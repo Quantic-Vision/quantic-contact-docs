@@ -47,6 +47,14 @@ En **Oficina virtual → Gestión de usuarios entrantes**, cada usuario virtual 
 
 Un mismo usuario virtual puede tener **distintos enlaces de pantalla por grupo de agentes** — útil si ese negocio, a su vez, se subdivide en líneas (ej. soporte técnico, verificación, comercial) enrutadas por IVR a distintos grupos.
 
+### Contactos frecuentes (opcional)
+
+Además de la base de conocimiento, se puede armar una **libreta de contactos frecuentes** por usuario virtual — como una guía telefónica interna para que el agente consulte o transfiera sin salir de la pantalla.
+
+1. En **Call center → Contactos frecuentes → Agregar**, define equipo, alcance (grupo/tipo de módulo/ID de módulo — para acotar quién ve este contacto), nombre, teléfono, si el teléfono se muestra al agente (o solo permite marcar/transferir sin revelarlo, por privacidad), descripción, y un texto de estado libre (ej. "disponible de 9 a 18h" — visible al agente para saber cuándo tiene sentido contactarlo).
+2. En la edición del usuario virtual, agrega el enlace a esta lista de contactos.
+3. Desde la pantalla del agente, la lista de contactos frecuentes de ese usuario virtual queda visible, y un clic sobre un contacto dispara la transferencia o consulta.
+
 ### 4. Base de conocimiento por usuario virtual
 
 Se organiza en categorías de uno o dos niveles (ej. Categoría → Subcategoría → Artículo), igual que en [4.6 Base de conocimiento](base-conocimiento-work-orders.md#base-de-conocimiento), pero acotada al usuario virtual correspondiente — así el agente solo ve el conocimiento relevante para la empresa que está atendiendo en ese momento.
@@ -82,3 +90,4 @@ Cuando terceros (las propias empresas B, C, D del ejemplo) necesitan ver sus pro
 
 - `raw/zh/用途和案例/为客户提供虚拟呼叫中心服务.txt`
 - `raw/zh/模块使用说明/bpo/bpo帐号管理.txt`
+- `raw/en/how-to/how_to_build_a_common_contacts.txt`

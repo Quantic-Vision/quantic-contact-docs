@@ -21,3 +21,4 @@ relacionados: []
 | [Configurar OpenVPN](openvpn.md) | Acceso remoto para teléfonos IP fuera de la oficina | Conceptos sí, comandos no |
 | [Configurar APC (caché de PHP)](apc.md) | Caché de opcode — reemplazado por OPcache en PHP 7.4 | No (ver equivalente) |
 | [Configurar Mailman / correo saliente](mailman.md) | Dependencias Perl para envío de correo masivo | Parcial |
+| [Diagnóstico de red y VoIP](diagnostico-red-voip.md) | ngrep, tcpdump/Wireshark, SIP sobre TLS, Samba, replicación MySQL | Comandos base sí, vías/paquetes a confirmar |

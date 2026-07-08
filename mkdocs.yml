@@ -97,6 +97,7 @@ nav:
       - OpenVPN: administracion/openvpn.md
       - APC (caché de PHP): administracion/apc.md
       - Mailman / correo saliente: administracion/mailman.md
+      - Diagnóstico de red y VoIP: administracion/diagnostico-red-voip.md
   - 7. Guía de desarrollo y customización:
       - desarrollo/index.md
       - API y AMI: desarrollo/api-y-ami.md

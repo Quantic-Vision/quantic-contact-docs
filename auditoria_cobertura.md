@@ -4,13 +4,13 @@ Cálculo: **archivos fuente citados bajo `## Fuentes` en algún artículo** ÷ *
 
 ## Cobertura global
 
-- Total: **155/1068 (14.5%)**
+- Total: **161/1068 (15.1%)**
 
 ## Cobertura por idioma
 
 | Idioma | Citadas | Total | % |
 |---|---|---|---|
-| EN | 9 | 441 | 2.0% |
+| EN | 15 | 441 | 3.4% |
 | ZH | 146 | 627 | 23.3% |
 
 > El chino (ZH) es la fuente primaria del proyecto (más completa en el wiki original).
@@ -695,38 +695,6 @@ Cálculo: **archivos fuente citados bajo `## Fuentes` en algún artículo** ÷ *
 - `raw/zh/实际案例指导/武汉某集团公司astercc应用实例.txt`
 - `raw/zh/实际案例指导/配置电话系统外呼及呼入流程.txt`
 
-### en/how-to — 29 páginas sin citar
-
-- `raw/en/how-to/how_to_build_a_common_contacts.txt`
-- `raw/en/how-to/how_to_build_a_voice_broadcasting_system.txt`
-- `raw/en/how-to/how_to_build_a_voice_broadcasting_to_ivr_system.txt`
-- `raw/en/how-to/how_to_config_a_campaign.txt`
-- `raw/en/how-to/how_to_config_customer_service_module_for_inbound_calls.txt`
-- `raw/en/how-to/how_to_config_e-commerce_for_customer_service.txt`
-- `raw/en/how-to/how_to_config_e-commerce_in_a_campaign.txt`
-- `raw/en/how-to/how_to_config_inbound_popup_for_campaign.txt`
-- `raw/en/how-to/how_to_configure_voice_survey_with_predictive_dailer.txt`
-- `raw/en/how-to/how_to_customize_customer_information_fields_and_import_data.txt`
-- `raw/en/how-to/how_to_filter.txt`
-- `raw/en/how-to/how_to_manage_callerid_number.txt`
-- `raw/en/how-to/how_to_set_agents_can_do_international_calls_with_an_authorization_numeric_code.txt`
-- `raw/en/how-to/how_to_set_sip_phone_uses_tls_to_register_the_astercc_system.txt`
-- `raw/en/how-to/how_to_set_up_master_slave_replication_in_mysql.txt`
-- `raw/en/how-to/how_to_settings_campaign_trunks_for_different_purposes.txt`
-- `raw/en/how-to/how_to_settings_the_astercc_moh.txt`
-- `raw/en/how-to/how_to_setup_ip_phone_auto_provisioning.txt`
-- `raw/en/how-to/how_to_use_consult_cb_conf_trans.txt`
-- `raw/en/how-to/how_to_use_e_commerce_in_customer_service_module.txt`
-- `raw/en/how-to/how_to_use_filter.txt`
-- `raw/en/how-to/how_to_use_ngrep_for_fast_sip_packet_analysis.txt`
-- `raw/en/how-to/how_to_use_predictive_dialer_in_a_campaign.txt`
-- `raw/en/how-to/how_to_use_rsync_to_synchronize_files_on_a_remote_server.txt`
-- `raw/en/how-to/how_to_use_samba_share_files_between_linux_and_linux.txt`
-- `raw/en/how-to/how_to_use_tcpdump_and_wireshark_to_debug_voip_calls.txt`
-- `raw/en/how-to/how_to_use_work_order_in_campaign_module.txt`
-- `raw/en/how-to/how_to_use_work_order_in_customer_service_module.txt`
-- `raw/en/how-to/how_to_verify_validity_of_credit_card_in_ivr_module.txt`
-
 ### zh/用途和案例 — 28 páginas sin citar
 
 - `raw/zh/用途和案例/ip话机自动部署详解.txt`
@@ -842,6 +810,32 @@ Cálculo: **archivos fuente citados bajo `## Fuentes` en algún artículo** ÷ *
 - `raw/en/change_log/astercc-3.2-rc1_changelog.txt`
 - `raw/en/change_log/astercc-4.1_changelog.txt`
 - `raw/en/change_log/astercc-4.2_changelog.txt`
+
+### en/how-to — 23 páginas sin citar
+
+- `raw/en/how-to/how_to_build_a_voice_broadcasting_system.txt`
+- `raw/en/how-to/how_to_build_a_voice_broadcasting_to_ivr_system.txt`
+- `raw/en/how-to/how_to_config_a_campaign.txt`
+- `raw/en/how-to/how_to_config_customer_service_module_for_inbound_calls.txt`
+- `raw/en/how-to/how_to_config_e-commerce_for_customer_service.txt`
+- `raw/en/how-to/how_to_config_e-commerce_in_a_campaign.txt`
+- `raw/en/how-to/how_to_config_inbound_popup_for_campaign.txt`
+- `raw/en/how-to/how_to_configure_voice_survey_with_predictive_dailer.txt`
+- `raw/en/how-to/how_to_customize_customer_information_fields_and_import_data.txt`
+- `raw/en/how-to/how_to_filter.txt`
+- `raw/en/how-to/how_to_manage_callerid_number.txt`
+- `raw/en/how-to/how_to_set_agents_can_do_international_calls_with_an_authorization_numeric_code.txt`
+- `raw/en/how-to/how_to_settings_campaign_trunks_for_different_purposes.txt`
+- `raw/en/how-to/how_to_settings_the_astercc_moh.txt`
+- `raw/en/how-to/how_to_setup_ip_phone_auto_provisioning.txt`
+- `raw/en/how-to/how_to_use_consult_cb_conf_trans.txt`
+- `raw/en/how-to/how_to_use_e_commerce_in_customer_service_module.txt`
+- `raw/en/how-to/how_to_use_filter.txt`
+- `raw/en/how-to/how_to_use_predictive_dialer_in_a_campaign.txt`
+- `raw/en/how-to/how_to_use_rsync_to_synchronize_files_on_a_remote_server.txt`
+- `raw/en/how-to/how_to_use_work_order_in_campaign_module.txt`
+- `raw/en/how-to/how_to_use_work_order_in_customer_service_module.txt`
+- `raw/en/how-to/how_to_verify_validity_of_credit_card_in_ivr_module.txt`
 
 ### zh/change_log — 20 páginas sin citar
 
