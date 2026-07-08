@@ -1,0 +1,23 @@
+# Entornos virtuales
+.venv/
+scraper/.venv/
+
+# Contenido scrapeado (fuente cruda, 375MB+ — no se versiona)
+raw/
+
+# Build de MkDocs (se genera vía GitHub Actions)
+site/
+
+# Caché y estado de Scrapy
+scraper/.httpcache/
+scraper/.scrapy_job/
+scraper/scraper.log
+scraper/images.log
+
+# Python
+__pycache__/
+*.pyc
+
+# Sistema
+.DS_Store
+Thumbs.db

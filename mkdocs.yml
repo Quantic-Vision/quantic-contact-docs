@@ -1,0 +1,105 @@
+site_name: Wiki AsterCC (Español)
+site_description: Documentación de AsterCC — plataforma de call center basada en Asterisk
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  language: es
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Cambiar a modo oscuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Cambiar a modo claro
+  features:
+    - navigation.top
+    - navigation.indexes
+    - navigation.tracking
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+
+plugins:
+  - search:
+      lang: es
+  - tags
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - tables
+  - toc:
+      permalink: true
+  - meta
+  - attr_list
+  - md_in_html
+
+nav:
+  - Inicio: index.md
+  - Glosario: glosario.md
+  - 1. Introducción a AsterCC:
+      - introduccion/index.md
+      - ¿Qué es AsterCC?: introduccion/que-es-astercc.md
+      - Funcionalidades del sistema: introduccion/funcionalidades.md
+      - Arquitectura general: introduccion/arquitectura-general.md
+      - Demo en línea: introduccion/demo-en-linea.md
+  - 2. Instalación y configuración inicial:
+      - instalacion/index.md
+      - Requisitos del sistema: instalacion/requisitos.md
+      - Descarga e instalación: instalacion/descarga-e-instalacion.md
+      - Instalar desde USB (AsterCC Box): instalacion/instalar-desde-usb.md
+      - Configuración post-instalación: instalacion/configuracion-post-instalacion.md
+      - Licencias y errores comunes de inicio: instalacion/licencias-y-errores-comunes.md
+  - 3. Primeros pasos:
+      - primeros-pasos/index.md
+      - Guía rápida para administradores: primeros-pasos/guia-administradores.md
+      - Guía rápida para agentes: primeros-pasos/guia-agentes.md
+      - Recorrido por la interfaz: primeros-pasos/recorrido-interfaz.md
+  - 4. Módulos del sistema:
+      - modulos/index.md
+      - PBX y telefonía: modulos/pbx-y-telefonia.md
+      - Marcador y campañas: modulos/marcador-y-campanas.md
+      - Cuentas, equipos y permisos: modulos/cuentas-equipos-permisos.md
+      - Tarifas y facturación: modulos/tarifas-y-facturacion.md
+      - Encuestas y cuestionarios: modulos/encuestas.md
+      - Base de conocimiento y Work Orders: modulos/base-conocimiento-work-orders.md
+      - Plataforma de trabajo del agente: modulos/plataforma-del-agente.md
+      - Reportes, estadísticas y financiero: modulos/reportes-y-estadisticas.md
+      - Oficina virtual / BPO: modulos/oficina-virtual-bpo.md
+      - Atención al cliente, mensajería y e-commerce: modulos/atencion-cliente-mensajeria-ecommerce.md
+  - 5. Casos de uso y soluciones:
+      - casos-de-uso/index.md
+      - Call center de atención al cliente (inbound): casos-de-uso/call-center-inbound.md
+      - Marketing outbound / televentas: casos-de-uso/marketing-outbound.md
+      - E-commerce: casos-de-uso/e-commerce.md
+      - Oficina virtual: casos-de-uso/oficina-virtual.md
+      - Marcación predictiva: casos-de-uso/marcacion-predictiva.md
+      - Casos técnicos avanzados: casos-de-uso/casos-tecnicos-avanzados.md
+  - 6. Administración avanzada:
+      - administracion/index.md
+      - Configuración de Asterisk AMI: administracion/asterisk-ami.md
+      - OpenVPN: administracion/openvpn.md
+      - APC (caché de PHP): administracion/apc.md
+      - Mailman / correo saliente: administracion/mailman.md
+  - 7. Guía de desarrollo y customización:
+      - desarrollo/index.md
+      - API y AMI: desarrollo/api-y-ami.md
+      - Guía para desarrolladores: desarrollo/guia-desarrolladores.md
+  - 8. Preguntas frecuentes: faq/index.md
+  - 9. Solución de problemas: troubleshooting/index.md
+  - 10. Historial de versiones: changelog/index.md
+
+extra_css:
+  - assets/stylesheets/extra.css
