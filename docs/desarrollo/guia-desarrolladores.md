@@ -63,4 +63,6 @@ Sigue el mismo principio, pero la comunicación entre el iframe de AsterCC y tu 
 
 ---
 
-*Fuente: `raw/zh/二次开发者指南/如何将第三方系统与astercc集成.txt`.*
+## Fuentes
+
+- `raw/zh/二次开发者指南/如何将第三方系统与astercc集成.txt`

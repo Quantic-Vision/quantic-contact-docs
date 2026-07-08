@@ -78,4 +78,6 @@ append ks=hd:sda1:/ks_default.cfg asknetwork initrd=initrd.img
 
 ---
 
-*Fuente: `raw/zh/使用u盘安装astercc-box.txt`.*
+## Fuentes
+
+- `raw/zh/使用u盘安装astercc-box.txt`

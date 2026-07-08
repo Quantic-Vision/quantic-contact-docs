@@ -88,4 +88,9 @@ Se abre con el botón de cola y muestra las colas a las que pertenece el agente,
 
 ---
 
-*Fuentes: `raw/zh/界面简介/管理界面.txt`, `raw/zh/界面简介/坐席界面.txt`, `raw/zh/界面简介/队列面板.txt`, `raw/zh/界面简介/拨号面板.txt`.*
+## Fuentes
+
+- `raw/zh/界面简介/管理界面.txt`
+- `raw/zh/界面简介/坐席界面.txt`
+- `raw/zh/界面简介/队列面板.txt`
+- `raw/zh/界面简介/拨号面板.txt`

@@ -176,6 +176,20 @@ La estructura de secciones vive en `plan-migracion-wiki-astercc.md` (v4+) y se a
    ---
    ```
    Nunca escribir un `.md` en `docs/` sin este bloque completo — es el criterio #1 de "artículo completo" en el plan.
+8. **Citas de fuentes — lista explícita, sin comodines, formato de lista.** Cada artículo termina con:
+   ```markdown
+   ---
+
+   ## Fuentes
+
+   - `raw/zh/模块使用说明/pbx管理/分机管理.txt`
+   - `raw/zh/模块使用说明/pbx高级管理/队列管理.txt`
+   ```
+   Reglas:
+   - **Nunca usar comodines** (`*.txt`, rutas de carpeta sin archivo) — cada línea es un archivo individual que efectivamente se leyó.
+   - Un archivo se cita si su contenido fue leído y usado — no basta con que "debería" estar cubierto por otro archivo similar.
+   - Si un tema tiene equivalente en EN y en ZH pero solo se leyó uno, se cita solo el leído — no asumir que el otro dice lo mismo sin verificarlo.
+   - Auditar cobertura real con `scraper/audit_coverage.py` (compara citas contra el listado completo de `raw/`, separado por idioma EN/ZH) — no confiar en estimaciones.
 
 ### Sección "Módulos del sistema" — mapeo por dominio funcional
 

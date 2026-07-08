@@ -67,4 +67,7 @@ Las facturas se generan automáticamente de forma periódica y pueden consultars
 
 ---
 
-*Fuentes: `raw/zh/模块使用说明/报表和统计/坐席服务明细.txt`, `raw/zh/模块使用说明/财务统计/系统账单.txt`.*
+## Fuentes
+
+- `raw/zh/模块使用说明/报表和统计/坐席服务明细.txt`
+- `raw/zh/模块使用说明/财务统计/系统账单.txt`

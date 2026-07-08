@@ -48,4 +48,7 @@ Antes de instalar, confirma que el servidor (físico o virtual) cumple los requi
 
 ---
 
-*Fuentes: `raw/zh/下载和安装/在rocky9中进行安装.txt`, `raw/en/download_and_install/iinstall_in_rocky9.txt`.*
+## Fuentes
+
+- `raw/zh/下载和安装/在rocky9中进行安装.txt`
+- `raw/en/download_and_install/iinstall_in_rocky9.txt`

@@ -76,4 +76,9 @@ Para un administrador, entender esta arquitectura ayuda a decidir en qué capa i
 
 ---
 
-*Fuentes: `raw/zh/start.txt`, `raw/en/start.txt`, `raw/zh/呼叫中心系统功能列表.txt`, `raw/en/astercc_call_center_quick_feature_list.txt`.*
+## Fuentes
+
+- `raw/zh/start.txt`
+- `raw/en/start.txt`
+- `raw/zh/呼叫中心系统功能列表.txt`
+- `raw/en/astercc_call_center_quick_feature_list.txt`

@@ -46,4 +46,7 @@ Para el detalle completo de funciones, ver [Funcionalidades del sistema](funcion
 
 ---
 
-*Fuentes: `raw/zh/start.txt`, `raw/en/start.txt`.*
+## Fuentes
+
+- `raw/zh/start.txt`
+- `raw/en/start.txt`

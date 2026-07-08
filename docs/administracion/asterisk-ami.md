@@ -57,4 +57,6 @@ AsterCC necesita acceso al **Asterisk Manager Interface (AMI)** para leer datos 
 
 ---
 
-*Fuente: `raw/en/asterisk_ami_username_password.txt`.*
+## Fuentes
+
+- `raw/en/asterisk_ami_username_password.txt`

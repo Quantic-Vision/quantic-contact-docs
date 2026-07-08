@@ -60,4 +60,6 @@ Al finalizar, consulta en [4.8 Reportes](../modulos/reportes-y-estadisticas.md) 
 
 ---
 
-*Fuente: `raw/zh/用途和案例/如何为在外呼任务中使用预拨号功能.txt`.*
+## Fuentes
+
+- `raw/zh/用途和案例/如何为在外呼任务中使用预拨号功能.txt`

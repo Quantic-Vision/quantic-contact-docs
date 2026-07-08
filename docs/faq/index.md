@@ -55,4 +55,9 @@ La documentación original distingue entre una rama abierta (0.x) y la **versió
 
 ---
 
-*Fuentes: `raw/zh/常见问题及解答/账户_坐席和分机之间有什么区别和联系.txt`, `raw/zh/常见问题及解答/登入_登出和签入签出有什么区别.txt`, `raw/zh/常见问题及解答/费率管理下的四个费率都是做什么用的_如何使用.txt`, `raw/zh/常见问题及解答/如何选择dtmf模式.txt`.*
+## Fuentes
+
+- `raw/zh/常见问题及解答/账户_坐席和分机之间有什么区别和联系.txt`
+- `raw/zh/常见问题及解答/登入_登出和签入签出有什么区别.txt`
+- `raw/zh/常见问题及解答/费率管理下的四个费率都是做什么用的_如何使用.txt`
+- `raw/zh/常见问题及解答/如何选择dtmf模式.txt`

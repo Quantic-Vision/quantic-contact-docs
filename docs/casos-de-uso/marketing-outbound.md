@@ -67,4 +67,6 @@ Al terminar la sesión de trabajo, en **Reportes y estadísticas** se puede cons
 
 ---
 
-*Fuente: `raw/zh/用途和案例/为企业建立一个外呼呼叫中心用于管理销售.txt`.*
+## Fuentes
+
+- `raw/zh/用途和案例/为企业建立一个外呼呼叫中心用于管理销售.txt`

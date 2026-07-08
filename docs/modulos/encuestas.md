@@ -77,15 +77,41 @@ Cada cuota admite un **margen de sobrecupo** (por cantidad o porcentaje) para ab
 2. Solo se contabilizan clientes en estado "enviado con éxito" o "enviado con error".
 3. Para exportar, elige el formato, agrega la tarea de exportación con su horario de ejecución, y descárgala luego desde **Administración avanzada del call center → Gestión de archivos exportados**.
 
+### 7. Plantillas de opciones (ahorro de tiempo al crear preguntas)
+
+Ciertos sets de opciones se repiten constantemente entre encuestas (escalas de puntaje, niveles de satisfacción, género, etc.). En vez de escribirlas cada vez, se arma una **plantilla de opciones** reutilizable:
+
+1. En **Encuestas → Plantillas de opciones → Agregar**, define un nombre descriptivo (ej. "satisfacción 5 niveles", "puntaje 1-10 ascendente").
+2. Dentro de la plantilla, agrega cada opción con: **texto de la opción**, si lleva **campo de texto adicional** (ej. "otro — especifique"), el **valor de exportación** (para convertir texto a un puntaje numérico al exportar), y una **nota** visible solo para el agente.
+3. Al crear una pregunta de opción única/múltiple/combinada en cualquier encuesta, se puede **importar** esta plantilla completa en vez de tipear las opciones una por una.
+
+### 8. Distribución y avance de respuestas
+
+En **Encuestas → Distribución de encuesta**, se elige la tarea de campaña y la encuesta asociada para ver dos tipos de estadística:
+
+| Tipo | Qué muestra |
+|---|---|
+| Resultado de la encuesta | Cuántas veces se eligió cada opción de cada pregunta, y su porcentaje sobre el total de respuestas |
+| Avance de finalización | Cuántas encuestas se completaron por día, en un rango de fechas |
+
+Ambos se pueden filtrar por estado: **aprobado en control de calidad**, **enviado con éxito** (según el agente), o **enviado con error** (según el agente) — útil para separar el avance "bruto" del agente de lo que realmente pasó la revisión de calidad.
+
 ## Referencia rápida
 
 | Tarea | Dónde |
 |---|---|
 | Crear/editar encuesta | Encuestas → Gestión de encuestas |
+| Reutilizar un set de opciones | Encuestas → Plantillas de opciones |
+| Ver distribución de respuestas | Encuestas → Distribución de encuesta |
 | Ver resultados de una campaña | Marketing outbound → Control de calidad |
 | Descargar exportación | Administración avanzada del call center → Gestión de archivos exportados |
 | Marcador de relleno de texto | `[FILL]` |
 
 ---
 
-*Fuente: `raw/zh/模块使用说明/问卷/问卷管理.txt`.*
+## Fuentes
+
+- `raw/zh/模块使用说明/问卷/问卷管理.txt`
+- `raw/zh/模块使用说明/问卷/问卷选项模板.txt`
+- `raw/zh/模块使用说明/问卷/问卷分布统计.txt`
+- `raw/zh/模块使用说明/问卷.txt`

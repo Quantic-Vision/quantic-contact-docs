@@ -37,4 +37,6 @@ El detalle de configuración del módulo está en [4.9 Oficina virtual / BPO](..
 
 ---
 
-*Fuente: `raw/zh/用途和案例/为客户提供虚拟呼叫中心服务.txt`.*
+## Fuentes
+
+- `raw/zh/用途和案例/为客户提供虚拟呼叫中心服务.txt`

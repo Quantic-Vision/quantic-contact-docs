@@ -75,4 +75,10 @@ Dos causas comunes:
 
 ---
 
-*Fuentes: `raw/zh/常见问题及解答/安装完毕后使用默认的admin账户登录astercc时总是显示错误.txt`, `raw/zh/常见问题及解答/为什么无法保存分机_坐席.txt`, `raw/zh/常见问题及解答/分机呼叫正常_使用预拨号时目标号码不振铃.txt`, `raw/zh/常见问题及解答.txt`, `raw/en/why_i_get_can_not_found_license_file_when_start_astercc_daemons.txt`.*
+## Fuentes
+
+- `raw/zh/常见问题及解答/安装完毕后使用默认的admin账户登录astercc时总是显示错误.txt`
+- `raw/zh/常见问题及解答/为什么无法保存分机_坐席.txt`
+- `raw/zh/常见问题及解答/分机呼叫正常_使用预拨号时目标号码不振铃.txt`
+- `raw/zh/常见问题及解答.txt`
+- `raw/en/why_i_get_can_not_found_license_file_when_start_astercc_daemons.txt`

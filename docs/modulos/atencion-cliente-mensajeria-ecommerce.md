@@ -80,4 +80,7 @@ Una vez creado, se administran **productos**, **pedidos recientes/históricos** 
 
 ---
 
-*Fuentes: `raw/zh/模块使用说明/呼入客服/呼入客服.txt`, `raw/zh/模块使用说明/电子商务/电子商务.txt`.*
+## Fuentes
+
+- `raw/zh/模块使用说明/呼入客服/呼入客服.txt`
+- `raw/zh/模块使用说明/电子商务/电子商务.txt`

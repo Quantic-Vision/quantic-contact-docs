@@ -93,4 +93,7 @@ Configuración que define una tarea de marcación saliente. Cada plan de marcaci
 
 ---
 
-*Fuentes: `raw/en/others/glossary.txt`, `raw/zh/其他/名词解释.txt`.*
+## Fuentes
+
+- `raw/en/others/glossary.txt`
+- `raw/zh/其他/名词解释.txt`

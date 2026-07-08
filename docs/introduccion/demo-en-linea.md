@@ -51,4 +51,6 @@ Una vez conectada la llamada, se pueden probar las funciones de [consulta, trans
 
 ---
 
-*Fuente: `raw/zh/在线演示/在线演示.txt`.*
+## Fuentes
+
+- `raw/zh/在线演示/在线演示.txt`

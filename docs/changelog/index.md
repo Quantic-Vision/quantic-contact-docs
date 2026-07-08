@@ -54,4 +54,9 @@ Existen reportes de cuentas comprometidas y datos dañados en sistemas AsterCC e
 
 ---
 
-*Fuentes: `raw/zh/change_log/astercc_login_security_patch.txt`, `raw/zh/change_log/astercc-4.2_changelog.txt`, `raw/zh/change_log/astercc-4.1_changelog.txt`, `raw/zh/change_log/astercc-2.0_changelog.txt`.*
+## Fuentes
+
+- `raw/zh/change_log/astercc_login_security_patch.txt`
+- `raw/zh/change_log/astercc-4.2_changelog.txt`
+- `raw/zh/change_log/astercc-4.1_changelog.txt`
+- `raw/zh/change_log/astercc-2.0_changelog.txt`

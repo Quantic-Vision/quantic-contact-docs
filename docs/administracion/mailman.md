@@ -55,4 +55,6 @@ AsterCC incluye un script en Perl (`astercc_mailman.pl`) para el envío de corre
 
 ---
 
-*Fuente: `raw/en/install_astcc_mailman.txt`.*
+## Fuentes
+
+- `raw/en/install_astcc_mailman.txt`

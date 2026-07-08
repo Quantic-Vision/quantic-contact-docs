@@ -78,4 +78,7 @@ Cuando terceros (las propias empresas B, C, D del ejemplo) necesitan ver sus pro
 
 ---
 
-*Fuentes: `raw/zh/用途和案例/为客户提供虚拟呼叫中心服务.txt`, `raw/zh/模块使用说明/bpo/bpo帐号管理.txt`.*
+## Fuentes
+
+- `raw/zh/用途和案例/为客户提供虚拟呼叫中心服务.txt`
+- `raw/zh/模块使用说明/bpo/bpo帐号管理.txt`

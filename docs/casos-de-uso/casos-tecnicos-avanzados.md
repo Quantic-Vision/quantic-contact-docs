@@ -22,7 +22,7 @@ Dos casos técnicos que van más allá de la configuración estándar de PBX: en
 
 En vez de pedir al cliente que presione una tecla, el IVR puede pedirle que **diga** la opción y enrutar según lo reconocido:
 
-1. Crea el flujo de [IVR](../modulos/pbx-y-telefonia.md#ivr-menu-de-voz) con sus parámetros básicos.
+1. Crea el flujo de [IVR](../modulos/pbx-ivr.md) con sus parámetros básicos.
 2. Agrega, en orden: una acción de **respuesta**, luego una de **aviso de voz** (pidiendo al cliente que diga la opción — ej. *"diga el área con la que desea comunicarse: consultas de producto, servicio al cliente o quejas"*), y luego una acción de **reconocimiento de voz**.
 3. En la acción de reconocimiento, configura:
    - **Duración máxima:** tiempo máximo que el sistema graba antes de intentar reconocer.
@@ -56,4 +56,7 @@ Al conectar un troncal SIP directamente con la red de un operador móvil (servic
 
 ---
 
-*Fuentes: `raw/zh/用途和案例/ivr语音识别配置示例.txt`, `raw/zh/用途和案例/中国移动ims对接.txt`.*
+## Fuentes
+
+- `raw/zh/用途和案例/ivr语音识别配置示例.txt`
+- `raw/zh/用途和案例/中国移动ims对接.txt`

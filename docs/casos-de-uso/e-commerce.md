@@ -56,4 +56,7 @@ En la ficha del cliente, la sección de e-commerce permite:
 
 ---
 
-*Fuentes: `raw/zh/用途和案例/如何在呼入客服系统中使用电子商务.txt`, `raw/zh/模块使用说明/电子商务/电子商务.txt`.*
+## Fuentes
+
+- `raw/zh/用途和案例/如何在呼入客服系统中使用电子商务.txt`
+- `raw/zh/模块使用说明/电子商务/电子商务.txt`

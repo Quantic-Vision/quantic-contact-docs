@@ -64,4 +64,6 @@ Cada grupo de agentes al que perteneces aparece como una columna en este panel:
 
 ---
 
-*Fuente: `raw/zh/新手上路/快速配置手册.txt` (secciones de portal del agente).*
+## Fuentes
+
+- `raw/zh/新手上路/快速配置手册.txt`

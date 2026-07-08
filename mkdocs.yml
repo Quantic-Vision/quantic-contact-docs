@@ -70,7 +70,10 @@ nav:
   - 4. Módulos del sistema:
       - modulos/index.md
       - PBX y telefonía: modulos/pbx-y-telefonia.md
+      - "PBX — IVR (menú de voz)": modulos/pbx-ivr.md
+      - "PBX — Funciones avanzadas": modulos/pbx-funciones-avanzadas.md
       - Marcador y campañas: modulos/marcador-y-campanas.md
+      - "Marcador predictivo — avanzado": modulos/marcador-predictivo-avanzado.md
       - Cuentas, equipos y permisos: modulos/cuentas-equipos-permisos.md
       - Tarifas y facturación: modulos/tarifas-y-facturacion.md
       - Encuestas y cuestionarios: modulos/encuestas.md

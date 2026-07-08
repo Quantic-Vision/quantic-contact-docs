@@ -73,4 +73,7 @@ Un work order se puede originar desde cuatro lugares:
 
 ---
 
-*Fuentes: `raw/zh/模块使用说明/知识库/知识库.txt`, `raw/zh/模块使用说明/工单管理/工单.txt`.*
+## Fuentes
+
+- `raw/zh/模块使用说明/知识库/知识库.txt`
+- `raw/zh/模块使用说明/工单管理/工单.txt`

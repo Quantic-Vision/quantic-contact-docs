@@ -45,4 +45,6 @@ Con esto termina la inicialización. A partir de aquí, el sistema queda listo p
 
 ---
 
-*Fuente: `raw/zh/新手上路/快速配置手册.txt` (primera sección).*
+## Fuentes
+
+- `raw/zh/新手上路/快速配置手册.txt`

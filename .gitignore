@@ -11,6 +11,7 @@ site/
 # Caché y estado de Scrapy
 scraper/.httpcache/
 scraper/.scrapy_job/
+scraper/.scrapy/
 scraper/scraper.log
 scraper/images.log
 

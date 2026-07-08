@@ -33,4 +33,7 @@ Este mensaje aparece en los logs al iniciar los procesos (`asterccdaemons`) cuan
 
 ---
 
-*Fuentes: `raw/en/why_i_get_can_not_found_license_file_when_start_astercc_daemons.txt`, `raw/zh/新手上路/快速配置手册.txt`.*
+## Fuentes
+
+- `raw/en/why_i_get_can_not_found_license_file_when_start_astercc_daemons.txt`
+- `raw/zh/新手上路/快速配置手册.txt`

@@ -48,4 +48,6 @@ relacionados: [requisitos]
 
 ---
 
-*Fuente: `raw/en/install_apc.txt`.*
+## Fuentes
+
+- `raw/en/install_apc.txt`

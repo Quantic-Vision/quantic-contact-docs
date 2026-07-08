@@ -22,8 +22,8 @@ Caso de uso de referencia para armar un servicio de atención al cliente entrant
 
 1. Da de alta el [troncal](../modulos/pbx-y-telefonia.md#troncales-y-grupos-de-troncales) por el que entrarán las llamadas.
 2. Crea el [grupo de agentes](../modulos/cuentas-equipos-permisos.md) que atenderá este servicio, con su cola asociada.
-3. Si manejas más de una línea de negocio, da de alta un [DID](../modulos/pbx-y-telefonia.md#did-y-rutas-entrantessalientes) por línea, para poder distinguir a qué servicio corresponde cada llamada.
-4. Crea la [ruta entrante](../modulos/pbx-y-telefonia.md#did-y-rutas-entrantessalientes) que conecta ese DID (o el troncal directamente, si no usas DID) con la cola del paso 2.
+3. Si manejas más de una línea de negocio, da de alta un [DID](../modulos/pbx-y-telefonia.md#did-y-grupos-de-did) por línea, para poder distinguir a qué servicio corresponde cada llamada.
+4. Crea la [ruta entrante](../modulos/pbx-y-telefonia.md#rutas-entrantes-y-salientes) que conecta ese DID (o el troncal directamente, si no usas DID) con la cola del paso 2.
 
 ### 2. Crear el servicio de atención al cliente
 
@@ -52,4 +52,7 @@ Sigue [4.10 Atención al cliente](../modulos/atencion-cliente-mensajeria-ecommer
 
 ---
 
-*Fuentes: `raw/zh/用途和案例/呼入客服的配置弹屏和简单使用.txt`, `raw/zh/用途和案例/如何在呼入客服系统中使用电子商务.txt`.*
+## Fuentes
+
+- `raw/zh/用途和案例/呼入客服的配置弹屏和简单使用.txt`
+- `raw/zh/用途和案例/如何在呼入客服系统中使用电子商务.txt`

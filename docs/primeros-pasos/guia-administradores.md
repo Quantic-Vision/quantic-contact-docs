@@ -28,25 +28,54 @@ Esta guía cubre el camino más corto entre una instalación recién inicializad
    - **Número de agente inicial** (ej. `5000`).
    - **Longitud de contraseña** (ej. 7 caracteres).
    - **Prefijo de contraseña** (ej. `temp12` — si el prefijo y la longitud coinciden, todas las cuentas comparten la misma contraseña).
+   ![Configuración rápida — parámetros de generación en lote](../assets/images/primeros-pasos/quick_start_1.jpg)
+
 3. Haz clic en **Vista previa** para revisar lo que se va a crear, ajusta si hace falta, y luego en **Guardar**.
+
+   ![Vista previa de las cuentas a generar](../assets/images/primeros-pasos/quick_start_2.jpg)
+
 4. El sistema pregunta si quieres exportar el resultado a CSV — útil para no perder las contraseñas generadas.
+
+   ![Confirmación de exportación a CSV](../assets/images/primeros-pasos/quick_start_3.jpg)
+
 5. Aparecerá una barra de **recarga** en la parte superior: haz clic en ella para que los cambios tomen efecto.
+
+   ![Barra de recarga tras guardar los cambios](../assets/images/primeros-pasos/quick_start_4.jpg)
 
 ### 2. Crear un grupo de agentes (cola)
 
 Un agente necesita pertenecer a un [grupo de agentes](../glosario.md#cola-grupo-de-agentes) para poder trabajar.
 
 1. Ve a **Cuentas y permisos → Gestión de grupos de agentes** y haz clic en **Agregar**.
+
+   ![Crear un grupo de agentes](../assets/images/primeros-pasos/agent_group_1.png)
+
 2. Agrega los agentes creados en el paso anterior al grupo (puedes usar "Seleccionar todos").
+
+   ![Agregar agentes al grupo](../assets/images/primeros-pasos/agent_group_2.png)
+
 3. Designa a uno de los agentes como **administrador del grupo** (jefe de equipo).
+
+   ![Agentes agregados exitosamente al grupo](../assets/images/primeros-pasos/agent_group_3.png)
+
 4. Al guardar, el sistema pregunta si quieres crear automáticamente una cola asociada — acepta. Un grupo de agentes y su cola tienen relación uno a uno.
+
+   ![Confirmación de creación automática de cola](../assets/images/primeros-pasos/agent_group_4.png)
+
 5. Recarga el sistema (barra de recarga) para aplicar el cambio.
+
+   ![Recarga exitosa tras crear el grupo de agentes](../assets/images/primeros-pasos/agent_group_6.jpg)
 
 ### 3. Configurar un softphone
 
 1. Descarga un softphone compatible con SIP 2.0 (X-Lite, Zoiper o eyeBeam).
 2. Configura la cuenta SIP usando el formato `<equipo>-<extensión>` como usuario (ej. `astercc-5000`, **no** `5000` solo), y la contraseña generada en el paso 1.
+
+   ![Configuración de cuenta SIP en el softphone](../assets/images/primeros-pasos/softphone.jpg)
+
 3. Puedes confirmar usuario/contraseña de registro en **Módulos → PBX → Gestión de extensiones**.
+
+   ![Softphone registrado correctamente](../assets/images/primeros-pasos/softphone_1.jpg)
 4. Si el registro falla, los códigos de error más comunes son:
    - **403 Forbidden:** usuario o contraseña incorrectos — confirma el formato `equipo-extensión`.
    - **408 Request Timeout:** el softphone no encuentra el servidor — revisa firewall y red.
@@ -63,6 +92,9 @@ Un agente necesita pertenecer a un [grupo de agentes](../glosario.md#cola-grupo-
    secret=<contraseña>
    port=5060
    ```
+
+   ![Formulario de configuración de troncal](../assets/images/primeros-pasos/trunk_1.png)
+
    Configuración típica por IP (sin registro):
    ```
    host=<ip-del-troncal>
@@ -70,7 +102,12 @@ Un agente necesita pertenecer a un [grupo de agentes](../glosario.md#cola-grupo-
    port=5060
    ```
 3. Al guardar, si el equipo no tiene un troncal saliente por defecto, el sistema pregunta si quieres asignar este troncal como predeterminado para las llamadas salientes del equipo.
+
+   ![Confirmación de troncal por defecto del equipo](../assets/images/primeros-pasos/trunk_2.png)
+
 4. Recarga el sistema. Si todo está bien, la columna **Estado** del troncal se muestra en verde.
+
+   ![Troncal en estado activo (verde)](../assets/images/primeros-pasos/trunk_3.png)
 5. Prueba una llamada saliente desde el softphone. Códigos de error comunes:
    - **486 Not Acceptable Here:** códec de voz incompatible entre el troncal y el softphone (revisa soporte de g729 si aplica).
    - **603 Declined:** normalmente autenticación del troncal — revisa si el troncal exige verificación del número que llama.
@@ -79,15 +116,31 @@ Un agente necesita pertenecer a un [grupo de agentes](../glosario.md#cola-grupo-
 
 1. Ve a **PBX avanzado → Rutas entrantes** y haz clic en **Agregar**.
 2. Define el destino de transferencia (por ejemplo, transferir a la cola creada en el paso 2) y un nombre descriptivo para esa transferencia.
+
+   ![Configuración de ruta entrante hacia una cola](../assets/images/primeros-pasos/inbound_route.jpg)
+
 3. Guarda y recarga. A partir de ahora, las llamadas que entren por el DID configurado se enrutan a esa cola.
 
 ### 6. Instalar un módulo de negocio
 
 1. Inicia sesión como administrador y entra a **Sistema → Gestión de módulos**.
+
+   ![Gestión de módulos del sistema](../assets/images/primeros-pasos/customerservice.jpg)
+
 2. Elige el módulo que necesites (por ejemplo, Atención al cliente) y haz clic en **Instalar**.
+
+   ![Instalación de un módulo de negocio](../assets/images/primeros-pasos/module_install_1.jpg)
+
 3. Confirma la instalación; al terminar, haz clic en **Finalizar**.
+
+   ![Instalación de módulo completada](../assets/images/primeros-pasos/module_install_2.jpg)
+
 4. Configura el módulo (por ejemplo, en Atención al cliente: crea una tarea y asígnale el grupo de agentes del paso 2).
+
+   ![Creación de una tarea de atención al cliente](../assets/images/primeros-pasos/customerservice_add.jpg)
 5. En **Cuentas y permisos → Grupos de agentes**, confirma que el grupo tenga vinculada la aplicación de negocio recién configurada como su flujo por defecto para llamadas entrantes/salientes.
+
+   ![Grupo de agentes con la aplicación de negocio vinculada](../assets/images/primeros-pasos/agent_group_default_app.jpg)
 
 ## Referencia rápida
 
@@ -102,4 +155,6 @@ Un agente necesita pertenecer a un [grupo de agentes](../glosario.md#cola-grupo-
 
 ---
 
-*Fuente: `raw/zh/新手上路/快速配置手册.txt`.*
+## Fuentes
+
+- `raw/zh/新手上路/快速配置手册.txt`

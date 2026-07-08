@@ -16,8 +16,11 @@ Los módulos se agrupan por dominio funcional (ver [Arquitectura general](../int
 
 | Grupo | Contenido |
 |---|---|
-| [4.1 PBX y telefonía](pbx-y-telefonia.md) | Extensiones, troncales, DID, colas, rutas, IVR |
-| [4.2 Marcador y campañas](marcador-y-campanas.md) | Campañas de marketing saliente y marcador predictivo |
+| [4.1 PBX y telefonía](pbx-y-telefonia.md) | Extensiones, troncales, DID, rutas, grupos de timbrado, colas |
+| [4.1 — PBX — IVR](pbx-ivr.md) | Referencia completa del motor de menús de voz |
+| [4.1 — PBX — Funciones avanzadas](pbx-funciones-avanzadas.md) | Conferencias, listas blanca/negra, horarios, plantillas, archivos de voz |
+| [4.2 Marcador y campañas](marcador-y-campanas.md) | Campañas de marketing saliente, paquetes de clientes, DNC, control de calidad |
+| [4.2 — Marcador predictivo avanzado](marcador-predictivo-avanzado.md) | Algoritmo de predicción, fórmulas, filtros automáticos |
 | [4.3 Cuentas, equipos y permisos](cuentas-equipos-permisos.md) | Equipos, cuentas, agentes, roles y permisos |
 | [4.4 Tarifas y facturación](tarifas-y-facturacion.md) | Tarifas de sistema, equipo y extensión |
 | [4.5 Encuestas y cuestionarios](encuestas.md) | Encuestas con lógica condicional y cuotas |

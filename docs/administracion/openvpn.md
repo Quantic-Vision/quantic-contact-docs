@@ -45,4 +45,6 @@ OpenVPN permite que teléfonos IP fuera de la red local (por ejemplo, agentes tr
 
 ---
 
-*Fuente: `raw/en/openvpn.txt`.*
+## Fuentes
+
+- `raw/en/openvpn.txt`
