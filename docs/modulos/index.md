@@ -28,6 +28,7 @@ Los módulos se agrupan por dominio funcional (ver [Arquitectura general](../int
 | [4.7 Plataforma de trabajo del agente](plataforma-del-agente.md) | Referencia completa de los controles del agente |
 | [4.8 Reportes, estadísticas y financiero](reportes-y-estadisticas.md) | Reportes de desempeño, monitoreo en tiempo real, facturación |
 | [4.9 Oficina virtual / BPO](oficina-virtual-bpo.md) | Un mismo equipo atendiendo a varias empresas cliente |
-| [4.10 Atención al cliente, mensajería y e-commerce](atencion-cliente-mensajeria-ecommerce.md) | Atención al cliente, gestión de clientes, e-commerce, WeChat, fax, mensajería masiva |
+| [4.10 Atención al cliente, mensajería y e-commerce](atencion-cliente-mensajeria-ecommerce.md) | Atención al cliente, gestión de clientes, e-commerce (productos, pedidos, logística) |
+| [4.10 — Mensajería: WeChat, Fax, envío masivo](mensajeria-wechat-fax.md) | Canales adicionales de comunicación con el cliente |
 
 Para ver estos módulos aplicados a un escenario completo, continúa con [Casos de uso y soluciones](../casos-de-uso/index.md).

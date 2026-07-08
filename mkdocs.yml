@@ -82,6 +82,7 @@ nav:
       - Reportes, estadísticas y financiero: modulos/reportes-y-estadisticas.md
       - Oficina virtual / BPO: modulos/oficina-virtual-bpo.md
       - Atención al cliente, mensajería y e-commerce: modulos/atencion-cliente-mensajeria-ecommerce.md
+      - "Mensajería — WeChat, Fax y envío masivo": modulos/mensajeria-wechat-fax.md
   - 5. Casos de uso y soluciones:
       - casos-de-uso/index.md
       - Call center de atención al cliente (inbound): casos-de-uso/call-center-inbound.md

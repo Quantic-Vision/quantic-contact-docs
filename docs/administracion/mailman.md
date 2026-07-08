@@ -14,7 +14,7 @@ relacionados: []
 
 ## Qué es
 
-AsterCC incluye un script en Perl (`astercc_mailman.pl`) para el envío de correo masivo usado por el módulo de [mensajería](../modulos/atencion-cliente-mensajeria-ecommerce.md#mensajeria-masiva). Este script depende de varios módulos de Perl que se instalan vía CPAN.
+AsterCC incluye un script en Perl (`astercc_mailman.pl`) para el envío de correo masivo usado por el módulo de [mensajería](../modulos/mensajeria-wechat-fax.md#envio-masivo-de-correosms). Este script depende de varios módulos de Perl que se instalan vía CPAN.
 
 !!! warning "Puede estar desactualizado"
     El procedimiento documenta CPAN sobre Perl 5.8.8 — una versión muy antigua. En un servidor moderno, confirma primero si el script de instalación de AsterCC (ver [Descargar e instalar AsterCC](../instalacion/descarga-e-instalacion.md)) ya resuelve estas dependencias automáticamente antes de instalar manualmente.

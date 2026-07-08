@@ -7,14 +7,14 @@ nivel: intermedio
 roles: [administrador, agente]
 fuente: zh
 obsoleto: false
-relacionados: [marcador-y-campanas, base-conocimiento-work-orders, call-center-inbound]
+relacionados: [marcador-y-campanas, base-conocimiento-work-orders, call-center-inbound, mensajeria-wechat-fax]
 ---
 
 # Atención al cliente, mensajería y e-commerce
 
 ## Qué es
 
-Este grupo cubre los módulos orientados al cliente entrante y a canales de comunicación adicionales: **atención al cliente** (post-venta, soporte, reclamos), **gestión de clientes** (fichas individuales e institucionales), **e-commerce** (venta de productos desde la pantalla del agente), y canales de mensajería (**correo/SMS masivo, WeChat, fax**).
+Este grupo cubre los módulos orientados al cliente entrante: **atención al cliente** (post-venta, soporte, reclamos), **gestión de clientes** (fichas individuales e institucionales), y **e-commerce** (venta de productos desde la pantalla del agente). Los canales de mensajería (WeChat, fax, envío masivo) tienen su propia página de referencia: [Mensajería — WeChat, Fax y envío masivo](mensajeria-wechat-fax.md).
 
 ## Cómo se usa
 
@@ -53,19 +53,58 @@ En **E-commerce → E-commerce → Agregar** se crea un "catálogo" de venta:
 | Equipo | A qué equipo pertenece |
 | Origen | Canal de la venta (saliente, entrante, revista, internet, etc.) |
 
-Una vez creado, se administran **productos**, **pedidos recientes/históricos** y **logística de envío** dentro de ese catálogo. El catálogo se vincula luego a una tarea de campaña o a un servicio de atención al cliente para que el agente pueda generar pedidos directamente desde la ficha del cliente durante la llamada.
+#### Productos
 
-### Mensajería masiva
+En **E-commerce → Gestión de productos**, cada producto define:
 
-- **Plantillas de mensaje:** para SMS y correo reutilizables.
-- **Envío masivo:** dispara una plantilla a un conjunto de destinatarios; queda registrado en **mensajes por enviar**, **mensajes enviados** y **archivo de mensajes**.
-- **Mensajería interna:** anuncios y mensajes internos entre cuentas del sistema, distinto de la mensajería hacia clientes.
-- **Servidores de correo y SMS:** configuración de las pasarelas usadas para el envío.
+| Campo | Qué controla |
+|---|---|
+| Nombre del producto | Se recomienda que distinga variantes de venta del mismo ítem (ej. "leche 1 bolsa" vs. "leche 1 caja") |
+| Publicado | Solo los productos publicados son visibles/vendibles por el agente |
+| Tipo de producto | Físico, virtual, o servicio |
+| Categoría | Clasificación libre del catálogo |
+| Código de barras / especificación / unidad | Datos de referencia del producto |
+| Cantidad | Cuántas unidades de la unidad base representa una venta — el sistema no calcula el despacho, solo registra cuántas veces se vendió el producto; la conversión a unidades de despacho es responsabilidad del negocio |
+| Precio / precio de socio | Dos tarifas posibles por venta — el agente elige cuál aplica según indique el negocio |
+| Vigencia (inicio/fin) | Solo informativa, para productos con periodo de validez (ej. garantías) |
+| Prioridad | Los productos con mayor prioridad aparecen primero en la lista del agente — útil para poner los más vendidos en la primera página y reducir tiempo de búsqueda |
+| Producto relacionado | Vincula a otro producto del mismo catálogo |
+| Descripción funcional | Para que el agente pueda responder preguntas del cliente sobre el producto |
 
-### WeChat y Fax
+#### Pedidos (recientes e históricos)
 
-- **WeChat:** administración de cuentas oficiales de WeChat vinculadas y de sus menús interactivos, para atender consultas desde ese canal.
-- **Fax:** gestión de dispositivos de fax, envío de fax, y registro de faxes recibidos/enviados — útil en flujos que aún dependen de este canal (contratos, comprobantes).
+Los pedidos se dividen en dos tablas — **recientes** e **históricos** — según el tiempo de retención configurado en **Sistema → Configuración → Procesamiento de grandes datos → Retención de datos de e-commerce**. Ambas comparten la misma estructura, con cuatro pestañas al editar un pedido:
+
+| Pestaña | Contenido |
+|---|---|
+| Información básica | Número de pedido, módulo/negocio de origen, cliente, estado, precio original, descuento, monto a cobrar, si requiere factura, fechas de envío/entrega, agente y equipo que lo creó |
+| Datos del destinatario | A quién y dónde se envía |
+| Datos de envío | Transportista, guía, estado del envío |
+| Productos comprados | Detalle de líneas del pedido |
+
+No se pueden crear pedidos manualmente desde esta pantalla — solo se editan, exportan o eliminan; los pedidos nuevos se generan desde la pantalla emergente del agente durante una llamada.
+
+#### Registro de ventas (recientes e históricos)
+
+Complementario a los pedidos: mientras un pedido agrupa la operación completa, el **registro de ventas** detalla cada línea de producto vendida (producto, cantidad, precio, descuento, monto, agente, fechas) — útil para reportes por producto en vez de por pedido.
+
+#### Logística
+
+En **E-commerce → Logística**, se asignan zonas de despacho a un almacén:
+
+| Campo | Qué define |
+|---|---|
+| Nombre de la zona | Identificación libre |
+| Almacén | A qué almacén pertenece esta zona |
+| Grupo logístico | Qué grupo de agentes gestiona esta zona |
+| Equipo | A qué equipo pertenece |
+| Agente responsable | Quién(es) del grupo gestiona(n) específicamente esta zona |
+| Provincia / ciudad | Cobertura geográfica de la zona |
+
+!!! warning
+    Si una zona no define provincia/ciudad, cubre **todo el país** — en ese caso no puede existir una segunda zona sin provincia/ciudad para el mismo almacén, porque el sistema no podría decidir a cuál asignar un pedido nuevo. Para logística multi-almacén por región, se recomienda crear campos personalizados de tipo "relación" en el pedido (provincia/ciudad/distrito del destinatario) en vez de depender solo de esta pantalla.
+
+Una vez creado, se vincula el catálogo a una tarea de campaña o a un servicio de atención al cliente para que el agente genere pedidos directamente desde la ficha del cliente durante la llamada.
 
 ## Referencia rápida
 
@@ -74,9 +113,10 @@ Una vez creado, se administran **productos**, **pedidos recientes/históricos** 
 | Crear servicio de atención al cliente | Atención al cliente → Atención al cliente |
 | Gestionar clientes individuales/institucionales | Gestión de clientes |
 | Crear catálogo de e-commerce | E-commerce → E-commerce |
-| Enviar mensajería masiva | Mensajería → Envío masivo |
-| Configurar WeChat | Mensajería → WeChat |
-| Enviar/gestionar fax | Mensajería → Fax |
+| Gestionar productos | E-commerce → Gestión de productos |
+| Ver pedidos | E-commerce → Pedidos recientes / históricos |
+| Configurar zonas de despacho | E-commerce → Logística |
+| WeChat, Fax, envío masivo | Ver [Mensajería — WeChat, Fax y envío masivo](mensajeria-wechat-fax.md) |
 
 ---
 
@@ -84,3 +124,9 @@ Una vez creado, se administran **productos**, **pedidos recientes/históricos** 
 
 - `raw/zh/模块使用说明/呼入客服/呼入客服.txt`
 - `raw/zh/模块使用说明/电子商务/电子商务.txt`
+- `raw/zh/模块使用说明/电子商务/产品管理.txt`
+- `raw/zh/模块使用说明/电子商务/近期订单.txt`
+- `raw/zh/模块使用说明/电子商务/历史订单.txt`
+- `raw/zh/模块使用说明/电子商务/近期售卖记录.txt`
+- `raw/zh/模块使用说明/电子商务/历史售卖记录.txt`
+- `raw/zh/模块使用说明/电子商务/物流管理.txt`
