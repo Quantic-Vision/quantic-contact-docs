@@ -62,6 +62,48 @@ Un work order se puede originar desde cuatro lugares:
 3. Pantalla emergente de una campaña de marketing saliente, si el resultado de la llamada está vinculado a esta plantilla.
 4. La pantalla **"Mis work orders"**, donde un jefe de grupo puede crear uno manualmente para su equipo.
 
+### Reglas de asignación por grupo
+
+Cuando la plantilla usa flujo manual (no automático), cada grupo de agentes involucrado define su propia regla de asignación — solo el jefe de ese grupo puede editarla:
+
+| Regla | Cómo asigna |
+|---|---|
+| Manual | El jefe de grupo asigna caso por caso desde "Mis work orders" |
+| Por orden de número de agente | Automático — reparte a los agentes en orden ascendente de número, solo entre los que tengan work orders nuevos sin asignar |
+| Por menor carga | Automático — prioriza al agente con menos work orders sin completar en ese momento |
+
+Ambas reglas automáticas pueden acotarse a **solo agentes conectados** o a **todos los agentes del grupo** (estén o no en línea). También se define si el nodo requiere **aprobación del jefe de grupo** antes de avanzar al siguiente — si no se aprueba, el work order vuelve al agente como "en seguimiento".
+
+### Estados de un work order
+
+| Estado general | Significado |
+|---|---|
+| Nuevo | Recién creado, sin procesar |
+| En proceso | Alguien lo está trabajando |
+| Completo | Cerrado |
+
+| Estado del nodo actual | Significado |
+|---|---|
+| Nuevo | Recién llegó al nodo, sin agente asignado o sin empezar |
+| En proceso | El agente lo está trabajando |
+| Devuelto | Rechazado por el siguiente nodo (pide correcciones), o el propio agente lo devolvió a su jefe de grupo por no poder resolverlo |
+| En revisión | El agente terminó su parte y espera aprobación del jefe de grupo |
+
+Los work orders se archivan en tres tablas independientes — **sin completar**, **completados recientes**, y **completados históricos** — con migración automática entre ellas: sin completar → completados recientes al cerrarse, y de ahí a históricos tras superar el tiempo de retención configurado (**Sistema → Configuración → Procesamiento de grandes datos → Tiempo de retención de work orders**), medido desde la última modificación.
+
+### Qué puede hacer un agente al procesar un work order
+
+Desde el detalle del work order (accesible por doble clic desde cualquiera de las tres tablas), el agente puede:
+
+- Editar los campos personalizados definidos en la plantilla (si tiene permiso).
+- Adjuntar archivos de soporte.
+- Ver el historial completo: quién hizo qué y cuándo, con las respuestas anteriores.
+- Consultar el historial de contacto y de compras del cliente asociado, sin salir de la pantalla.
+- Originar llamada, SMS, correo o fax al cliente desde una barra de accesos rápidos siempre visible.
+- Al finalizar su parte, elegir el **estado del nodo**: en proceso, completo, devolver al nodo anterior, devolver a su propio grupo (pedir ayuda al jefe), o —si tiene permiso de aprobación— aprobar/rechazar el trabajo de otro agente.
+
+Si el work order ya está completo, nadie puede modificarlo — solo consultar.
+
 ## Referencia rápida
 
 | Tarea | Dónde |
@@ -76,4 +118,8 @@ Un work order se puede originar desde cuatro lugares:
 ## Fuentes
 
 - `raw/zh/模块使用说明/知识库/知识库.txt`
+- `raw/zh/模块使用说明/知识库.txt`
 - `raw/zh/模块使用说明/工单管理/工单.txt`
+- `raw/zh/模块使用说明/工单管理/分配规则.txt`
+- `raw/zh/模块使用说明/工单管理/我的工单.txt`
+- `raw/zh/模块使用说明/工单管理/工单记录.txt`
