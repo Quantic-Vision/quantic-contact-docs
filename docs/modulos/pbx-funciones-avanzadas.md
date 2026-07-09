@@ -39,9 +39,13 @@ Permiten unir múltiples participantes en una misma llamada (probado hasta 30 pa
 | Grabar conferencia | Genera una grabación asociada al número interno de la sala — solo si está activado |
 | Número que llama al invitar | Qué número ve el invitado cuando se le llama para sumarse |
 
+![Formulario para agregar una sala de conferencia con sus opciones básicas y de administradores](../assets/images/pbx-funciones-avanzadas/agregar-sala-conferencia.jpg)
+
 **Invitar participantes:** desde la sala, se elige la cuenta invitante, se seleccionan destinatarios (por equipo) o se escriben números manualmente (uno por línea), y se confirma la invitación — también es posible entrar directamente marcando un número que enruta por IVR/ruta entrante al número interno de la sala.
 
 **Administradores de la sala:** desde la pantalla de la sala, con el botón "Agregar administrador" se mueven usuarios de una lista general a una lista de administradores de esa sala específica — solo esos usuarios pueden actuar como administrador dentro de la conferencia (usando la contraseña de administrador). Se puede editar esta lista en cualquier momento desde la misma pantalla.
+
+![Pantalla para mover usuarios de la lista general a la lista de administradores de la sala](../assets/images/pbx-funciones-avanzadas/agregar-administrador-sala.jpg)
 
 ### Listas blanca y negra de llamadas entrantes
 
@@ -49,6 +53,10 @@ Permiten unir múltiples participantes en una misma llamada (probado hasta 30 pa
 - **Lista blanca:** **solo** los números listados pueden llamar a ese equipo/cuenta/extensión — cualquier otro número queda bloqueado.
 
 Ambas se configuran igual: número, equipo (obligatorio), cuenta y extensión (opcionales — entre más específico, más acotada la regla), y estado.
+
+![Formulario para agregar un número a la lista negra: número, cuenta, equipo, dispositivo y estado](../assets/images/pbx-funciones-avanzadas/agregar-lista-negra.jpg)
+
+![Formulario para agregar un número a la lista blanca, con el mismo aviso de que bloquea a cualquier otro número](../assets/images/pbx-funciones-avanzadas/agregar-lista-blanca.jpg)
 
 ### Restricción de número que llama saliente
 
@@ -62,10 +70,17 @@ Limita qué números puede usar un equipo como identificador al llamar hacia afu
 | Tipo de troncal | Troncal individual o grupo de troncales |
 | Troncal / grupo de troncales | Cuál, según el tipo elegido — los grupos permiten fallback automático a otro troncal si el primero falla |
 
+![Formulario para agregar una restricción de número que llama saliente: tipo de restricción, equipo, tipo y troncal](../assets/images/pbx-funciones-avanzadas/agregar-restriccion-cid-saliente.jpg)
+
 ### Horarios de trabajo y paquetes de horario
 
 - **Horario de trabajo:** define un rango — fecha de inicio/fin, hora de inicio/fin, y días de la semana (mediante control deslizante) — válido para un equipo. Por ejemplo: "turno de feriado", 1–7 de octubre, 9:00–16:00 todos los días.
+
+![Formulario para agregar un horario de trabajo con fechas, horas y control deslizante de días de la semana](../assets/images/pbx-funciones-avanzadas/agregar-horario-trabajo.jpg)
+
 - **Paquete de horario de trabajo:** combina uno o más horarios de trabajo en un conjunto reutilizable, usado principalmente para acotar cuándo puede operar el [marcador](marcador-y-campanas.md) o una [ruta entrante](pbx-y-telefonia.md#rutas-entrantes-y-salientes).
+
+![Formulario para agregar un paquete de horario de trabajo combinando varios horarios](../assets/images/pbx-funciones-avanzadas/agregar-paquete-horario.jpg)
 
 ### Plantillas de PBX
 
@@ -79,6 +94,8 @@ Definen parámetros de configuración reutilizables para **troncales** o **dispo
 | Equipo | A qué equipo aplica |
 | Detalle | El contenido de configuración en sí (incluye, entre otros, el modo DTMF — clave para el diagnóstico de problemas con [IVR](pbx-ivr.md#diagnostico-de-problemas-comunes)) |
 
+![Formulario para agregar una plantilla de PBX: nombre, tipo, protocolo, equipo y detalle de configuración](../assets/images/pbx-funciones-avanzadas/agregar-plantilla-pbx.jpg)
+
 ### Gestión de tarjetas (hardware)
 
 Pantalla en inglés (orientada a hardware) para configurar tarjetas de voz físicas — digitales (E1/T1) y analógicas — organizadas en dos tablas separadas por tipo.
@@ -89,6 +106,8 @@ Pantalla en inglés (orientada a hardware) para configurar tarjetas de voz físi
 | Group | Grupo de canales — todos los canales de una misma tarjeta comparten grupo |
 | Channels | Cuántos canales de la tarjeta se van a usar |
 | Advanced Settings | Configuración avanzada libre |
+
+![Listado de tarjetas digitales (E1/T1) y analógicas detectadas, con estado, canales y acción de edición](../assets/images/pbx-funciones-avanzadas/gestion-tarjetas-dahdi.jpg)
 
 Los cambios quedan en un archivo de configuración pendiente hasta hacer clic en la barra de **recarga** — recién ahí se sobrescribe la configuración activa.
 
@@ -106,6 +125,8 @@ Permite registrar aplicaciones personalizadas dentro del dialplan de Asterisk.
 | Número interno | Para poder invocarla desde otros objetos del sistema |
 | Descripción | Notas libres |
 
+![Formulario para agregar una aplicación: nombre, equipo, context, prioridad y número interno](../assets/images/pbx-funciones-avanzadas/agregar-aplicacion.jpg)
+
 ### Gestión de archivos de voz
 
 Repositorio central de archivos de audio (formato requerido: **WAV, 8000 Hz, 16 bits, mono**) usados por IVR, colas, grupos de timbrado, etc.
@@ -113,6 +134,8 @@ Repositorio central de archivos de audio (formato requerido: **WAV, 8000 Hz, 16 
 - Alta individual desde la propia pantalla.
 - Cada archivo puede reproducirse en línea o descargarse desde el listado.
 - Se puede asociar (o no) a un equipo específico — si no se asocia, cualquier equipo puede usarlo.
+
+![Formulario para subir un archivo de voz individual, con selector de archivo, nombre y equipo](../assets/images/pbx-funciones-avanzadas/agregar-archivo-voz.jpg)
 
 **Carga masiva vía FTP:** para volúmenes grandes de locuciones, es posible subirlas por FTP al directorio configurado en **Sistema → Configuración del sistema → Configuración básica**, siguiendo esta estructura obligatoria:
 
@@ -129,6 +152,8 @@ Luego, en **PBX avanzado → Carga masiva de archivos de voz**, se elige el equi
 - Qué archivos van a **Gestión de archivos de voz** (checkbox general por archivo).
 - Qué idioma de cada archivo va, además, directo a **Voz de llamada** (checkbox por idioma) — evita tener que repetir el alta manual descrita en esa sección.
 
+![Pantalla de carga masiva con la lista de archivos detectados y checkboxes por idioma](../assets/images/pbx-funciones-avanzadas/carga-masiva-archivos-voz.jpg)
+
 ### Voz de llamada
 
 Envuelve un archivo de voz (o varios, uno por idioma) bajo un nombre lógico reutilizable en IVR, colas y grupos de timbrado — de modo que el mismo "aviso de bienvenida" pueda reproducirse en el idioma correspondiente a cada llamada sin duplicar configuración.
@@ -143,6 +168,8 @@ Envuelve un archivo de voz (o varios, uno por idioma) bajo un nombre lógico reu
 !!! tip
     Un registro de voz de llamada sin ningún archivo asociado aparece resaltado en rojo en el listado — es una señal visual de que falta completar la configuración.
 
+![Listado de voz de llamada con un registro resaltado en rojo por no tener archivo de voz asociado](../assets/images/pbx-funciones-avanzadas/listado-voz-llamada-resaltado-rojo.jpg)
+
 ### Gestión de música en espera
 
 Registra, bajo un nombre lógico reutilizable, qué archivo de voz (de los subidos en [Gestión de archivos de voz](#gestion-de-archivos-de-voz)) se usa como música en espera para un equipo — la misma lógica de "nombre reutilizable + equipo + archivo" que [Voz de llamada](#voz-de-llamada), pero para el rol de música en espera en vez de locución.
@@ -153,6 +180,8 @@ Registra, bajo un nombre lógico reutilizable, qué archivo de voz (de los subid
 | Identificador | Etiqueta corta para distinguir esta música en espera de otras |
 | Equipo | A qué equipo pertenece |
 | Archivo de voz | Archivo (del equipo) a usar como música en espera |
+
+![Formulario para agregar una música en espera reutilizable: nombre, identificador, equipo y archivo de voz](../assets/images/pbx-funciones-avanzadas/agregar-musica-espera.jpg)
 
 Los campos "Formato" y "Modo de aplicación" están reservados para una función aún no implementada.
 
@@ -174,6 +203,8 @@ Usada dentro de una acción "dejar mensaje" del [IVR](pbx-ivr.md) — por ejempl
 | Aviso de cierre / reintentos máximos | Si avisa que la grabación está por terminar, y cuántas veces se puede regrabar |
 | Aviso de tiempo restante | Solo aplica si el aviso de cierre está activo |
 | Tipo de aviso | Por defecto o vía webservice (con su propia dirección/método/parámetros) |
+
+![Formulario para agregar una aplicación de mensaje de voz con llamada a webservice, ruta/nombre de archivo, beep y duración máxima](../assets/images/pbx-funciones-avanzadas/aplicacion-mensaje-voz-campos.png)
 
 ## Referencia rápida
 

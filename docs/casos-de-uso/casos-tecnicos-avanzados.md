@@ -28,6 +28,9 @@ En vez de pedir al cliente que presione una tecla, el IVR puede pedirle que **di
    - **Duración máxima:** tiempo máximo que el sistema graba antes de intentar reconocer.
    - **Silencio máximo:** si detecta silencio en la línea por N segundos, da por terminada la grabación y empieza a reconocer.
    - El resultado del reconocimiento se guarda en una **variable** (ej. `ASR1`).
+
+   ![Pestaña Basic de un flujo de IVR llamado "speech recognition", con extensión, failover y botón para ver el sub-flujo de IVR](../assets/images/casos-tecnicos-avanzados/ivr-asr-flujo-principal.png)
+
 4. Da de alta las colas y grupos de agentes correspondientes a cada opción de enrutamiento.
 5. Configura el **destino** del nodo de IVR usando la variable de reconocimiento como condición — por ejemplo, si `ASR1` = "quejas", enruta a la cola de quejas.
 
@@ -105,6 +108,8 @@ Caso más detallado de IVR con webservice: validar el número y la fecha de venc
 1. **Flujo principal:** acción de respuesta → recepción de dígitos para el número de tarjeta (variable `CARDNO`) → repetición del número (`Saydigits`) → confirmación (`1` confirma, `2` repite).
 2. **Primer sub-IVR (fecha de vencimiento):** recibe la fecha en formato mes-año (variable `DATENO`), la repite y confirma igual que el número.
 3. **Segundo sub-IVR (llamada HTTP):** acción **HTTP** que envía `cardno=CARDNO|validdate=DATENO` como parámetros y recibe la respuesta en la variable global `R1`, más un valor de control en `inputcode`.
+   ![Acción HTTP de un sub-IVR con el parámetro cardno=CARDNO|validdate=DATENO y el resultado guardado en la variable global R1](../assets/images/casos-tecnicos-avanzados/ivr-tarjeta-credito-accion-http.png)
+
 4. **Tercer sub-IVR (resultado válido):** anuncia el saldo disponible usando la acción **Sayamount** sobre la variable `R1`; permite repetir con `0`.
 5. **Cuarto sub-IVR (resultado inválido):** si `inputcode` = `0`, informa que el número no existe y permite reintentar con `*`, regresando al flujo principal.
 
@@ -116,7 +121,13 @@ Caso más detallado de IVR con webservice: validar el número y la fecha de venc
 La barra de herramientas del agente ofrece cuatro acciones sobre una llamada en curso — **Consult** (consultar), **CB** (call back / finalizar consulta), **Conf** (conferencia) y **Trans** (transferir):
 
 1. Al contestar una llamada, el ícono **Consult** se pone naranja (disponible).
+
+   ![Barra de herramientas del agente con el ícono Consult resaltado, disponible sobre una llamada en curso](../assets/images/casos-tecnicos-avanzados/agente-toolbar-consult.png)
+
 2. Al hacer clic en **Consult** se abre un panel para marcar un número externo o consultar a otro **agente** o **cola** interna.
+
+   ![Panel Consult con opción Agent/Number y una consulta en curso hacia otra extensión en estado idle](../assets/images/casos-tecnicos-avanzados/agente-panel-consult.png)
+
 3. Si se elige solo el número de cola (sin agente específico), el sistema busca automáticamente un agente en estado **inactivo (idle)** dentro de esa cola.
 4. Una vez que la consulta conecta, **Consult** se pone verde y **CB**, **Conf** y **Trans** se habilitan (naranja):
    - **CB** finaliza la llamada con el agente consultado y regresa al cliente original.
@@ -155,9 +166,14 @@ Dos variantes del mismo patrón — enrutar según franja horaria, ya sea a nive
 
 1. Da de alta los **grupos de timbrado (ringgroups)** necesarios como posibles destinos.
 2. Crea los **horarios (worktime)**: si la hora de inicio es mayor que la de fin, el sistema divide automáticamente el rango en dos intervalos.
+
+   ![Formulario Add WorkTime con nombre, fecha de inicio/fin, hora de inicio/fin y selector de días de la semana](../assets/images/casos-tecnicos-avanzados/pbx-horario-worktime.png)
+
 3. Agrupa los horarios en **paquetes de horario (worktime packages)** — uno para horario laboral y otro para horario de descanso.
 4. Sube el **anuncio** de voz para cada franja (ej. mensaje fuera de horario).
 5. Crea el **IVR principal**: acción de respuesta, seguida de una acción de **"Judge Time" (evaluar horario)** que compara la hora actual contra los paquetes de horario, y la transferencia correspondiente hacia la cola o el destino de cada franja.
+
+   ![Pestaña Transfer de un flujo de IVR mostrando el campo Transfer en modo IVR y el ActionID para crear el destino](../assets/images/casos-tecnicos-avanzados/ivr-transferencia-horario.png)
 6. Variante dentro de opciones de IVR: en vez de evaluar el horario en la ruta entrante, se guarda la opción marcada por el cliente en una variable global (ej. `PK`) y se usa un IVR de control de tiempo que combina esa variable con la franja horaria para decidir el sub-IVR de destino.
 
 !!! tip
@@ -176,9 +192,17 @@ El troncal debe permitir el envío del caller ID configurado (`allowsend` o equi
 Casos de uso típicos:
 
 - **Número unificado por troncal:** todas las llamadas salientes por ese troncal usan el mismo caller ID, sin importar el dispositivo o agente.
+
+  ![Pestaña Basic de un troncal con los campos CIDNum y CIDName resaltados](../assets/images/casos-tecnicos-avanzados/callerid-troncal.png)
+
 - **Dispositivo con caller ID propio:** útil cuando un equipo necesita presentarse con un número distinto al del troncal.
+
+  ![Pestaña Advanced de un dispositivo con los campos OCIDNUM y OCIDNAME resaltados](../assets/images/casos-tecnicos-avanzados/callerid-dispositivo.png)
+
 - **Agente con caller ID propio:** al iniciar sesión desde un dispositivo, las llamadas salientes usan el caller ID del agente en vez del del dispositivo.
 - **Campaña con caller ID propio:** en centros de atención tipo BPO/outsourcing, cada campaña presenta su propio número al cliente.
+
+  ![Pestaña Advanced de una campaña con los campos CIDName y CIDNum resaltados](../assets/images/casos-tecnicos-avanzados/callerid-campana.png)
 
 !!! note "Fuente con contenido incompleto"
     Un archivo fuente ZH adicional (`用途和案例/在电脑话务ivr中调用webservice并控制ivr转向.txt`) tiene título sobre "llamar a un webservice desde IVR", pero su contenido real —las mismas capturas e ideas de caller ID por troncal/dispositivo/agente/campaña— coincide con el de este apartado, no con su propio título. Se cita en Fuentes porque su contenido efectivo cubre este tema; no se encontró una página ZH separada que documente la llamada a un webservice desde IVR para control de transferencia (ese caso ya está cubierto arriba con la fuente EN `call_webservice_in_ivr.txt`).
@@ -195,9 +219,14 @@ Además de decidir qué número se muestra al marcar, el sistema puede leer el p
 Escenario: dos servidores AsterCC en la misma red local (A y B), cada uno con su propio equipo de extensiones, que necesitan poder llamarse entre sí.
 
 1. En cada servidor, crea un **troncal** (PBX → Troncales) hacia el otro servidor.
+
+   ![Formulario Add Trunk con protocolo SIP y el detalle host/fromdomain/port apuntando a la IP del otro servidor](../assets/images/casos-tecnicos-avanzados/lan-crear-troncal.png)
+
 2. Si el equipo ya tiene un troncal asociado, agrupa los troncales en un **grupo de troncales** (Avanzado → Grupos de troncales) y define ahí el nombre, estado, tipo de coincidencia y prefijo/longitud del número de origen.
 3. Vincula el troncal (o grupo de troncales) al **equipo** correspondiente en Usuarios → Equipos.
 4. Crea la **ruta entrante** en cada servidor: coincidencia de troncal = el troncal recién creado, transferencia a "Dispositivo", con Action ID en modo "auto-match".
+
+   ![Formulario Add Inbound Route con Transfer en modo Device, ActionID Auto Match y Trunk Match apuntando al troncal creado](../assets/images/casos-tecnicos-avanzados/lan-ruta-entrante-dispositivo.png)
 5. Repite exactamente la misma configuración en el servidor B — la conectividad es simétrica.
 
 ### Montar una VPN (OpenVPN) para acceso remoto seguro
@@ -274,6 +303,8 @@ AsterCC es un sistema multi-tenant: cada cliente (equipo) puede tener su propia 
 
 - Por defecto, el usuario elige su equipo al iniciar sesión — pero en un despliegue de hosting normalmente no se quiere que un cliente vea la lista completa de equipos del sistema.
 - **En versiones anteriores a core-2.4-rc1:** habilita la variable `login_route = team` en `/etc/astercc.conf` (quitando el comentario). El acceso por dominio general solo permite login de administrador del sistema; para entrar directo al equipo se usa `http://servidor/identificador_de_equipo` o un subdominio resuelto a ese host.
+
+  ![Archivo astercc.conf en terminal con la línea login_route = team resaltada](../assets/images/casos-tecnicos-avanzados/dominio-equipo-astercc-conf.png)
 - **Desde core-2.4-rc1:** el mismo comportamiento se activa desde la interfaz, en Sistema → Configuración del sistema → Ruta de login = habilitado, sin editar el archivo de configuración.
 
 ### Respaldo del sistema (backup)
@@ -292,6 +323,8 @@ Ver también la entrada de [Solución de problemas](../troubleshooting/index.md#
 ### Agregar un paquete de idioma
 
 1. En Sistema → Idioma → Agregar, define **nombre del idioma**, **código del idioma** (abreviatura), si aparece en el **listado de login**, y notas.
+
+   ![Formulario Add Language con Languagename, Languagecode, Loginlist y Languagenote](../assets/images/casos-tecnicos-avanzados/agregar-idioma.png)
 2. Cada idioma necesita su propio paquete de traducción: en el servidor, dentro de `/var/www/html/astercc/app/locale`, copia la carpeta del paquete chino o inglés existente, renómbrala con el código del nuevo idioma, y edita todos los archivos `.po` de la carpeta `LC_MESSAGES` correspondiente.
 3. En cada archivo `.po`, traduce el texto entre comillas de la línea `msgstr`.
 4. Coloca el paquete editado de vuelta en `/var/www/html/astercc/app/locale` — si activaste el listado de login, el nuevo idioma aparecerá en el selector de la pantalla de acceso.
@@ -303,6 +336,8 @@ Varias formas de incorporar audio al sistema:
 - **Grabar en Windows y subir:** graba con cualquier grabador de sonido (formato requerido: `wav`, 8000 KHz, 16 bits) y sube el archivo en **PBX avanzado → SoundFiles → Agregar**. Si no se elige un equipo, el archivo queda disponible para todos los equipos.
 - **Usar el archivo en un anuncio:** PBX avanzado → Anuncios → Agregar, elige el equipo de aplicación (o ninguno para todos), guarda y en el panel "Agregar sonido" elige el archivo para cada idioma.
 - **Usar el archivo como música en espera:** PBX avanzado → MOHs → Agregar; el campo **Identity** debe escribirse en inglés (identificador interno). Después de agregarla, queda disponible en el desplegable de música en espera de **Gestión de colas** y en la configuración de dispositivos (**Advance**) para el tono de espera personalizado (CRBT).
+
+  ![Formulario Add Moh con Music On Hold, Identity, Teamname y el desplegable Filename para elegir el archivo de sonido ya subido](../assets/images/casos-tecnicos-avanzados/agregar-moh.png)
 - **Configurar el sonido de fallback de un IVR:** en Ivrs, define el "Failedover" y elige el archivo que se reproducirá.
 - **Grabar por teléfono:** con el código de función `*63` (Sistema → Feature Code) se activa la grabación desde cualquier softphone: graba, presiona `#` para terminar, luego `1` para escuchar, `2` para guardar o `3` para volver a grabar. El archivo guardado aparece al inicio del listado de SoundFiles.
 
@@ -323,6 +358,8 @@ Ejemplo con teléfonos Yealink:
 3. Asocia el dispositivo de dos formas: **fijo** (PBX → Dispositivos → editar → Avanzado → dirección MAC del teléfono), o **automático** (Sistema → Configuración → "Equipo por defecto" → el sistema asigna el primer dispositivo libre de ese equipo al teléfono que se conecte).
 4. En el propio teléfono Yealink, ve a Configuración → Actualizaciones automáticas → "Server Address" y define `http://<ip_del_servidor>/provisions/provisioning`. Al hacer clic en "Update Now", el teléfono descarga y aplica la configuración generada.
 
+   ![Pantalla Settings → Auto Provision de un teléfono Yealink con el campo Server URL apuntando a la ruta de aprovisionamiento del servidor](../assets/images/casos-tecnicos-avanzados/aprovisionamiento-server-url.png)
+
 !!! tip
     La plantilla de aprovisionamiento también puede incluir una URL de **libreta de contactos** (`local_contact.data.url = http://<servidor>/contactdata.xml`) apuntando a un archivo XML con la lista de contactos (nombre, número, línea, grupo) y una lista negra — el teléfono la descarga junto con su configuración de cuenta, sin necesidad de capturar los contactos manualmente en cada terminal.
 
@@ -342,7 +379,13 @@ Antes de existir el aprovisionamiento automático por plantilla, el mismo result
 Para que solo agentes autorizados puedan marcar internacional, usando un PIN numérico:
 
 1. **Prefijo de marcado:** Usuarios → Equipos → editar el equipo → pestaña Básico → campo "PIN Prefix" — define el prefijo que activará la validación de PIN al marcar.
+
+   ![Pestaña Basic de un equipo con el campo PIN Prefix resaltado, con el valor 88888](../assets/images/casos-tecnicos-avanzados/pin-prefix-equipo.png)
+
 2. **Contraseña del PIN:** Usuarios → Cuentas → editar la cuenta del agente → pestaña Básico → campo "PIN" — define la contraseña numérica de ese agente para ese prefijo.
+
+   ![Pestaña Basic de una cuenta de usuario con el campo PIN resaltado](../assets/images/casos-tecnicos-avanzados/pin-cuenta.png)
+
 3. **Prueba:** el agente marca el prefijo seguido del número destino (ej. `88888` + `076`); el sistema pide la contraseña antes de continuar la llamada.
 
 !!! warning
@@ -353,6 +396,9 @@ Para que solo agentes autorizados puedan marcar internacional, usando un PIN num
 El campo de tipo "Link" en Clientes → Campos personalizados permite abrir una URL externa (mapas, CRM externo, etc.) con datos del cliente insertados automáticamente:
 
 1. En Clientes → Personalización, agrega un campo personalizado de tipo Link.
+
+   ![Formulario Add Customizefield con Type = link y Open Pattern = Manual resaltados](../assets/images/casos-tecnicos-avanzados/campo-personalizado-tipo-link.png)
+
 2. En el patrón de apertura, elige **Manual** (el agente hace clic para abrir el enlace) o **Automático** (se abre solo al abrir la ficha del cliente).
 3. En la URL, reemplaza los valores por marcadores `##nombreDeCampo##` — por ejemplo `##address1##`, `##srcAddr##`, `##dstAddr##` — que el sistema sustituye por el valor real del cliente en pantalla.
 4. Aplica a cualquier proveedor de mapas (Google Maps, Baidu, Gaode, Tencent, Sogou) u otro sistema externo que acepte parámetros por URL, ej. `http://miapp.com/?phone=##phone1##&name=##individualname##`.
