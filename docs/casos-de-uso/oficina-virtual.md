@@ -23,7 +23,25 @@ El detalle de configuración del módulo está en [4.9 Oficina virtual / BPO](..
 1. **Cola y grupo de agentes:** un único grupo de agentes puede atender a las tres empresas cliente, ya que lo que cambia entre ellas es la pantalla y el conocimiento mostrado, no quién contesta.
 2. **Un DID por empresa cliente:** B, C y D reciben cada una su propio DID — es la señal que usa el sistema para identificar de qué empresa viene la llamada.
 3. **Un usuario virtual por empresa cliente:** se da de alta B, C y D como usuarios virtuales, cada uno con su propio saludo, enlace de pantalla, y base de conocimiento (ver [4.9](../modulos/oficina-virtual-bpo.md#3-dar-de-alta-el-usuario-virtual-empresa-cliente)).
+
+   ![Formulario "Add Virtualcustomer" con los campos de nombre, equipo, enlace de agente, encuestas, correo, teléfono, imagen y mensaje de bienvenida](../assets/images/oficina-virtual/alta-usuario-virtual.jpg)
+
+   La base de conocimiento de cada usuario virtual se organiza en dos niveles de categoría, para que el agente solo vea el contenido relevante de la empresa que está atendiendo:
+
+   ![Listado de categorías de primer nivel de la base de conocimiento, con su nombre, nota y equipo asociado](../assets/images/oficina-virtual/categorias-conocimiento-nivel1.jpg)
+
+   ![Listado de subcategorías (segundo nivel) dentro de una categoría de primer nivel](../assets/images/oficina-virtual/categorias-conocimiento-nivel2.jpg)
+
 4. **Resultado para el agente:** al entrar una llamada de un cliente de B, el agente ve el nombre de B, su saludo de apertura, los datos del cliente que llama (si ya existía), y puede consultar la base de conocimiento específica de B para resolver la consulta — todo sin salir de la misma plataforma ni conocer de memoria el negocio de B.
+
+   ![Pantalla del agente con la lista de usuarios virtuales a la izquierda (user1, customerA, customerB) y el panel de información del usuario virtual seleccionado, con saludo y descripción del negocio](../assets/images/oficina-virtual/agente-selecciona-usuario-virtual.png)
+
+   ![Pantalla del agente mostrando los datos del usuario virtual, la ficha del cliente que llama, y la lista de números de transferencia disponibles para ese usuario virtual](../assets/images/oficina-virtual/agente-datos-cliente-transferencia.png)
+
+   Los clientes de cada usuario virtual se filtran desde la misma pantalla de gestión de clientes, eligiendo a qué usuario virtual pertenecen:
+
+   ![Pantalla de gestión de clientes con el selector de usuario virtual en la esquina superior izquierda, filtrando la lista de clientes por ese usuario](../assets/images/oficina-virtual/clientes-filtrados-usuario-virtual.jpg)
+
 5. **Reportes separados por empresa cliente:** si B, C o D necesitan ver sus propias estadísticas sin acceso al resto del sistema, se les crea una [cuenta BPO](../modulos/oficina-virtual-bpo.md#cuentas-bpo) con acceso acotado a su propio usuario virtual.
 
 ## Vínculo técnico entre el DID y la empresa cliente (CvNumber)
@@ -31,6 +49,10 @@ El detalle de configuración del módulo está en [4.9 Oficina virtual / BPO](..
 Una guía de configuración en inglés documenta este mismo escenario (agentes compartidos atendiendo llamadas de distintas empresas cliente) con el flujo completo desde cero: equipo → cuenta → dispositivo (extensión SIP) → grupo de agentes → agente → DID de entrada → troncal → ruta de entrada → cola → **usuario virtual** (dado de alta con nombre, equipo, URL de eventos, mensaje de bienvenida, imagen del logo, y la opción de contar cada llamada entrante como un contacto nuevo aunque el número ya haya llamado antes) → inicio de sesión del agente para probar el flujo de punta a punta.
 
 El detalle que aporta y que no está explícito en el resto de esta página: el objeto que efectivamente **vincula** el DID (o el número que llama) con el usuario virtual correspondiente se llama, a nivel de base de datos/interfaz, **CvNumber** — se da de alta eligiendo el equipo, el tipo de vínculo ("usuario virtual" o "campaña", según a qué se está vinculando el número) y el tipo de coincidencia (por DID único, entre otros). En la terminología usada en el resto de esta página, este objeto es lo que hace posible el punto "Un DID por empresa cliente" del resumen inicial: permite que el sistema, al recibir la llamada, sepa a cuál usuario virtual (empresa cliente) mostrarle al agente.
+
+![Formulario "Add Cvnumber" con los campos Team, Cvtype (Campaign / Virtualcustomer), Cvid, Bindtype (Callerid, DID, entre otros) y Calleridname/Callerid](../assets/images/oficina-virtual/alta-cvnumber.jpg)
+
+![Listado de CvNumber de un equipo, mostrando dos registros de tipo "Virtualcustomer" vinculados por DID, cada uno apuntando a un usuario virtual distinto](../assets/images/oficina-virtual/listado-cvnumber.jpg)
 
 ## Vincular el equipo de agentes al dominio de la empresa cliente
 

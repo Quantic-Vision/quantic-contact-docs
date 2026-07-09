@@ -63,13 +63,23 @@ En **Oficina virtual → Gestión de usuarios entrantes**, cada usuario virtual 
 | Descripción del negocio | Notas para orientar al agente |
 | Saludo | Frase de apertura que el agente debe usar al contestar |
 
+![Listado de usuarios virtuales (empresas cliente) con filtros de búsqueda](../assets/images/oficina-virtual-bpo/usuarios-virtuales-listado.jpg)
+
+![Formulario para dar de alta un usuario virtual, con enlace de pantalla, encuesta asociada y grupo de agentes](../assets/images/oficina-virtual-bpo/usuario-virtual-formulario-alta.jpg)
+
 **Datos avanzados:** número/nombre que llama (para telefonía IP), forzar uso de ese número/nombre, modo de transferencia avanzado (agente/ciega/libre elección), restricción de números de transferencia (cualquiera vs. solo contactos frecuentes), IPs de confianza (si un sistema externo va a invocar eventos de este usuario virtual), y si un agente consultado puede editar los datos del cliente que ve durante la consulta.
 
 Un mismo usuario virtual puede tener **distintos enlaces de pantalla por grupo de agentes** (vía "agregar enlace de grupo" en la edición) — útil si ese negocio, a su vez, se subdivide en líneas (ej. soporte técnico, verificación, comercial) enrutadas por IVR a distintos grupos.
 
+![Formulario para editar el enlace de pantalla de un grupo de agentes dentro de un usuario virtual](../assets/images/oficina-virtual-bpo/enlace-de-grupo-usuario-virtual.jpg)
+
 ### Clientes del usuario virtual
 
 Los clientes de cada usuario virtual se gestionan en **Oficina virtual → Gestión de clientes**, filtrando por usuario virtual. Comparten estructura con el resto del sistema, más los **campos personalizados** definidos específicamente para ese usuario virtual (ver más abajo).
+
+![Listado de clientes de un usuario virtual, con filtros de búsqueda por nombre, teléfono y otros campos](../assets/images/oficina-virtual-bpo/clientes-usuario-virtual-listado.jpg)
+
+![Formulario para dar de alta un cliente de un usuario virtual, con sus campos básicos](../assets/images/oficina-virtual-bpo/cliente-usuario-virtual-formulario-alta.jpg)
 
 ### Campos personalizados por usuario virtual
 
@@ -84,13 +94,21 @@ En **Oficina virtual → Campos personalizados**, cada campo se asocia a uno o v
 | `upload` | Subida de archivo |
 | `link` | Enlace clickeable — se abre en una pestaña de la plataforma del agente o en una ventana de navegador aparte, según se configure |
 
+![Listado de campos personalizados con su nombre, tipo de campo e idioma](../assets/images/oficina-virtual-bpo/campos-personalizados-listado.jpg)
+
+![Formulario para dar de alta un campo personalizado, con tipo de campo y usuario virtual asociado](../assets/images/oficina-virtual-bpo/campo-personalizado-formulario-alta.jpg)
+
 ### Tarifa del usuario virtual
 
 Ver [4.4 Tarifas y facturación](tarifas-y-facturacion.md#tarifa-de-usuario-virtual) — cada usuario virtual puede tener su propia tarifa de llamadas entrantes y de transferencias.
 
+![Listado de tarifas de usuario virtual, con costo de conexión y bloque de facturación](../assets/images/oficina-virtual-bpo/tarifa-usuario-virtual.jpg)
+
 ### Registro de llamadas del usuario virtual
 
 **Oficina virtual → Registro de llamadas** centraliza el historial de todos los usuarios virtuales del equipo, con reproducción y descarga de grabación cuando existe.
+
+![Registro de llamadas de un usuario virtual, con reproducción y descarga de grabación por llamada](../assets/images/oficina-virtual-bpo/registro-llamadas-usuario-virtual.jpg)
 
 ### Contactos frecuentes (opcional)
 
@@ -105,8 +123,16 @@ Además de la base de conocimiento, se puede armar una **libreta de contactos fr
 Se organiza en **dos niveles de categoría** (categoría → subcategoría → artículo de conocimiento) — análoga por concepto a [4.6 Base de conocimiento](base-conocimiento-work-orders.md#base-de-conocimiento), pero con su propia pantalla dentro de Oficina virtual y acotada al usuario virtual correspondiente:
 
 1. En **Oficina virtual → Categorías de conocimiento**, crea la categoría de primer nivel.
+
+    ![Listado de categorías de conocimiento de primer nivel, con nombre, nota y equipo](../assets/images/oficina-virtual-bpo/categoria-conocimiento-nivel1.jpg)
+
 2. Desde esa categoría, entra a "subcategorías" (o usa el botón "nivel siguiente") para crear la de segundo nivel.
+
+    ![Listado de subcategorías de conocimiento de segundo nivel, ligadas a su categoría de primer nivel](../assets/images/oficina-virtual-bpo/categoria-conocimiento-nivel2.jpg)
+
 3. Desde la subcategoría, entra a "artículos de conocimiento" y agrega el artículo (nombre, archivo adjunto opcional, contenido).
+
+    ![Formulario para agregar un artículo de conocimiento (FAQ), con categorías de primer y segundo nivel y editor de contenido](../assets/images/oficina-virtual-bpo/articulo-conocimiento-formulario.jpg)
 
 Así el agente solo ve el conocimiento relevante para la empresa que está atendiendo en ese momento, sin mezclar contenido de otros usuarios virtuales.
 

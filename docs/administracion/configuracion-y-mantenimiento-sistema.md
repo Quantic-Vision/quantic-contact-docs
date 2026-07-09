@@ -37,11 +37,15 @@ Ve a **Configuración de sistema → Gestión de planes de respaldo**. Sirve par
 | Contenido a respaldar | Lista de directorios del sistema, uno por línea (hay accesos directos para autocompletar rutas clave) |
 | Bases de datos a respaldar | Una por línea, formato `nombre_bd,usuario,contraseña` (si no hay contraseña, se deja vacía después de la coma) — por defecto la base de datos del sistema es `astercc10` con usuario `root` |
 
+![Formulario de alta de un plan de respaldo: nombre, estado, programación tipo cron (mes/semana/día/hora/minuto), días de retención y envío por FTP](../assets/images/configuracion-y-mantenimiento-sistema/planes-respaldo-alta-plan.jpg)
+
 Ejemplos de programación: `mes=todos, semana=todos, día=todos, hora=0, minuto=0` ejecuta el respaldo diario a medianoche; `mes=todos, semana=domingo, día=todos, hora=2, minuto=0` ejecuta el respaldo cada domingo a las 2am.
 
 ### Archivos de respaldo (Backup Archives)
 
 Ve a **Sistema → Archivos de respaldo**. Es la pantalla donde se ven los respaldos ya generados (según la configuración del archivo de configuración del sistema, no del plan anterior) y desde donde se pueden descargar, eliminar o restaurar.
+
+![Listado de archivos de respaldo de base de datos generados, con nombre de archivo, fecha y botones de descarga, ver y eliminar](../assets/images/configuracion-y-mantenimiento-sistema/archivos-respaldo-listado.jpg)
 
 - Al restaurar, el sistema pide elegir qué restaurar: base de datos, configuración de Asterisk, archivos de voz (selección única o múltiple).
 - Restaurar la base de datos crea una base de datos **nueva** — no borra la original.
@@ -55,9 +59,13 @@ Ve a **Sistema → Archivos de respaldo**. Es la pantalla donde se ven los respa
 
 Ve a **Sistema → Comandos del núcleo**. Permite ejecutar directamente comandos de consola de Asterisk desde el navegador (por ejemplo `core show calls`) y ver el resultado en pantalla. Pensado para quien ya conoce los comandos de Asterisk.
 
+![Pantalla de comandos del núcleo: cuadro de comando (ejemplo "core show calls") y resultado de la ejecución debajo](../assets/images/configuracion-y-mantenimiento-sistema/comandos-nucleo-consola.jpg)
+
 ### Log del núcleo (Core Log)
 
 Ve a **Sistema → Log del núcleo**. Muestra el log del kernel/núcleo del sistema relacionado con Asterisk, útil para diagnóstico.
+
+![Vista del log del núcleo, con las líneas de registro de Asterisk (notificaciones de registro de canales SIP/IAX2)](../assets/images/configuracion-y-mantenimiento-sistema/log-nucleo-registro.jpg)
 
 ### Limpieza de tablas temporales de llamadas
 
@@ -85,6 +93,8 @@ Ve a **Sistema → Red** para configurar la red del sistema:
 - **DNS**: agrega servidores DNS con el botón correspondiente.
 - **ETH**: agrega sub-interfaces a `eth0` y edita los parámetros de cada interfaz de red.
 
+![Pantalla de configuración de red con sus tres bloques: NETWORK (hostname y gateway), DNS y ETH (interfaces eth0 con IP, máscara y gateway)](../assets/images/configuracion-y-mantenimiento-sistema/red-network-dns-eth.jpg)
+
 ### Servidores PBX (PBXs)
 
 Ve a **Sistema → Servidores PBX**. Da de alta los servidores PBX (Asterisk) que administra AsterCC — relevante en instalaciones con más de un servidor PBX.
@@ -101,6 +111,8 @@ Ve a **Sistema → Servidores PBX**. Da de alta los servidores PBX (Asterisk) qu
 
 Doble clic sobre un registro para editarlo.
 
+![Listado de servidores PBX dados de alta, con nombre, IP, usuario AMI, puerto AMI y contadores de dispositivos/llamadas actuales](../assets/images/configuracion-y-mantenimiento-sistema/servidores-pbx-listado.jpg)
+
 ### Plan de grabaciones (Recording Plan / Backup Monitor)
 
 Ve a **Configuración de sistema → Gestión de archivos de grabación**. Define cómo se archivan o eliminan las grabaciones de llamada para no agotar el espacio en disco.
@@ -114,6 +126,10 @@ Ve a **Configuración de sistema → Gestión de archivos de grabación**. Defin
 | Procesamiento de grabación vencida | **Transferir** (mover a un disco montado) o **Eliminar** (borrar definitivamente) |
 | Ruta de transferencia | Ruta absoluta del disco montado, si se eligió transferir |
 | Empaquetar archivo transferido | Si se comprime en `.tar.gz` al transferir — ahorra espacio pero impide reproducir/descargar esas grabaciones desde la web |
+
+![Listado de planes de grabación por equipo, con estado, días de retención, tratamiento de vencidas y hora de ejecución](../assets/images/configuracion-y-mantenimiento-sistema/plan-grabaciones-listado.jpg)
+
+![Formulario de edición de un plan de grabación: equipo, estado, días de retención, hora de ejecución, tratamiento (transferir/eliminar), ruta de transferencia y opción de comprimir en .tar.gz](../assets/images/configuracion-y-mantenimiento-sistema/plan-grabaciones-edicion.jpg)
 
 !!! tip
     Con múltiples equipos, escalona la hora de ejecución de cada plan (recomendado 1 hora de diferencia) porque el sistema procesa un plan a la vez por franja horaria.
@@ -133,6 +149,10 @@ Ve a **Sistema → Configuración**. Agrupa parámetros generales en varios bloq
 | Configuración básica del sistema | Expansión automática del panel de búsqueda, filas por página, activar Google Maps (**desactivar si el sistema no tiene internet** — consume recursos y puede bloquear al agente), modo de notificación de tareas, popup automático de plataforma de agente, modo de login, restricción de sesión simultánea por cuenta, ruta FTP de archivos de voz, cifrado MD5 de contraseña de extensión, límite de uso de extensión, formato de duración (`hh:mm:ss` o segundos), formato de exportación (xls/csv/ambos), paginación de exportación, horario mínimo permitido para exportar, codificación del archivo exportado (UTF-8/ANSI), modo del panel de avisos (ventana emergente o botón parpadeante) |
 | Configuración avanzada | Dominio de login de usuario vs. de agente (permite dos URLs distintas para backend y plataforma de agente en el mismo navegador), restricción de acceso por rango de IP, método de push de eventos (HttpPush vs. comet), URL de HttpPush (por defecto `http://127.0.0.1/agentindesks/pushagent`), nombre de cliente con licencia, idioma por defecto del sistema, idioma por defecto de IVR entrante, modo de marcación, modo realtime de Asterisk, reinicio automático de servicio programado, equipo por defecto, descarga de grabaciones vía web, compresión de grabaciones, descarga automática de paquetes de actualización |
 
+![Bloque "Procesamiento de grandes datos" de Configuración general, con los días/meses de retención de CDR, work orders, historial de contacto, e-commerce, estadísticas y logs](../assets/images/configuracion-y-mantenimiento-sistema/configuracion-general-grandes-datos.jpg)
+
+![Bloque "Configuración avanzada" de Configuración general, con dominio de login, restricción de IP, método de push de eventos, URL de HttpPush e idioma del sistema](../assets/images/configuracion-y-mantenimiento-sistema/configuracion-general-avanzada.jpg)
+
 !!! warning
     Una URL de HttpPush mal configurada impide que la plataforma de agente reciba el popup de llamadas entrantes.
 
@@ -145,12 +165,19 @@ Ve a **Configuración de sistema → Teclas rápidas del sistema**. Administra d
 
 Cada código tiene nombre, valor (el número que se marca — editable), nota y estado (**habilitado**/**deshabilitado**). El selector de equipo permite ver y modificar códigos por equipo; si no se ha modificado nada, se muestran los valores por defecto del sistema (sin distinción de equipo). Modificar hotkeys de transferencia dispara automáticamente una recarga de configuración; también hay un botón manual de **recargar** que regenera `featurecodes.conf`.
 
+![Listado de hotkeys del sistema (transferencia ciega, transferencia atendida, consultar a agente, consultar a teléfono) con su valor, texto y estado](../assets/images/configuracion-y-mantenimiento-sistema/codigos-funcion-hotkeys.jpg)
+
 ### Menú lateral (Menu / Sub Menu)
 
 Dos pantallas relacionadas, para quien personaliza o extiende módulos del sistema:
 
 - **Menú de categorías** (`Sistema → Menú`): almacena las categorías del menú lateral del backend y su orden de aparición. El nombre de categoría debe empezar con letra y solo usar letras, números y guion bajo; para mostrar el nombre traducido hay que agregarlo al archivo `default.po` del idioma correspondiente. Permite reordenar categorías arrastrándolas y guardando el nuevo orden.
+
+![Listado de categorías del menú lateral, con su tipo de uso, quién las creó y fecha de última actualización](../assets/images/configuracion-y-mantenimiento-sistema/menu-lateral-categorias.jpg)
+
 - **Submenú** (`Sistema → Submenú`): almacena los módulos (páginas) dentro de cada categoría y su orden. Al agregar un módulo se define: la URL de la página (completa si es externa, o solo el nombre del controlador si es interna), la categoría a la que pertenece, si aparece en backend/frontend/ambos, los permisos CRUD+exportación que aplican (si es página interna del framework — genera automáticamente el SQL de permisos), y opcionalmente un rol al que asignarle de inmediato el permiso sobre esa página nueva. También permite reordenar por arrastre dentro de cada categoría. Los registros del sistema por defecto se muestran en gris y no son editables.
+
+![Formulario de alta de un módulo del submenú: controlador, categoría, estado, visibilidad (fondo/portal) y permisos CRUD + exportación que genera el SQL automáticamente](../assets/images/configuracion-y-mantenimiento-sistema/submenu-alta-modulo.jpg)
 
 ### Registro de auditoría y eventos (Log)
 
@@ -168,6 +195,8 @@ Ve a **Módulos del sistema**. Muestra la versión actual del sistema, los módu
 !!! warning
     Instalar un módulo nuevo requiere iniciar sesión con la cuenta de **administrador del sistema** — no funciona con una cuenta de administrador de equipo.
 
+![Pantalla Módulos del sistema: versión actual, módulos instalados con opción de desinstalar, y módulos disponibles con botón Instalar](../assets/images/configuracion-y-mantenimiento-sistema/modulos-sistema-instalacion.jpg)
+
 Para instalar un módulo disponible, basta con hacer clic en su botón **Instalar**; el sistema muestra una confirmación y, al terminar, el menú lateral correspondiente aparece automáticamente sin necesidad de configuración adicional.
 
 - Si hay una versión nueva disponible, se puede **descargar automáticamente** (si `Descarga automática de paquete de actualización` está activo en Configuración → avanzada) o **descargar manualmente** desde la propia pantalla.
@@ -182,6 +211,8 @@ Problemas conocidos durante la actualización y su solución:
 | Error de archivo de configuración | Mismo procedimiento: eliminar, volver a descargar, reintentar |
 | El proceso se detiene por permisos | El sistema no tiene permiso de escritura sobre el archivo de la aplicación — por SSH, ejecutar `chmod 777 /var/www/html/asterCC/app/app_controller.php` (ajustar la ruta a la instalación real) y reintentar |
 | `413 Request Entity Too Large` | El paquete excede los límites de subida configurados en PHP y en el servidor web — en PHP, editar `upload_max_filesize` en `php.ini`; en Nginx, editar `client_max_body_size` en `nginx.conf` (subir ambos por encima del tamaño del paquete, ej. de 20M a 80M) y reiniciar Nginx (`service nginx restart`) |
+
+![Error "413 Request Entity Too Large" devuelto por Nginx al subir un paquete de actualización que excede el límite configurado](../assets/images/configuracion-y-mantenimiento-sistema/modulos-sistema-error-413.jpg)
 
 ## Referencia rápida
 

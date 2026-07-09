@@ -22,11 +22,18 @@ El marcador predictivo marca automáticamente por el agente, aplicando una estra
 
 Sigue [4.2 Marcador y campañas](../modulos/marcador-y-campanas.md) para crear la tarea. Si no se especifica un paquete de clientes existente, el sistema crea automáticamente uno con el mismo nombre de la tarea. Importa los números a marcar según [Atención al cliente](../modulos/atencion-cliente-mensajeria-ecommerce.md) → carga de datos, o usando la función de importación de datos del módulo de campañas.
 
-**Importar un rango de números para marcación saliente (manual, automática o predial).** Solo un agente con rol de jefe de grupo puede importar números — se asigna en **Cuentas y permisos → Gestión de equipos de agentes → Agregar agente**, marcando el rol de jefe de grupo, y confirmando que el rol de cuenta del agente sea el adecuado para esa función. Con esa sesión:
+**Importar un rango de números para marcación saliente (manual, automática o predial).** Solo un agente con rol de jefe de grupo puede importar números — se asigna en **Cuentas y permisos → Gestión de equipos de agentes → Agregar agente**, marcando el rol de jefe de grupo, y confirmando que el rol de cuenta del agente sea el adecuado para esa función.
+
+![Formulario de edición de agente con la casilla "groupadmin" marcada para habilitar el rol de jefe de grupo](../assets/images/marcacion-predictiva/rol-jefe-de-grupo.png)
+
+Con esa sesión:
 
 1. Entra a **Administración avanzada del call center → Carga de datos** y sube el archivo de números en CSV o XLS.
 2. Elige la tabla destino — la tarea de campaña (ej. "Externas 01") a la que se van a importar los números.
 3. Mapea cada columna del archivo a un campo de la tarea; define además cuál columna determina el teléfono, la prioridad y la hora de contacto que va a usar el predial.
+
+   ![Pantalla de importación con los selectores de "Dialer Setting" para mapear cada columna del archivo a un campo del predial](../assets/images/marcacion-predictiva/importar-mapeo-campo-marcador.jpg)
+
 4. Decide si se limpia la restricción de "agente asignado" para números ya marcados antes por otro agente, y si se reinicia el estado previo del cliente.
 5. Quita la primera fila si corresponde al encabezado del archivo original, y confirma la importación.
 
@@ -47,6 +54,8 @@ El jefe de grupo entra al **marcador**, donde ve la tarea con su cantidad de **c
 
 Al hacer clic en **iniciar**, el marcador comienza a marcar automáticamente los números de la lista.
 
+![Panel del marcador mostrando las dos estrategias de marcado, "By Max. Calls" y "By Available Agent", con los botones Start/End por tarea](../assets/images/marcacion-predictiva/estrategia-inicio-marcador.png)
+
 ### 3. Monitorear la sesión en vivo
 
 Mientras la campaña corre, el panel del marcador muestra en tiempo real:
@@ -56,24 +65,37 @@ Mientras la campaña corre, el panel del marcador muestra en tiempo real:
 - **Esperando agente:** clientes que contestaron pero aún no hay agente libre asignado — este número debe mantenerse lo más bajo posible; si crece mucho, hay que bajar la agresividad de la estrategia de marcado.
 - Duración de timbrado, tiempo de espera, y tiempos entre respuesta del cliente y asignación al agente.
 
+![Panel de monitoreo del marcador con los parámetros de predicción (límite de marcado, intervalo, tasa de respuesta, tiempos de conversación y de gestión posterior) y las listas de llamadas timbrando, en conversación y esperando agente](../assets/images/marcacion-predictiva/panel-monitoreo-marcador.jpg)
+
 ### 4. Recuperar números no completados
 
 Si la lista de marcación se agota antes de terminar la tarea, se puede **recuperar** clientes desde el paquete completo de la tarea de vuelta a la lista de marcación, para reintentarlos.
+
+![Lista de marcado de la campaña con los botones Filter, Recycle by checked y Recycle by conditions, y la pestaña para ver los clientes de la campaña](../assets/images/marcacion-predictiva/lista-marcado-recuperar.jpg)
 
 **Forzar el marcado inmediato de números con hora de cita pendiente.** El predial solo marca un número en seguimiento cuando su hora programada (`schedule`) ya es igual o anterior a la hora actual del sistema — si la cita quedó fijada para más adelante, el botón de inicio no lo tomará todavía. Para marcarlo de inmediato desde la interfaz, sin esperar a que llegue la hora:
 
 1. Entra a **Predial → Ver lista de marcado** y busca los registros por "hora de cita" (`schedule`).
 2. Bórralos con **Eliminar por condición de búsqueda** (por ejemplo, "eliminación directa") — solo se pueden eliminar los registros cuyo estado de marcado sea "pendiente".
 3. Ve a **Recuperar** y recupera esos mismos clientes de vuelta a la lista de marcado, fijando ahora una hora de cita menor o igual a la hora actual.
+
+   ![Ventana "Choose Recycle Conditions" para recuperar un cliente hacia la lista de marcado, con los campos de número de teléfono a usar, prioridad y hora de cita (schedule)](../assets/images/marcacion-predictiva/recuperar-condiciones-cita.jpg)
+
 4. Pulsa **Iniciar** en el predial para que se marquen de inmediato.
 
 (La guía original también documenta un método alternativo por base de datos — actualizar `schedule` a `0000-00-00 00:00:00` y el campo `dialer` de la campaña a `start` directamente en MySQL — que se omite aquí por ser una intervención directa sobre la base de datos, fuera del flujo normal de administración.)
 
 Por defecto, un número de predial que no contesta se marca una sola vez y no se reintenta automáticamente. Para habilitar reintentos, configura **Marketing outbound → Tarea de marketing outbound → Configuración avanzada de predial → Remarcado automático por no respuesta**, indicando los intervalos entre reintentos (ej. `1h,1d,1w` reintenta a la hora, al día y a la semana siguientes; `0,0` reintenta de inmediato con un máximo de 2 reintentos).
 
+También se puede automatizar la recuperación con un filtro por condiciones en vez de repetirla manualmente cada vez — por ejemplo, para reciclar automáticamente a los clientes mayores de cierta edad o con determinada fecha de nacimiento, programando además cada cuánto se ejecuta el filtro:
+
+![Formulario "Add Filter" para crear un filtro de recuperación automática, con nombre, prioridad, programación (minuto/hora/día/mes/semana) y condiciones de filtrado](../assets/images/marcacion-predictiva/filtro-recuperacion-condiciones.jpg)
+
 ### 5. Cerrar y revisar resultados
 
 Al finalizar, consulta en [4.8 Reportes](../modulos/reportes-y-estadisticas.md) el desempeño de agente y de grupo para esa sesión — volumen marcado, tasa de contactación, y tiempos promedio.
+
+![Reporte por grupo de agentes con columnas de llamadas marcadas, llamadas contestadas, tasa de respuesta, y tiempos promedio de timbrado, respuesta y conversación](../assets/images/marcacion-predictiva/estadisticas-marcador-grupo.png)
 
 ### 6. Marcador predictivo vs. marcado automático (auto dial)
 
@@ -87,7 +109,15 @@ El marcador predictivo no es la única forma de marcado asistido por sistema den
 | Reintento con múltiples números | Según configuración de recuperación de la lista | Automático: si el primer número del cliente no contesta, marca el siguiente número registrado |
 | Llamadas con cita (callback) | No es su función típica | Soporta: al llegar la hora programada (±5 min) el sistema marca automáticamente |
 
-Se activa en **Marcador y campañas → Avanzado**, seleccionando "Automático" u "Opcional" en el modo de marcado (`dialway`) de la tarea; con esto habilitado, el agente ve un botón "Iniciar marcado automático" en su panel de trabajo. La prioridad de marcado en este modo es: primero los clientes pendientes con hora programada cercana (±5 min) ordenados por esa hora; luego los pendientes con hora programada más lejana, ordenados por hora y número de intentos; y por último los clientes nuevos, ordenados por número de intentos y por el orden de la lista en la pantalla del agente.
+Se activa en **Marcador y campañas → Avanzado**, seleccionando "Automático" u "Opcional" en el modo de marcado (`dialway`) de la tarea:
+
+![Pestaña Advanced de la tarea de campaña con el campo Dialway desplegado, mostrando las opciones Default, Preview, Auto y Optional](../assets/images/marcacion-predictiva/modo-marcado-dialway.png)
+
+con esto habilitado, el agente ve un botón "Iniciar marcado automático" en su panel de trabajo:
+
+![Panel de trabajo del agente con el botón "Start to auto-dial" resaltado, dentro de la pestaña de clientes nuevos de la tarea](../assets/images/marcacion-predictiva/boton-iniciar-marcado-automatico.png)
+
+La prioridad de marcado en este modo es: primero los clientes pendientes con hora programada cercana (±5 min) ordenados por esa hora; luego los pendientes con hora programada más lejana, ordenados por hora y número de intentos; y por último los clientes nuevos, ordenados por número de intentos y por el orden de la lista en la pantalla del agente.
 
 ## Encuestas telefónicas con marcación predictiva
 

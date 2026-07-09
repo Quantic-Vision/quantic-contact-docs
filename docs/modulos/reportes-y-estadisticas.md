@@ -37,6 +37,8 @@ Indicadores más relevantes del reporte de desempeño de agente:
 | Tasa de efectividad | (Timbrado + en llamada + ACW) ÷ (conectado − pausado) |
 | Tasa de retención | Retenciones ÷ (entrantes + salientes atendidas) |
 
+![Reporte de desempeño de agente con filtros por equipo, grupo y agente, y listado de llamadas por fecha](../assets/images/reportes-y-estadisticas/reporte-desempeno-agente.jpg)
+
 El desglose de "tiempo en pausa" separa la duración acumulada por cada motivo predefinido: **almuerzo**, **reunión**, **descanso**, **permiso/ausencia**, **capacitación** y **otro** — más dos motivos que no elige el propio agente: **pausa automática** (activada por el sistema cuando el grupo de agentes tiene esa opción habilitada) y **pausa por administrador** (forzada por un jefe de grupo). El reporte también incluye **porcentaje de ocupado** (tiempo en pausa ÷ tiempo de check-in × 100%) y un contador de **calificación de llamada por IVR**: cuántas veces se le reprodujo al cliente el IVR de calificación tras la llamada, cuántas veces marcó una tecla, y qué porcentaje de esas respuestas correspondió a cada tecla — útil para medir satisfacción sin depender de una encuesta completa.
 
 ### Reporte de desempeño de grupo — niveles de servicio (SLA)
@@ -52,11 +54,17 @@ El reporte por **grupo de agentes** agrega, además de indicadores equivalentes 
 | Nivel de servicio ≤60s | Contestadas en ≤60s ÷ total |
 | Nivel de servicio >60s | Contestadas después de 60s ÷ total |
 
+![Reporte de desempeño de grupo con indicadores agregados por fecha, incluyendo tasa de contestación](../assets/images/reportes-y-estadisticas/reporte-desempeno-grupo-sla.jpg)
+
 Otros indicadores exclusivos del reporte de grupo: **tasa de abandono** (clientes que colgaron esperando ÷ llamadas entrantes totales), **velocidad promedio de respuesta** ((timbrado + espera en cola) ÷ contestadas), y **tiempo promedio de manejo del grupo** ((tiempo en llamada + ACW) ÷ contestadas).
 
 ### Reportes con salida gráfica
 
 Los reportes de **agente** y de **grupo de agentes** tienen una variante gráfica (barras o líneas), exportable a HTML, imagen o PDF (estos dos últimos no soportados en Internet Explorer). El sistema pre-calcula estos datos por la noche para no consumir recursos durante el horario de operación. Se puede agregar por: total, año, mes, semana, día, hora, o media hora.
+
+![Reporte gráfico de agente en barras 3D, mostrando tiempo acumulado por tipo de estado en un mes](../assets/images/reportes-y-estadisticas/reporte-grafico-agente-barras.jpg)
+
+![Reporte gráfico de grupo comparando dos grupos de agentes por mes, con tiempo en pausa como indicador](../assets/images/reportes-y-estadisticas/reporte-grafico-grupo-comparativo.jpg)
 
 !!! tip
     Cada indicador de tiempo tiene dos variantes: **(O)** cuenta el evento en el bloque de tiempo donde *comenzó*, y **(P)** lo cuenta en el bloque donde *estaba en curso*. Por ejemplo, una llamada de 10:59:48 a 11:00:32: para las 10:00, (O)=44s y (P)=12s; para las 11:00, (O)=0s y (P)=32s. Si se necesitan columnas que no vienen por defecto, se puede armar una **plantilla de columnas personalizada** (nombre solo en inglés) para reutilizar esa selección después.
@@ -70,17 +78,39 @@ Los reportes de **agente** y de **grupo de agentes** tienen una variante gráfic
 | Resumen de salientes | Por agente: cantidad de marcaciones, cantidad contestadas, duración total, costo — agregado, no línea por línea |
 | Detalle de IVR | Por paso de IVR: duración, estado del IVR, número que llama/llamado, y cómo terminó (colgó, transfirió, error) |
 
+![Listado de detalle de servicio entrante, con agente, cola, tiempos de timbrado y estado final de la llamada](../assets/images/reportes-y-estadisticas/detalle-servicio-entrante.jpg)
+
+![Listado de detalle de servicio saliente, con agente, números marcados y duración por llamada](../assets/images/reportes-y-estadisticas/detalle-servicio-saliente.jpg)
+
+![Listado de detalle de IVR, mostrando duración por paso y estado final de cada llamada](../assets/images/reportes-y-estadisticas/detalle-ivr.jpg)
+
 ### Estadísticas operativas del sistema
 
 - **Estadísticas de importación de datos:** por rango de fecha, cuántos registros se importaron en total, y cuántos resultaron exitosos, fallidos o duplicados — complementa a [Marcador y campañas](marcador-y-campanas.md).
+
+    ![Gráfico de estadísticas de importación de datos, comparando total, exitosos, con error y duplicados a lo largo del tiempo](../assets/images/reportes-y-estadisticas/estadisticas-importacion-datos.jpg)
+
 - **Estadísticas de datos del sistema:** serie de tiempo de cuentas conectadas, agentes conectados, agentes en check-in, clientes en conversación, clientes en espera, y pausas manuales — el nivel de agregación se ajusta automáticamente según el rango elegido (cada 5 minutos si es un solo día, por día si es un rango dentro del mismo año, por año si el rango cruza años).
+
+    ![Gráfico de estadísticas de datos del sistema, con líneas de cuentas, agentes y clientes conectados por día](../assets/images/reportes-y-estadisticas/estadisticas-datos-sistema.jpg)
 
 ### Monitoreo en tiempo real
 
 - **Agentes en línea:** número de agente, cola, estado, cantidad de llamadas contestadas/hechas, tiempo total de conversación, equipo, hora de conexión — con opción de auto-refrescar cada 30 segundos.
+
+    ![Listado de agentes en línea con filtros por número de agente, cola y estado](../assets/images/reportes-y-estadisticas/agentes-en-linea.jpg)
+
 - **Usuarios en línea:** cuentas conectadas ahora mismo, con IP de origen, tipo de cuenta, equipo, grupo de cuentas, hora de conexión — y un botón para **forzar el cierre de sesión** de cualquier cuenta que no sea la propia.
+
+    ![Listado de usuarios en línea con IP de origen y botón para forzar el cierre de sesión](../assets/images/reportes-y-estadisticas/usuarios-en-linea.jpg)
+
 - **Uso de troncales en tiempo real:** llamadas entrantes y salientes en curso por troncal, agrupadas por equipo, con auto-refresco cada 5 segundos (se puede desactivar); entrantes y salientes se muestran en dos tablas separadas.
+
+    ![Vista de uso de troncales en tiempo real, con detalle de llamadas entrantes y salientes por troncal](../assets/images/reportes-y-estadisticas/uso-troncales-tiempo-real.jpg)
+
 - **Uso del sistema por equipo:** cuántos agentes, colas, extensiones, etc. tiene provisionados cada equipo en este momento. Un administrador de sistema ve todos los equipos; un administrador de equipo solo ve el suyo.
+
+    ![Resumen de uso del sistema por equipo, con cantidad de agentes, dispositivos, colas y cuentas provisionados](../assets/images/reportes-y-estadisticas/uso-sistema-por-equipo.jpg)
 
 #### Monitoreo de grupo de agentes (detallado)
 
@@ -101,6 +131,8 @@ Al hacer clic sobre un agente en llamada, se abre un panel de control con:
 
 Estas acciones usan como número ejecutor, por defecto, la extensión del propio jefe de grupo que las dispara. Los estados de un agente se codifican por color: libre, timbrando, en llamada, en conferencia, en pausa, en gestión posterior, y los dos casos de consulta (consultando / siendo consultado).
 
+![Monitoreo de grupo de agentes, con contadores por estado y listado individual de cada agente conectado](../assets/images/reportes-y-estadisticas/monitoreo-grupo-agentes-detallado.jpg)
+
 Hay también una **vista de pantalla completa** pensada para mostrar en un monitor grande de la sala de operaciones, con una alarma sonora que se dispara cada vez que la cantidad de clientes esperando en cola sube en múltiplos de 5.
 
 ### Información del sistema
@@ -109,6 +141,8 @@ Hay también una **vista de pantalla completa** pensada para mostrar en un monit
 - **Procesos del sistema:** estado del kernel y del CTI, con botones de reinicio individual; **reiniciar o apagar el servidor completo** desde la misma pantalla.
 - **Uso actual:** cantidad de agentes, colas, extensiones y equipos dados de alta.
 - **Aviso de vencimiento:** alerta visual si algún módulo está por expirar.
+
+![Pantalla de información del sistema: licencia, procesos (núcleo y CTI), uso de agentes/colas/dispositivos, e información del host](../assets/images/reportes-y-estadisticas/informacion-del-sistema.jpg)
 
 !!! tip
     Cuando se cambian los campos de integración de eventos de un [equipo](cuentas-equipos-permisos.md#equipos) (dirección de eventos, interfaz de negocio, cadena de verificación), hay que reiniciar el **CTI** desde esta pantalla para que la nueva conexión tome efecto.

@@ -23,7 +23,13 @@ En resumen (según la página de introducción del módulo): el sistema soporta 
 ### Base de conocimiento
 
 1. Ve a **Base de conocimiento → Base de conocimiento** y selecciona el equipo.
+
+![Menú lateral con la sección Base de conocimiento y sus tres paneles: árbol de categorías, buscador de artículos y resultado](../assets/images/base-conocimiento-work-orders/kb-menu-navegacion.jpg)
+
 2. Crea **categorías de conocimiento** (y subcategorías, arrastrando para anidar u ordenar).
+
+![Formulario de alta de una categoría de conocimiento, con nombre y nota](../assets/images/base-conocimiento-work-orders/kb-crear-categoria.jpg)
+
 3. Dentro de una categoría, agrega un artículo de conocimiento con:
 
 | Campo | Qué define |
@@ -34,8 +40,17 @@ En resumen (según la página de introducción del módulo): el sistema soporta 
 | Archivo adjunto | Material de soporte descargable |
 | Contenido con formato / contenido en texto plano | El texto en formato enriquecido se muestra al leer el artículo; el texto plano es lo que se indexa para búsqueda |
 
+![Formulario de alta de un artículo de conocimiento: título, etiqueta, estado (borrador/publicado), adjunto y contenido con formato y en texto plano](../assets/images/base-conocimiento-work-orders/kb-crear-articulo-campos.jpg)
+
+![Vista de detalle de un artículo publicado, con título, etiquetas y estado](../assets/images/base-conocimiento-work-orders/kb-articulo-vista-detalle.jpg)
+
 4. Los agentes pueden **buscar por texto libre** o hacer clic en una etiqueta para filtrar artículos relacionados.
+
+![Listado de artículos con sus etiquetas asociadas, usadas para filtrar por tema](../assets/images/base-conocimiento-work-orders/kb-etiquetas-busqueda.jpg)
+
 5. El **permiso por rol** controla, para cada cuenta, si puede: agregar categorías, agregar artículos, editar, ver, eliminar, y **publicar** (un artículo enviado por alguien sin permiso de publicar queda pendiente de revisión hasta que alguien con ese permiso lo apruebe).
+
+![Configuración de permisos de rol para la Base de conocimiento: agregar categorías, agregar artículos, editar, ver, eliminar y publicar](../assets/images/base-conocimiento-work-orders/kb-permisos-rol.jpg)
 
 ### Work Orders
 
@@ -53,8 +68,15 @@ Antes de usar el módulo, hay que definir una **plantilla de work order** — el
 | Acción de cierre | Qué pasa al cerrar el último nodo: nada, crear automáticamente un work order de seguimiento, o dejar que el agente decida |
 | Copia de correo por defecto | Direcciones que se notifican en cada cambio del work order |
 
+![Formulario de alta de una plantilla de work order: equipo, alcance de flujo, flujo inicial directo, permiso de edición, retener agente, acción de cierre y copia de correo](../assets/images/base-conocimiento-work-orders/wo-plantilla-campos.jpg)
+
 2. Define **campos personalizados** para capturar información específica del proceso (texto corto, selección, texto largo, archivo, fecha, fecha y hora).
+
+![Pestaña de campos personalizados de una plantilla de work order, con tipo, identidad, texto a mostrar y opciones de selección](../assets/images/base-conocimiento-work-orders/wo-campos-personalizados.jpg)
+
 3. Si el proceso siempre sigue el mismo camino, configura el **flujo automático**: al guardar la secuencia de grupos, el work order avanza solo de un grupo al siguiente al completarse cada paso, y se cierra automáticamente al terminar el último.
+
+![Pestaña de flujo automático de una plantilla de work order, con la secuencia ordenada de grupos por los que pasa el caso](../assets/images/base-conocimiento-work-orders/wo-flujo-automatico.jpg)
 
 ### Pantalla "Mis work orders"
 
@@ -69,6 +91,10 @@ Al entrar con work orders pendientes, el sistema abre automáticamente esta pant
 
 Dentro de cada categoría se filtra además por **Nuevo**, **Recién completado** e **Histórico completado** (mismas tres tablas de archivo mencionadas abajo). El jefe de grupo puede asignar o reasignar manualmente desde aquí seleccionando el work order y usando el botón **Asignar** — no se pueden asignar juntos work orders de grupos distintos.
 
+![Pantalla "Mis work orders" con las cuatro categorías (Mis work orders, Mis creados, Work orders del grupo, Creados por el grupo) y los filtros de búsqueda](../assets/images/base-conocimiento-work-orders/wo-mis-work-orders-pantalla.jpg)
+
+![Selección de varios work orders nuevos del grupo y botón Asignar, para repartirlos manualmente entre agentes](../assets/images/base-conocimiento-work-orders/wo-asignacion-manual.jpg)
+
 ### Dónde se crea un work order
 
 Un work order se puede originar desde cuatro lugares:
@@ -76,6 +102,8 @@ Un work order se puede originar desde cuatro lugares:
 2. Gestión de llamadas perdidas, para dar seguimiento a una llamada no atendida.
 3. Pantalla emergente de una campaña de marketing saliente, si el resultado de la llamada está vinculado a esta plantilla.
 4. La pantalla **"Mis work orders"**, donde un jefe de grupo puede crear uno manualmente para su equipo.
+
+![Pantalla emergente de atención al cliente entrante: al elegir un resultado de llamada vinculado a una plantilla, aparece el enlace para crear el work order correspondiente](../assets/images/base-conocimiento-work-orders/wo-creacion-desde-atencion-cliente.jpg)
 
 ### Reglas de asignación por grupo
 
@@ -88,6 +116,8 @@ Cuando la plantilla usa flujo manual (no automático), cada grupo de agentes inv
 | Por menor carga | Automático — prioriza al agente con menos work orders sin completar en ese momento |
 
 Ambas reglas automáticas pueden acotarse a **solo agentes conectados** o a **todos los agentes del grupo** (estén o no en línea). También se define si el nodo requiere **aprobación del jefe de grupo** antes de avanzar al siguiente — si no se aprueba, el work order vuelve al agente como "en seguimiento".
+
+![Selector de regla de asignación de un grupo: manual, por orden de número de agente o por menor carga](../assets/images/base-conocimiento-work-orders/wo-regla-asignacion-dropdown.jpg)
 
 ### Estados de un work order
 
@@ -115,7 +145,12 @@ Desde el detalle del work order (accesible por doble clic desde cualquiera de la
 - Ver el historial completo: quién hizo qué y cuándo, con las respuestas anteriores.
 - Consultar el historial de contacto y de compras del cliente asociado, sin salir de la pantalla.
 - Originar llamada, SMS, correo o fax al cliente desde una barra de accesos rápidos siempre visible.
+
+![Barra de accesos rápidos del detalle de un work order: teléfono, SMS, correo, fax, registros relacionados, operación, historial, archivos, descripción e información del cliente](../assets/images/base-conocimiento-work-orders/wo-barra-accesos-rapidos.jpg)
+
 - Al finalizar su parte, elegir el **estado del nodo**: en proceso, completo, devolver al nodo anterior, devolver a su propio grupo (pedir ayuda al jefe), o —si tiene permiso de aprobación— aprobar/rechazar el trabajo de otro agente.
+
+![Sección "Operación" del detalle de un work order: selector de estado del nodo y cuadro de texto para la respuesta antes de enviar](../assets/images/base-conocimiento-work-orders/wo-estado-nodo-operacion.jpg)
 
 Si el work order ya está completo, nadie puede modificarlo — solo consultar.
 
