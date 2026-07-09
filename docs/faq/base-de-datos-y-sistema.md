@@ -221,6 +221,12 @@ Y para el log de MySQL:
 
 ### ¿Cómo reviso los logs del sistema para diagnosticar un problema?
 
+Además de los archivos de log en disco, la interfaz web tiene sus propias pantallas de consulta: **Logs** (acciones de los usuarios: login, altas, bajas, por cuenta/acción/controlador) y **Eventos de llamada** (eventos de canal por agente: timbrado, contestada, colgada, pausa, con su `uniqueid`).
+
+![Pantalla Logs con filtros por cuenta, acción y controlador, y el listado de acciones registradas (login, alta de dialer, etc.)](../assets/images/faq-base-de-datos-y-sistema/pantalla-logs-sistema.jpg)
+
+![Pantalla Call Events con filtros por agente y evento, y el listado de eventos (Hangup, Ringing, Incoming, autopaused, etc.)](../assets/images/faq-base-de-datos-y-sistema/pantalla-eventos-llamada.jpg)
+
 Con el log de Asterisk habilitado (ver arriba), revisa `/var/log/asterisk/full` para eventos de canal, SIP y aplicaciones de dialplan. Para el log de AsterCC, edita `/etc/astercc.conf` — sube `debug` a un valor mayor (por ejemplo `debug=11`) y agrega `internal_debug = 1` bajo `[system]`:
 
 ```
@@ -341,6 +347,10 @@ La grabación se controla en cuatro niveles:
 | Extensión (dispositivo) | Se puede habilitar/deshabilitar la grabación de esa extensión específica |
 | Cuenta de usuario | Fuerza la grabación de todos los dispositivos de esa cuenta |
 | Equipo | Fuerza la grabación de todas las extensiones del equipo |
+
+![Campo "Monitor Force" en la pestaña Basic de Edit User, forzando la grabación de todos los dispositivos de esa cuenta](../assets/images/faq-base-de-datos-y-sistema/grabacion-forzada-cuenta.png)
+
+![Campo "Monitor Force" en la pestaña Basic de Edit Team, forzando la grabación de todas las extensiones del equipo](../assets/images/faq-base-de-datos-y-sistema/grabacion-forzada-equipo.png)
 
 ### Falta `lame` y no se pueden convertir las grabaciones a MP3
 
@@ -667,6 +677,8 @@ Los archivos de anotación viven en `/var/www/html/asterCC/app/webroot/docs/<idi
 
 El contenido que se muestra al usuario es exactamente lo que está entre las etiquetas `<p>` y `</p>` del archivo HTML correspondiente. Editar ese texto y guardar el archivo actualiza la anotación mostrada en la interfaz.
 
+![Ícono de anotación junto al campo "Name" en Edit Team, mostrando el tooltip "Give name to the team, to identify it." con enlace a "More information"](../assets/images/faq-base-de-datos-y-sistema/anotacion-campo-tooltip.png)
+
 ### Catálogo de ventanas emergentes comunes del sistema
 
 Referencia de los mensajes de confirmación/error más frecuentes en la interfaz web, útil para soporte de primer nivel:
@@ -694,6 +706,8 @@ Referencia de los mensajes de confirmación/error más frecuentes en la interfaz
 | Vaciar la papelera | "Todos los datos en la papelera serán eliminados, ¿continuar?" |
 | Usuario o contraseña incorrectos al iniciar sesión | "Contraseña incorrecta o el usuario no existe" |
 | Agregar una orden de trabajo a una llamada perdida sin datos de cliente | "Data could not be saved. Please try again" |
+
+![Ventana emergente "System Message" con el texto "Data could not be saved. Please, tryagain"](../assets/images/faq-base-de-datos-y-sistema/popup-error-guardado.png)
 
 ### Falta información de código de área telefónico tras instalar el sistema
 

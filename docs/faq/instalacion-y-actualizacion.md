@@ -37,6 +37,8 @@ El procedimiento tiene cinco pasos obligatorios, en este orden:
 
 1. **Instalar AsterCC en el servidor nuevo** — debe ser **exactamente la misma versión** y tener **los mismos módulos** instalados que el servidor original. Instalar módulos distintos es la causa más común de fallos posteriores.
 2. **Obtener nueva autorización.** En el servidor nuevo ejecuta `/opt/asterisk/scripts/astercc/asterccc --RNI` y descarga el archivo de identidad. Envía ese archivo junto con el archivo de identidad del servidor original a `support@astercc.org` o `support@sonicwell.com`, explicando el motivo de la migración. Al recibir la licencia, súbela y respalda `license.astercc` (por ejemplo renómbralo a `license.astercc.bak`).
+
+   ![Pantalla System Message con el botón "Download Identity" resaltado, generando el archivo identity.aster que hay que enviar a soporte](../assets/images/faq-instalacion-y-actualizacion/descargar-identidad-servidor.png)
 3. **Respaldar y restaurar la base de datos:**
    ```bash
    mysqldump -uroot -p astercc10 > astercc_backup.sql

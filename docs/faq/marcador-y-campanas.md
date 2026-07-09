@@ -32,14 +32,27 @@ El límite efectivo de concurrencia surge de varias capas, evaluadas de la más 
 
 1. **Troncal (proveedor):** el proveedor impone un tope de líneas simultáneas — conviene confirmarlo antes de ajustar cualquier otro parámetro.
 2. **Sistema:** en **Información en tiempo real → Información del sistema** se ve el máximo de concurrencia predictiva permitido para todo el sistema.
+
+   ![Página de información del sistema con el campo "Max. Dialer Concurrent Calls" resaltado](../assets/images/faq-marcador-y-campanas/concurrencia-maxima-sistema.png)
+
 3. **Equipo:** en **Predictivo → Configuración del marcador** se define el máximo de líneas concurrentes por equipo (todas sus tareas combinadas); `-1` significa sin límite. Si un troncal está dedicado a un solo equipo, este es el lugar para reflejar el tope real del proveedor.
+
+   ![Listado "Dialer Setting" con la columna "Max Dialer Concurrent" por equipo, mostrando un valor numérico o "No Limitation"](../assets/images/faq-marcador-y-campanas/concurrencia-maxima-por-equipo.png)
+
 4. **Tarea de campaña:** en la configuración avanzada de predictivo de cada tarea, el campo de canales máximos actúa como el "máximo de llamadas" de la configuración avanzada del marcador; `0` significa sin límite.
+
+   ![Pestaña "Predictive Dialer" de una tarea de campaña con el campo "Dialer MaxChannel" resaltado](../assets/images/faq-marcador-y-campanas/concurrencia-maxima-tarea-campana.png)
+
 5. **Configuración avanzada del marcador:** aquí se define el modo de cálculo:
    - **Por máximo de llamadas:** si el valor configurado excede el "máximo de llamadas" de la tarea, se reduce automáticamente a ese tope.
    - **Por porcentaje de agentes disponibles:** concurrencia = (agentes con check-in × porcentaje) / tasa de contestación, sin superar nunca el "máximo de llamadas".
    - También se configuran ahí el **límite de marcado por ciclo** (cuántos números se marcan a la vez) y el **intervalo de marcado** (cada cuántos segundos se marca).
 
+   ![Consola del marcador con los campos "By Max. Calls", "By Available Agent", "Dial Limit" y "Dialer Interval" resaltados por categoría](../assets/images/faq-marcador-y-campanas/configuracion-avanzada-marcador-consola.png)
+
 Si tras ajustar todo lo anterior la concurrencia real sigue siendo baja, revisa los datos de **marcado con error** (`Curspools`/cola de errores del marcador): registros muy antiguos (creados hace más de media hora, horas o días) son datos "atascados" que conviene eliminar — algunos ocupan un canal de concurrencia real aunque duren solo 1-2 segundos y no lleguen a mostrarse en el panel.
+
+![Pantalla de Curspools con los filtros de búsqueda y la columna "Created" resaltada para ubicar registros antiguos](../assets/images/faq-marcador-y-campanas/curspools-registros-atascados.png)
 
 ## Troncales para salida
 
@@ -57,7 +70,14 @@ Cuando la regla general de troncales no basta y se necesita fijar el troncal de 
 
 1. **Si el equipo tiene un único troncal** (no un grupo): toda tarea de campaña de ese equipo usa ese troncal directamente — se configura en la gestión de equipos.
 2. **Si el equipo tiene varios troncales** y solo una tarea puntual debe usar uno distinto: agrega las cuentas de los agentes de esa tarea a un **grupo de cuentas**, y asigna a ese grupo de cuentas el troncal (o grupo de troncales) deseado. Por ejemplo, si los agentes 01 y 02 deben marcar por el troncal 01 dentro de un equipo que tiene un grupo de troncales con tres troncales, se agregan sus cuentas a un grupo de cuentas y se le asigna el troncal 01 a ese grupo.
+
+   ![Pantalla para mover cuentas de agentes hacia la lista de un grupo de cuentas](../assets/images/faq-marcador-y-campanas/agregar-cuentas-a-grupo-cuentas.png)
+
+   ![Edición del grupo de cuentas con el tipo de troncal y el troncal específico seleccionado en el desplegable](../assets/images/faq-marcador-y-campanas/asignar-troncal-a-grupo-cuentas.png)
+
 3. **Si la tarea usa marcado predictivo:** el troncal se determina indicando qué cuenta del grupo de cuentas se usa para el predictivo (ej. la cuenta ya asociada al troncal deseado) — no se selecciona el troncal directamente en la tarea.
+
+   ![Pestaña "Predictive Dialer" de una tarea de campaña con el campo "Dialer Account" resaltado, apuntando a la cuenta del grupo de cuentas](../assets/images/faq-marcador-y-campanas/asignar-cuenta-a-marcador-predictivo.png)
 
 ## Registro de llamadas y grabaciones
 

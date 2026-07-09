@@ -50,6 +50,16 @@ Se hace combinando un grupo de troncales con reglas de selección (ver [Funcione
 3. **Aplica la regla a todo el equipo:** en la configuración del equipo, selecciona este grupo de troncales para que la regla aplique a todos sus miembros.
 4. **Aplica la regla solo a usuarios específicos:** agrupa a esos usuarios en un grupo de cuentas y asigna el grupo de troncales únicamente a ese grupo de cuentas — cada agente usa las reglas que corresponden a su cuenta.
 
+![Formulario de edición de un grupo de troncales, moviendo troncales disponibles hacia la lista seleccionada del grupo](../assets/images/faq-pbx-y-telefonia/agregar-troncales-a-grupo.png)
+
+![Regla de grupo de troncales por prefijo del número marcado, con el troncal a usar cuando coincide](../assets/images/faq-pbx-y-telefonia/regla-grupo-troncales-prefijo.png)
+
+![Formulario de edición de un equipo con el tipo de troncal en "Trunk Group" y el grupo de troncales asignado](../assets/images/faq-pbx-y-telefonia/equipo-con-grupo-troncales-asignado.png)
+
+![Formulario de edición de un grupo de cuentas con el troncal (o grupo de troncales) asignado en el campo Trunk](../assets/images/faq-pbx-y-telefonia/grupo-cuentas-con-troncal-asignado.png)
+
+![Pantalla para mover cuentas de agentes hacia la lista de un grupo de cuentas](../assets/images/faq-pbx-y-telefonia/agregar-cuentas-a-grupo.png)
+
 ## Extensiones y registro
 
 ### ¿Cómo cambio el puerto de registro SIP por defecto?
@@ -82,6 +92,8 @@ DTMF (Dual Tone Multi Frequency) es la señal que se genera al presionar las tec
 | `info` | Vía SIP INFO |
 
 El modo debe coincidir con lo que espera el proveedor del troncal. Si un cliente no puede navegar un IVR con el teclado, este es el primer parámetro a revisar.
+
+![Edición de un troncal con el parámetro dtmfmode=inband agregado en el campo Detail](../assets/images/faq-pbx-y-telefonia/configuracion-dtmfmode-troncal.png)
 
 ### ¿Cómo agrego soporte para el códec G.729?
 

@@ -98,8 +98,12 @@ Registros PBX, de campaña y de atención entrante tienen ~31, ~31 y ~18 campos 
 
 En **Sistema → Configuración → Configuración básica del sistema**, activa el parámetro del mapa de Google (`sí`/`no`).
 
+![Parámetro "Google map" en Configuración básica del sistema, con las opciones Sí/No](../assets/images/faq-mensajeria-encuestas-y-personalizacion/mapa-google-configuracion-sistema.jpg)
+
 !!! warning
     Solo actívalo si el servidor tiene salida a internet. Si no la tiene, activar el mapa hace que la plataforma del agente cargue muy lento, y al abrir el mapa se muestra un error de carga. Las causas típicas del error de carga son: el servidor no tiene acceso a internet, el mapa está desactivado, o falló la carga del recurso del mapa.
+
+![Mensaje de error "Google map loading failed, please refresh the page and try again!"](../assets/images/faq-mensajeria-encuestas-y-personalizacion/mapa-google-error-carga.jpg)
 
 *(Fuente: zh+en — mismo procedimiento documentado en ambos idiomas.)*
 
@@ -120,13 +124,30 @@ Existen dos mecanismos de encuesta de voz distintos en AsterCC — no los confun
 **2. Encuesta IVR de evaluación al agente tras colgar (after call survey)** — el sistema trae por defecto un IVR de evaluación, pero solo en chino; para español o inglés hay que crear uno propio:
 
 1. Sube los anuncios de voz de la encuesta en **Avanzado → Anuncios**.
+
+   ![Formulario para agregar el sonido de un anuncio, eligiendo idioma y subiendo el archivo](../assets/images/faq-mensajeria-encuestas-y-personalizacion/encuesta-ivr-subir-anuncio.png)
+
 2. Crea un nuevo IVR en **Avanzado → IVR**, con esta secuencia de acciones:
+
+   ![Formulario para agregar un nuevo IVR, con nombre y número de extensión](../assets/images/faq-mensajeria-encuestas-y-personalizacion/encuesta-ivr-crear-flujo.png)
+
    - **Answer** (contesta la llamada).
    - **ReadData**, reproduciendo el anuncio subido y capturando la tecla de calificación.
    - **Webservice**, apuntando a `http://<host>/agentcallrate.php?wsdl`, función `saverate`, con parámetros `AGENTNO|TEAMID|AGENTGROUPID|sessionid|inputcode|callerid|MODELTYPE|MODELID`.
+
+     ![Acción Webservice del IVR, con dirección, función y parámetros configurados](../assets/images/faq-mensajeria-encuestas-y-personalizacion/encuesta-ivr-accion-webservice.png)
+
    - Una rama de **transferencia** para el resultado fallido (condición `0`) y otra para el éxito (condición `1`) — estas condiciones son el valor de retorno del webservice, no la calificación numérica en sí.
+
+     ![Pestaña de transferencia del IVR, con la condición 1 (éxito) enrutada a un anuncio de despedida](../assets/images/faq-mensajeria-encuestas-y-personalizacion/encuesta-ivr-transferencia-exito.png)
+
 3. Asigna el IVR a la cola desde **Avanzado → Colas → Anuncio de calificación**.
+
+   ![Pestaña avanzada de una cola, con el IVR de calificación asignado en el campo "Rate Announce"](../assets/images/faq-mensajeria-encuestas-y-personalizacion/encuesta-ivr-asignar-cola.png)
+
 4. Los resultados se consultan en **Estadísticas → Registro de calificación**.
+
+   ![Registro de calificación con el número de agente y la puntuación obtenida por llamada](../assets/images/faq-mensajeria-encuestas-y-personalizacion/encuesta-ivr-registro-calificacion.png)
 
 ## ¿Por qué no funciona la síntesis de voz (TTS) de AsterCC?
 

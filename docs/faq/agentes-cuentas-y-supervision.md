@@ -62,6 +62,8 @@ Cuando el personal rota de escritorio, el número de agente puede quedar vincula
 1. **Modo de trabajo del agente:** en el grupo de agentes, cambiar a **dinámico + en línea**, y pedir al agente que vuelva a iniciar sesión.
 2. **Modo de extensión del agente:** cambiar a **autoseleccionable**. Tras iniciar sesión, el agente hace doble clic sobre el campo de extensión, escribe el número del teléfono que tiene frente a él, confirma, y luego hace check-in normalmente.
 
+![Aviso al agente cuando el sistema detecta que la IP del teléfono no coincide con la IP del navegador, con el campo para escribir la nueva extensión](../assets/images/faq-agentes-cuentas-y-supervision/extension-autoadaptable-conflicto-ip.jpg)
+
 ### ¿Cómo hago que el sistema sepa para qué aplicación está marcando un agente cuando usa la extensión directamente?
 
 Un mismo grupo de agentes puede corresponder a varias aplicaciones/módulos. Si el agente marca directo desde su extensión (sin pasar por el panel de una tarea), el sistema no sabe a qué aplicación asociar la llamada. Para resolverlo:
@@ -87,6 +89,12 @@ Hay cuatro formas por las que un cliente queda asignado a un agente:
 Si un cliente quedó **sin asignar** (por ejemplo, se importó duplicado sin distribuir, el marcador predictivo lo envió a un agente pero nadie contestó, y luego otro agente le hizo un callback manual guardando los datos vía pop-up), el sistema **no** reasigna automáticamente la propiedad — sigue apareciendo con número de agente `0`.
 
 **Solución:** en **Marketing outbound → Tareas de marketing outbound**, abre la tarea correspondiente, ve a **Datos básicos → Asignación manual de tareas**, busca el número y asígnalo manualmente al agente.
+
+![Pantalla de asignación manual de clientes, con filtros de búsqueda y el campo para indicar a qué número de agente asignar los registros encontrados](../assets/images/faq-agentes-cuentas-y-supervision/asignacion-manual-tarea.jpg)
+
+La opción "**Agent Get Customer**" en la configuración avanzada de la tarea es la que habilita el botón de "obtener" con el que un agente toma clientes activamente (la segunda de las cuatro formas de asignación listadas arriba):
+
+![Configuración avanzada de una tarea de campaña, con el campo "Agent Get Customer" en Sí y los límites de clientes por obtención](../assets/images/faq-agentes-cuentas-y-supervision/campana-agente-obtener-cliente.png)
 
 ### No puedo guardar una extensión o un agente nuevo
 
@@ -134,6 +142,8 @@ La visibilidad de columnas en el detalle de servicio del agente se guarda como u
 
 Edita la tarea de marketing outbound específica y ajusta los **campos mostrados en frontend**. En versiones nuevas del sistema este panel está limitado a mostrar como máximo **5 campos** (las versiones antiguas no tenían este límite).
 
+![Configuración de campos de una tarea, con casillas de Ver, Editar y Requerido por cada campo](../assets/images/faq-agentes-cuentas-y-supervision/configurar-campos-visibles-tarea.jpg)
+
 ### El pop-up de pantalla (screen pop) no se comporta como se espera
 
 Un causante frecuente y fácil de pasar por alto: verifica que la **zona horaria de PHP** coincida con la **zona horaria del sistema operativo**. Un desfase entre ambas puede alterar el comportamiento del pop-up.
@@ -149,6 +159,9 @@ Pasos (ejemplo: mover al agente 8000 del grupo B al grupo A):
 1. Agrega el agente 8000 al grupo A.
 2. En **Gestión de clientes individual**, selecciona la tarea correspondiente al grupo B y asigna todos los clientes del agente 8000 al grupo A.
 3. En el diálogo de confirmación, marca **"conservar estado del agente"** y **"conservar estado de procesamiento"**.
+
+![Diálogo "Assign By Conditions" con las casillas "Keep Agent" y "Keep Status" marcadas](../assets/images/faq-agentes-cuentas-y-supervision/transferir-clientes-entre-grupos.jpg)
+
 4. Una vez completada la asignación, elimina al agente 8000 del grupo B.
 
 ## Tarifas y niveles de facturación
@@ -163,6 +176,8 @@ Ver el detalle completo de configuración en [4.4 Tarifas y facturación](../mod
 | Equipo (Team) | Precio de venta al equipo/cliente — factura al equipo por su consumo | Solo lectura para un administrador de equipo |
 | Extensión (Cliente/Device) | Tarifa aplicada al usuario final; si no se selecciona un "grupo de cuentas", aplica a cualquier dispositivo | Determina también qué troncal usar según el número marcado |
 | Agente (llamadas entrantes) | Pago al agente por cada llamada entrante atendida — típico para liquidar agentes freelance o part-time | Se define por grupo de agentes, o por agente específico dentro del grupo |
+
+![Formulario para agregar una tarifa de agente: sin prefijo ni longitud de número, solo destino, cargos y el grupo de agentes/agente al que aplica](../assets/images/faq-agentes-cuentas-y-supervision/tarifa-agente-formulario.jpg)
 
 Cada tarifa (salvo la de agente) se puede acotar por **prefijo del número marcado**, **longitud del número**, **destino** (nombre descriptivo), **cargo de conexión**, **duración inicial**, **tarifa por minuto**, **bloque de facturación** y **troncal a facturar**.
 
