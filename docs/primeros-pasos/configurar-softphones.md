@@ -33,10 +33,23 @@ Antes de configurar cualquier softphone, abre en AsterCC **PBX → Gestión de d
 
 1. Descarga e instala Eyebeam (el sitio del fabricante lo distribuye como parte de sus productos SIP).
 2. Clic derecho sobre la ventana de Eyebeam → **SIP Account Settings** → botón **Add** para crear una cuenta SIP nueva.
+
+   ![Ventana de cuentas SIP de Eyebeam, con la lista de cuentas y el botón Add para crear una nueva](../assets/images/configurar-softphones/sip-accounts-lista.png)
+
 3. Completa el formulario con los cuatro datos de la tabla anterior (`Display Name`, `User Name`, `Password`, `Domain`) y confirma.
+
+   ![Formulario de propiedades de la cuenta SIP en Eyebeam, con los campos Display Name, User name, Password, Authorization user name y Domain resaltados](../assets/images/configurar-softphones/eyebeam-propiedades-cuenta-sip.jpg)
+
 4. Marca la casilla de la cuenta para activarla — a diferencia de X-Lite, Eyebeam soporta **múltiples cuentas SIP simultáneas** y puedes agregar más en cualquier momento con **Add**. También soporta el códec **g729**.
 5. Si el registro fue exitoso, el softphone muestra el estado **Ready**.
+
+   ![Eyebeam en estado Ready tras un registro exitoso, mostrando el nombre de usuario registrado](../assets/images/configurar-softphones/eyebeam-registro-exitoso.png)
+
 6. Ya puedes marcar otras extensiones directamente y recibir llamadas — la información del llamante aparece en pantalla al timbrar.
+
+   ![Eyebeam mostrando una llamada entrante con las opciones Answer e Ignore](../assets/images/configurar-softphones/eyebeam-llamada-entrante.png)
+
+   ![Diagrama de las teclas de función de Eyebeam: volumen de micrófono y audífono, silencio, respuesta automática, historial de llamadas, colgar, entre otras](../assets/images/configurar-softphones/eyebeam-teclas-de-funcion.png)
 
 ### X-Lite
 
@@ -45,6 +58,9 @@ Antes de configurar cualquier softphone, abre en AsterCC **PBX → Gestión de d
 3. Al iniciar X-Lite por primera vez se abre automáticamente la ventana de **SIP Account Settings** (o ábrela manualmente).
 4. Completa el formulario: `User ID` y `Authorization` (ambos con el identificador `equipo-extensión`), `Domain` (IP interna del servidor), `Password` y `Display Name`.
 5. Confirma con **OK**. Si el registro fue exitoso, el softphone se muestra disponible para llamar.
+
+   ![X-Lite en estado Ready tras un registro exitoso](../assets/images/configurar-softphones/xlite-registro-exitoso.png)
+
 6. A diferencia de Eyebeam, X-Lite solo soporta **una cuenta SIP** activa a la vez.
 
 ### Zoiper
@@ -55,6 +71,8 @@ Antes de configurar cualquier softphone, abre en AsterCC **PBX → Gestión de d
 4. Completa el formulario: `Domain` (IP interna del servidor), `Username` (identificador `equipo-extensión`), `Password`, y `Caller ID Name` (número de extensión).
 5. Confirma. Si el registro fue exitoso, el estado pasa a **Registered**.
 6. Ya puedes recibir llamadas de otras extensiones, marcar directamente por número, y ver la información de quien llama.
+
+   ![Diagrama de las teclas de función de Zoiper: botón de marcado, responder/colgar, historial, opciones y volumen de micrófono y audífono](../assets/images/configurar-softphones/zoiper-teclas-de-funcion.png)
 
 ## Referencia rápida
 

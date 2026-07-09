@@ -49,6 +49,8 @@ En **Marcador → Configuración del marcador**, el administrador define, por eq
 - El **límite de concurrencia máxima** de ese equipo (`-1` = sin límite propio, hereda el de licencia; `0` = concurrencia deshabilitada para ese equipo).
 - La **regla de marcado** permitida en el panel: ambas estrategias disponibles a elección del operador, o forzar únicamente una de las dos.
 
+![Listado "Dialer Setting" por equipo: Team ID, Team Name, Max Dialer Concurrent (o "No Limitation") y Dial Rules](../assets/images/marcador-predictivo-avanzado/configuracion-marcador-por-equipo.jpg)
+
 !!! tip
     La suma de los límites de concurrencia de todos los equipos no puede superar el límite de licencia del sistema — si todos los equipos se dejan en `-1`, el sistema reparte dinámicamente hasta el máximo de licencia.
 
@@ -65,6 +67,8 @@ Disponibles al marcar "configuración avanzada" en una tarea. El objetivo de tod
 | Tiempo promedio de espera del cliente en cola | Clientes ya contestados con menos tiempo de espera que este valor se consideran "todavía viables" y se restan de la próxima tanda a marcar |
 | Duración promedio de llamada / gestión posterior | Predicen cuándo un agente en llamada o en ACW estará libre |
 | Umbral y proporción de "llamada corta" | Define qué se considera una llamada corta (cliente poco cooperativo) y su proporción esperada sobre el total — refina la predicción de cuándo un agente vuelve a estar libre |
+
+![Fila de parámetros avanzados de una tarea, numerada: (1) Dial Limit, (2) Dialer Interval, (3) Answered Rate, (4) Answered Ringing, (5) Customer Waiting, (6) Talking Time, (7) ACW Time, (8) Short Call Time, (9) Short Call ACW Time, (10) Short Call Rate](../assets/images/marcador-predictivo-avanzado/parametros-avanzados-prediccion.png)
 
 ### Fórmulas de predicción
 
@@ -99,16 +103,28 @@ La **lista de marcación** es una copia de trabajo del paquete de clientes, excl
 - **Recuperación manual:** por selección puntual o por condición de búsqueda (ej. estado = pendiente + estado de marcado = contestado por el cliente) — con campo de teléfono a usar, prioridad, y hora de marcado.
 - **Filtro de recuperación automática:** programa una recuperación recurrente con condiciones guardadas (ej. "estado = sin procesar Y estado de marcado = timbrando cliente Y intentos ∈ {1,2}"), con horario tipo cron y ejecución inmediata opcional (útil si la lista se vació antes de la hora programada). El **log de filtros** registra cada corrida: inicio, fin, SQL generado, y cantidad recuperada — útil para auditar por qué la lista se vació o se llenó en cierto momento.
 
+![Búsqueda de clientes en la lista de marcación por "Recognition Result", con flecha señalando el filtro de búsqueda hacia el botón "Recycle" para recuperar los resultados encontrados](../assets/images/marcador-predictivo-avanzado/filtro-recuperacion-resultado-reconocimiento.png)
+
 !!! warning
     Solo se puede eliminar de la lista de marcación un cliente cuyo estado de marcado sea "pendiente" (aún no intentado) — el resto se depura automáticamente. Para depuraciones o recuperaciones masivas, se recomienda acotar la condición de búsqueda para procesar en tandas de no más de ~5,000 registros por operación, evitando timeouts.
+
+![Log de filtros: nombre del filtro, hora de inicio (Schedule), hora de fin (End Time), total procesado (Total) y cantidad exitosa (Successed)](../assets/images/marcador-predictivo-avanzado/log-filtros-recuperacion.jpg)
 
 ### Motivos de no conexión (detección de números inválidos)
 
 Con la **grabación de llamadas en "todas"** activada a nivel de equipo, el sistema puede clasificar por qué un número no conectó (apagado, fuera de servicio, número inexistente, etc.) — útil para depurar bases de datos de baja calidad. Se consulta por tarea, y también aparece en el registro de llamadas de PBX para marcaciones manuales.
 
+![Formulario de edición de equipo con el campo "Rec Condition" en "All" — prerrequisito para que el sistema clasifique los motivos de no conexión](../assets/images/marcador-predictivo-avanzado/equipo-grabacion-llamadas-todas.png)
+
+![Lista de clientes de la tarea con la columna "Recognition Result" mostrando valores como "Agent Failed" y "Call Callee"](../assets/images/marcador-predictivo-avanzado/lista-resultados-reconocimiento-llamada.png)
+
+![Gráficos circulares de "Dialer Noanswer Cause" por campaña, con la distribución de motivos de no conexión (CALLING, ERROR, EMPTY, POWEROFF, UNSERVICE)](../assets/images/marcador-predictivo-avanzado/estadisticas-motivos-no-conexion.png)
+
 ### Estadísticas específicas de predictivo
 
 Reporte generado una vez al día (00:00, sobre el día anterior) por tarea, o bajo demanda para el día en curso. Distribuciones incluidas:
+
+![Selector de reporte de predictivo: equipo, campaña, tipo de estadística (ej. "Callee waitsec") y fecha, con la tabla resultante de tiempos y porcentajes](../assets/images/marcador-predictivo-avanzado/selector-tipo-estadistica-predictivo.jpg)
 
 | Distribución | Qué mide |
 |---|---|
@@ -119,6 +135,8 @@ Reporte generado una vez al día (00:00, sobre el día anterior) por tarea, o ba
 | Duración de gestión posterior (ACW) por estado final | Igual, pero el tiempo de trabajo posterior a colgar |
 | Sin guardar | Llamadas conectadas donde el agente no guardó resultado |
 | Distribución global | Porcentaje de: no conectadas, abandonadas, exitosas, fallidas, en seguimiento, sin guardar — todas sobre el total de marcaciones |
+
+![Reporte "Distribute Rate Statistical": No Answer, giveup, success, failed, pending y No Save, con cantidad y porcentaje de cada uno](../assets/images/marcador-predictivo-avanzado/distribucion-global-resultados.jpg)
 
 ## Referencia rápida
 

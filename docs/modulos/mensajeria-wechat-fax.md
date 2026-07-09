@@ -60,6 +60,8 @@ Reglas de WeChat: máximo 3 menús de primer nivel (4 caracteres cada uno) con h
 
 Todos los cambios de menú quedan en borrador hasta hacer clic en **Publicar** — se pueden armar varios cambios (crear, editar, reordenar, eliminar) y publicar todos juntos al final.
 
+![Pantalla de gestión del menú de WeChat: selección de cuenta, administración de menús y configuración de la acción, con los botones Publicar y Restablecer](../assets/images/mensajeria-wechat-fax/wechat-menu-gestion.jpg)
+
 ### Fax — dispositivos y envío
 
 **Dar de alta un dispositivo de fax** (**Fax → Gestión de dispositivos**):
@@ -97,17 +99,25 @@ Solo se aceptan archivos `.doc`, `.docx` o `.pdf` (se convierten automáticament
 1. **Origen de los clientes a contactar:**
    - La tabla general de clientes individuales, filtrando por **etiqueta**, o
    - Un archivo importado específicamente para envío masivo (vía **Administración avanzada del call center → Importación**, tabla "clientes de envío masivo") — el archivo debe incluir el destino (teléfono o correo), los valores para las variables de la plantilla, y una etiqueta que identifique ese lote.
+![Vista previa del archivo importado con el mapeo de columnas a las variables de la plantilla (phone, param0, param1...)](../assets/images/mensajeria-wechat-fax/envio-masivo-mapeo-variables.jpg)
+
 2. **Armar el envío** (**Mensajería → Envío masivo**):
    - Elige método de envío (SMS o correo) y la tabla origen.
    - Elige la etiqueta — el sistema muestra cuántos de esos clientes tienen destino válido (teléfono/correo) frente al total de la etiqueta.
    - Si el origen es la tabla general, hay que mapear qué campo de esa tabla llena cada variable de la plantilla, y cuál es el campo `target` (destino).
    - Elige la **plantilla**, previsualizada con los datos reales del primer cliente.
    - Confirma cantidad estimada de envíos, fecha/hora programada, y —si es correo— el servidor de correo a usar.
+![Listado de contactos por lote pendientes de envío, con estado de error y filtros de búsqueda](../assets/images/mensajeria-wechat-fax/contactos-por-lote-pendientes.jpg)
+
 3. Tras enviar, el lote queda visible en **contactos por lote** (`batchcontacts`) mientras está pendiente, en proceso, o si falló — funciona como bitácora de trabajo; una vez enviado con éxito, el sistema mueve el registro a **contactos por lote enviados** (`batchcontact sents`), y de ahí a **archivos** (`archives`), la vista de solo lectura donde queda visible qué servidor de correo se usó, qué plantilla, qué adjunto (si aplica) y el contenido final enviado. Un mensaje fallido puede reintentarse editando su registro en "contactos por lote" y cambiando el estado a "Nuevo".
 
 ### Plantillas de mensajes
 
 Las **plantillas** (**Mensajería → Plantillas**) evitan escribir el mismo texto cada vez que se envía un SMS, correo o fax. El sistema trae plantillas predefinidas para las notificaciones automáticas del sistema (tareas, facturas, buzón de voz) — se pueden editar directamente, o crear una nueva y deshabilitar la original para que el sistema use la nueva a partir de ese momento.
+
+![Listado de plantillas de mensajes, con nombre, estado, objetivo y equipo](../assets/images/mensajeria-wechat-fax/plantillas-listado.jpg)
+
+![Formulario para agregar una plantilla: nombre, tipo, objetivo, idioma, comodines, asunto, MIME, estado y contenido](../assets/images/mensajeria-wechat-fax/plantilla-agregar.jpg)
 
 | Campo | Qué controla |
 |---|---|
@@ -131,7 +141,14 @@ Las **plantillas** (**Mensajería → Plantillas**) evitan escribir el mismo tex
 Dos canales de comunicación interna, distintos de los canales orientados al cliente:
 
 - **Mensajes internos** (**Mensajería → Mensajes internos**): mensajería punto a punto entre cuentas del sistema — se elige uno o varios destinatarios, se escribe asunto y contenido (con opción de usar una plantilla), y se envía. El destinatario ve un aviso de mensaje nuevo; el mensaje enviado queda visible tanto en **Mensajes internos → enviados/recibidos** (con estado leído/no leído, que cambia automáticamente al abrir el mensaje) como en **Archivos**.
+
+  ![Formulario para enviar un mensaje interno: destinatario, título, contenido y lista de cuentas/agentes disponibles](../assets/images/mensajeria-wechat-fax/enviar-mensaje-interno.jpg)
+
+  ![Listado de mensajes internos con asunto, contenido, remitente, destinatario y estado leído/no leído](../assets/images/mensajeria-wechat-fax/mensajes-internos-listado.jpg)
+
 - **Avisos** (**Mensajería → Avisos**): boletines internos con alcance configurable — sin equipo ni grupo, lo ve toda la organización; con equipo pero sin grupo, lo ve todo el equipo; con equipo y grupo, solo ese grupo; también puede dirigirse a cuentas específicas arrastrándolas de la lista de disponibles a la de seleccionadas. El contenido se escribe con un editor HTML (WYSIWYG). El estado puede ser **deshabilitado** (nadie lo ve), **abierto** (aparece en orden cronológico inverso) o **fijado** (aparece siempre arriba; si hay varios avisos fijados, se ordenan por fecha de publicación entre ellos). Al publicar o fijar un aviso, el sistema notifica a las cuentas con acceso.
+
+  ![Formulario para agregar un aviso: título, estado, objetivo, equipo, grupo y contenido en editor HTML](../assets/images/mensajeria-wechat-fax/aviso-agregar.jpg)
 
 ### Servidor de correo
 
@@ -148,6 +165,8 @@ Configura las cuentas de correo salientes usadas por el envío masivo, la plataf
 | SSL | Requerido por algunos proveedores (ej. Gmail) |
 | Usuario / contraseña | Solo si el tipo es SMTP — el formato de usuario varía por proveedor |
 | Botón de prueba | Verifica la conexión antes de guardar en firme |
+
+![Formulario para agregar un servidor de correo SMTP, con el botón de prueba de conexión confirmando el éxito](../assets/images/mensajeria-wechat-fax/servidor-correo-agregar.jpg)
 
 ### Servidor de SMS
 

@@ -35,9 +35,13 @@ Un **flujo principal** tiene número interno propio y puede tener múltiples **s
 | Guardar variables | Envía variables del flujo junto con los eventos de llamada hacia el agente o el sistema receptor de eventos |
 | Acción al colgar | Qué ejecutar si el cliente cuelga dentro del IVR — puede ser una llamada a webservice |
 
+![Formulario "Add Main Flow" para crear un flujo principal de IVR, con nombre, extensión, equipo, destino de fallo y timeout de webservice](../assets/images/pbx-ivr/crear-flujo-principal-ivr.png)
+
 ### 2. Configurar acciones dentro del nodo
 
 Un nodo de IVR ejecuta una o más acciones en orden. Tipos disponibles:
+
+![Menú desplegable "Action" dentro de un nodo de IVR, listando todos los tipos de acción disponibles: Answer, Play Announce, ReadData, Webservice, Send dtmf, Saynumber, Saydigits, Sayamount, Wait, Option, Record, Busy, Congestion, Hangup, Write File, Set Language](../assets/images/pbx-ivr/lista-tipos-de-accion-ivr.jpg)
 
 | Acción | Qué hace |
 |---|---|
@@ -69,6 +73,10 @@ Un nodo de IVR ejecuta una o más acciones en orden. Tipos disponibles:
 
 Parámetros comunes: cantidad de repeticiones, destino y voz de fallo, descripción.
 
+![Acción "Play Announce" con fuente de audio "System": tipo de anuncio, anuncio a reproducir y cantidad de repeticiones](../assets/images/pbx-ivr/accion-reproducir-voz-sistema.jpg)
+
+![Acción "Play Announce" con fuente de audio "Webservice": dirección WS, función WS, parámetros WS, ruta de voz local y repeticiones](../assets/images/pbx-ivr/accion-reproducir-voz-webservice.jpg)
+
 #### Reproducir y capturar dígitos — parámetros específicos
 
 | Campo | Qué controla |
@@ -79,6 +87,8 @@ Parámetros comunes: cantidad de repeticiones, destino y voz de fallo, descripci
 | Voz / repetir menú en timeout | Qué reproducir y si reinicia el menú cuando se agota el tiempo sin input |
 | Voz / repetir menú en error | Igual, pero cuando la entrada no cumple el mínimo de dígitos |
 | Verificar origen de transferencia | — |
+
+![Acción "ReadData" con anuncio de sistema, cantidad de repeticiones, máximo de dígitos, timeout y variable donde se guarda la entrada](../assets/images/pbx-ivr/accion-capturar-digitos-parametros.jpg)
 
 La captura también termina si el cliente presiona `#` (tecla de fin reservada — no debe asignarse como opción de menú).
 
@@ -95,6 +105,8 @@ WS Parámetros: callerid|sessionid|CURLANG|[abc.txt]|CARDNO
 - El **valor de retorno** del webservice debe ser un string; si trae varios valores, van separados por `|` y el primero se guarda automáticamente en `inputcode`.
 - El campo **"valor de retorno"** define un nombre (en mayúsculas) para cada valor devuelto, en el mismo orden.
 - El campo **"variable global"** promueve uno o más de esos valores a variables reutilizables en todo el flujo (no solo el nodo actual).
+
+![Acción "Webservice" con dirección WS, función WS, parámetros WS (agentno, TEAMID, AGENTGROUPID, sessionid, inputcode, callerid, MODELTYPE, MODELID), valor de retorno WS y variable global](../assets/images/pbx-ivr/accion-webservice-parametros.jpg)
 
 **Variables internas disponibles:**
 
@@ -149,7 +161,17 @@ Tras capturar una entrada (o el resultado de un webservice), se define a dónde 
 | Enviar DTMF | Envía tonos DTMF antes de continuar (además de existir como acción de nodo) |
 | Solicitud de devolución de llamada | Guarda el número que llama y genera una solicitud de rellamada (callback) que se envía a los agentes |
 
+![Pestaña "Transfer" de un nodo con destino "Extension": condición, entrada de transferencia (Trans From) y ActionID de la extensión destino](../assets/images/pbx-ivr/destino-transferir-extension.png)
+
+![Pestaña "Transfer" de un nodo con destino "Queue": condición y ActionID de la cola destino, con la opción "Skip Circular Queue"](../assets/images/pbx-ivr/destino-transferir-cola.png)
+
+![Pestaña "Transfer" con destino "IVR": encadena la respuesta del cliente a otro flujo de IVR (ActionID = docivr), para armar menús anidados](../assets/images/pbx-ivr/destino-otro-ivr-anidado.jpg)
+
+![Pestaña "Transfer" con destino "Request CallBack": selección del objeto (Campaign o Customerservice) al que se envía la solicitud de devolución de llamada](../assets/images/pbx-ivr/destino-solicitud-devolucion-llamada.jpg)
+
 Cuando el destino es "voz de entrada", hay opciones adicionales para encadenar una **acción posterior** (anunciar dígitos/número/monto usando el valor obtenido), una **voz de retorno** (ej. *"para regresar al menú anterior, marque *"*), y una **voz posterior** (ej. *"para repetir, marque 1"*) — todas pensadas para mejorar la experiencia cuando el flujo lee en voz alta un dato dinámico.
+
+![Pestaña "Transfer" con destino "Announce": reproduce una locución tras capturar la entrada, pensado para leer en voz alta un resultado dinámico](../assets/images/pbx-ivr/destino-voz-de-entrada.jpg)
 
 ### 4. Ejemplo completo — consulta de licencias por número de serie
 
@@ -178,6 +200,8 @@ Objetivo: *"Bienvenido, para consultas de producto marque 1, para soporte técni
 | El webservice nunca recibe la llamada | Revisar la dirección/método configurados, restricciones de red/firewall entre el servidor y el webservice, o probar el servicio de forma aislada |
 | El cliente presiona teclas y el IVR no avanza | Revisar el modo DTMF en la [plantilla de la extensión](pbx-funciones-avanzadas.md#plantillas-de-pbx) (llamadas internas) o del troncal (llamadas externas) — debe coincidir con lo que espera el operador/dispositivo |
 | La llamada se corta sin reproducir la voz esperada | Confirmar que el archivo de voz configurado en ese nodo realmente existe |
+
+![Consola de depuración de Asterisk mostrando la ejecución del dialplan de un IVR: entrada del cliente ("User entered '1111'") y reproducción de la locución correspondiente](../assets/images/pbx-ivr/log-depuracion-ivr-consola.png)
 
 ## Referencia rápida
 

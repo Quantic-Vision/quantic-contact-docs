@@ -26,6 +26,8 @@ Al iniciar sesión con una cuenta de administrador, la pantalla se divide en tre
 - **Zona izquierda:** menú de funciones — varía según los permisos del usuario que inició sesión.
 - **Zona derecha:** área principal de trabajo, donde se muestran listados y formularios.
 
+![Menú de funciones a la izquierda y área principal de trabajo a la derecha, en la pantalla de configuración rápida](../assets/images/recorrido-interfaz/interfaz-administracion-menu-y-area-trabajo.jpg)
+
 Acciones comunes disponibles en la mayoría de las pantallas de listado:
 - **Buscar:** expande o contrae el panel de búsqueda.
 - **Restablecer:** limpia los criterios de búsqueda ingresados.
@@ -35,6 +37,10 @@ Acciones comunes disponibles en la mayoría de las pantallas de listado:
 ### Interfaz del agente
 
 Al iniciar sesión como agente se muestra la plataforma de trabajo, con estos elementos principales:
+
+![Pantalla de inicio de sesión de la interfaz del agente](../assets/images/recorrido-interfaz/interfaz-agente-login.jpg)
+
+![Barra de funciones de la plataforma del agente con el botón de inicio de sesión en cola resaltado](../assets/images/recorrido-interfaz/agente-boton-iniciar-sesion-cola.jpg)
 
 | Elemento | Función |
 |---|---|
@@ -62,6 +68,8 @@ Se abre desde "Mi grupo de agentes". Por cada grupo al que pertenece el agente a
 - Iniciar/cerrar sesión y pausar/reanudar ese grupo específicamente.
 - El modo de gestión posterior aplicable a ese grupo (al timbrar, al contestar, o deshabilitado).
 
+![Panel de grupo de agentes con la fila del grupo "Customer Service" resaltada](../assets/images/recorrido-interfaz/panel-grupo-agentes.jpg)
+
 ### Panel de marcación
 
 Se abre con el botón de marcación. Permite:
@@ -76,6 +84,8 @@ Se abre con el botón de marcación. Permite:
 
 Se abre con el botón de cola y muestra las colas a las que pertenece el agente, con controles para iniciar/cerrar sesión y pausar/reanudar cada una individualmente o todas a la vez, y el estado actual (libre, ocupado al timbrar, ocupado al contestar).
 
+![Diálogo para pausar el servicio, con selección del motivo de pausa](../assets/images/recorrido-interfaz/dialogo-pausa-motivo.jpg)
+
 ### Monitoreo y supervisión
 
 AsterCC ofrece monitoreo en dos niveles: el administrador (o cualquier cuenta con permiso) ve el sistema completo; el **administrador del grupo de agentes** ("jefe de equipo") ve y actúa solo sobre su propio grupo.
@@ -89,6 +99,8 @@ AsterCC ofrece monitoreo en dos niveles: el administrador (o cualquier cuenta co
 | Usuarios conectados actualmente | Lo mismo, para cuentas de usuario (no agentes). |
 | Información de uso del sistema | Uso agregado del sistema completo y por equipo. |
 
+![Monitoreo de grupos de agentes en tiempo real: check-in, libres, timbrando, en conversación y en pausa por grupo](../assets/images/recorrido-interfaz/monitoreo-grupos-agentes-tiempo-real.jpg)
+
 En el panel de grupo de agentes de la plataforma del agente, los colores indican el estado: **amarillo** = libre, **azul claro** = timbrando, **rojo** = en llamada.
 
 **Vista de jefe de equipo — control sobre su grupo:**
@@ -100,6 +112,8 @@ Al hacer clic sobre un agente de su grupo, el jefe de equipo puede ejecutar (seg
 - **Forzar ocupado:** pone al agente en pausa de inmediato, sin que pueda recibir llamadas.
 - **Forzar libre:** saca al agente de pausa para que vuelva a recibir llamadas.
 - **Forzar cierre de sesión:** saca al agente de la cola (no disponible si el agente está fijo en ese grupo).
+
+![Panel de acciones del jefe de equipo sobre una llamada de un agente: colgar, espiar, intervenir, susurrar y forzar liberación](../assets/images/recorrido-interfaz/panel-acciones-jefe-equipo.jpg)
 
 Estas acciones requieren un número de extensión desde el cual se ejecutan — por defecto, la extensión del propio jefe de equipo.
 
@@ -113,6 +127,8 @@ Sin necesidad de entrar al módulo avanzado de reportes, estos son los más cons
 |---|---|
 | Servicio de agentes | Parámetros de un agente en un rango de fechas — por todas sus tareas de marcación saliente, o solo una. |
 | Detalle de IVR | Cada llamada que entró a un IVR: número que llama, DID, tiempo dentro del IVR, y a dónde salió. |
+
+![Listado de registros de llamada de un agente (CDR), con filtros de búsqueda y descarga de grabación](../assets/images/recorrido-interfaz/reporte-detalle-llamadas-agente.jpg)
 | Detalle de llamadas entrantes / salientes | Detalle y volumen de llamadas por agente o por extensión. |
 | Servicio de grupo de agentes | Estadísticas de un grupo de agentes en un rango de fechas (solo datos de telefonía — el detalle de negocio está en el reporte del módulo correspondiente). |
 | Resumen de llamadas salientes | Totales de llamadas salientes por extensión, agente o cuenta. |

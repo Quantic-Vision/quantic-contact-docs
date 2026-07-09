@@ -30,11 +30,16 @@ En **Encuestas → Gestión de encuestas → Agregar**, define:
 | Copiar de encuesta existente | Permite clonar grupos, preguntas y opciones de otra encuesta como punto de partida |
 | Saludo / cierre | Texto (o audio) que el agente usa para introducir y cerrar la encuesta |
 
+![Formulario de creación de encuesta con equipo, tipo, cuota y nombre](../assets/images/encuestas/crear-encuesta-formulario.png)
+
 Una encuesta queda en estado **libre** hasta que una campaña o el módulo de atención al cliente la selecciona — en ese momento pasa a **asignada** y no puede ser tomada por otra tarea al mismo tiempo.
 
 ### 2. Definir grupos y preguntas
 
 - **Grupos de preguntas:** agrupan preguntas relacionadas (ej. "filtro", "cuerpo", "datos del cliente"); pueden mostrarse en orden aleatorio.
+
+  ![Configuración de un grupo de preguntas con orden aleatorio](../assets/images/encuestas/grupo-de-preguntas.png)
+
 - **Tipos de pregunta:**
 
 | Tipo | Comportamiento |
@@ -43,6 +48,16 @@ Una encuesta queda en estado **libre** hasta que una campaña o el módulo de at
 | Opción múltiple | Varias respuestas, con mínimo/máximo configurable |
 | Combinada | Varias sub-preguntas que comparten el mismo set de opciones (tipo matriz) |
 | Texto libre | Campo abierto para respuestas largas |
+
+![Formulario para agregar una pregunta de opción, con grupo, tipo, obligatoriedad y referencia a datos del cliente](../assets/images/encuestas/agregar-opcion-pregunta.png)
+
+Al agregar las opciones de respuesta de una pregunta de opción única o múltiple, cada opción se configura como un ítem independiente (texto de la opción, si lleva campo de texto adicional, y si se reemplaza por otro valor al exportar):
+
+![Formulario para agregar un ítem de respuesta a una pregunta de opción](../assets/images/encuestas/agregar-item-respuesta.png)
+
+Para preguntas de tipo combinada (varias sub-preguntas con el mismo set de opciones, en forma de matriz), se configuran filas (sub-preguntas) y columnas (opciones) por separado:
+
+![Configuración de una pregunta combinada tipo matriz, con filas de sub-preguntas y columnas de opciones](../assets/images/encuestas/pregunta-combinada.png)
 
 - **Referenciar datos del cliente:** una pregunta puede autocompletarse con un dato ya existente en la ficha del cliente (por ejemplo, si el campo "marca de auto" del cliente es "Toyota", la opción correspondiente se marca sola). Se puede permitir o no que el agente edite esa respuesta autocompletada. La tabla de clientes disponible para referenciar depende de a qué módulo de negocio está atada la encuesta (campaña saliente, atención al cliente, etc.) — dentro de esa tabla se elige el campo concreto cuyo valor completa la respuesta.
 
@@ -60,9 +75,13 @@ Permite saltar preguntas, ocultar preguntas u ocultar opciones según respuestas
 3. Define la acción: **saltar a otra pregunta**, **ocultar una pregunta**, u **ocultar una opción**.
 4. Define el objetivo de esa acción.
 
+![Configuración de una condición lógica: pregunta disparadora, respuestas, acción y pregunta destino](../assets/images/encuestas/logica-condicional.png)
+
 Usa la función de **vista previa de encuesta** para simular el recorrido de un agente y validar que la lógica funciona como se espera.
 
 ### 5. Cuotas
+
+![Botón "Quotation" en la pantalla de edición de encuesta, habilitado cuando ClosedQuota está en No](../assets/images/encuestas/boton-cuotas.png)
 
 Solo disponibles si la encuesta tiene la cuota activada. Sirven para dejar de encuestar sobre un segmento una vez alcanzado un número de respuestas — evita gastar tiempo de agente en cuotas ya cubiertas. Dos formas de definir una cuota:
 
@@ -74,6 +93,8 @@ Cada cuota admite un **margen de sobrecupo** (por cantidad o porcentaje) para ab
 ### 6. Ver y exportar resultados
 
 1. Ve a **Marketing outbound → Control de calidad**, elige la tarea de campaña y la encuesta asociada, y busca.
+
+   ![Pantalla de control de calidad de campaña con filtros de agente, teléfono, estado y resultado](../assets/images/encuestas/control-de-calidad-campana.png)
 2. Solo se contabilizan clientes en estado "enviado con éxito" o "enviado con error".
 3. Para exportar, elige el formato, agrega la tarea de exportación con su horario de ejecución, y descárgala luego desde **Administración avanzada del call center → Gestión de archivos exportados**.
 
@@ -82,7 +103,12 @@ Cada cuota admite un **margen de sobrecupo** (por cantidad o porcentaje) para ab
 Ciertos sets de opciones se repiten constantemente entre encuestas (escalas de puntaje, niveles de satisfacción, género, etc.). En vez de escribirlas cada vez, se arma una **plantilla de opciones** reutilizable:
 
 1. En **Encuestas → Plantillas de opciones → Agregar**, define un nombre descriptivo (ej. "satisfacción 5 niveles", "puntaje 1-10 ascendente").
+
+   ![Formulario para agregar una plantilla de opciones, solo con el nombre](../assets/images/encuestas/plantilla-opciones-agregar.png)
+
 2. Dentro de la plantilla, agrega cada opción con: **texto de la opción**, si lleva **campo de texto adicional** (ej. "otro — especifique"), el **valor de exportación** (para convertir texto a un puntaje numérico al exportar), y una **nota** visible solo para el agente.
+
+   ![Formulario para agregar cada respuesta de la plantilla, con texto, texto adicional y valor de exportación](../assets/images/encuestas/plantilla-opciones-respuestas.png)
 3. Al crear una pregunta de opción única/múltiple/combinada en cualquier encuesta, se puede **importar** esta plantilla completa en vez de tipear las opciones una por una.
 
 ### 8. Distribución y avance de respuestas
@@ -93,6 +119,10 @@ En **Encuestas → Distribución de encuesta**, se elige la tarea de campaña y 
 |---|---|
 | Resultado de la encuesta | Cuántas veces se eligió cada opción de cada pregunta, y su porcentaje sobre el total de respuestas |
 | Avance de finalización | Cuántas encuestas se completaron por día, en un rango de fechas |
+
+![Estadística de resultado de encuesta: cantidad de respuestas por opción de cada pregunta](../assets/images/encuestas/distribucion-resultado-encuesta.jpg)
+
+![Estadística de avance de finalización: encuestas completadas por día en un rango de fechas](../assets/images/encuestas/distribucion-avance-finalizacion.jpg)
 
 Ambos se pueden filtrar por estado: **aprobado en control de calidad**, **enviado con éxito** (según el agente), o **enviado con error** (según el agente) — útil para separar el avance "bruto" del agente de lo que realmente pasó la revisión de calidad.
 
