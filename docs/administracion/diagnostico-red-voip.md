@@ -44,6 +44,8 @@ ngrep -deth0 -qWbyline "^REGISTER" port 5060
 ngrep -W byline -d eth0 port 5060 -O capture_file
 ```
 
+![Captura de ngrep mostrando un mensaje SIP REGISTER completo y la respuesta 401 Unauthorized](../assets/images/diagnostico-red-voip/ngrep-captura-registro-sip.jpg)
+
 !!! tip
     `ngrep` captura a un nivel anterior al firewall — si `ngrep` ve un paquete pero Asterisk no reacciona a él, el problema está en las reglas de `iptables`, no en la señalización SIP.
 
@@ -54,6 +56,8 @@ sip set debug on              # activa el volcado de mensajes SIP
 sip set debug ip <ip>         # acota a una IP específica
 sip set debug off             # desactiva
 ```
+
+![Consola de Asterisk mostrando el volcado completo de un mensaje SIP REGISTER con `sip set debug ip`](../assets/images/diagnostico-red-voip/asterisk-sip-debug-consola.jpg)
 
 ### Capturar y analizar una llamada completa con `tcpdump` + Wireshark
 
@@ -69,7 +73,13 @@ tcpdump -i any -s 65535 -w internal.pcap
 Con la captura corriendo, reproduce el problema (haz la llamada), luego `Ctrl+C` para detener. Descarga el archivo `.pcap` y ábrelo en [Wireshark](https://www.wireshark.org/download.html):
 
 1. Ve a **Telephony → VoIP Calls** — Wireshark agrupa automáticamente los paquetes por llamada.
+
+   ![Ventana VoIP Calls de Wireshark con 19 llamadas detectadas, mostrando origen, destino y estado (completada/rechazada) de cada una](../assets/images/diagnostico-red-voip/wireshark-voip-calls-lista.png)
+
 2. Selecciona una llamada y haz clic en **Flow** para ver un diagrama de la señalización SIP paso a paso.
+
+   ![Diagrama de flujo (Graph Analysis) de Wireshark mostrando la secuencia SIP completa de una llamada: INVITE, 100 Trying, 183 Session Progress, 180 Ringing, RTP y BYE](../assets/images/diagnostico-red-voip/wireshark-voip-calls-flow.png)
+
 3. Haz clic en cualquier paso del diagrama para ver el paquete IP correspondiente en detalle.
 
 ### Configurar SIP sobre TLS (registro cifrado)
@@ -77,15 +87,31 @@ Con la captura corriendo, reproduce el problema (haz la llamada), luego `Ctrl+C`
 Para que un teléfono IP se registre usando SIP sobre TLS en vez de UDP/TCP sin cifrar:
 
 1. En **Sistema → Configuración → Configuración general de SIP**, agrega `tls` al campo **transporte** (separado por coma si ya hay otro protocolo). Recarga para aplicar.
+
+   ![Página de configuración general de SIP en AsterCC con el campo transporte mostrando el valor udp,tls,tcp](../assets/images/diagnostico-red-voip/sistema-configuracion-sip-transporte-tls.png)
+
 2. Genera un certificado con el script de Asterisk:
    ```bash
    wget http://download3.astercc.org/ast_tls_cert
    chmod +x ast_tls_cert
    ./ast_tls_cert -C pbx.midominio.com -O "Mi Organización" -d /etc/asterisk/keys
    ```
+
+   ![Listado de /etc/asterisk/keys/ mostrando los archivos de certificado generados (asterisk.crt, asterisk.key, asterisk.pem, ca.crt, ca.key)](../assets/images/diagnostico-red-voip/certificado-tls-archivos-generados.png)
+
 3. Edita `sip.conf` para habilitar soporte TLS.
+
+   ![Fragmento de sip.conf con tlsenable=yes y tlscertfile=/etc/asterisk/keys/asterisk.pem resaltados](../assets/images/diagnostico-red-voip/sip-conf-tlsenable-tlscertfile.png)
+
 4. Sube el certificado de CA (`ca.crt`) al teléfono IP (ej. Yealink).
+
+   ![Panel Security de un teléfono Yealink cargando el archivo ca.crt como certificado confiable](../assets/images/diagnostico-red-voip/yealink-importar-certificado-ca.png)
+   ![Panel Security de Yealink mostrando el certificado "Asterisk Private CA" ya importado en la lista de certificados confiables](../assets/images/diagnostico-red-voip/yealink-certificado-confiable-importado.png)
+
 5. En el teléfono, cambia el transporte SIP a **TLS**.
+
+   ![Página Account de un teléfono Yealink con el campo Transport configurado en TLS](../assets/images/diagnostico-red-voip/yealink-cuenta-transporte-tls.png)
+
 6. Abre el puerto TCP 5060 en el firewall.
 
 ### Compartir grabaciones entre dos servidores con Samba

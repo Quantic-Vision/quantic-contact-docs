@@ -103,6 +103,8 @@ Mecanismo adicional, específico del módulo de **campañas** (marcación salien
 
 4. **Respuesta esperada:** el backend receptor debe permitir `POST` cross-domain (CORS) y devolver un JSON como `{"code": 1, "msg": "success"}` — si no responde así, el agente puede ver un error en el navegador aunque el envío haya funcionado.
 
+![Pestaña Avanzado de la configuración de campaña, con el campo Submit Post resaltado](../assets/images/eventos-tiempo-real-api/campana-submit-post-avanzado.png)
+
 !!! note "Solo disponible en la fuente en inglés"
     Este mecanismo no aparece documentado en la fuente china leída para esta página — proviene exclusivamente de `raw/en/custom_development_guide/how_to_post_customer_and_call_information_to_specific_url_in_campaign_model.txt`. Se incluye aquí (en vez de en una página nueva) porque es, en esencia, otra variante del mismo patrón "AsterCC hace POST hacia mi URL" ya cubierto en esta página, aplicada a datos de cierre de campaña en vez de a eventos de llamada en tiempo real.
 
@@ -118,19 +120,32 @@ Cuando el agente inicia sesión directamente en la interfaz de AsterCC (no en un
 ### Depurar la página de prueba de `http_push`
 
 1. Configurar en el equipo (menú **Cuentas y permisos → Gestión de equipos**, configuración avanzada): la cadena de validación (ej. `temp123`) y la dirección de envío de eventos (`127.0.0.1` si nginx corre en el mismo servidor). Reiniciar: `service asterccd restart`.
+
+   ![Configuración avanzada del equipo con los campos Push event key y API Domain resaltados](../assets/images/eventos-tiempo-real-api/config-equipo-push-event-key.jpg)
+
 2. Con un agente con sesión iniciada y en cola, abrir **Configuración → "http_push obtener eventos de llamada"** en la plataforma del agente.
+
+   ![Menú de la plataforma del agente con la opción "http_push get call events" resaltada](../assets/images/eventos-tiempo-real-api/menu-http-push-obtener-eventos.jpg)
+
 3. Para obtener eventos de **un solo agente**, completar `astercc_ip` (IP del servidor), `astercc_identity` (identificador del equipo), `astercc_agentno` (número de agente) y `astercc_pwd` (contraseña del agente **en MD5** — ej. la contraseña `temp123` en MD5 es `cca8dd8babd4c9996c8dfee788a49d18`).
 4. Para obtener los eventos de **todo el equipo**, no se indica número de agente, pero sí la cadena de validación (también en MD5).
 5. Iniciar la captura y originar una llamada desde el agente — los eventos deben aparecer en pantalla.
+
+   ![Página de prueba http_push mostrando los eventos de llamada recibidos en tiempo real para un agente](../assets/images/eventos-tiempo-real-api/prueba-http-push-eventos-recibidos.jpg)
 
 ### Probar la interfaz JavaScript (JS interface test)
 
 Con un agente con sesión iniciada y en cola:
 
 1. Abrir **Configuración → "Prueba de interfaz JS"** en la plataforma del agente.
+
+   ![Menú de la plataforma del agente con la opción "JS interface testing" resaltada](../assets/images/eventos-tiempo-real-api/menu-prueba-interfaz-js.jpg)
+
 2. Indicar la IP del servidor de AsterCC y pulsar "Fijar IP".
 3. Usar la sección de eventos para probar la recepción en vivo mientras el agente hace una llamada.
 4. Usar la sección de login (número y contraseña de agente) para probar las operaciones de la [API de integración](introduccion-api-integracion.md) directamente desde esta página.
+
+   ![Página de prueba de interfaz JS mostrando el resultado JSON de una prueba de login (loginCJI)](../assets/images/eventos-tiempo-real-api/prueba-js-login-resultado.jpg)
 
 Se recomienda depurar primero la página de prueba de `http_push` antes de esta, ya que comparten los mismos conceptos de eventos.
 

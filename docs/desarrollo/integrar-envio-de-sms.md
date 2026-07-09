@@ -94,7 +94,19 @@ AsterCC almacena los SMS que un agente redacta desde la [plataforma de trabajo](
 
 ### Verificar el envío (aplica a ambas opciones)
 
-Desde la plataforma de trabajo, botón de mensajes → completar destinatario y texto → **Enviar**. Los mensajes pendientes o fallidos se revisan en **Gestión de mensajería masiva → Gestión de mensajes por enviar**; los enviados con éxito, en **Gestión de mensajería masiva → Gestión de mensajes enviados**.
+Desde la plataforma de trabajo, botón de mensajes → completar destinatario y texto → **Enviar**.
+
+![Formulario de envío de mensaje en la plataforma del agente, con tipo SMS, destinatario y contenido](../assets/images/integrar-envio-de-sms/enviar-sms-formulario.jpg)
+
+![Confirmación "The sms has been sent" tras pulsar Enviar](../assets/images/integrar-envio-de-sms/enviar-sms-confirmacion.jpg)
+
+Los mensajes pendientes o fallidos se revisan en **Gestión de mensajería masiva → Gestión de mensajes por enviar**:
+
+![Listado de Gestión de mensajes por enviar, mostrando un mensaje SMS con estado failed](../assets/images/integrar-envio-de-sms/gestion-mensajes-por-enviar.jpg)
+
+Los enviados con éxito, en **Gestión de mensajería masiva → Gestión de mensajes enviados**:
+
+![Listado de Gestión de mensajes enviados, mostrando un mensaje SMS con estado success](../assets/images/integrar-envio-de-sms/gestion-mensajes-enviados.jpg)
 
 ## Referencia rápida
 

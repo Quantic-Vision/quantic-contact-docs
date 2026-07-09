@@ -47,9 +47,17 @@ Los primeros niveles son independientes entre sí — la tarifa de sistema mide 
 
 Mide el costo real de cada llamada saliente según el troncal usado — acumula tanto al costo de ese troncal como al costo total del sistema. No está pensada para facturar clientes, sino para que el operador conozca su propio costo real: no influye en qué troncal se selecciona para la llamada, solo la contabiliza una vez que el troncal ya fue elegido por la tarifa de extensión. Es de solo lectura para administradores de equipo.
 
+![Listado de tarifas de sistema, con filtros de búsqueda por prefijo, longitud, destino y troncal](../assets/images/tarifas-y-facturacion/tarifa-sistema-listado.jpg)
+
+![Formulario para agregar una tarifa de sistema, con prefijo, longitud, tarifa por minuto y troncal](../assets/images/tarifas-y-facturacion/tarifa-sistema-agregar.jpg)
+
 ### Tarifa de equipo
 
 Define cuánto se le cobra a un equipo por sus llamadas salientes — el mecanismo típico en modo multiempresa/SaaS. También es de solo lectura para el administrador del equipo (la fija el administrador de sistema).
+
+![Listado de tarifas de equipo, con selector de equipo y filtros de búsqueda](../assets/images/tarifas-y-facturacion/tarifa-equipo-listado.jpg)
+
+![Formulario para agregar una tarifa de equipo, con prefijo, longitud, tarifa por minuto y troncal](../assets/images/tarifas-y-facturacion/tarifa-equipo-agregar.jpg)
 
 ### Tarifa de extensión — también decide el troncal de salida
 
@@ -72,6 +80,10 @@ Dentro de un mismo nivel, el orden de coincidencia es: **prefijo + longitud exac
 
 Un administrador de equipo, al entrar a esta pantalla, ve tanto las tarifas de extensión propias de su equipo como la tarifa `default` general — esta última es de solo lectura para él, ya que la fija el administrador de sistema.
 
+![Formulario para agregar una tarifa de extensión, con equipo, grupo de cuentas y troncal](../assets/images/tarifas-y-facturacion/tarifa-extension-agregar.jpg)
+
+![Vista de edición de una tarifa de extensión, con sus campos de solo lectura tras guardarla](../assets/images/tarifas-y-facturacion/tarifa-extension-editar.jpg)
+
 ### Tarifa de agente (llamadas entrantes)
 
 Paga al agente una tarifa por cada llamada entrante que atiende — no usa prefijo ni longitud de número, ya que no se trata de marcación saliente.
@@ -82,6 +94,10 @@ Paga al agente una tarifa por cada llamada entrante que atiende — no usa prefi
 | Equipo | Vacío = aplica a todos los equipos |
 | Grupo de agentes | La tarifa se aplica por grupo — distintos grupos pueden pagar distinto |
 | Agente | Opcional — acota la tarifa a un agente específico dentro del grupo; vacío = aplica a todo el grupo |
+
+![Listado de tarifas de agente, con filtros por equipo, grupo de agentes y agente](../assets/images/tarifas-y-facturacion/tarifa-agente-listado.jpg)
+
+![Formulario para agregar una tarifa de agente, con equipo, grupo de agentes y agente específico](../assets/images/tarifas-y-facturacion/tarifa-agente-agregar.jpg)
 
 El monto acumulado se liquida luego desde [Gestión de agentes → Pagar](cuentas-equipos-permisos.md#agentes), y queda auditado en el log financiero del agente.
 

@@ -29,7 +29,17 @@ Aplica cuando el agente entra por la interfaz de AsterCC y la página de negocio
    - Una página que **recibe eventos** de llamada.
    - Una página de **pop-up** que se abre cuando corresponde.
 2. Registra la página receptora como enlace de trabajo de una tarea de campaña (o servicio de atención al cliente), usando **Gestión de enlaces** para crear un enlace de tipo "enlace de plan de marcación" apuntando a tu archivo.
+
+   ![Gestión de enlaces, editando una URL de tipo campaignurl con nombre MyPopup apuntando a sample.html](../assets/images/guia-desarrolladores/gestion-enlaces-campaignurl.jpg)
+
 3. Asigna esa tarea como el flujo por defecto entrante/saliente del grupo de agentes correspondiente.
+
+   ![Configuración avanzada de la campaña con el campo Campaign URL resaltado, apuntando a sample.html](../assets/images/guia-desarrolladores/campana-campaign-url.jpg)
+
+   ![Gestión de vinculación de aplicaciones (App Binding), mostrando el enlace vinculado a la campaña MyDev del grupo Customer Service](../assets/images/guia-desarrolladores/enlace-vinculado-app-binding.jpg)
+
+   ![Configuración del grupo de agentes con la aplicación actual (Current Application) asociada a la campaña MyDev](../assets/images/guia-desarrolladores/grupo-agentes-aplicacion-asociada.jpg)
+
 4. En la página receptora, implementa una función JavaScript que reciba el evento de llamada (parámetros separados por `&`, ej. `source=AGENT&event=ringing&calleridnum=...`) y, si el evento es un timbrado de agente, abra una nueva pestaña con la URL de la página de pop-up, pasando el número de teléfono como parámetro.
 
 ```javascript
@@ -48,6 +58,10 @@ function sonAccept(msgStr) {
 ```
 
 5. Prueba marcando desde un softphone de agente — la página de pop-up debería recibir el número por parámetro de URL.
+
+   ![Página de pop-up de prueba en la plataforma del agente, con los campos Popup URL, Caller ID y Type](../assets/images/guia-desarrolladores/plataforma-agente-popup-html.jpg)
+
+   ![Pestaña de pop-up abierta automáticamente con el número de teléfono recibido por parámetro de URL](../assets/images/guia-desarrolladores/plataforma-agente-popup-con-numero.jpg)
 
 La documentación en inglés describe el mismo procedimiento (enlace tipo `campaignurl`, vinculación de la campaña como pop-up entrante/saliente por defecto del grupo de agentes) con un ejemplo de código equivalente al de arriba — confirma que el mecanismo es el mismo en ambos idiomas de la fuente original.
 
