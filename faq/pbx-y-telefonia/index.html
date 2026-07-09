@@ -1,0 +1,2989 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación de AsterCC — plataforma de call center basada en Asterisk">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>FAQ: PBX y telefonía - Wiki AsterCC (Español)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#faq-pbx-y-telefonia" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Wiki AsterCC (Español)" class="md-header__button md-logo" aria-label="Wiki AsterCC (Español)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Wiki AsterCC (Español)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FAQ: PBX y telefonía
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Wiki AsterCC (Español)" class="md-nav__button md-logo" aria-label="Wiki AsterCC (Español)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Wiki AsterCC (Español)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glosario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glosario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../introduccion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introducción a AsterCC
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. Introducción a AsterCC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/que-es-astercc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ¿Qué es AsterCC?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/funcionalidades/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funcionalidades del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/arquitectura-general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura general
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/demo-en-linea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo en línea
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../instalacion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Instalación y configuración inicial
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Instalación y configuración inicial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requisitos del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/descarga-e-instalacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descarga e instalación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/instalar-desde-usb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instalar desde USB (AsterCC Box)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/configuracion-post-instalacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración post-instalación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/licencias-y-errores-comunes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licencias y errores comunes de inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../primeros-pasos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Primeros pasos
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Primeros pasos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/guia-administradores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía rápida para administradores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/guia-agentes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía rápida para agentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/recorrido-interfaz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recorrido por la interfaz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/configurar-softphones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configurar softphones (Eyebeam, X-Lite, Zoiper)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../modulos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Módulos del sistema
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. Módulos del sistema
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/pbx-y-telefonia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX y telefonía
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/pbx-ivr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX — IVR (menú de voz)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/pbx-funciones-avanzadas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX — Funciones avanzadas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/marcador-y-campanas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcador y campañas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/marcador-predictivo-avanzado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcador predictivo — avanzado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/cuentas-equipos-permisos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cuentas, equipos y permisos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/tarifas-y-facturacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarifas y facturación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/encuestas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encuestas y cuestionarios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/base-conocimiento-work-orders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base de conocimiento y Work Orders
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/plataforma-del-agente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plataforma de trabajo del agente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/reportes-y-estadisticas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reportes, estadísticas y financiero
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/oficina-virtual-bpo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oficina virtual / BPO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/atencion-cliente-mensajeria-ecommerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atención al cliente, mensajería y e-commerce
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/mensajeria-wechat-fax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mensajería — WeChat, Fax y envío masivo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../casos-de-uso/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Casos de uso y soluciones
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. Casos de uso y soluciones
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/call-center-inbound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Call center de atención al cliente (inbound)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/marketing-outbound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketing outbound / televentas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/e-commerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-commerce
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/oficina-virtual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oficina virtual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/marcacion-predictiva/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcación predictiva
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/casos-tecnicos-avanzados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Casos técnicos avanzados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../administracion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Administración avanzada
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Administración avanzada
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/asterisk-ami/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración de Asterisk AMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/openvpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenVPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/apc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APC (caché de PHP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/mailman/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mailman / correo saliente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/diagnostico-red-voip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagnóstico de red y VoIP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/configuracion-y-mantenimiento-sistema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración y mantenimiento del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/gestion-avanzada-call-center/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestión avanzada del call center
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/historial-documentacion-1.2-beta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentación histórica — AsterCC 1.2 beta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../desarrollo/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Guía de desarrollo y customización
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7. Guía de desarrollo y customización
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-y-ami/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API y AMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/guia-desarrolladores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía para desarrolladores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/introduccion-api-integracion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción a la API de integración
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/codigos-retorno-e-idiomas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Códigos de retorno y codificación de idioma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-autenticacion-y-sesion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Autenticación y sesión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-control-de-llamada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Control de llamada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-supervision-y-control-de-agente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Supervisión y control de agente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-datos-y-grabaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Datos y grabaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/eventos-tiempo-real-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recibir eventos en tiempo real de la API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/integrar-envio-de-sms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrar el envío de SMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Preguntas frecuentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Solución de problemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Historial de versiones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#troncales-y-numeracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troncales y numeración
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troncales y numeración">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-el-did-que-configure-muestra-una-letra-en-vez-del-numero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Por qué el DID que configuré muestra una letra en vez del número?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-restrinjo-numeros-que-llaman-al-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo restrinjo números que llaman al sistema?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-configuro-el-numero-que-llama-callerid-de-una-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo configuro el número que llama (callerID) de una extensión?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-extension-marca-normal-pero-con-marcacion-predictiva-el-destino-no-timbra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La extensión marca normal, pero con marcación predictiva el destino no timbra
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-fuerzo-el-uso-de-un-troncal-especifico-para-las-llamadas-salientes-de-un-usuario-o-equipo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo fuerzo el uso de un troncal específico para las llamadas salientes de un usuario o equipo?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extensiones-y-registro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extensiones y registro
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extensiones y registro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#como-cambio-el-puerto-de-registro-sip-por-defecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo cambio el puerto de registro SIP por defecto?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-que-mis-extensiones-no-logran-registrarse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Por qué mis extensiones no logran registrarse?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-configuro-un-telefono-ip-con-registro-sip-sobre-tls-cifrado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo configuro un teléfono IP con registro SIP sobre TLS (cifrado)?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#audio-codecs-y-dtmf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audio, códecs y DTMF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Audio, códecs y DTMF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#como-elijo-el-modo-dtmf-correcto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo elijo el modo DTMF correcto?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-agrego-soporte-para-el-codec-g729" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo agrego soporte para el códec G.729?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-configuro-y-administro-la-musica-en-espera" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo configuro y administro la música en espera?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-audio-se-corta-o-solo-se-escucha-en-un-sentido-llamadas-con-nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El audio se corta o solo se escucha en un sentido (llamadas con NAT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ivr-y-enrutamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IVR y enrutamiento
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IVR y enrutamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#como-transfiero-una-llamada-a-un-ivr-desde-la-plataforma-del-agente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo transfiero una llamada a un IVR desde la plataforma del agente?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-funciona-el-aparcado-de-llamadas-call-parking-con-numeros-de-estacionamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo funciona el aparcado de llamadas (call parking) con números de estacionamiento?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagnostico-voip-basico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagnóstico VoIP básico
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagnóstico VoIP básico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-significan-los-errores-sip-408-403-484-y-488" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué significan los errores SIP 408, 403, 484 y 488?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#una-tarjeta-prie1-muestra-el-error-pri-got-event-hdlc-abort-6-on-d-channel-of-span" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Una tarjeta PRI/E1 muestra el error "PRI got event: HDLC Abort (6) on D-channel of span"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#una-llamada-queda-colgada-en-estado-up-y-no-se-puede-volver-a-marcar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Una llamada queda "colgada" en estado Up y no se puede volver a marcar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-limites-tiene-astercc-en-salas-de-conferencia-y-troncales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué límites tiene AsterCC en salas de conferencia y troncales?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fuentes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="faq-pbx-y-telefonia">FAQ: PBX y telefonía<a class="headerlink" href="#faq-pbx-y-telefonia" title="Permanent link">&para;</a></h1>
+<h2 id="troncales-y-numeracion">Troncales y numeración<a class="headerlink" href="#troncales-y-numeracion" title="Permanent link">&para;</a></h2>
+<h3 id="por-que-el-did-que-configure-muestra-una-letra-en-vez-del-numero">¿Por qué el DID que configuré muestra una letra en vez del número?<a class="headerlink" href="#por-que-el-did-que-configure-muestra-una-letra-en-vez-del-numero" title="Permanent link">&para;</a></h3>
+<p>Ocurre cuando la extensión de un sistema A se usa como troncal en un sistema B — el DID entrante aparece como una letra (ej. <code>S</code>) en vez del número esperado, y si se escribe el número directo el sistema indica "no hay ruta de entrada". Solución: en la cadena de registro del troncal, agrega una barra (<code>/</code>) seguida del número de extensión al final del registro string.</p>
+<h3 id="como-restrinjo-numeros-que-llaman-al-sistema">¿Cómo restrinjo números que llaman al sistema?<a class="headerlink" href="#como-restrinjo-numeros-que-llaman-al-sistema" title="Permanent link">&para;</a></h3>
+<p>Hay dos mecanismos, según el caso:</p>
+<p><strong>Lista negra de llamadas entrantes</strong> (para números específicos): en <strong>PBX avanzado → Lista negra de entrada → Agregar</strong>, indica el número y el equipo/cuenta/extensión al que aplica la restricción. Para bloquear muchos números a la vez, impórtalos por CSV desde <strong>Administración avanzada del call center → Importar datos</strong>, seleccionando la tabla "lista negra de entrada" — el estado de la importación se revisa en <strong>Gestión de tareas por lotes → Gestión de planes de importación</strong>.</p>
+<p><strong>Ruta de entrada</strong> (para un patrón, ej. todo un prefijo): en <strong>PBX avanzado → Rutas de entrada → Agregar</strong>, configura coincidencia de número que llama como "coincidencia de prefijo" (ej. <code>150</code>), y define el destino de transferencia como "finalizar" con razón "ocupado" o "colgar".</p>
+<h3 id="como-configuro-el-numero-que-llama-callerid-de-una-extension">¿Cómo configuro el número que llama (callerID) de una extensión?<a class="headerlink" href="#como-configuro-el-numero-que-llama-callerid-de-una-extension" title="Permanent link">&para;</a></h3>
+<p>Cada extensión tiene un <strong>número/nombre de llamante</strong> por defecto y un <strong>número/nombre de llamante para llamadas salientes</strong> independiente. La prioridad al marcar por un troncal es:</p>
+<ol>
+<li>Si el troncal tiene activado "forzar uso de callerID saliente" <strong>y</strong> tiene su propio número/nombre configurado → se usa el del troncal.</li>
+<li>Si el troncal fuerza el uso pero no tiene número propio configurado → se usa el número/nombre de llamante saliente de la extensión.</li>
+<li>Si el troncal <strong>no</strong> fuerza el uso y tiene número propio → se usa el del troncal.</li>
+<li>Si el troncal no fuerza el uso y no tiene número propio → se usa el número/nombre por defecto de la extensión.</li>
+</ol>
+<p>Si ni el troncal ni la extensión tienen configurado un número de llamante saliente, se usa siempre el número/nombre por defecto de la extensión.</p>
+<h3 id="la-extension-marca-normal-pero-con-marcacion-predictiva-el-destino-no-timbra">La extensión marca normal, pero con marcación predictiva el destino no timbra<a class="headerlink" href="#la-extension-marca-normal-pero-con-marcacion-predictiva-el-destino-no-timbra" title="Permanent link">&para;</a></h3>
+<p>Ver <a href="../../troubleshooting/">Solución de problemas</a> — es un síntoma típico de un troncal que exige verificación del número que llama; se soluciona configurando el callerID en la tarea de campaña o forzando el número saliente en el troncal.</p>
+<h3 id="como-fuerzo-el-uso-de-un-troncal-especifico-para-las-llamadas-salientes-de-un-usuario-o-equipo">¿Cómo fuerzo el uso de un troncal específico para las llamadas salientes de un usuario o equipo?<a class="headerlink" href="#como-fuerzo-el-uso-de-un-troncal-especifico-para-las-llamadas-salientes-de-un-usuario-o-equipo" title="Permanent link">&para;</a></h3>
+<p>Se hace combinando un grupo de troncales con reglas de selección (ver <a href="../../modulos/pbx-funciones-avanzadas/">Funciones avanzadas de PBX</a> para el detalle de grupos de troncales):</p>
+<ol>
+<li><strong>Agrupa los troncales:</strong> crea un grupo de troncales que incluya solo los troncales que quieres usar para este caso.</li>
+<li><strong>Define reglas de selección:</strong> en las reglas del grupo, indica prefijo y/o longitud del número marcado — si el número coincide, el sistema usa ese grupo de troncales. Desde aquí también se puede cambiar el callerID de las llamadas entrantes de ese grupo.</li>
+<li><strong>Aplica la regla a todo el equipo:</strong> en la configuración del equipo, selecciona este grupo de troncales para que la regla aplique a todos sus miembros.</li>
+<li><strong>Aplica la regla solo a usuarios específicos:</strong> agrupa a esos usuarios en un grupo de cuentas y asigna el grupo de troncales únicamente a ese grupo de cuentas — cada agente usa las reglas que corresponden a su cuenta.</li>
+</ol>
+<p><img alt="Formulario de edición de un grupo de troncales, moviendo troncales disponibles hacia la lista seleccionada del grupo" src="../../assets/images/faq-pbx-y-telefonia/agregar-troncales-a-grupo.png" /></p>
+<p><img alt="Regla de grupo de troncales por prefijo del número marcado, con el troncal a usar cuando coincide" src="../../assets/images/faq-pbx-y-telefonia/regla-grupo-troncales-prefijo.png" /></p>
+<p><img alt="Formulario de edición de un equipo con el tipo de troncal en &quot;Trunk Group&quot; y el grupo de troncales asignado" src="../../assets/images/faq-pbx-y-telefonia/equipo-con-grupo-troncales-asignado.png" /></p>
+<p><img alt="Formulario de edición de un grupo de cuentas con el troncal (o grupo de troncales) asignado en el campo Trunk" src="../../assets/images/faq-pbx-y-telefonia/grupo-cuentas-con-troncal-asignado.png" /></p>
+<p><img alt="Pantalla para mover cuentas de agentes hacia la lista de un grupo de cuentas" src="../../assets/images/faq-pbx-y-telefonia/agregar-cuentas-a-grupo.png" /></p>
+<h2 id="extensiones-y-registro">Extensiones y registro<a class="headerlink" href="#extensiones-y-registro" title="Permanent link">&para;</a></h2>
+<h3 id="como-cambio-el-puerto-de-registro-sip-por-defecto">¿Cómo cambio el puerto de registro SIP por defecto?<a class="headerlink" href="#como-cambio-el-puerto-de-registro-sip-por-defecto" title="Permanent link">&para;</a></h3>
+<p>En <strong>Sistema → Configuración → Configuración básica de SIP → <code>bindport</code></strong>, edita el valor del puerto (por defecto <code>5060</code>) y recarga la configuración. A partir de ese momento, los softphones deben apuntar al nuevo puerto para poder registrarse — si se cambia, por ejemplo, a <code>80</code>, chocará con el puerto HTTP y el registro fallará. Recuerda también abrir el nuevo puerto en el firewall.</p>
+<h3 id="por-que-mis-extensiones-no-logran-registrarse">¿Por qué mis extensiones no logran registrarse?<a class="headerlink" href="#por-que-mis-extensiones-no-logran-registrarse" title="Permanent link">&para;</a></h3>
+<p>Las tres causas más comunes de una extensión en estado <code>UNREGISTERED</code> o <code>UNKNOWN</code> (visible en <strong>PBX → Gestión de extensiones</strong>):</p>
+<ol>
+<li><strong>Usuario/contraseña incorrectos:</strong> confirma que el ID de usuario del softphone incluya el identificador del equipo (ej. <code>astercc-5001</code>, no solo <code>5001</code>) y que la contraseña coincida con la configurada en la extensión.</li>
+<li><strong>Firewall bloqueando el puerto:</strong> revisa el estado con <code>/etc/init.d/iptables status</code>; si es necesario, detén el firewall temporalmente (<code>service iptables stop</code>) para confirmar el diagnóstico, y luego abre el puerto SIP correspondiente en la configuración persistente.</li>
+<li><strong>Conflicto de puerto:</strong> el puerto SIP configurado ya está en uso por otro servicio. Revisa qué proceso lo ocupa con <code>lsof -i</code> y cambia el puerto de registro si es necesario (ver pregunta anterior).</li>
+</ol>
+<h3 id="como-configuro-un-telefono-ip-con-registro-sip-sobre-tls-cifrado">¿Cómo configuro un teléfono IP con registro SIP sobre TLS (cifrado)?<a class="headerlink" href="#como-configuro-un-telefono-ip-con-registro-sip-sobre-tls-cifrado" title="Permanent link">&para;</a></h3>
+<p>Ver la guía completa en <a href="../../administracion/diagnostico-red-voip/#configurar-sip-sobre-tls-registro-cifrado">Diagnóstico de red y VoIP → Configurar SIP sobre TLS</a>. Resumen: agregar <code>tls</code> al transporte SIP del sistema, generar certificado con <code>ast_tls_cert</code>, habilitar TLS en <code>sip.conf</code>, subir el certificado de CA al teléfono y cambiar su transporte a TLS. Abre también el puerto TCP 5061 (además del 5060) en el firewall para el registro cifrado.</p>
+<h2 id="audio-codecs-y-dtmf">Audio, códecs y DTMF<a class="headerlink" href="#audio-codecs-y-dtmf" title="Permanent link">&para;</a></h2>
+<h3 id="como-elijo-el-modo-dtmf-correcto">¿Cómo elijo el modo DTMF correcto?<a class="headerlink" href="#como-elijo-el-modo-dtmf-correcto" title="Permanent link">&para;</a></h3>
+<p>DTMF (Dual Tone Multi Frequency) es la señal que se genera al presionar las teclas del teléfono — es lo que permite navegar un IVR por teclado. Se configura por troncal con el parámetro <code>dtmfmode</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Modo</th>
+<th>Cuándo usarlo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rfc2833</code></td>
+<td>El más universal — modo por defecto en las plantillas SIP de AsterCC. Úsalo salvo que tengas una razón específica para otro</td>
+</tr>
+<tr>
+<td><code>auto</code></td>
+<td>Deja que el sistema negocie el modo con el proveedor</td>
+</tr>
+<tr>
+<td><code>inband</code></td>
+<td>Requiere que el códec de voz sea <code>ulaw</code> o <code>alaw</code> — necesario con operadores/troncales que no soportan <code>rfc2833</code></td>
+</tr>
+<tr>
+<td><code>info</code></td>
+<td>Vía SIP INFO</td>
+</tr>
+</tbody>
+</table>
+<p>El modo debe coincidir con lo que espera el proveedor del troncal. Si un cliente no puede navegar un IVR con el teclado, este es el primer parámetro a revisar.</p>
+<p><img alt="Edición de un troncal con el parámetro dtmfmode=inband agregado en el campo Detail" src="../../assets/images/faq-pbx-y-telefonia/configuracion-dtmfmode-troncal.png" /></p>
+<h3 id="como-agrego-soporte-para-el-codec-g729">¿Cómo agrego soporte para el códec G.729?<a class="headerlink" href="#como-agrego-soporte-para-el-codec-g729" title="Permanent link">&para;</a></h3>
+<p>G.729 es un códec de compresión de voz que equilibra bien ancho de banda y calidad. En la versión comercial de AsterCC no viene incluido por defecto y hay que instalarlo manualmente:</p>
+<ol>
+<li>Descarga el decodificador según la arquitectura del CPU:
+   <div class="highlight"><pre><span></span><code><span class="c1"># 32 bits</span>
+wget<span class="w"> </span>http://asterisk.hosting.lv/bin162/codec_g729-ast16-icc-glibc-pentium4.so
+<span class="c1"># 64 bits</span>
+wget<span class="w"> </span>http://asterisk.hosting.lv/bin162/codec_g729-ast16-icc-glibc-x86_64-pentium4.so
+</code></pre></div></li>
+<li>Copia el archivo <code>.so</code> al directorio de módulos de Asterisk: <code>/usr/lib/asterisk/modules/</code> (o <code>/usr/lib64/asterisk/modules/</code> en 64 bits).</li>
+<li>Cárgalo en caliente: <code>asterisk -rx "module load codec_g729-ast16-icc-glibc-&lt;arch&gt;.so"</code> — debe responder <code>Loaded codec_g729...</code>.</li>
+<li>Verifica con <code>asterisk -rx "core show translation"</code> — si aparece una columna con números bajo <code>g729</code>, el códec está activo.</li>
+<li>Para que se cargue automáticamente al reiniciar, agrégalo a <code>/etc/asterisk/modules.conf</code>:
+   <div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;load =&gt; codec_g729-ast16-icc-glibc-&lt;arch&gt;.so&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/asterisk/modules.conf
+</code></pre></div></li>
+</ol>
+<h3 id="como-configuro-y-administro-la-musica-en-espera">¿Cómo configuro y administro la música en espera?<a class="headerlink" href="#como-configuro-y-administro-la-musica-en-espera" title="Permanent link">&para;</a></h3>
+<p>La música en espera se gestiona de forma centralizada en <strong>PBX avanzado → Gestión de música en espera</strong>, y luego se asigna en distintos lugares del sistema:</p>
+<table>
+<thead>
+<tr>
+<th>Dónde se aplica</th>
+<th>Ruta de configuración</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Música en espera global del sistema</td>
+<td>Editar el perfil <code>default</code>, subir un archivo <code>.wav</code> nuevo</td>
+</tr>
+<tr>
+<td>Nueva música en espera con nombre propio</td>
+<td><strong>Agregar</strong> un perfil nuevo (nombre, identificador, equipo, archivo de voz)</td>
+</tr>
+<tr>
+<td>Música en espera de una cola</td>
+<td>Editar la cola → Información básica → campo "música en espera"</td>
+</tr>
+<tr>
+<td>Música en espera de un grupo de timbrado</td>
+<td>Editar el grupo de timbrado → Información básica → campo "música en espera"</td>
+</tr>
+<tr>
+<td>Tono de retorno personalizado de una extensión</td>
+<td>Editar la extensión → Información avanzada → campo "tono de retorno" (ringback)</td>
+</tr>
+</tbody>
+</table>
+<p>Tras cualquier cambio, hay que guardar y recargar la configuración (botón de recarga) para que el sistema lo aplique.</p>
+<h3 id="el-audio-se-corta-o-solo-se-escucha-en-un-sentido-llamadas-con-nat">El audio se corta o solo se escucha en un sentido (llamadas con NAT)<a class="headerlink" href="#el-audio-se-corta-o-solo-se-escucha-en-un-sentido-llamadas-con-nat" title="Permanent link">&para;</a></h3>
+<p>Es un síntoma típico cuando el servidor está detrás de un router o firewall (NAT) y las extensiones se registran desde fuera de la red local. Hay que configurar la IP pública y la red interna del servidor en la configuración SIP: el campo <code>externip</code> debe llevar la IP pública del servidor, y <code>localnet</code> el segmento de red interno (visible con <code>ifconfig</code>) — si hay más de un segmento, se separan por comas.</p>
+<h2 id="ivr-y-enrutamiento">IVR y enrutamiento<a class="headerlink" href="#ivr-y-enrutamiento" title="Permanent link">&para;</a></h2>
+<h3 id="como-transfiero-una-llamada-a-un-ivr-desde-la-plataforma-del-agente">¿Cómo transfiero una llamada a un IVR desde la plataforma del agente?<a class="headerlink" href="#como-transfiero-una-llamada-a-un-ivr-desde-la-plataforma-del-agente" title="Permanent link">&para;</a></h3>
+<p>En la página del agente, mientras está en una llamada, haz clic en <strong>Consultar</strong> en la barra superior e ingresa el número correspondiente al IVR — la llamada se transfiere al menú de voz.</p>
+<h3 id="como-funciona-el-aparcado-de-llamadas-call-parking-con-numeros-de-estacionamiento">¿Cómo funciona el aparcado de llamadas (call parking) con números de estacionamiento?<a class="headerlink" href="#como-funciona-el-aparcado-de-llamadas-call-parking-con-numeros-de-estacionamiento" title="Permanent link">&para;</a></h3>
+<p>El aparcado de llamadas permite que una extensión deje en espera una llamada y que <strong>otra</strong> extensión del mismo equipo la retome. La tecla rápida de aparcado por defecto es <code>700</code>, con 10 números de retorno reservados del <code>701</code> al <code>710</code>. También se puede configurar una tecla rápida propia por equipo (si equipo y sistema tienen teclas distintas, ambas funcionan en paralelo).</p>
+<p>Para aparcar una llamada: durante la llamada, la extensión marca <code>*52</code> (se escucha "transfiriendo..."), luego digita <code>700</code> — el sistema responde con el número de retorno asignado (ej. <code>701</code>). Cualquier extensión del equipo que marque ese número retoma la llamada.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Los números <code>700</code> a <code>710</code> están reservados por el sistema — no los uses como número interno al crear colas o IVR, o el sistema mostrará error.</p>
+</div>
+<h2 id="diagnostico-voip-basico">Diagnóstico VoIP básico<a class="headerlink" href="#diagnostico-voip-basico" title="Permanent link">&para;</a></h2>
+<h3 id="que-significan-los-errores-sip-408-403-484-y-488">¿Qué significan los errores SIP 408, 403, 484 y 488?<a class="headerlink" href="#que-significan-los-errores-sip-408-403-484-y-488" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Significado</th>
+<th>Causa típica / solución</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>408 Request Timeout</code></td>
+<td>Timeout de registro</td>
+<td>El servidor no ve ningún paquete de respuesta — revisa el firewall local y, si el sistema está detrás de NAT, confirma que el puerto UDP 5060 está correctamente redirigido</td>
+</tr>
+<tr>
+<td><code>403 Forbidden</code></td>
+<td>Usuario/contraseña incorrectos</td>
+<td>Verifica las credenciales de registro de la extensión</td>
+</tr>
+<tr>
+<td><code>484 Address Incomplete</code></td>
+<td>Error de marcado</td>
+<td>Desactiva el soporte de video en la configuración SIP del troncal</td>
+</tr>
+<tr>
+<td><code>488 Not Acceptable Here</code></td>
+<td>Incompatibilidad de códec</td>
+<td>Confirma que el códec de voz configurado coincide en ambos extremos (servidor y proveedor/dispositivo)</td>
+</tr>
+</tbody>
+</table>
+<p>Para ver el tráfico SIP en vivo y diagnosticar estos casos, usa <code>ngrep</code> — ver <a href="../../administracion/diagnostico-red-voip/#depuracion-de-sip-con-ngrep">Diagnóstico de red y VoIP → Depuración de SIP con ngrep</a>.</p>
+<h3 id="una-tarjeta-prie1-muestra-el-error-pri-got-event-hdlc-abort-6-on-d-channel-of-span">Una tarjeta PRI/E1 muestra el error "PRI got event: HDLC Abort (6) on D-channel of span"<a class="headerlink" href="#una-tarjeta-prie1-muestra-el-error-pri-got-event-hdlc-abort-6-on-d-channel-of-span" title="Permanent link">&para;</a></h3>
+<p>Suele indicar un problema físico en el canal de línea. Prueba conectar el mismo cable a otro puerto de la tarjeta — si funciona ahí, revisa la configuración por defecto de ese puerto específico comparándola con otros puertos que sí funcionan.</p>
+<h3 id="una-llamada-queda-colgada-en-estado-up-y-no-se-puede-volver-a-marcar">Una llamada queda "colgada" en estado <code>Up</code> y no se puede volver a marcar<a class="headerlink" href="#una-llamada-queda-colgada-en-estado-up-y-no-se-puede-volver-a-marcar" title="Permanent link">&para;</a></h3>
+<p>Síntoma: el agente y el cliente ya colgaron, pero el canal sigue apareciendo activo en <code>core show channels</code> y no se puede realizar ni recibir llamadas en esa extensión. Se libera manualmente desde la consola de Asterisk:</p>
+<div class="highlight"><pre><span></span><code>core set verbose 0
+core show channels concise        # lista los canales activos
+channel request hangup &lt;nombre-del-canal&gt;   # fuerza el colgado del canal
+</code></pre></div>
+<h3 id="que-limites-tiene-astercc-en-salas-de-conferencia-y-troncales">¿Qué límites tiene AsterCC en salas de conferencia y troncales?<a class="headerlink" href="#que-limites-tiene-astercc-en-salas-de-conferencia-y-troncales" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Sala de conferencia:</strong> probado con hasta 30 participantes simultáneos; no hay garantía de estabilidad por encima de ese número.</li>
+<li><strong>Límite de llamadas por troncal:</strong> el sistema <strong>no</strong> tiene una función nativa para limitar la cantidad de llamadas por unidad de tiempo, ni el total de llamadas permitidas en un troncal.</li>
+<li><strong>Buzón de voz que deja de recibir mensajes tras 100:</strong> el límite por defecto es de 100 mensajes por buzón. Para ampliarlo, agrega <code>maxmsg=1000</code> (o el valor deseado) en <code>/etc/asterisk/voicemail.conf</code>.</li>
+</ul>
+<hr />
+<h2 id="fuentes">Fuentes<a class="headerlink" href="#fuentes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>raw/zh/常见问题及解答/did号码显示为字母.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何增加对g729语音编码的支持.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何对呼入号码进行限制.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何选择dtmf模式.txt</code></li>
+<li><code>raw/zh/常见问题及解答/分机无法注册的原因及解决方案.txt</code></li>
+<li><code>raw/zh/常见问题及解答/客服转ivr的功能.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何配置主叫号码.txt</code></li>
+<li><code>raw/zh/常见问题及解答/astercc等待音乐设置汇总.txt</code></li>
+<li><code>raw/zh/常见问题及解答/asterisk返回pri_got_event_hdlc_abort_6_on_d-channel_of_span错误.txt</code></li>
+<li><code>raw/zh/常见问题及解答/asterisk处理死在channels里的通话.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何修改默认sip注册端口.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何使用驻留号码进行通话驻留.txt</code></li>
+<li><code>raw/zh/常见问题及解答/sip话机使用tls注册astercc系统方法.txt</code></li>
+<li><code>raw/zh/常见问题及解答/分机呼叫正常_使用预拨号时目标号码不振铃.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何确定voip中出现的问题.txt</code></li>
+<li><code>raw/zh/常见问题及解答/系统faq.txt</code></li>
+<li><code>raw/en/faq/how_to_choose_dtmf_mode.txt</code></li>
+<li><code>raw/en/faq/how_to_add_g729_codec_support.txt</code></li>
+<li><code>raw/en/faq/how_to_use_a_specific_trunk_for_outbound_calls.txt</code></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.indexes", "navigation.tracking", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/javascripts/nav-toggle.js"></script>
+      
+    
+  </body>
+</html>

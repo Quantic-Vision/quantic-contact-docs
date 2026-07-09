@@ -1,0 +1,3230 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación de AsterCC — plataforma de call center basada en Asterisk">
+      
+      
+      
+      
+        <link rel="prev" href="../oficina-virtual/">
+      
+      
+        <link rel="next" href="../casos-tecnicos-avanzados/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Marcación predictiva - Wiki AsterCC (Español)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#marcacion-predictiva" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Wiki AsterCC (Español)" class="md-header__button md-logo" aria-label="Wiki AsterCC (Español)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Wiki AsterCC (Español)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Marcación predictiva
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Wiki AsterCC (Español)" class="md-nav__button md-logo" aria-label="Wiki AsterCC (Español)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Wiki AsterCC (Español)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glosario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glosario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../introduccion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introducción a AsterCC
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. Introducción a AsterCC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/que-es-astercc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ¿Qué es AsterCC?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/funcionalidades/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funcionalidades del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/arquitectura-general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura general
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/demo-en-linea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo en línea
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../instalacion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Instalación y configuración inicial
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Instalación y configuración inicial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requisitos del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/descarga-e-instalacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descarga e instalación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/instalar-desde-usb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instalar desde USB (AsterCC Box)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/configuracion-post-instalacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración post-instalación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/licencias-y-errores-comunes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licencias y errores comunes de inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../primeros-pasos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Primeros pasos
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Primeros pasos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/guia-administradores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía rápida para administradores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/guia-agentes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía rápida para agentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/recorrido-interfaz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recorrido por la interfaz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/configurar-softphones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configurar softphones (Eyebeam, X-Lite, Zoiper)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../modulos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Módulos del sistema
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. Módulos del sistema
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/pbx-y-telefonia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX y telefonía
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/pbx-ivr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX — IVR (menú de voz)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/pbx-funciones-avanzadas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX — Funciones avanzadas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/marcador-y-campanas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcador y campañas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/marcador-predictivo-avanzado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcador predictivo — avanzado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/cuentas-equipos-permisos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cuentas, equipos y permisos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/tarifas-y-facturacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarifas y facturación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/encuestas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encuestas y cuestionarios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/base-conocimiento-work-orders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base de conocimiento y Work Orders
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/plataforma-del-agente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plataforma de trabajo del agente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/reportes-y-estadisticas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reportes, estadísticas y financiero
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/oficina-virtual-bpo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oficina virtual / BPO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/atencion-cliente-mensajeria-ecommerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atención al cliente, mensajería y e-commerce
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/mensajeria-wechat-fax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mensajería — WeChat, Fax y envío masivo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Casos de uso y soluciones
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. Casos de uso y soluciones
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../call-center-inbound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Call center de atención al cliente (inbound)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marketing-outbound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketing outbound / televentas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../e-commerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-commerce
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oficina-virtual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oficina virtual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcación predictiva
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcación predictiva
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qué es
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-se-usa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo se usa
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cómo se usa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-crear-la-tarea-de-campana-y-su-lista-de-marcacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Crear la tarea de campaña y su lista de marcación
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-iniciar-la-sesion-de-marcado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Iniciar la sesión de marcado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-monitorear-la-sesion-en-vivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Monitorear la sesión en vivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-recuperar-numeros-no-completados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Recuperar números no completados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-cerrar-y-revisar-resultados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Cerrar y revisar resultados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-marcador-predictivo-vs-marcado-automatico-auto-dial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Marcador predictivo vs. marcado automático (auto dial)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encuestas-telefonicas-con-marcacion-predictiva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encuestas telefónicas con marcación predictiva
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Encuestas telefónicas con marcación predictiva">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-crear-el-cuestionario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Crear el cuestionario
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-vincular-la-encuesta-a-la-tarea-de-campana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Vincular la encuesta a la tarea de campaña
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-la-pantalla-emergente-de-encuesta-durante-la-llamada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. La pantalla emergente de encuesta durante la llamada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-encuestas-de-voz-con-predial-sin-agente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Encuestas de voz con predial (sin agente)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caso-real-empresa-de-encuestas-telefonicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caso real: empresa de encuestas telefónicas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validar-tarjetas-de-credito-con-ivr-durante-una-campana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validar tarjetas de crédito con IVR durante una campaña
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#difusion-de-voz-masiva-voice-broadcasting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Difusión de voz masiva (voice broadcasting)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencia-rapida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referencia rápida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fuentes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../casos-tecnicos-avanzados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Casos técnicos avanzados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../administracion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Administración avanzada
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Administración avanzada
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/asterisk-ami/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración de Asterisk AMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/openvpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenVPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/apc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APC (caché de PHP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/mailman/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mailman / correo saliente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/diagnostico-red-voip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagnóstico de red y VoIP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/configuracion-y-mantenimiento-sistema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración y mantenimiento del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/gestion-avanzada-call-center/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestión avanzada del call center
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/historial-documentacion-1.2-beta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentación histórica — AsterCC 1.2 beta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../desarrollo/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Guía de desarrollo y customización
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7. Guía de desarrollo y customización
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-y-ami/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API y AMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/guia-desarrolladores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía para desarrolladores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/introduccion-api-integracion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción a la API de integración
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/codigos-retorno-e-idiomas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Códigos de retorno y codificación de idioma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-autenticacion-y-sesion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Autenticación y sesión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-control-de-llamada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Control de llamada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-supervision-y-control-de-agente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Supervisión y control de agente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-datos-y-grabaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Datos y grabaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/eventos-tiempo-real-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recibir eventos en tiempo real de la API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/integrar-envio-de-sms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrar el envío de SMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Preguntas frecuentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Solución de problemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Historial de versiones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qué es
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-se-usa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo se usa
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cómo se usa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-crear-la-tarea-de-campana-y-su-lista-de-marcacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Crear la tarea de campaña y su lista de marcación
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-iniciar-la-sesion-de-marcado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Iniciar la sesión de marcado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-monitorear-la-sesion-en-vivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Monitorear la sesión en vivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-recuperar-numeros-no-completados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Recuperar números no completados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-cerrar-y-revisar-resultados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Cerrar y revisar resultados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-marcador-predictivo-vs-marcado-automatico-auto-dial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Marcador predictivo vs. marcado automático (auto dial)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encuestas-telefonicas-con-marcacion-predictiva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encuestas telefónicas con marcación predictiva
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Encuestas telefónicas con marcación predictiva">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-crear-el-cuestionario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Crear el cuestionario
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-vincular-la-encuesta-a-la-tarea-de-campana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Vincular la encuesta a la tarea de campaña
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-la-pantalla-emergente-de-encuesta-durante-la-llamada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. La pantalla emergente de encuesta durante la llamada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-encuestas-de-voz-con-predial-sin-agente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Encuestas de voz con predial (sin agente)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caso-real-empresa-de-encuestas-telefonicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caso real: empresa de encuestas telefónicas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validar-tarjetas-de-credito-con-ivr-durante-una-campana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validar tarjetas de crédito con IVR durante una campaña
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#difusion-de-voz-masiva-voice-broadcasting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Difusión de voz masiva (voice broadcasting)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencia-rapida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referencia rápida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fuentes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="marcacion-predictiva">Marcación predictiva<a class="headerlink" href="#marcacion-predictiva" title="Permanent link">&para;</a></h1>
+<h2 id="que-es">Qué es<a class="headerlink" href="#que-es" title="Permanent link">&para;</a></h2>
+<p>El marcador predictivo marca automáticamente por el agente, aplicando una estrategia que intenta que, en cuanto un cliente contesta, siempre haya un agente libre esperando — sin que el agente pierda tiempo buscando números o esperando que timbre.</p>
+<h2 id="como-se-usa">Cómo se usa<a class="headerlink" href="#como-se-usa" title="Permanent link">&para;</a></h2>
+<h3 id="1-crear-la-tarea-de-campana-y-su-lista-de-marcacion">1. Crear la tarea de campaña y su lista de marcación<a class="headerlink" href="#1-crear-la-tarea-de-campana-y-su-lista-de-marcacion" title="Permanent link">&para;</a></h3>
+<p>Sigue <a href="../../modulos/marcador-y-campanas/">4.2 Marcador y campañas</a> para crear la tarea. Si no se especifica un paquete de clientes existente, el sistema crea automáticamente uno con el mismo nombre de la tarea. Importa los números a marcar según <a href="../../modulos/atencion-cliente-mensajeria-ecommerce/">Atención al cliente</a> → carga de datos, o usando la función de importación de datos del módulo de campañas.</p>
+<p><strong>Importar un rango de números para marcación saliente (manual, automática o predial).</strong> Solo un agente con rol de jefe de grupo puede importar números — se asigna en <strong>Cuentas y permisos → Gestión de equipos de agentes → Agregar agente</strong>, marcando el rol de jefe de grupo, y confirmando que el rol de cuenta del agente sea el adecuado para esa función.</p>
+<p><img alt="Formulario de edición de agente con la casilla &quot;groupadmin&quot; marcada para habilitar el rol de jefe de grupo" src="../../assets/images/marcacion-predictiva/rol-jefe-de-grupo.png" /></p>
+<p>Con esa sesión:</p>
+<ol>
+<li>Entra a <strong>Administración avanzada del call center → Carga de datos</strong> y sube el archivo de números en CSV o XLS.</li>
+<li>Elige la tabla destino — la tarea de campaña (ej. "Externas 01") a la que se van a importar los números.</li>
+<li>Mapea cada columna del archivo a un campo de la tarea; define además cuál columna determina el teléfono, la prioridad y la hora de contacto que va a usar el predial.</li>
+</ol>
+<p><img alt="Pantalla de importación con los selectores de &quot;Dialer Setting&quot; para mapear cada columna del archivo a un campo del predial" src="../../assets/images/marcacion-predictiva/importar-mapeo-campo-marcador.jpg" /></p>
+<ol>
+<li>Decide si se limpia la restricción de "agente asignado" para números ya marcados antes por otro agente, y si se reinicia el estado previo del cliente.</li>
+<li>Quita la primera fila si corresponde al encabezado del archivo original, y confirma la importación.</li>
+</ol>
+<p>A partir de esa lista, la tarea admite tres formas de marcar:</p>
+<ul>
+<li><strong>Marcación manual (vista previa):</strong> el agente ve la lista de números "sin procesar" y decide cuándo marcar cada uno; también puede hacer doble clic sobre un cliente para ir directo a su ficha y marcar desde ahí.</li>
+<li><strong>Marcación automática:</strong> ver el detalle de prioridades en el paso 6, "Marcador predictivo vs. marcado automático (auto dial)".</li>
+<li><strong>Predial (marcador predictivo):</strong> ver los pasos 2 y 3 de esta guía.</li>
+</ul>
+<h3 id="2-iniciar-la-sesion-de-marcado">2. Iniciar la sesión de marcado<a class="headerlink" href="#2-iniciar-la-sesion-de-marcado" title="Permanent link">&para;</a></h3>
+<p>El jefe de grupo entra al <strong>marcador</strong>, donde ve la tarea con su cantidad de <strong>clientes pendientes de marcar</strong>, y elige una de dos estrategias:</p>
+<table>
+<thead>
+<tr>
+<th>Estrategia</th>
+<th>Cómo calcula cuántas llamadas lanzar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Por concurrencia máxima</td>
+<td>Un número fijo de llamadas simultáneas para la tarea (ej. 50: si ya hay 30 en curso y 10 timbrando, lanza 10 más para completar 50)</td>
+</tr>
+<tr>
+<td>Por porcentaje de agentes disponibles</td>
+<td>Agentes libres × porcentaje configurado, menos las llamadas que ya están timbrando (ej. 40 agentes libres × 120% − 10 timbrando = 36 nuevas llamadas)</td>
+</tr>
+</tbody>
+</table>
+<p>Al hacer clic en <strong>iniciar</strong>, el marcador comienza a marcar automáticamente los números de la lista.</p>
+<p><img alt="Panel del marcador mostrando las dos estrategias de marcado, &quot;By Max. Calls&quot; y &quot;By Available Agent&quot;, con los botones Start/End por tarea" src="../../assets/images/marcacion-predictiva/estrategia-inicio-marcador.png" /></p>
+<h3 id="3-monitorear-la-sesion-en-vivo">3. Monitorear la sesión en vivo<a class="headerlink" href="#3-monitorear-la-sesion-en-vivo" title="Permanent link">&para;</a></h3>
+<p>Mientras la campaña corre, el panel del marcador muestra en tiempo real:</p>
+<ul>
+<li><strong>Timbrando:</strong> clientes cuya llamada está en curso, esperando respuesta.</li>
+<li><strong>En conversación:</strong> clientes ya conectados con un agente.</li>
+<li><strong>Esperando agente:</strong> clientes que contestaron pero aún no hay agente libre asignado — este número debe mantenerse lo más bajo posible; si crece mucho, hay que bajar la agresividad de la estrategia de marcado.</li>
+<li>Duración de timbrado, tiempo de espera, y tiempos entre respuesta del cliente y asignación al agente.</li>
+</ul>
+<p><img alt="Panel de monitoreo del marcador con los parámetros de predicción (límite de marcado, intervalo, tasa de respuesta, tiempos de conversación y de gestión posterior) y las listas de llamadas timbrando, en conversación y esperando agente" src="../../assets/images/marcacion-predictiva/panel-monitoreo-marcador.jpg" /></p>
+<h3 id="4-recuperar-numeros-no-completados">4. Recuperar números no completados<a class="headerlink" href="#4-recuperar-numeros-no-completados" title="Permanent link">&para;</a></h3>
+<p>Si la lista de marcación se agota antes de terminar la tarea, se puede <strong>recuperar</strong> clientes desde el paquete completo de la tarea de vuelta a la lista de marcación, para reintentarlos.</p>
+<p><img alt="Lista de marcado de la campaña con los botones Filter, Recycle by checked y Recycle by conditions, y la pestaña para ver los clientes de la campaña" src="../../assets/images/marcacion-predictiva/lista-marcado-recuperar.jpg" /></p>
+<p><strong>Forzar el marcado inmediato de números con hora de cita pendiente.</strong> El predial solo marca un número en seguimiento cuando su hora programada (<code>schedule</code>) ya es igual o anterior a la hora actual del sistema — si la cita quedó fijada para más adelante, el botón de inicio no lo tomará todavía. Para marcarlo de inmediato desde la interfaz, sin esperar a que llegue la hora:</p>
+<ol>
+<li>Entra a <strong>Predial → Ver lista de marcado</strong> y busca los registros por "hora de cita" (<code>schedule</code>).</li>
+<li>Bórralos con <strong>Eliminar por condición de búsqueda</strong> (por ejemplo, "eliminación directa") — solo se pueden eliminar los registros cuyo estado de marcado sea "pendiente".</li>
+<li>Ve a <strong>Recuperar</strong> y recupera esos mismos clientes de vuelta a la lista de marcado, fijando ahora una hora de cita menor o igual a la hora actual.</li>
+</ol>
+<p><img alt="Ventana &quot;Choose Recycle Conditions&quot; para recuperar un cliente hacia la lista de marcado, con los campos de número de teléfono a usar, prioridad y hora de cita (schedule)" src="../../assets/images/marcacion-predictiva/recuperar-condiciones-cita.jpg" /></p>
+<ol>
+<li>Pulsa <strong>Iniciar</strong> en el predial para que se marquen de inmediato.</li>
+</ol>
+<p>(La guía original también documenta un método alternativo por base de datos — actualizar <code>schedule</code> a <code>0000-00-00 00:00:00</code> y el campo <code>dialer</code> de la campaña a <code>start</code> directamente en MySQL — que se omite aquí por ser una intervención directa sobre la base de datos, fuera del flujo normal de administración.)</p>
+<p>Por defecto, un número de predial que no contesta se marca una sola vez y no se reintenta automáticamente. Para habilitar reintentos, configura <strong>Marketing outbound → Tarea de marketing outbound → Configuración avanzada de predial → Remarcado automático por no respuesta</strong>, indicando los intervalos entre reintentos (ej. <code>1h,1d,1w</code> reintenta a la hora, al día y a la semana siguientes; <code>0,0</code> reintenta de inmediato con un máximo de 2 reintentos).</p>
+<p>También se puede automatizar la recuperación con un filtro por condiciones en vez de repetirla manualmente cada vez — por ejemplo, para reciclar automáticamente a los clientes mayores de cierta edad o con determinada fecha de nacimiento, programando además cada cuánto se ejecuta el filtro:</p>
+<p><img alt="Formulario &quot;Add Filter&quot; para crear un filtro de recuperación automática, con nombre, prioridad, programación (minuto/hora/día/mes/semana) y condiciones de filtrado" src="../../assets/images/marcacion-predictiva/filtro-recuperacion-condiciones.jpg" /></p>
+<h3 id="5-cerrar-y-revisar-resultados">5. Cerrar y revisar resultados<a class="headerlink" href="#5-cerrar-y-revisar-resultados" title="Permanent link">&para;</a></h3>
+<p>Al finalizar, consulta en <a href="../../modulos/reportes-y-estadisticas/">4.8 Reportes</a> el desempeño de agente y de grupo para esa sesión — volumen marcado, tasa de contactación, y tiempos promedio.</p>
+<p><img alt="Reporte por grupo de agentes con columnas de llamadas marcadas, llamadas contestadas, tasa de respuesta, y tiempos promedio de timbrado, respuesta y conversación" src="../../assets/images/marcacion-predictiva/estadisticas-marcador-grupo.png" /></p>
+<h3 id="6-marcador-predictivo-vs-marcado-automatico-auto-dial">6. Marcador predictivo vs. marcado automático (auto dial)<a class="headerlink" href="#6-marcador-predictivo-vs-marcado-automatico-auto-dial" title="Permanent link">&para;</a></h3>
+<p>El marcador predictivo no es la única forma de marcado asistido por sistema dentro de una tarea de campaña. Existe una alternativa, el <strong>marcado automático</strong> (auto dial), pensada para conservar la relación agente-cliente en vez de maximizar la ocupación del agente:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Marcador predictivo</th>
+<th>Marcado automático (auto dial)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A quién marca</td>
+<td>El siguiente número disponible en la lista, sin importar el agente</td>
+<td>Solo los clientes ya asignados a ese agente ("nuevo" o "pendiente")</td>
+</tr>
+<tr>
+<td>Orden de marcado</td>
+<td>Cliente primero; el agente se asigna cuando contesta</td>
+<td>Agente primero; solo se marca al cliente si el agente contesta</td>
+</tr>
+<tr>
+<td>Experiencia del cliente</td>
+<td>Puede quedar en espera unos segundos hasta que se le asigna agente</td>
+<td>No espera — el agente ya está en línea cuando se marca su número</td>
+</tr>
+<tr>
+<td>Reintento con múltiples números</td>
+<td>Según configuración de recuperación de la lista</td>
+<td>Automático: si el primer número del cliente no contesta, marca el siguiente número registrado</td>
+</tr>
+<tr>
+<td>Llamadas con cita (callback)</td>
+<td>No es su función típica</td>
+<td>Soporta: al llegar la hora programada (±5 min) el sistema marca automáticamente</td>
+</tr>
+</tbody>
+</table>
+<p>Se activa en <strong>Marcador y campañas → Avanzado</strong>, seleccionando "Automático" u "Opcional" en el modo de marcado (<code>dialway</code>) de la tarea:</p>
+<p><img alt="Pestaña Advanced de la tarea de campaña con el campo Dialway desplegado, mostrando las opciones Default, Preview, Auto y Optional" src="../../assets/images/marcacion-predictiva/modo-marcado-dialway.png" /></p>
+<p>con esto habilitado, el agente ve un botón "Iniciar marcado automático" en su panel de trabajo:</p>
+<p><img alt="Panel de trabajo del agente con el botón &quot;Start to auto-dial&quot; resaltado, dentro de la pestaña de clientes nuevos de la tarea" src="../../assets/images/marcacion-predictiva/boton-iniciar-marcado-automatico.png" /></p>
+<p>La prioridad de marcado en este modo es: primero los clientes pendientes con hora programada cercana (±5 min) ordenados por esa hora; luego los pendientes con hora programada más lejana, ordenados por hora y número de intentos; y por último los clientes nuevos, ordenados por número de intentos y por el orden de la lista en la pantalla del agente.</p>
+<h2 id="encuestas-telefonicas-con-marcacion-predictiva">Encuestas telefónicas con marcación predictiva<a class="headerlink" href="#encuestas-telefonicas-con-marcacion-predictiva" title="Permanent link">&para;</a></h2>
+<p><strong>Qué es:</strong> combinar una tarea de campaña con predial/marcador y una encuesta (ver <a href="../../modulos/encuestas/">4.5 Encuestas y cuestionarios</a>), de forma que al conectar la llamada el agente — o, en encuestas de voz sin agente, el propio IVR — recorre un cuestionario con el cliente. Es el patrón típico de estudios de mercado, medición de satisfacción, y campañas de venta telefónica con guion estructurado.</p>
+<h3 id="1-crear-el-cuestionario">1. Crear el cuestionario<a class="headerlink" href="#1-crear-el-cuestionario" title="Permanent link">&para;</a></h3>
+<p>Antes de vincularlo a una tarea, crea la encuesta completa en <strong>Encuestas → Gestión de encuestas</strong>: nombre, saludo y cierre, grupos de preguntas, preguntas (opción única, opción múltiple, combinada o texto libre), sus opciones, el orden y la lógica de salto entre preguntas, y cuotas si aplica. El detalle completo de esta parte está en <a href="../../modulos/encuestas/">4.5 Encuestas y cuestionarios</a> — aquí solo se resume el punto donde se integra con una tarea de campaña.</p>
+<p>Para una <strong>encuesta de voz</strong> (sin agente, ver más abajo), hay dos particularidades adicionales frente a una encuesta de texto normal:</p>
+<ul>
+<li>El tipo de la encuesta debe ser "voz", y el saludo/cierre son archivos de audio en vez de texto.</li>
+<li>Solo admite dos tipos de pregunta: opción única y texto libre. Cada pregunta necesita su propio audio grabado, y cada opción de respuesta corresponde a la tecla numérica que el cliente presiona (la opción 1 se selecciona presionando "1", y así sucesivamente — el orden de grabación de las opciones debe coincidir con ese mapeo). Si el cliente no responde o presiona una tecla inválida, el sistema repite la pregunta una vez; si vuelve a fallar, la encuesta termina en falla si la pregunta era obligatoria, o avanza a la siguiente si no lo era.</li>
+<li>Las grabaciones de las preguntas se suben primero como archivos de audio (<strong>PBX avanzado → Carga masiva de archivos de voz</strong>, o por FTP a la carpeta de sonidos del equipo) y luego se administran como voces del sistema en <strong>PBX avanzado → Gestión de voces de llamada</strong>, antes de poder asignarlas a cada pregunta.</li>
+</ul>
+<h3 id="2-vincular-la-encuesta-a-la-tarea-de-campana">2. Vincular la encuesta a la tarea de campaña<a class="headerlink" href="#2-vincular-la-encuesta-a-la-tarea-de-campana" title="Permanent link">&para;</a></h3>
+<ol>
+<li>En <strong>Marketing outbound → Tarea de marketing outbound → Agregar</strong>, en la pestaña de guion (script) selecciona la encuesta ya creada — solo se puede elegir una encuesta libre (no asignada todavía a otra tarea).</li>
+<li>Completa el resto de la tarea: paquete de clientes, equipo de agentes, campos visibles/editables por el agente, y porcentaje de control de calidad.</li>
+<li>Asigna los clientes del paquete a los agentes del equipo (reparto automático por porcentaje, o manual).</li>
+<li>Si el cuestionario debe activarse también en llamadas entrantes hacia esta tarea, configura el enlace de número entrante/saliente en <strong>Administración avanzada del call center → Enlace de aplicación entrante</strong>, con tipo de destino "tarea saliente" y el nombre de la tarea recién creada — así el sistema reconoce el número y abre la pantalla de encuesta correspondiente.</li>
+</ol>
+<h3 id="3-la-pantalla-emergente-de-encuesta-durante-la-llamada">3. La pantalla emergente de encuesta durante la llamada<a class="headerlink" href="#3-la-pantalla-emergente-de-encuesta-durante-la-llamada" title="Permanent link">&para;</a></h3>
+<p>Con la encuesta ya vinculada, cuando el agente marca (o recibe) una llamada de esta tarea, la ficha de cliente se abre junto con la pantalla de la encuesta:</p>
+<ul>
+<li>Si el cliente ya existe en el sistema, se abre su ficha para edición y la encuesta debajo o en una pestaña asociada.</li>
+<li>Si el cliente no existe, se abre primero el formulario de alta de cliente nuevo.</li>
+<li>El agente puede maximizar la encuesta a pantalla completa para facilitar la lectura del guion mientras habla.</li>
+<li>Al colgar, el agente registra el resultado de la llamada, el estado de la gestión (completado, en seguimiento, fallido), y guarda — quedando el resultado de la encuesta asociado a ese contacto.</li>
+</ul>
+<h3 id="4-encuestas-de-voz-con-predial-sin-agente">4. Encuestas de voz con predial (sin agente)<a class="headerlink" href="#4-encuestas-de-voz-con-predial-sin-agente" title="Permanent link">&para;</a></h3>
+<p>Cuando la encuesta es de tipo voz, no participa un agente — el predial marca directamente hacia la encuesta:</p>
+<ol>
+<li>Sube las voces de las preguntas por FTP a la ruta configurada del equipo (por defecto algo como <code>/var/www/html/asterCC/data/soundfiles/&lt;equipo&gt;/&lt;idioma&gt;/</code>) y genera/publica los archivos desde <strong>PBX avanzado → Carga masiva de archivos de voz</strong>.</li>
+<li>Crea la encuesta de voz con sus preguntas, cada una apuntando a su archivo de audio, y su cuota si corresponde (para encuestas de voz, la cuota solo admite el tipo "por encuesta completada").</li>
+<li>Crea la tarea de campaña, elige la encuesta de voz en el guion, y en la pestaña de predial define como destino de conexión la propia encuesta — así, al contestar, el cliente entra directo al cuestionario grabado sin pasar por un agente.</li>
+<li>Importa los números de la tarea igual que en cualquier campaña.</li>
+<li>Inicia el predial: como no hay agentes involucrados, la única estrategia disponible es por concurrencia máxima (no aplica la estrategia por porcentaje de agentes).</li>
+<li>Revisa el avance en <strong>Encuestas → Distribución de encuesta</strong> (completadas, porcentaje de cada respuesta) y en <strong>Marketing outbound → Control de calidad</strong> el detalle por cliente — por ejemplo, un cliente que cuelga tras responder solo 2 de 5 preguntas queda como "fallido", mientras uno que responde todas o llega al final por un salto de lógica queda como encuesta válida.</li>
+</ol>
+<h3 id="caso-real-empresa-de-encuestas-telefonicas">Caso real: empresa de encuestas telefónicas<a class="headerlink" href="#caso-real-empresa-de-encuestas-telefonicas" title="Permanent link">&para;</a></h3>
+<p>Una empresa de estudios de mercado se dedica a realizar encuestas telefónicas por encargo de terceros, y entregarles el resultado tabulado. Necesita gestión de clientes, gestión de encuestas y grabación obligatoria de toda llamada para control de calidad. El flujo con AsterCC queda así:</p>
+<ul>
+<li><strong>El administrador de la campaña:</strong> importa los datos del cliente encargante a <strong>Administración avanzada del call center → Carga de datos</strong>; crea la encuesta con las preguntas del estudio; crea la tarea de campaña (plan de marcado) y le asocia la encuesta; asigna los clientes del paquete a los agentes en un porcentaje definido (por ejemplo, reparto automático equitativo).</li>
+<li><strong>El agente:</strong> desde su plataforma de trabajo, llama a los clientes que le fueron asignados, edita la ficha de cliente si hace falta, y completa la encuesta durante la llamada; al finalizar, guarda el resultado de la encuesta, el resultado de la llamada, y el estado de avance de la gestión de ese cliente.</li>
+<li><strong>Al cerrar la recolección:</strong> el administrador revisa qué cambios de ficha de cliente hechos por los agentes se sincronizan de vuelta a la base principal; hace control de calidad cruzando resultado de encuesta contra la grabación de la llamada; y exporta a Excel únicamente los registros validados como encuesta efectiva, junto con el reporte de tasa de contactación y tasa de finalización por agente y por campaña.</li>
+</ul>
+<h2 id="validar-tarjetas-de-credito-con-ivr-durante-una-campana">Validar tarjetas de crédito con IVR durante una campaña<a class="headerlink" href="#validar-tarjetas-de-credito-con-ivr-durante-una-campana" title="Permanent link">&para;</a></h2>
+<p><strong>Qué es:</strong> un IVR que, sin intervención de agente, recibe el número de tarjeta y la fecha de vencimiento por teclado, y consulta un servicio HTTP externo para determinar si la tarjeta es válida — útil como paso de verificación dentro de un flujo de campaña o de atención (por ejemplo, antes de procesar un cobro o confirmar una suscripción).</p>
+<p>El flujo completo se construye encadenando un IVR principal y varios IVR secundarios (ver <a href="../../modulos/pbx-ivr/">4.1 PBX e IVR</a> para la mecánica general de acciones y transferencias entre flujos):</p>
+<ol>
+<li><strong>Audio de bienvenida:</strong> en <strong>PBX avanzado → Gestión de voces de llamada</strong>, agrega la voz de bienvenida (por ejemplo, por TTS) que pedirá el número de tarjeta.</li>
+<li><strong>IVR principal — capturar y confirmar el número de tarjeta:</strong></li>
+<li>Acción "Responder".</li>
+<li>Acción "Reproducir y capturar dígitos": reproduce la bienvenida y guarda lo capturado en una variable, ej. <code>CARDNO</code>.</li>
+<li>Acción "Reproducir audio" + "Leer número": confirma al cliente el número capturado.</li>
+<li>Acción "Reproducir y capturar dígitos": "confirmar presione 1, cancelar presione 2", guardado en una variable de confirmación (ej. <code>OK1</code>).</li>
+<li>Transferencia: si <code>OK1 = 1</code>, pasa al IVR secundario de fecha de vencimiento; si <code>OK1 = 2</code>, vuelve al inicio de este mismo IVR para volver a capturar el número.</li>
+<li><strong>IVR secundario 1 — capturar y confirmar la fecha de vencimiento:</strong> mismo patrón que el paso anterior, pero capturando la fecha en formato AAMM (ej. octubre de 2015 = <code>1510</code>) en una variable (ej. <code>DATENO</code>), con su propia confirmación (<code>OK2</code>) que transfiere al siguiente IVR si es correcta, o vuelve a pedir la fecha si no.</li>
+<li><strong>IVR secundario 2 — consulta HTTP/webservice:</strong> acción "HTTP", enviando como parámetros el número de tarjeta y la fecha capturados (formato <code>cardno=CARDNO|validdate=DATENO</code>) y recibiendo la respuesta del servicio en una variable global en mayúsculas cuyo nombre coincide exactamente con el nombre de retorno definido por el servicio (ej. <code>R1</code>). El servicio también devuelve un código (<code>inputcode</code>) que indica si la validación fue exitosa (1) o fallida (0).</li>
+<li><strong>Transferencia según el código de retorno:</strong></li>
+<li><code>inputcode = 1</code> (válido): transfiere al IVR que informa el resultado — por ejemplo, reproduce el cupo disponible de la tarjeta usando el valor recibido en la variable global (<code>R1</code>), con opción de repetir el mensaje o colgar.</li>
+<li><code>inputcode = 0</code> (inválido): transfiere a un IVR que informa que la tarjeta no es válida y ofrece reintentar la captura desde el inicio.</li>
+</ol>
+<p>Este patrón de "capturar dato → confirmar → transferir según validación externa" se puede reutilizar para cualquier otra verificación por HTTP dentro de un IVR (por ejemplo, validar un número de socio o un código de cupón), cambiando únicamente los parámetros enviados y las variables de retorno esperadas.</p>
+<h2 id="difusion-de-voz-masiva-voice-broadcasting">Difusión de voz masiva (voice broadcasting)<a class="headerlink" href="#difusion-de-voz-masiva-voice-broadcasting" title="Permanent link">&para;</a></h2>
+<p><strong>Qué es:</strong> un modo de marcado automatizado que combina marcador predictivo, IVR y campaña, pero sin agente en la llamada — el sistema marca según ciertas condiciones y, al conectar, transfiere la llamada directamente a un <a href="../../modulos/pbx-ivr/">IVR</a> que reproduce una grabación y recoge respuestas por tonos del teclado (por ejemplo, avisos masivos, encuestas de voz, o campañas tipo "presione 1 para..."). No hay conversación con un agente: es reproducción de audio pregrabado más navegación por IVR. Se distingue así del marcador predictivo con agente descrito arriba, que siempre conecta al cliente con una persona.</p>
+<p><strong>Cómo se configura (panorama, sin repetir la configuración base de troncal/extensión/agente ya cubierta en <a href="../marketing-outbound/">Marketing outbound</a>):</strong></p>
+<ol>
+<li>Preparar el sistema (servidor, troncal saliente, cuentas y extensiones) igual que para cualquier campaña.</li>
+<li>Instalar los módulos de campaña y marcador predictivo.</li>
+<li>Crear el IVR que se va a reproducir (bienvenida, menú de tonos, cierre) — ver <a href="../../modulos/pbx-ivr/">4.1 PBX e IVR</a>.</li>
+<li>Crear la tarea de campaña con el marcador habilitado y, en <strong>Dial-In-Exten</strong>, apuntar al IVR de difusión en vez de a un grupo de agentes; desactivar la reasignación automática a agente ("check reassign" → no), porque en este modo no se asignan clientes a agentes.</li>
+<li>Importar el listado de números a marcar, igual que en cualquier tarea de campaña. Si los datos de origen usan valores distintos a los que espera AsterCC (por ejemplo, "M"/"F" en vez de "male"/"female" para el sexo del cliente), define antes un diccionario de datos en <strong>Administración avanzada del call center → Coincidencia de importación de datos</strong>, mapeando cada valor externo a su equivalente interno, y márcalo para usarse durante la importación.</li>
+<li>Iniciar el marcador desde <strong>Marcador → Marcador</strong>, con el límite de llamadas simultáneas (por defecto hasta 20 concurrentes sin licencia adicional, ajustable según los canales que permita el troncal).</li>
+<li>Los números no contestados o con error se pueden recuperar y reintentar igual que en cualquier tarea con marcador.</li>
+<li>Revisar resultados en los reportes de la campaña y en el CDR (<strong>Marketing outbound → CDR de campaña</strong>).</li>
+</ol>
+<p>Si la difusión debe transferir a una cola o grupo de agentes en vez de a un IVR puro (por ejemplo, para escalar a un humano si el cliente presiona una opción), se configura igual pero seleccionando el grupo de agentes en Dial-In-Exten; en ese caso el flujo vuelve a ser equivalente al marcador predictivo estándar descrito en este artículo, con el IVR como paso intermedio antes de la cola.</p>
+<p><strong>Escalar a un agente humano dentro de la difusión.</strong> También se puede combinar broadcast y atención humana en el mismo IVR (en vez de transferir toda la tarea a una cola): se crea un equipo de agentes con su cola asociada y, en el IVR de difusión, la opción "servicio con agente" (por ejemplo, presionar 0) se transfiere a esa cola en vez de colgar — así solo el cliente que pide hablar con una persona pasa de la reproducción automática a un agente en línea, mientras el resto de las llamadas del broadcast sigue su curso sin intervención humana.</p>
+<h2 id="referencia-rapida">Referencia rápida<a class="headerlink" href="#referencia-rapida" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parámetro</th>
+<th>Se configura en</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Límite de concurrencia por equipo</td>
+<td>Marcador → Configuración del marcador</td>
+</tr>
+<tr>
+<td>Estrategia de marcado (concurrencia / % agentes)</td>
+<td>Panel del marcador, al iniciar la sesión</td>
+</tr>
+<tr>
+<td>Destino al contestar (cola / IVR)</td>
+<td>Configuración avanzada de predial, dentro de la tarea de campaña</td>
+</tr>
+<tr>
+<td>Modo de marcado (predictivo / automático / opcional)</td>
+<td>Marcador y campañas → Avanzado → <code>dialway</code> de la tarea</td>
+</tr>
+<tr>
+<td>Difusión de voz masiva</td>
+<td>Tarea de campaña con Dial-In-Exten apuntando a un IVR</td>
+</tr>
+<tr>
+<td>Importar rango de números</td>
+<td>Administración avanzada del call center → Carga de datos (requiere rol de jefe de grupo)</td>
+</tr>
+<tr>
+<td>Forzar marcado inmediato de una cita programada</td>
+<td>Predial → Ver lista de marcado → eliminar por condición → Recuperar con <code>schedule</code> ≤ ahora</td>
+</tr>
+<tr>
+<td>Remarcado automático de predial sin respuesta</td>
+<td>Marketing outbound → Tarea → Configuración avanzada de predial</td>
+</tr>
+<tr>
+<td>Vincular encuesta a una tarea de campaña</td>
+<td>Marketing outbound → Tarea de marketing outbound → pestaña de guion</td>
+</tr>
+<tr>
+<td>Diccionario de datos para importación</td>
+<td>Administración avanzada del call center → Coincidencia de importación de datos</td>
+</tr>
+<tr>
+<td>Validar dato externo (tarjeta, cupón, etc.) por HTTP dentro de un IVR</td>
+<td>PBX avanzado → Electronic call flow (IVR) → acción "HTTP"</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="fuentes">Fuentes<a class="headerlink" href="#fuentes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>raw/zh/用途和案例/如何为在外呼任务中使用预拨号功能.txt</code></li>
+<li><code>raw/en/how-to/how_to_use_predictive_dialer_in_a_campaign.txt</code></li>
+<li><code>raw/en/how-to/how_to_build_a_voice_broadcasting_system.txt</code></li>
+<li><code>raw/en/how-to/how_to_build_a_voice_broadcasting_to_ivr_system.txt</code></li>
+<li><code>raw/en/regular_function_description_in_call_center/auto_dialing.txt</code></li>
+<li><code>raw/en/regular_function_description_in_call_center/predictive_dialer.txt</code></li>
+<li><code>raw/zh/实际案例指导/如何导入电话销售号码段进行外呼拨号_自动拨号和预拨号.txt</code></li>
+<li><code>raw/zh/实际案例指导/如何立刻拨打预拨号任务中有预约时间的号码.txt</code></li>
+<li><code>raw/zh/实际案例指导/拨号计划问卷弹屏设置步骤.txt</code></li>
+<li><code>raw/zh/实际案例指导/某电话问卷调查公司的astercc应用实例.txt</code></li>
+<li><code>raw/zh/实际案例指导/如何利用ivr功能验证信用卡的有效性.txt</code></li>
+<li><code>raw/zh/用途和案例/使用预拨号进行语音问卷调查.txt</code></li>
+<li><code>raw/zh/用途和案例/如何制作问卷.txt</code></li>
+<li><code>raw/zh/用途和案例/如何结合外呼计划使用问卷进行市场调查.txt</code></li>
+<li><code>raw/zh/用途和案例/通过电话进行市场调查问卷或销售.txt</code></li>
+<li><code>raw/zh/用途和案例/如何建立一个语音广播系统.txt</code></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.indexes", "navigation.tracking", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/javascripts/nav-toggle.js"></script>
+      
+    
+  </body>
+</html>

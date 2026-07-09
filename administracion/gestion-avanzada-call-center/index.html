@@ -1,0 +1,3124 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación de AsterCC — plataforma de call center basada en Asterisk">
+      
+      
+      
+      
+        <link rel="prev" href="../configuracion-y-mantenimiento-sistema/">
+      
+      
+        <link rel="next" href="../historial-documentacion-1.2-beta/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Gestión avanzada del call center - Wiki AsterCC (Español)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gestion-avanzada-del-call-center" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Wiki AsterCC (Español)" class="md-header__button md-logo" aria-label="Wiki AsterCC (Español)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Wiki AsterCC (Español)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Gestión avanzada del call center
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Wiki AsterCC (Español)" class="md-nav__button md-logo" aria-label="Wiki AsterCC (Español)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Wiki AsterCC (Español)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glosario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glosario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../introduccion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introducción a AsterCC
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. Introducción a AsterCC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/que-es-astercc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ¿Qué es AsterCC?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/funcionalidades/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funcionalidades del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/arquitectura-general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura general
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/demo-en-linea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo en línea
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../instalacion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Instalación y configuración inicial
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Instalación y configuración inicial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requisitos del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/descarga-e-instalacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descarga e instalación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/instalar-desde-usb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instalar desde USB (AsterCC Box)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/configuracion-post-instalacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración post-instalación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/licencias-y-errores-comunes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licencias y errores comunes de inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../primeros-pasos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Primeros pasos
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Primeros pasos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/guia-administradores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía rápida para administradores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/guia-agentes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía rápida para agentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/recorrido-interfaz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recorrido por la interfaz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/configurar-softphones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configurar softphones (Eyebeam, X-Lite, Zoiper)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../modulos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Módulos del sistema
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. Módulos del sistema
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/pbx-y-telefonia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX y telefonía
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/pbx-ivr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX — IVR (menú de voz)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/pbx-funciones-avanzadas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX — Funciones avanzadas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/marcador-y-campanas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcador y campañas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/marcador-predictivo-avanzado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcador predictivo — avanzado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/cuentas-equipos-permisos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cuentas, equipos y permisos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/tarifas-y-facturacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarifas y facturación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/encuestas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encuestas y cuestionarios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/base-conocimiento-work-orders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base de conocimiento y Work Orders
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/plataforma-del-agente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plataforma de trabajo del agente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/reportes-y-estadisticas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reportes, estadísticas y financiero
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/oficina-virtual-bpo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oficina virtual / BPO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/atencion-cliente-mensajeria-ecommerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atención al cliente, mensajería y e-commerce
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/mensajeria-wechat-fax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mensajería — WeChat, Fax y envío masivo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../casos-de-uso/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Casos de uso y soluciones
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. Casos de uso y soluciones
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/call-center-inbound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Call center de atención al cliente (inbound)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/marketing-outbound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketing outbound / televentas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/e-commerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-commerce
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/oficina-virtual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oficina virtual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/marcacion-predictiva/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcación predictiva
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/casos-tecnicos-avanzados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Casos técnicos avanzados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Administración avanzada
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Administración avanzada
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../asterisk-ami/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración de Asterisk AMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openvpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenVPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APC (caché de PHP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mailman/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mailman / correo saliente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagnostico-red-voip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagnóstico de red y VoIP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuracion-y-mantenimiento-sistema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración y mantenimiento del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestión avanzada del call center
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestión avanzada del call center
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qué es
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-se-usa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo se usa
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cómo se usa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integracion-de-aplicaciones-externas-crm-propio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integración de aplicaciones externas (CRM propio)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-tareas-internas-del-equipo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de tareas internas del equipo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importacion-y-exportacion-masiva-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Importación y exportación masiva de datos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-area-numero-que-llama" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Código de área (número que llama)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reglas-de-visualizacion-de-numero-telefonico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reglas de visualización de número telefónico
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turnos-y-horarios-de-agentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Turnos y horarios de agentes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motivos-de-pausa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motivos de pausa
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#campos-y-categorias-de-campo-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Campos y categorías de campo del sistema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contactos-frecuentes-agenda-administrativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contactos frecuentes (agenda administrativa)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flujos-de-trabajo-aprobaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flujos de trabajo (aprobaciones)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calificacion-de-llamadas-por-el-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calificación de llamadas por el cliente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-enlaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de enlaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencia-rapida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referencia rápida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fuentes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../historial-documentacion-1.2-beta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentación histórica — AsterCC 1.2 beta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../desarrollo/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Guía de desarrollo y customización
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7. Guía de desarrollo y customización
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-y-ami/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API y AMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/guia-desarrolladores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía para desarrolladores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/introduccion-api-integracion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción a la API de integración
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/codigos-retorno-e-idiomas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Códigos de retorno y codificación de idioma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-autenticacion-y-sesion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Autenticación y sesión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-control-de-llamada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Control de llamada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-supervision-y-control-de-agente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Supervisión y control de agente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-datos-y-grabaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Datos y grabaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/eventos-tiempo-real-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recibir eventos en tiempo real de la API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/integrar-envio-de-sms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrar el envío de SMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Preguntas frecuentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Solución de problemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Historial de versiones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qué es
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-se-usa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo se usa
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cómo se usa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integracion-de-aplicaciones-externas-crm-propio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integración de aplicaciones externas (CRM propio)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-tareas-internas-del-equipo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de tareas internas del equipo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importacion-y-exportacion-masiva-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Importación y exportación masiva de datos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigo-de-area-numero-que-llama" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Código de área (número que llama)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reglas-de-visualizacion-de-numero-telefonico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reglas de visualización de número telefónico
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turnos-y-horarios-de-agentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Turnos y horarios de agentes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motivos-de-pausa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motivos de pausa
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#campos-y-categorias-de-campo-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Campos y categorías de campo del sistema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contactos-frecuentes-agenda-administrativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contactos frecuentes (agenda administrativa)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flujos-de-trabajo-aprobaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flujos de trabajo (aprobaciones)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calificacion-de-llamadas-por-el-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calificación de llamadas por el cliente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-enlaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de enlaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencia-rapida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referencia rápida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fuentes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="gestion-avanzada-del-call-center">Gestión avanzada del call center<a class="headerlink" href="#gestion-avanzada-del-call-center" title="Permanent link">&para;</a></h1>
+<h2 id="que-es">Qué es<a class="headerlink" href="#que-es" title="Permanent link">&para;</a></h2>
+<p>El menú <strong>呼叫中心高级管理 / Call Center (Advanced)</strong> agrupa un conjunto de utilidades de configuración que no pertenecen a un solo módulo de negocio, sino que dan soporte transversal a varios: campañas de marcación, oficina virtual/BPO y atención al cliente. Incluye: vínculo de aplicaciones externas (CRM propio) con el timbrado entrante, gestión de tareas internas del equipo, importación y exportación masiva de datos, turnos y horarios de agentes, motivos de pausa, formato de visualización de números telefónicos, código de área de un número, campos y categorías de campo genéricos del sistema, flujos de trabajo de aprobación, calificación de llamadas por el cliente, y gestión de enlaces reutilizables.</p>
+<p>No cubre configuración de negocio en sí (eso vive en <a href="../../modulos/marcador-y-campanas/">Marcador y campañas</a>, <a href="../../modulos/oficina-virtual-bpo/">Oficina virtual / BPO</a> o <a href="../../modulos/atencion-cliente-mensajeria-ecommerce/">Atención al cliente, mensajería y e-commerce</a>), sino la maquinaria administrativa que esos módulos reutilizan.</p>
+<h2 id="como-se-usa">Cómo se usa<a class="headerlink" href="#como-se-usa" title="Permanent link">&para;</a></h2>
+<h3 id="integracion-de-aplicaciones-externas-crm-propio">Integración de aplicaciones externas (CRM propio)<a class="headerlink" href="#integracion-de-aplicaciones-externas-crm-propio" title="Permanent link">&para;</a></h3>
+<p>Cuando el negocio ya tiene un sistema propio (tipo CRM) y quiere que AsterCC le envíe los eventos de llamada para mostrar la ficha del cliente automáticamente ("pantalla emergente"), se usan dos pantallas en conjunto:</p>
+<p><strong>Gestión de aplicaciones de negocio</strong> (<code>Business Apps</code>): define la aplicación externa —nombre, identificador único, equipo, grupo de agentes, URL de la aplicación (se embebe como pestaña dentro de la plataforma del agente), URL de eventos de llamada, número/nombre que se envía en la llamada saliente, si se abre por defecto, si se envían las credenciales de login del agente a la aplicación, si se usa el aviso emergente propio de la plataforma o el de la aplicación externa, y si el agente puede transferir a cualquier número o solo a contactos frecuentes.</p>
+<p><img alt="Listado y filtros de búsqueda de aplicaciones de negocio configuradas" src="../../assets/images/gestion-avanzada-call-center/aplicaciones-negocio-listado.jpg" /></p>
+<p><strong>Vínculo de aplicación entrante</strong> (<code>App Binding</code>): asocia esa aplicación (o una tarea de campaña, atención al cliente u oficina virtual) a un DID, un troncal y/o un número que llama, para que el sistema sepa qué pantalla mostrarle al agente según por dónde entró la llamada. Los criterios de coincidencia (DID, DID de un grupo, troncal, número que llama) se pueden combinar; si hay varias reglas que podrían aplicar, gana la de mayor prioridad. También permite definir una <strong>aplicación por defecto de grupo</strong>, para cuando el agente marca directamente desde su extensión sin que haya pasado por un enrutamiento explícito.</p>
+<p><img alt="Menú de vínculo de aplicación entrante y formulario básico de alta (equipo, tipo, agente/grupo)" src="../../assets/images/gestion-avanzada-call-center/vinculo-aplicacion-entrante-alta.png" /></p>
+<p><img alt="Criterios avanzados de coincidencia de un vínculo: tipo de DID, DID, troncal, número que llama y prioridad" src="../../assets/images/gestion-avanzada-call-center/vinculo-aplicacion-criterios-avanzados.png" /></p>
+<h3 id="gestion-de-tareas-internas-del-equipo">Gestión de tareas internas del equipo<a class="headerlink" href="#gestion-de-tareas-internas-del-equipo" title="Permanent link">&para;</a></h3>
+<p>Distinta de las tareas de campaña de marcación: es un sistema simple de asignación y seguimiento de pendientes internos entre cuentas/equipos, con nivel de urgencia, adjuntos, historial de cambios y respuestas.</p>
+<ul>
+<li><strong>Categorías de tarea:</strong> clasificación libre para ordenar las tareas (nombre + descripción).</li>
+<li><strong>Tareas:</strong> cada tarea define título, categoría, nivel (general/importante/urgente/muy urgente), fecha de inicio prevista, contenido, adjunto, y a quién se asigna —equipo, y opcionalmente grupo y persona específica. Sin persona asignada, la tarea queda disponible para todo el equipo (o todo el grupo, si se eligió uno). Al abrir una tarea se ven cinco secciones: datos básicos, descripción original, archivos adjuntos, historial de cambios, y respuestas (donde se puede reasignar, tomar la tarea, o marcarla completa/a rehacer/cancelada). Cada cambio dispara un aviso a la otra parte (y, si está configurado, correo o mensaje interno).</li>
+</ul>
+<p><img alt="Listado de tareas internas con filtros por agente, prioridad, estado y asunto" src="../../assets/images/gestion-avanzada-call-center/tareas-internas-listado.jpg" /></p>
+<p><img alt="Listado de categorías de tarea, usadas para clasificar las tareas al crearlas" src="../../assets/images/gestion-avanzada-call-center/categorias-tarea-listado.jpg" /></p>
+<h3 id="importacion-y-exportacion-masiva-de-datos">Importación y exportación masiva de datos<a class="headerlink" href="#importacion-y-exportacion-masiva-de-datos" title="Permanent link">&para;</a></h3>
+<p><strong>Importar datos:</strong> sube un archivo CSV (recomendado, en UTF‑8) o XLS y lo dirige a una de las tablas del sistema: clientes individuales, clientes institucionales, lista de envío masivo (correo/SMS), lista negra de campañas, código de área, DID, lista negra o blanca de entrantes, u otras listas de clientes de campaña. El sistema intenta emparejar automáticamente las columnas del archivo con los campos de la tabla; los que no coincidan se ajustan a mano. Puede programarse la hora de ejecución y si se descarta la primera fila (encabezado).</p>
+<p><img alt="Pantalla de coincidencia de columnas al importar: cada columna del archivo se asigna a un campo del sistema (teléfono, email, fax, dirección)" src="../../assets/images/gestion-avanzada-call-center/importar-datos-coincidencia-columnas.png" /></p>
+<ul>
+<li><strong>Importar y comenzar (<code>Import &amp; Start</code>):</strong> para inicializar de cero una tabla de clientes vacía (general o de una tarea puntual) sin configurar antes los campos personalizados uno por uno — el sistema crea los campos automáticamente a partir del encabezado del archivo. Detecta por convención de nombre los campos de teléfono (<code>phone_custom*</code>), correo (<code>email_custom*</code>), fax (<code>fax_custom*</code>) y dirección (<code>address_custom*</code>) para mostrarles el ícono correspondiente en la pantalla del agente. Solo aplica a una tabla que no tenga datos ni campos previos; ejecutarlo sobre una tabla con datos existentes los borra.</li>
+<li><strong>Diccionario de coincidencia de importación</strong> (<code>Import Dict</code> / 导入数据匹配): como el chino admite varias formas de escribir el mismo valor (ej. "男" / "男士" para "masculino"), esta pantalla mapea esas variantes de texto libre a los ~11 valores fijos que espera la base de datos (sexo, estado civil, intención de compra, sí/no, etc.), para que la importación no pierda esos datos por no reconocer la variante exacta.</li>
+<li><strong>Gestión de planes de importación</strong> (<code>Shell Import Jobs</code> / 计划管理): monitorea cada trabajo de importación creado — tabla destino, archivo subido, estado (pendiente/en curso/completo/error), total de filas, filas exitosas/fallidas/duplicadas, porcentaje de éxito, y descarga de los datos exitosos, fallidos, duplicados u originales. Un trabajo "en curso" no se puede eliminar ni descargar.</li>
+<li><strong>Gestión de archivos exportados</strong> (<code>Shell Export</code>): lista los archivos generados por operaciones de exportación (descargables por SFTP desde <code>/var/www/html/asterCC/data/shellexport/</code>) y, por separado, las grabaciones exportadas en lote (en <code>/var/www/html/asterCC/data/monitor_download/</code>, con botón de descarga directa desde la web solo si el parámetro "Web Download Recording" está activado en Sistema → Configuración avanzada).</li>
+</ul>
+<p><img alt="Listado de archivos exportados (Export Jobs) y de grabaciones exportadas en lote (RecordingFile Export)" src="../../assets/images/gestion-avanzada-call-center/archivos-exportados-listado.jpg" /></p>
+<p>Al importar hacia una tarea con marcación predictiva habilitada, aparecen opciones adicionales: qué columna alimenta la lista de predictivo, prioridad y horario de marcación, si se limpia el agente asignado en registros duplicados, y qué hacer con duplicados respecto a la lista de predictivo (ignorar, importar todos, o ignorar solo los que ya tuvieron envío exitoso).</p>
+<h3 id="codigo-de-area-numero-que-llama">Código de área (número que llama)<a class="headerlink" href="#codigo-de-area-numero-que-llama" title="Permanent link">&para;</a></h3>
+<p><strong>Código de área / Área de número</strong> (<code>Area Code</code>): asocia el prefijo de un número a país, provincia, ciudad y tipo de número (fijo, u operador móvil en China). Se puede dar de alta manualmente o importar en lote (ver importación de datos, tabla "código de área"). Con esta tabla poblada, la pantalla del agente muestra automáticamente el origen geográfico del número tanto en llamadas entrantes como en llamadas salientes de campaña. Incluye un botón para vaciar toda la tabla.</p>
+<p><img alt="Listado de códigos de área con su país, provincia, ciudad y tipo de número" src="../../assets/images/gestion-avanzada-call-center/codigo-area-listado.jpg" /></p>
+<h3 id="reglas-de-visualizacion-de-numero-telefonico">Reglas de visualización de número telefónico<a class="headerlink" href="#reglas-de-visualizacion-de-numero-telefonico" title="Permanent link">&para;</a></h3>
+<p><strong>Formato de teléfono</strong> (<code>Phone Format</code>): el sistema guarda los números como una cadena de dígitos sin separadores (para uniformidad, sea que el dato venga de alta manual o de importación). Esta pantalla define reglas de formato solo para la <em>visualización</em> — no altera el dato guardado. Una regla usa <code>x</code>/<code>X</code> para cualquier dígito 0-9 y <code>z</code>/<code>Z</code> para cualquier dígito 1-9 en el patrón de entrada, y <code>#</code> en el patrón de salida por cada dígito, agregando el resto de caracteres (paréntesis, guiones, espacios) libremente. El sistema trae 4 reglas por defecto orientadas a números fijos de China continental.</p>
+<p><img alt="Formulario de alta de una regla de formato, con las instrucciones de uso de los patrones x/z/# y un ejemplo" src="../../assets/images/gestion-avanzada-call-center/formato-telefono-reglas.jpg" /></p>
+<h3 id="turnos-y-horarios-de-agentes">Turnos y horarios de agentes<a class="headerlink" href="#turnos-y-horarios-de-agentes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Gestión de franjas horarias</strong> (<code>Duty Time</code>): define bloques de horario reutilizables (nombre, hora de inicio, hora de fin) por equipo, para usarlos al armar el calendario de turnos.</li>
+</ul>
+<p><img alt="Listado de franjas horarias definidas por equipo, con hora de inicio y fin" src="../../assets/images/gestion-avanzada-call-center/franjas-horarias-listado.jpg" /></p>
+<ul>
+<li><strong>Gestión de turnos de agentes</strong> (<code>Duty</code>): calendario visual donde se selecciona un conjunto de agentes y unos días (clic izquierdo) y se les asigna, por clic derecho, una de las franjas horarias definidas arriba. El propio agente puede ver su turno desde esta misma pantalla, y el jefe de grupo puede ver el de todo su grupo. Desde ahí el agente puede solicitar <strong>cambio de turno</strong> (elige con qué compañero del grupo intercambiar fecha) o <strong>solicitud de permiso/ausencia</strong> — ambas solicitudes se envían a aprobación a través de un flujo de trabajo (ver más abajo).</li>
+</ul>
+<h3 id="motivos-de-pausa">Motivos de pausa<a class="headerlink" href="#motivos-de-pausa" title="Permanent link">&para;</a></h3>
+<p><strong>Motivos de pausa</strong> (<code>Pause Cause</code>): catálogo de razones que el agente debe elegir al pausarse (o que el jefe de grupo elige al forzar la pausa de un agente desde el monitor en tiempo real). El sistema no permite agregar ni eliminar motivos, solo editarlos: texto del motivo, equipo (vacío = disponible para todo el sistema), habilitado/deshabilitado, si requiere aprobación del jefe de grupo (el agente debe ingresar la cuenta y contraseña de un jefe de grupo para poder pausarse), y nota. Si el agente elige el motivo "Otro", se habilita un cuadro de texto libre. Cuando el jefe de grupo fuerza la pausa desde el monitor, no necesita volver a autenticarse aunque el motivo elegido normalmente requiera aprobación. El tiempo en cada motivo de pausa se contabiliza para reportes.</p>
+<p><img alt="Aviso al agente al elegir un motivo de pausa que requiere aprobación: debe ingresar la cuenta y contraseña de un jefe de grupo" src="../../assets/images/gestion-avanzada-call-center/motivo-pausa-aprobacion-jefe-grupo.jpg" /></p>
+<h3 id="campos-y-categorias-de-campo-del-sistema">Campos y categorías de campo del sistema<a class="headerlink" href="#campos-y-categorias-de-campo-del-sistema" title="Permanent link">&para;</a></h3>
+<p><strong>Categorías de campo</strong> y <strong>Campos</strong> (<code>Field Category</code> / <code>Field</code>): mecanismo genérico para definir las opciones de un campo de selección fija en pantallas que no tienen su propio editor de opciones — por ejemplo, el campo "Estado" de contactos frecuentes (ver abajo). Primero se crea la categoría con un identificador en inglés que el sistema ya reconoce por convención (ej. <code>contact_status</code>); luego, dentro de "Campos", se agregan los valores concretos de esa categoría (uno por registro).</p>
+<p><img alt="Listado de categorías de campo del sistema, cada una con su nombre e identificador interno" src="../../assets/images/gestion-avanzada-call-center/categorias-campo-listado.jpg" /></p>
+<div class="admonition note">
+<p class="admonition-title">No confundir con los campos personalizados de negocio</p>
+<p>Esto es distinto de los <strong>campos personalizados</strong> de clientes/pedidos que se configuran por campaña, por usuario virtual (ver <a href="../../modulos/oficina-virtual-bpo/#campos-personalizados-por-usuario-virtual">Oficina virtual / BPO</a>) o por ficha de cliente/institución (ver <a href="../../modulos/atencion-cliente-mensajeria-ecommerce/#gestion-de-clientes">Atención al cliente, mensajería y e-commerce</a>). Estos últimos son de tipo texto/select/fecha/archivo/enlace y capturan datos de negocio; los de esta sección solo alimentan listas de opciones fijas de pantallas del propio sistema.</p>
+</div>
+<h3 id="contactos-frecuentes-agenda-administrativa">Contactos frecuentes (agenda administrativa)<a class="headerlink" href="#contactos-frecuentes-agenda-administrativa" title="Permanent link">&para;</a></h3>
+<p><strong>Contactos frecuentes</strong> (<code>Common Contacts</code>) se configura desde este menú de gestión avanzada, aunque su uso principal ya está documentado desde la perspectiva de oficina virtual en <a href="../../modulos/oficina-virtual-bpo/#contactos-frecuentes-opcional">Oficina virtual / BPO — Contactos frecuentes</a>: equipo, alcance (grupo/tipo de módulo/ID de módulo), nombre, teléfono, si el número se muestra al agente, descripción y un campo de estado libre. Lo específico de esta página de gestión avanzada es cómo se personaliza ese campo <strong>Estado</strong>: se define primero la categoría de campo con identificador <code>contact_status</code> (en Categorías de campo) y luego se agregan los valores concretos uno por uno (en Campos) — el mecanismo genérico descrito arriba.</p>
+<h3 id="flujos-de-trabajo-aprobaciones">Flujos de trabajo (aprobaciones)<a class="headerlink" href="#flujos-de-trabajo-aprobaciones" title="Permanent link">&para;</a></h3>
+<p><strong>Gestión de flujos de trabajo</strong> (<code>Workflow</code>): define circuitos de aprobación reutilizables por varios procesos del sistema — por ejemplo, las solicitudes de cambio de turno o de permiso mencionadas en turnos de agentes pasan por un flujo de trabajo antes de confirmarse. Un flujo de trabajo tiene equipo, identificador único y descripción; dentro de él se agregan <strong>nodos</strong>, cada uno con un nodo superior (para armar una jerarquía de aprobación), tipo (aviso — solo notifica, sin bloquear— o revisión —requiere aprobación explícita—), tipo de validación (todos deben aprobar, o basta que apruebe una parte), y a quién se dirige el nodo (cuenta, grupo de cuentas, agente o grupo de agentes del equipo).</p>
+<p><img alt="Formulario de alta de un nodo de flujo de trabajo: nodo superior, tipo, tipo de validación y destinatario" src="../../assets/images/gestion-avanzada-call-center/flujo-trabajo-nodo-alta.jpg" /></p>
+<h3 id="calificacion-de-llamadas-por-el-cliente">Calificación de llamadas por el cliente<a class="headerlink" href="#calificacion-de-llamadas-por-el-cliente" title="Permanent link">&para;</a></h3>
+<p><strong>Gestión de calificación</strong> (<code>Rate</code> / 评分管理): si una cola tiene habilitada la calificación (ver glosario, <a href="../../glosario/">Cola / Grupo de agentes — Calificación del agente</a>), al terminar la llamada —si el agente cuelga primero— el cliente recibe un IVR que le pide calificar el servicio con el teclado. Esta pantalla lista esas calificaciones recibidas, una por cada llamada calificada, con acceso directo al registro de llamada correspondiente. En la interfaz en español conviene acceder desde Reportes y estadísticas → Registro de calificación (mismo dato, ruta de menú distinta a la que muestran las capturas originales en chino/inglés).</p>
+<p><img alt="Listado de calificaciones de llamada recibidas, con agente, calificación y acceso al registro de llamada" src="../../assets/images/gestion-avanzada-call-center/calificacion-llamadas-listado.jpg" /></p>
+<h3 id="gestion-de-enlaces">Gestión de enlaces<a class="headerlink" href="#gestion-de-enlaces" title="Permanent link">&para;</a></h3>
+<p><strong>Gestión de enlaces</strong> (<code>Link URLs</code>): registra URLs reutilizables para no tener que escribirlas cada vez que un módulo pide una dirección de pantalla emergente o de evento. Un enlace tiene equipo (vacío = disponible para cualquier equipo) y un tipo, que determina en qué selector de módulo puede reutilizarse después:</p>
+<p><img alt="Listado de enlaces reutilizables con su tipo, nombre, URL y equipo" src="../../assets/images/gestion-avanzada-call-center/gestion-enlaces-listado.jpg" /></p>
+<table>
+<thead>
+<tr>
+<th>Tipo de enlace</th>
+<th>Dónde se reutiliza</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enlace de agente</td>
+<td>Pantalla emergente por defecto de oficina virtual, enlace de trabajo de atención al cliente, enlace de aplicación de negocio</td>
+</tr>
+<tr>
+<td>Enlace de administración</td>
+<td>Página de gestión que ve el usuario virtual de oficina virtual</td>
+</tr>
+<tr>
+<td>Enlace de evento</td>
+<td>Dirección de envío de eventos de llamada (registro de llamadas)</td>
+</tr>
+<tr>
+<td>Enlace de trabajo de grupo de agentes</td>
+<td>Interfaz de trabajo personalizada de un grupo de agentes</td>
+</tr>
+<tr>
+<td>Enlace de plan de marcación</td>
+<td>Pantalla emergente de una tarea de campaña</td>
+</tr>
+<tr>
+<td>Enlace de evento de telefonía de escritorio</td>
+<td>Interfaz personalizada de eventos de un grupo de agentes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="referencia-rapida">Referencia rápida<a class="headerlink" href="#referencia-rapida" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tarea</th>
+<th>Dónde</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vincular un CRM propio a los eventos de llamada</td>
+<td>Call Center (avanzado) → Aplicaciones de negocio</td>
+</tr>
+<tr>
+<td>Enrutar una pantalla emergente por DID/troncal/número</td>
+<td>Call Center (avanzado) → Vínculo de aplicación entrante</td>
+</tr>
+<tr>
+<td>Asignar/seguir una tarea interna de equipo</td>
+<td>Call Center (avanzado) → Tareas / Categorías de tarea</td>
+</tr>
+<tr>
+<td>Importar clientes, DID, listas negras/blancas, código de área</td>
+<td>Call Center (avanzado) → Importar datos</td>
+</tr>
+<tr>
+<td>Inicializar campos de una tabla vacía desde un archivo</td>
+<td>Importar datos → Importar y comenzar</td>
+</tr>
+<tr>
+<td>Revisar el resultado de una importación</td>
+<td>Call Center (avanzado) → Gestión de planes de importación</td>
+</tr>
+<tr>
+<td>Descargar archivos/grabaciones exportados en lote</td>
+<td>Call Center (avanzado) → Gestión de archivos exportados</td>
+</tr>
+<tr>
+<td>Configurar geolocalización por prefijo de número</td>
+<td>Call Center (avanzado) → Código de área</td>
+</tr>
+<tr>
+<td>Formatear la visualización de números telefónicos</td>
+<td>Call Center (avanzado) → Formato de teléfono</td>
+</tr>
+<tr>
+<td>Definir bloques horarios y calendario de turnos</td>
+<td>Call Center (avanzado) → Franjas horarias / Turnos de agentes</td>
+</tr>
+<tr>
+<td>Editar catálogo de motivos de pausa</td>
+<td>Call Center (avanzado) → Motivos de pausa</td>
+</tr>
+<tr>
+<td>Definir opciones fijas de un campo del sistema (ej. estado de contacto)</td>
+<td>Call Center (avanzado) → Categorías de campo / Campos</td>
+</tr>
+<tr>
+<td>Configurar la agenda de contactos frecuentes</td>
+<td>Call Center (avanzado) → Contactos frecuentes (ver también <a href="../../modulos/oficina-virtual-bpo/#contactos-frecuentes-opcional">Oficina virtual / BPO</a>)</td>
+</tr>
+<tr>
+<td>Crear un circuito de aprobación (turnos, permisos)</td>
+<td>Call Center (avanzado) → Flujos de trabajo</td>
+</tr>
+<tr>
+<td>Ver calificaciones que dejaron los clientes</td>
+<td>Call Center (avanzado) → Gestión de calificación</td>
+</tr>
+<tr>
+<td>Reutilizar una URL en varios módulos</td>
+<td>Call Center (avanzado) → Gestión de enlaces</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="fuentes">Fuentes<a class="headerlink" href="#fuentes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>raw/zh/模块使用说明/呼叫中心高级管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/呼叫中心高级管理/业务应用管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/呼叫中心高级管理/任务管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/呼叫中心高级管理/任务类别管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/呼叫中心高级管理/号码归属地.txt</code></li>
+<li><code>raw/zh/模块使用说明/呼叫中心高级管理/呼入应用绑定.txt</code></li>
+<li><code>raw/zh/模块使用说明/呼叫中心高级管理/坐席排班管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/呼叫中心高级管理/字段管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/呼叫中心高级管理/字段类别管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/呼叫中心高级管理/导入数据匹配.txt</code></li>
+<li><code>raw/zh/模块使用说明/呼叫中心高级管理/导出文件管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/呼叫中心高级管理/工作流管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/呼叫中心高级管理/常用联系人.txt</code></li>
+<li><code>raw/zh/模块使用说明/呼叫中心高级管理/排班时间段管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/呼叫中心高级管理/数据导入.txt</code></li>
+<li><code>raw/zh/模块使用说明/呼叫中心高级管理/暂停原因管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/呼叫中心高级管理/电话号码显示规则.txt</code></li>
+<li><code>raw/zh/模块使用说明/呼叫中心高级管理/计划管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/呼叫中心高级管理/评分管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/呼叫中心高级管理/链接管理.txt</code></li>
+<li><code>raw/en/module_manual/call_center.txt</code></li>
+<li><code>raw/en/module_manual/call_center/app_binding.txt</code></li>
+<li><code>raw/en/module_manual/call_center/area_code.txt</code></li>
+<li><code>raw/en/module_manual/call_center/business_app.txt</code></li>
+<li><code>raw/en/module_manual/call_center/common_contact.txt</code></li>
+<li><code>raw/en/module_manual/call_center/duty.txt</code></li>
+<li><code>raw/en/module_manual/call_center/duty_time.txt</code></li>
+<li><code>raw/en/module_manual/call_center/field.txt</code></li>
+<li><code>raw/en/module_manual/call_center/field_category.txt</code></li>
+<li><code>raw/en/module_manual/call_center/import.txt</code></li>
+<li><code>raw/en/module_manual/call_center/import_match.txt</code></li>
+<li><code>raw/en/module_manual/call_center/link_urls.txt</code></li>
+<li><code>raw/en/module_manual/call_center/pause_cause.txt</code></li>
+<li><code>raw/en/module_manual/call_center/phoneformat.txt</code></li>
+<li><code>raw/en/module_manual/call_center/rate.txt</code></li>
+<li><code>raw/en/module_manual/call_center/shellexport.txt</code></li>
+<li><code>raw/en/module_manual/call_center/shellimport.txt</code></li>
+<li><code>raw/en/module_manual/call_center/ticket.txt</code></li>
+<li><code>raw/en/module_manual/call_center/ticket_category.txt</code></li>
+<li><code>raw/en/module_manual/call_center/workflow.txt</code></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.indexes", "navigation.tracking", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/javascripts/nav-toggle.js"></script>
+      
+    
+  </body>
+</html>

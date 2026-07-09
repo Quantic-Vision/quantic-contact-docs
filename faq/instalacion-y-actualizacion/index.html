@@ -1,0 +1,3052 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación de AsterCC — plataforma de call center basada en Asterisk">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>FAQ: Instalación, migración y actualización - Wiki AsterCC (Español)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#faq-instalacion-migracion-y-actualizacion" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Wiki AsterCC (Español)" class="md-header__button md-logo" aria-label="Wiki AsterCC (Español)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Wiki AsterCC (Español)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FAQ: Instalación, migración y actualización
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Wiki AsterCC (Español)" class="md-nav__button md-logo" aria-label="Wiki AsterCC (Español)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Wiki AsterCC (Español)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glosario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glosario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../introduccion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introducción a AsterCC
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. Introducción a AsterCC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/que-es-astercc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ¿Qué es AsterCC?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/funcionalidades/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funcionalidades del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/arquitectura-general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura general
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/demo-en-linea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo en línea
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../instalacion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Instalación y configuración inicial
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Instalación y configuración inicial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requisitos del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/descarga-e-instalacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descarga e instalación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/instalar-desde-usb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instalar desde USB (AsterCC Box)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/configuracion-post-instalacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración post-instalación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/licencias-y-errores-comunes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licencias y errores comunes de inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../primeros-pasos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Primeros pasos
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Primeros pasos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/guia-administradores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía rápida para administradores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/guia-agentes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía rápida para agentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/recorrido-interfaz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recorrido por la interfaz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/configurar-softphones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configurar softphones (Eyebeam, X-Lite, Zoiper)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../modulos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Módulos del sistema
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. Módulos del sistema
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/pbx-y-telefonia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX y telefonía
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/pbx-ivr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX — IVR (menú de voz)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/pbx-funciones-avanzadas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX — Funciones avanzadas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/marcador-y-campanas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcador y campañas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/marcador-predictivo-avanzado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcador predictivo — avanzado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/cuentas-equipos-permisos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cuentas, equipos y permisos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/tarifas-y-facturacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarifas y facturación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/encuestas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encuestas y cuestionarios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/base-conocimiento-work-orders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base de conocimiento y Work Orders
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/plataforma-del-agente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plataforma de trabajo del agente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/reportes-y-estadisticas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reportes, estadísticas y financiero
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/oficina-virtual-bpo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oficina virtual / BPO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/atencion-cliente-mensajeria-ecommerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atención al cliente, mensajería y e-commerce
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/mensajeria-wechat-fax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mensajería — WeChat, Fax y envío masivo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../casos-de-uso/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Casos de uso y soluciones
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. Casos de uso y soluciones
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/call-center-inbound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Call center de atención al cliente (inbound)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/marketing-outbound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketing outbound / televentas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/e-commerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-commerce
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/oficina-virtual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oficina virtual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/marcacion-predictiva/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcación predictiva
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/casos-tecnicos-avanzados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Casos técnicos avanzados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../administracion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Administración avanzada
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Administración avanzada
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/asterisk-ami/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración de Asterisk AMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/openvpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenVPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/apc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APC (caché de PHP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/mailman/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mailman / correo saliente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/diagnostico-red-voip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagnóstico de red y VoIP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/configuracion-y-mantenimiento-sistema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración y mantenimiento del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/gestion-avanzada-call-center/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestión avanzada del call center
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/historial-documentacion-1.2-beta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentación histórica — AsterCC 1.2 beta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../desarrollo/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Guía de desarrollo y customización
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7. Guía de desarrollo y customización
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-y-ami/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API y AMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/guia-desarrolladores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía para desarrolladores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/introduccion-api-integracion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción a la API de integración
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/codigos-retorno-e-idiomas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Códigos de retorno y codificación de idioma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-autenticacion-y-sesion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Autenticación y sesión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-control-de-llamada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Control de llamada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-supervision-y-control-de-agente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Supervisión y control de agente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-datos-y-grabaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Datos y grabaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/eventos-tiempo-real-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recibir eventos en tiempo real de la API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/integrar-envio-de-sms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrar el envío de SMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Preguntas frecuentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Solución de problemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Historial de versiones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#versiones-y-ediciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versiones y ediciones
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Versiones y ediciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-diferencia-hay-entre-astercc-0x-y-la-version-comercial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué diferencia hay entre AsterCC 0.x y la versión comercial?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-version-de-asterisk-usa-astercc-y-como-la-cambio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué versión de Asterisk usa AsterCC y cómo la cambio?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migracion-y-actualizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migración y actualización
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Migración y actualización">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#como-migro-una-instalacion-completa-de-astercc-a-otro-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo migro una instalación completa de AsterCC a otro servidor?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-subo-la-version-de-astercc-desde-el-panel-web-o-por-consola" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo subo la versión de AsterCC desde el panel web o por consola?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#despues-de-actualizar-a-la-version-26-el-proceso-datamover-deja-de-funcionar-por-que" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Después de actualizar a la versión 2.6, el proceso datamover deja de funcionar. ¿Por qué?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tras-migrar-el-servidor-modulos-que-no-estan-instalados-aparecen-como-ya-instalados-como-lo-corrijo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tras migrar el servidor, módulos que no están instalados aparecen como "ya instalados". ¿Cómo lo corrijo?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#respaldo-y-recuperacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Respaldo y recuperación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Respaldo y recuperación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#como-restauro-astercc-desde-un-archivo-de-respaldo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo restauro AsterCC desde un archivo de respaldo?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servidores-multiples-y-alta-disponibilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Servidores múltiples y alta disponibilidad
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Servidores múltiples y alta disponibilidad">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#como-reparto-astercc-entre-varios-servidores-php-cti-base-de-datos-y-balanceo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo reparto AsterCC entre varios servidores PHP (CTI, base de datos y balanceo)?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-configuro-alta-disponibilidad-primariorespaldo-o-cluster-con-el-script-clusterconfsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo configuro alta disponibilidad (primario/respaldo) o clúster con el script clusterconf.sh?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-elijo-el-hardware-para-mi-call-center" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo elijo el hardware para mi call center?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#licencias-y-errores-de-arranque" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Licencias y errores de arranque
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Licencias y errores de arranque">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-veo-can-not-found-license-file-al-iniciar-los-demonios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Por qué veo "can not found license file" al iniciar los demonios?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-significan-los-codigos-de-error-de-licencia-mas-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué significan los códigos de error de licencia más comunes?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#al-abrir-la-pagina-de-login-aparece-no-se-puede-conectar-al-servidor-de-licencias-9301-como-lo-resuelvo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Al abrir la página de login aparece "no se puede conectar al servidor de licencias: 9301". ¿Cómo lo resuelvo?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-sistema-cambio-repentinamente-al-idioma-ingles-y-el-login-muestra-un-error-404-que-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El sistema cambió repentinamente al idioma inglés y el login muestra un error 404. ¿Qué pasó?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#falta-php-al-instalar-astercc-con-el-script-de-instalacion-como-lo-resuelvo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Falta PHP al instalar AsterCC con el script de instalación. ¿Cómo lo resuelvo?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perdi-la-contrasena-de-admin-como-la-reseteo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Perdí la contraseña de admin. ¿Cómo la reseteo?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#justo-despues-de-instalar-el-login-con-la-cuenta-admin-por-defecto-siempre-muestra-un-error-a-que-se-debe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Justo después de instalar, el login con la cuenta admin por defecto siempre muestra un error. ¿A qué se debe?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fuentes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="faq-instalacion-migracion-y-actualizacion">FAQ: Instalación, migración y actualización<a class="headerlink" href="#faq-instalacion-migracion-y-actualizacion" title="Permanent link">&para;</a></h1>
+<h2 id="versiones-y-ediciones">Versiones y ediciones<a class="headerlink" href="#versiones-y-ediciones" title="Permanent link">&para;</a></h2>
+<h3 id="que-diferencia-hay-entre-astercc-0x-y-la-version-comercial">¿Qué diferencia hay entre AsterCC 0.x y la versión comercial?<a class="headerlink" href="#que-diferencia-hay-entre-astercc-0x-y-la-version-comercial" title="Permanent link">&para;</a></h3>
+<p>AsterCC 0.x es la edición gratuita de código abierto: requiere conocimientos de Asterisk/Linux, se administra editando scripts y archivos de configuración a mano, y cubre solo lo básico (marcar, colgar, facturación simple por extensión). La versión comercial agrega interfaz web completa para IVR, marcador, cuestionarios, reportes profesionales y configuración de Asterisk; soporta múltiples usuarios, roles y equipos; facturación por extensión/troncal/agente con generación automática de facturas; API con todos los eventos de llamada; funciones avanzadas de agente (consulta, transferencia asistida/ciega, conferencia); planes de respaldo con restauración desde la página; y protección/rollback de datos. La edición 0.x se licencia por canales concurrentes de Asterisk y es de código abierto; la comercial se licencia por número de agentes y módulos habilitados, y es de código cerrado. La 0.x sirve para call centers simples; la comercial está pensada para call centers complejos, telemercadeo, BPO, operación de PBX e integración con sistemas de terceros.</p>
+<h3 id="que-version-de-asterisk-usa-astercc-y-como-la-cambio">¿Qué versión de Asterisk usa AsterCC y cómo la cambio?<a class="headerlink" href="#que-version-de-asterisk-usa-astercc-y-como-la-cambio" title="Permanent link">&para;</a></h3>
+<p>AsterCC requiere una versión específica de Asterisk (no cualquier versión funciona con todos los módulos). Para cambiar de versión:</p>
+<ol>
+<li>Respalda los módulos actuales: <code>mv /usr/lib/asterisk/modules/ /usr/lib/asterisk/modules/.bak</code></li>
+<li>Instala la nueva versión de Asterisk (normalmente compilando desde el código fuente).</li>
+<li>Actualiza <code>/etc/asterisk/modules.conf</code> con la lista de módulos correspondiente a la nueva versión (la lista de módulos a cargar cambia entre versiones de Asterisk, por ejemplo entre 1.6.2.20 y 1.8.x).</li>
+<li>Reinicia Asterisk y luego <code>asterccd</code>.</li>
+</ol>
+<p>Si migraste de una versión antigua (ej. 1.2.2) a una beta más reciente (ej. 2.0-beta), los archivos de configuración de Asterisk de la versión anterior quedan respaldados en una ruta con el sufijo <code>.bak.core-&lt;versión&gt;</code> (ej. <code>/etc/asterisk.bak.core-2.0-beta/</code>).</p>
+<h2 id="migracion-y-actualizacion">Migración y actualización<a class="headerlink" href="#migracion-y-actualizacion" title="Permanent link">&para;</a></h2>
+<h3 id="como-migro-una-instalacion-completa-de-astercc-a-otro-servidor">¿Cómo migro una instalación completa de AsterCC a otro servidor?<a class="headerlink" href="#como-migro-una-instalacion-completa-de-astercc-a-otro-servidor" title="Permanent link">&para;</a></h3>
+<p>El procedimiento tiene cinco pasos obligatorios, en este orden:</p>
+<ol>
+<li><strong>Instalar AsterCC en el servidor nuevo</strong> — debe ser <strong>exactamente la misma versión</strong> y tener <strong>los mismos módulos</strong> instalados que el servidor original. Instalar módulos distintos es la causa más común de fallos posteriores.</li>
+<li><strong>Obtener nueva autorización.</strong> En el servidor nuevo ejecuta <code>/opt/asterisk/scripts/astercc/asterccc --RNI</code> y descarga el archivo de identidad. Envía ese archivo junto con el archivo de identidad del servidor original a <code>support@astercc.org</code> o <code>support@sonicwell.com</code>, explicando el motivo de la migración. Al recibir la licencia, súbela y respalda <code>license.astercc</code> (por ejemplo renómbralo a <code>license.astercc.bak</code>).</li>
+</ol>
+<p><img alt="Pantalla System Message con el botón &quot;Download Identity&quot; resaltado, generando el archivo identity.aster que hay que enviar a soporte" src="../../assets/images/faq-instalacion-y-actualizacion/descargar-identidad-servidor.png" />
+3. <strong>Respaldar y restaurar la base de datos:</strong>
+   <div class="highlight"><pre><span></span><code>mysqldump<span class="w"> </span>-uroot<span class="w"> </span>-p<span class="w"> </span>astercc10<span class="w"> </span>&gt;<span class="w"> </span>astercc_backup.sql
+<span class="c1"># copiar el archivo al servidor nuevo, luego:</span>
+mysql<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>-p<span class="w"> </span>astercc10<span class="w"> </span>&lt;<span class="w"> </span>astercc_backup.sql
+</code></pre></div>
+   Si el servidor original no usaba la configuración de base de datos por defecto, hay que editar manualmente tres archivos en el servidor nuevo: <code>[database]</code> y <code>[statistics]</code> en <code>/etc/astercc.conf</code>, y el arreglo <code>$default</code> en <code>/var/www/html/asterCC/app/config/database.php</code>.
+4. <strong>Copiar (sobrescribir) los archivos de configuración del sistema</strong> — los mismos diez elementos seleccionados en un plan de respaldo (<strong>Configuración del sistema → Gestión de planes de respaldo</strong>):
+   <div class="highlight"><pre><span></span><code><span class="se">\c</span>p<span class="w"> </span>-rpf<span class="w"> </span>/ruta_backup/etc/*<span class="w"> </span>/etc
+<span class="se">\c</span>p<span class="w"> </span>-rpf<span class="w"> </span>/ruta_backup/var/*<span class="w"> </span>/var
+<span class="se">\c</span>p<span class="w"> </span>-rpf<span class="w"> </span>/ruta_backup/opt/*<span class="w"> </span>/opt
+<span class="se">\c</span>p<span class="w"> </span>-rpf<span class="w"> </span>/ruta_backup/usr/*<span class="w"> </span>/usr
+</code></pre></div>
+   <code>\cp</code> evita las confirmaciones de sobrescritura; <code>-r</code> copia directorios; <code>-p</code> conserva permisos y fecha; <code>-f</code> fuerza la operación — úsalo con cuidado.
+5. <strong>Recargar el sistema</strong> ejecutando el script de recarga en el servidor nuevo:
+   <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/opt/asterisk/scripts/astercc/
+./reloadconf.sh
+</code></pre></div></p>
+<p>Si al hacer clic en "Recargar" aparece <code>Permission denied!</code>, ejecuta:</p>
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span><span class="m">777</span><span class="w"> </span>/var/www/html/asterCC/cake/console/cake
+</code></pre></div>
+<p>y reinicia <code>asterccd</code>. Si persiste, corrige la propiedad de los directorios:</p>
+<div class="highlight"><pre><span></span><code>chown<span class="w"> </span>-R<span class="w"> </span>asterisk.asterisk<span class="w"> </span>/var/www/html/asterCC/
+chown<span class="w"> </span>-R<span class="w"> </span>asterisk.asterisk<span class="w"> </span>/etc/asterisk
+</code></pre></div>
+<h3 id="como-subo-la-version-de-astercc-desde-el-panel-web-o-por-consola">¿Cómo subo la versión de AsterCC desde el panel web o por consola?<a class="headerlink" href="#como-subo-la-version-de-astercc-desde-el-panel-web-o-por-consola" title="Permanent link">&para;</a></h3>
+<p>Cuando hay una nueva versión disponible aparece indicado en <strong>Módulos del sistema</strong>. Para actualizarla:</p>
+<ul>
+<li><strong>Desde la web:</strong> descarga el paquete de actualización a <code>/var/www/html/asterCC/data/_cache/</code> en el servidor (por GUI, o por <code>wget</code> si el paquete es grande — el núcleo, por ejemplo, suele pesar mucho):
+  <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/var/www/html/asterCC/data/_cache/
+wget<span class="w"> </span>http://download1.astercc.org/packages/core/core-2.6-rc1-patch-x86_64.tar.gz
+</code></pre></div>
+  Refresca la página: aparecerá el botón "Actualizar". Haz clic para ejecutar la actualización.</li>
+<li><strong>Por consola (SSH):</strong>
+  <div class="highlight"><pre><span></span><code>tar<span class="w"> </span>zxf<span class="w"> </span>core-2.6-rc1-patch-x86_64.tar.gz
+<span class="nb">cd</span><span class="w"> </span>core-2.6-rc1-patch-x86_64
+php<span class="w"> </span>install.php
+</code></pre></div>
+  Espera con paciencia — si la actualización termina bien, el proceso muestra <code>successful</code> al final.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Puede estar desactualizado</p>
+<p>No inicies la actualización con llamadas en curso en el sistema.</p>
+</div>
+<h3 id="despues-de-actualizar-a-la-version-26-el-proceso-datamover-deja-de-funcionar-por-que">Después de actualizar a la versión 2.6, el proceso <code>datamover</code> deja de funcionar. ¿Por qué?<a class="headerlink" href="#despues-de-actualizar-a-la-version-26-el-proceso-datamover-deja-de-funcionar-por-que" title="Permanent link">&para;</a></h3>
+<p>El error típico al ejecutar <code>/opt/asterisk/scripts/astercc/astcc_datamover</code> es:</p>
+<div class="highlight"><pre><span></span><code>DBD::mysql::db do failed: Unknown column &#39;seria&#39; in &#39;field list&#39; at astcc_datamover.pl line 1554.
+</code></pre></div>
+<p>Indica que la tabla correspondiente en la base de datos le falta un campo que la nueva versión espera. Soluciones: reintentar la actualización completa (para que el instalador aplique el cambio de esquema pendiente) o completar manualmente el campo faltante en la tabla afectada.</p>
+<h3 id="tras-migrar-el-servidor-modulos-que-no-estan-instalados-aparecen-como-ya-instalados-como-lo-corrijo">Tras migrar el servidor, módulos que no están instalados aparecen como "ya instalados". ¿Cómo lo corrijo?<a class="headerlink" href="#tras-migrar-el-servidor-modulos-que-no-estan-instalados-aparecen-como-ya-instalados-como-lo-corrijo" title="Permanent link">&para;</a></h3>
+<p>Sucede porque la base de datos importada conserva la información de instalación del sistema original. Se corrige directamente en la base de datos: revisa la tabla <code>cc10_upgradelogs</code>, que es la que le informa a la página qué módulos están "instalados", y elimina las filas que correspondan a módulos que en realidad no están instalados en el servidor nuevo:</p>
+<div class="highlight"><pre><span></span><code><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">cc10_upgradelogs</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="respaldo-y-recuperacion">Respaldo y recuperación<a class="headerlink" href="#respaldo-y-recuperacion" title="Permanent link">&para;</a></h2>
+<h3 id="como-restauro-astercc-desde-un-archivo-de-respaldo">¿Cómo restauro AsterCC desde un archivo de respaldo?<a class="headerlink" href="#como-restauro-astercc-desde-un-archivo-de-respaldo" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Instala en el servidor nuevo <strong>la misma versión</strong> de AsterCC que generó el respaldo, con los mismos módulos.</li>
+<li>Sube el archivo de respaldo al servidor nuevo (generado previamente con un plan de respaldo).</li>
+<li>Descomprime el paquete de respaldo:
+   <div class="highlight"><pre><span></span><code>tar<span class="w"> </span>-xzvf<span class="w"> </span>astercc_files.tar.gz
+</code></pre></div></li>
+<li>Restaura la base de datos:
+   <div class="highlight"><pre><span></span><code>gunzip<span class="w"> </span>-c<span class="w"> </span>astercc_db.sql.gz<span class="w"> </span>&gt;<span class="w"> </span>astercc_db.sql
+mysql<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>-p<span class="w"> </span>astercc10<span class="w"> </span>&lt;<span class="w"> </span>astercc_db.sql
+</code></pre></div>
+   La contraseña por defecto de la base de datos es <code>astercc</code>. Si el servidor original no usaba la configuración por defecto, edita manualmente <code>[database]</code> y <code>[statistics]</code> en <code>/etc/astercc.conf</code>, y el bloque <code>DATABASE_CONFIG</code> en <code>/var/www/html/asterCC/app/config/database.php</code>.</li>
+<li>Restaura los directorios de configuración:
+   <div class="highlight"><pre><span></span><code><span class="se">\c</span>p<span class="w"> </span>-rpf<span class="w"> </span>./etc/*<span class="w"> </span>/etc
+<span class="se">\c</span>p<span class="w"> </span>-rpf<span class="w"> </span>./opt/*<span class="w"> </span>/opt
+<span class="se">\c</span>p<span class="w"> </span>-rpf<span class="w"> </span>./var/*<span class="w"> </span>/var
+</code></pre></div></li>
+<li>Ejecuta el script de recarga:
+   <div class="highlight"><pre><span></span><code>/opt/asterisk/scripts/astercc/reloadconf.sh
+</code></pre></div></li>
+</ol>
+<p>Ver el procedimiento de creación del respaldo (no solo la restauración) en <a href="../../casos-de-uso/casos-tecnicos-avanzados/#respaldo-del-sistema-backup">Casos técnicos avanzados</a>.</p>
+<h2 id="servidores-multiples-y-alta-disponibilidad">Servidores múltiples y alta disponibilidad<a class="headerlink" href="#servidores-multiples-y-alta-disponibilidad" title="Permanent link">&para;</a></h2>
+<h3 id="como-reparto-astercc-entre-varios-servidores-php-cti-base-de-datos-y-balanceo">¿Cómo reparto AsterCC entre varios servidores PHP (CTI, base de datos y balanceo)?<a class="headerlink" href="#como-reparto-astercc-entre-varios-servidores-php-cti-base-de-datos-y-balanceo" title="Permanent link">&para;</a></h3>
+<p>Es una arquitectura de cuatro roles: <strong>CTI</strong> (Asterisk + Nginx), <strong>base de datos</strong> (MySQL), y uno o más <strong>servidores PHP</strong>. Antes de repartir, confirma que todos los servidores tengan la misma versión de AsterCC y los mismos módulos instalados. Pasos principales:</p>
+<ol>
+<li>Respalda la base de datos en el CTI y restáurala en el servidor MySQL dedicado:
+   <div class="highlight"><pre><span></span><code>mysqldump<span class="w"> </span>-uroot<span class="w"> </span>-p<span class="w"> </span>astercc10<span class="w"> </span>&gt;<span class="w"> </span>backup.sql
+mysql<span class="w"> </span>-uroot<span class="w"> </span>-p<span class="w"> </span>astercc10<span class="w"> </span>&lt;<span class="w"> </span>backup.sql
+</code></pre></div></li>
+<li>En el servidor MySQL, otorga privilegios a los demás servidores:
+   <div class="highlight"><pre><span></span><code><span class="k">grant</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="k">privileges</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">astercc10</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">astercc</span><span class="o">@</span><span class="s1">&#39;192.168.1.%&#39;</span><span class="w"> </span><span class="n">identified</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s1">&#39;asterccpw&#39;</span><span class="p">;</span>
+</code></pre></div></li>
+<li>En CTI y en cada servidor PHP, actualiza <code>/etc/astercc.conf</code> (secciones <code>[database]</code>, <code>[statistics]</code> y <code>[system] cluster = php</code>) y <code>/var/www/html/asterCC/app/config/database.php</code> con la IP del servidor MySQL.</li>
+<li>Ajusta <code>iptables</code> en cada rol según los puertos que le corresponden (SIP 5060, IAX2 4569, AMI 5038, RTP 10000-20000 en CTI; 3306 en MySQL; 9000 (PHP-FPM) en los servidores PHP).</li>
+<li>Instala y configura <strong>Samba</strong> en CTI y en el/los servidor(es) PHP para compartir los directorios que ambos roles necesitan leer/escribir (<code>/var/spool/asterisk</code>, <code>/etc/asterisk</code>, <code>/var/lib/asterisk</code>, <code>/opt/asterisk/scripts/astercc</code>, <code>/var/www/html/asterCC/data</code>, <code>/var/www/html/asterCC/statistics</code>), y móntalos por CIFS en cada servidor.</li>
+<li>Si hay más de un servidor PHP, configura balanceo en Nginx (en el CTI) con un bloque <code>upstream</code>, y enruta <code>login</code> y <code>reloadConf</code> siempre hacia el PHP local del CTI:
+   <div class="highlight"><pre><span></span><code><span class="k">upstream</span><span class="w"> </span><span class="s">myphp</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">server</span><span class="w"> </span><span class="n">192.168.1.61</span><span class="p">:</span><span class="mi">9000</span><span class="w"> </span><span class="s">weight=2</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">server</span><span class="w"> </span><span class="n">192.168.1.70</span><span class="p">:</span><span class="mi">9000</span><span class="w"> </span><span class="s">weight=2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>Comparte los archivos de licencia/autorización (<code>agentsxindesk.ctp</code>, <code>database.php</code>, <code>hcdesk.conf</code>, <code>astercc.conf</code>) entre servidores mediante enlaces simbólicos hacia la copia compartida por Samba, respaldando primero los originales en cada servidor PHP.</li>
+<li>Divide los <code>crontab</code> de mantenimiento entre los servidores PHP para que las tareas no se dupliquen, y agrega comprobaciones de montaje CIFS al crontab (reintenta el montaje si se cayó).</li>
+<li>Al finalizar, regenera la identidad y autoriza cada servidor:
+   <div class="highlight"><pre><span></span><code><span class="c1"># en CTI</span>
+/opt/asterisk/scripts/astercc/asterccc<span class="w"> </span>--RNI
+<span class="c1"># en cada servidor PHP</span>
+/opt/asterisk/scripts/astercc/asterccc<span class="w"> </span>--ADI
+</code></pre></div>
+   Si todo va bien, el CTI muestra el código <code>001</code> y cada PHP muestra <code>002</code>, <code>003</code>, etc. Tras recibir la licencia, reinicia <code>asterccd</code> en el CTI.</li>
+</ol>
+<h3 id="como-configuro-alta-disponibilidad-primariorespaldo-o-cluster-con-el-script-clusterconfsh">¿Cómo configuro alta disponibilidad (primario/respaldo) o clúster con el script <code>clusterconf.sh</code>?<a class="headerlink" href="#como-configuro-alta-disponibilidad-primariorespaldo-o-cluster-con-el-script-clusterconfsh" title="Permanent link">&para;</a></h3>
+<p><strong>Primario/respaldo (HA):</strong> dos servidores; el primario corre todos los servicios (PBX, CTI, WEB, base de datos) tras una IP virtual, y el de respaldo lo monitorea por una IP de heartbeat y toma el control de la IP virtual si el primario falla.</p>
+<p><strong>Clúster / gestión centralizada:</strong> tres o más servidores compartiendo una sola base de datos y la misma configuración de PBX/CTI; el primario corre todos los servicios, el de respaldo corre PBX + CTI + respaldo de base de datos, y el resto corre solo PBX + CTI.</p>
+<p>Ambos esquemas se configuran con el mismo script, tras instalar y autorizar AsterCC en todos los servidores involucrados:</p>
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>/opt/asterisk/scripts/astercc/clusterconf.sh<span class="w"> </span>/root
+<span class="nb">cd</span><span class="w"> </span>/root
+chmod<span class="w"> </span>+x<span class="w"> </span>./clusterconf.sh
+./clusterconf.sh
+</code></pre></div>
+<p>El script pide elegir el tipo de configuración (<code>1</code> = primario/respaldo, <code>2</code> = clúster) y luego los datos de red de cada servidor. Al terminar, apaga los servidores secundarios, reinicia el primario y luego enciende los secundarios.</p>
+<p>Para verificar que la replicación de base de datos quedó bien, en cada servidor de base de datos:</p>
+<div class="highlight"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="n">slave</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="err">\</span><span class="k">G</span><span class="p">;</span>
+</code></pre></div>
+<p><code>Slave_IO_Running</code> y <code>Slave_SQL_Running</code> deben mostrar <code>Yes</code>. Para verificar la sincronización de archivos, crea un archivo de prueba en el primario y confirma que aparece (y luego desaparece al borrarlo) en los demás servidores:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/home/ccsync<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>touch<span class="w"> </span>abc
+ls<span class="w"> </span>/home/ccsync/abc<span class="w">   </span><span class="c1"># en el servidor de respaldo</span>
+rm<span class="w"> </span>/home/ccsync/abc
+</code></pre></div>
+<h3 id="como-elijo-el-hardware-para-mi-call-center">¿Cómo elijo el hardware para mi call center?<a class="headerlink" href="#como-elijo-el-hardware-para-mi-call-center" title="Permanent link">&para;</a></h3>
+<p>La elección depende de: número de llamadas concurrentes, número de agentes conectados simultáneamente (por navegador o por teléfono), módulos de negocio usados, tipo de troncal y códec de voz, tamaño de la base de clientes, y requisitos de disponibilidad. El sistema se puede repartir en tres roles con necesidades distintas:</p>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Cuello de botella típico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PBX</td>
+<td>Velocidad de lectura/escritura de disco</td>
+</tr>
+<tr>
+<td>Base de datos</td>
+<td>CPU, memoria y disco — depende del tamaño del proyecto; si se requiere alta disponibilidad, considerar master/master o master/slave</td>
+</tr>
+<tr>
+<td>WEB</td>
+<td>CPU — como referencia, un servidor web adicional por cada ~60 agentes conectados simultáneamente</td>
+</tr>
+</tbody>
+</table>
+<p>Como referencia de dimensionamiento real (no representa el máximo soportado): instalaciones de 20 a 200 agentes en producción han usado desde un solo servidor con CPU Intel Xeon E3 de 4 núcleos y 8 GB de RAM (20 agentes, 50 canales concurrentes) hasta clústeres de 3-4 servidores DELL R710/R720 con Xeon E5 y 8-16 GB de RAM cada uno (150-200 agentes, 120-250 canales concurrentes).</p>
+<h2 id="licencias-y-errores-de-arranque">Licencias y errores de arranque<a class="headerlink" href="#licencias-y-errores-de-arranque" title="Permanent link">&para;</a></h2>
+<h3 id="por-que-veo-can-not-found-license-file-al-iniciar-los-demonios">¿Por qué veo "can not found license file" al iniciar los demonios?<a class="headerlink" href="#por-que-veo-can-not-found-license-file-al-iniciar-los-demonios" title="Permanent link">&para;</a></h3>
+<p>Es solo un aviso, no un error — el sistema sigue funcionando con la licencia de prueba por defecto. Ver detalle completo en <a href="../../instalacion/licencias-y-errores-comunes/">Licencias y errores comunes de inicio</a>.</p>
+<h3 id="que-significan-los-codigos-de-error-de-licencia-mas-comunes">¿Qué significan los códigos de error de licencia más comunes?<a class="headerlink" href="#que-significan-los-codigos-de-error-de-licencia-mas-comunes" title="Permanent link">&para;</a></h3>
+<p>La tabla completa de códigos vive en el archivo fuente; los más frecuentes en campo son:</p>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th>Causa</th>
+<th>Acción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>9301</code></td>
+<td>El servidor no puede conectarse al servidor de validación de AsterCC</td>
+<td>Verificar conectividad a internet; revisar el MTU de la interfaz de red</td>
+</tr>
+<tr>
+<td><code>9903</code> / <code>9910</code></td>
+<td>Cambio en la verificación de licencia invalidó la autorización</td>
+<td>Regenerar el archivo de identidad con <code>asterccc --RNI</code> (o <code>--ADI</code> en servidores PHP adicionales) y volver a solicitar la licencia</td>
+</tr>
+<tr>
+<td><code>9920</code></td>
+<td>Cambio de hardware invalidó la licencia</td>
+<td>Regenerar identidad con <code>asterccc --RNI</code> y volver a autorizar</td>
+</tr>
+<tr>
+<td><code>9930</code></td>
+<td>Tras migrar el sistema, la licencia no coincide con los módulos instalados</td>
+<td>Ejecutar <code>asterccc --SMI &lt;código_de_módulo&gt;</code> para el módulo afectado (no requiere nueva licencia)</td>
+</tr>
+<tr>
+<td><code>9104</code> / <code>9201</code> / <code>9937</code></td>
+<td>Desajuste entre la hora del servidor y la fecha de activación/emisión</td>
+<td>Corregir la hora del sistema</td>
+</tr>
+<tr>
+<td><code>403</code> (frontend)</td>
+<td>Cantidad de agentes en el sistema supera el máximo autorizado</td>
+<td>Eliminar agentes sobrantes desde la cuenta <code>admin</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="al-abrir-la-pagina-de-login-aparece-no-se-puede-conectar-al-servidor-de-licencias-9301-como-lo-resuelvo">Al abrir la página de login aparece "no se puede conectar al servidor de licencias: 9301". ¿Cómo lo resuelvo?<a class="headerlink" href="#al-abrir-la-pagina-de-login-aparece-no-se-puede-conectar-al-servidor-de-licencias-9301-como-lo-resuelvo" title="Permanent link">&para;</a></h3>
+<p>Dos vías, en este orden:</p>
+<ol>
+<li><strong>Verificar conectividad:</strong> desde el servidor CTI, ejecuta <code>ping update.astercc.org</code>. Si no responde, es un problema de red — revisa la salida a internet del servidor.</li>
+<li><strong>Ajustar el MTU</strong> si el ping sí responde pero el error persiste:
+   <div class="highlight"><pre><span></span><code><span class="c1"># cambio temporal, efecto inmediato</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;1430&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/class/net/eth0/mtu
+</code></pre></div>
+   Para hacerlo permanente, agrega <code>MTU="1430"</code> al final de <code>/etc/sysconfig/network-scripts/ifcfg-eth0</code> y ejecuta <code>service network restart</code>.</li>
+</ol>
+<p>Un caso relacionado: si <code>/etc/hosts</code> tiene una entrada manual para <code>update.astercc.org</code> que apunta a una IP obsoleta, <code>ping</code> devolverá una dirección de servidor incorrecta y también producirá el error 9301 — corrígela o elimínala del archivo <code>hosts</code>.</p>
+<h3 id="el-sistema-cambio-repentinamente-al-idioma-ingles-y-el-login-muestra-un-error-404-que-paso">El sistema cambió repentinamente al idioma inglés y el login muestra un error 404. ¿Qué pasó?<a class="headerlink" href="#el-sistema-cambio-repentinamente-al-idioma-ingles-y-el-login-muestra-un-error-404-que-paso" title="Permanent link">&para;</a></h3>
+<p>Casi siempre es porque el disco (o el directorio temporal, <code>/tmp</code>) se llenó. Revisa el uso de espacio en los logs del sistema y en los archivos temporales, y libera espacio antes de intentar iniciar sesión de nuevo.</p>
+<h3 id="falta-php-al-instalar-astercc-con-el-script-de-instalacion-como-lo-resuelvo">Falta PHP al instalar AsterCC con el script de instalación. ¿Cómo lo resuelvo?<a class="headerlink" href="#falta-php-al-instalar-astercc-con-el-script-de-instalacion-como-lo-resuelvo" title="Permanent link">&para;</a></h3>
+<p>El instalador por script requiere paquetes de PHP 5.5 (<code>php55u-*</code>) específicos que a veces no quedan disponibles en el repositorio del sistema. Instálalos manualmente desde el repositorio de IUS Community, por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>n<span class="w"> </span><span class="k">in</span><span class="w"> </span>php55u-common<span class="w"> </span>php55u-cli<span class="w"> </span>php55u-fpm<span class="w"> </span>php55u-mysqlnd<span class="w"> </span>php55u-gd<span class="w"> </span>php55u-pdo<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>php55u-xml<span class="w"> </span>php55u-process<span class="w"> </span>php55u-mbstring<span class="w"> </span>php55u-pear<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>php55u-pecl-jsonc<span class="w"> </span>php55u-pecl-igbinary<span class="w"> </span>php55u-pecl-redis<span class="w"> </span><span class="se">\</span>
+<span class="w">         </span>php55u-ioncube-loader<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span>rpm<span class="w"> </span>-ivh<span class="w"> </span>https://dl.iuscommunity.org/pub/ius/archive/CentOS/6/x86_64/<span class="nv">$n</span>-&lt;version&gt;.ius.el6.x86_64.rpm
+<span class="k">done</span>
+</code></pre></div>
+<p>En total son 14 paquetes los que requiere la instalación por script (la versión concreta de cada uno depende del snapshot del repositorio en el momento de instalar).</p>
+<h3 id="perdi-la-contrasena-de-admin-como-la-reseteo">Perdí la contraseña de <code>admin</code>. ¿Cómo la reseteo?<a class="headerlink" href="#perdi-la-contrasena-de-admin-como-la-reseteo" title="Permanent link">&para;</a></h3>
+<p>Para cualquier otro usuario, basta con iniciar sesión como <code>admin</code> o como administrador de equipo (<code>teamadmin</code>) y restablecer su contraseña desde la interfaz. Para <code>admin</code> mismo hay que hacerlo directamente en la base de datos:</p>
+<ol>
+<li>Ubica las credenciales de MySQL en <code>/etc/astercc.conf</code> (sección <code>[database]</code>) si no las tienes:
+   <div class="highlight"><pre><span></span><code>head<span class="w"> </span>/etc/astercc.conf
+</code></pre></div></li>
+<li>Conéctate a la base de datos y actualiza la contraseña (almacenada como MD5):
+   <div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="w"> </span><span class="o">-</span><span class="n">uroot</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="o">&lt;</span><span class="n">password</span><span class="o">&gt;</span><span class="w"> </span><span class="n">astercc10</span>
+<span class="k">update</span><span class="w"> </span><span class="n">cc10_accounts</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">password</span><span class="o">=</span><span class="n">md5</span><span class="p">(</span><span class="s1">&#39;nueva_contraseña&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">username</span><span class="o">=</span><span class="s1">&#39;admin&#39;</span><span class="p">;</span>
+</code></pre></div></li>
+</ol>
+<h3 id="justo-despues-de-instalar-el-login-con-la-cuenta-admin-por-defecto-siempre-muestra-un-error-a-que-se-debe">Justo después de instalar, el login con la cuenta <code>admin</code> por defecto siempre muestra un error. ¿A qué se debe?<a class="headerlink" href="#justo-despues-de-instalar-el-login-con-la-cuenta-admin-por-defecto-siempre-muestra-un-error-a-que-se-debe" title="Permanent link">&para;</a></h3>
+<p>Es el mismo síntoma documentado en la sección de solución de problemas — revisa <code>error_reporting</code> en <code>php.ini</code>. Ver <a href="../../troubleshooting/">Solución de problemas</a>.</p>
+<hr />
+<h2 id="fuentes">Fuentes<a class="headerlink" href="#fuentes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>raw/zh/常见问题及解答/astercc_0.x的版本和astercc商业版有什么区别.txt</code></li>
+<li><code>raw/en/faq/what_s_the_difference_between_astercc_0.x_and_astercc_commercial_version.txt</code></li>
+<li><code>raw/en/faq/how_to_change_the_asterisk_version_in_astercc.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何在页面迁移astercc系统.txt</code></li>
+<li><code>raw/en/faq/how_to_migrate_astercc_system.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何在服务器后台升级astercc.txt</code></li>
+<li><code>raw/en/faq/how_to_upgrade_system.txt</code></li>
+<li><code>raw/zh/常见问题及解答/升级后datamover程序无法运行.txt</code></li>
+<li><code>raw/zh/常见问题及解答/执行服务器迁移后没安装的模块显示已安装解决办法.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何从系统的备份文件中恢复系统.txt</code></li>
+<li><code>raw/en/faq/how_to_restore_system_from_a_backup_file.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何为astercc系统配置多台php服务器.txt</code></li>
+<li><code>raw/en/faq/how_to_configure_multiple_servers.txt</code></li>
+<li><code>raw/en/faq/how_to_use_multiple_servers_for_astercc_system.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何使用脚本配置主备服务器以及集中管理.txt</code></li>
+<li><code>raw/en/faq/how_to_use_script_configure_high_available_and_cluster.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何选择呼叫中心硬件.txt</code></li>
+<li><code>raw/en/faq/how_to_choose_hardware_for_your_call_center.txt</code></li>
+<li><code>raw/zh/常见问题及解答/授权常见错误代码详解.txt</code></li>
+<li><code>raw/zh/常见问题及解答/ping_update.astercc.org返回的不是服务器地址_返回错误码9301.txt</code></li>
+<li><code>raw/zh/常见问题及解答/web页面提示9301无法连接服务器错误解决方法.txt</code></li>
+<li><code>raw/zh/常见问题及解答/系统突然变英文版_登陆提示404错误.txt</code></li>
+<li><code>raw/zh/常见问题及解答/脚本安装系统缺少php安装方法.txt</code></li>
+<li><code>raw/en/faq/how_to_reset_admin_password.txt</code></li>
+<li><code>raw/zh/常见问题及解答/为什么启动进程的时候看到cant_not_found_licnese.txt</code> (ver <a href="../../instalacion/licencias-y-errores-comunes/">Licencias y errores comunes de inicio</a>)</li>
+<li><code>raw/zh/常见问题及解答/安装完毕后使用默认的admin账户登录astercc时总是显示错误.txt</code> (ver <a href="../../troubleshooting/">Solución de problemas</a>)</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.indexes", "navigation.tracking", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/javascripts/nav-toggle.js"></script>
+      
+    
+  </body>
+</html>

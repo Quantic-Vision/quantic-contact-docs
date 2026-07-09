@@ -1,0 +1,3783 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación de AsterCC — plataforma de call center basada en Asterisk">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>FAQ: Base de datos y sistema - Wiki AsterCC (Español)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#faq-base-de-datos-y-sistema" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Wiki AsterCC (Español)" class="md-header__button md-logo" aria-label="Wiki AsterCC (Español)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Wiki AsterCC (Español)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FAQ: Base de datos y sistema
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Wiki AsterCC (Español)" class="md-nav__button md-logo" aria-label="Wiki AsterCC (Español)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Wiki AsterCC (Español)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glosario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glosario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../introduccion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introducción a AsterCC
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. Introducción a AsterCC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/que-es-astercc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ¿Qué es AsterCC?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/funcionalidades/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funcionalidades del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/arquitectura-general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura general
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/demo-en-linea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo en línea
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../instalacion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Instalación y configuración inicial
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Instalación y configuración inicial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requisitos del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/descarga-e-instalacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descarga e instalación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/instalar-desde-usb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instalar desde USB (AsterCC Box)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/configuracion-post-instalacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración post-instalación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/licencias-y-errores-comunes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licencias y errores comunes de inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../primeros-pasos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Primeros pasos
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Primeros pasos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/guia-administradores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía rápida para administradores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/guia-agentes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía rápida para agentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/recorrido-interfaz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recorrido por la interfaz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/configurar-softphones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configurar softphones (Eyebeam, X-Lite, Zoiper)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../modulos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Módulos del sistema
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. Módulos del sistema
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/pbx-y-telefonia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX y telefonía
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/pbx-ivr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX — IVR (menú de voz)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/pbx-funciones-avanzadas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX — Funciones avanzadas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/marcador-y-campanas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcador y campañas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/marcador-predictivo-avanzado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcador predictivo — avanzado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/cuentas-equipos-permisos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cuentas, equipos y permisos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/tarifas-y-facturacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarifas y facturación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/encuestas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encuestas y cuestionarios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/base-conocimiento-work-orders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base de conocimiento y Work Orders
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/plataforma-del-agente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plataforma de trabajo del agente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/reportes-y-estadisticas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reportes, estadísticas y financiero
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/oficina-virtual-bpo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oficina virtual / BPO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/atencion-cliente-mensajeria-ecommerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atención al cliente, mensajería y e-commerce
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/mensajeria-wechat-fax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mensajería — WeChat, Fax y envío masivo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../casos-de-uso/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Casos de uso y soluciones
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. Casos de uso y soluciones
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/call-center-inbound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Call center de atención al cliente (inbound)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/marketing-outbound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketing outbound / televentas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/e-commerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-commerce
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/oficina-virtual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oficina virtual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/marcacion-predictiva/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcación predictiva
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/casos-tecnicos-avanzados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Casos técnicos avanzados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../administracion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Administración avanzada
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Administración avanzada
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/asterisk-ami/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración de Asterisk AMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/openvpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenVPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/apc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APC (caché de PHP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/mailman/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mailman / correo saliente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/diagnostico-red-voip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagnóstico de red y VoIP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/configuracion-y-mantenimiento-sistema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración y mantenimiento del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/gestion-avanzada-call-center/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestión avanzada del call center
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/historial-documentacion-1.2-beta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentación histórica — AsterCC 1.2 beta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../desarrollo/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Guía de desarrollo y customización
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7. Guía de desarrollo y customización
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-y-ami/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API y AMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/guia-desarrolladores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía para desarrolladores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/introduccion-api-integracion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción a la API de integración
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/codigos-retorno-e-idiomas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Códigos de retorno y codificación de idioma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-autenticacion-y-sesion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Autenticación y sesión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-control-de-llamada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Control de llamada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-supervision-y-control-de-agente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Supervisión y control de agente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-datos-y-grabaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Datos y grabaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/eventos-tiempo-real-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recibir eventos en tiempo real de la API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/integrar-envio-de-sms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrar el envío de SMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Preguntas frecuentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Solución de problemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Historial de versiones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#base-de-datos-mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Base de datos (MySQL)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Base de datos (MySQL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-tablas-incluye-la-base-de-datos-de-astercc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué tablas incluye la base de datos de AsterCC?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-se-si-una-tabla-de-mysql-esta-danada-y-como-la-reparo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo sé si una tabla de MySQL está dañada y cómo la reparo?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mysql-no-arranca-y-el-log-muestra-innodb-error-tried-to-read-xxxxxx-bytes-at-offset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MySQL no arranca y el log muestra InnoDB: Error: tried to read XXXXXX bytes at offset...
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-log-de-mysql-indica-que-una-tabla-de-memoria-memory-esta-llena" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El log de MySQL indica que una tabla de memoria (MEMORY) está llena
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-cambio-la-direccionhost-de-la-base-de-datos-que-usa-astercc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo cambio la dirección/host de la base de datos que usa AsterCC?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-traslado-el-directorio-de-almacenamiento-de-mysql-a-otro-disco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo traslado el directorio de almacenamiento de MySQL a otro disco?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replicacion-maestro-esclavo-de-mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Replicación maestro-esclavo de MySQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datos-huerfanos-en-cc10_curpbxcdrs-y-registros-de-llamada-duplicados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Datos huérfanos en cc10_curpbxcdrs y registros de llamada duplicados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logs-y-monitoreo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logs y monitoreo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logs y monitoreo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-logs-genera-astercc-y-donde-estan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué logs genera AsterCC y dónde están?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-administra-astercc-la-rotacion-de-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo administra AsterCC la rotación de logs?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-reviso-los-logs-del-sistema-para-diagnosticar-un-problema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo reviso los logs del sistema para diagnosticar un problema?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-proceso-realtime-se-cae-repetidamente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El proceso realtime se cae repetidamente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aparece-chown-invalid-user-al-reiniciar-asterccd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aparece "chown: invalid user" al reiniciar asterccd
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limpiar-datos-antiguos-de-las-tablas-de-informacion-en-tiempo-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limpiar datos antiguos de las tablas de información en tiempo real
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-hago-limpieza-de-disco-en-un-servidor-astercc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo hago limpieza de disco en un servidor AsterCC?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#almacenamiento-y-grabaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Almacenamiento y grabaciones
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Almacenamiento y grabaciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuanto-espacio-ocupan-las-grabaciones-de-llamadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cuánto espacio ocupan las grabaciones de llamadas?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-cambio-la-ubicacion-de-almacenamiento-de-las-grabaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo cambio la ubicación de almacenamiento de las grabaciones?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-controla-si-una-llamada-se-grava-o-no" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué controla si una llamada se grava o no?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#falta-lame-y-no-se-pueden-convertir-las-grabaciones-a-mp3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Falta lame y no se pueden convertir las grabaciones a MP3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#al-intentar-escuchar-una-grabacion-aparece-404-file-not-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Al intentar escuchar una grabación aparece 404 File Not Found
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hay-datos-del-cliente-en-control-de-calidad-pero-no-se-puede-escuchar-la-grabacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hay datos del cliente en control de calidad pero no se puede escuchar la grabación
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redes-y-permisos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redes y permisos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Redes y permisos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#como-monto-un-recurso-de-red-via-nfs-entre-dos-hosts-centos-6x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo monto un recurso de red vía NFS entre dos hosts CentOS 6.x?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-monto-grabaciones-de-otro-servidor-astercc-via-samba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo monto grabaciones de otro servidor AsterCC vía Samba?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-se-monta-un-disco-automaticamente-al-arrancar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo se monta un disco automáticamente al arrancar?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aparece-chown-invalid-user-al-ejecutar-operaciones-de-escrituracreacion-en-php" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aparece "chown: invalid user" al ejecutar operaciones de escritura/creación en PHP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aparece-rootgvfs-permission-denied" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aparece "/root/.gvfs: Permission denied"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seguridad-y-acceso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seguridad y acceso
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Seguridad y acceso">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cual-es-la-politica-de-iptables-por-defecto-de-astercc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cuál es la política de iptables por defecto de AsterCC?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-cancelo-la-restriccion-de-acceso-por-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo cancelo la restricción de acceso por IP?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#depuracion-de-sip-con-tcpdump-y-wireshark" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depuración de SIP con tcpdump y Wireshark
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-configuro-astercc-para-servir-por-https" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo configuro AsterCC para servir por HTTPS?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-cambio-el-puerto-http-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo cambio el puerto HTTP del sistema?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-actualizo-el-modulo-push-de-nginx-fuga-de-memoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo actualizo el módulo push de nginx (fuga de memoria)?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis-muestra-error-noauth-authentication-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redis muestra (error) NOAUTH Authentication required.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-agrego-o-edito-la-anotacion-memo-de-un-campo-de-parametro-de-un-modulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo agrego o edito la anotación (memo) de un campo de parámetro de un módulo?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#catalogo-de-ventanas-emergentes-comunes-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Catálogo de ventanas emergentes comunes del sistema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#falta-informacion-de-codigo-de-area-telefonico-tras-instalar-el-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Falta información de código de área telefónico tras instalar el sistema
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fuentes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="faq-base-de-datos-y-sistema">FAQ: Base de datos y sistema<a class="headerlink" href="#faq-base-de-datos-y-sistema" title="Permanent link">&para;</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Puede estar desactualizado</p>
+<p>Varias respuestas documentan rutas, versiones de paquete y comandos de una instalación de referencia antigua (CentOS 6, <code>astercc10</code> como nombre de base de datos, <code>astercc2.6-rc1</code>, <code>nginx-1.2.6</code>). Verifica las rutas y versiones reales de tu instalación antes de ejecutar cualquier comando.</p>
+</div>
+<h2 id="base-de-datos-mysql">Base de datos (MySQL)<a class="headerlink" href="#base-de-datos-mysql" title="Permanent link">&para;</a></h2>
+<h3 id="que-tablas-incluye-la-base-de-datos-de-astercc">¿Qué tablas incluye la base de datos de AsterCC?<a class="headerlink" href="#que-tablas-incluye-la-base-de-datos-de-astercc" title="Permanent link">&para;</a></h3>
+<p>La base de datos <code>astercc10</code> contiene varios cientos de tablas con el prefijo <code>cc10_</code>. Algunas de las más relevantes para diagnóstico:</p>
+<ul>
+<li><code>cc10_pbxcdrs</code> — historial de registros de llamada (CDR) del PBX.</li>
+<li><code>cc10_curpbxcdrs</code> — llamadas en curso / recientes (tabla "en tiempo real").</li>
+<li><code>cc10_1_campaigncdrs</code>, <code>cc10_2_campaigncdrs</code>, ... — CDR de cada campaña de marcador (el número es el ID de la campaña).</li>
+<li><code>cc10_cache_campaign_cdrs</code> — caché intermedia de CDR de campañas, usada mientras la llamada no ha cerrado.</li>
+<li><code>cc10_accounts</code>, <code>cc10_agents</code>, <code>cc10_teams</code>, <code>cc10_extensions</code>, <code>cc10_trunks</code>, <code>cc10_ivrs</code>, <code>cc10_queues</code> — configuración de cuentas, agentes, equipos, extensiones, troncales, IVR y colas.</li>
+<li><code>cc10_settings</code> — parámetros generales del sistema (por ejemplo <code>ip_limit</code> para la restricción de IP).</li>
+<li><code>cc10_knowledges</code>, <code>cc10_workorders</code> — base de conocimiento y órdenes de trabajo (work orders).</li>
+</ul>
+<h3 id="como-se-si-una-tabla-de-mysql-esta-danada-y-como-la-reparo">¿Cómo sé si una tabla de MySQL está dañada y cómo la reparo?<a class="headerlink" href="#como-se-si-una-tabla-de-mysql-esta-danada-y-como-la-reparo" title="Permanent link">&para;</a></h3>
+<p>Señales típicas: todos los agentes se desconectan de golpe, las consultas de llamadas no devuelven resultados, el proceso <code>datamover</code> se cae, o el CTI Core reporta alarmas. Para diagnosticar:</p>
+<ol>
+<li>Revisa el log de errores de MySQL:
+   <div class="highlight"><pre><span></span><code>tail -n 50 /var/log/mysqld.log
+</code></pre></div></li>
+<li>Identifica el nombre de la tabla dañada en el log.</li>
+<li>Repárala con <code>mysqlcheck</code> (funciona incluso con la tabla en uso):
+   <div class="highlight"><pre><span></span><code>mysqlcheck -r astercc10 --auto-repair -u&lt;usuario&gt; -p&lt;contraseña&gt;
+</code></pre></div>
+   Alternativa manual dentro de la consola de MySQL: <code>repair table &lt;nombre_tabla&gt;;</code></li>
+<li>Sigue vigilando el log por si aparecen nuevos errores de corrupción.</li>
+</ol>
+<h3 id="mysql-no-arranca-y-el-log-muestra-innodb-error-tried-to-read-xxxxxx-bytes-at-offset">MySQL no arranca y el log muestra <code>InnoDB: Error: tried to read XXXXXX bytes at offset...</code><a class="headerlink" href="#mysql-no-arranca-y-el-log-muestra-innodb-error-tried-to-read-xxxxxx-bytes-at-offset" title="Permanent link">&para;</a></h3>
+<p>Este error suele resolverse moviendo los archivos de InnoDB fuera del directorio de datos y dejando que MySQL los regenere:</p>
+<div class="highlight"><pre><span></span><code>mv /var/lib/mysql/ib* /root
+service mysql start
+</code></pre></div>
+<h3 id="el-log-de-mysql-indica-que-una-tabla-de-memoria-memory-esta-llena">El log de MySQL indica que una tabla de memoria (<code>MEMORY</code>) está llena<a class="headerlink" href="#el-log-de-mysql-indica-que-una-tabla-de-memoria-memory-esta-llena" title="Permanent link">&para;</a></h3>
+<p>Primero verifica si el proceso que descarga las tablas de memoria a disco sigue vivo:</p>
+<div class="highlight"><pre><span></span><code>ps aux | grep astcc_datamover
+</code></pre></div>
+<p>Si el proceso <code>astcc_datamover -d</code> no aparece, es la causa típica de que la tabla de memoria se llene. Pasos:</p>
+<ol>
+<li>Revisa el log de MySQL — además de la alarma de tabla llena puede haber alarmas de tablas corruptas; repáralas todas.</li>
+<li>Reinicia el proceso <code>datamover</code> y confirma que permanece corriendo hasta que termine de mover los datos de la tabla en memoria:
+   <div class="highlight"><pre><span></span><code>/opt/asterisk/scripts/astercc/astcc_datamover -d
+</code></pre></div></li>
+</ol>
+<h3 id="como-cambio-la-direccionhost-de-la-base-de-datos-que-usa-astercc">¿Cómo cambio la dirección/host de la base de datos que usa AsterCC?<a class="headerlink" href="#como-cambio-la-direccionhost-de-la-base-de-datos-que-usa-astercc" title="Permanent link">&para;</a></h3>
+<p>Hay que editar dos archivos:</p>
+<p><strong><code>/etc/astercc.conf</code></strong> — las etiquetas <code>[database]</code> y <code>[statistics]</code> definen la conexión que usan los procesos backend:</p>
+<div class="highlight"><pre><span></span><code>vi /etc/astercc.conf
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>status</code></td>
+<td>Si esta configuración está activa</td>
+</tr>
+<tr>
+<td><code>dbtype</code></td>
+<td>Tipo de base de datos</td>
+</tr>
+<tr>
+<td><code>dbhost</code></td>
+<td>Dirección del servidor de base de datos</td>
+</tr>
+<tr>
+<td><code>dbname</code></td>
+<td>Nombre de la base de datos</td>
+</tr>
+<tr>
+<td><code>dbport</code></td>
+<td>Puerto de conexión</td>
+</tr>
+<tr>
+<td><code>username</code> / <code>password</code></td>
+<td>Credenciales de acceso</td>
+</tr>
+<tr>
+<td><code>prefix</code></td>
+<td>Prefijo de las tablas</td>
+</tr>
+<tr>
+<td><code>shortringsec</code></td>
+<td>Duración mínima de llamada para contar en las estadísticas</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>/var/www/html/asterCC/app/config/database.php</code></strong> — la clase <code>DATABASE_CONFIG</code>, bloque <code>default</code>, define la conexión que usa la interfaz web:</p>
+<div class="highlight"><pre><span></span><code>vi /var/www/html/asterCC/app/config/database.php
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>driver</code></td>
+<td>Tipo de base de datos</td>
+</tr>
+<tr>
+<td><code>persistent</code></td>
+<td>Si se mantiene la conexión persistente</td>
+</tr>
+<tr>
+<td><code>host</code></td>
+<td>Dirección del servidor</td>
+</tr>
+<tr>
+<td><code>login</code> / <code>password</code></td>
+<td>Credenciales</td>
+</tr>
+<tr>
+<td><code>database</code></td>
+<td>Nombre de la base de datos</td>
+</tr>
+<tr>
+<td><code>prefix</code></td>
+<td>Prefijo de tablas</td>
+</tr>
+<tr>
+<td><code>encoding</code></td>
+<td>Codificación de caracteres</td>
+</tr>
+</tbody>
+</table>
+<h3 id="como-traslado-el-directorio-de-almacenamiento-de-mysql-a-otro-disco">¿Cómo traslado el directorio de almacenamiento de MySQL a otro disco?<a class="headerlink" href="#como-traslado-el-directorio-de-almacenamiento-de-mysql-a-otro-disco" title="Permanent link">&para;</a></h3>
+<p>Con el sistema sin llamadas activas:</p>
+<ol>
+<li>Detén MySQL: <code>service mysqld stop</code> (o <code>mysqladmin shutdown -uroot -p&lt;contraseña&gt;</code>).</li>
+<li>Monta el nuevo almacenamiento (por ejemplo en <code>/mnt</code>) y copia los datos:
+   <div class="highlight"><pre><span></span><code>cp -Rp /var/lib/mysql /mnt
+</code></pre></div></li>
+<li>Renombra el directorio original como respaldo:
+   <div class="highlight"><pre><span></span><code>mv /var/lib/mysql /var/lib/mysql.bak
+</code></pre></div></li>
+<li>Crea el enlace simbólico hacia la nueva ubicación:
+   <div class="highlight"><pre><span></span><code>ln -s /mnt/mysql /var/lib
+</code></pre></div></li>
+<li>Verifica el enlace (<code>ll /var/lib</code>) y arranca MySQL de nuevo: <code>service mysqld start</code>.</li>
+<li>Una vez confirmado que todo funciona, elimina <code>mysql.bak</code> para liberar espacio.</li>
+</ol>
+<h3 id="replicacion-maestro-esclavo-de-mysql">Replicación maestro-esclavo de MySQL<a class="headerlink" href="#replicacion-maestro-esclavo-de-mysql" title="Permanent link">&para;</a></h3>
+<p>Cubierto en <a href="../../administracion/diagnostico-red-voip/#replicacion-maestro-esclavo-de-mysql">Diagnóstico de red y VoIP — Replicación maestro-esclavo de MySQL</a>.</p>
+<h3 id="datos-huerfanos-en-cc10_curpbxcdrs-y-registros-de-llamada-duplicados">Datos huérfanos en <code>cc10_curpbxcdrs</code> y registros de llamada duplicados<a class="headerlink" href="#datos-huerfanos-en-cc10_curpbxcdrs-y-registros-de-llamada-duplicados" title="Permanent link">&para;</a></h3>
+<p>Datos huérfanos: cuando quedan registros históricos sin explicación en <code>cc10_curpbxcdrs</code> producto de una falla desconocida durante la llamada, no hay forma de repararlos — solo se puede revisar el log del sistema de AsterCC para identificar qué falla los originó.</p>
+<p>Registros de llamada duplicados: la causa habitual es tener el cron <code>astcc_historydata -d</code> corriendo dos veces. Verifica con:</p>
+<div class="highlight"><pre><span></span><code>crontab -l
+</code></pre></div>
+<p>y elimina la entrada duplicada de <code>* * * * * /opt/asterisk/scripts/astercc/astcc_historydata -d</code>.</p>
+<h2 id="logs-y-monitoreo">Logs y monitoreo<a class="headerlink" href="#logs-y-monitoreo" title="Permanent link">&para;</a></h2>
+<h3 id="que-logs-genera-astercc-y-donde-estan">¿Qué logs genera AsterCC y dónde están?<a class="headerlink" href="#que-logs-genera-astercc-y-donde-estan" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Componente</th>
+<th>Ruta</th>
+<th>Notas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sistema Linux (general)</td>
+<td><code>/var/log/messages</code></td>
+<td>Todo lo que no tenga destino específico</td>
+</tr>
+<tr>
+<td>HTTP (nginx)</td>
+<td>Error: <code>/var/log/nginx/error.log</code>; acceso: <code>/var/www/html/asterCC/http-log/access.log</code></td>
+<td>La ruta se puede redefinir en <code>/usr/local/nginx/conf/nginx.conf</code></td>
+</tr>
+<tr>
+<td>Asterisk</td>
+<td><code>/var/log/asterisk/full</code>, <code>/var/log/asterisk/messages</code></td>
+<td>Requiere habilitar niveles de log (ver abajo)</td>
+</tr>
+<tr>
+<td>AsterCC (asterccd)</td>
+<td><code>/opt/asterisk/scripts/astercc/*.log</code></td>
+<td>Un archivo por módulo, por ejemplo <code>astcc_dialer.log</code> para el marcador predictivo</td>
+</tr>
+<tr>
+<td>Eventos de llamada de agente</td>
+<td><code>/tmp/astcceventslog/eventsfile_AAAAMMDD.log</code></td>
+<td>Se conservan por defecto los últimos 5 días; nunca borrar el log del día en curso</td>
+</tr>
+</tbody>
+</table>
+<p>Para habilitar el log de Asterisk, quita el <code>;</code> de las líneas <code>messages =&gt;</code> y <code>full =&gt;</code> en <code>/etc/asterisk/logger.conf</code> y recarga:</p>
+<div class="highlight"><pre><span></span><code>asterisk -rx &quot;logger reload&quot;
+</code></pre></div>
+<p>Para habilitar el log de AsterCC, en <code>/etc/astercc.conf</code> bajo <code>[system]</code> pon <code>debug</code> en un entero mayor a 0 (por ejemplo <code>debug=2</code>; <code>debug=0</code> lo desactiva) y reinicia el servicio:</p>
+<div class="highlight"><pre><span></span><code>service asterccd restart
+</code></pre></div>
+<p>Algunas instalaciones también agregan <code>internal_debug = 1</code> bajo <code>[system]</code> para depuración interna adicional.</p>
+<h3 id="como-administra-astercc-la-rotacion-de-logs">¿Cómo administra AsterCC la rotación de logs?<a class="headerlink" href="#como-administra-astercc-la-rotacion-de-logs" title="Permanent link">&para;</a></h3>
+<p><code>logrotate</code> rota, comprime y elimina logs antiguos según tamaño/antigüedad, normalmente vía cron. Su configuración global vive en <code>/etc/logrotate.conf</code> (no suele modificarse) y las reglas por servicio en <code>/etc/logrotate.d/</code>. Desde <code>astercc2.6-rc1</code> el sistema incluye reglas de logrotate propias en esa carpeta.</p>
+<p>Directivas más usadas en las reglas de AsterCC:</p>
+<table>
+<thead>
+<tr>
+<th>Directiva</th>
+<th>Efecto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>missingok</code></td>
+<td>Ignora errores como "archivo no encontrado"</td>
+</tr>
+<tr>
+<td><code>notifempty</code></td>
+<td>No rota si el archivo está vacío</td>
+</tr>
+<tr>
+<td><code>daily</code> / <code>weekly</code> / <code>monthly</code></td>
+<td>Periodicidad de la rotación</td>
+</tr>
+<tr>
+<td><code>rotate N</code></td>
+<td>Cuántas copias históricas conservar</td>
+</tr>
+<tr>
+<td><code>compress</code> / <code>nocompress</code></td>
+<td>Comprime (gzip) los archivos ya rotados</td>
+</tr>
+<tr>
+<td><code>delaycompress</code></td>
+<td>Comprime hasta la siguiente rotación (útil junto con <code>compress</code>)</td>
+</tr>
+<tr>
+<td><code>create modo owner group</code></td>
+<td>Permisos/propietario del nuevo archivo de log</td>
+</tr>
+<tr>
+<td><code>sharedscripts</code></td>
+<td>Ejecuta el script <code>postrotate</code> una sola vez para todos los archivos que coincidan</td>
+</tr>
+</tbody>
+</table>
+<p>Ejemplo real usado para PHP-FPM:</p>
+<div class="highlight"><pre><span></span><code>/var/log/php-fpm/*log {
+    missingok
+    notifempty
+    sharedscripts
+    delaycompress
+    postrotate
+        /bin/kill -SIGUSR1 `cat /var/run/php-fpm/php-fpm.pid 2&gt;/dev/null` 2&gt;/dev/null || true
+    endscript
+}
+</code></pre></div>
+<p>Y para el log de MySQL:</p>
+<div class="highlight"><pre><span></span><code>/var/log/mysqld.log {
+    create 640 mysql mysql
+    notifempty
+    daily
+    rotate 3
+    missingok
+    compress
+    postrotate
+        if test -x /usr/bin/mysqladmin &amp;&amp; /usr/bin/mysqladmin ping &amp;&gt;/dev/null
+        then
+            /usr/bin/mysqladmin flush-logs
+        fi
+    endscript
+}
+</code></pre></div>
+<h3 id="como-reviso-los-logs-del-sistema-para-diagnosticar-un-problema">¿Cómo reviso los logs del sistema para diagnosticar un problema?<a class="headerlink" href="#como-reviso-los-logs-del-sistema-para-diagnosticar-un-problema" title="Permanent link">&para;</a></h3>
+<p>Además de los archivos de log en disco, la interfaz web tiene sus propias pantallas de consulta: <strong>Logs</strong> (acciones de los usuarios: login, altas, bajas, por cuenta/acción/controlador) y <strong>Eventos de llamada</strong> (eventos de canal por agente: timbrado, contestada, colgada, pausa, con su <code>uniqueid</code>).</p>
+<p><img alt="Pantalla Logs con filtros por cuenta, acción y controlador, y el listado de acciones registradas (login, alta de dialer, etc.)" src="../../assets/images/faq-base-de-datos-y-sistema/pantalla-logs-sistema.jpg" /></p>
+<p><img alt="Pantalla Call Events con filtros por agente y evento, y el listado de eventos (Hangup, Ringing, Incoming, autopaused, etc.)" src="../../assets/images/faq-base-de-datos-y-sistema/pantalla-eventos-llamada.jpg" /></p>
+<p>Con el log de Asterisk habilitado (ver arriba), revisa <code>/var/log/asterisk/full</code> para eventos de canal, SIP y aplicaciones de dialplan. Para el log de AsterCC, edita <code>/etc/astercc.conf</code> — sube <code>debug</code> a un valor mayor (por ejemplo <code>debug=11</code>) y agrega <code>internal_debug = 1</code> bajo <code>[system]</code>:</p>
+<div class="highlight"><pre><span></span><code>[system]
+debug = 11
+internal_debug = 1
+</code></pre></div>
+<p>Reinicia el servicio para aplicar:</p>
+<div class="highlight"><pre><span></span><code>service asterccd restart
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Reiniciar <code>asterccd</code> interrumpe el servicio; hazlo solo cuando no haya llamadas activas.</p>
+</div>
+<p>Los logs de AsterCC con este nivel de detalle se escriben en <code>/var/log/asterisk/full</code>.</p>
+<h3 id="el-proceso-realtime-se-cae-repetidamente">El proceso <code>realtime</code> se cae repetidamente<a class="headerlink" href="#el-proceso-realtime-se-cae-repetidamente" title="Permanent link">&para;</a></h3>
+<p>Ejecuta el binario manualmente para ver el error exacto:</p>
+<div class="highlight"><pre><span></span><code>/opt/asterisk/scripts/astercc/astcc_realtime
+</code></pre></div>
+<p>Con alta concurrencia es normal que el socket AMI se desconecte momentáneamente; <code>realtime</code> se reinicia solo y en general no afecta el servicio.</p>
+<h3 id="aparece-chown-invalid-user-al-reiniciar-asterccd">Aparece "chown: invalid user" al reiniciar <code>asterccd</code><a class="headerlink" href="#aparece-chown-invalid-user-al-reiniciar-asterccd" title="Permanent link">&para;</a></h3>
+<p>Indica que el usuario referenciado en la configuración no existe o no pertenece al grupo esperado. Verifica y corrige:</p>
+<div class="highlight"><pre><span></span><code>groups &lt;usuario&gt;
+useradd &lt;usuario&gt; -g &lt;grupo&gt;
+service asterccd restart
+</code></pre></div>
+<h3 id="limpiar-datos-antiguos-de-las-tablas-de-informacion-en-tiempo-real">Limpiar datos antiguos de las tablas de información en tiempo real<a class="headerlink" href="#limpiar-datos-antiguos-de-las-tablas-de-informacion-en-tiempo-real" title="Permanent link">&para;</a></h3>
+<p>Las pantallas de "Información en tiempo real del sistema" (por ejemplo el monitor de llamadas) leen de tablas como <code>cc10_curpbxcdrs</code>. Para depurar datos antiguos, elige un punto de corte de fecha y ejecuta un <code>DELETE</code> directo en MySQL:</p>
+<div class="highlight"><pre><span></span><code><span class="k">delete</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">cc10_curpbxcdrs</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">calldate</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="s1">&#39;AAAA-MM-DD&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p>El mismo patrón aplica a otras tablas de "en curso" (<code>cc10_curqueuecallers</code>, etc.), sustituyendo el nombre de tabla y la columna de fecha correspondiente.</p>
+<h3 id="como-hago-limpieza-de-disco-en-un-servidor-astercc">¿Cómo hago limpieza de disco en un servidor AsterCC?<a class="headerlink" href="#como-hago-limpieza-de-disco-en-un-servidor-astercc" title="Permanent link">&para;</a></h3>
+<p>Usa <code>df</code> para ver espacio disponible por partición y <code>du -sh &lt;directorio&gt;</code> para tamaño de una carpeta. Puntos de limpieza más comunes:</p>
+<ul>
+<li><strong>Log del sistema AsterCC</strong>: pon <code>debug=0</code> en <code>/etc/astercc.conf</code> bajo <code>[system]</code> y reinicia <code>asterccd</code> (solo sin llamadas activas) — sin esto seguirá escribiendo.</li>
+<li><strong>Logs de scripts</strong>: <code>/opt/asterisk/scripts/astercc/*.log</code> y <code>*.gz</code> se pueden borrar directamente.</li>
+<li><strong>Archivos del sistema web</strong>: <code>data/</code> y <code>statistics/</code> bajo <code>/var/www/html/asterCC/</code> suelen crecer mucho (grabaciones descargadas, datos de estadísticas); se recomienda moverlos a un disco con más espacio y enlazarlos de vuelta con <code>ln -s</code>.</li>
+<li><strong>Grabaciones PBX</strong>: <code>/var/spool/asterisk/monitor</code> — conserva al menos los últimos 5 días; el resto se puede migrar a otro disco y enlazar de vuelta.</li>
+<li><strong>Eventos de llamada</strong>: <code>/tmp/astcceventslog/</code> — se pueden borrar los <code>.log</code> de más de 5 días una vez confirmado que los registros de llamada están correctos.</li>
+<li><strong>Asterisk</strong>: <code>/var/log/asterisk/full</code> y <code>messages</code> se vacían sin detener el servicio con <code>echo &gt; full</code> / <code>echo &gt; messages</code>. Para deshabilitar el log, comenta las líneas correspondientes en <code>/etc/asterisk/logger.conf</code> y ejecuta <code>asterisk -rx "logger reload"</code>.</li>
+<li><strong>MySQL</strong>: el log de errores se define en <code>/etc/my.cnf</code> bajo <code>[mysqld_safe]</code> con <code>log-error=/var/log/mysqld.log</code>; puede desactivarse y su archivo eliminarse (reiniciar <code>mysqld</code> sin llamadas activas para que el cambio tome efecto).</li>
+<li><strong>HTTP</strong>: <code>/var/www/html/asterCC/http-log/access.log</code> se puede vaciar con <code>echo &gt; /var/www/html/asterCC/http-log/access.log</code>.</li>
+<li><strong>PHP</strong>: logs en <code>/var/log/php-fpm/</code> (<code>error.log</code>, <code>www-error.log</code>).</li>
+<li><strong>Otros servicios</strong>: en <code>/var/log/</code> los archivos con fecha en el nombre (<code>maillog</code>, <code>cron</code>, <code>secure</code>, <code>yum</code>, etc.) se eliminan con <code>rm</code>; los que no tienen fecha se vacían con <code>echo &gt;</code>.</li>
+</ul>
+<h2 id="almacenamiento-y-grabaciones">Almacenamiento y grabaciones<a class="headerlink" href="#almacenamiento-y-grabaciones" title="Permanent link">&para;</a></h2>
+<h3 id="cuanto-espacio-ocupan-las-grabaciones-de-llamadas">¿Cuánto espacio ocupan las grabaciones de llamadas?<a class="headerlink" href="#cuanto-espacio-ocupan-las-grabaciones-de-llamadas" title="Permanent link">&para;</a></h3>
+<p>AsterCC graba en dos formatos: WAV (~240 KB por minuto) y MP3 (~180 KB por minuto).</p>
+<h3 id="como-cambio-la-ubicacion-de-almacenamiento-de-las-grabaciones">¿Cómo cambio la ubicación de almacenamiento de las grabaciones?<a class="headerlink" href="#como-cambio-la-ubicacion-de-almacenamiento-de-las-grabaciones" title="Permanent link">&para;</a></h3>
+<p>Con el sistema sin llamadas activas:</p>
+<ol>
+<li>Monta el nuevo almacenamiento (por ejemplo en <code>/mnt</code>).</li>
+<li>Copia la carpeta de grabaciones al nuevo destino:
+   <div class="highlight"><pre><span></span><code>cp -Rp /var/spool/asterisk/monitor /mnt/
+</code></pre></div></li>
+<li>Renombra la carpeta original como respaldo:
+   <div class="highlight"><pre><span></span><code>mv /var/spool/asterisk/monitor /var/spool/asterisk/monitor.bak
+</code></pre></div></li>
+<li>Crea el enlace simbólico de vuelta a la ruta original:
+   <div class="highlight"><pre><span></span><code>ln -s /mnt/monitor /var/spool/asterisk/monitor
+</code></pre></div></li>
+<li>Verifica el enlace con <code>ll /var/spool/asterisk/</code> y prueba reproducir/descargar una grabación desde <strong>PBX → Registro de llamadas</strong> en la interfaz.</li>
+<li>Si todo funciona, elimina el respaldo: <code>rm -rf /var/spool/asterisk/monitor.bak</code>.</li>
+</ol>
+<p>Para empaquetar y migrar las grabaciones de un mes específico (ejemplo febrero de 2015) a otro servidor, dos métodos:</p>
+<p><strong>Método 1 — comprimir todo el mes de todos los equipos:</strong></p>
+<div class="highlight"><pre><span></span><code>tar zcvf 201502.tar.gz /var/spool/asterisk/monitor/*/2015/02/
+scp 201502.tar.gz root@192.168.1.177:/root/
+</code></pre></div>
+<p>En el destino: <code>tar zxf 201502.tar.gz</code></p>
+<p><strong>Método 2 — listar archivos primero y empaquetar solo esos:</strong></p>
+<div class="highlight"><pre><span></span><code>find /var/spool/asterisk/monitor/*/2015/02 -name &quot;*.wav&quot; -print &gt; list
+tar -T list -czvf 201502.tar.gz
+</code></pre></div>
+<p>Luego mover el <code>.tar.gz</code> al servidor destino y descomprimir con <code>tar zxf 201502.tar.gz</code>.</p>
+<h3 id="que-controla-si-una-llamada-se-grava-o-no">¿Qué controla si una llamada se grava o no?<a class="headerlink" href="#que-controla-si-una-llamada-se-grava-o-no" title="Permanent link">&para;</a></h3>
+<p>La grabación se controla en cuatro niveles:</p>
+<table>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Comportamiento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Llamadas de agente</td>
+<td>Siempre se grava, no requiere configuración</td>
+</tr>
+<tr>
+<td>Extensión (dispositivo)</td>
+<td>Se puede habilitar/deshabilitar la grabación de esa extensión específica</td>
+</tr>
+<tr>
+<td>Cuenta de usuario</td>
+<td>Fuerza la grabación de todos los dispositivos de esa cuenta</td>
+</tr>
+<tr>
+<td>Equipo</td>
+<td>Fuerza la grabación de todas las extensiones del equipo</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Campo &quot;Monitor Force&quot; en la pestaña Basic de Edit User, forzando la grabación de todos los dispositivos de esa cuenta" src="../../assets/images/faq-base-de-datos-y-sistema/grabacion-forzada-cuenta.png" /></p>
+<p><img alt="Campo &quot;Monitor Force&quot; en la pestaña Basic de Edit Team, forzando la grabación de todas las extensiones del equipo" src="../../assets/images/faq-base-de-datos-y-sistema/grabacion-forzada-equipo.png" /></p>
+<h3 id="falta-lame-y-no-se-pueden-convertir-las-grabaciones-a-mp3">Falta <code>lame</code> y no se pueden convertir las grabaciones a MP3<a class="headerlink" href="#falta-lame-y-no-se-pueden-convertir-las-grabaciones-a-mp3" title="Permanent link">&para;</a></h3>
+<p>Sin <code>lame</code> instalado, el sistema no puede convertir las grabaciones a MP3 y por lo tanto no se pueden reproducir en línea.</p>
+<p>En Ubuntu, CentOS 7 y entornos similares, compilar e instalar desde fuente:</p>
+<div class="highlight"><pre><span></span><code>wget http://internode.dl.sourceforge.net/project/lame/lame/3.99/lame-3.99.5.tar.gz
+tar zxf lame-3.99.5.tar.gz
+cd lame-3.99.5
+./configure
+make &amp;&amp; make install
+</code></pre></div>
+<p>En CPUs de varios núcleos se puede acelerar la compilación con <code>make -j2</code> (o el número de núcleos disponibles).</p>
+<p>En CentOS 6.7 (entorno de referencia de AsterCC):</p>
+<div class="highlight"><pre><span></span><code>yum install lame.x86_64
+</code></pre></div>
+<p>o, para instalación local vía RPM:</p>
+<div class="highlight"><pre><span></span><code>rpm -Uvh ftp://rpmfind.net/linux/dag/redhat/el6/en/x86_64/dag/RPMS/lame-3.99.5-1.el6.rf.x86_64.rpm
+</code></pre></div>
+<h3 id="al-intentar-escuchar-una-grabacion-aparece-404-file-not-found">Al intentar escuchar una grabación aparece 404 File Not Found<a class="headerlink" href="#al-intentar-escuchar-una-grabacion-aparece-404-file-not-found" title="Permanent link">&para;</a></h3>
+<p>Pasos de diagnóstico:</p>
+<ol>
+<li>Verifica que el archivo exista combinando la ruta base de grabaciones con la ruta de grabación indicada en el registro de llamadas del PBX.</li>
+<li>Revisa que todos los niveles de la ruta tengan permisos de usuario/grupo <code>asterisk</code>.</li>
+<li>Confirma que la dependencia <code>sox</code> esté instalada:
+   <div class="highlight"><pre><span></span><code>rpm -qa | grep sox
+</code></pre></div>
+   Si falta, instálala con:
+   <div class="highlight"><pre><span></span><code>yum install sox
+</code></pre></div></li>
+</ol>
+<h3 id="hay-datos-del-cliente-en-control-de-calidad-pero-no-se-puede-escuchar-la-grabacion">Hay datos del cliente en control de calidad pero no se puede escuchar la grabación<a class="headerlink" href="#hay-datos-del-cliente-en-control-de-calidad-pero-no-se-puede-escuchar-la-grabacion" title="Permanent link">&para;</a></h3>
+<p>Ocurre cuando el registro de llamadas del PBX (<code>cc10_pbxcdrs</code>) existe pero el registro correspondiente en la tabla de la campaña de marketing (por ejemplo <code>cc10_1_campaigncdrs</code> para la campaña con ID <code>1</code>) no se creó, porque el sistema no recibió la señal de colgado del agente y la fila en <code>cc10_cache_campaign_cdrs</code> quedó sin hora de fin.</p>
+<p>Para reparar:</p>
+<ol>
+<li>En <code>cc10_pbxcdrs</code>, busca por el identificador único de llamada (<code>sessionid</code>) los valores correctos de <code>endtime</code>, <code>duration</code> y <code>billsec</code>.</li>
+<li>En <code>cc10_cache_campaign_cdrs</code>, localiza la fila por <code>diallogid</code> — si tiene esos tres campos en <code>0000-00-00 00:00:00</code>, <code>0</code>, <code>0</code>, complétalos con los valores obtenidos en el paso 1.</li>
+<li>Inserta el registro reparado en la tabla de CDR de la campaña correspondiente:
+   <div class="highlight"><pre><span></span><code><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">cc10_1_campaigncdrs</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">cc10_cache_campaign_cdrs</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">diallogid</span><span class="o">=</span><span class="ss">&quot;xxxxxxxxxxxxxx&quot;</span><span class="p">;</span>
+</code></pre></div></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Puede producirse un error de clave primaria duplicada si el <code>id</code> de la fila de <code>cc10_cache_campaign_cdrs</code> ya existe en <code>cc10_1_campaigncdrs</code>.</p>
+</div>
+<h2 id="redes-y-permisos">Redes y permisos<a class="headerlink" href="#redes-y-permisos" title="Permanent link">&para;</a></h2>
+<h3 id="como-monto-un-recurso-de-red-via-nfs-entre-dos-hosts-centos-6x">¿Cómo monto un recurso de red vía NFS entre dos hosts CentOS 6.x?<a class="headerlink" href="#como-monto-un-recurso-de-red-via-nfs-entre-dos-hosts-centos-6x" title="Permanent link">&para;</a></h3>
+<p>Escenario: un servidor (<code>192.168.1.76</code>) comparte una carpeta; un cliente (<code>192.168.1.198</code>) la monta localmente.</p>
+<ol>
+<li>Instala el soporte NFS en ambos hosts:
+   <div class="highlight"><pre><span></span><code>yum install nfs-utils
+</code></pre></div></li>
+<li>Configura el arranque automático de los servicios necesarios:
+   <div class="highlight"><pre><span></span><code>chkconfig rpcbind on
+chkconfig nfs on
+service rpcbind start
+service nfs start
+</code></pre></div></li>
+<li>En el servidor, exporta el directorio compartido editando <code>/etc/exports</code>:
+   <div class="highlight"><pre><span></span><code>vi /etc/exports
+</code></pre></div>
+   <div class="highlight"><pre><span></span><code>/root/my 192.168.1.198(insecure,rw,async,no_root_squash)
+</code></pre></div>
+   Notas de las opciones:</li>
+<li><code>rw</code>: lectura y escritura.</li>
+<li><code>sync</code>/<code>async</code>: <code>sync</code> escribe a disco de inmediato; <code>async</code> almacena primero en memoria (más rápido, menos seguro ante caídas).</li>
+<li><code>no_root_squash</code>: el usuario root del cliente conserva permisos de root sobre el recurso.</li>
+<li><code>insecure</code>: permite acceso desde puertos no privilegiados del cliente (opcional).</li>
+<li>Puede restringirse a un rango con <code>192.168.1.*(...)</code> en vez de una IP única.</li>
+</ol>
+<p>Aplica los cambios sin reiniciar el servicio:
+   <div class="highlight"><pre><span></span><code>exportfs -rv
+</code></pre></div>
+4. Desde el cliente, verifica qué se está compartiendo:
+   <div class="highlight"><pre><span></span><code>showmount -e 192.168.1.76
+</code></pre></div>
+5. Abre en el firewall los puertos que usan los servicios auxiliares de NFS (<code>rpcbind</code>, <code>mountd</code>, <code>statd</code>, <code>lockd</code>, <code>rquotad</code>). Primero fija puertos fijos para esos servicios en <code>/etc/sysconfig/nfs</code>:
+   <div class="highlight"><pre><span></span><code>RQUOTAD_PORT=10001
+LOCKD_TCPPORT=10002
+LOCKD_UDPPORT=10002
+MOUNTD_PORT=10003
+STATD_PORT=10004
+</code></pre></div>
+   Reinicia los servicios afectados:
+   <div class="highlight"><pre><span></span><code>service nfslock restart
+service nfs restart
+</code></pre></div>
+   Y agrega las reglas de iptables correspondientes (además del puerto fijo 2049 de NFS y el 111 de <code>rpcbind</code>):
+   <div class="highlight"><pre><span></span><code>iptables -I INPUT -p tcp --dport 111 -j ACCEPT
+iptables -I INPUT -p udp --dport 111 -j ACCEPT
+iptables -I INPUT -p tcp --dport 2049 -j ACCEPT
+iptables -I INPUT -p udp --dport 2049 -j ACCEPT
+iptables -I INPUT -p tcp --dport 10001:10004 -j ACCEPT
+iptables -I INPUT -p udp --dport 10001:10004 -j ACCEPT
+service iptables save
+service iptables restart
+</code></pre></div>
+6. Monta el recurso desde el cliente:
+   <div class="highlight"><pre><span></span><code>mount -t nfs -o rw 192.168.1.76:/root/my /mnt
+</code></pre></div>
+7. Verifica el montaje: <code>df -hT</code>. Para desmontar: <code>umount 192.168.1.76:/root/my</code>.
+8. Para que el montaje persista tras un reinicio, agrega la misma línea de <code>mount</code> a <code>/etc/rc.local</code>:
+   <div class="highlight"><pre><span></span><code>mount -t nfs -o rw 192.168.1.76:/root/my /mnt
+</code></pre></div></p>
+<p>Para montar grabaciones u otros recursos vía <strong>Samba/CIFS</strong> en lugar de NFS, ver <a href="../../administracion/diagnostico-red-voip/#compartir-grabaciones-entre-dos-servidores-con-samba">Diagnóstico de red y VoIP — Compartir grabaciones entre dos servidores con Samba</a> — ya está documentado ahí, no se repite aquí.</p>
+<h3 id="como-monto-grabaciones-de-otro-servidor-astercc-via-samba">¿Cómo monto grabaciones de otro servidor AsterCC vía Samba?<a class="headerlink" href="#como-monto-grabaciones-de-otro-servidor-astercc-via-samba" title="Permanent link">&para;</a></h3>
+<p>Cubierto en <a href="../../administracion/diagnostico-red-voip/#compartir-grabaciones-entre-dos-servidores-con-samba">Diagnóstico de red y VoIP — Compartir grabaciones entre dos servidores con Samba</a>.</p>
+<h3 id="como-se-monta-un-disco-automaticamente-al-arrancar">¿Cómo se monta un disco automáticamente al arrancar?<a class="headerlink" href="#como-se-monta-un-disco-automaticamente-al-arrancar" title="Permanent link">&para;</a></h3>
+<p>El sistema lee <code>/etc/fstab</code> al inicio y monta los discos según lo indicado ahí. El archivo tiene seis columnas:</p>
+<div class="highlight"><pre><span></span><code>&lt;file system&gt;   &lt;dir&gt;   &lt;type&gt;   &lt;options&gt;   &lt;dump&gt;   &lt;pass&gt;
+/dev/sdb1       /mnt    ext3     defaults    0        0
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 — dispositivo</td>
+<td>Nombre/UUID/etiqueta del dispositivo a montar (usa <code>mount</code> sin argumentos para consultar nombres actuales)</td>
+</tr>
+<tr>
+<td>2 — punto de montaje</td>
+<td>Directorio donde se monta (ej. <code>/mnt</code>, <code>/media</code>)</td>
+</tr>
+<tr>
+<td>3 — tipo de sistema de archivos</td>
+<td><code>ext3</code>, <code>ext4</code>, etc.</td>
+</tr>
+<tr>
+<td>4 — opciones</td>
+<td><code>auto</code> (monta automáticamente, valor por defecto), <code>noauto</code> (no monta al arrancar), <code>defaults</code> (<code>rw,suid,dev,exec,auto,nouser,async</code>), <code>nouser</code>/<code>user</code> (quién puede montarlo), <code>ro</code>/<code>rw</code> (solo lectura o lectura-escritura)</td>
+</tr>
+<tr>
+<td>5 — dump</td>
+<td><code>0</code> = ignorar, <code>1</code> = respaldar con <code>dump</code> (normalmente <code>0</code>)</td>
+</tr>
+<tr>
+<td>6 — pass (chequeo de arranque)</td>
+<td><code>0</code> = no verificar; la partición raíz debe ser <code>1</code>; el resto empieza en <code>2</code> — número menor se verifica primero, iguales se verifican en paralelo (normalmente <code>0</code>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="aparece-chown-invalid-user-al-ejecutar-operaciones-de-escrituracreacion-en-php">Aparece "chown: invalid user" al ejecutar operaciones de escritura/creación en PHP<a class="headerlink" href="#aparece-chown-invalid-user-al-ejecutar-operaciones-de-escrituracreacion-en-php" title="Permanent link">&para;</a></h3>
+<p>Ver la pregunta de la sección de Logs y monitoreo sobre <code>chown: invalid user</code>. Un caso relacionado es que las operaciones de escritura o creación desde la interfaz web fallen (por ejemplo al importar o instalar un módulo) porque PHP-FPM no corre con el usuario/grupo correcto.</p>
+<p>AsterCC ejecuta PHP con el usuario y grupo <code>asterisk</code>. Verifica en <code>/etc/php-fpm.d/www.conf</code> que los parámetros <code>user</code> y <code>group</code> sean <code>asterisk</code>; si no lo son, corrígelos manualmente o ejecuta:</p>
+<div class="highlight"><pre><span></span><code>sed -i &quot;s/user = .*/user = asterisk/&quot; /etc/php-fpm.d/www.conf
+sed -i &quot;s/group = .*/group = asterisk/&quot; /etc/php-fpm.d/www.conf
+</code></pre></div>
+<h3 id="aparece-rootgvfs-permission-denied">Aparece "/root/.gvfs: Permission denied"<a class="headerlink" href="#aparece-rootgvfs-permission-denied" title="Permanent link">&para;</a></h3>
+<p>Es un problema del sistema de archivos virtual de GNOME en Linux, no específico de AsterCC — normalmente no afecta el funcionamiento del sistema. Si necesitas resolverlo, investiga la solución específica de tu distribución para errores de <code>.gvfs</code>.</p>
+<h2 id="seguridad-y-acceso">Seguridad y acceso<a class="headerlink" href="#seguridad-y-acceso" title="Permanent link">&para;</a></h2>
+<h3 id="cual-es-la-politica-de-iptables-por-defecto-de-astercc">¿Cuál es la política de <code>iptables</code> por defecto de AsterCC?<a class="headerlink" href="#cual-es-la-politica-de-iptables-por-defecto-de-astercc" title="Permanent link">&para;</a></h3>
+<p>Reglas de referencia (CentOS 6, archivo <code>/etc/sysconfig/iptables</code>):</p>
+<div class="highlight"><pre><span></span><code>*filter
+:INPUT DROP [32888:6036616]
+:FORWARD DROP [0:0]
+:OUTPUT ACCEPT [38964:13133002]
+-A INPUT -p udp -m udp --dport 5060 -j ACCEPT
+-A INPUT -p udp -m udp --dport 4569 -j ACCEPT
+-A INPUT -p udp -m udp --dport 5036 -j ACCEPT
+-A INPUT -p udp -m udp --dport 10000:20000 -j ACCEPT
+-A INPUT -p udp -m udp --dport 2727 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 443 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 21 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
+-A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
+-A INPUT -s 127.0.0.1/32 -d 127.0.0.1/32 -j ACCEPT
+-A INPUT -m state --state ESTABLISHED -j ACCEPT
+COMMIT
+</code></pre></div>
+<p>Para aplicarla: reemplaza el archivo por este contenido y ejecuta <code>service iptables restart</code>.</p>
+<h3 id="como-cancelo-la-restriccion-de-acceso-por-ip">¿Cómo cancelo la restricción de acceso por IP?<a class="headerlink" href="#como-cancelo-la-restriccion-de-acceso-por-ip" title="Permanent link">&para;</a></h3>
+<p><strong>Desde la interfaz web</strong>: en <strong>Configuración de sistema → Configuración avanzada del sistema</strong>, elimina las entradas de IP en el campo correspondiente (doble clic para borrar). Un campo vacío significa que cualquier IP puede acceder.</p>
+<p><strong>Directamente en la base de datos</strong> (útil si tu propia IP quedó fuera de la lista permitida y no puedes entrar por la web):</p>
+<div class="highlight"><pre><span></span><code><span class="n">mysql</span><span class="w"> </span><span class="o">-</span><span class="n">h127</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="n">uroot</span><span class="w"> </span><span class="o">-</span><span class="n">pastercc</span><span class="w"> </span><span class="n">astercc10</span><span class="w"> </span><span class="o">-</span><span class="n">A</span>
+<span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">cc10_settings</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">item</span><span class="o">=</span><span class="s1">&#39;ip_limit&#39;</span><span class="p">;</span>
+<span class="k">update</span><span class="w"> </span><span class="n">cc10_settings</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">itemvalue</span><span class="o">=</span><span class="k">NULL</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">item</span><span class="o">=</span><span class="s1">&#39;ip_limit&#39;</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="depuracion-de-sip-con-tcpdump-y-wireshark">Depuración de SIP con <code>tcpdump</code> y Wireshark<a class="headerlink" href="#depuracion-de-sip-con-tcpdump-y-wireshark" title="Permanent link">&para;</a></h3>
+<p>Cubierto en <a href="../../administracion/diagnostico-red-voip/#capturar-y-analizar-una-llamada-completa-con-tcpdump-wireshark">Diagnóstico de red y VoIP — Capturar y analizar una llamada completa con tcpdump + Wireshark</a>.</p>
+<h3 id="como-configuro-astercc-para-servir-por-https">¿Cómo configuro AsterCC para servir por HTTPS?<a class="headerlink" href="#como-configuro-astercc-para-servir-por-https" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Requisitos mínimos de referencia: 2 GB de RAM, 20 GB de disco.</li>
+<li>Obtén de una autoridad certificadora el par de archivos de certificado (<code>.key</code> y <code>.pem</code>) para tu dominio.</li>
+<li>Crea el directorio de certificados en el servidor:
+   <div class="highlight"><pre><span></span><code>mkdir -p /usr/local/nginx/conf/ssl/
+</code></pre></div>
+   y copia ahí los archivos <code>server.key</code> y <code>server.pem</code>.</li>
+<li>Edita <code>/usr/local/nginx/conf/nginx.conf</code> para habilitar TLS en el bloque <code>server</code>:
+   <div class="highlight"><pre><span></span><code>listen       443 ssl;
+ssl          on;
+ssl_certificate /usr/local/nginx/conf/ssl/server.pem;
+ssl_certificate_key /usr/local/nginx/conf/ssl/server.key;
+ssl_session_timeout   5m;
+ssl_protocols SSLv3 TLSv1;
+ssl_ciphers HIGH:!ADH:!EXPORT56:RC4+RSA:+MEDIUM;
+ssl_prefer_server_ciphers   on;
+</code></pre></div>
+   Si además quieres mantener HTTP activo en paralelo, agrega <code>listen 80 default;</code> y comenta <code>ssl on;</code>.</li>
+<li>Reinicia nginx: <code>service nginx restart</code>.</li>
+<li>Prueba accediendo por HTTPS al dominio — el candado del navegador debe mostrarse cerrado/verde; si aparece con una X, el enlace del certificado falló.</li>
+<li>Actualiza la URL de <strong>Configuración de sistema → Configuración avanzada del sistema → Enlace HTTP Push</strong> para que use <code>https://</code> y reinicia <code>asterccd</code>, de lo contrario los eventos de llamada en tiempo real dejan de llegar al navegador.</li>
+</ol>
+<h3 id="como-cambio-el-puerto-http-del-sistema">¿Cómo cambio el puerto HTTP del sistema?<a class="headerlink" href="#como-cambio-el-puerto-http-del-sistema" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Realiza este cambio solo cuando no haya acceso web activo.</p>
+</div>
+<ol>
+<li>Edita <code>/usr/local/nginx/conf/nginx.conf</code> (ruta puede variar según el tipo de instalación) y cambia el puerto <code>80</code> del bloque <code>server</code> por el nuevo puerto (ejemplo <code>8080</code>). Aplica con:
+   <div class="highlight"><pre><span></span><code>service nginx reload
+</code></pre></div></li>
+<li>Verifica y agrega la regla en <code>iptables</code> para permitir el nuevo puerto:
+   <div class="highlight"><pre><span></span><code>iptables -nL
+iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
+iptables -nL
+service iptables save
+service iptables restart
+</code></pre></div></li>
+<li>En la interfaz web, ve a <strong>Configuración de sistema → Configuración de sistema → Configuración avanzada del sistema → Enlace HTTP Push</strong> y agrega el nuevo puerto a la IP configurada ahí.</li>
+</ol>
+<h3 id="como-actualizo-el-modulo-push-de-nginx-fuga-de-memoria">¿Cómo actualizo el módulo <code>push</code> de nginx (fuga de memoria)?<a class="headerlink" href="#como-actualizo-el-modulo-push-de-nginx-fuga-de-memoria" title="Permanent link">&para;</a></h3>
+<p>Aplica a instalaciones cuya versión inicial de AsterCC era <code>2.3-rc2</code> o anterior, incluso si luego se actualizó a una versión más nueva — el módulo de nginx no se actualiza automáticamente con el resto del sistema.</p>
+<p>Solución temporal: <code>service nginx restart</code>.</p>
+<p>Solución definitiva — recompilar nginx con el módulo <code>push-stream</code> parchado:</p>
+<div class="highlight"><pre><span></span><code>cd /usr/src
+wget http://download1.astercc.org/nginx-1.2.6.tar.gz
+wget http://download1.astercc.org/nginx-push-stream-module-master-20130206.tar.gz
+tar -zxf nginx-1.2.6.tar.gz
+tar -zxf nginx-push-stream-module-master-20130206.tar.gz
+cd nginx-1.2.6
+./configure --add-module=/usr/src/nginx-push-stream-module-master --with-http_ssl_module --user=asterisk --group=asterisk
+/etc/init.d/nginx stop
+make &amp;&amp; make install
+/etc/init.d/nginx start
+</code></pre></div>
+<p>Si ya tienes el código fuente de nginx 1.2.6, puedes aplicar solo el parche:</p>
+<div class="highlight"><pre><span></span><code>cd /usr/src
+wget http://download1.astercc.org/unfrag_slab_memory2.patch
+cd nginx-1.2.6
+patch -p0 &lt; ../unfrag_slab_memory2.patch
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Compilar con versiones más nuevas de nginx es posible pero no está probado en producción — no se recomienda.</p>
+</div>
+<h3 id="redis-muestra-error-noauth-authentication-required">Redis muestra <code>(error) NOAUTH Authentication required.</code><a class="headerlink" href="#redis-muestra-error-noauth-authentication-required" title="Permanent link">&para;</a></h3>
+<p>Causa: la contraseña de Redis fue modificada, lo que hace fallar la autenticación de los procesos que se conectan a él.</p>
+<p>Solución — reiniciar Redis en modo sin autenticación:</p>
+<ol>
+<li>Localiza el proceso:
+   <div class="highlight"><pre><span></span><code>ps aux | grep redis
+</code></pre></div></li>
+<li>Termínalo:
+   <div class="highlight"><pre><span></span><code>kill &lt;pid&gt;
+</code></pre></div></li>
+<li>Reinícialo con la configuración por defecto (<code>requirepass</code> deshabilitado) en segundo plano:
+   <div class="highlight"><pre><span></span><code>redis-server /etc/redis.conf &amp;
+</code></pre></div></li>
+<li>Verifica que esté activo con <code>ps</code> o probando la conexión:
+   <div class="highlight"><pre><span></span><code>redis-cli
+</code></pre></div></li>
+</ol>
+<p>Prevención: mantén activo el firewall <code>iptables</code>, ya que por defecto no se expone el puerto 6379 (el puerto por defecto de Redis) — así, aunque la contraseña cambie inesperadamente, el servicio no queda accesible desde fuera.</p>
+<h3 id="como-agrego-o-edito-la-anotacion-memo-de-un-campo-de-parametro-de-un-modulo">¿Cómo agrego o edito la anotación (memo) de un campo de parámetro de un módulo?<a class="headerlink" href="#como-agrego-o-edito-la-anotacion-memo-de-un-campo-de-parametro-de-un-modulo" title="Permanent link">&para;</a></h3>
+<p>Cada campo de configuración de los módulos puede mostrar una anotación explicativa accesible desde un icono junto al nombre del campo (por ejemplo, "Nombre del equipo").</p>
+<p>Los archivos de anotación viven en <code>/var/www/html/asterCC/app/webroot/docs/&lt;idioma&gt;/</code>, organizados en subcarpetas que corresponden a cada pantalla del sistema (por ejemplo la carpeta <code>teams</code> contiene <code>teamname.html</code> para el campo "Nombre del equipo" de la pantalla Equipos).</p>
+<p>El contenido que se muestra al usuario es exactamente lo que está entre las etiquetas <code>&lt;p&gt;</code> y <code>&lt;/p&gt;</code> del archivo HTML correspondiente. Editar ese texto y guardar el archivo actualiza la anotación mostrada en la interfaz.</p>
+<p><img alt="Ícono de anotación junto al campo &quot;Name&quot; en Edit Team, mostrando el tooltip &quot;Give name to the team, to identify it.&quot; con enlace a &quot;More information&quot;" src="../../assets/images/faq-base-de-datos-y-sistema/anotacion-campo-tooltip.png" /></p>
+<h3 id="catalogo-de-ventanas-emergentes-comunes-del-sistema">Catálogo de ventanas emergentes comunes del sistema<a class="headerlink" href="#catalogo-de-ventanas-emergentes-comunes-del-sistema" title="Permanent link">&para;</a></h3>
+<p>Referencia de los mensajes de confirmación/error más frecuentes en la interfaz web, útil para soporte de primer nivel:</p>
+<table>
+<thead>
+<tr>
+<th>Situación</th>
+<th>Mensaje mostrado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Eliminar datos seleccionados</td>
+<td>"Todos los datos relacionados serán eliminados, ¿continuar?"</td>
+</tr>
+<tr>
+<td>Eliminación exitosa</td>
+<td>"¡Datos eliminados exitosamente!"</td>
+</tr>
+<tr>
+<td>Eliminar sin seleccionar nada</td>
+<td>"¡Selecciona uno o más registros para eliminar!"</td>
+</tr>
+<tr>
+<td>Guardar datos (equipo, cuenta, extensión, etc.)</td>
+<td>"Datos guardados"</td>
+</tr>
+<tr>
+<td>Inactividad prolongada en la sesión</td>
+<td>"¡Conexión con el servidor anómala o sesión expirada!"</td>
+</tr>
+<tr>
+<td>Editar un equipo sin troncal/grupo de troncal asignado</td>
+<td>"Este equipo no tiene troncal o grupo de troncal configurado, lo que puede impedir llamadas salientes, ¿configurarlo ahora?"</td>
+</tr>
+<tr>
+<td>Vincular un DID no usado por ninguna ruta entrante</td>
+<td>"No usado"</td>
+</tr>
+<tr>
+<td>Vincular un DID ya usado por otra ruta entrante</td>
+<td>"Este DID ya está siendo usado por la ruta entrante (xxxxxx), ¿continuar?"</td>
+</tr>
+<tr>
+<td>Recargar configuración exitosamente</td>
+<td>"Reload Succeed"</td>
+</tr>
+<tr>
+<td>Importar datos a campaña con marcación predictiva sin campo de número asignado</td>
+<td>"Esta tarea tiene habilitada la marcación predictiva pero no se ha seleccionado el campo del número, ¿continuar la importación?"</td>
+</tr>
+<tr>
+<td>Importar datos de cliente sin seleccionar ningún campo</td>
+<td>"¡Selecciona al menos un campo!"</td>
+</tr>
+<tr>
+<td>Nombre del archivo importado distinto al del paquete de clientes</td>
+<td>"El archivo importado y el nombre del paquete de clientes no coinciden, ¿continuar?"</td>
+</tr>
+<tr>
+<td>Plan de importación creado exitosamente</td>
+<td>"¡Plan de importación de datos creado exitosamente! Recuerda tu número de plan: XXX"</td>
+</tr>
+<tr>
+<td>Vincular DID a una cuenta que ya tiene otro DID vinculado</td>
+<td>"Esta cuenta ya está vinculada al DID (xxxxx), ¿continuar?"</td>
+</tr>
+<tr>
+<td>Vincular DID a una cuenta sin DID previo</td>
+<td>"Esta cuenta no está en uso"</td>
+</tr>
+<tr>
+<td>Eliminar grandes volúmenes de datos (en progreso)</td>
+<td>"Eliminando, no actualices la página"</td>
+</tr>
+<tr>
+<td>Cerrar sesión de administrador</td>
+<td>"¿Confirmas que deseas salir?"</td>
+</tr>
+<tr>
+<td>Login sin correo de administrador configurado</td>
+<td>"Inicio de sesión exitoso, configura el correo del administrador"</td>
+</tr>
+<tr>
+<td>Vaciar la papelera</td>
+<td>"Todos los datos en la papelera serán eliminados, ¿continuar?"</td>
+</tr>
+<tr>
+<td>Usuario o contraseña incorrectos al iniciar sesión</td>
+<td>"Contraseña incorrecta o el usuario no existe"</td>
+</tr>
+<tr>
+<td>Agregar una orden de trabajo a una llamada perdida sin datos de cliente</td>
+<td>"Data could not be saved. Please try again"</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Ventana emergente &quot;System Message&quot; con el texto &quot;Data could not be saved. Please, tryagain&quot;" src="../../assets/images/faq-base-de-datos-y-sistema/popup-error-guardado.png" /></p>
+<h3 id="falta-informacion-de-codigo-de-area-telefonico-tras-instalar-el-sistema">Falta información de código de área telefónico tras instalar el sistema<a class="headerlink" href="#falta-informacion-de-codigo-de-area-telefonico-tras-instalar-el-sistema" title="Permanent link">&para;</a></h3>
+<p>Si <strong>Administración avanzada del call center → Código de área telefónico</strong> aparece vacío, normalmente es porque los datos demo iniciales no se importaron. Solución:</p>
+<ol>
+<li>En el servidor, ubica el archivo <code>phoneareas.sql</code> en <code>/var/www/html/asterCC/sql</code>.</li>
+<li>Impórtalo a la base de datos con el cliente de MySQL.</li>
+<li>Verifica que la lista de códigos de área quede poblada en la interfaz.</li>
+</ol>
+<h2 id="fuentes">Fuentes<a class="headerlink" href="#fuentes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>raw/zh/常见问题及解答/astercc10包含的表.txt</code></li>
+<li><code>raw/zh/常见问题及解答/astercc中录音文件的大小是多少.txt</code></li>
+<li><code>raw/zh/常见问题及解答/astercc的iptables文件.txt</code></li>
+<li><code>raw/zh/常见问题及解答/astercc的logrotate日志管理工具说明.txt</code></li>
+<li><code>raw/zh/常见问题及解答/chown_invalid_user_错误.txt</code></li>
+<li><code>raw/zh/常见问题及解答/mysql无法启动_日志里显示innodb_error_tried_to_read_xxxxx_bytes.....错误的解决办法.txt</code></li>
+<li><code>raw/zh/常见问题及解答/mysql错误日志内存表满了的问题处理.txt</code></li>
+<li><code>raw/zh/常见问题及解答/redis出现_error_noauth_authentication_required._错误的原因_解决方案和预防措施.txt</code></li>
+<li><code>raw/zh/常见问题及解答/realtime程序老是down掉.txt</code></li>
+<li><code>raw/zh/常见问题及解答/关于astercc系统相关日志的介绍.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何检查系统日志.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何修复mysql数据表.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何修改astercc系统的数据库地址.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何修改http端口号.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何修改发送voicemail的smtp服务器.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何修改录音文件地址.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何升级http中push模块.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何取消ip访问限制.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何对astercc服务器进行磁盘清理.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何开机自动挂载硬盘.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何转移mysql数据库存储目录.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何配置astercc的https安全链接.txt</code></li>
+<li><code>raw/zh/常见问题及解答/显示_root_gvfs_permission_denied问题解决.txt</code></li>
+<li><code>raw/zh/常见问题及解答/由于配置文件权限错误导致php无法执行写入_创建操作.txt</code></li>
+<li><code>raw/zh/常见问题及解答/系统实时信息清理旧数据.txt</code></li>
+<li><code>raw/zh/常见问题及解答/未安装安lame导致无法将录音文件转为mp3.txt</code></li>
+<li><code>raw/zh/常见问题及解答/录音试听时返回404_file_not_found.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何设置录音.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何添加_修改astercc系统模块参数字段注解.txt</code></li>
+<li><code>raw/zh/常见问题及解答/常见系统提示窗口.txt</code></li>
+<li><code>raw/zh/常见问题及解答/未导入demo数据造成未装号码归属地的问题.txt</code></li>
+<li><code>raw/zh/常见问题及解答/质检管理里有客户资料但是听不了录音.txt</code></li>
+<li><code>raw/zh/常见问题及解答/centos6.x主机之间网络文件挂载.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何在linux间设置samba挂载网络文件.txt</code></li>
+<li><code>raw/zh/常见问题及解答/mysql主从复制.txt</code></li>
+<li><code>raw/zh/常见问题及解答/使用tcpdump和wireshark进行sip调试.txt</code></li>
+<li><code>raw/zh/常见问题及解答/系统faq.txt</code></li>
+<li><code>raw/en/faq/how_to_add_edit_memo_of_field_parameter.txt</code></li>
+<li><code>raw/en/faq/how_to_cancel_the_ip_accesslimit.txt</code></li>
+<li><code>raw/en/faq/how_to_edit_smtpserver_to_send_voicemail.txt</code></li>
+<li><code>raw/en/faq/how_to_setup_recording.txt</code></li>
+<li><code>raw/en/faq/the_common_prompt_of_system.txt</code></li>
+<li><code>raw/en/faq/the_logs_of_system-related_about_astercc.txt</code></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.indexes", "navigation.tracking", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/javascripts/nav-toggle.js"></script>
+      
+    
+  </body>
+</html>

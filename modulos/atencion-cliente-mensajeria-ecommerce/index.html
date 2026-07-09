@@ -1,0 +1,3546 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación de AsterCC — plataforma de call center basada en Asterisk">
+      
+      
+      
+      
+        <link rel="prev" href="../oficina-virtual-bpo/">
+      
+      
+        <link rel="next" href="../mensajeria-wechat-fax/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Atención al cliente, mensajería y e-commerce - Wiki AsterCC (Español)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#atencion-al-cliente-mensajeria-y-e-commerce" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Wiki AsterCC (Español)" class="md-header__button md-logo" aria-label="Wiki AsterCC (Español)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Wiki AsterCC (Español)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Atención al cliente, mensajería y e-commerce
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Wiki AsterCC (Español)" class="md-nav__button md-logo" aria-label="Wiki AsterCC (Español)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Wiki AsterCC (Español)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glosario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glosario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../introduccion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introducción a AsterCC
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. Introducción a AsterCC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/que-es-astercc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ¿Qué es AsterCC?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/funcionalidades/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funcionalidades del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/arquitectura-general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura general
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/demo-en-linea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo en línea
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../instalacion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Instalación y configuración inicial
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Instalación y configuración inicial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requisitos del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/descarga-e-instalacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descarga e instalación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/instalar-desde-usb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instalar desde USB (AsterCC Box)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/configuracion-post-instalacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración post-instalación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/licencias-y-errores-comunes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licencias y errores comunes de inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../primeros-pasos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Primeros pasos
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Primeros pasos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/guia-administradores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía rápida para administradores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/guia-agentes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía rápida para agentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/recorrido-interfaz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recorrido por la interfaz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/configurar-softphones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configurar softphones (Eyebeam, X-Lite, Zoiper)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Módulos del sistema
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. Módulos del sistema
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pbx-y-telefonia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX y telefonía
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pbx-ivr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX — IVR (menú de voz)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pbx-funciones-avanzadas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX — Funciones avanzadas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marcador-y-campanas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcador y campañas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marcador-predictivo-avanzado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcador predictivo — avanzado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cuentas-equipos-permisos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cuentas, equipos y permisos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarifas-y-facturacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarifas y facturación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../encuestas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encuestas y cuestionarios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../base-conocimiento-work-orders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base de conocimiento y Work Orders
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plataforma-del-agente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plataforma de trabajo del agente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reportes-y-estadisticas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reportes, estadísticas y financiero
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oficina-virtual-bpo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oficina virtual / BPO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atención al cliente, mensajería y e-commerce
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atención al cliente, mensajería y e-commerce
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qué es
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-se-usa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo se usa
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cómo se usa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atencion-al-cliente-entrante" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atención al cliente entrante
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Atención al cliente entrante">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motivos-de-llamada-naturaleza-de-la-llamada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motivos de llamada (naturaleza de la llamada)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registro-de-llamadas-cdr-del-servicio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registro de llamadas (CDR) del servicio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#busqueda-de-clientes-pantalla-del-agente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Búsqueda de clientes (pantalla del agente)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llamadas-perdidas-gestion-de" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Llamadas perdidas (gestión de "漏单")
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reportes-y-estadisticas-de-atencion-al-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reportes y estadísticas de atención al cliente
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-clientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de clientes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestión de clientes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#registro-de-contacto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registro de contacto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#campos-personalizados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Campos personalizados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etiquetas-de-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Etiquetas de cliente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fichas-individuales-e-institucionales-comportamiento-comun" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fichas individuales e institucionales — comportamiento común
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-commerce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E-commerce
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="E-commerce">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#productos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Productos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pedidos-recientes-e-historicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pedidos (recientes e históricos)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registro-de-ventas-recientes-e-historicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registro de ventas (recientes e históricos)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logistica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logística
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencia-rapida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referencia rápida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fuentes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mensajeria-wechat-fax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mensajería — WeChat, Fax y envío masivo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../casos-de-uso/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Casos de uso y soluciones
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. Casos de uso y soluciones
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/call-center-inbound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Call center de atención al cliente (inbound)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/marketing-outbound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketing outbound / televentas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/e-commerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-commerce
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/oficina-virtual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oficina virtual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/marcacion-predictiva/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcación predictiva
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/casos-tecnicos-avanzados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Casos técnicos avanzados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../administracion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Administración avanzada
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Administración avanzada
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/asterisk-ami/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración de Asterisk AMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/openvpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenVPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/apc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APC (caché de PHP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/mailman/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mailman / correo saliente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/diagnostico-red-voip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagnóstico de red y VoIP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/configuracion-y-mantenimiento-sistema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración y mantenimiento del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/gestion-avanzada-call-center/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestión avanzada del call center
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/historial-documentacion-1.2-beta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentación histórica — AsterCC 1.2 beta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../desarrollo/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Guía de desarrollo y customización
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7. Guía de desarrollo y customización
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-y-ami/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API y AMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/guia-desarrolladores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía para desarrolladores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/introduccion-api-integracion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción a la API de integración
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/codigos-retorno-e-idiomas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Códigos de retorno y codificación de idioma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-autenticacion-y-sesion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Autenticación y sesión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-control-de-llamada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Control de llamada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-supervision-y-control-de-agente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Supervisión y control de agente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-datos-y-grabaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Datos y grabaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/eventos-tiempo-real-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recibir eventos en tiempo real de la API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/integrar-envio-de-sms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrar el envío de SMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Preguntas frecuentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Solución de problemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Historial de versiones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qué es
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-se-usa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo se usa
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cómo se usa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atencion-al-cliente-entrante" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atención al cliente entrante
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Atención al cliente entrante">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motivos-de-llamada-naturaleza-de-la-llamada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motivos de llamada (naturaleza de la llamada)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registro-de-llamadas-cdr-del-servicio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registro de llamadas (CDR) del servicio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#busqueda-de-clientes-pantalla-del-agente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Búsqueda de clientes (pantalla del agente)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llamadas-perdidas-gestion-de" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Llamadas perdidas (gestión de "漏单")
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reportes-y-estadisticas-de-atencion-al-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reportes y estadísticas de atención al cliente
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-clientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de clientes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestión de clientes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#registro-de-contacto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registro de contacto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#campos-personalizados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Campos personalizados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etiquetas-de-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Etiquetas de cliente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fichas-individuales-e-institucionales-comportamiento-comun" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fichas individuales e institucionales — comportamiento común
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-commerce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E-commerce
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="E-commerce">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#productos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Productos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pedidos-recientes-e-historicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pedidos (recientes e históricos)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registro-de-ventas-recientes-e-historicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registro de ventas (recientes e históricos)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logistica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logística
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencia-rapida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referencia rápida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fuentes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="atencion-al-cliente-mensajeria-y-e-commerce">Atención al cliente, mensajería y e-commerce<a class="headerlink" href="#atencion-al-cliente-mensajeria-y-e-commerce" title="Permanent link">&para;</a></h1>
+<h2 id="que-es">Qué es<a class="headerlink" href="#que-es" title="Permanent link">&para;</a></h2>
+<p>Este grupo cubre los módulos orientados al cliente entrante: <strong>atención al cliente</strong> (post-venta, soporte, reclamos), <strong>gestión de clientes</strong> (fichas individuales e institucionales), y <strong>e-commerce</strong> (venta de productos desde la pantalla del agente). Los canales de mensajería (WeChat, fax, envío masivo) tienen su propia página de referencia: <a href="../mensajeria-wechat-fax/">Mensajería — WeChat, Fax y envío masivo</a>.</p>
+<h2 id="como-se-usa">Cómo se usa<a class="headerlink" href="#como-se-usa" title="Permanent link">&para;</a></h2>
+<h3 id="atencion-al-cliente-entrante">Atención al cliente entrante<a class="headerlink" href="#atencion-al-cliente-entrante" title="Permanent link">&para;</a></h3>
+<p><strong>Aplicaciones típicas</strong> (según la página de introducción del módulo): servicio posventa y gestión de ventas empresariales. Varias de sus características principales — múltiples formas de registrar el contacto, campos personalizados, work orders y gestión de llamadas perdidas — se documentan en detalle en las secciones siguientes. La misma introducción menciona además la <strong>ubicación geográfica del número que llama</strong> (deducida del prefijo del CID) como dato disponible en pantalla, y que el módulo puede combinarse con marketing outbound para dar tratamiento a las llamadas entrantes generadas por una campaña saliente (ver <a href="../../casos-de-uso/marketing-outbound/#7-encuestas-y-pantalla-emergente-en-campana">Marketing outbound / televentas</a>).</p>
+<p>En <strong>Atención al cliente → Atención al cliente → Agregar</strong>, se define un "servicio" con:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué controla</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nombre del servicio</td>
+<td>Identifica el propósito del servicio (ej. "Soporte técnico", "Reclamos")</td>
+</tr>
+<tr>
+<td>Grupo de agentes</td>
+<td>Quién atiende este servicio</td>
+</tr>
+<tr>
+<td>Enlace de trabajo</td>
+<td>Página que se muestra al agente cuando entra la llamada</td>
+</tr>
+<tr>
+<td>Cargar historial por defecto</td>
+<td>Si se recomienda desactivar para no sobrecargar el servidor cuando no es necesario</td>
+</tr>
+<tr>
+<td>Prioridad de tipo de cliente nuevo</td>
+<td>Si el alta por defecto es cliente individual, institucional, o con preferencia configurable</td>
+</tr>
+<tr>
+<td>E-commerce asociado</td>
+<td>Habilita operaciones de venta desde la ficha del cliente</td>
+</tr>
+<tr>
+<td>Número/nombre que llama</td>
+<td>Configurable a nivel del servicio, con la misma jerarquía de prioridad que en campañas (agente &gt; extensión &gt; servicio, salvo que se fuerce)</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Listado de servicios de atención al cliente en el menú del sistema, con el servicio &quot;Customer Service&quot; ya creado" src="../../assets/images/atencion-cliente-mensajeria-ecommerce/servicios-atencion-cliente-listado.jpg" /></p>
+<p><img alt="Formulario para agregar un servicio de atención al cliente: nombre, grupo de agentes, enlace de trabajo, e-commerce asociado y prioridad de tipo de cliente" src="../../assets/images/atencion-cliente-mensajeria-ecommerce/agregar-servicio-atencion-cliente.jpg" /></p>
+<p>Un mismo servicio puede tener <strong>varios grupos de agentes</strong>, cada uno con su propia pantalla y su propio <strong>motivo de llamada por defecto</strong> — típico cuando un IVR deriva "consultas" a un grupo y "reclamos" a otro, dentro del mismo servicio de atención al cliente.</p>
+<p>Los clientes de atención al cliente <strong>son los mismos</strong> que los de <a href="#gestion-de-clientes">gestión de clientes</a> (individual/institucional) — no hay una tabla de clientes separada por servicio.</p>
+<p>Otros parámetros del servicio, a nivel de grupo de agentes: <strong>enlace por grupo</strong> (cada grupo de agentes puede tener su propia pantalla de trabajo dentro del mismo servicio — útil cuando un IVR deriva "1 = consultas" y "2 = reclamos" a grupos distintos) y <strong>motivo de llamada asociado al enlace de grupo</strong> (evita que el agente tenga que elegir el motivo manualmente si ya se sabe por qué tecla del IVR entró la llamada). También puede activarse <strong>división de clientes por región del agente</strong> (solo en sistemas con despliegue regional) para que el cliente quede asignado a la región donde fue atendido.</p>
+<h4 id="motivos-de-llamada-naturaleza-de-la-llamada">Motivos de llamada (naturaleza de la llamada)<a class="headerlink" href="#motivos-de-llamada-naturaleza-de-la-llamada" title="Permanent link">&para;</a></h4>
+<p>En <strong>Atención al cliente → Motivos de llamada</strong>, se define el catálogo de motivos que el agente elige al finalizar cada llamada (ej. "consulta", "reclamo", "reparación"):</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué controla</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nombre del motivo</td>
+<td>Palabra o frase breve que describe el propósito de la llamada o el resultado final</td>
+</tr>
+<tr>
+<td>Estado</td>
+<td>Respondida / no respondida — la pantalla de llamada muestra un listado de motivos distinto según si la llamada fue atendida o no</td>
+</tr>
+<tr>
+<td>Equipo</td>
+<td>A qué equipo aplica este motivo (por defecto, todos)</td>
+</tr>
+<tr>
+<td>Work order asociado</td>
+<td>Si el módulo de work orders está instalado, al elegir este motivo el agente puede crear automáticamente un work order de la plantilla vinculada (ej. motivo "reclamo" → work order de tipo reclamo)</td>
+</tr>
+<tr>
+<td>Servicio de atención al cliente</td>
+<td>Si se especifica, solo ese servicio puede usar este motivo</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Listado de motivos de llamada configurados, con su equipo, nota y work order asociado" src="../../assets/images/atencion-cliente-mensajeria-ecommerce/motivos-llamada-listado.jpg" /></p>
+<p><img alt="Formulario para agregar un motivo de llamada: nombre, estado (respondida/no respondida), equipo y work order asociado" src="../../assets/images/atencion-cliente-mensajeria-ecommerce/agregar-motivo-llamada.jpg" /></p>
+<p>El mismo motivo se reutiliza en campañas salientes, donde se guarda como el "resultado de llamada" que elige el agente.</p>
+<h4 id="registro-de-llamadas-cdr-del-servicio">Registro de llamadas (CDR) del servicio<a class="headerlink" href="#registro-de-llamadas-cdr-del-servicio" title="Permanent link">&para;</a></h4>
+<p>En <strong>Atención al cliente → Registro de llamadas</strong>, se listan las llamadas de todos los servicios de atención al cliente, con código de color: en rojo, llamadas entrantes que el agente no respondió; en verde, llamadas de retorno (callback) hechas por el agente que el cliente no respondió. Cada fila permite escuchar o descargar la grabación cuando existe.</p>
+<p><img alt="Pantalla de registro de llamadas (CDR) de atención al cliente con filtros de búsqueda por origen, destino, resultado de llamada y duración" src="../../assets/images/atencion-cliente-mensajeria-ecommerce/registro-llamadas-atencion-cliente.jpg" /></p>
+<h4 id="busqueda-de-clientes-pantalla-del-agente">Búsqueda de clientes (pantalla del agente)<a class="headerlink" href="#busqueda-de-clientes-pantalla-del-agente" title="Permanent link">&para;</a></h4>
+<p><strong>Búsqueda de clientes</strong> es una pantalla exclusiva de la plataforma del agente (habilitada por rol) para que el agente busque manualmente un cliente — por ejemplo, para completar un registro pendiente o hacer una llamada de seguimiento fuera del flujo normal de atención de una llamada entrante. Los campos de búsqueda disponibles dependen de la configuración de campos de búsqueda de cada servicio de atención al cliente, y se puede elegir buscar entre clientes individuales o institucionales.</p>
+<p><img alt="Pantalla de búsqueda de clientes del agente, con selector de tipo de cliente (individual/institucional) y campo de búsqueda por teléfono o nombre" src="../../assets/images/atencion-cliente-mensajeria-ecommerce/busqueda-clientes-agente.jpg" /></p>
+<h4 id="llamadas-perdidas-gestion-de">Llamadas perdidas (gestión de "漏单")<a class="headerlink" href="#llamadas-perdidas-gestion-de" title="Permanent link">&para;</a></h4>
+<p><strong>Atención al cliente → Llamadas perdidas</strong> lista las llamadas entrantes que colgaron antes de que un agente libre las atendiera. Las no devueltas aparecen en rojo (o se filtran por el campo "¿ya se devolvió?"). Desde esta pantalla el agente puede volver a llamar directamente (doble clic, o con el botón que antepone un <code>0</code> si el número requiere prefijo de larga distancia). La lista no se actualiza en tiempo real — dos agentes del mismo grupo pueden ver la misma llamada perdida; si uno ya la devolvió, el otro recibe un aviso al intentar marcar. Un supervisor de grupo con una plantilla de work order de "llamada perdida" puede seleccionar varias filas y generar un work order en lote para cada una; al crear el work order, la llamada perdida se marca automáticamente como devuelta.</p>
+<p><img alt="Listado de llamadas perdidas con origen, destino, cliente, fecha y columna &quot;Visit&quot; indicando si ya fue devuelta" src="../../assets/images/atencion-cliente-mensajeria-ecommerce/llamadas-perdidas-listado.jpg" /></p>
+<h4 id="reportes-y-estadisticas-de-atencion-al-cliente">Reportes y estadísticas de atención al cliente<a class="headerlink" href="#reportes-y-estadisticas-de-atencion-al-cliente" title="Permanent link">&para;</a></h4>
+<p><strong>Atención al cliente → Estadísticas</strong> genera reportes agrupados por servicio o por agente (con desglose adicional por grupo de agentes y agente individual). Cada consulta se procesa como una <strong>tarea de fondo</strong> — no es un reporte instantáneo — y queda en una lista de tareas de estadísticas que se puede refrescar hasta que termine de procesarse; el resultado se puede ver en pantalla o exportar a archivo.</p>
+<h3 id="gestion-de-clientes">Gestión de clientes<a class="headerlink" href="#gestion-de-clientes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Cliente individual / institucional:</strong> dos tipos de ficha de cliente en el sistema, cada una con sus propios campos personalizados y etiquetas. Comparten el mismo origen de datos que usan atención al cliente y campañas salientes — importación masiva, alta manual desde la pantalla de gestión de clientes, o alta desde la pantalla emergente de atención al cliente/campaña.</li>
+</ul>
+<p><img alt="Listado de clientes individuales con filtros de búsqueda, etiquetas de cliente, paquetes y asignación por región" src="../../assets/images/atencion-cliente-mensajeria-ecommerce/clientes-individuales-listado.jpg" /></p>
+<ul>
+<li><strong>Etiquetas de cliente:</strong> clasificación libre para segmentar o filtrar clientes (ver más abajo).</li>
+<li><strong>Registro de contacto:</strong> historial de todas las interacciones con un cliente, sin importar si vinieron de atención al cliente o de una campaña.</li>
+<li><strong>Campos personalizados y configuración de la tabla general:</strong> permiten adaptar qué información se captura por cliente según el negocio (ver más abajo).</li>
+</ul>
+<h4 id="registro-de-contacto">Registro de contacto<a class="headerlink" href="#registro-de-contacto" title="Permanent link">&para;</a></h4>
+<p>El <strong>registro de contacto</strong> (Gestión de clientes → Registro de contacto) es la bitácora unificada de cada interacción — no importa si el cliente vino de atención al cliente o de una campaña saliente. Igual que otras tablas de alto volumen, se divide en <strong>recientes</strong> e <strong>históricos</strong> según el tiempo configurado en <strong>Sistema → Configuración → Procesamiento de grandes datos → Retención de registro de contacto del equipo</strong>. Cada fila registra:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué guarda</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Módulo</td>
+<td>En qué módulo ocurrió el contacto</td>
+</tr>
+<tr>
+<td>Nombre del cliente</td>
+<td>Nombre usado al momento de guardar el contacto</td>
+</tr>
+<tr>
+<td>Medio de contacto</td>
+<td><code>phone</code>, <code>sms</code>, <code>email</code> o <code>fax</code></td>
+</tr>
+<tr>
+<td>Destino</td>
+<td>El número, correo o fax correspondiente al medio usado</td>
+</tr>
+<tr>
+<td>Resultado de llamada</td>
+<td>En atención al cliente, el motivo de llamada elegido; en campañas salientes, el resultado de la llamada</td>
+</tr>
+<tr>
+<td>Agente</td>
+<td>Quién atendió el contacto</td>
+</tr>
+<tr>
+<td>Estado del cliente</td>
+<td>Solo aplica a campañas salientes — el estado de seguimiento que el agente eligió</td>
+</tr>
+<tr>
+<td>Notas</td>
+<td>Lo que el agente escribió en el cuadro de notas de este contacto</td>
+</tr>
+<tr>
+<td>Creador / fecha de creación</td>
+<td>Agente y momento del contacto</td>
+</tr>
+<tr>
+<td>Región de creación / origen</td>
+<td>Solo en sistemas con despliegue regional</td>
+</tr>
+</tbody>
+</table>
+<h4 id="campos-personalizados">Campos personalizados<a class="headerlink" href="#campos-personalizados" title="Permanent link">&para;</a></h4>
+<p>Además de dar de alta campos en la ficha de cliente (<strong>Gestión de clientes → Campos personalizados</strong>), cada campo tiene un tipo que determina cómo se captura el dato:</p>
+<p><img alt="Listado de campos personalizados con tabla, tipo, idioma, identificador y si están seleccionados" src="../../assets/images/atencion-cliente-mensajeria-ecommerce/campos-personalizados-listado.jpg" /></p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Comportamiento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>input</code></td>
+<td>Texto corto de una línea</td>
+</tr>
+<tr>
+<td><code>select</code></td>
+<td>Lista desplegable con opciones separadas por coma; con "select editable" activado, además admite texto libre</td>
+</tr>
+<tr>
+<td><code>integer</code></td>
+<td>Número entero</td>
+</tr>
+<tr>
+<td><code>text</code></td>
+<td>Texto largo (notas, detalle de trabajo)</td>
+</tr>
+<tr>
+<td><code>upload</code></td>
+<td>Subida de archivo o imagen</td>
+</tr>
+<tr>
+<td><code>date</code> / <code>datetime</code></td>
+<td>Selector de fecha, con o sin hora</td>
+</tr>
+<tr>
+<td><code>relate</code></td>
+<td>Campos relacionados en cascada (ej. país → provincia → ciudad) — se cargan por <code>textarea</code> (para volumen bajo) o subiendo un archivo <code>.txt</code> (para volumen alto)</td>
+</tr>
+<tr>
+<td><code>link</code></td>
+<td>Enlace de pantalla emergente (screen-pop) hacia una URL externa que recibe parámetros del sistema (ej. tipo de llamada, teléfono, nombre del cliente) — se abre en la pestaña de trabajo del agente o en una ventana de navegador aparte, según se configure; disponible al recibir una llamada, al conectarse, o solo cuando el agente lo abre manualmente</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Formulario para agregar un campo personalizado: equipo, tabla, tipo, identificador, paquete de clientes e idioma" src="../../assets/images/atencion-cliente-mensajeria-ecommerce/agregar-campo-personalizado.jpg" /></p>
+<p><img alt="Ejemplo de campo personalizado tipo &quot;relate&quot; con selectores en cascada de provincia, ciudad, distrito y oficina" src="../../assets/images/atencion-cliente-mensajeria-ecommerce/campo-personalizado-tipo-relacion.jpg" /></p>
+<p>El campo puede limitarse a un <strong>paquete de clientes</strong> específico (si no se elige ninguno, se agrega automáticamente a todos los paquetes nuevos que se creen después). Al editar un campo ya creado, si originalmente no tenía paquete asignado no se le puede asignar uno después; si ya tenía paquetes, solo se pueden agregar más, nunca quitar los existentes (para no perder datos ya capturados). Los campos de tipo <code>input</code>/<code>select</code> pueden cambiarse entre sí; el resto de tipos no es intercambiable una vez creado.</p>
+<p>La visibilidad y el orden de estos campos en la pantalla de atención al cliente se controla desde <strong>Atención al cliente → Campos personalizados</strong>; en campañas, desde <strong>Campaña → Campaña → campos de fondo y campos de agente</strong>.</p>
+<h4 id="etiquetas-de-cliente">Etiquetas de cliente<a class="headerlink" href="#etiquetas-de-cliente" title="Permanent link">&para;</a></h4>
+<p>Cada equipo tiene su propio catálogo de etiquetas, uno para clientes individuales y otro para institucionales (<strong>Gestión de clientes → Etiquetas de cliente individual/institucional</strong>). Dos reglas configurables por equipo:</p>
+<ul>
+<li><strong>Permitir que el agente agregue etiquetas:</strong> si el agente encuentra una característica del cliente que no tiene etiqueta todavía, puede crear una nueva sobre la marcha — queda disponible para todo el equipo de inmediato.</li>
+<li><strong>Permitir selección múltiple:</strong> si el campo describe un estado de proceso (mutuamente excluyente), se desactiva; si describe características del cliente (pueden combinarse), se activa.</li>
+</ul>
+<p>Cada etiqueta puede marcarse como <strong>predeterminada</strong> (se aplica automáticamente al importar clientes o al dar de alta uno nuevo desde la pantalla, aunque el agente puede desmarcarla) y tiene un <strong>orden de aparición</strong>. Dos etiquetas de sistema no se pueden borrar ni editar (solo reordenar): <strong>Empty</strong> (marcador para buscar clientes sin ninguna etiqueta) y <strong>DNC</strong> ("Do Not Call" / no volver a llamar — se usa cuando el cliente pide no ser contactado). Borrar una etiqueta no borra la referencia que ya tienen los clientes que la llevaban puesta.</p>
+<p><img alt="Diálogo para agregar una etiqueta de cliente, con selector de equipo y campo de nombre de la etiqueta" src="../../assets/images/atencion-cliente-mensajeria-ecommerce/agregar-etiqueta-cliente.jpg" /></p>
+<h4 id="fichas-individuales-e-institucionales-comportamiento-comun">Fichas individuales e institucionales — comportamiento común<a class="headerlink" href="#fichas-individuales-e-institucionales-comportamiento-comun" title="Permanent link">&para;</a></h4>
+<p>Ambas tablas maestras (individual e institucional) comparten el mismo comportamiento operativo:</p>
+<ul>
+<li><strong>Origen de datos:</strong> importación masiva (<strong>Administración avanzada del call center → Importación</strong>, hacia la tabla maestra o hacia un paquete de clientes que use la tabla maestra), alta manual desde la pantalla de gestión de clientes, alta desde la pantalla emergente de atención al cliente, o alta desde campañas salientes (pantalla de gestión de clientes de campaña o pantalla emergente del agente).</li>
+<li><strong>Campos especiales — cliente individual:</strong> <em>edad/fecha de nacimiento</em> se calculan automáticamente uno a partir del otro; <em>lista negra</em> = "sí" agrega automáticamente todos los teléfonos del cliente al listado de números bloqueados de PBX avanzado → lista negra de entrantes (se recomienda documentar el motivo en un campo personalizado dedicado); <em>institución asociada</em> vincula el cliente individual a una institución del mismo equipo.</li>
+</ul>
+<p><img alt="Campo &quot;lista negra&quot; en la ficha del cliente individual, con memo del motivo del bloqueo" src="../../assets/images/atencion-cliente-mensajeria-ecommerce/campo-lista-negra-cliente.jpg" /></p>
+<p><img alt="Campo de etiquetas en la ficha del cliente, mostrando la etiqueta &quot;new customer&quot; ya asignada y el botón para agregar más" src="../../assets/images/atencion-cliente-mensajeria-ecommerce/campo-etiquetas-cliente.jpg" /></p>
+<ul>
+<li><strong>Paquete de clientes actual:</strong> asigna el cliente a un paquete de campaña saliente que use la tabla maestra — un cliente de la tabla maestra solo puede pertenecer a un paquete a la vez.</li>
+<li><strong>Asignación de clientes (a un paquete):</strong> por selección manual, por lote según los filtros de búsqueda actuales (se recomienda no superar ~3000 registros por lote para evitar timeouts), o al momento del alta eligiendo directamente el paquete. Al asignar, puede optarse por <strong>conservar el agente asignado</strong> (si el paquete destino tiene al mismo agente que ya atendía al cliente) y <strong>conservar el estado de seguimiento</strong>.</li>
+<li><strong>Eliminación masiva:</strong> por lote según los filtros de búsqueda actuales — si no se aplica ningún filtro, se borra toda la tabla; se recomienda acotar por fecha de creación o lote de importación y proceder en tandas de no más de ~3000 registros.</li>
+<li><strong>División regional:</strong> solo visible en sistemas con despliegue regional — copia clientes seleccionados (o filtrados) hacia la base de datos de un nodo hijo.</li>
+</ul>
+<h3 id="e-commerce">E-commerce<a class="headerlink" href="#e-commerce" title="Permanent link">&para;</a></h3>
+<p>En <strong>E-commerce → E-commerce → Agregar</strong> se crea un "catálogo" de venta:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué controla</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nombre del catálogo</td>
+<td>Ej. "Suplementos", "Electrónica" — se pueden tener varios catálogos independientes</td>
+</tr>
+<tr>
+<td>Equipo</td>
+<td>A qué equipo pertenece</td>
+</tr>
+<tr>
+<td>Origen</td>
+<td>Canal de la venta (saliente, entrante, revista, internet, etc.)</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Formulario para agregar un catálogo de e-commerce: nombre, equipo, estado y memo" src="../../assets/images/atencion-cliente-mensajeria-ecommerce/agregar-catalogo-ecommerce.jpg" /></p>
+<h4 id="productos">Productos<a class="headerlink" href="#productos" title="Permanent link">&para;</a></h4>
+<p>En <strong>E-commerce → Gestión de productos</strong>, cada producto define:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué controla</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nombre del producto</td>
+<td>Se recomienda que distinga variantes de venta del mismo ítem (ej. "leche 1 bolsa" vs. "leche 1 caja")</td>
+</tr>
+<tr>
+<td>Publicado</td>
+<td>Solo los productos publicados son visibles/vendibles por el agente</td>
+</tr>
+<tr>
+<td>Tipo de producto</td>
+<td>Físico, virtual, o servicio</td>
+</tr>
+<tr>
+<td>Categoría</td>
+<td>Clasificación libre del catálogo</td>
+</tr>
+<tr>
+<td>Código de barras / especificación / unidad</td>
+<td>Datos de referencia del producto</td>
+</tr>
+<tr>
+<td>Cantidad</td>
+<td>Cuántas unidades de la unidad base representa una venta — el sistema no calcula el despacho, solo registra cuántas veces se vendió el producto; la conversión a unidades de despacho es responsabilidad del negocio</td>
+</tr>
+<tr>
+<td>Precio / precio de socio</td>
+<td>Dos tarifas posibles por venta — el agente elige cuál aplica según indique el negocio</td>
+</tr>
+<tr>
+<td>Vigencia (inicio/fin)</td>
+<td>Solo informativa, para productos con periodo de validez (ej. garantías)</td>
+</tr>
+<tr>
+<td>Prioridad</td>
+<td>Los productos con mayor prioridad aparecen primero en la lista del agente — útil para poner los más vendidos en la primera página y reducir tiempo de búsqueda</td>
+</tr>
+<tr>
+<td>Producto relacionado</td>
+<td>Vincula a otro producto del mismo catálogo</td>
+</tr>
+<tr>
+<td>Descripción funcional</td>
+<td>Para que el agente pueda responder preguntas del cliente sobre el producto</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Formulario para agregar un producto: nombre, tipo, categoría, código de barras, precio, precio de socio y vigencia" src="../../assets/images/atencion-cliente-mensajeria-ecommerce/agregar-producto.jpg" /></p>
+<h4 id="pedidos-recientes-e-historicos">Pedidos (recientes e históricos)<a class="headerlink" href="#pedidos-recientes-e-historicos" title="Permanent link">&para;</a></h4>
+<p>Los pedidos se dividen en dos tablas — <strong>recientes</strong> e <strong>históricos</strong> — según el tiempo de retención configurado en <strong>Sistema → Configuración → Procesamiento de grandes datos → Retención de datos de e-commerce</strong>. Ambas comparten la misma estructura, con cuatro pestañas al editar un pedido:</p>
+<table>
+<thead>
+<tr>
+<th>Pestaña</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Información básica</td>
+<td>Número de pedido, módulo/negocio de origen, cliente, estado, precio original, descuento, monto a cobrar, si requiere factura, fechas de envío/entrega, agente y equipo que lo creó</td>
+</tr>
+<tr>
+<td>Datos del destinatario</td>
+<td>A quién y dónde se envía</td>
+</tr>
+<tr>
+<td>Datos de envío</td>
+<td>Transportista, guía, estado del envío</td>
+</tr>
+<tr>
+<td>Productos comprados</td>
+<td>Detalle de líneas del pedido</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Pestaña &quot;Información básica&quot; de un pedido, con código, cliente, estado, precio y fechas" src="../../assets/images/atencion-cliente-mensajeria-ecommerce/pedido-informacion-basica.jpg" /></p>
+<p><img alt="Pestaña &quot;Productos comprados&quot; de un pedido, con el detalle de línea por producto: cantidad, precio unitario y monto a cobrar" src="../../assets/images/atencion-cliente-mensajeria-ecommerce/pedido-productos-comprados.jpg" /></p>
+<p>No se pueden crear pedidos manualmente desde esta pantalla — solo se editan, exportan o eliminan; los pedidos nuevos se generan desde la pantalla emergente del agente durante una llamada.</p>
+<p>Dentro de "Información básica" hay además un grupo de campos opcionales relacionados con SMS y facturación, útiles para procesos de seguimiento post-venta:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué controla</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Seguimiento por SMS</td>
+<td>Si el pedido usa confirmación por SMS al cliente — requiere un desarrollo a medida solicitado a AsterCC, no viene activo por defecto</td>
+</tr>
+<tr>
+<td>SMS de pedido enviado / SMS de envío enviado</td>
+<td>Indican si ya se envió al cliente el SMS de confirmación del pedido y el de despacho, respectivamente</td>
+</tr>
+<tr>
+<td>Participa en el cálculo (verificado)</td>
+<td>Si el pedido debe contarse en los reportes de e-commerce — permite excluir pedidos de prueba o anulados sin borrarlos</td>
+</tr>
+<tr>
+<td>Requiere factura / detalle de factura / número de factura</td>
+<td>Datos de facturación cuando el cliente la solicita</td>
+</tr>
+</tbody>
+</table>
+<p>El <strong>número de pedido</strong> se genera automáticamente a partir del ID de la tabla (11 dígitos, rellenado con ceros a la izquierda) — no es editable.</p>
+<h4 id="registro-de-ventas-recientes-e-historicos">Registro de ventas (recientes e históricos)<a class="headerlink" href="#registro-de-ventas-recientes-e-historicos" title="Permanent link">&para;</a></h4>
+<p>Complementario a los pedidos: mientras un pedido agrupa la operación completa, el <strong>registro de ventas</strong> detalla cada línea de producto vendida (producto, cantidad, precio, descuento, monto, agente, fechas) — útil para reportes por producto en vez de por pedido.</p>
+<h4 id="logistica">Logística<a class="headerlink" href="#logistica" title="Permanent link">&para;</a></h4>
+<p>En <strong>E-commerce → Logística</strong>, se asignan zonas de despacho a un almacén:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué define</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nombre de la zona</td>
+<td>Identificación libre</td>
+</tr>
+<tr>
+<td>Almacén</td>
+<td>A qué almacén pertenece esta zona</td>
+</tr>
+<tr>
+<td>Grupo logístico</td>
+<td>Qué grupo de agentes gestiona esta zona</td>
+</tr>
+<tr>
+<td>Equipo</td>
+<td>A qué equipo pertenece</td>
+</tr>
+<tr>
+<td>Agente responsable</td>
+<td>Quién(es) del grupo gestiona(n) específicamente esta zona</td>
+</tr>
+<tr>
+<td>Provincia / ciudad</td>
+<td>Cobertura geográfica de la zona</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Si una zona no define provincia/ciudad, cubre <strong>todo el país</strong> — en ese caso no puede existir una segunda zona sin provincia/ciudad para el mismo almacén, porque el sistema no podría decidir a cuál asignar un pedido nuevo. Para logística multi-almacén por región, se recomienda crear campos personalizados de tipo "relación" en el pedido (provincia/ciudad/distrito del destinatario) en vez de depender solo de esta pantalla.</p>
+</div>
+<p>Una vez creado, se vincula el catálogo a una tarea de campaña o a un servicio de atención al cliente para que el agente genere pedidos directamente desde la ficha del cliente durante la llamada.</p>
+<h2 id="referencia-rapida">Referencia rápida<a class="headerlink" href="#referencia-rapida" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tarea</th>
+<th>Dónde</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Crear servicio de atención al cliente</td>
+<td>Atención al cliente → Atención al cliente</td>
+</tr>
+<tr>
+<td>Configurar motivos de llamada</td>
+<td>Atención al cliente → Motivos de llamada</td>
+</tr>
+<tr>
+<td>Ver registro de llamadas / llamadas perdidas</td>
+<td>Atención al cliente → Registro de llamadas / Llamadas perdidas</td>
+</tr>
+<tr>
+<td>Generar reportes de atención al cliente</td>
+<td>Atención al cliente → Estadísticas</td>
+</tr>
+<tr>
+<td>Gestionar clientes individuales/institucionales</td>
+<td>Gestión de clientes</td>
+</tr>
+<tr>
+<td>Crear campos personalizados de cliente</td>
+<td>Gestión de clientes → Campos personalizados</td>
+</tr>
+<tr>
+<td>Gestionar etiquetas de cliente</td>
+<td>Gestión de clientes → Etiquetas de cliente individual/institucional</td>
+</tr>
+<tr>
+<td>Crear catálogo de e-commerce</td>
+<td>E-commerce → E-commerce</td>
+</tr>
+<tr>
+<td>Gestionar productos</td>
+<td>E-commerce → Gestión de productos</td>
+</tr>
+<tr>
+<td>Ver pedidos</td>
+<td>E-commerce → Pedidos recientes / históricos</td>
+</tr>
+<tr>
+<td>Configurar zonas de despacho</td>
+<td>E-commerce → Logística</td>
+</tr>
+<tr>
+<td>WeChat, Fax, envío masivo</td>
+<td>Ver <a href="../mensajeria-wechat-fax/">Mensajería — WeChat, Fax y envío masivo</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="fuentes">Fuentes<a class="headerlink" href="#fuentes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>raw/zh/呼入客服.txt</code></li>
+<li><code>raw/zh/模块使用说明/呼入客服/呼入客服.txt</code></li>
+<li><code>raw/zh/模块使用说明/呼入客服/来电性质.txt</code></li>
+<li><code>raw/zh/模块使用说明/呼入客服/呼叫记录.txt</code></li>
+<li><code>raw/zh/模块使用说明/呼入客服/客户搜索.txt</code></li>
+<li><code>raw/zh/模块使用说明/呼入客服/漏单管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/呼入客服/统计报表.txt</code></li>
+<li><code>raw/zh/模块使用说明/客户管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/客户管理/联络记录.txt</code></li>
+<li><code>raw/zh/模块使用说明/客户管理/总表字段设置.txt</code></li>
+<li><code>raw/zh/模块使用说明/客户管理/自定义字段.txt</code></li>
+<li><code>raw/zh/模块使用说明/客户管理/个人客户标签管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/客户管理/机构客户标签管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/客户管理/个人客户管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/客户管理/机构客户管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/电子商务/电子商务.txt</code></li>
+<li><code>raw/zh/模块使用说明/电子商务/产品管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/电子商务/近期订单.txt</code></li>
+<li><code>raw/zh/模块使用说明/电子商务/历史订单.txt</code></li>
+<li><code>raw/zh/模块使用说明/电子商务/近期售卖记录.txt</code></li>
+<li><code>raw/zh/模块使用说明/电子商务/历史售卖记录.txt</code></li>
+<li><code>raw/zh/模块使用说明/电子商务/物流管理.txt</code></li>
+<li><code>raw/en/module_manual/customer/contact_log.txt</code></li>
+<li><code>raw/en/module_manual/customer/customer_field.txt</code></li>
+<li><code>raw/en/module_manual/customer/customization.txt</code></li>
+<li><code>raw/en/module_manual/customer/individualcustomer_tag.txt</code></li>
+<li><code>raw/en/module_manual/customer/individuals.txt</code></li>
+<li><code>raw/en/module_manual/customer/organization.txt</code></li>
+<li><code>raw/en/module_manual/customer/organization_customer_tag.txt</code></li>
+<li><code>raw/en/module_manual/customerservice/call_result.txt</code></li>
+<li><code>raw/en/module_manual/customerservice/cdr.txt</code></li>
+<li><code>raw/en/module_manual/customerservice/customer_search.txt</code></li>
+<li><code>raw/en/module_manual/customerservice/customer_service.txt</code></li>
+<li><code>raw/en/module_manual/customerservice/missed_call.txt</code></li>
+<li><code>raw/en/module_manual/customerservice/statistics.txt</code></li>
+<li><code>raw/en/module_manual/e_commerce/e_commerce.txt</code></li>
+<li><code>raw/en/module_manual/e_commerce/history_order_details.txt</code></li>
+<li><code>raw/en/module_manual/e_commerce/history_orders.txt</code></li>
+<li><code>raw/en/module_manual/e_commerce/order_details.txt</code></li>
+<li><code>raw/en/module_manual/e_commerce/orders.txt</code></li>
+<li><code>raw/en/module_manual/e_commerce/product.txt</code></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.indexes", "navigation.tracking", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/javascripts/nav-toggle.js"></script>
+      
+    
+  </body>
+</html>

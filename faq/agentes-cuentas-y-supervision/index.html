@@ -1,0 +1,2953 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación de AsterCC — plataforma de call center basada en Asterisk">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>FAQ: Agentes, cuentas y supervisión - Wiki AsterCC (Español)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#faq-agentes-cuentas-y-supervision" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Wiki AsterCC (Español)" class="md-header__button md-logo" aria-label="Wiki AsterCC (Español)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Wiki AsterCC (Español)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FAQ: Agentes, cuentas y supervisión
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Wiki AsterCC (Español)" class="md-nav__button md-logo" aria-label="Wiki AsterCC (Español)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Wiki AsterCC (Español)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glosario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glosario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../introduccion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introducción a AsterCC
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. Introducción a AsterCC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/que-es-astercc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ¿Qué es AsterCC?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/funcionalidades/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funcionalidades del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/arquitectura-general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura general
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/demo-en-linea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo en línea
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../instalacion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Instalación y configuración inicial
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Instalación y configuración inicial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requisitos del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/descarga-e-instalacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descarga e instalación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/instalar-desde-usb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instalar desde USB (AsterCC Box)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/configuracion-post-instalacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración post-instalación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/licencias-y-errores-comunes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licencias y errores comunes de inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../primeros-pasos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Primeros pasos
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Primeros pasos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/guia-administradores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía rápida para administradores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/guia-agentes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía rápida para agentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/recorrido-interfaz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recorrido por la interfaz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/configurar-softphones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configurar softphones (Eyebeam, X-Lite, Zoiper)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../modulos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Módulos del sistema
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. Módulos del sistema
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/pbx-y-telefonia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX y telefonía
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/pbx-ivr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX — IVR (menú de voz)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/pbx-funciones-avanzadas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX — Funciones avanzadas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/marcador-y-campanas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcador y campañas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/marcador-predictivo-avanzado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcador predictivo — avanzado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/cuentas-equipos-permisos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cuentas, equipos y permisos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/tarifas-y-facturacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarifas y facturación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/encuestas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encuestas y cuestionarios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/base-conocimiento-work-orders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base de conocimiento y Work Orders
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/plataforma-del-agente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plataforma de trabajo del agente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/reportes-y-estadisticas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reportes, estadísticas y financiero
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/oficina-virtual-bpo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oficina virtual / BPO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/atencion-cliente-mensajeria-ecommerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atención al cliente, mensajería y e-commerce
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/mensajeria-wechat-fax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mensajería — WeChat, Fax y envío masivo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../casos-de-uso/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Casos de uso y soluciones
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. Casos de uso y soluciones
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/call-center-inbound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Call center de atención al cliente (inbound)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/marketing-outbound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketing outbound / televentas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/e-commerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-commerce
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/oficina-virtual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oficina virtual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/marcacion-predictiva/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcación predictiva
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/casos-tecnicos-avanzados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Casos técnicos avanzados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../administracion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Administración avanzada
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Administración avanzada
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/asterisk-ami/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración de Asterisk AMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/openvpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenVPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/apc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APC (caché de PHP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/mailman/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mailman / correo saliente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/diagnostico-red-voip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagnóstico de red y VoIP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/configuracion-y-mantenimiento-sistema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración y mantenimiento del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/gestion-avanzada-call-center/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestión avanzada del call center
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/historial-documentacion-1.2-beta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentación histórica — AsterCC 1.2 beta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../desarrollo/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Guía de desarrollo y customización
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7. Guía de desarrollo y customización
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-y-ami/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API y AMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/guia-desarrolladores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía para desarrolladores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/introduccion-api-integracion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción a la API de integración
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/codigos-retorno-e-idiomas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Códigos de retorno y codificación de idioma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-autenticacion-y-sesion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Autenticación y sesión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-control-de-llamada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Control de llamada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-supervision-y-control-de-agente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Supervisión y control de agente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-datos-y-grabaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Datos y grabaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/eventos-tiempo-real-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recibir eventos en tiempo real de la API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/integrar-envio-de-sms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrar el envío de SMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Preguntas frecuentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Solución de problemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Historial de versiones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#conceptos-cuentas-agentes-y-extensiones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conceptos: cuentas, agentes y extensiones
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conceptos: cuentas, agentes y extensiones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cual-es-la-diferencia-entre-cuenta-agente-y-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cuál es la diferencia entre cuenta, agente y extensión?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estados-y-sesion-del-agente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estados y sesión del agente
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estados y sesión del agente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cual-es-la-diferencia-entre-iniciarcerrar-sesion-y-check-incheck-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cuál es la diferencia entre iniciar/cerrar sesión y check-in/check-out?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#que-significan-los-cuatro-modos-de-trabajo-de-un-agente-estaticodinamico-en-lineafuera-de-linea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué significan los cuatro modos de trabajo de un agente (estático/dinámico, en línea/fuera de línea)?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-a-un-agente-como-solo-salida-pero-sigue-recibiendo-llamadas-entrantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuré a un agente como "solo salida" pero sigue recibiendo llamadas entrantes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#un-agente-cambia-frecuentemente-de-puesto-de-trabajo-y-su-extension-no-coincide-con-el-telefono-fisico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Un agente cambia frecuentemente de puesto de trabajo y su extensión no coincide con el teléfono físico
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-hago-que-el-sistema-sepa-para-que-aplicacion-esta-marcando-un-agente-cuando-usa-la-extension-directamente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo hago que el sistema sepa para qué aplicación está marcando un agente cuando usa la extensión directamente?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#un-cliente-fue-atendido-por-un-agente-via-devolucion-de-llamada-pero-el-sistema-no-le-asigna-la-propiedad-del-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Un cliente fue atendido por un agente vía devolución de llamada, pero el sistema no le asigna la propiedad del cliente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-puedo-guardar-una-extension-o-un-agente-nuevo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No puedo guardar una extensión o un agente nuevo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoreo-y-evaluacion-de-calidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoreo y evaluación de calidad
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitoreo y evaluación de calidad">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#como-configuro-la-evaluacion-calificacion-de-llamadas-por-parte-del-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo configuro la evaluación (calificación) de llamadas por parte del cliente?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-cliente-califica-la-llamada-pero-la-calificacion-no-aparece-en-el-reporte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El cliente califica la llamada pero la calificación no aparece en el reporte
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-monitor-de-un-grupo-de-agentes-muestra-informacion-de-llamadas-que-no-coincide-con-la-realidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El monitor de un grupo de agentes muestra información de llamadas que no coincide con la realidad
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-que-el-panel-de-servicio-del-agente-siempre-muestra-las-mismas-columnas-sin-importar-que-configure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Por qué el panel de servicio del agente siempre muestra las mismas columnas, sin importar qué configuré?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-puedo-cambiar-que-campos-se-muestran-en-la-barra-de-busqueda-de-la-pagina-de-agente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No puedo cambiar qué campos se muestran en la barra de búsqueda de la página de agente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-pop-up-de-pantalla-screen-pop-no-se-comporta-como-se-espera" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El pop-up de pantalla (screen pop) no se comporta como se espera
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transferencia-de-datos-entre-equipos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transferencia de datos entre equipos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transferencia de datos entre equipos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#como-transfiero-clientes-de-un-grupo-de-agentes-a-otro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cómo transfiero clientes de un grupo de agentes a otro?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tarifas-y-niveles-de-facturacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tarifas y niveles de facturación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tarifas y niveles de facturación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#para-que-sirve-cada-uno-de-los-cuatro-niveles-de-tarifa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Para qué sirve cada uno de los cuatro niveles de tarifa?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fuentes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="faq-agentes-cuentas-y-supervision">FAQ: Agentes, cuentas y supervisión<a class="headerlink" href="#faq-agentes-cuentas-y-supervision" title="Permanent link">&para;</a></h1>
+<h2 id="conceptos-cuentas-agentes-y-extensiones">Conceptos: cuentas, agentes y extensiones<a class="headerlink" href="#conceptos-cuentas-agentes-y-extensiones" title="Permanent link">&para;</a></h2>
+<h3 id="cual-es-la-diferencia-entre-cuenta-agente-y-extension">¿Cuál es la diferencia entre cuenta, agente y extensión?<a class="headerlink" href="#cual-es-la-diferencia-entre-cuenta-agente-y-extension" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Cuenta:</strong> unidad de administración. Hay tres tipos: <strong>administrador de sistema</strong> (permiso total sobre todo el sistema), <strong>administrador de equipo</strong> (permiso total dentro de su equipo: cuentas, agentes, PBX) y <strong>usuario</strong> (unidad básica de facturación; puede tener cero o más agentes y dispositivos).</li>
+<li><strong>Dispositivo (extensión):</strong> puede ser <strong>interno</strong> (SIP, IAX, DAHDI/ZAP — conectado a Asterisk, alcanzable por número de extensión; si marca hacia afuera, el costo se factura al usuario al que pertenece) o <strong>externo</strong> (un teléfono normal — móvil o fijo — que solo puede recibir llamadas del sistema, nunca marcar). Cada dispositivo tiene asociado un número de extensión.</li>
+<li><strong>Agente:</strong> la unidad operativa de call center. Antes de trabajar se asigna a uno o más <strong>grupos de agentes</strong> y luego a campañas. Al crear un agente se le asocia un dispositivo (o un número externo), con tres modos posibles:</li>
+<li><strong>Fija:</strong> el agente siempre usa el mismo número (interno o externo); no puede cambiarlo.</li>
+<li><strong>Adaptativa:</strong> el sistema revisa si hay un teléfono IP registrado desde la IP con la que el agente inició sesión, y si lo hay, cambia automáticamente el número asociado a ese teléfono.</li>
+<li><strong>Autoseleccionable:</strong> el agente puede cambiar de número en cualquier momento (el sistema valida que ningún otro agente esté usando ya ese número).</li>
+</ul>
+<h2 id="estados-y-sesion-del-agente">Estados y sesión del agente<a class="headerlink" href="#estados-y-sesion-del-agente" title="Permanent link">&para;</a></h2>
+<h3 id="cual-es-la-diferencia-entre-iniciarcerrar-sesion-y-check-incheck-out">¿Cuál es la diferencia entre iniciar/cerrar sesión y check-in/check-out?<a class="headerlink" href="#cual-es-la-diferencia-entre-iniciarcerrar-sesion-y-check-incheck-out" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Iniciar sesión (login):</strong> el agente o la cuenta entra al sistema con usuario y contraseña.</li>
+<li><strong>Cerrar sesión (logout):</strong> el agente o la cuenta sale del sistema — puede ser voluntario o forzado por el sistema por tiempo de inactividad.</li>
+<li><strong>Check-in:</strong> el agente entra a una <strong>cola</strong>, quedando disponible para que la cola le envíe llamadas según sus reglas.</li>
+<li><strong>Check-out:</strong> el agente sale de la cola — deja de recibir llamadas de ella.</li>
+</ul>
+<p>Por lo general, al cerrar sesión también se hace check-out automáticamente. Excepciones:</p>
+<ul>
+<li>Si dos sesiones (dos navegadores) inician sesión con la <strong>misma cuenta de agente</strong> y ambas hacen check-in, cerrar una no afecta el check-in de la otra — el check-out automático solo ocurre cuando se cierra la última sesión activa.</li>
+<li>Un agente configurado como <strong>estático</strong> (ver modos de trabajo abajo) no hace check-out automático al cerrar sesión.</li>
+</ul>
+<h3 id="que-significan-los-cuatro-modos-de-trabajo-de-un-agente-estaticodinamico-en-lineafuera-de-linea">¿Qué significan los cuatro modos de trabajo de un agente (estático/dinámico, en línea/fuera de línea)?<a class="headerlink" href="#que-significan-los-cuatro-modos-de-trabajo-de-un-agente-estaticodinamico-en-lineafuera-de-linea" title="Permanent link">&para;</a></h3>
+<p>Se configuran por agente dentro de un grupo de agentes:</p>
+<table>
+<thead>
+<tr>
+<th>Modo</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Estático + en línea</td>
+<td>El agente queda en check-in permanente por defecto, pero debe estar conectado (en línea) para trabajar</td>
+</tr>
+<tr>
+<td>Estático + fuera de línea</td>
+<td>El agente queda en check-in permanente por defecto y puede trabajar sin estar conectado a la página</td>
+</tr>
+<tr>
+<td>Dinámico + en línea</td>
+<td>El agente debe hacer check-in/check-out manualmente y debe estar conectado</td>
+</tr>
+<tr>
+<td>Dinámico + fuera de línea</td>
+<td>El agente debe hacer check-in/check-out manualmente y puede trabajar sin estar conectado a la página</td>
+</tr>
+</tbody>
+</table>
+<h3 id="configure-a-un-agente-como-solo-salida-pero-sigue-recibiendo-llamadas-entrantes">Configuré a un agente como "solo salida" pero sigue recibiendo llamadas entrantes<a class="headerlink" href="#configure-a-un-agente-como-solo-salida-pero-sigue-recibiendo-llamadas-entrantes" title="Permanent link">&para;</a></h3>
+<p>Dos causas posibles:</p>
+<ul>
+<li>El agente está en <strong>check-in en varios grupos de agentes</strong> y el modo "solo salida" solo se activó en uno de ellos — sigue recibiendo llamadas de los demás grupos.</li>
+<li>El modo "solo salida" solo afecta llamadas <strong>enrutadas por cola</strong>. Si una llamada llega directamente transferida desde un IVR (u otro mecanismo que no pasa por la cola), igual timbra en el teléfono del agente.</li>
+</ul>
+<h3 id="un-agente-cambia-frecuentemente-de-puesto-de-trabajo-y-su-extension-no-coincide-con-el-telefono-fisico">Un agente cambia frecuentemente de puesto de trabajo y su extensión no coincide con el teléfono físico<a class="headerlink" href="#un-agente-cambia-frecuentemente-de-puesto-de-trabajo-y-su-extension-no-coincide-con-el-telefono-fisico" title="Permanent link">&para;</a></h3>
+<p>Cuando el personal rota de escritorio, el número de agente puede quedar vinculado a una extensión distinta a la del teléfono que tiene enfrente. Se corrige con dos ajustes:</p>
+<ol>
+<li><strong>Modo de trabajo del agente:</strong> en el grupo de agentes, cambiar a <strong>dinámico + en línea</strong>, y pedir al agente que vuelva a iniciar sesión.</li>
+<li><strong>Modo de extensión del agente:</strong> cambiar a <strong>autoseleccionable</strong>. Tras iniciar sesión, el agente hace doble clic sobre el campo de extensión, escribe el número del teléfono que tiene frente a él, confirma, y luego hace check-in normalmente.</li>
+</ol>
+<p><img alt="Aviso al agente cuando el sistema detecta que la IP del teléfono no coincide con la IP del navegador, con el campo para escribir la nueva extensión" src="../../assets/images/faq-agentes-cuentas-y-supervision/extension-autoadaptable-conflicto-ip.jpg" /></p>
+<h3 id="como-hago-que-el-sistema-sepa-para-que-aplicacion-esta-marcando-un-agente-cuando-usa-la-extension-directamente">¿Cómo hago que el sistema sepa para qué aplicación está marcando un agente cuando usa la extensión directamente?<a class="headerlink" href="#como-hago-que-el-sistema-sepa-para-que-aplicacion-esta-marcando-un-agente-cuando-usa-la-extension-directamente" title="Permanent link">&para;</a></h3>
+<p>Un mismo grupo de agentes puede corresponder a varias aplicaciones/módulos. Si el agente marca directo desde su extensión (sin pasar por el panel de una tarea), el sistema no sabe a qué aplicación asociar la llamada. Para resolverlo:</p>
+<ol>
+<li><strong>Gestión de PBX → Gestión de extensiones:</strong> en la extensión del agente, en <strong>Datos avanzados</strong>, activa <strong>"Modo agente"</strong>.</li>
+<li><strong>Gestión de cuentas y permisos → Gestión de agentes:</strong> en el agente, define un <strong>"grupo de agentes de salida actual"</strong>.</li>
+<li><strong>Gestión de cuentas y permisos → Gestión de grupos de agentes:</strong> en el grupo, define el <strong>"tipo de aplicación de salida actual"</strong> — esto determina qué aplicación se usa para registrar y mostrar la llamada.</li>
+</ol>
+<p>Con esto configurado, al marcar directo desde la extensión el sistema registra la llamada bajo esa aplicación y muestra su página de procesamiento correspondiente.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Para que el marcado directo desde extensión funcione, el agente debe estar <strong>libre</strong> (no en llamada ni en postprocesamiento). Configurar el agente como <strong>estático + fuera de línea</strong> permite generar registros de llamadas salientes sin que el agente tenga que iniciar sesión en la página.</p>
+</div>
+<h3 id="un-cliente-fue-atendido-por-un-agente-via-devolucion-de-llamada-pero-el-sistema-no-le-asigna-la-propiedad-del-cliente">Un cliente fue atendido por un agente vía devolución de llamada, pero el sistema no le asigna la propiedad del cliente<a class="headerlink" href="#un-cliente-fue-atendido-por-un-agente-via-devolucion-de-llamada-pero-el-sistema-no-le-asigna-la-propiedad-del-cliente" title="Permanent link">&para;</a></h3>
+<p>Hay cuatro formas por las que un cliente queda asignado a un agente:</p>
+<ol>
+<li>Asignación manual por el administrador.</li>
+<li>El agente lo toma activamente (botón de "obtener" en su panel de trabajo).</li>
+<li>Contesta exitosamente una llamada que el marcador predictivo le asignó.</li>
+<li>El agente lo agrega él mismo como cliente nuevo.</li>
+</ol>
+<p>Si un cliente quedó <strong>sin asignar</strong> (por ejemplo, se importó duplicado sin distribuir, el marcador predictivo lo envió a un agente pero nadie contestó, y luego otro agente le hizo un callback manual guardando los datos vía pop-up), el sistema <strong>no</strong> reasigna automáticamente la propiedad — sigue apareciendo con número de agente <code>0</code>.</p>
+<p><strong>Solución:</strong> en <strong>Marketing outbound → Tareas de marketing outbound</strong>, abre la tarea correspondiente, ve a <strong>Datos básicos → Asignación manual de tareas</strong>, busca el número y asígnalo manualmente al agente.</p>
+<p><img alt="Pantalla de asignación manual de clientes, con filtros de búsqueda y el campo para indicar a qué número de agente asignar los registros encontrados" src="../../assets/images/faq-agentes-cuentas-y-supervision/asignacion-manual-tarea.jpg" /></p>
+<p>La opción "<strong>Agent Get Customer</strong>" en la configuración avanzada de la tarea es la que habilita el botón de "obtener" con el que un agente toma clientes activamente (la segunda de las cuatro formas de asignación listadas arriba):</p>
+<p><img alt="Configuración avanzada de una tarea de campaña, con el campo &quot;Agent Get Customer&quot; en Sí y los límites de clientes por obtención" src="../../assets/images/faq-agentes-cuentas-y-supervision/campana-agente-obtener-cliente.png" /></p>
+<h3 id="no-puedo-guardar-una-extension-o-un-agente-nuevo">No puedo guardar una extensión o un agente nuevo<a class="headerlink" href="#no-puedo-guardar-una-extension-o-un-agente-nuevo" title="Permanent link">&para;</a></h3>
+<p>Ver <a href="../../troubleshooting/#no-se-puede-guardar-una-extension-o-un-agente-nuevo">Solución de problemas: "No se puede guardar una extensión o un agente nuevo"</a> — la causa es la falta de un equipo creado en el sistema.</p>
+<h2 id="monitoreo-y-evaluacion-de-calidad">Monitoreo y evaluación de calidad<a class="headerlink" href="#monitoreo-y-evaluacion-de-calidad" title="Permanent link">&para;</a></h2>
+<h3 id="como-configuro-la-evaluacion-calificacion-de-llamadas-por-parte-del-cliente">¿Cómo configuro la evaluación (calificación) de llamadas por parte del cliente?<a class="headerlink" href="#como-configuro-la-evaluacion-calificacion-de-llamadas-por-parte-del-cliente" title="Permanent link">&para;</a></h3>
+<p>Se construye con tres piezas:</p>
+<ol>
+<li><strong>Grabar el audio de la encuesta:</strong> en <strong>PBX avanzado → Gestión de voz de llamadas</strong>, sube un archivo de audio o genéralo con <strong>TTS</strong> (texto a voz). El sistema solo interpreta los dígitos DTMF recibidos — el significado de cada dígito (ej. "1 = satisfecho, 2 = regular, 3 = insatisfecho") lo defines tú al grabar el mensaje.</li>
+<li><strong>Crear un IVR de evaluación:</strong> en <strong>PBX avanzado → IVR</strong>, construye un flujo con una acción de <strong>respuesta</strong>, luego <strong>reproducir audio y recibir dígitos</strong> (usando el audio del paso 1, con mínimo/máximo de dígitos a esperar), y finalmente una acción <strong>webservice</strong> que envía el resultado a <code>http://127.0.0.1/agentcallrate.php?wsdl</code> (método <code>saverate</code>, parámetros <code>AGENTNO|TEAMID|AGENTGROUPID|sessionid|inputcode|callerid|MODELTYPE|MODELID</code>).</li>
+<li><strong>Vincular el IVR a la cola:</strong> en <strong>PBX avanzado → Gestión de colas</strong>, edita la cola del grupo de agentes a evaluar, ve a <strong>Datos avanzados</strong> y selecciona el IVR de evaluación en el campo <strong>Evaluación</strong>.</li>
+</ol>
+<p>Las calificaciones quedan visibles en <strong>Reportes y estadísticas → Registro de evaluaciones</strong>.</p>
+<h3 id="el-cliente-califica-la-llamada-pero-la-calificacion-no-aparece-en-el-reporte">El cliente califica la llamada pero la calificación no aparece en el reporte<a class="headerlink" href="#el-cliente-califica-la-llamada-pero-la-calificacion-no-aparece-en-el-reporte" title="Permanent link">&para;</a></h3>
+<p>Causa típica: falta el paquete <strong><code>php-soap</code></strong> en el servidor (la acción webservice del IVR de evaluación depende de él). Instálalo desde el repositorio IUS:</p>
+<div class="highlight"><pre><span></span><code>yum<span class="w"> </span>install<span class="w"> </span>php55u-soap.x86_64
+</code></pre></div>
+<h3 id="el-monitor-de-un-grupo-de-agentes-muestra-informacion-de-llamadas-que-no-coincide-con-la-realidad">El monitor de un grupo de agentes muestra información de llamadas que no coincide con la realidad<a class="headerlink" href="#el-monitor-de-un-grupo-de-agentes-muestra-informacion-de-llamadas-que-no-coincide-con-la-realidad" title="Permanent link">&para;</a></h3>
+<p>Esto ocurre cuando las tablas de información en tiempo real (<code>cc10_curpbxcdrs</code>, <code>cc10_curqueuecallers</code> en la base <code>astercc10</code>) acumulan datos obsoletos sin limpiar. La solución es depurar manualmente esas tablas desde MySQL, definiendo un punto de corte de fecha:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Limpiar monitoreo de llamadas antiguo</span>
+<span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cc10_curpbxcdrs</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">calldate</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="s1">&#39;AAAA-MM-DD&#39;</span><span class="p">;</span>
+
+<span class="c1">-- Limpiar colas de espera antiguas</span>
+<span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cc10_curqueuecallers</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">created</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="s1">&#39;AAAA-MM-DD&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p>Desde la interfaz: <strong>Sistema → Información en tiempo real → Monitoreo de llamadas</strong>.</p>
+<h3 id="por-que-el-panel-de-servicio-del-agente-siempre-muestra-las-mismas-columnas-sin-importar-que-configure">¿Por qué el panel de servicio del agente siempre muestra las mismas columnas, sin importar qué configuré?<a class="headerlink" href="#por-que-el-panel-de-servicio-del-agente-siempre-muestra-las-mismas-columnas-sin-importar-que-configure" title="Permanent link">&para;</a></h3>
+<p>La visibilidad de columnas en el detalle de servicio del agente se guarda como una <strong>cookie del navegador</strong>, no como configuración de servidor. Por eso el ajuste "recuerda" el estado solo en ese navegador específico — si el agente cambia de navegador o borra las cookies, vuelve a la configuración por defecto.</p>
+<h3 id="no-puedo-cambiar-que-campos-se-muestran-en-la-barra-de-busqueda-de-la-pagina-de-agente">No puedo cambiar qué campos se muestran en la barra de búsqueda de la página de agente<a class="headerlink" href="#no-puedo-cambiar-que-campos-se-muestran-en-la-barra-de-busqueda-de-la-pagina-de-agente" title="Permanent link">&para;</a></h3>
+<p>Edita la tarea de marketing outbound específica y ajusta los <strong>campos mostrados en frontend</strong>. En versiones nuevas del sistema este panel está limitado a mostrar como máximo <strong>5 campos</strong> (las versiones antiguas no tenían este límite).</p>
+<p><img alt="Configuración de campos de una tarea, con casillas de Ver, Editar y Requerido por cada campo" src="../../assets/images/faq-agentes-cuentas-y-supervision/configurar-campos-visibles-tarea.jpg" /></p>
+<h3 id="el-pop-up-de-pantalla-screen-pop-no-se-comporta-como-se-espera">El pop-up de pantalla (screen pop) no se comporta como se espera<a class="headerlink" href="#el-pop-up-de-pantalla-screen-pop-no-se-comporta-como-se-espera" title="Permanent link">&para;</a></h3>
+<p>Un causante frecuente y fácil de pasar por alto: verifica que la <strong>zona horaria de PHP</strong> coincida con la <strong>zona horaria del sistema operativo</strong>. Un desfase entre ambas puede alterar el comportamiento del pop-up.</p>
+<h2 id="transferencia-de-datos-entre-equipos">Transferencia de datos entre equipos<a class="headerlink" href="#transferencia-de-datos-entre-equipos" title="Permanent link">&para;</a></h2>
+<h3 id="como-transfiero-clientes-de-un-grupo-de-agentes-a-otro">¿Cómo transfiero clientes de un grupo de agentes a otro?<a class="headerlink" href="#como-transfiero-clientes-de-un-grupo-de-agentes-a-otro" title="Permanent link">&para;</a></h3>
+<p>Requiere que <strong>ambos</strong> grupos de agentes (origen y destino) usen la <strong>tabla maestra de clientes</strong> — si alguno de los dos no la usa, la transferencia no es posible.</p>
+<p>Pasos (ejemplo: mover al agente 8000 del grupo B al grupo A):</p>
+<ol>
+<li>Agrega el agente 8000 al grupo A.</li>
+<li>En <strong>Gestión de clientes individual</strong>, selecciona la tarea correspondiente al grupo B y asigna todos los clientes del agente 8000 al grupo A.</li>
+<li>En el diálogo de confirmación, marca <strong>"conservar estado del agente"</strong> y <strong>"conservar estado de procesamiento"</strong>.</li>
+</ol>
+<p><img alt="Diálogo &quot;Assign By Conditions&quot; con las casillas &quot;Keep Agent&quot; y &quot;Keep Status&quot; marcadas" src="../../assets/images/faq-agentes-cuentas-y-supervision/transferir-clientes-entre-grupos.jpg" /></p>
+<ol>
+<li>Una vez completada la asignación, elimina al agente 8000 del grupo B.</li>
+</ol>
+<h2 id="tarifas-y-niveles-de-facturacion">Tarifas y niveles de facturación<a class="headerlink" href="#tarifas-y-niveles-de-facturacion" title="Permanent link">&para;</a></h2>
+<h3 id="para-que-sirve-cada-uno-de-los-cuatro-niveles-de-tarifa">¿Para qué sirve cada uno de los cuatro niveles de tarifa?<a class="headerlink" href="#para-que-sirve-cada-uno-de-los-cuatro-niveles-de-tarifa" title="Permanent link">&para;</a></h3>
+<p>Ver el detalle completo de configuración en <a href="../../modulos/tarifas-y-facturacion/">4.4 Tarifas y facturación</a>. Resumen conceptual:</p>
+<table>
+<thead>
+<tr>
+<th>Tarifa</th>
+<th>Para qué</th>
+<th>Notas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sistema</td>
+<td>Costo real de compra de cada troncal para el operador — se usa para calcular el costo saliente del propio sistema</td>
+<td>El "equipo" que se ve aquí solo agrupa troncales, no representa un equipo real</td>
+</tr>
+<tr>
+<td>Equipo (Team)</td>
+<td>Precio de venta al equipo/cliente — factura al equipo por su consumo</td>
+<td>Solo lectura para un administrador de equipo</td>
+</tr>
+<tr>
+<td>Extensión (Cliente/Device)</td>
+<td>Tarifa aplicada al usuario final; si no se selecciona un "grupo de cuentas", aplica a cualquier dispositivo</td>
+<td>Determina también qué troncal usar según el número marcado</td>
+</tr>
+<tr>
+<td>Agente (llamadas entrantes)</td>
+<td>Pago al agente por cada llamada entrante atendida — típico para liquidar agentes freelance o part-time</td>
+<td>Se define por grupo de agentes, o por agente específico dentro del grupo</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Formulario para agregar una tarifa de agente: sin prefijo ni longitud de número, solo destino, cargos y el grupo de agentes/agente al que aplica" src="../../assets/images/faq-agentes-cuentas-y-supervision/tarifa-agente-formulario.jpg" /></p>
+<p>Cada tarifa (salvo la de agente) se puede acotar por <strong>prefijo del número marcado</strong>, <strong>longitud del número</strong>, <strong>destino</strong> (nombre descriptivo), <strong>cargo de conexión</strong>, <strong>duración inicial</strong>, <strong>tarifa por minuto</strong>, <strong>bloque de facturación</strong> y <strong>troncal a facturar</strong>.</p>
+<hr />
+<h2 id="fuentes">Fuentes<a class="headerlink" href="#fuentes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>raw/zh/常见问题及解答/账户_坐席和分机之间有什么区别和联系.txt</code></li>
+<li><code>raw/en/faq/what_s_the_difference_between_account_agent_and_device.txt</code></li>
+<li><code>raw/zh/常见问题及解答/登入_登出和签入签出有什么区别.txt</code></li>
+<li><code>raw/en/faq/what_s_the_difference_between_checkin_checkout_login_logout.txt</code></li>
+<li><code>raw/zh/常见问题及解答/坐席工作状态.txt</code></li>
+<li><code>raw/zh/常见问题及解答/设置仅呼出状态后依旧有电话进来问题可能原因.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何解决坐席频繁变动导致分机不匹配的问题.txt</code></li>
+<li><code>raw/zh/常见问题及解答/坐席模式手动回拨具体的操作流程.txt</code></li>
+<li><code>raw/zh/常见问题及解答/坐席主动回拨客户后通话结果不属于该坐席问题解答.txt</code></li>
+<li><code>raw/zh/常见问题及解答/为什么无法保存分机_坐席.txt</code></li>
+<li><code>raw/zh/常见问题及解答/如何配置坐席评分功能.txt</code></li>
+<li><code>raw/zh/常见问题及解答/关于评分队列的问题_挂机后后台看不到评分.txt</code></li>
+<li><code>raw/zh/常见问题及解答/坐席组监控显示的通话信息与实际不符.txt</code></li>
+<li><code>raw/zh/常见问题及解答/系统faq.txt</code></li>
+<li><code>raw/zh/常见问题及解答/坐席页面搜索栏字段显示更改.txt</code></li>
+<li><code>raw/zh/常见问题及解答/弹屏相关问题.txt</code></li>
+<li><code>raw/zh/常见问题及解答/两个坐席组彼此之间转移客户数据.txt</code></li>
+<li><code>raw/zh/常见问题及解答/费率管理下的四个费率都是做什么用的_如何使用.txt</code></li>
+<li><code>raw/en/faq/what_s_the_four_rates_under_rate_management_and_how_to_use.txt</code></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.indexes", "navigation.tracking", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/javascripts/nav-toggle.js"></script>
+      
+    
+  </body>
+</html>

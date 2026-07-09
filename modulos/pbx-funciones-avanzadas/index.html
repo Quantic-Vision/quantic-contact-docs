@@ -1,0 +1,3331 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación de AsterCC — plataforma de call center basada en Asterisk">
+      
+      
+      
+      
+        <link rel="prev" href="../pbx-ivr/">
+      
+      
+        <link rel="next" href="../marcador-y-campanas/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>PBX — Funciones avanzadas - Wiki AsterCC (Español)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pbx-funciones-avanzadas" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Wiki AsterCC (Español)" class="md-header__button md-logo" aria-label="Wiki AsterCC (Español)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Wiki AsterCC (Español)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              PBX — Funciones avanzadas
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Wiki AsterCC (Español)" class="md-nav__button md-logo" aria-label="Wiki AsterCC (Español)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Wiki AsterCC (Español)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glosario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glosario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../introduccion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introducción a AsterCC
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. Introducción a AsterCC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/que-es-astercc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ¿Qué es AsterCC?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/funcionalidades/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funcionalidades del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/arquitectura-general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura general
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/demo-en-linea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo en línea
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../instalacion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Instalación y configuración inicial
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Instalación y configuración inicial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requisitos del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/descarga-e-instalacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descarga e instalación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/instalar-desde-usb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instalar desde USB (AsterCC Box)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/configuracion-post-instalacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración post-instalación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/licencias-y-errores-comunes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licencias y errores comunes de inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../primeros-pasos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Primeros pasos
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Primeros pasos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/guia-administradores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía rápida para administradores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/guia-agentes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía rápida para agentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/recorrido-interfaz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recorrido por la interfaz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/configurar-softphones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configurar softphones (Eyebeam, X-Lite, Zoiper)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Módulos del sistema
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. Módulos del sistema
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pbx-y-telefonia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX y telefonía
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pbx-ivr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX — IVR (menú de voz)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX — Funciones avanzadas
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX — Funciones avanzadas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qué es
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-se-usa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo se usa
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cómo se usa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#salas-de-conferencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Salas de conferencia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listas-blanca-y-negra-de-llamadas-entrantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Listas blanca y negra de llamadas entrantes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restriccion-de-numero-que-llama-saliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restricción de número que llama saliente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#horarios-de-trabajo-y-paquetes-de-horario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Horarios de trabajo y paquetes de horario
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plantillas-de-pbx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plantillas de PBX
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-tarjetas-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de tarjetas (hardware)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-aplicaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de aplicaciones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-archivos-de-voz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de archivos de voz
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voz-de-llamada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voz de llamada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-musica-en-espera" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de música en espera
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-de-mensaje-de-voz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación de mensaje de voz
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencia-rapida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referencia rápida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fuentes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marcador-y-campanas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcador y campañas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marcador-predictivo-avanzado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcador predictivo — avanzado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cuentas-equipos-permisos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cuentas, equipos y permisos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarifas-y-facturacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarifas y facturación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../encuestas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encuestas y cuestionarios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../base-conocimiento-work-orders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base de conocimiento y Work Orders
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plataforma-del-agente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plataforma de trabajo del agente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reportes-y-estadisticas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reportes, estadísticas y financiero
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oficina-virtual-bpo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oficina virtual / BPO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atencion-cliente-mensajeria-ecommerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atención al cliente, mensajería y e-commerce
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mensajeria-wechat-fax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mensajería — WeChat, Fax y envío masivo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../casos-de-uso/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Casos de uso y soluciones
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. Casos de uso y soluciones
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/call-center-inbound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Call center de atención al cliente (inbound)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/marketing-outbound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketing outbound / televentas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/e-commerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-commerce
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/oficina-virtual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oficina virtual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/marcacion-predictiva/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcación predictiva
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/casos-tecnicos-avanzados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Casos técnicos avanzados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../administracion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Administración avanzada
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Administración avanzada
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/asterisk-ami/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración de Asterisk AMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/openvpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenVPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/apc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APC (caché de PHP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/mailman/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mailman / correo saliente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/diagnostico-red-voip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagnóstico de red y VoIP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/configuracion-y-mantenimiento-sistema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración y mantenimiento del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/gestion-avanzada-call-center/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestión avanzada del call center
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/historial-documentacion-1.2-beta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentación histórica — AsterCC 1.2 beta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../desarrollo/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Guía de desarrollo y customización
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7. Guía de desarrollo y customización
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-y-ami/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API y AMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/guia-desarrolladores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía para desarrolladores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/introduccion-api-integracion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción a la API de integración
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/codigos-retorno-e-idiomas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Códigos de retorno y codificación de idioma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-autenticacion-y-sesion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Autenticación y sesión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-control-de-llamada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Control de llamada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-supervision-y-control-de-agente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Supervisión y control de agente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-datos-y-grabaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Datos y grabaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/eventos-tiempo-real-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recibir eventos en tiempo real de la API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/integrar-envio-de-sms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrar el envío de SMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Preguntas frecuentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Solución de problemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Historial de versiones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qué es
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-se-usa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo se usa
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cómo se usa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#salas-de-conferencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Salas de conferencia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listas-blanca-y-negra-de-llamadas-entrantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Listas blanca y negra de llamadas entrantes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restriccion-de-numero-que-llama-saliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restricción de número que llama saliente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#horarios-de-trabajo-y-paquetes-de-horario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Horarios de trabajo y paquetes de horario
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plantillas-de-pbx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plantillas de PBX
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-tarjetas-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de tarjetas (hardware)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-aplicaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de aplicaciones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-archivos-de-voz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de archivos de voz
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voz-de-llamada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voz de llamada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-musica-en-espera" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión de música en espera
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacion-de-mensaje-de-voz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aplicación de mensaje de voz
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencia-rapida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referencia rápida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fuentes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="pbx-funciones-avanzadas">PBX — Funciones avanzadas<a class="headerlink" href="#pbx-funciones-avanzadas" title="Permanent link">&para;</a></h1>
+<h2 id="que-es">Qué es<a class="headerlink" href="#que-es" title="Permanent link">&para;</a></h2>
+<p>Funciones de soporte que complementan la telefonía base (<a href="../pbx-y-telefonia/">PBX y telefonía</a>) y el <a href="../pbx-ivr/">IVR</a>: salas de conferencia, restricciones de llamada, horarios, plantillas de configuración, y gestión de los archivos de voz que usa todo el sistema.</p>
+<h2 id="como-se-usa">Cómo se usa<a class="headerlink" href="#como-se-usa" title="Permanent link">&para;</a></h2>
+<h3 id="salas-de-conferencia">Salas de conferencia<a class="headerlink" href="#salas-de-conferencia" title="Permanent link">&para;</a></h3>
+<p>Permiten unir múltiples participantes en una misma llamada (probado hasta 30 participantes). Se puede entrar por <strong>invitación</strong> desde la pantalla de la sala, o por <strong>marcación entrante</strong> (vía IVR o ruta entrante hacia el número interno de la sala).</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué define</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Número interno</td>
+<td>Para marcar/enrutar hacia esta sala</td>
+</tr>
+<tr>
+<td>Nombre de la sala</td>
+<td>Identificación libre</td>
+</tr>
+<tr>
+<td>Contraseña de usuario / de administrador</td>
+<td>Ambas opcionales, pero si se definen ambas, deben ser distintas</td>
+</tr>
+<tr>
+<td>Esperar al anfitrión</td>
+<td>Si los participantes esperan a que el anfitrión se conecte</td>
+</tr>
+<tr>
+<td>ID de voz de entrada</td>
+<td>Locución al entrar a la sala</td>
+</tr>
+<tr>
+<td>Optimización de llamada</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Detección de llamada</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Modo silencioso</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Aviso de entrada/salida de usuarios</td>
+<td>Anuncia cuando alguien entra o sale</td>
+</tr>
+<tr>
+<td>Música de espera</td>
+<td>Se reproduce si la sala tiene un único participante (evita silencio total)</td>
+</tr>
+<tr>
+<td>Habilitar menú</td>
+<td>Menú de teclas dentro de la sala</td>
+</tr>
+<tr>
+<td>Cantidad fija de usuarios</td>
+<td>Limita el cupo</td>
+</tr>
+<tr>
+<td>Grabar conferencia</td>
+<td>Genera una grabación asociada al número interno de la sala — solo si está activado</td>
+</tr>
+<tr>
+<td>Número que llama al invitar</td>
+<td>Qué número ve el invitado cuando se le llama para sumarse</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Formulario para agregar una sala de conferencia con sus opciones básicas y de administradores" src="../../assets/images/pbx-funciones-avanzadas/agregar-sala-conferencia.jpg" /></p>
+<p><strong>Invitar participantes:</strong> desde la sala, se elige la cuenta invitante, se seleccionan destinatarios (por equipo) o se escriben números manualmente (uno por línea), y se confirma la invitación — también es posible entrar directamente marcando un número que enruta por IVR/ruta entrante al número interno de la sala.</p>
+<p><strong>Administradores de la sala:</strong> desde la pantalla de la sala, con el botón "Agregar administrador" se mueven usuarios de una lista general a una lista de administradores de esa sala específica — solo esos usuarios pueden actuar como administrador dentro de la conferencia (usando la contraseña de administrador). Se puede editar esta lista en cualquier momento desde la misma pantalla.</p>
+<p><img alt="Pantalla para mover usuarios de la lista general a la lista de administradores de la sala" src="../../assets/images/pbx-funciones-avanzadas/agregar-administrador-sala.jpg" /></p>
+<h3 id="listas-blanca-y-negra-de-llamadas-entrantes">Listas blanca y negra de llamadas entrantes<a class="headerlink" href="#listas-blanca-y-negra-de-llamadas-entrantes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Lista negra:</strong> los números listados <strong>no pueden</strong> llamar al equipo/cuenta/extensión asociado.</li>
+<li><strong>Lista blanca:</strong> <strong>solo</strong> los números listados pueden llamar a ese equipo/cuenta/extensión — cualquier otro número queda bloqueado.</li>
+</ul>
+<p>Ambas se configuran igual: número, equipo (obligatorio), cuenta y extensión (opcionales — entre más específico, más acotada la regla), y estado.</p>
+<p><img alt="Formulario para agregar un número a la lista negra: número, cuenta, equipo, dispositivo y estado" src="../../assets/images/pbx-funciones-avanzadas/agregar-lista-negra.jpg" /></p>
+<p><img alt="Formulario para agregar un número a la lista blanca, con el mismo aviso de que bloquea a cualquier otro número" src="../../assets/images/pbx-funciones-avanzadas/agregar-lista-blanca.jpg" /></p>
+<h3 id="restriccion-de-numero-que-llama-saliente">Restricción de número que llama saliente<a class="headerlink" href="#restriccion-de-numero-que-llama-saliente" title="Permanent link">&para;</a></h3>
+<p>Limita qué números puede usar un equipo como identificador al llamar hacia afuera, para prevenir llamadas no autorizadas.</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué define</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Números</td>
+<td>Uno por línea</td>
+</tr>
+<tr>
+<td>Tipo de restricción</td>
+<td>Lista negra (esos números no pueden usarse) o lista blanca (solo esos pueden usarse)</td>
+</tr>
+<tr>
+<td>Equipo</td>
+<td>A qué equipo aplica</td>
+</tr>
+<tr>
+<td>Tipo de troncal</td>
+<td>Troncal individual o grupo de troncales</td>
+</tr>
+<tr>
+<td>Troncal / grupo de troncales</td>
+<td>Cuál, según el tipo elegido — los grupos permiten fallback automático a otro troncal si el primero falla</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Formulario para agregar una restricción de número que llama saliente: tipo de restricción, equipo, tipo y troncal" src="../../assets/images/pbx-funciones-avanzadas/agregar-restriccion-cid-saliente.jpg" /></p>
+<h3 id="horarios-de-trabajo-y-paquetes-de-horario">Horarios de trabajo y paquetes de horario<a class="headerlink" href="#horarios-de-trabajo-y-paquetes-de-horario" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Horario de trabajo:</strong> define un rango — fecha de inicio/fin, hora de inicio/fin, y días de la semana (mediante control deslizante) — válido para un equipo. Por ejemplo: "turno de feriado", 1–7 de octubre, 9:00–16:00 todos los días.</li>
+</ul>
+<p><img alt="Formulario para agregar un horario de trabajo con fechas, horas y control deslizante de días de la semana" src="../../assets/images/pbx-funciones-avanzadas/agregar-horario-trabajo.jpg" /></p>
+<ul>
+<li><strong>Paquete de horario de trabajo:</strong> combina uno o más horarios de trabajo en un conjunto reutilizable, usado principalmente para acotar cuándo puede operar el <a href="../marcador-y-campanas/">marcador</a> o una <a href="../pbx-y-telefonia/#rutas-entrantes-y-salientes">ruta entrante</a>.</li>
+</ul>
+<p><img alt="Formulario para agregar un paquete de horario de trabajo combinando varios horarios" src="../../assets/images/pbx-funciones-avanzadas/agregar-paquete-horario.jpg" /></p>
+<h3 id="plantillas-de-pbx">Plantillas de PBX<a class="headerlink" href="#plantillas-de-pbx" title="Permanent link">&para;</a></h3>
+<p>Definen parámetros de configuración reutilizables para <strong>troncales</strong> o <strong>dispositivos</strong>, por tipo de protocolo — al aplicar una plantilla a varios objetos, basta con editar la plantilla para actualizarlos a todos a la vez.</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué define</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nombre de la plantilla</td>
+<td>Identificación libre</td>
+</tr>
+<tr>
+<td>Tipo de plantilla</td>
+<td>Troncal o dispositivo</td>
+</tr>
+<tr>
+<td>Tipo de protocolo</td>
+<td>Con qué protocolo se usa esta plantilla</td>
+</tr>
+<tr>
+<td>Equipo</td>
+<td>A qué equipo aplica</td>
+</tr>
+<tr>
+<td>Detalle</td>
+<td>El contenido de configuración en sí (incluye, entre otros, el modo DTMF — clave para el diagnóstico de problemas con <a href="../pbx-ivr/#diagnostico-de-problemas-comunes">IVR</a>)</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Formulario para agregar una plantilla de PBX: nombre, tipo, protocolo, equipo y detalle de configuración" src="../../assets/images/pbx-funciones-avanzadas/agregar-plantilla-pbx.jpg" /></p>
+<h3 id="gestion-de-tarjetas-hardware">Gestión de tarjetas (hardware)<a class="headerlink" href="#gestion-de-tarjetas-hardware" title="Permanent link">&para;</a></h3>
+<p>Pantalla en inglés (orientada a hardware) para configurar tarjetas de voz físicas — digitales (E1/T1) y analógicas — organizadas en dos tablas separadas por tipo.</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué define</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Status</td>
+<td>Si la configuración actual de este hardware está activa</td>
+</tr>
+<tr>
+<td>Group</td>
+<td>Grupo de canales — todos los canales de una misma tarjeta comparten grupo</td>
+</tr>
+<tr>
+<td>Channels</td>
+<td>Cuántos canales de la tarjeta se van a usar</td>
+</tr>
+<tr>
+<td>Advanced Settings</td>
+<td>Configuración avanzada libre</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Listado de tarjetas digitales (E1/T1) y analógicas detectadas, con estado, canales y acción de edición" src="../../assets/images/pbx-funciones-avanzadas/gestion-tarjetas-dahdi.jpg" /></p>
+<p>Los cambios quedan en un archivo de configuración pendiente hasta hacer clic en la barra de <strong>recarga</strong> — recién ahí se sobrescribe la configuración activa.</p>
+<h3 id="gestion-de-aplicaciones">Gestión de aplicaciones<a class="headerlink" href="#gestion-de-aplicaciones" title="Permanent link">&para;</a></h3>
+<p>Permite registrar aplicaciones personalizadas dentro del dialplan de Asterisk.</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué define</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nombre de la aplicación</td>
+<td>Identificación libre</td>
+</tr>
+<tr>
+<td>Context</td>
+<td>Contexto de Asterisk asociado</td>
+</tr>
+<tr>
+<td>Equipo</td>
+<td>A qué equipo pertenece</td>
+</tr>
+<tr>
+<td>Identificador inicial</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Prioridad</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Número interno</td>
+<td>Para poder invocarla desde otros objetos del sistema</td>
+</tr>
+<tr>
+<td>Descripción</td>
+<td>Notas libres</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Formulario para agregar una aplicación: nombre, equipo, context, prioridad y número interno" src="../../assets/images/pbx-funciones-avanzadas/agregar-aplicacion.jpg" /></p>
+<h3 id="gestion-de-archivos-de-voz">Gestión de archivos de voz<a class="headerlink" href="#gestion-de-archivos-de-voz" title="Permanent link">&para;</a></h3>
+<p>Repositorio central de archivos de audio (formato requerido: <strong>WAV, 8000 Hz, 16 bits, mono</strong>) usados por IVR, colas, grupos de timbrado, etc.</p>
+<ul>
+<li>Alta individual desde la propia pantalla.</li>
+<li>Cada archivo puede reproducirse en línea o descargarse desde el listado.</li>
+<li>Se puede asociar (o no) a un equipo específico — si no se asocia, cualquier equipo puede usarlo.</li>
+</ul>
+<p><img alt="Formulario para subir un archivo de voz individual, con selector de archivo, nombre y equipo" src="../../assets/images/pbx-funciones-avanzadas/agregar-archivo-voz.jpg" /></p>
+<p><strong>Carga masiva vía FTP:</strong> para volúmenes grandes de locuciones, es posible subirlas por FTP al directorio configurado en <strong>Sistema → Configuración del sistema → Configuración básica</strong>, siguiendo esta estructura obligatoria:</p>
+<div class="highlight"><pre><span></span><code>soundfiles/
+├── &lt;identificador-de-equipo&gt;/
+│   ├── cn/   ← locuciones en chino de ese equipo
+│   └── en/   ← locuciones en inglés de ese equipo
+├── cn/       ← locuciones en chino sin equipo asociado (uso general)
+└── en/       ← locuciones en inglés sin equipo asociado
+</code></pre></div>
+<p>Luego, en <strong>PBX avanzado → Carga masiva de archivos de voz</strong>, se elige el equipo (o se deja vacío para ver los archivos generales), se listan los <code>.mp3</code>/<code>.wav</code> encontrados en esa carpeta, y se marca:
+- Qué archivos van a <strong>Gestión de archivos de voz</strong> (checkbox general por archivo).
+- Qué idioma de cada archivo va, además, directo a <strong>Voz de llamada</strong> (checkbox por idioma) — evita tener que repetir el alta manual descrita en esa sección.</p>
+<p><img alt="Pantalla de carga masiva con la lista de archivos detectados y checkboxes por idioma" src="../../assets/images/pbx-funciones-avanzadas/carga-masiva-archivos-voz.jpg" /></p>
+<h3 id="voz-de-llamada">Voz de llamada<a class="headerlink" href="#voz-de-llamada" title="Permanent link">&para;</a></h3>
+<p>Envuelve un archivo de voz (o varios, uno por idioma) bajo un nombre lógico reutilizable en IVR, colas y grupos de timbrado — de modo que el mismo "aviso de bienvenida" pueda reproducirse en el idioma correspondiente a cada llamada sin duplicar configuración.</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué define</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nombre de la voz de llamada</td>
+<td>Identificación lógica reutilizable</td>
+</tr>
+<tr>
+<td>Descripción</td>
+<td>Notas libres</td>
+</tr>
+<tr>
+<td>Equipo</td>
+<td>A qué equipo pertenece</td>
+</tr>
+<tr>
+<td>Archivo de voz</td>
+<td>Selecciona, por idioma, cuál archivo (de los subidos en Gestión de archivos de voz) corresponde</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Un registro de voz de llamada sin ningún archivo asociado aparece resaltado en rojo en el listado — es una señal visual de que falta completar la configuración.</p>
+</div>
+<p><img alt="Listado de voz de llamada con un registro resaltado en rojo por no tener archivo de voz asociado" src="../../assets/images/pbx-funciones-avanzadas/listado-voz-llamada-resaltado-rojo.jpg" /></p>
+<h3 id="gestion-de-musica-en-espera">Gestión de música en espera<a class="headerlink" href="#gestion-de-musica-en-espera" title="Permanent link">&para;</a></h3>
+<p>Registra, bajo un nombre lógico reutilizable, qué archivo de voz (de los subidos en <a href="#gestion-de-archivos-de-voz">Gestión de archivos de voz</a>) se usa como música en espera para un equipo — la misma lógica de "nombre reutilizable + equipo + archivo" que <a href="#voz-de-llamada">Voz de llamada</a>, pero para el rol de música en espera en vez de locución.</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué define</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nombre de la música en espera</td>
+<td>Identificación reutilizable</td>
+</tr>
+<tr>
+<td>Identificador</td>
+<td>Etiqueta corta para distinguir esta música en espera de otras</td>
+</tr>
+<tr>
+<td>Equipo</td>
+<td>A qué equipo pertenece</td>
+</tr>
+<tr>
+<td>Archivo de voz</td>
+<td>Archivo (del equipo) a usar como música en espera</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Formulario para agregar una música en espera reutilizable: nombre, identificador, equipo y archivo de voz" src="../../assets/images/pbx-funciones-avanzadas/agregar-musica-espera.jpg" /></p>
+<p>Los campos "Formato" y "Modo de aplicación" están reservados para una función aún no implementada.</p>
+<p>Esta música en espera reutilizable es la misma que puede seleccionarse en el campo "Música en espera" de <a href="../pbx-y-telefonia/#extensiones-gestion-de-dispositivos">extensiones</a>, <a href="../pbx-y-telefonia/#colas">colas</a>, <a href="../pbx-y-telefonia/#grupos-de-timbrado">grupos de timbrado</a> y <a href="#salas-de-conferencia">salas de conferencia</a>.</p>
+<h3 id="aplicacion-de-mensaje-de-voz">Aplicación de mensaje de voz<a class="headerlink" href="#aplicacion-de-mensaje-de-voz" title="Permanent link">&para;</a></h3>
+<p>Usada dentro de una acción "dejar mensaje" del <a href="../pbx-ivr/">IVR</a> — por ejemplo, para capturar consultas fuera de horario laboral y que un agente las gestione al día siguiente.</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué define</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nombre de la aplicación</td>
+<td>Identificación reutilizable desde el IVR</td>
+</tr>
+<tr>
+<td>Llamada inicial a webservice</td>
+<td>Opcional — si el mensaje debe disparar un webservice al iniciar la grabación</td>
+</tr>
+<tr>
+<td>Directorio / nombre de archivo</td>
+<td>Dónde y cómo se guarda el mensaje grabado — se recomienda incluir variables como <code>[year]-[mon]-[day]-[hour]-[min]-[sec]-[callerid]-[sessionid]</code> para evitar sobrescribir archivos (mismas variables internas que en <a href="../pbx-ivr/#webservice-como-pasar-y-recibir-parametros">IVR</a>)</td>
+</tr>
+<tr>
+<td>Aviso inicial</td>
+<td>Locución antes de empezar a grabar</td>
+</tr>
+<tr>
+<td>Beep</td>
+<td>Si suena un aviso sonoro al iniciar la grabación</td>
+</tr>
+<tr>
+<td>Duración máxima / silencio máximo</td>
+<td><code>0</code> = sin límite; el silencio máximo corta automáticamente la grabación</td>
+</tr>
+<tr>
+<td>Tecla de fin</td>
+<td>Tecla que el cliente presiona para terminar de grabar</td>
+</tr>
+<tr>
+<td>Aviso de cierre / reintentos máximos</td>
+<td>Si avisa que la grabación está por terminar, y cuántas veces se puede regrabar</td>
+</tr>
+<tr>
+<td>Aviso de tiempo restante</td>
+<td>Solo aplica si el aviso de cierre está activo</td>
+</tr>
+<tr>
+<td>Tipo de aviso</td>
+<td>Por defecto o vía webservice (con su propia dirección/método/parámetros)</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Formulario para agregar una aplicación de mensaje de voz con llamada a webservice, ruta/nombre de archivo, beep y duración máxima" src="../../assets/images/pbx-funciones-avanzadas/aplicacion-mensaje-voz-campos.png" /></p>
+<h2 id="referencia-rapida">Referencia rápida<a class="headerlink" href="#referencia-rapida" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tarea</th>
+<th>Dónde</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Crear sala de conferencia</td>
+<td>PBX avanzado → Salas de conferencia</td>
+</tr>
+<tr>
+<td>Restringir llamadas entrantes</td>
+<td>PBX avanzado → Lista negra / Lista blanca</td>
+</tr>
+<tr>
+<td>Restringir número saliente</td>
+<td>PBX avanzado → Restricción de número saliente</td>
+</tr>
+<tr>
+<td>Definir horarios</td>
+<td>PBX avanzado → Horarios de trabajo / Paquetes de horario</td>
+</tr>
+<tr>
+<td>Plantillas reutilizables</td>
+<td>PBX avanzado → Plantillas de PBX</td>
+</tr>
+<tr>
+<td>Subir locuciones</td>
+<td>PBX avanzado → Gestión de archivos de voz</td>
+</tr>
+<tr>
+<td>Asociar locución a un idioma</td>
+<td>PBX avanzado → Voz de llamada</td>
+</tr>
+<tr>
+<td>Definir música en espera reutilizable</td>
+<td>PBX avanzado → Gestión de música en espera</td>
+</tr>
+<tr>
+<td>Buzón de voz dentro de un IVR</td>
+<td>PBX avanzado → Aplicación de mensaje de voz</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="fuentes">Fuentes<a class="headerlink" href="#fuentes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>raw/zh/模块使用说明/pbx高级管理/会议室.txt</code></li>
+<li><code>raw/zh/模块使用说明/pbx高级管理/会议室管理_可设录音.txt</code></li>
+<li><code>raw/zh/模块使用说明/pbx高级管理/呼入黑名单.txt</code></li>
+<li><code>raw/zh/模块使用说明/pbx高级管理/白名单管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/pbx高级管理/外呼主叫号码限制.txt</code></li>
+<li><code>raw/zh/模块使用说明/pbx高级管理/工作时间.txt</code></li>
+<li><code>raw/zh/模块使用说明/pbx高级管理/工作时间包.txt</code></li>
+<li><code>raw/zh/模块使用说明/pbx高级管理/pbx模版.txt</code></li>
+<li><code>raw/zh/模块使用说明/pbx高级管理/板卡管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/pbx高级管理/应用管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/pbx高级管理/语音文件管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/pbx高级管理/呼叫语音管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/pbx高级管理/留言应用.txt</code></li>
+<li><code>raw/zh/模块使用说明/pbx高级管理/等待音乐管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/pbx高级管理/批量添加语音文件.txt</code></li>
+<li><code>raw/en/module_manual/advanced/conference.txt</code></li>
+<li><code>raw/en/module_manual/advanced/blacklist.txt</code></li>
+<li><code>raw/en/module_manual/advanced/whitelist.txt</code></li>
+<li><code>raw/en/module_manual/advanced/callerid_number_restrict.txt</code></li>
+<li><code>raw/en/module_manual/advanced/worktime.txt</code></li>
+<li><code>raw/en/module_manual/advanced/worktimepackage.txt</code></li>
+<li><code>raw/en/module_manual/advanced/pbxtemplate.txt</code></li>
+<li><code>raw/en/module_manual/advanced/dahdi.txt</code></li>
+<li><code>raw/en/module_manual/advanced/sys_application.txt</code></li>
+<li><code>raw/en/module_manual/advanced/soundfile.txt</code></li>
+<li><code>raw/en/module_manual/advanced/announcement.txt</code></li>
+<li><code>raw/en/module_manual/advanced/record_app.txt</code></li>
+<li><code>raw/en/module_manual/advanced/moh.txt</code></li>
+<li><code>raw/en/module_manual/advanced/addsoundfiles.txt</code></li>
+<li><code>raw/en/module_manual/advanced.txt</code></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.indexes", "navigation.tracking", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/javascripts/nav-toggle.js"></script>
+      
+    
+  </body>
+</html>

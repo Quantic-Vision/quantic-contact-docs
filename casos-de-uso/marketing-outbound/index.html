@@ -1,0 +1,3562 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación de AsterCC — plataforma de call center basada en Asterisk">
+      
+      
+      
+      
+        <link rel="prev" href="../call-center-inbound/">
+      
+      
+        <link rel="next" href="../e-commerce/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Marketing outbound / televentas - Wiki AsterCC (Español)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#marketing-outbound-televentas" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Wiki AsterCC (Español)" class="md-header__button md-logo" aria-label="Wiki AsterCC (Español)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Wiki AsterCC (Español)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Marketing outbound / televentas
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Wiki AsterCC (Español)" class="md-nav__button md-logo" aria-label="Wiki AsterCC (Español)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Wiki AsterCC (Español)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glosario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glosario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../introduccion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introducción a AsterCC
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. Introducción a AsterCC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/que-es-astercc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ¿Qué es AsterCC?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/funcionalidades/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funcionalidades del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/arquitectura-general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura general
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/demo-en-linea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo en línea
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../instalacion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Instalación y configuración inicial
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Instalación y configuración inicial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requisitos del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/descarga-e-instalacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descarga e instalación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/instalar-desde-usb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instalar desde USB (AsterCC Box)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/configuracion-post-instalacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración post-instalación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/licencias-y-errores-comunes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licencias y errores comunes de inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../primeros-pasos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Primeros pasos
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Primeros pasos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/guia-administradores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía rápida para administradores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/guia-agentes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía rápida para agentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/recorrido-interfaz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recorrido por la interfaz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/configurar-softphones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configurar softphones (Eyebeam, X-Lite, Zoiper)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../modulos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Módulos del sistema
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. Módulos del sistema
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/pbx-y-telefonia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX y telefonía
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/pbx-ivr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX — IVR (menú de voz)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/pbx-funciones-avanzadas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX — Funciones avanzadas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/marcador-y-campanas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcador y campañas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/marcador-predictivo-avanzado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcador predictivo — avanzado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/cuentas-equipos-permisos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cuentas, equipos y permisos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/tarifas-y-facturacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarifas y facturación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/encuestas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encuestas y cuestionarios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/base-conocimiento-work-orders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base de conocimiento y Work Orders
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/plataforma-del-agente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plataforma de trabajo del agente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/reportes-y-estadisticas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reportes, estadísticas y financiero
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/oficina-virtual-bpo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oficina virtual / BPO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/atencion-cliente-mensajeria-ecommerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atención al cliente, mensajería y e-commerce
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/mensajeria-wechat-fax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mensajería — WeChat, Fax y envío masivo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Casos de uso y soluciones
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. Casos de uso y soluciones
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../call-center-inbound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Call center de atención al cliente (inbound)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketing outbound / televentas
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketing outbound / televentas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qué es
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-se-usa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo se usa
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cómo se usa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-preparar-extension-agente-y-softphone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Preparar extensión, agente y softphone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-crear-el-paquete-de-clientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Crear el paquete de clientes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-definir-los-resultados-de-llamada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Definir los resultados de llamada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-crear-la-tarea-de-campana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Crear la tarea de campaña
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-trabajo-diario-del-agente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Trabajo diario del agente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-ver-los-reportes-de-cierre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Ver los reportes de cierre
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-encuestas-y-pantalla-emergente-en-campana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Encuestas y pantalla emergente en campaña
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-troncales-dedicados-por-tipo-de-campana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Troncales dedicados por tipo de campaña
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-work-orders-desde-la-campana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Work orders desde la campaña
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-venta-durante-la-campana-e-commerce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Venta durante la campaña (e-commerce)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-facturacion-de-llamadas-de-campana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Facturación de llamadas de campaña
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-gestion-operativa-de-la-tarea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Gestión operativa de la tarea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-controlar-que-campos-ve-cada-quien" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Controlar qué campos ve cada quien
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-plantillas-de-sms-correo-y-fax-con-comodines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Plantillas de SMS, correo y fax con comodines
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-fax-en-una-tarea-outbound" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Fax en una tarea outbound
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-asignar-y-recuperar-clientes-entre-el-total-y-la-tarea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Asignar y recuperar clientes entre el total y la tarea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-marcar-solo-con-el-teclado-del-telefono" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. Marcar solo con el teclado del teléfono
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18-agregar-campos-personalizados-e-importar-con-diccionario-de-coincidencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. Agregar campos personalizados e importar con diccionario de coincidencia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19-filtro-de-recuperacion-automatica-hacia-la-lista-de-predial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19. Filtro de recuperación automática hacia la lista de predial
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencia-rapida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referencia rápida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fuentes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../e-commerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-commerce
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oficina-virtual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oficina virtual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marcacion-predictiva/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcación predictiva
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../casos-tecnicos-avanzados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Casos técnicos avanzados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../administracion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Administración avanzada
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Administración avanzada
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/asterisk-ami/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración de Asterisk AMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/openvpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenVPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/apc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APC (caché de PHP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/mailman/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mailman / correo saliente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/diagnostico-red-voip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagnóstico de red y VoIP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/configuracion-y-mantenimiento-sistema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración y mantenimiento del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/gestion-avanzada-call-center/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestión avanzada del call center
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/historial-documentacion-1.2-beta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentación histórica — AsterCC 1.2 beta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../desarrollo/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Guía de desarrollo y customización
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7. Guía de desarrollo y customización
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-y-ami/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API y AMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/guia-desarrolladores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía para desarrolladores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/introduccion-api-integracion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción a la API de integración
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/codigos-retorno-e-idiomas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Códigos de retorno y codificación de idioma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-autenticacion-y-sesion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Autenticación y sesión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-control-de-llamada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Control de llamada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-supervision-y-control-de-agente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Supervisión y control de agente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-datos-y-grabaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Datos y grabaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/eventos-tiempo-real-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recibir eventos en tiempo real de la API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/integrar-envio-de-sms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrar el envío de SMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Preguntas frecuentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Solución de problemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Historial de versiones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qué es
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-se-usa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo se usa
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cómo se usa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-preparar-extension-agente-y-softphone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Preparar extensión, agente y softphone
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-crear-el-paquete-de-clientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Crear el paquete de clientes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-definir-los-resultados-de-llamada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Definir los resultados de llamada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-crear-la-tarea-de-campana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Crear la tarea de campaña
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-trabajo-diario-del-agente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Trabajo diario del agente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-ver-los-reportes-de-cierre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Ver los reportes de cierre
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-encuestas-y-pantalla-emergente-en-campana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Encuestas y pantalla emergente en campaña
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-troncales-dedicados-por-tipo-de-campana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Troncales dedicados por tipo de campaña
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-work-orders-desde-la-campana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Work orders desde la campaña
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-venta-durante-la-campana-e-commerce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Venta durante la campaña (e-commerce)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-facturacion-de-llamadas-de-campana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Facturación de llamadas de campaña
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-gestion-operativa-de-la-tarea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Gestión operativa de la tarea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-controlar-que-campos-ve-cada-quien" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Controlar qué campos ve cada quien
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-plantillas-de-sms-correo-y-fax-con-comodines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Plantillas de SMS, correo y fax con comodines
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-fax-en-una-tarea-outbound" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Fax en una tarea outbound
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-asignar-y-recuperar-clientes-entre-el-total-y-la-tarea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Asignar y recuperar clientes entre el total y la tarea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-marcar-solo-con-el-teclado-del-telefono" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. Marcar solo con el teclado del teléfono
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18-agregar-campos-personalizados-e-importar-con-diccionario-de-coincidencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. Agregar campos personalizados e importar con diccionario de coincidencia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19-filtro-de-recuperacion-automatica-hacia-la-lista-de-predial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19. Filtro de recuperación automática hacia la lista de predial
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencia-rapida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referencia rápida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fuentes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="marketing-outbound-televentas">Marketing outbound / televentas<a class="headerlink" href="#marketing-outbound-televentas" title="Permanent link">&para;</a></h1>
+<h2 id="que-es">Qué es<a class="headerlink" href="#que-es" title="Permanent link">&para;</a></h2>
+<p>Caso de uso de referencia para montar una operación de televenta desde cero: extensión, agente, softphone, paquete de clientes, tarea de campaña, y cómo se ve el trabajo diario del agente hasta llegar a los reportes de cierre.</p>
+<p>En pocas palabras (nota introductoria de la fuente): un plan de marcación saliente define, dentro de la pantalla de trabajo de una tarea, qué agentes participan en la marcación y a qué clientes llama cada uno; el agente ve únicamente los campos del cliente configurados como visibles para esa tarea, y el administrador puede modificar esa configuración para ver el mismo avance de trabajo del equipo. Esta idea general es la que desarrollan en detalle los pasos 1–6 de esta guía.</p>
+<h2 id="como-se-usa">Cómo se usa<a class="headerlink" href="#como-se-usa" title="Permanent link">&para;</a></h2>
+<h3 id="1-preparar-extension-agente-y-softphone">1. Preparar extensión, agente y softphone<a class="headerlink" href="#1-preparar-extension-agente-y-softphone" title="Permanent link">&para;</a></h3>
+<p>Sigue los pasos 1–3 de la <a href="../../primeros-pasos/guia-administradores/">Guía rápida para administradores</a>: crear la extensión, el agente, y configurar el softphone. Confirma en la lista de extensiones que el estado muestre el retardo de conexión (a menor retardo, mejor calidad de audio).</p>
+<h3 id="2-crear-el-paquete-de-clientes">2. Crear el paquete de clientes<a class="headerlink" href="#2-crear-el-paquete-de-clientes" title="Permanent link">&para;</a></h3>
+<p>En <strong>Marketing outbound → Gestión de paquetes de clientes</strong>, crea un <a href="../../glosario/#paquete-de-clientes-para-marcacion-saliente">paquete de clientes</a> con el segmento a contactar. Cada paquete genera automáticamente su propia tabla de datos, separada de la tabla general — así el paquete no se ve afectado por cambios posteriores en la base general, y viceversa.</p>
+<h3 id="3-definir-los-resultados-de-llamada">3. Definir los resultados de llamada<a class="headerlink" href="#3-definir-los-resultados-de-llamada" title="Permanent link">&para;</a></h3>
+<p>En <strong>Marketing outbound → Gestión de resultados de llamada</strong>, define las opciones que el agente podrá elegir tras cada llamada — típicamente separadas en resultados para llamadas contestadas (ej. "no coopera", "sin tiempo", "coopera", "número equivocado") y para no contestadas (ej. "apagado", "fuera de servicio", "no existe").</p>
+<h3 id="4-crear-la-tarea-de-campana">4. Crear la tarea de campaña<a class="headerlink" href="#4-crear-la-tarea-de-campana" title="Permanent link">&para;</a></h3>
+<p>Sigue <a href="../../modulos/marcador-y-campanas/">4.2 Marcador y campañas</a> para crear la tarea, apuntando al grupo de agentes y al paquete de clientes de los pasos anteriores.</p>
+<h3 id="5-trabajo-diario-del-agente">5. Trabajo diario del agente<a class="headerlink" href="#5-trabajo-diario-del-agente" title="Permanent link">&para;</a></h3>
+<ol>
+<li>El agente inicia sesión y se conecta al grupo de trabajo saliente.</li>
+</ol>
+<p><img alt="Portal del agente tras iniciar sesión, con la tarea de campaña visible en el panel lateral" src="../../assets/images/marketing-outbound/login-agente-campana.jpg" /></p>
+<ol>
+<li>Selecciona la tarea de campaña en el panel lateral — se muestra el detalle de la tarea y la lista de clientes pendientes.</li>
+</ol>
+<p><img alt="Pestaña &quot;Unfinished&quot; con la lista de clientes sin procesar de la tarea" src="../../assets/images/marketing-outbound/lista-clientes-pendientes-agente.jpg" /></p>
+<p>Si el agente puede pedir manualmente un cliente (según la configuración de "obtención de datos" de la tarea), lo hace con el botón <strong>Obtain Customer</strong>:</p>
+<p><img alt="Mensaje de sistema confirmando que se obtuvieron 3 clientes nuevos para trabajar" src="../../assets/images/marketing-outbound/agente-obtiene-clientes.jpg" /></p>
+<ol>
+<li>Al hacer doble clic en un cliente se abre su ficha con los campos configurados para ser visibles.</li>
+<li>El agente marca (según el modo configurado: manual, preview o automático — ver <a href="../../modulos/marcador-y-campanas/#2-elegir-el-modo-de-marcacion">4.2</a>).</li>
+</ol>
+<p><img alt="Ventana emergente del softphone mostrando una llamada entrante del cliente, con botones para contestar o ignorar" src="../../assets/images/marketing-outbound/llamada-entrante-softphone.jpg" /></p>
+<ol>
+<li>Al colgar, registra el <strong>resultado de la llamada</strong>, el <strong>estado de procesamiento</strong>, y notas adicionales — el sistema puede exigir que haya habido conexión real antes de permitir guardar (configurable en la tarea). Si el estado de procesamiento queda como "Pending" (en seguimiento), se puede fijar además la fecha/hora del próximo contacto y una prioridad:</li>
+</ol>
+<p><img alt="Ficha del cliente con el resultado de llamada guardado, estado &quot;Pending&quot; y fecha programada de reintento" src="../../assets/images/marketing-outbound/guardar-resultado-en-seguimiento.jpg" /></p>
+<h3 id="6-ver-los-reportes-de-cierre">6. Ver los reportes de cierre<a class="headerlink" href="#6-ver-los-reportes-de-cierre" title="Permanent link">&para;</a></h3>
+<p>Al terminar la sesión de trabajo, en <strong>Reportes y estadísticas</strong> se puede consultar, para la tarea o el periodo elegido:</p>
+<table>
+<thead>
+<tr>
+<th>Indicador</th>
+<th>Qué mide</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Volumen de datos</td>
+<td>Cuántos clientes se marcaron</td>
+</tr>
+<tr>
+<td>Tasa de contactación</td>
+<td>Clientes contestados ÷ volumen de datos</td>
+</tr>
+<tr>
+<td>Tasa de éxito de marcación</td>
+<td>Llamadas contestadas ÷ llamadas realizadas</td>
+</tr>
+<tr>
+<td>Sin guardar por el agente</td>
+<td>Llamadas donde no se registró resultado</td>
+</tr>
+<tr>
+<td>En seguimiento / completados</td>
+<td>Según el estado de procesamiento elegido por el agente</td>
+</tr>
+<tr>
+<td>Aprobados en control de calidad</td>
+<td>Cuántos casos pasaron la revisión de calidad</td>
+</tr>
+</tbody>
+</table>
+<p>Además de este reporte por tarea, <strong>Reportes y estadísticas → Detalle de servicio del agente</strong> (y, de forma equivalente, el detalle de llamadas salientes/entrantes, el resumen de salientes y los registros de calificación) permiten ver el mismo tipo de desempeño agrupado por agente, grupo o equipo, con salida por año/mes/semana/día/hora — usando los mismos indicadores de duración, tiempo de gestión posterior y timbrado descritos en <a href="../../modulos/reportes-y-estadisticas/">4.8 Reportes, estadísticas y financiero</a>. El sistema solo genera estas estadísticas de trabajo sobre <strong>agentes</strong>; una llamada saliente hecha directamente desde una extensión, sin pasar por un agente, solo deja el registro de la llamada, sin las métricas agregadas.</p>
+<div class="admonition example">
+<p class="admonition-title">Ejemplo real: un ciclo completo con cifras</p>
+<p>Para ilustrar cómo se interpretan estos indicadores, así se vio el cierre de un ciclo de prueba sobre un paquete de 5 clientes:</p>
+<ul>
+<li>Se hicieron <strong>6 llamadas</strong>: 4 contestadas y 2 sin respuesta.</li>
+<li>De las 4 contestadas, 3 quedaron en "completado (éxito)" y 1 en "completado (dato no coincide)".</li>
+<li>De las 2 sin respuesta, en una el agente colgó sin registrar resultado de llamada — por eso el registro de llamadas de la tarea mostró esa fila con el resultado vacío.</li>
+<li>En control de calidad solo aparecieron <strong>3 registros</strong> para revisar: los que habían quedado en "completado (éxito)".</li>
+<li>Los clientes ya trabajados se pueden <strong>regresar (rollback)</strong> a la tabla de origen (clientes individuales) de dos formas: revertir todo el plan de una sola vez, o revisar y revertir registro por registro — la elección depende de si se necesita precisión por caso o rapidez para todo el lote.</li>
+</ul>
+</div>
+<h3 id="7-encuestas-y-pantalla-emergente-en-campana">7. Encuestas y pantalla emergente en campaña<a class="headerlink" href="#7-encuestas-y-pantalla-emergente-en-campana" title="Permanent link">&para;</a></h3>
+<p>Una campaña puede combinarse con una <a href="../../modulos/encuestas/">encuesta</a> para estandarizar lo que el agente pregunta y registra en cada llamada:</p>
+<ol>
+<li>Crea primero la encuesta en <strong>Encuestas → Encuestas</strong> y agrégale las preguntas (opción única o texto libre), agrupadas en grupos de preguntas para facilitar su gestión.</li>
+<li>Al crear o editar la tarea de campaña, vincula la encuesta. Si el paquete de clientes no se seleccionó al crear la campaña, el sistema genera uno automáticamente con el mismo nombre de la tarea.</li>
+<li>Define qué campos del cliente son visibles/editables desde los botones de configuración de campos de gestión e interfaz en la propia tarea.</li>
+<li>Registra un número de CV (número virtual/DID) para la campaña — en Administración avanzada del call center → Vinculación de aplicación de entrada, eligiendo tipo "tarea de marketing outbound" y asociando el número de llamante o el DID. Cuando un cliente que ya está en el paquete llama por ese número, el sistema hace <strong>pop-up automático de su ficha y de la encuesta</strong> vinculada a la tarea, aunque la llamada sea entrante.</li>
+</ol>
+<p><img alt="Formulario para vincular un número (Cvnumber) a una tarea de campaña, eligiendo equipo, grupo de agentes y tipo" src="../../assets/images/marketing-outbound/vincular-cvnumber-tarea.png" /></p>
+<p>Este último punto — el pop-up de encuesta al recibir una llamada entrante de un cliente ya cargado en la campaña — es la vía para usar campañas salientes también como mecanismo de identificación de llamadas entrantes de esos mismos clientes. Para el enlace del pop-up con el binding de aplicación y DID (caso puramente entrante) ver <a href="../call-center-inbound/">Call center inbound</a>.</p>
+<p>Si el cliente cuelga sin terminar la encuesta, marcar el estado de procesamiento como "en seguimiento" conserva el punto exacto donde quedó — al volver a llamar (o si el cliente devuelve la llamada y entra por la vinculación de arriba), la encuesta continúa desde la siguiente pregunta sin perder las respuestas ya dadas. El agente puede usar la tecla <code>Tab</code> para confirmar cada respuesta y avanzar sin usar el mouse.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Este mismo mecanismo de pop-up de encuesta también existe para llamadas de <strong>usuarios de entrada virtuales</strong> (oficina virtual/BPO), vinculando el número/DID a un "usuario de entrada" en vez de a una tarea de marketing outbound — ese escenario no aplica aquí y se documenta en la sección de oficina virtual/BPO.</p>
+</div>
+<p>También existe una variante sin agente: la <strong>encuesta de voz con marcador predictivo</strong>, donde el propio marcador reproduce las preguntas grabadas y el cliente responde con el teclado del teléfono, sin que intervenga un agente. Se configura igual que una campaña normal pero con un tipo de encuesta "voz", subiendo primero los archivos de audio de cada pregunta y, en la tarea, seleccionando esa encuesta como destino de la llamada contestada (en lugar de un agente o grupo). Es útil para sondeos masivos donde no se necesita conversación, solo respuestas por tono. Los resultados (cuántos terminaron la encuesta, distribución de respuestas por pregunta) se consultan igual que en <strong>Encuestas → Estadísticas de encuesta</strong>.</p>
+<h3 id="8-troncales-dedicados-por-tipo-de-campana">8. Troncales dedicados por tipo de campaña<a class="headerlink" href="#8-troncales-dedicados-por-tipo-de-campana" title="Permanent link">&para;</a></h3>
+<p>Si se necesita que una campaña o un grupo de agentes salga siempre por un troncal específico (por ejemplo, para separar el costo o el origen de llamada por tipo de campaña), hay tres niveles donde fijar el troncal, de más general a más específico:</p>
+<ol>
+<li><strong>Por equipo:</strong> si el equipo solo tiene enlazado un troncal (no un grupo de troncales), todas las tareas de marketing outbound de ese equipo salen por ese troncal.</li>
+<li><strong>Por grupo de cuentas:</strong> las cuentas de los agentes de la tarea se agregan a un grupo de cuentas, y a ese grupo de cuentas se le asigna el troncal (o grupo de troncales) a usar.</li>
+<li><strong>Por marcador:</strong> en el marcador predictivo, se especifica qué cuenta del grupo de cuentas (y por lo tanto qué troncal) usar para las llamadas salientes de esa tarea en concreto.</li>
+</ol>
+<h3 id="9-work-orders-desde-la-campana">9. Work orders desde la campaña<a class="headerlink" href="#9-work-orders-desde-la-campana" title="Permanent link">&para;</a></h3>
+<p>Una campaña puede generar <a href="../../modulos/base-conocimiento-work-orders/">work orders</a> directamente desde el resultado de la llamada:</p>
+<ul>
+<li>El work order debe crearse primero indicando qué grupo(s) de agentes pueden usarlo.</li>
+<li>La campaña debe usar tabla principal (no se puede cambiar el paquete de clientes una vez creada la campaña con esta opción).</li>
+<li>Se vincula el work order a uno o varios resultados de llamada de la campaña.</li>
+</ul>
+<p><img alt="Formulario para agregar un resultado de campaña, con el work order &quot;Complain&quot; vinculado y el equipo asignado" src="../../assets/images/marketing-outbound/vincular-work-order-resultado-llamada.png" /></p>
+<ul>
+<li>Cuando el agente selecciona ese resultado en la ficha emergente del cliente, aparece un enlace para crear el work order directamente desde ahí. Un jefe de grupo también puede crear uno manualmente desde <strong>Work order de grupo</strong>.</li>
+</ul>
+<p><img alt="Ventana emergente &quot;Add work order&quot; abierta desde la ficha del cliente, con título, grupo y descripción" src="../../assets/images/marketing-outbound/crear-work-order-desde-ficha.png" /></p>
+<p>Para el detalle de gestión y ciclo de vida del work order (asignación, seguimiento, cierre) ver el módulo de referencia.</p>
+<h3 id="10-venta-durante-la-campana-e-commerce">10. Venta durante la campaña (e-commerce)<a class="headerlink" href="#10-venta-durante-la-campana-e-commerce" title="Permanent link">&para;</a></h3>
+<p>Si la campaña vincula un catálogo de e-commerce, la ficha emergente del cliente incluye una sección para buscar productos, armar el pedido y guardarlo sin salir de la pantalla de llamada — el mismo flujo de venta que en atención al cliente. Ver <a href="../e-commerce/">E-commerce</a> para el detalle de cómo configurar el catálogo y registrar pedidos; aquí solo hace falta enlazar el catálogo ya creado a la campaña desde su página de edición.</p>
+<p><img alt="Pantalla de edición de la tarea con el catálogo de e-commerce ya enlazado en el campo &quot;E-commerce&quot;" src="../../assets/images/marketing-outbound/vincular-catalogo-ecommerce-tarea.jpg" /></p>
+<p><img alt="Sección de e-commerce dentro de la ficha emergente del cliente: búsqueda de producto, carrito y datos del pedido" src="../../assets/images/marketing-outbound/venta-ecommerce-en-ficha-cliente.jpg" /></p>
+<h3 id="11-facturacion-de-llamadas-de-campana">11. Facturación de llamadas de campaña<a class="headerlink" href="#11-facturacion-de-llamadas-de-campana" title="Permanent link">&para;</a></h3>
+<p>Las llamadas salientes de la campaña se tarifican igual que cualquier llamada saliente del sistema, con hasta tres niveles de tarifa aplicables (sistema, equipo, cuenta). Cada llamada de la campaña queda reflejada en el CDR con su costo, y el saldo de la cuenta/equipo se actualiza automáticamente. El detalle de cómo configurar tarifas por prefijo, equipo o cuenta está en <a href="../../modulos/tarifas-y-facturacion/">4.4 Tarifas y facturación</a> — esta página no repite esa configuración.</p>
+<h3 id="12-gestion-operativa-de-la-tarea">12. Gestión operativa de la tarea<a class="headerlink" href="#12-gestion-operativa-de-la-tarea" title="Permanent link">&para;</a></h3>
+<p>Dos operaciones frecuentes durante la vida de una tarea de campaña:</p>
+<ul>
+<li><strong>Forzar el marcado inmediato de números con hora programada:</strong> si un lote de números quedó con una hora de reintento futura (<code>schedule</code>) y se necesita marcarlos ya, se buscan en la lista de marcado por "hora programada", se eliminan (solo es posible si su estado es "pendiente de marcar"), y luego se recuperan de vuelta desde el paquete completo — al recuperarlos, su hora programada queda en blanco y entran de inmediato en la cola de marcado. Alternativa por base de datos (uso avanzado, revisar antes con el equipo técnico): cambiar el campo <code>dialer</code> de la campaña a <code>start</code> y poner en <code>0000-00-00 00:00:00</code> el campo <code>schedule</code> de los registros a marcar ya en la tabla de lista de marcado de esa tarea.</li>
+<li><strong>Terminar una operación en curso (importación o borrado de datos) que está ralentizando el sistema:</strong> una importación o un borrado masivo de clientes de la campaña puede quedar "colgado" o simplemente se necesita detenerlo. Si el trabajo todavía está en cola (estado "Import"/en cola, equivalente a "未进行" en Administración avanzada del call center → Gestión de tareas por lotes), basta con eliminarlo desde <strong>Call Center → Shell Jobs</strong>. Si ya está en ejecución (estado "Importing"/"Deleting", equivalente a "进行中"), hay que terminar el proceso en el servidor (identificarlo con <code>ps ax | grep asterccimport</code> o <code>asterccdelete</code> y matarlo con <code>sudo kill &lt;PID&gt;</code>) antes de eliminar el registro del job — de lo contrario el proceso sigue consumiendo recursos aunque el job se borre de la interfaz. Este mismo mecanismo de cancelación aplica también a los <strong>borrados directos</strong> (los que se ejecutan de inmediato al pedirlos desde Gestión de clientes, sin pasar por un job programado) — en ese caso, al no haber un proceso de job que matar, se cancela reiniciando el servicio con <code>/etc/init.d/php-fpm restart</code>.</li>
+</ul>
+<h3 id="13-controlar-que-campos-ve-cada-quien">13. Controlar qué campos ve cada quien<a class="headerlink" href="#13-controlar-que-campos-ve-cada-quien" title="Permanent link">&para;</a></h3>
+<p>Los campos del cliente visibles en pantalla se configuran por separado como <strong>frontend</strong> (lo que ve el agente) y <strong>backend</strong> (lo que ve administración) desde la propia tarea — la misma configuración de "campos para el agente / campos para administración" descrita en <a href="../../modulos/marcador-y-campanas/#5-configurar-que-ve-el-agente">4.2 Marcador y campañas</a>. Cada una se aplica en varias pantallas distintas:</p>
+<table>
+<thead>
+<tr>
+<th>Configuración</th>
+<th>Pantallas donde aplica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Campos frontend</td>
+<td>Lista de clientes del agente (la búsqueda del agente solo puede usar los primeros 5 campos configurados aquí), ficha emergente del agente, pantalla de asignación manual de tarea</td>
+</tr>
+<tr>
+<td>Campos backend</td>
+<td>Listado y búsqueda en Gestión de clientes, exportación desde Gestión de clientes, ficha y búsqueda en Control de calidad</td>
+</tr>
+</tbody>
+</table>
+<h3 id="14-plantillas-de-sms-correo-y-fax-con-comodines">14. Plantillas de SMS, correo y fax con comodines<a class="headerlink" href="#14-plantillas-de-sms-correo-y-fax-con-comodines" title="Permanent link">&para;</a></h3>
+<p>El sistema soporta tres tipos de plantilla: <strong>SMS</strong>, <strong>correo</strong> y <strong>fax</strong>. Al crear una plantilla (<strong>Gestión de mensajería masiva → Gestión de plantillas → Agregar</strong>) se define, entre otros:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué controla</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tipo de plantilla</td>
+<td>SMS, correo o fax — condiciona qué otros campos aparecen (ej. SMS no lleva título; fax exige adjuntar el archivo)</td>
+</tr>
+<tr>
+<td>Propósito</td>
+<td><strong>Normal</strong> (uso propio, ej. publicidad) o <strong>de negocio</strong> (tarea, factura, notificación de correo de voz — usadas automáticamente por el sistema; solo puede haber una plantilla de negocio activa por equipo e idioma)</td>
+</tr>
+<tr>
+<td>Idioma</td>
+<td>Permite tener la misma plantilla en varios idiomas; el agente elige según el idioma del cliente</td>
+</tr>
+<tr>
+<td>Comodín</td>
+<td>Indica si el contenido usa variables de sistema que deben reemplazarse al enviar</td>
+</tr>
+<tr>
+<td>Editable</td>
+<td>Si el agente puede modificar el contenido antes de enviar, o debe enviarse tal cual</td>
+</tr>
+<tr>
+<td>Equipo</td>
+<td>Si se deja vacío, la plantilla está disponible para todos los equipos</td>
+</tr>
+<tr>
+<td>Tipo y nombre de objeto</td>
+<td>A qué módulo y tarea/negocio se asocia — si coincide con la tarea desde la que el agente envía, el sistema preselecciona esta plantilla automáticamente</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sintaxis del comodín:</strong> el contenido usa <code>##nombre_columna##</code> (ej. <code>##param0##</code>), y el nombre debe coincidir exactamente con el nombre de columna elegido al importar los datos del cliente. Ejemplo de plantilla de SMS:</p>
+<div class="highlight"><pre><span></span><code>Estimado ##param0##, su saldo de este mes es ##param1## y le quedan ##param2## MB de datos.
+</code></pre></div>
+<p><img alt="Formulario para crear una plantilla de correo, con tipo, idioma, adjunto y contenido" src="../../assets/images/marketing-outbound/crear-plantilla-correo-comodines.jpg" /></p>
+<p><strong>Enviar correo masivo con plantilla (comodines incluidos):</strong></p>
+<ol>
+<li>Crear la plantilla de correo y, por separado, el servidor de correo (<strong>Gestión de mensajería masiva → Servidor de correo</strong>).</li>
+<li>Importar la lista de destinatarios desde <strong>Administración avanzada del call center → Importación de datos</strong>, mapeando cada columna del archivo a un campo — las columnas que se usarán como comodín deben mapearse con el mismo nombre que la variable de la plantilla (ej. <code>param0</code>, <code>param1</code>, <code>param2</code>), y la columna de correo se mapea a <code>target</code>.</li>
+<li>En <strong>Envío masivo</strong>: paso 1, elegir tipo de envío y origen de los clientes destino; paso 2, confirmar la columna <code>target</code>; paso 3, elegir fecha/hora de envío y hacer doble clic en la plantilla de la derecha para previsualizar título y contenido ya con las variables sustituidas; paso 4, confirmar la vista previa final; paso 5, elegir el servidor SMTP y enviar — el sistema confirma "¡Enviado con éxito!".</li>
+</ol>
+<p>El estado de los envíos se revisa en <strong>Gestión de mensajería masiva → Gestión de mensajes enviados</strong> (éxito) y <strong>Gestión de mensajes pendientes</strong> (fallidos o en cola).</p>
+<p><strong>Envío individual desde la ficha del cliente:</strong> tras cerrar una llamada, el agente puede hacer clic en el ícono junto al correo o teléfono del cliente para editar y enviar un mensaje suelto — elige plantilla, idioma y servidor, y el contenido se autocompleta con los comodines ya resueltos (editable si la plantilla lo permite).</p>
+<p><img alt="Ícono de envío de correo junto al campo de email en la ficha del cliente, dentro de una llamada de campaña" src="../../assets/images/marketing-outbound/enviar-correo-individual-ficha-cliente.jpg" /></p>
+<p><strong>Usar una plantilla desde un evento de colgado de la tarea:</strong> además del envío manual, una tarea puede disparar el envío de una plantilla automáticamente al colgar según el resultado de la llamada (ej. "contestada sin respuesta"): en la tarea, agregar un <strong>evento de colgado</strong>, elegir el resultado objetivo y la plantilla, y guardar. Para activarlo, el grupo de agentes debe tener esa tarea seleccionada como "aplicación de salida actual" en su configuración básica.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>El contenido de SMS solo admite texto (sin imágenes ni multimedia); cada SMS cuenta 70 caracteres y el exceso se divide automáticamente en varios mensajes. Para pegar contenido con formato en una plantilla de correo, pégalo primero en un editor de texto plano — pegar directo desde Word puede introducir caracteres especiales que el sistema no interpreta y corrompan el contenido.</p>
+</div>
+<p><strong>Proveedores de SMS soportados:</strong> AsterCC trae integrado, por defecto, un proveedor de SMS (Shanghai Xi'ao). Además, soporta configurar directamente desde su lista interna (sin desarrollo adicional):</p>
+<table>
+<thead>
+<tr>
+<th>Proveedor</th>
+<th>Notas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Shanghai Xi'ao (希奥)</td>
+<td>Proveedor por defecto — basta con la cuenta y contraseña del proveedor</td>
+</tr>
+<tr>
+<td>Yijia365 (驿家365 / eaka365)</td>
+<td>Interfaz SOAP</td>
+</tr>
+<tr>
+<td>Yimei (亿美)</td>
+<td>Interfaz SOAP</td>
+</tr>
+<tr>
+<td>Ruitewei (瑞特维)</td>
+<td>Interfaz HTTP</td>
+</tr>
+<tr>
+<td>Diandianke (点点客)</td>
+<td>Interfaz HTTP</td>
+</tr>
+</tbody>
+</table>
+<p>Para módems SMS por puerto serie o plataformas de SMS de terceros no listadas, se requiere integración vía la guía de desarrollador correspondiente — fuera del alcance de este caso de uso.</p>
+<h3 id="15-fax-en-una-tarea-outbound">15. Fax en una tarea outbound<a class="headerlink" href="#15-fax-en-una-tarea-outbound" title="Permanent link">&para;</a></h3>
+<p>Para recibir fax automáticamente en un número dedicado: crear el <strong>DID</strong> en PBX → DID, crear una <strong>ruta entrante</strong> en PBX avanzado que transfiera ese DID al dispositivo de fax, y otorgar el permiso del módulo de fax al rol correspondiente en Administración de cuentas y permisos.</p>
+<p>Para habilitar el envío/recepción de fax <strong>dentro de una tarea outbound</strong>, confirma primero que el módulo de fax esté instalado, luego crea el dispositivo en <strong>Gestión de fax → Gestión de dispositivos de fax</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué define</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nombre del dispositivo</td>
+<td>Identifica el dispositivo entre varios</td>
+</tr>
+<tr>
+<td>Identificador visible</td>
+<td>Nombre que aparece en el encabezado del fax recibido por el destinatario</td>
+</tr>
+<tr>
+<td>Extensión interna</td>
+<td>Número interno al que se enrutan los fax entrantes de ese dispositivo</td>
+</tr>
+<tr>
+<td>Canales</td>
+<td>Cuántos fax simultáneos soporta — más canales evita bloqueos, pero consume más recursos</td>
+</tr>
+<tr>
+<td>Número/nombre de llamada</td>
+<td>Identificador mostrado cuando ambos extremos usan IP</td>
+</tr>
+<tr>
+<td>Código de país / de ciudad</td>
+<td>Requeridos para formar el número de fax completo</td>
+</tr>
+<tr>
+<td>Timbres antes de recibir</td>
+<td>En qué timbre empieza a recibir (recomendado: 2)</td>
+</tr>
+<tr>
+<td>Páginas máximas por fax</td>
+<td>Excedido este número, el resto se guarda como un registro nuevo</td>
+</tr>
+<tr>
+<td>Equipo / cuenta</td>
+<td>Dueño del dispositivo, para facturación</td>
+</tr>
+<tr>
+<td>Rango de uso</td>
+<td>Quién puede usar el dispositivo y ver sus registros</td>
+</tr>
+</tbody>
+</table>
+<p>Tras guardar (y editar) un dispositivo hay que hacer clic en el aviso de <strong>recarga</strong> para que el cambio tome efecto.</p>
+<p><strong>Enviar un fax</strong> desde <strong>Gestión de fax → Enviar fax</strong>, en dos modos:</p>
+<ul>
+<li><strong>Automático:</strong> el fax de destino recibe directamente sin intervención humana — se indica el número destino, se elige el dispositivo y se sube el archivo (solo <code>doc</code>, <code>docx</code> o <code>pdf</code>; el sistema lo convierte a PDF).</li>
+<li><strong>Manual:</strong> el fax de destino requiere que alguien active el envío desde su lado — el sistema primero conecta tu extensión con el número del cliente por voz; cuando escuchas el tono de fax del otro lado, subes el archivo y pulsas el botón de envío.</li>
+</ul>
+<p>Los registros de envío/recepción (con descarga del PDF) quedan en <strong>Gestión de fax → Registro de fax</strong>.</p>
+<h3 id="16-asignar-y-recuperar-clientes-entre-el-total-y-la-tarea">16. Asignar y recuperar clientes entre el total y la tarea<a class="headerlink" href="#16-asignar-y-recuperar-clientes-entre-el-total-y-la-tarea" title="Permanent link">&para;</a></h3>
+<p>El <strong>total de clientes</strong> del equipo (el "总表"/"公海" del wiki original) almacena todos los clientes de forma centralizada; la <strong>tabla de la tarea</strong> (el "私海") almacena solo los clientes de esa campaña. Al elegir "nuevo paquete de clientes" en el paso 2 de esta guía, la tabla queda independiente del total — los datos importados a la tarea no se reflejan en el total, y viceversa. Alternativamente, se puede elegir vincular la tarea directamente al total del equipo, en cuyo caso sí se sincronizan.</p>
+<p>Con paquetes independientes, los datos se mueven entre el total y la tarea manualmente desde <strong>Gestión de clientes → Clientes individuales</strong>:</p>
+<ul>
+<li><strong>Asignar del total a una tarea:</strong> filtrar los clientes a asignar, seleccionarlos, y usar <strong>Asignar selección</strong> → elegir la tarea destino.</li>
+<li><strong>Recuperar de una tarea al total:</strong> filtrar los clientes de esa tarea, seleccionarlos, y usar <strong>Asignar selección</strong> → elegir "Recuperar al total de clientes".</li>
+</ul>
+<h3 id="17-marcar-solo-con-el-teclado-del-telefono">17. Marcar solo con el teclado del teléfono<a class="headerlink" href="#17-marcar-solo-con-el-teclado-del-telefono" title="Permanent link">&para;</a></h3>
+<p>Un agente puede trabajar una tarea outbound usando exclusivamente el teclado del teléfono, sin abrir la interfaz web — útil cuando el paquete de la tarea no usa el total de clientes y el agente pertenece a un grupo con cola asignada.</p>
+<ol>
+<li><strong>Iniciar sesión en la cola:</strong> el agente marca <code>*64</code> (tecla configurable en Sistema → Teclas rápidas del sistema) y, siguiendo el mensaje de voz, ingresa el número de cola seguido de <code>#</code> (o <code>0#</code> para todas las colas).</li>
+<li><strong>Elegir la tarea:</strong> con la sesión iniciada, marca <code>*0</code> para que el sistema disque el siguiente cliente de la tarea configurada como "aplicación de salida actual" del grupo de agentes (Administración de cuentas y permisos → Gestión de grupos de agentes).</li>
+<li><strong>Marcar el resultado con dos dígitos:</strong> tras que el cliente cuelga, el sistema pide el estado — se ingresan dos números consecutivos:<ul>
+<li><strong>Primer dígito — estado de procesamiento:</strong> <code>1</code> sin procesar, <code>2</code> en seguimiento, <code>3</code> enviado con éxito, <code>4</code> enviado con error.</li>
+<li><strong>Segundo dígito — resultado de llamada:</strong> el número de orden (por fecha de creación) del resultado dentro de ese estado de procesamiento — por ejemplo, si "enviado con éxito" tiene los resultados "no interesado" (creado primero) e "interesado" (creado después), marcar <code>31</code> o <code>32</code> respectivamente.</li>
+</ul>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>El resultado de llamada solo queda registrado en Gestión de clientes si tiene un <strong>equipo</strong> asignado — de lo contrario, solo se guarda el estado de procesamiento, sin resultado de llamada.</p>
+</div>
+<h3 id="18-agregar-campos-personalizados-e-importar-con-diccionario-de-coincidencia">18. Agregar campos personalizados e importar con diccionario de coincidencia<a class="headerlink" href="#18-agregar-campos-personalizados-e-importar-con-diccionario-de-coincidencia" title="Permanent link">&para;</a></h3>
+<p>Cuando los datos del cliente incluyen información que no existe como campo del sistema (ej. "escuela" para una campaña dirigida a estudiantes), se agrega primero en <strong>Gestión de clientes → Campos personalizados → Agregar</strong>:</p>
+<ul>
+<li>Elegir el <strong>equipo</strong> y el <strong>tipo de tabla</strong> (cliente individual o institucional) — determina a qué paquetes de esa combinación se les puede aplicar el campo.</li>
+<li>Elegir uno o varios <strong>paquetes de clientes</strong> concretos para agregarles el campo — o dejar la selección vacía para agregarlo al total de clientes (en ese caso, no podrá editarse después desde los parámetros del paquete).</li>
+</ul>
+<p>Con el campo ya creado, se importa el archivo desde <strong>Administración avanzada del call center → Importación de datos</strong>: se elige el paquete destino (aparecen todas sus columnas, incluida la nueva), se mapea cada columna del archivo — marcando <strong>"coincidencia de diccionario"</strong> en las que lo necesiten — y, si la tarea usa predial, opcionalmente se mapean también teléfono/prioridad/hora de predial.</p>
+<p><img alt="Pantalla de importación con la vista previa del archivo y el mapeo de cada columna a un campo del sistema" src="../../assets/images/marketing-outbound/mapear-columnas-importacion.jpg" /></p>
+<p>El diccionario de coincidencia (configurado en Administración avanzada del call center → Coincidencia de datos de importación) traduce valores del archivo origen a los que la base de datos espera en campos de tipo enumerado — por ejemplo, "男"/"女" a <code>male</code>/<code>female</code>.</p>
+<p><img alt="Listado del diccionario de coincidencia con pares clave-valor, por ejemplo &quot;male&quot; → &quot;boy&quot;" src="../../assets/images/marketing-outbound/diccionario-coincidencia-importacion.jpg" /></p>
+<p>Antes de importar, se indica cuántas filas iniciales del archivo hay que descartar (normalmente 1, la fila de encabezados). Al confirmar, el sistema genera un <strong>plan de importación</strong> con número de seguimiento y lo procesa en segundo plano (revisar el avance en Gestión de planes de importación).</p>
+<p><img alt="Listado de planes de importación con su estado, total de registros, éxitos y errores" src="../../assets/images/marketing-outbound/plan-importacion-resultado.jpg" /></p>
+<p>Tras importar, se revisan/ajustan los campos visibles para el agente y para administración desde la tarea (punto 13 de esta guía) y se confirman los datos en Gestión de clientes de la tarea.</p>
+<div class="admonition tip">
+<p class="admonition-title">Reprogramar contacto con prioridad</p>
+<p>Al marcar el estado de procesamiento como "en seguimiento" (paso 5 de "Trabajo diario del agente"), el sistema puede pedir fecha/hora de la próxima llamada y una prioridad — útil, por ejemplo, en tareas de agendamiento de visitas, para acordar con el cliente cuándo volver a contactarlo.</p>
+</div>
+<h3 id="19-filtro-de-recuperacion-automatica-hacia-la-lista-de-predial">19. Filtro de recuperación automática hacia la lista de predial<a class="headerlink" href="#19-filtro-de-recuperacion-automatica-hacia-la-lista-de-predial" title="Permanent link">&para;</a></h3>
+<p>Cuando una tarea usa <a href="../../glosario/">predial</a> (marcado automático de una lista, sin que el agente pida cliente por cliente), un <strong>filtro</strong> automatiza la recuperación periódica de clientes que cumplen ciertas condiciones desde el paquete de la tarea hacia la lista de predial, evitando recuperarlos manualmente. Se configura en <strong>Predial → Lista de predial → Filtros</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué define</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nombre del filtro</td>
+<td>Identifica su propósito</td>
+</tr>
+<tr>
+<td>Estado</td>
+<td>Habilitado / deshabilitado</td>
+</tr>
+<tr>
+<td>Campo de teléfono prioritario</td>
+<td>De los teléfonos del cliente, cuál usa el predial primero</td>
+</tr>
+<tr>
+<td>Prioridad</td>
+<td>Prioridad de marcado de los clientes recuperados por este filtro</td>
+</tr>
+<tr>
+<td>Hora de marcado</td>
+<td>A qué hora se marcará a los clientes recuperados en esta corrida</td>
+</tr>
+<tr>
+<td>Horario de ejecución</td>
+<td>Expresión tipo cron (minuto, hora, día, mes, semana) — <code>*</code> en todos los campos significa "siempre activo"; <strong>día y semana no pueden combinarse a la vez</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Las condiciones del filtro combinan campo + operador (<code>contiene</code>, <code>menor que</code>, <code>igual</code>, <code>mayor que</code>, <code>distinto de</code>) + valor, enlazadas con <code>y</code>/<code>o</code> — por ejemplo, "edad mayor que 25 <strong>y</strong> nombre contiene 王". También se puede forzar la ejecución inmediata de un filtro con el botón <strong>Ejecutar ahora</strong>, útil para recuperar de golpe un segmento puntual (ej. "nombre contiene Dalian").</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Un número que ya está en la lista de predial no se vuelve a recuperar por un filtro, aunque cumpla sus condiciones — evita duplicados en la cola de marcado.</p>
+</div>
+<h2 id="referencia-rapida">Referencia rápida<a class="headerlink" href="#referencia-rapida" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Paso</th>
+<th>Dónde</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Extensión, agente, softphone</td>
+<td><a href="../../primeros-pasos/guia-administradores/">Guía rápida para administradores</a></td>
+</tr>
+<tr>
+<td>Paquete de clientes</td>
+<td>Marketing outbound → Gestión de paquetes de clientes</td>
+</tr>
+<tr>
+<td>Resultados de llamada</td>
+<td>Marketing outbound → Gestión de resultados de llamada</td>
+</tr>
+<tr>
+<td>Tarea de campaña</td>
+<td><a href="../../modulos/marcador-y-campanas/">4.2 Marcador y campañas</a></td>
+</tr>
+<tr>
+<td>Reportes de cierre</td>
+<td><a href="../../modulos/reportes-y-estadisticas/">4.8 Reportes, estadísticas y financiero</a></td>
+</tr>
+<tr>
+<td>Encuesta / pop-up en campaña</td>
+<td>Encuestas → Encuestas; vincular en la tarea de campaña</td>
+</tr>
+<tr>
+<td>Troncal por campaña</td>
+<td>Equipo, grupo de cuentas o marcador (de más a menos general)</td>
+</tr>
+<tr>
+<td>Work order desde campaña</td>
+<td>Vincular en resultados de llamada de la tarea</td>
+</tr>
+<tr>
+<td>Catálogo e-commerce en campaña</td>
+<td>Vincular en la edición de la tarea de campaña</td>
+</tr>
+<tr>
+<td>Terminar importación/borrado en curso</td>
+<td>Call Center → Shell Jobs (o Gestión de tareas por lotes) — + acceso al servidor si ya está en curso</td>
+</tr>
+<tr>
+<td>Controlar campos visibles</td>
+<td>Dentro de la tarea → Campos frontend / backend</td>
+</tr>
+<tr>
+<td>Plantillas de SMS/correo/fax</td>
+<td>Gestión de mensajería masiva → Gestión de plantillas</td>
+</tr>
+<tr>
+<td>Servidor(es) de SMS y proveedores soportados</td>
+<td>Gestión de mensajería masiva → Servidor de SMS</td>
+</tr>
+<tr>
+<td>Fax (dispositivos, envío, registros)</td>
+<td>Gestión de fax</td>
+</tr>
+<tr>
+<td>Asignar/recuperar clientes del total</td>
+<td>Gestión de clientes → Clientes individuales → Asignar selección</td>
+</tr>
+<tr>
+<td>Marcar solo con teclado del teléfono</td>
+<td><code>*64</code> (iniciar sesión), <code>*0</code> (siguiente cliente), dos dígitos (resultado)</td>
+</tr>
+<tr>
+<td>Campos personalizados</td>
+<td>Gestión de clientes → Campos personalizados</td>
+</tr>
+<tr>
+<td>Diccionario de coincidencia al importar</td>
+<td>Administración avanzada del call center → Coincidencia de datos de importación</td>
+</tr>
+<tr>
+<td>Filtro de recuperación a predial</td>
+<td>Predial → Lista de predial → Filtros</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="fuentes">Fuentes<a class="headerlink" href="#fuentes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>raw/zh/用途和案例/为企业建立一个外呼呼叫中心用于管理销售.txt</code></li>
+<li><code>raw/en/to_establish_an_outbound_program.txt</code></li>
+<li><code>raw/en/real_case_guidance/how_to_dial_the_schedular_calling_immediately.txt</code></li>
+<li><code>raw/en/real_case_guidance/how_to_terminate_the_mission.txt</code></li>
+<li><code>raw/en/real_case_guidance/step_of_configuring_outbound_and_inbound_of_telephone_system.txt</code></li>
+<li><code>raw/en/real_case_guidance/step_of_popup_survey_in_a_campaign.txt</code></li>
+<li><code>raw/en/use_case/billing_and_invoice.txt</code></li>
+<li><code>raw/en/use_case/for_survey_or_sales_outbound_campaign.txt</code></li>
+<li><code>raw/en/how-to/how_to_config_a_campaign.txt</code></li>
+<li><code>raw/en/how-to/how_to_config_inbound_popup_for_campaign.txt</code></li>
+<li><code>raw/en/how-to/how_to_configure_voice_survey_with_predictive_dailer.txt</code></li>
+<li><code>raw/en/how-to/how_to_settings_campaign_trunks_for_different_purposes.txt</code></li>
+<li><code>raw/en/how-to/how_to_use_work_order_in_campaign_module.txt</code></li>
+<li><code>raw/en/how-to/how_to_config_e-commerce_in_a_campaign.txt</code></li>
+<li><code>raw/en/regular_function_description_in_call_center/outbound_functions.txt</code></li>
+<li><code>raw/zh/实际案例指导/astercc支持的sms供应商列表.txt</code></li>
+<li><code>raw/zh/实际案例指导/外呼营销任务中字段的控制.txt</code></li>
+<li><code>raw/zh/实际案例指导/如何使用带有通配符功能的电子邮箱模板群发邮件.txt</code></li>
+<li><code>raw/zh/实际案例指导/如何使用模板中的通配符.txt</code></li>
+<li><code>raw/zh/实际案例指导/如何使用短信和电子邮件模板.txt</code></li>
+<li><code>raw/zh/实际案例指导/如何分配或回收总表客户资料.txt</code></li>
+<li><code>raw/zh/实际案例指导/如何利用astercc统计坐席工作情况.txt</code></li>
+<li><code>raw/zh/实际案例指导/如何利用电话键盘进行外呼任务.txt</code></li>
+<li><code>raw/zh/实际案例指导/如何取消正在进行的删除_导入数据的任务.txt</code></li>
+<li><code>raw/zh/实际案例指导/如何在外呼营销模块中使用短信模板.txt</code></li>
+<li><code>raw/zh/实际案例指导/建立一个主动外呼呼叫中心.txt</code></li>
+<li><code>raw/zh/实际案例指导/传真模块使用说明.txt</code></li>
+<li><code>raw/zh/用途和案例/在外呼任务中使用传真.txt</code></li>
+<li><code>raw/zh/用途和案例/如何建立一个外呼约访任务.txt</code></li>
+<li><code>raw/zh/用途和案例/如何设定自定义字段并导入客户资料.txt</code></li>
+<li><code>raw/zh/用途和案例/如何设定过滤器.txt</code></li>
+<li><code>raw/zh/用途和案例/如何设置外呼任务的呼入弹屏.txt</code></li>
+<li><code>raw/zh/用途和案例/如何设定呼入问卷弹屏.txt</code></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.indexes", "navigation.tracking", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/javascripts/nav-toggle.js"></script>
+      
+    
+  </body>
+</html>

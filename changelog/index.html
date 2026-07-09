@@ -1,0 +1,4455 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación de AsterCC — plataforma de call center basada en Asterisk">
+      
+      
+      
+      
+        <link rel="prev" href="../troubleshooting/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Historial de versiones - Wiki AsterCC (Español)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#historial-de-versiones" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Wiki AsterCC (Español)" class="md-header__button md-logo" aria-label="Wiki AsterCC (Español)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Wiki AsterCC (Español)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Historial de versiones
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Wiki AsterCC (Español)" class="md-nav__button md-logo" aria-label="Wiki AsterCC (Español)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Wiki AsterCC (Español)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glosario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glosario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../introduccion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introducción a AsterCC
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. Introducción a AsterCC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduccion/que-es-astercc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ¿Qué es AsterCC?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduccion/funcionalidades/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funcionalidades del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduccion/arquitectura-general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura general
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduccion/demo-en-linea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo en línea
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../instalacion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Instalación y configuración inicial
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Instalación y configuración inicial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instalacion/requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requisitos del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instalacion/descarga-e-instalacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descarga e instalación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instalacion/instalar-desde-usb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instalar desde USB (AsterCC Box)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instalacion/configuracion-post-instalacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración post-instalación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instalacion/licencias-y-errores-comunes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licencias y errores comunes de inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../primeros-pasos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Primeros pasos
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Primeros pasos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../primeros-pasos/guia-administradores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía rápida para administradores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../primeros-pasos/guia-agentes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía rápida para agentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../primeros-pasos/recorrido-interfaz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recorrido por la interfaz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../primeros-pasos/configurar-softphones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configurar softphones (Eyebeam, X-Lite, Zoiper)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../modulos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Módulos del sistema
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. Módulos del sistema
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modulos/pbx-y-telefonia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX y telefonía
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modulos/pbx-ivr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX — IVR (menú de voz)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modulos/pbx-funciones-avanzadas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX — Funciones avanzadas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modulos/marcador-y-campanas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcador y campañas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modulos/marcador-predictivo-avanzado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcador predictivo — avanzado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modulos/cuentas-equipos-permisos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cuentas, equipos y permisos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modulos/tarifas-y-facturacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarifas y facturación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modulos/encuestas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encuestas y cuestionarios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modulos/base-conocimiento-work-orders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base de conocimiento y Work Orders
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modulos/plataforma-del-agente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plataforma de trabajo del agente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modulos/reportes-y-estadisticas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reportes, estadísticas y financiero
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modulos/oficina-virtual-bpo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oficina virtual / BPO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modulos/atencion-cliente-mensajeria-ecommerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atención al cliente, mensajería y e-commerce
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modulos/mensajeria-wechat-fax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mensajería — WeChat, Fax y envío masivo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../casos-de-uso/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Casos de uso y soluciones
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. Casos de uso y soluciones
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../casos-de-uso/call-center-inbound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Call center de atención al cliente (inbound)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../casos-de-uso/marketing-outbound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketing outbound / televentas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../casos-de-uso/e-commerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-commerce
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../casos-de-uso/oficina-virtual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oficina virtual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../casos-de-uso/marcacion-predictiva/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcación predictiva
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../casos-de-uso/casos-tecnicos-avanzados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Casos técnicos avanzados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../administracion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Administración avanzada
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Administración avanzada
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administracion/asterisk-ami/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración de Asterisk AMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administracion/openvpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenVPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administracion/apc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APC (caché de PHP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administracion/mailman/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mailman / correo saliente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administracion/diagnostico-red-voip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagnóstico de red y VoIP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administracion/configuracion-y-mantenimiento-sistema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración y mantenimiento del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administracion/gestion-avanzada-call-center/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestión avanzada del call center
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administracion/historial-documentacion-1.2-beta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentación histórica — AsterCC 1.2 beta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../desarrollo/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Guía de desarrollo y customización
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7. Guía de desarrollo y customización
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/api-y-ami/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API y AMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/guia-desarrolladores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía para desarrolladores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/introduccion-api-integracion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción a la API de integración
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/codigos-retorno-e-idiomas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Códigos de retorno y codificación de idioma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/api-autenticacion-y-sesion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Autenticación y sesión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/api-control-de-llamada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Control de llamada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/api-supervision-y-control-de-agente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Supervisión y control de agente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/api-datos-y-grabaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Datos y grabaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/eventos-tiempo-real-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recibir eventos en tiempo real de la API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desarrollo/integrar-envio-de-sms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrar el envío de SMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Preguntas frecuentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Solución de problemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Historial de versiones
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Historial de versiones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parche-de-seguridad-de-login-aplicar-si-el-sistema-esta-expuesto-a-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parche de seguridad de login (aplicar si el sistema está expuesto a internet)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 4.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 4.1
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AsterCC 4.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nuevas-funcionalidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nuevas funcionalidades
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correccion-de-errores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Corrección de errores
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-32-rc1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 3.2-rc1
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AsterCC 3.2-rc1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nuevas-funcionalidades_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nuevas funcionalidades
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correccion-de-errores_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Corrección de errores
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-26-rc2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 2.6-rc2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-26-rc1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 2.6-rc1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-24-rc2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 2.4-rc2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-24-rc1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 2.4-rc1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-23-rc2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 2.3-rc2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-23-rc1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 2.3-rc1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 2.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-22-rc4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 2.2-rc4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-22-beta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 2.2-beta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-22-alpha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 2.2-alpha
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 2.1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 2.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-20-beta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 2.0-beta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-122" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 1.2.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-121" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 1.2.1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 1.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-12-beta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 1.2-beta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 1.1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-11-beta2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 1.1-beta2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-11-beta1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 1.1-beta1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fuentes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parche-de-seguridad-de-login-aplicar-si-el-sistema-esta-expuesto-a-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parche de seguridad de login (aplicar si el sistema está expuesto a internet)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 4.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 4.1
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AsterCC 4.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nuevas-funcionalidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nuevas funcionalidades
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correccion-de-errores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Corrección de errores
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-32-rc1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 3.2-rc1
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AsterCC 3.2-rc1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nuevas-funcionalidades_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nuevas funcionalidades
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correccion-de-errores_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Corrección de errores
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-26-rc2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 2.6-rc2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-26-rc1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 2.6-rc1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-24-rc2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 2.4-rc2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-24-rc1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 2.4-rc1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-23-rc2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 2.3-rc2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-23-rc1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 2.3-rc1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 2.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-22-rc4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 2.2-rc4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-22-beta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 2.2-beta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-22-alpha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 2.2-alpha
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 2.1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 2.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-20-beta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 2.0-beta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-122" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 1.2.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-121" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 1.2.1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 1.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-12-beta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 1.2-beta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 1.1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-11-beta2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 1.1-beta2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astercc-11-beta1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AsterCC 1.1-beta1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fuentes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="historial-de-versiones">Historial de versiones<a class="headerlink" href="#historial-de-versiones" title="Permanent link">&para;</a></h1>
+<p>Este historial cubre todas las versiones de AsterCC de las que existen notas de cambios en el wiki original, de la más reciente a la más antigua. Los archivos fuente no incluyen fechas de publicación, por lo que no se muestran fechas — solo el orden relativo de versiones.</p>
+<h2 id="parche-de-seguridad-de-login-aplicar-si-el-sistema-esta-expuesto-a-internet">Parche de seguridad de login (aplicar si el sistema está expuesto a internet)<a class="headerlink" href="#parche-de-seguridad-de-login-aplicar-si-el-sistema-esta-expuesto-a-internet" title="Permanent link">&para;</a></h2>
+<p>Existen reportes de cuentas comprometidas y datos dañados en sistemas AsterCC expuestos directamente a internet, explotando el endpoint <code>/login/changelogin</code>. Si tu servidor es accesible desde internet, aplica esto cuanto antes.</p>
+<p><strong>1. Aplicar el parche de login</strong></p>
+<ol>
+<li>Respalda los archivos originales:
+   <div class="highlight"><pre><span></span><code>cp<span class="w"> </span>/var/www/html/asterCC/app/controllers/login_controller.php<span class="w"> </span>login_controller.php_bak
+cp<span class="w"> </span>/var/www/html/asterCC/app/controllers/logouts_controller.php<span class="w"> </span>logouts_controller.php_bak
+</code></pre></div></li>
+<li>Descarga el parche desde <code>http://download2.astercc.org/astercc_login_security_patch.tar.gz</code> y verifica su integridad (<code>md5sum</code>, hash esperado <code>e7dcf526a00e20da24866d1a3b5b61ae</code>).</li>
+<li>Descomprime el paquete (<code>tar zxf astercc_login_security_patch.tar.gz</code>) y localiza el subdirectorio que corresponde a tu versión de sistema. Reemplaza <code>login_controller.php</code> y <code>logouts_controller.php</code> con los del paquete.</li>
+<li>Si el paquete no incluye tu versión, escribe a <code>support@astercc.org</code> indicando la versión del sistema y el número de serie del producto.</li>
+<li>Si tras reemplazar los archivos aparece un error 500, contacta a soporte e incluye la salida de <code>uname -m</code> y <code>php -v</code>.</li>
+<li>Agrega una "sal" (salt) en <code>/etc/astercc.conf</code> para dificultar el uso indebido del endpoint de cambio de contraseña, en caso de que la contraseña almacenada en la base de datos se filtre:
+   <div class="highlight"><pre><span></span><code><span class="k">[system]</span>
+<span class="na">changelogin_pnum_salt</span><span class="o">=</span><span class="s">1234567890abcdefghizklABCD</span>
+</code></pre></div></li>
+<li><strong>Después del parche:</strong> revisa los datos de equipos, cuentas, agentes y extensiones en busca de registros sospechosos, y rota contraseñas y cadenas de verificación (troncales, extensiones) que puedan haberse filtrado.</li>
+</ol>
+<p><strong>2. Deshabilitar archivos vulnerables a inyección</strong></p>
+<p>Como medida adicional, AsterCC recomienda eliminar (o renombrar con <code>mv</code> en vez de <code>rm</code> si se prefiere poder revertir) un conjunto de controladores considerados vulnerables a inyección o en desuso, entre ellos: <code>apac_realtimes_controller.php</code>, <code>allocate_controller.php</code>, <code>login_new_controller.php</code>, <code>unicomgd_controller.php</code>, <code>alicallback_controller.php</code>, <code>solocallback_controller.php</code>, <code>mengs_controller.php</code>, <code>account_info_controller.php</code>, <code>agent_registers_controller.php</code>, <code>api_controller.php</code>, <code>astercc_debug_controller.php</code>, <code>tmk_region_controller.php</code>, <code>tmk_monitor_controller.php</code>, <code>ucpay_controller.php</code>, <code>ucserver_controller.php</code>, <code>outbound/ucpccb_controller.php</code>, <code>asradjust_controller.php</code>, <code>ningweifs_controller.php</code>, <code>axbs_controller.php</code>, <code>huawei_controller.php</code>, <code>purviews_controller.php</code>, <code>resource_controller.php</code>, <code>short_links_controller.php</code>, y (si no aplican a tu implementación) <code>bills_controller.php</code> (facturación), <code>zkr_realtime_status_controller.php</code> / <code>zkr_realtimes_controller.php</code> (solo si no usas ZKR). Los directorios <code>bpo</code> y <code>weixin</code> pueden eliminarse por completo si no se usan esos módulos, y <code>didweb</code> y <code>kakao</code> (este último solo fuera de Corea) también pueden retirarse. <code>provisions_controller.php</code> y <code>systemevents_controller.php</code> deben renombrarse (no eliminarse) mientras se espera un parche definitivo.</p>
+<p><strong>3. Endurecimiento adicional recomendado</strong></p>
+<ul>
+<li><strong>Restringir la IP de registro de extensiones:</strong> en PBX avanzado → Plantillas de PBX, edita el detalle de "default sip device" para limitar la(s) dirección(es) IP permitida(s) de registro.</li>
+<li><strong>Restringir el acceso al sistema por rango de IP:</strong> en Sistema → Configuración del sistema → pestaña de configuración avanzada, define los rangos de IP autorizados.</li>
+<li><strong>Filtrar por país/región a nivel de firewall:</strong> usando las reglas del proveedor cloud, o combinando GeoIP/<code>ipset</code> con Nginx/<code>iptables</code>/<code>firewalld</code> para bloquear tráfico fuera de la región de operación (por ejemplo, permitir solo IPs de China en los puertos 80 y 5060 usando <code>ipset create china hash:net</code> con la lista de bloques de <code>ipdeny.com</code>).</li>
+<li><strong>Bloquear en Nginx solicitudes con palabras clave SQL sospechosas</strong>, por ejemplo:
+  <div class="highlight"><pre><span></span><code><span class="k">location</span><span class="w"> </span><span class="s">/</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">if</span><span class="w"> </span><span class="s">(</span><span class="nv">$args</span><span class="w"> </span><span class="p">~</span><span class="sr">*</span><span class="w"> </span><span class="s">&quot;(\b(union|insert|alter|truncate|executesql|DECLARE|replace)\b)&quot;)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kn">return</span><span class="w"> </span><span class="mi">403</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></li>
+</ul>
+<h2 id="astercc-42">AsterCC 4.2<a class="headerlink" href="#astercc-42" title="Permanent link">&para;</a></h2>
+<p><strong>Notas de versión:</strong> esta versión requiere instalarse sobre Rocky Linux 9.x. El stack de soporte más reciente es Rocky Linux 9.6 (Blue Onyx), kernel 5.14.0-570.58.1.el9_6.x86_64, Asterisk 13.38.3, Nginx 1.20.2, PHP 7.4.33, MariaDB 10.5.29 y Redis 6.2.20.</p>
+<ul>
+<li>Compatibilidad completa con el entorno de ejecución Rocky Linux 9.x + PHP 7.4.</li>
+<li>Se agregó la extensión <code>spout</code> para permitir la importación de archivos <code>.xlsx</code>.</li>
+<li>Soporte para cifrado de tablas InnoDB de MariaDB (instrucciones de uso en <code>inst-shell/MariaDB_InnoDB_Encrypted.md</code> dentro del paquete de código).</li>
+<li>Mejora de seguridad para evitar inicios de sesión no autorizados a través del endpoint <code>/login/changelogin</code> tras una filtración de contraseñas: se puede configurar una "sal" (números y letras, sensible a mayúsculas/minúsculas) en <code>/etc/astercc.conf</code>.</li>
+<li>Actualización de plugins de frontend: jQuery a la versión 1.7.2, jQuery UI a la 1.12.0, jQuery Layout a la 1.3.0-rc-30.79 y el plugin de validación jQuery a la 1.9.0.</li>
+<li>Correcciones en el framework CakePHP para asegurar compatibilidad con PHP 7.4.</li>
+</ul>
+<h2 id="astercc-41">AsterCC 4.1<a class="headerlink" href="#astercc-41" title="Permanent link">&para;</a></h2>
+<h3 id="nuevas-funcionalidades">Nuevas funcionalidades<a class="headerlink" href="#nuevas-funcionalidades" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Soporte para Rocky Linux 9.x y PHP 7.4.</li>
+<li>Conexiones a Redis con autenticación por contraseña, y caché de esquema (schema cache) en Redis.</li>
+<li>Bloqueo de llamadas salientes para extensiones de agente en pausa.</li>
+<li>Nuevo campo <code>label</code> en la lista de no llamar (DNC), visible también en las opciones de la página de campañas.</li>
+<li>Cambio en el formato de fecha y en la presentación de la lista DNC.</li>
+<li>Cuando un agente recibe una notificación de recarga del grupo de agentes, su página muestra ahora una cuenta regresiva automática de recarga (la duración viene indicada en el propio evento).</li>
+<li>Modificar los parámetros de colgado automático de un grupo de agentes ahora dispara la recarga del archivo de configuración de colas.</li>
+<li>Bloqueo de inicio de sesión tras cierto número de intentos fallidos de contraseña.</li>
+<li>Filtros por grupo de agentes y por tarea de marcación saliente en el resumen de llamadas salientes.</li>
+<li>Cambio a un reproductor basado en HTML5 para anuncios y buzones de voz.</li>
+<li>Soporte para almacenar por separado los canales de archivos WAV estéreo (dos canales).</li>
+<li>Los usuarios no administradores ahora pueden importar campañas/listas masivas.</li>
+<li>Nueva opción de enrutamiento por sondeo (round-robin) de grupo.</li>
+<li>Reproducción de un mensaje de voz cuando el IVR marca hacia una línea externa.</li>
+<li>La importación ahora admite archivos <code>.xlsx</code>.</li>
+</ul>
+<h3 id="correccion-de-errores">Corrección de errores<a class="headerlink" href="#correccion-de-errores" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Al eliminar entradas de la lista negra de salientes, la eliminación ahora usa el ID del registro, corrigiendo el problema de números ocultos que no se podían borrar.</li>
+<li>Corrección de un bug en AGI donde la coincidencia contra la lista DNC ignoraba mayúsculas/minúsculas incorrectamente.</li>
+<li>Corrección de problemas de falta de memoria causados por listas negras excesivamente grandes.</li>
+<li>Exportación de grabaciones: se optimizó el empaquetado para evitar fallos de conexión a MySQL al empaquetar/exportar grandes cantidades de archivos.</li>
+<li>Corrección de las condiciones de consulta SQL de <code>campaign_dncs</code> en AGI.</li>
+<li>Corrección de las condiciones SQL usadas por AGI al buscar cuentas de entrada.</li>
+<li>Corrección de caídas de llamada al transferir agentes salientes al IVR.</li>
+<li>Corrección de un fallo al crear la tabla <code>bind_phone</code> causado por un campo <code>tablename</code> demasiado largo.</li>
+<li>Corrección de un problema que impedía colgar llamadas transferidas.</li>
+<li>Resolución de problemas de permisos para usuarios en la gestión de equipos de sub-CDR.</li>
+<li>Las estadísticas ahora toleran un <code>pause_reason</code> vacío sin fallar.</li>
+<li>Mejora en la visualización de adjuntos de la base de conocimiento.</li>
+<li>Corrección de un problema donde las transferencias salientes no entraban al flujo de evaluación de calidad.</li>
+<li>El sondeo previo a la marcación ahora llama a una API para validar el número destino.</li>
+<li>Corrección de fallos de autorización causados por espacio insuficiente en disco.</li>
+<li>Corrección de la visualización del nombre del cliente en llamadas entrantes de atención al cliente.</li>
+<li>Se agregó un parámetro de alcance de control de calidad y se corrigió un problema de reproducción de grabaciones.</li>
+<li>Corrección de un problema que impedía a los no administradores editar horarios de trabajo.</li>
+<li>Corrección de un problema en versiones recientes de Nginx HTTP Push donde a varios eventos les faltaba el <code>\r\n</code> final.</li>
+<li>Corrección de valores de estado incorrectos al agregar reglas de relevo de troncal/grupo.</li>
+</ul>
+<h2 id="astercc-32-rc1">AsterCC 3.2-rc1<a class="headerlink" href="#astercc-32-rc1" title="Permanent link">&para;</a></h2>
+<h3 id="nuevas-funcionalidades_1">Nuevas funcionalidades<a class="headerlink" href="#nuevas-funcionalidades_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Actualización del refresco de información del cliente en ventanas existentes para llamadas entrantes; actualización de la API del plugin de Chrome; ajuste del script de reconocimiento de voz de Alibaba (ASR).</li>
+<li>La API de consulta de resultados de llamada ahora soporta múltiples <code>sessionid</code> a la vez, y solo ejecuta la consulta cuando el <code>sessionid</code> existe (evita consultas innecesarias).</li>
+<li>Nuevo campo de ID de WeChat en la cuenta; soporte de reconocimiento de una sola frase de Alibaba Cloud.</li>
+<li>Cifrado/descifrado del contenido de las grabaciones de llamadas.</li>
+<li>Soporte de WeChat en dispositivos móviles para el módulo de atención al cliente; nueva interfaz de envío de noticias/push para WeChat.</li>
+<li>Nuevo módulo de control de calidad con inteligencia artificial (calidad inteligente), con páginas propias para tareas, reglas y condiciones de control de calidad; soporte de reconocimiento local; página de vocabulario sensible; función de recuperación en resultados de control de calidad para volver a revisar datos; opción de revisión manual adicional; los registros de control de calidad ahora registran el número de coincidencias de condiciones, reglas y estándares; el estándar de control de calidad ganó un campo de resultado, y el script de control de calidad actualiza el resultado en el perfil del cliente al mismo tiempo que su estado.</li>
+<li>Reproducción de un mensaje de voz al alcanzar el límite de número de llamadas; nuevo parámetro de interruptor (<code>chkNoAnswerLastHour</code>) para no permitir llamar a números que no contestaron en la última hora.</li>
+<li>Búsqueda por nombre de cliente en la página de registros de llamadas (CDR) de campañas de marcación saliente.</li>
+<li>En el monitoreo de agentes: filtro por grupo de agentes, columna de hora de inicio de estado en el monitoreo del supervisor, y posibilidad de que el supervisor adjunte archivos desde la página de monitoreo.</li>
+<li>Al editar un agente se muestra su nombre; soporte de motivos de pausa personalizados, visibles tanto en el detalle de servicio del agente como en el menú desplegable de pausa de la interfaz del agente.</li>
+<li>Ocultar los primeros 4 dígitos del número de teléfono del cliente, incluyendo en las exportaciones a XLS/CSV.</li>
+<li>Nuevas validaciones de canal al hacer check-in forzado de una extensión ya en uso, y en pausa, reanudación, transferencia, recuperación, consulta, configuración de datos adjuntos a la grabación y transferencia de colgado en IVR.</li>
+<li>Se agregaron sub-CDR para las aplicaciones de IVR y de mensajes de voz.</li>
+<li>En la importación de datos del centro de llamadas, los números repetidos en el pre-marcado ahora también actualizan los datos existentes.</li>
+</ul>
+<h3 id="correccion-de-errores_1">Corrección de errores<a class="headerlink" href="#correccion-de-errores_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Corrección de un bug al ocultar el número telefónico del cliente.</li>
+<li>Corrección de bugs en el script de traducción de grabaciones, incluyendo manejo de registros cuya ruta de grabación existe pero el archivo no; se agregó registro de errores y se eliminó el timeout de 45 segundos en la subida de archivos a Alibaba Cloud.</li>
+<li>Corrección de un bug donde el agente entraba en espera con música (MOH) al responder una consulta.</li>
+<li>Corrección de fallos al exportar a XLS desde la página de tareas de control de calidad inteligente, desde la página de estándares de control de calidad y desde la página de reglas (esta última fallaba cuando el archivo exportado contenía el carácter <code>&amp;</code>); corrección de errores ortográficos.</li>
+<li>Mejoras y validaciones adicionales en las páginas de tareas y condiciones de control de calidad, incluyendo que el destino de datos sea obligatorio y corrección de problemas de multi-idioma entre condiciones y reglas.</li>
+<li>Mejora del método de consulta SQL de la página de sub-registros de llamadas.</li>
+<li>Corrección de un bug en la asignación automática de marcación saliente que buscaba agentes en línea de cualquier tarea en vez de solo los de la tarea actual.</li>
+<li>Se agregó <code>act_callerid</code> a los eventos <code>callee_ring</code> (marcación por clic) y <code>agent_ring</code> (pre-marcado); corrección de un bug donde no se detectaban números en la lista de bloqueo que empezaban con 0.</li>
+<li>Corrección de un error en la construcción de la consulta SQL del reporte semanal de servicio por grupo de agentes.</li>
+<li>Corrección de un bug en el filtro de agentes del monitoreo de grupos de agentes.</li>
+<li>Eliminación de código de prueba en la página de control de calidad y corrección de un problema donde no se mostraba la calificación.</li>
+<li>Corrección de bugs varios de control de calidad, incluyendo un error de "modelo no encontrado".</li>
+<li>Corrección de una duplicación en el conteo de agentes del gráfico circular de estados de agente cuando un agente pertenece a varios grupos.</li>
+<li>Optimización del control de calidad: el estado de cliente que requiere revisión de calidad ahora puede configurarse por archivo de configuración (por defecto, todo estado distinto de "open").</li>
+<li>Mejora de compatibilidad con nombres de agente muy largos en el módulo de control de calidad.</li>
+<li>El monitoreo de grupos de agentes cambió de cookies a <code>localStorage</code> para evitar pérdida de memoria con muchos datos; la importación ahora permite especificar la columna de agente; se agregó atributo <code>title</code> al campo de búsqueda para textos largos; corrección de un problema que impedía abrir en Excel el registro de llamadas exportado de tareas de marcación saliente (por un atributo de columna incorrecto).</li>
+<li>Mejora en la interfaz de marcación: si el grupo de agentes tiene restringida la llamada saliente, el campo ya se bloquea de inmediato en vez de requerir un cambio de pantalla para verlo.</li>
+<li>Corrección de un error al crear la tabla de resultados tras crear una tarea de control de calidad.</li>
+<li>Los filtros de las tareas de control de calidad ahora se pueden modificar al editar la tarea.</li>
+<li>Corrección de un problema de falta de audio al escuchar (spy) una llamada que fue transferida a un agente.</li>
+<li>Mejora en la visualización del control de calidad; la duración de la grabación ahora se escribe al momento de la creación.</li>
+<li>Corrección de un problema donde los datos de <code>curspool</code> no se limpiaban tras alcanzar el límite de número de llamadas.</li>
+<li>Corrección de un error en el campo de tarificación al obtener el DID.</li>
+<li>El límite de número de llamadas ya no afecta la transferencia a línea externa.</li>
+<li>Correcciones pendientes de la versión 2.6-rc2: mensaje de voz de cambio de contraseña tras check-in telefónico, eliminación de datos de <code>curagents</code> que quedaban al hacer check-out del agente; corrección de que Internet Explorer no podía abrir con <code>window.open</code> una página de campo de enlace personalizado (por el guion <code>-</code> en el nombre de la ventana); el check-out forzado desde el monitoreo en tiempo real de grupos de agentes ahora registra la hora de check-out.</li>
+<li>Corrección de una duplicación de puerto al construir la URL de nombre de host y puerto.</li>
+<li>Corrección de un bug donde la página de registros de llamadas del módulo de marcación saliente no mostraba las llamadas de tareas de tipo "importar y usar de inmediato".</li>
+<li>Corrección de un bug donde un usuario normal usando la función de "importar y usar de inmediato" no obtenía el <code>team_id</code>.</li>
+</ul>
+<h2 id="astercc-26-rc2">AsterCC 2.6-rc2<a class="headerlink" href="#astercc-26-rc2" title="Permanent link">&para;</a></h2>
+<p><strong>Cuentas, equipos y permisos</strong></p>
+<ul>
+<li>El identificador de equipo ahora permite el punto (<code>.</code>) como símbolo, pero no al inicio ni al final.</li>
+<li>En [Administración de cuentas] -&gt; [Gestión de roles] -&gt; [Agregar], la ventana de configuración de permisos ahora se puede redimensionar y ampliar a pantalla completa con doble clic en el título.</li>
+<li>La vinculación de equipo y dominio (antes el parámetro <code>login_route</code> en <code>astercc.conf</code>) se movió a [Configuración del sistema] -&gt; [Configuración avanzada del sistema].</li>
+</ul>
+<p><strong>PBX</strong></p>
+<ul>
+<li>Mejora del aviso de números DID duplicados: al agregar varios DID en lote, ahora se muestra cuántos números tuvieron éxito, cuántos se repitieron y cuántos fallaron.</li>
+</ul>
+<p><strong>Administración avanzada de PBX</strong></p>
+<ul>
+<li>En [Restricción de números salientes], se agregó la función de eliminación en lote.</li>
+</ul>
+<p><strong>Marcador y campañas</strong></p>
+<ul>
+<li>Las tareas de marketing outbound ahora admiten clonación: copia toda la configuración de una tarea existente a una nueva (se puede cambiar el nombre y el grupo de agentes), sin clonar la encuesta vinculada.</li>
+<li>Mejora de permisos de campos en la interfaz de trabajo del agente: se respetan los campos configurados como "editar", "ver" y "obligatorio" en la configuración de campos del panel frontal.</li>
+<li>Los campos frontal/trasera de la tarea permiten configurar si el número de agente (<code>agentno</code>) se muestra, con permiso de solo lectura.</li>
+<li>Los datos del cliente en campañas ahora incluyen el resultado de reconocimiento (ASR).</li>
+</ul>
+<p><strong>Administración avanzada del call center</strong></p>
+<ul>
+<li>En [Administración avanzada del call center] -&gt; [Importar datos], se agregó la importación de restricciones de números salientes.</li>
+<li>Optimización de rendimiento en la importación de datos del sistema.</li>
+</ul>
+<p><strong>Información en tiempo real</strong></p>
+<ul>
+<li>En [Monitoreo de grupos de agentes], se agregó la función "Seleccionar todo / Deseleccionar" tanto para equipos como para grupos de agentes; al seleccionar un equipo se seleccionan automáticamente todos sus grupos de agentes.</li>
+<li>La página de información del sistema ahora muestra la versión actual.</li>
+</ul>
+<p><strong>Configuración del sistema</strong></p>
+<ul>
+<li>Mejora de retención de recordatorios de agenda y mensajes internos: el tiempo de retención de datos de agenda pasó de 30 a 7 días por defecto; se agregó el parámetro de retención de datos de mensajes, también en 7 días.</li>
+</ul>
+<p><strong>Marcador predictivo</strong></p>
+<ul>
+<li>Nuevo reporte de causas de llamadas no contestadas en marcado predictivo, con gráfico circular que muestra proporción y cantidad por estado, a nivel de campaña completa.</li>
+</ul>
+<p><strong>Atención al cliente entrante</strong></p>
+<ul>
+<li>Los campos mostrados en el panel frontal de la tarea de atención al cliente entrante ahora son consistentes con la configuración de campos de la tabla general.</li>
+</ul>
+<p><strong>Interfaz de agente</strong></p>
+<ul>
+<li>En la página de consulta del panel de trabajo del agente se agregó un botón de actualización para refrescar el estado de disponibilidad para consulta.</li>
+</ul>
+<p><strong>Corrección de errores</strong></p>
+<ul>
+<li>Corregido un error donde, si un mismo troncal pertenecía a varios grupos de troncales, al eliminar las reglas de ese troncal en un grupo se eliminaban por error también las reglas del mismo troncal en otros grupos.</li>
+<li>Corregido que en gestión de calidad y gestión de clientes de campañas, el buscador no mostraba los resultados de llamada compartidos por el equipo.</li>
+<li>Ajuste de estilo en el buscador de la página de asignación manual de tareas outbound.</li>
+<li>Corregido error que impedía descargar datos en la página de tareas por lotes según distintos alcances de permisos.</li>
+<li>Corregido error de desalineación de columnas en archivos <code>.csv</code> exportados desde el backend.</li>
+<li>Corregido error de idioma en campos personalizados de clientes en la configuración de cuotas de encuestas.</li>
+<li>Mejora en encuestas de voz: ahora se permite el salto en la última pregunta.</li>
+<li>Mejoras de idioma en encuestas y corrección de confusión entre número de secuencia y número de pregunta.</li>
+<li>Mejora del monitoreo en tiempo real: el "tiempo desde la última llamada" en el monitoreo de grupos de agentes ahora se calcula desde el fin de la llamada, no desde el inicio.</li>
+<li>Corregido error de paginación en la lista de la base de conocimiento.</li>
+<li>Corregido error de búsqueda en gestión de clientes y gestión de calidad cuando el resultado de llamada contenía comas.</li>
+<li>Corregido que un agente dinámico marcado como estático por el administrador todavía podía cerrar sesión.</li>
+<li>Corregido que, al iniciar sesión como administrador de equipo, no se podía volver a ingresar tras cambiar la contraseña en la página de información básica.</li>
+<li>Corregido que al quitar un agente de su grupo de salida actual no se liberaba la vinculación con ese grupo.</li>
+<li>Se ocultó el mensaje de error de <code>pcilib</code> (<code>sysfs_read_vpd: read failed: Connection timed out</code>) que aparecía en algunas máquinas al ejecutar <code>lspci</code>, para evitar confusión.</li>
+<li>Corregido que en el panel de trabajo de marcado outbound, si una tarea tenía varias encuestas, no se podía elegir cuál abrir (se recomienda usar una encuesta por tarea).</li>
+<li>Corregido que una desvinculación incorrecta entre una tarea outbound y e-commerce dejaba el popup de cliente en blanco en la interfaz del agente.</li>
+</ul>
+<h2 id="astercc-26-rc1">AsterCC 2.6-rc1<a class="headerlink" href="#astercc-26-rc1" title="Permanent link">&para;</a></h2>
+<p><strong>Nuevas funciones</strong></p>
+<ul>
+<li>Nuevo parámetro <code>ivrinputcode</code> en <code>astercc.conf</code>: cuando tiene valor, el sistema solo guarda en el CDR el código de entrada IVR correctamente transferido.</li>
+<li>Registro de la fecha de la primera llamada del agente al cliente en el módulo de campañas.</li>
+<li>Nueva interfaz (API) de transferencia ciega para agentes.</li>
+<li>Nuevos parámetros <code>cid_btrans</code> y <code>cid_consult</code> en <code>astercc.conf</code> para controlar si se usa el número original al hacer transferencia ciega o consulta hacia líneas externas de terceros.</li>
+<li>Soporte de TLS en el servidor SMTP.</li>
+<li>Auto-relleno de la MAC en el aprovisionamiento automático de dispositivos.</li>
+<li>Soporte de libreta de direcciones para aprovisionamiento automático de teléfonos Yealink.</li>
+<li>Nuevo reporte de calificación (ranking) de agentes.</li>
+<li>Soporte de TTS de Baidu.</li>
+<li>Uso de <code>*65</code> para cerrar sesión del agente vinculado a la extensión.</li>
+<li>Nueva opción en IVR para que el agente cambie su contraseña tras iniciar sesión por teléfono.</li>
+<li>Soporte para el plugin <code>astercc-chrome-plugin</code>.</li>
+<li>Prioridad de DID para colas.</li>
+<li>Al exportar órdenes de trabajo, se exportan también el identificador de llamada y el DID de las llamadas relacionadas.</li>
+<li>Uso de Redis para cachear el esquema de tablas de MySQL.</li>
+<li>Apertura automática de la orden de trabajo en el módulo de atención al cliente entrante.</li>
+<li>La orden de trabajo puede leer datos del cliente en el módulo de atención al cliente.</li>
+<li>Cierre automático del estado de trabajo posterior a la llamada (ACW) tras guardar una opción en atención al cliente.</li>
+<li>Cierre automático de la pestaña tras guardar una opción en atención al cliente.</li>
+<li>Nueva opción en campañas para recordar al agente guardar el resultado de la llamada.</li>
+<li>Se permite que el creador o el administrador del grupo de agentes revise órdenes de trabajo.</li>
+<li>Protección contra corrupción de datos causada por cortes de energía.</li>
+</ul>
+<p><strong>Corrección de errores</strong></p>
+<ul>
+<li>Corregido que, al importar clientes duplicados, se perdían el estado del cliente y el agente asignado.</li>
+<li>Corregido que, al marcar "reasignar agente" en la importación, se reseteaba el agente de clientes duplicados; ahora, si los datos están duplicados, no se modifican.</li>
+<li>Corregido error de JSON al abrir la ventana de selección de agentes cuando el nombre de usuario contenía caracteres chinos de más de 6 bytes.</li>
+<li>Mejora de la consulta SQL de verificación de duplicados al importar múltiples números de marcado predictivo, para acelerar la importación.</li>
+<li>Optimización de la consulta de exportación en el detalle de servicio de atención entrante (estadísticas).</li>
+<li>El detalle de servicio de atención entrante y el detalle de IVR entrante ahora muestran y exportan el campo de entrada del usuario en IVR.</li>
+<li>Corregido que, tras transferir una llamada, el agente no podía volver a hacer consulta o transferencia hasta que finalizara la llamada transferida.</li>
+<li>Corregido que, si existía una llamada transferida sin colgar, una nueva consulta o transferencia del agente usaba el canal equivocado.</li>
+<li>Corregido error en la fecha de primera llamada: en planes que usan la tabla general de clientes, este campo no se actualizaba.</li>
+<li>Corregido que la tarea nocturna (<code>nighttask</code>) eliminaba directorios de tipo distinto a año al limpiar el directorio <code>getMonitor</code> cuando el nombre no era numérico.</li>
+<li>Nueva función de exportación del contenido de mensajes enviados; el archivo <code>.xls</code> ahora se exporta en segundo plano.</li>
+<li>El monitor de pantalla grande ahora permite filtrar por grupo de agentes seleccionado y se agregaron dos vistas gráficas adicionales.</li>
+<li>En el popup de atención al cliente entrante, si el cliente está en estado de llamada conectada, es obligatorio seleccionar un motivo de llamada antes de poder cerrar el popup.</li>
+<li>Corregida la imprecisión en la duración del estado del agente mostrada en el monitor de pantalla grande.</li>
+<li>Corregido que, al generar una orden de trabajo, el aviso en la interfaz del agente mostraba "undefined".</li>
+<li>Corregido que, al seleccionar grupo de agentes y agente en la página de tareas, el agente correspondiente no recibía el aviso de la tarea.</li>
+<li>Corregido error al agregar contactos frecuentes para usuarios de llamadas entrantes virtuales.</li>
+<li>Corregido error en la exportación por totales del detalle de servicio de agentes.</li>
+<li>Corregido que, tras una transferencia por consulta, no se podía volver a consultar; y que si la interfaz de control de sub-grabación no llamaba a <code>stop</code> antes de colgar, la siguiente llamada no podía llamar a <code>start</code>.</li>
+<li>Corregido error de <code>vartoagent</code> en eventos de bifurcación (<code>split</code>).</li>
+<li>Corregido que, en la página de tareas outbound, al hacer asignación manual, la lista de resultados de llamada en el buscador era incorrecta (no aparecían los resultados si solo se elegía el equipo sin la tarea).</li>
+<li>Corregido que el script de importación <code>asterccimport.php</code> solo verificaba duplicados en el campo <code>phone1</code>.</li>
+</ul>
+<h2 id="astercc-24-rc2">AsterCC 2.4-rc2<a class="headerlink" href="#astercc-24-rc2" title="Permanent link">&para;</a></h2>
+<p><strong>Administración avanzada de PBX</strong></p>
+<ul>
+<li>La calificación de agente (QC Rate) ya no está limitada al rango de 1 a 5.</li>
+</ul>
+<p><strong>Reportes y estadísticas</strong></p>
+<ul>
+<li>Se agregó el botón rápido "Ayer" en la página de detalle de servicio de agentes.</li>
+<li>Se agregó exportación en segundo plano (tarea shell) para el detalle de servicio IVR entrante.</li>
+<li>Se agregó la página de reporte regional dentro de estadísticas.</li>
+</ul>
+<p><strong>Marcador y campañas</strong></p>
+<ul>
+<li>En la página de asignación automática de tareas outbound, el botón "Aceptar" se renombró a "Guardar plan de asignación automática" para evitar operaciones accidentales.</li>
+<li>El estilo de distribución por defecto en la asignación automática de clientes ahora es "por todos los no asignados".</li>
+</ul>
+<p><strong>Mensajería masiva</strong></p>
+<ul>
+<li>El proveedor de SMS ahora se puede configurar por equipo.</li>
+</ul>
+<p><strong>Marcador predictivo</strong></p>
+<ul>
+<li>Nueva función para colgar a los agentes en estado de timbrado cuando no hay agentes libres; se configura en [Tareas outbound] -&gt; [Configuración avanzada de marcado predictivo] -&gt; "Colgar timbrado sin agente disponible".</li>
+</ul>
+<p><strong>Configuración del sistema</strong></p>
+<ul>
+<li>En modo de dispositivo (extensión), el tiempo de espera para recuperar una llamada aparcada (<code>call-parking</code>) pasó de 12 a 300 segundos.</li>
+</ul>
+<p><strong>Atención al cliente entrante</strong></p>
+<ul>
+<li>Se agregó el campo de grupo de agentes en la página de llamadas perdidas de atención al cliente entrante.</li>
+</ul>
+<p><strong>Interfaz de agente</strong></p>
+<ul>
+<li>Al detectar datos de marcado erróneos, ahora se agrega un botón "Continuar marcado" que limpia automáticamente el dato erróneo anterior e inserta una nueva solicitud de marcado (antes solo se advertía no repetir el marcado).</li>
+<li>En [Mensajería masiva] -&gt; [Gestión de anuncios] -&gt; [Agregar anuncio], se agregó la función "Seleccionar todo" para los destinatarios.</li>
+<li>El formato de ocultación de números se modificó: se ocultan las posiciones 5 a 8 contando de derecha a izquierda; si el número tiene menos de 5 dígitos, se oculta por completo.</li>
+</ul>
+<p><strong>Corrección de errores</strong></p>
+<ul>
+<li>Corregido que, cuando el alcance de grabación de un equipo era "todos", la generación de grabaciones fallaba en modo de dispositivo (extensión).</li>
+<li>Corregido que, en [Gestión de roles] -&gt; [Agregar], tras el aviso de campos obligatorios, no se podía guardar aunque se completaran los campos.</li>
+<li>Corregido que el campo de detalle de extensión tenía longitudes distintas entre agregar y editar en [Gestión de extensiones].</li>
+<li>Corregido que el campo de número de llamada saliente en [Troncales], al configurarse con múltiples espacios vacíos, quedaba imposible de editar tras guardarse.</li>
+<li>Corregido que el campo de hora de fin no se podía modificar al agregar un horario de trabajo en [Horarios de trabajo].</li>
+<li>Corregido que los campos exportados en [Registro de llamadas] eran inconsistentes entre los formatos <code>.csv</code> y <code>.xls</code>.</li>
+<li>Corregido que, en el reporte gráfico de agentes, al seleccionar "acumulado de todos los grupos de habilidad" y descargar imagen o PDF, aparecía un aviso pidiendo seleccionar grupo de agentes.</li>
+<li>Corregido que, en tareas outbound que usan la tabla general, al buscar por "fecha de actualización" y eliminar mediante "eliminar según búsqueda", se eliminaban también datos fuera del resultado de búsqueda.</li>
+<li>Corregido que, al generar carpetas de archivos exportados, un nombre con espacios impedía la compresión, bloqueando la descarga del archivo exportado.</li>
+<li>Corregido que al exportar el registro de eventos de agente faltaban campos.</li>
+<li>Corregido que cuentas con alcance de permiso "sistema" tenían por defecto permiso sobre la página de configuración del marcador; ahora este permiso se controla por rol.</li>
+<li>Corregido que, en [Marcador predictivo] -&gt; [Marcador] -&gt; [Recuperar], no se podía programar la recuperación de datos para ejecución inmediata (<code>0000-00-00 00:00</code>).</li>
+<li>Corregido un problema al exportar datos en formato <code>.csv</code> en [Atención al cliente entrante] -&gt; [Registro de llamadas].</li>
+<li>Corregido que, al desinstalar el módulo de e-commerce, el módulo de gestión de inventario en el menú lateral no se eliminaba de forma sincronizada.</li>
+<li>Corregido que, en el popup de tareas outbound, si el cliente no tenía nombre, la etiqueta mostraba el valor del primer campo frontal configurado; si además la tarea ocultaba el contacto y ese campo era el teléfono 1, el número no se ocultaba en la etiqueta.</li>
+<li>En [Mensajería masiva] -&gt; [Gestión de anuncios] -&gt; [Agregar anuncio], corregido que tras seleccionar un grupo de cuentas por el administrador, las cuentas no aparecían listadas.</li>
+<li>Corregido que, en [Marcador predictivo] -&gt; [Causas de no contactado], cuando el rol tenía alcance de equipo, no se veían las tareas outbound del equipo propio.</li>
+<li>Corregido que en navegadores IE 8/9/10 el estado del agente mostraba "NAN" (el sistema ya no da soporte a IE; se recomienda Firefox o navegadores basados en Chrome).</li>
+<li>Corregida la cuenta regresiva de marcado automático, que siempre iniciaba en 60 segundos.</li>
+<li>Corregido un desbordamiento de memoria en el módulo de push HTTP del programa de fondo.</li>
+<li>Corregido que la tarea programada de composición de archivos no se completaba a tiempo.</li>
+<li>Corregido que no se podía instalar el módulo de atención al cliente entrante al instalar los datos de demostración.</li>
+</ul>
+<h2 id="astercc-24-rc1">AsterCC 2.4-rc1<a class="headerlink" href="#astercc-24-rc1" title="Permanent link">&para;</a></h2>
+<p><strong>Nuevas funciones</strong></p>
+<ul>
+<li>Soporte de motor de reconocimiento de voz (ASR) en chino (iFlytek).</li>
+<li>Uso del motor ASR para reconocer el estado de la llamada mediante media temprana (apagado, ocupado, en curso, número inválido, etc.).</li>
+<li>Al guardar un cliente en una campaña, el sistema puede enviar (POST) toda la información a una URL específica.</li>
+<li>Nueva información al exportar datos de clientes de campañas: hora de inicio y fin de la última llamada, y duración de la última llamada.</li>
+<li>Exportación de estadísticas del detalle de servicio de agentes mediante tarea en segundo plano.</li>
+<li>Herramienta de línea de comandos para regenerar y recargar toda la configuración.</li>
+<li>Nueva interfaz para llamadas de conferencia entre dos números externos, con paso de tonos DTMF.</li>
+<li>Protección contra corrupción de datos causada por cortes de energía.</li>
+</ul>
+<p><strong>Corrección de errores</strong></p>
+<ul>
+<li>Corregido que, al activar "ocultar contacto", el número de teléfono del cliente aún era visible en algunos módulos relacionados.</li>
+<li>Corregido que el menú de la página de importación aparecía duplicado cuando diferentes roles tenían permisos distintos.</li>
+</ul>
+<h2 id="astercc-23-rc2">AsterCC 2.3-rc2<a class="headerlink" href="#astercc-23-rc2" title="Permanent link">&para;</a></h2>
+<p><strong>Cuentas, equipos y permisos</strong></p>
+<ul>
+<li>Ampliación del rango de grabación: la grabación de llamadas contestadas ahora comienza desde el timbrado, no desde la respuesta.</li>
+<li>Al quitar un agente de su grupo, se verifica si su grupo de salida actual es el mismo que se está eliminando.</li>
+<li>Nueva configuración de cierre automático del estado posterior a la llamada (ACW) tras N segundos por grupo de agentes.</li>
+<li>Nueva interfaz webservice de estadísticas de agentes por grupo del día.</li>
+<li>El área de búsqueda ahora ajusta su ancho de forma automática (diseño responsive).</li>
+</ul>
+<p><strong>PBX</strong></p>
+<ul>
+<li>El script de procesamiento de grandes volúmenes de datos ahora también limpia los sub-CDR antiguos según el tiempo de retención histórica configurado.</li>
+</ul>
+<p><strong>Administración avanzada de PBX</strong></p>
+<ul>
+<li>En [Administración avanzada de PBX] -&gt; [Gestión de anuncios de voz], al agregar un anuncio se puede elegir motor TTS.</li>
+<li>Las acciones de IVR (principal y sub-IVR) incorporan una condición de tiempo (<code>judge_time</code>).</li>
+<li>En IVR, las acciones "Reproducir anuncio" y "Leer datos" ahora admiten archivos de voz tipo PTTS.</li>
+<li>Se agregó escape/traducción de caracteres especiales en la importación/exportación de datos de PBX.</li>
+</ul>
+<p><strong>Reportes y estadísticas</strong></p>
+<ul>
+<li>En [Detalle de servicio de agentes] se agregaron las columnas <code>workmode_dialin</code>, <code>workmode_dialout</code> y <code>workmode_all</code> para mostrar y exportar.</li>
+</ul>
+<p><strong>Marcador y campañas</strong></p>
+<ul>
+<li>En la pestaña de "Marcador predictivo" de las tareas outbound se agregó el campo <code>remote_fields</code>.</li>
+<li>Las páginas de edición de la tabla general de clientes (individual y organización) ahora muestran el registro de contacto relacionado, incluyendo sus campos personalizados.</li>
+</ul>
+<p><strong>Configuración del sistema</strong></p>
+<ul>
+<li>Al eliminar un plan de grabación en [Gestión de archivos de grabación], se puede elegir si también se elimina el archivo de respaldo asociado.</li>
+<li>Se agregaron las interfaces <code>testConnect</code> y <code>setNode</code>.</li>
+</ul>
+<p><strong>Marcador predictivo</strong></p>
+<ul>
+<li>En [Registro de filtros de marcado predictivo], ahora se puede copiar el SQL (antes solo se podía consultar en modo lectura).</li>
+</ul>
+<p><strong>Interfaz de agente</strong></p>
+<ul>
+<li>Se agregó un botón de un clic para cambiar el estado de trabajo y modo ACW de todos los grupos de agentes a la vez.</li>
+<li>Al iniciar/finalizar el marcado predictivo, se reemplazó el <code>alert</code> de JavaScript por un aviso emergente en la parte superior que desaparece automáticamente sin interrumpir otras acciones.</li>
+<li>Al agregar un nuevo cliente desde el popup de campañas, se actualizan los campos <code>autocount</code>, <code>noanswernum</code> y <code>answernum</code> según la hora de respuesta y fin de la llamada.</li>
+<li>Se agregó un reloj dinámico en la esquina superior derecha de la interfaz de agente.</li>
+<li>Bajo el botón de estado se muestra el estado actual y su duración.</li>
+<li>En el módulo de campañas, al hacer clic en "Obtener cliente" la página abre automáticamente el primer registro de la lista.</li>
+</ul>
+<p><strong>Corrección de errores</strong></p>
+<ul>
+<li>Corregido el botón "Seleccionar todo" al editar agentes en [Cuentas y permisos] -&gt; [Gestión de grupos de agentes].</li>
+<li>Corregido que se podían ingresar letras en el campo de número de extensión en [Gestión de extensiones].</li>
+<li>Corregido la ruta incorrecta de lectura de la imagen de perfil (avatar por defecto) al editar administrador en [Gestión de salas de conferencia].</li>
+<li>Corregido que las grabaciones seguían existiendo tras eliminarlas en [Gestión de música de espera].</li>
+<li>Corregida una validación regex errónea que no permitía <code>|</code> ni <code>;</code> al editar contenido TTS en anuncios de voz.</li>
+<li>Se agregó el texto "Seleccionar equipo" antes de "Por favor seleccione" en [Detalle de servicio IVR entrante].</li>
+<li>Corregido que "primera hora de inicio de sesión" y "última hora de cierre de sesión" mostraban el mismo valor en [Detalle de servicio de agentes].</li>
+<li>Corregidos errores en [Oficina virtual] -&gt; [Gestión de clientes]: cuando solo había un usuario, no se mostraban los campos personalizados relacionados en el buscador; y no se podía abrir el desplegable de un campo de prueba tipo "select" en la edición del registro.</li>
+<li>Corregido que existían dos páginas de "gestión de tareas" en administración avanzada del call center; se renombró la página de tareas por lotes (Shell Jobs) a "Gestión de tareas por lotes".</li>
+<li>Corregido que en [Mensajería masiva] -&gt; [Enviar mensaje interno] la columna derecha mostraba empleados de otros equipos.</li>
+<li>Corregido el procesamiento de cadenas en el contenido de SMS.</li>
+<li>Corregido que los comodines de las plantillas de mensajería masiva no reemplazaban el contenido correspondiente.</li>
+<li>Corregido que, en [Mensajería masiva] -&gt; [Servidores de SMS], varios servidores del mismo equipo podían marcarse simultáneamente como "predeterminado".</li>
+<li>Corregido un error de consulta de saldo en la interfaz del proveedor de SMS Xiao.</li>
+<li>En [Configuración del sistema] -&gt; [Gestión de archivos de grabación] -&gt; [Agregar plan]: corregido que había que crear manualmente el directorio si la ruta de destino no existía; y corregido que, con varios planes a la misma hora, solo se ejecutaba el primero.</li>
+<li>Corregido que el filtro de marcado predictivo no funcionaba tras usar "importar y ejecutar".</li>
+<li>Corregido que, al hacer clic en "Obtener cliente", el dato del cliente aparecía como -0.5.</li>
+<li>Corregido que faltaba la opción "Atención al cliente" en el tipo de objeto al buscar plantillas de Email/SMS desde la interfaz de agente.</li>
+<li>Corregido que la ventana del plan de marcado desaparecía al hacer clic en "Actualizar llamadas" del menú.</li>
+<li>Al agregar un cliente nuevo desde el popup de marcado outbound, se actualizan <code>autocount</code>, <code>noanswernum</code> y <code>answernum</code> según hora de respuesta y fin de llamada.</li>
+<li>Corregido que el estado mostraba "NA:NA:NA" al hacer clic en "Actualizar llamadas" del menú.</li>
+</ul>
+<h2 id="astercc-23-rc1">AsterCC 2.3-rc1<a class="headerlink" href="#astercc-23-rc1" title="Permanent link">&para;</a></h2>
+<p><strong>Nuevas funciones</strong></p>
+<ul>
+<li>Soporte para motor ASR chino.</li>
+<li>Uso del motor ASR para reconocer el estado de la llamada (apagado, ocupado, número inválido, etc.).</li>
+<li>Al guardar un cliente en una campaña, el sistema puede enviar la información mediante POST a una URL específica.</li>
+<li>Nueva información al exportar datos de clientes: hora de inicio, hora de fin y duración de la última llamada.</li>
+<li>Exportación mediante tarea en segundo plano en la página de estadísticas de detalle de agentes.</li>
+<li>Herramienta de línea de comandos para regenerar y recargar toda la configuración.</li>
+<li>Nueva interfaz de conferencia entre tres partes con paso de tonos DTMF.</li>
+</ul>
+<p><strong>Corrección de errores</strong></p>
+<ul>
+<li>Corregido que, con "ocultar contacto" activado, el número de teléfono aún era visible en algunos módulos relacionados.</li>
+<li>Corregido el menú duplicado en la página de importación cuando distintos roles tenían permisos diferentes.</li>
+</ul>
+<h2 id="astercc-22">AsterCC 2.2<a class="headerlink" href="#astercc-22" title="Permanent link">&para;</a></h2>
+<p><strong>Nuevas funciones</strong></p>
+<ul>
+<li>En IVR, todas las acciones ahora tienen un destino de fallo configurable.</li>
+<li>Soporte de ASR (reconocimiento de voz) en IVR.</li>
+<li>Soporte de importación/exportación de IVR.</li>
+<li>La interfaz de agente muestra el estado de la cola a la que pertenece.</li>
+<li>Nuevo reporte por agente que incluye todos los grupos a los que pertenece: número de llamadas, duración, duración promedio, tiempo de sesión, tiempo en pausa, etc.</li>
+<li>Nuevas opciones para el panel de aviso de llamada: oculto, fijo o cierre retrasado.</li>
+<li>Nuevo diagrama en tiempo real del estado de llamadas: IVR, en llamada, timbrando, en espera (cola).</li>
+<li>Nuevo editor de texto WYSIWYG.</li>
+<li>Se agregó el número de extensión en la lista de extensiones.</li>
+<li>Las plantillas ahora usan el nombre visible del campo en lugar del nombre de columna de base de datos.</li>
+<li>Las campañas admiten reasignación automática del cliente si el agente no lo contacta en cierto número de días, para que otros agentes puedan obtenerlo.</li>
+<li>Nuevo reporte en el registro de llamadas (CDR) con llamadas entrantes, duración entrante, llamadas salientes, duración saliente, costo entrante, costo de equipo, costo de sistema y costo de usuario.</li>
+<li>Nuevo indicador de estado de extensión en salas de conferencia (verde = en línea, gris = fuera de línea).</li>
+<li>El marcador predictivo admite reintento automático configurable (por ejemplo, a 1, 3 o 12 horas).</li>
+<li>Algunos reportes ahora se ejecutan en segundo plano para evitar tiempos de espera con grandes volúmenes de datos.</li>
+</ul>
+<p><strong>Corrección de errores</strong></p>
+<ul>
+<li>Corregido que, con contacto oculto activado, el número seguía siendo visible en el historial de contacto.</li>
+<li>Corregido que, al escuchar grabaciones en la página de control de calidad, los datos del cliente aparecían como nulos cuando se usaba la tabla general.</li>
+<li>La página de importación solo muestra la lista negra de llamadas entrantes y DID cuando el usuario es administrador de sistema o de equipo con alcance de sistema/equipo.</li>
+<li>Corregido error al enviar correos no-MIME desde el panel de agente.</li>
+<li>Corregido error de estilos (CSS) en la página de gestión del menú de WeChat.</li>
+<li>Corregido que la página de gestión de tareas de importación/exportación siempre regresaba a la primera página al actualizarse automáticamente.</li>
+<li>Corregido que las salas de conferencia no filtraban por permisos, permitiendo que distintos equipos vieran los registros de otros.</li>
+<li>Corregido que al eliminar un cliente en gestión de clientes de campañas no se registraba en el log.</li>
+</ul>
+<h2 id="astercc-22-rc4">AsterCC 2.2-rc4<a class="headerlink" href="#astercc-22-rc4" title="Permanent link">&para;</a></h2>
+<p><strong>Nuevas funciones</strong></p>
+<ul>
+<li>Nueva interfaz para llamar a dos números que no son dispositivos del sistema.</li>
+</ul>
+<p><strong>Corrección de errores</strong></p>
+<ul>
+<li>Actualización del driver DAHDI en la ISO.</li>
+<li>Corregido que el tiempo de espera de timbrado del agente siempre era de 15 segundos.</li>
+<li>Corregido que la llamada se colgaba si el agente presionaba <code>#</code> durante la llamada.</li>
+<li>Corregido que la música de espera en grupos de timbrado no se podía cambiar.</li>
+<li>Corregido que el marcador predictivo no respetaba la opción de reintento.</li>
+<li>Corregido que no se creaba la tabla relacionada al crear una campaña con tabla general.</li>
+<li>Corregido que el registro de llamadas (CDR) no respetaba el alcance de permisos del usuario.</li>
+<li>Corregido que IVR no respetaba la opción de dispositivo.</li>
+<li>Corregido que la página de conferencias mostraba las conferencias de todos los equipos.</li>
+<li>Se ocultó la contraseña en la página de configuración de SMS.</li>
+</ul>
+<h2 id="astercc-22-beta">AsterCC 2.2-beta<a class="headerlink" href="#astercc-22-beta" title="Permanent link">&para;</a></h2>
+<p><strong>Funciones de llamadas</strong></p>
+<ul>
+<li>Los agentes en modo dispositivo ya pueden usar buzón de voz.</li>
+<li>El agente puede transferir llamadas con el botón del teléfono IP.</li>
+<li>Nueva interfaz HTTP en IVR (además de webservice).</li>
+</ul>
+<p><strong>Funciones centrales</strong></p>
+<ul>
+<li>El monitoreo en tiempo real agrega datos de clientes en espera, tiempo máximo de espera y nivel de servicio.</li>
+<li>La página de monitoreo en tiempo real permite mostrar todos los agentes, incluidos los que no han iniciado sesión.</li>
+<li>Se admite un mayor volumen de datos al importar.</li>
+<li>Al subir un anuncio de voz, se pueden subir archivos en distintos códecs.</li>
+<li>Se permite personalizar las columnas y el orden de exportación (por ejemplo, en detalle de agentes y exportación de clientes).</li>
+<li>Se permiten reglas para troncales y grupos de troncales, como quitar el 0 en números locales o elegir troncal según los atributos del número destino.</li>
+<li>El administrador puede combinar anuncios desde la interfaz gráfica, permitiendo crear IVR multilenguaje usando TTS.</li>
+<li>Se agregó el nombre de cuenta en el reporte estadístico de llamadas salientes.</li>
+<li>Se puede ocultar el historial de contacto en el panel de llamadas del agente.</li>
+<li>El envío masivo de mensajes permite seleccionar el objeto destinatario mediante etiquetas.</li>
+<li>El envío masivo de mensajes permite seleccionar por paquete de clientes y estado del cliente.</li>
+<li>Se puede buscar por ID de importación; se agregaron íconos de ayuda visual en algunas listas y avisos sobre tareas de importación pendientes o recién completadas.</li>
+<li>Se agregó búsqueda rápida de resultado de llamada en campañas.</li>
+</ul>
+<p><strong>Atención al cliente</strong></p>
+<ul>
+<li>Nueva página predeterminada para atención al cliente, donde el agente puede consultar y buscar su propio historial de llamadas.</li>
+</ul>
+<p><strong>Marcador y campañas</strong></p>
+<ul>
+<li>Opción para que el agente escuche la grabación de su llamada desde el popup de campaña.</li>
+<li>Opción para mostrar el atributo del número (área/procedencia) en el popup de campaña.</li>
+<li>Se permite usar texto simple como guion de llamada.</li>
+<li>El "recordatorio rápido" (quick scheduler) admite valor vacío para indicar "sin cita".</li>
+<li>Se agregó un enlace directo a importación desde la lista de campañas.</li>
+</ul>
+<p><strong>Marcador predictivo</strong></p>
+<ul>
+<li>La estrategia "por agente 100%" ahora es la predeterminada.</li>
+</ul>
+<p><strong>WeChat</strong></p>
+<ul>
+<li>Se agregó la función de diseñar el menú de WeChat.</li>
+</ul>
+<p><strong>Corrección de errores</strong></p>
+<ul>
+<li>Corregido que algunos campos personalizados no se mostraban en la orden de trabajo.</li>
+<li>Corregido que, con varios servidores SMS, la acción de colgar no seleccionaba el servidor correcto.</li>
+<li>Corregido que la creación automática de colas podía generar números de cola duplicados.</li>
+<li>Corregido que, con muchos campos de cliente, no se podía ajustar el orden de visualización en Chrome.</li>
+<li>Corregido que la configuración rápida podía crear una extensión de un solo dígito cuando el rango comenzaba en 0.</li>
+</ul>
+<h2 id="astercc-22-alpha">AsterCC 2.2-alpha<a class="headerlink" href="#astercc-22-alpha" title="Permanent link">&para;</a></h2>
+<p><strong>Núcleo (core-2.2-alpha)</strong></p>
+<ul>
+<li>Optimización de estilos CSS del sistema.</li>
+<li>Las listas ahora muestran 30 registros por defecto.</li>
+<li>Ajustes de traducción en varias páginas.</li>
+<li>Equipos: nuevo parámetro <code>Followme Accept</code> (aviso de aceptación de seguimiento de llamada).</li>
+<li>Dispositivos: nuevo parámetro <code>FollowMe</code>.</li>
+<li>Monitoreo en vivo: nuevo ícono junto al número de agente para iniciar sesión como ese agente.</li>
+<li>Tareas por lotes (Shell Jobs): actualización automática cada 5 segundos.</li>
+<li>Exportación de tareas: actualización automática cada 5 segundos.</li>
+<li>Plantillas: los valores por defecto de "Elección del agente" y "Modificar" cambian a "sí"; el administrador puede usar <code>##nombre_campo##</code> en la plantilla, que se sustituye por el dato del cliente al enviar el mensaje.</li>
+<li>Troncales: al usar DAHDI ya no se pide seleccionar plantilla.</li>
+<li>Importación: el parámetro "Restablecer agente" ya no requiere habilitar el marcador para la campaña.</li>
+<li>Buzón de voz: se puede acceder directamente marcando <code>*</code> + extensión; se puede entrar al buzón durante el mensaje de bienvenida presionando asterisco, y se puede acceder a la operadora del equipo presionando cero.</li>
+</ul>
+<p><strong>Marcador y campañas</strong></p>
+<ul>
+<li>El administrador puede definir un número de marcado rápido: el agente lo marca para obtener un cliente de su lista, y al finalizar puede usar IVR para guardar el resultado de la llamada.</li>
+<li>El valor por defecto de "Cargar historial de contacto" cambia a "sí".</li>
+<li>El "recordatorio rápido" admite configurar minutos.</li>
+<li>Nuevo parámetro "Campos ocultos", usado junto con "Ocultar información de contacto".</li>
+<li>Resultados: el parámetro "Equipo" cambia su valor por defecto de "Predeterminado" a "Todos".</li>
+<li>Panel de agente: cuando no hay más números para marcar en modo automático, el sistema revisa cada minuto si hay nuevos números disponibles; se usa el primer campo mostrado como título de la pestaña; se agrega un número de prefijo para acelerar la selección del resultado de llamada.</li>
+</ul>
+<p><strong>Oficina virtual / BPO</strong></p>
+<ul>
+<li>Cuenta BPO: nueva opción "Iniciar sesión como usuario BPO"; el rol pasa a ser obligatorio; se permite subir una imagen de perfil para la página personal de gestión BPO; se pueden configurar los campos visibles por campaña asociada a la cuenta.</li>
+<li>Página de clientes BPO: se muestra según los campos configurados en la cuenta BPO; se agregaron estadísticas de estado de clientes por campaña.</li>
+</ul>
+<p><strong>Órdenes de trabajo</strong></p>
+<ul>
+<li>Se agregó un botón de actualización en la página de detalle de la orden de trabajo.</li>
+</ul>
+<p><strong>Interfaz de trabajo del agente</strong></p>
+<ul>
+<li>Popup de cliente de campaña: se unificó el estilo de los mensajes de aviso; se agregó inicio de sesión automático en la cola; el ranking de agentes solo se puede consultar una vez por minuto; se agregó numeración para ordenar los resultados de llamada en el desplegable del popup de cliente.</li>
+</ul>
+<h2 id="astercc-21">AsterCC 2.1<a class="headerlink" href="#astercc-21" title="Permanent link">&para;</a></h2>
+<p><strong>Núcleo (core-2.1)</strong></p>
+<ul>
+<li>Optimización de estilos CSS del sistema.</li>
+<li>Si solo existe un equipo, se selecciona automáticamente por defecto.</li>
+<li>Corregida la imposibilidad de restaurar la vista de columnas en algunas páginas tras eliminarlas todas del título.</li>
+<li>La paginación se muestra flotante cuando el contenido supera la altura visible del navegador.</li>
+<li>Mejora de etiquetas de cliente: se pueden ingresar manualmente con autocompletado, o elegir desde una lista de etiquetas en el popup.</li>
+<li>Al vincular un DID a un dispositivo, si el dispositivo no está disponible, ya no se redirige a la ruta de entrada.</li>
+<li>Todas las extensiones ahora pueden usarse para grabación.</li>
+<li>Equipos: nuevos parámetros "Facturación de agente externo", "Tipo de troncal de agente externo" y "Troncal de agente externo".</li>
+<li>Troncales: nuevo parámetro de ganancia para aumentar el volumen al combinar grabaciones.</li>
+<li>Importación: optimización de estilos; auto-coincidencia de campos según el título del archivo importado; importación a lista blanca; nueva función "Importar y ejecutar" (ver documentación del módulo de importación).</li>
+<li>Monitoreo en vivo: los contadores de "Registrado", "Libre", "Timbrando", "En llamada", "Pausa" y "ACW" del equipo ahora se basan en el resumen real de agentes del equipo.</li>
+<li>IVR: eliminación automática de espacios finales.</li>
+<li>Llamadas salientes: se puede elegir estadística de todos los agentes.</li>
+<li>TTS en chino.</li>
+<li>Detalle de agentes: se agregó estadística total; estadística por cuenta; las cuentas con permiso de grupo de agentes solo ven la estadística de su propio grupo.</li>
+</ul>
+<p><strong>Marcador y campañas</strong></p>
+<ul>
+<li>Nuevo parámetro "Orden de nueva pestaña" en "Avanzado", para controlar el orden de los datos bajo "Nuevo".</li>
+<li>Nuevo parámetro "Recordatorio rápido" en "Avanzado", para elegir rápidamente la hora de cita de un cliente pendiente.</li>
+<li>Nuevo parámetro "Colgar al enviar".</li>
+<li>Nuevo parámetro "Eliminar recordatorio al enviar".</li>
+<li>Corregido que no se podía asignar clientes por "estado" cuando la campaña usaba tabla general.</li>
+<li>Los parámetros "Verificar reasignación" y "Aviso de llamada" se movieron a "Avanzado".</li>
+<li>Mejora de la prioridad del marcado automático.</li>
+<li>Se permite mostrar toda la información del cliente en la ventana de asignación manual.</li>
+<li>Se agregó el porcentaje de resultados de llamada en la estadística de campañas.</li>
+<li>El panel de agente permite buscar en 5 campos de campaña personalizados.</li>
+</ul>
+<p><strong>BPO</strong></p>
+<ul>
+<li>La lista lateral no muestra campañas deshabilitadas al iniciar sesión con cuenta BPO.</li>
+<li>Corregido que no se veían los datos en la página de registro de llamadas (CDR) tras iniciar sesión con cuenta BPO.</li>
+<li>Cuenta BPO: en la página de agregar/editar, ya no se pueden elegir campañas deshabilitadas.</li>
+</ul>
+<p><strong>Interfaz de trabajo del agente</strong></p>
+<ul>
+<li>Popup de cliente de campaña: corregido que no se podía marcar automáticamente cuando "Ocultar información de contacto" estaba activado; al hacer clic en marcar desde el popup se finaliza el estado ACW (o pausa) del agente; el panel de marcado automático se muestra siempre, sin necesidad de elegir el modo de marcado; los clientes "pendientes" se ordenan por hora de cita programada; se puede buscar con la tecla Enter; se agregaron campos de búsqueda dinámicos según los primeros cuatro campos frontales configurados en la campaña (sin contar los campos fijos).</li>
+</ul>
+<p><strong>Interfaces (API)</strong></p>
+<ul>
+<li>Nueva API de marcado por extensión.</li>
+<li>Nueva API de transferencia de agente a IVR.</li>
+<li>Inicio de sesión: se permite pasar el número de extensión como identificador de extensión para iniciar sesión en la cola.</li>
+</ul>
+<h2 id="astercc-20">AsterCC 2.0<a class="headerlink" href="#astercc-20" title="Permanent link">&para;</a></h2>
+<p><strong>Núcleo (core-2.0)</strong></p>
+<ul>
+<li>Actualización de la ISO a CentOS 6.5.</li>
+<li>Compatibilidad con PHP 5.4.</li>
+<li>Ajustes de traducción y optimización de estilos CSS.</li>
+<li>Mejora del selector de hora: además del selector gráfico, se puede ingresar manualmente.</li>
+<li>Se agregó la tecla <code>ESC</code> para cerrar rápidamente ventanas emergentes.</li>
+<li>Aviso de voz cuando el cliente solicita una nueva visita.</li>
+<li>Mejora de la función <code>*97</code>: ahora requiere ingresar contraseña.</li>
+<li>Mejoras en la interfaz y en las validaciones del sistema.</li>
+<li>Los idiomas listados en el sistema ahora solo muestran los habilitados.</li>
+<li>El sistema ahora gestiona dependencias entre módulos.</li>
+<li>Cada cuenta puede configurar su preferencia de idioma.</li>
+<li>El administrador puede iniciar sesión como otra cuenta.</li>
+<li>Optimización de la página de configuración de exportación, con casilla para controlar el envío de correo.</li>
+<li>Páginas nuevas: Monitoreo en tiempo real, Estado de agentes (en información en tiempo real) y Estadística de DID (en reportes).</li>
+<li>Monitoreo en tiempo real: permite ver llamadas entrantes y salientes por equipo.</li>
+<li>Estado de agentes: muestra el estado de trabajo del equipo, incluyendo total, con sesión iniciada, registrado, libre, timbrando, en pausa, ACW y en llamada.</li>
+<li>Equipos: en la página de edición se agregaron los botones "Recargar" (abre la gestión financiera del usuario para ese equipo) y "Exportar datos de PBX" (genera una tarea de exportación en segundo plano); se agregó el botón "Importar datos de PBX del equipo"; al crear un equipo se genera automáticamente un servidor de correo tipo "localhost".</li>
+<li>Cuentas: nuevo parámetro "Idioma predeterminado", aplicado a los mensajes de voz.</li>
+<li>Estado de cuenta (financiero): nuevo parámetro "Forma de pago" (tarjeta de crédito, PayPal, transferencia, efectivo, otro; por defecto "otro"); nuevo campo "Número de transacción".</li>
+<li>Plantillas: nuevo parámetro "Responder a"; el contenido admite <code>##NombreDeCampo##</code> como variable de reemplazo con los datos del cliente.</li>
+<li>Grupos de DID: nuevos parámetros "Tarifa mensual" y "Tarifa inicial" (costo por minuto, puede ser negativo, por defecto 0.0000).</li>
+<li>DID: soporte de facturación; se agregaron "Tipo de tarifa inicial", "Tarifa inicial", "Tarifa mensual" y "Costo"; se agregó "Proveedor" y "País" (opcional).</li>
+<li>Estadística de DID: permite ver el detalle por DID, incluyendo llamadas entrantes, llamadas contestadas, duración, duración facturable y crédito.</li>
+<li>Música de espera: se puede editar la música de espera predeterminada del sistema.</li>
+<li>Importación: soporte para importar datos de DID desde archivo.</li>
+<li>Servidor de correo: se ocultan parámetros innecesarios al elegir tipo "localhost"; si "Predeterminado" es "sí", el modo solo puede ser "Daemon".</li>
+<li>Personalización: el tipo de idioma solo permite los idiomas habilitados en el sistema.</li>
+<li>Configuración: nuevo parámetro "Mostrar menú de depuración del agente" para controlar la visibilidad del botón de menú en el panel de agente.</li>
+</ul>
+<p><strong>Marcador predictivo</strong></p>
+<ul>
+<li>Al desinstalar el módulo de marcador predictivo, se oculta la pestaña de marcador predictivo en la creación/edición de campañas, así como el selector de configuración de marcado predictivo y el parámetro "Importar a la lista de marcado si está duplicado" en la página de importación.</li>
+</ul>
+<p><strong>E-commerce</strong></p>
+<ul>
+<li>Productos: el parámetro "En el mercado" tiene valor por defecto "sí".</li>
+</ul>
+<p><strong>Marcador y campañas</strong></p>
+<ul>
+<li>Nuevo parámetro "AllowManualPopCustomer" en "Avanzado" (por defecto "sí"): permite que el agente ingrese un número para mostrar el popup del cliente asociado; si no existe, se muestra un aviso; si no se ingresa número, se comporta como el marcado automático mostrando el cliente de mayor prioridad.</li>
+<li>Nueva opción "Prohibido" para el parámetro "Cargar historial de contacto": oculta la sección de detalle de historial.</li>
+<li>Nuevo parámetro "Eliminar recordatorio al enviar", para controlar si se borra la hora de reintento al guardar el estado del cliente como cerrado con éxito o cerrado con error.</li>
+<li>La página de asignación muestra los campos teléfono 1 y teléfono 2 en la lista.</li>
+<li>Lista de no llamar (DNC): si el desplegable tiene una sola opción, se marca automáticamente.</li>
+<li>Resultados: si la cuenta tiene permiso de equipo, puede ver los resultados de sistema, pero no editarlos.</li>
+<li>Monitores de datos: corregido un error que mostraba "null" en lugar de los datos correctos.</li>
+<li>Se agregó el recordatorio rápido (quick scheduler).</li>
+</ul>
+<p><strong>Interfaz de trabajo del agente</strong></p>
+<ul>
+<li>Optimización de estilos CSS.</li>
+<li>Si el parámetro "Dispositivo" del agente es dinámico, ya no se valida la coincidencia entre la IP del teléfono y la IP de inicio de sesión, solo si el dispositivo está habilitado.</li>
+<li>Ante llamadas anómalas en el panel del agente, se puede hacer clic en el botón de colgar de la página de estado para finalizar el procesamiento de datos con error.</li>
+<li>Nueva combinación de teclas <code>Ctrl+Z</code> para iniciar sesión rápidamente y abrir la interfaz de marcado saliente: selecciona automáticamente el primer grupo de agentes, la primera campaña (u oficina virtual) disponible, enfoca el campo de número y permite marcar con la tecla Enter.</li>
+<li>Popup de cliente de campaña: muestra el ID del cliente cuando el registro ya existe; mejora del marcado automático (prioriza clientes pendientes cuya hora de reintento ya pasó, y luego clientes nuevos con menos intentos automáticos); al enviar SMS desde el popup, se reemplazan automáticamente las variables de plantilla con los datos del cliente (se elimina el reemplazo manual al usar plantilla); los campos con solo permiso de vista no pueden editarse; se permite guardar el cliente con múltiples avisos.</li>
+<li>Popup de cliente de atención al cliente: muestra el ID del cliente cuando el registro ya existe.</li>
+</ul>
+<h2 id="astercc-20-beta">AsterCC 2.0-beta<a class="headerlink" href="#astercc-20-beta" title="Permanent link">&para;</a></h2>
+<p><strong>Núcleo (core-2.0_beta)</strong></p>
+<ul>
+<li>Ajustes de traducción y optimización de estilos CSS.</li>
+<li>Nuevos mensajes informativos al marcar.</li>
+<li>Se reproduce un anuncio predeterminado cuando no hay ruta de entrada coincidente ni ruta por defecto.</li>
+<li>La duración en los reportes estadísticos ahora respeta el formato de hora configurado en el sistema.</li>
+<li>Se renombró "Importaciones" a "Tareas por lotes" (Shell Jobs) dentro de administración avanzada del call center.</li>
+<li>Se renombró "Calificación" (Rate) a "Registro de calificación" y se trasladó a la sección de estadísticas.</li>
+<li>Nueva interfaz para importación.</li>
+<li>Nueva función de solicitud de devolución de llamada (callback).</li>
+<li>Nueva función de "tarea de eliminación" (shell delete): al eliminar datos se puede elegir eliminación directa o mediante tarea, disponible en: Campañas -&gt; Clientes; Marcador predictivo -&gt; página de recuperación; Marcador predictivo -&gt; listas de marcado de campaña; Clientes -&gt; Individuos; Clientes -&gt; Organizaciones.</li>
+<li>Equipos: corregido que al eliminar un equipo no se eliminaban los grupos de agentes relacionados.</li>
+<li>Agentes: nuevo botón "Iniciar sesión como este agente" en la página de edición.</li>
+<li>Grupos de agentes: nuevo parámetro "Encabezado SIP de respuesta automática", que controla colas, marcador predictivo y "clic para llamar" de forma independiente (cola por defecto "no", marcador predictivo por defecto "no", clic para llamar por defecto "sí"; el teléfono debe soportar respuesta automática); se movió "Abrir ventana de entrada" a la pestaña avanzada, renombrado a "Abrir pestaña de oficina virtual".</li>
+<li>Troncales: aviso informativo cuando "Forzar uso de tarifa" está activado; nuevo "Estado de colgado" que muestra las últimas 10 desconexiones; nuevo parámetro "Máximo de no disponibilidad", que deshabilita el troncal tras cierto número de errores (relacionado con "Duración de error de troncal").</li>
+<li>Dispositivos: la opción "Marcar todo" cambia a "Todos" y "Solo interno".</li>
+<li>Sonidos: mejora de los mensajes de error.</li>
+<li>Rutas de entrada: la opción "Coincidencia de CID" cambia a "Ninguna", "Completa", "Prefijo" y "Área/procedencia".</li>
+<li>Configuración: nuevo parámetro "Auto-agregar DID", que crea automáticamente un DID cuando el número entrante no coincide con ninguno existente; nuevo parámetro "Duración de error de troncal" (relacionado con "Máximo de no disponibilidad" del troncal); nuevo parámetro <code>rtptimeout</code> en la configuración general SIP (valor por defecto 120); nueva función para editar la zona horaria del sistema.</li>
+<li>Códigos de función: nuevo código <code>*73</code> para reproducir/devolver la llamada al último número contactado.</li>
+<li>Configuración rápida: los prefijos de usuario y contraseña dejan de ser obligatorios, con avisos informativos.</li>
+<li>Importación: optimización de estilos; nuevos parámetros de importación; nuevo parámetro "Restablecer estado de cliente" (solo disponible al importar a un paquete de clientes con campaña asociada, marcado por defecto); si el sistema tiene un solo equipo o el usuario pertenece a uno, se selecciona automáticamente.</li>
+<li>Tareas por lotes: la página se dividió en dos secciones, arriba las tareas de importación y abajo las tareas de eliminación.</li>
+<li>Planes de respaldo: se agregó el parámetro de dirección de base de datos, para poder respaldar la base de datos cuando esta no está en el mismo servidor que el núcleo (usar <code>127.0.0.1</code> si están en el mismo servidor, o la IP del servidor de base de datos si están separados).</li>
+</ul>
+<p><strong>Marcador y campañas</strong></p>
+<ul>
+<li>Nuevo parámetro "Actualizar estado de cliente", que controla el permiso de edición de datos del cliente: "Agente asignado" (solo el agente propietario puede editar) o "Cualquier agente".</li>
+<li>Nuevo parámetro "Llamada prioritaria" (opciones: desactivado, agente actual, último agente de contacto): al recibir una llamada entrante, prioriza al agente correspondiente según la configuración; si no hay agente disponible, la llamada va a la cola (requiere que la campaña use la tabla general de clientes).</li>
+<li>En la lista de campañas, las que usan la tabla general de clientes se muestran en color rojo.</li>
+<li>Nuevo botón "Agregar evento de colgado" en la edición de campaña, para enviar correo o SMS automáticamente tras colgar según el evento: "Agente no contestó", "Abierto", "Pendiente", "Cerrado con éxito" o "Cerrado con error" (estos últimos cuatro solo aplican durante la llamada o inmediatamente después de colgar).</li>
+<li>Estadísticas: nuevos reportes "Reporte de llamadas" y "Reporte de contacto", visibles solo si se elige "Cliente de tabla general".</li>
+<li>Llamadas perdidas: las que solicitan devolución de llamada se muestran en color azul.</li>
+</ul>
+<p><strong>Oficina virtual</strong></p>
+<ul>
+<li>Clientes: nuevo botón "Gestión de contactos frecuentes" en la edición, para agregar contactos habituales del cliente.</li>
+</ul>
+<p><strong>Atención al cliente</strong></p>
+<ul>
+<li>Nuevo parámetro "Llamada prioritaria" (desactivado, agente actual, último agente de contacto), igual que en campañas.</li>
+<li>Nuevo botón "Agregar evento de colgado": "Agente no contestó" y "Agente contestó", cada uno con envío de correo/SMS configurable.</li>
+</ul>
+<p><strong>E-commerce</strong></p>
+<ul>
+<li>Nuevo parámetro "Origen", personalizable con múltiples valores separados por coma; el agente puede usarlo como origen del pedido.</li>
+<li>Productos: al crear o editar, se pueden asociar uno o más productos relacionados, visibles para el agente al armar un pedido.</li>
+</ul>
+<p><strong>Interfaz de trabajo del agente</strong></p>
+<ul>
+<li>En el popup de cliente se combinaron los paneles "Historial de contacto" y "Compras recientes" en uno solo, mostrando por defecto el historial.</li>
+<li>En "Compras recientes" se puede abrir el detalle de un pedido desde su número; si el pedido no ha sido despachado, se puede cancelar con confirmación previa.</li>
+<li>Popup de cliente de campaña y de atención al cliente: se agregó la vista de cancelación de pedido descrita arriba.</li>
+</ul>
+<h2 id="astercc-122">AsterCC 1.2.2<a class="headerlink" href="#astercc-122" title="Permanent link">&para;</a></h2>
+<p><strong>Core</strong></p>
+<ul>
+<li>Se agrega el tipo de campo "link" en la personalización de campos.</li>
+<li>Se corrige que un memo con saltos de línea impedía abrir la página de control de calidad (qcpage).</li>
+<li>En los gráficos estadísticos, la unidad de "Hora" cambia a formato "hh:mm:ss".</li>
+<li>Se mejoran los mensajes de error del sistema.</li>
+<li>Se agrega un aviso en amarillo (arriba a la derecha) que muestra usuario, rol y hora local.</li>
+<li>Nuevo calendario del cliente en la tabla maestra: al reasignar un cliente, su calendario se reasigna también al nuevo agente.</li>
+<li>Se agrega el privilegio de rol "Mis órdenes de trabajo" para que el agente vea solo sus propias órdenes.</li>
+<li>Al consultar o transferir una llamada, al agente consultado/receptor se le muestra automáticamente la ficha del cliente, con botón de actualización inmediata.</li>
+<li>Se corrige que un dispositivo externo no podía transferir a una extensión.</li>
+<li>Se agrega soporte de BLF en los teléfonos.</li>
+<li>Se corrige la exportación de archivos que no incluía los campos correctamente.</li>
+<li>Se corrige el estilo (CSS) incorrecto del cuadro de búsqueda.</li>
+<li>Al exportar, ahora se puede indicar un correo destino para recibir el archivo exportado; aplica a: PBX → CDRs, Campaña → exportar clientes desde edición de paquete, Campaña → Clientes, Campaña → CDRs, Campaña → Control de calidad, Marcador → listas de marcación, Atención al cliente → CDR, Atención al cliente → Llamadas perdidas, y Encuestas → exportación de cuotas.</li>
+<li>Cuentas: aparece barra de desplazamiento en las páginas de lista negra/blanca cuando hay muchos datos.</li>
+<li>Agentes: desde "Ver grupo de agentes" se puede quitar al agente del grupo.</li>
+<li>Grupo de agentes: al editar el campo ACW aparece el aviso de reiniciar sesión.</li>
+<li>Personalización: los saltos de línea se unifican al estándar unix; el campo <code>Display As</code> ahora es editable.</li>
+<li>Troncal: al editar <code>Registry String</code> aparece el aviso de recarga.</li>
+<li>Rutas salientes: se agrega la opción <code>Sip Refer</code> en el campo <code>Transfer</code> de la regla.</li>
+<li>IVR: se corrige que se podían guardar datos vacíos.</li>
+<li>Base de conocimiento: se revisan traducciones y se optimiza el CSS.</li>
+<li>Dispositivo: el campo <code>ExternalNumber</code> no puede coincidir con <code>Ext. No.</code>.</li>
+<li>Configuración: se agregan los parámetros SIP TCP (<code>tcpenable</code>, <code>tcpbindaddr</code>, <code>transport</code>) en <code>GENERAL SIP SETTINGS</code>.</li>
+<li>Respaldo de archivos: se optimiza el CSS de la paginación.</li>
+<li>Troncal en vivo: se corrige que no se mostraban troncales sin equipo asignado.</li>
+<li>Grupo BLF: los dispositivos pueden unirse a un grupo BLF para ver en el teléfono el estado de las demás extensiones del grupo.</li>
+</ul>
+<p><strong>Página de inicio de sesión</strong></p>
+<ul>
+<li>Se corrige que no se podía entrar al sistema presionando Enter tras llenar el correo.</li>
+<li>El acceso ahora admite identificar el equipo por URL, de dos formas: <code>http://IP_SERVIDOR/identificadorDeEquipo</code> o mediante dominio propio (<code>http://www.identificador.xxx</code> o <code>http://identificador.xxx</code>); con este método ya no se muestra el selector de equipo, útil para operaciones multi-equipo. Para activarlo se agrega <code>login_route = team</code> bajo <code>[system]</code> en <code>/etc/astercc.conf</code> (quitando el <code>;</code> si ya existía comentado).</li>
+</ul>
+<p><strong>Campaña</strong></p>
+<ul>
+<li>Las campañas que usan la tabla maestra de clientes ya pueden trabajar con el marcador (dialer).</li>
+</ul>
+<p><strong>Marcador</strong></p>
+<ul>
+<li>Al reciclar clientes, se usa el valor del campo <code>Schedule</code> del cliente como horario de re-marcado, en dos casos: cuando el cliente reciclado tiene <code>Schedule</code> propio posterior al del reciclado, o cuando la operación de reciclado no define <code>Schedule</code> y el cliente sí lo tiene.</li>
+<li>Nueva opción para controlar si se vacía el número de agente (<code>agentno</code>) del cliente al reciclar.</li>
+<li>En la lista de marcación de campaña se deshabilita la edición del cliente en la vista "Campaign Customer".</li>
+</ul>
+<p><strong>Plataforma de trabajo del agente</strong></p>
+<ul>
+<li>Se agrega la columna <code>status</code> en la lista de pedidos al ver el historial de compras.</li>
+<li>Aparece barra de desplazamiento cuando la cola es demasiado larga para la pantalla.</li>
+<li>Se corrige que no se obtenían los datos de clientes pendientes bajo la pestaña <code>Pending</code> en la pantalla de trabajo de campaña.</li>
+</ul>
+<h2 id="astercc-121">AsterCC 1.2.1<a class="headerlink" href="#astercc-121" title="Permanent link">&para;</a></h2>
+<p><strong>Core</strong></p>
+<ul>
+<li>Se agrega control del modo de aviso en la pantalla de trabajo del agente: ventana emergente o parpadeo.</li>
+<li>Al consultar a un agente, se muestra la ficha del cliente en la pantalla emergente del agente consultado.</li>
+<li>Correcciones de traducción.</li>
+<li>Se optimiza la consulta SQL de reciclado de clientes, ordenando por fecha de marcado e ID ascendente.</li>
+<li>Se corrige que no se actualizaba el correo del administrador al iniciar sesión.</li>
+<li>Equipo: se corrige que no se validaba la duplicidad del identificador al editar; se corrige que no se podía actualizar el número máximo de agentes al valor real ya existente en el equipo.</li>
+<li>Agente: se corrige que no se guardaba el rol al agregar un agente.</li>
+<li>Monitor en vivo: el estado del agente ahora es consistente entre distintos grupos de agentes; se corrige que no funcionaban las funciones "Call Barge", "Call Spy" y "Whisper".</li>
+<li>Códigos de función: se agrega <code>*54</code> para consultar a un agente; <code>*55</code> queda reservado para consultar un número telefónico.</li>
+</ul>
+<p><strong>Campaña (campaign-1.5)</strong></p>
+<ul>
+<li>Se corrige que el número de agente (agentno) no aparecía en la búsqueda de la página de asignación manual.</li>
+</ul>
+<p><strong>Atención al cliente (customerservice-1.2)</strong></p>
+<ul>
+<li>Se corrige que el campo de agente podía quedar nulo.</li>
+</ul>
+<h2 id="astercc-12">AsterCC 1.2<a class="headerlink" href="#astercc-12" title="Permanent link">&para;</a></h2>
+<p><strong>Core</strong></p>
+<ul>
+<li>Se agrega la interfaz del marcador (dialer) y una plantilla de troncal IAX.</li>
+<li>Nuevo módulo de comercio electrónico (E-Commerce).</li>
+<li>Control de privilegios por rango para equipos, grupos de agentes e individuos.</li>
+<li>Pausa automática cuando una llamada no es contestada.</li>
+<li>Nueva página de registro de contactos para ver el historial de contacto de cada equipo.</li>
+<li>Nueva página para controlar los privilegios de campos de la tabla maestra (individuos u organizaciones) por equipo.</li>
+<li>Mejoras en la codificación de errores del sistema.</li>
+<li>En la barra de búsqueda: se agrega el operador <code>!=</code> y la opción <code>Otros</code> para búsquedas de tipo selección.</li>
+<li>Los módulos del sistema ahora se pueden desinstalar.</li>
+<li>El sistema permite la existencia de un solo equipo (team); si solo hay un equipo, el selector de equipo no muestra la opción "seleccionar".</li>
+<li>Se corrige la incompatibilidad del plugin de horario con Chrome.</li>
+<li>Aviso en la página de mensajes del sistema cuando vence la licencia de un módulo.</li>
+<li>Se pueden agregar varios correos en copia (CC) separados por punto y coma.</li>
+<li>Correcciones en varias traducciones (po).</li>
+</ul>
+<p><strong>Agente</strong></p>
+<ul>
+<li>Nuevos parámetros <code>CIDNum</code> y <code>CIDName</code> para mostrar el nombre y número que llama al marcar; si están configurados, se usan salvo que la campaña fuerce su propio identificador de llamada.</li>
+</ul>
+<p><strong>Grupo de agentes</strong></p>
+<ul>
+<li>En la selección de agentes se agregan los modos <code>detallado</code> y <code>simple</code> para controlar cómo se listan los agentes.</li>
+<li>La lista de agentes no asignados se divide en dos paneles: agentes sin ningún grupo y agentes fuera del grupo actual.</li>
+<li>El selector de equipo ahora filtra la búsqueda según el equipo elegido.</li>
+</ul>
+<p><strong>Roles</strong></p>
+<ul>
+<li>Los roles de tipo agente pueden configurar el privilegio de la página de búsqueda de clientes del módulo de atención al cliente.</li>
+</ul>
+<p><strong>Edición rápida</strong></p>
+<ul>
+<li>Se corrige un error de parámetros que no mostraba el aviso correspondiente.</li>
+<li>Se corrige que, al editar un dispositivo de tipo distinto a mgcp o dahdi, no se actualizaba el campo <code>Username</code>.</li>
+</ul>
+<p><strong>Dispositivos</strong></p>
+<ul>
+<li>Se ocultan los parámetros relacionados con el buzón de voz cuando este está deshabilitado.</li>
+<li>El campo <code>Connect Status</code> cambia de posición; si el estado es "reachable" se muestra en verde con los milisegundos de conexión, y en negro para otros valores.</li>
+<li>Se optimiza la actualización del valor de <code>Username</code> al modificar el número de extensión.</li>
+</ul>
+<p><strong>Grupos de timbrado (Ringgroups)</strong></p>
+<ul>
+<li>Se corrige que no timbraban cuando había un anuncio configurado y la estrategia de timbrado era "Hunt" o "Hunt-next".</li>
+<li>Se corrige que un IVR dirigido a un grupo de agentes sin anuncio no podía usar estrategia "Hunt" o "Hunt-next".</li>
+</ul>
+<p><strong>Troncal</strong></p>
+<ul>
+<li>En Avanzado: se agrega el parámetro <code>Custom Dial String</code> y se eliminan <code>CIDNum AddPrefix</code>, <code>CIDNum RemovePrefix</code> y <code>CIDName AddPrefix</code>.</li>
+<li>En la edición de reglas se agrega la opción <code>Callerid Name</code> para el parámetro <code>Object</code>.</li>
+<li>El estado de registro (<code>reg. status</code>/<code>peer status</code>) se reubica a la izquierda; si es "reachable" se muestra en verde junto con los milisegundos.</li>
+</ul>
+<p><strong>Importación</strong></p>
+<ul>
+<li>Se agrega manejo de datos duplicados mediante los parámetros <code>Customer Duplicate</code> (modos <code>skip</code>/<code>update</code>) y <code>Duplicate Customer Import Diallist</code> (modos <code>Ignore Duplicate</code>, <code>All</code>, <code>Ignore Success</code>) para controlar cómo se insertan clientes duplicados en la lista de marcación al importar.</li>
+</ul>
+<p><strong>Lotes de contactos (Batchcontacts)</strong></p>
+<ul>
+<li>Se agrega el campo de búsqueda <code>Archivetype</code>.</li>
+</ul>
+<p><strong>Monitor en vivo</strong></p>
+<ul>
+<li>Se corrige que el conteo de check-in por equipo mostraba "NaN".</li>
+<li>El administrador de grupo de agentes puede monitorear agentes con una nueva función.</li>
+</ul>
+<p><strong>Servidor de correo (antes SMTP Servers)</strong></p>
+<ul>
+<li>Se renombra a "Mail Server". Se agrega un servidor de correo local por defecto al instalar o actualizar el sistema si no existe ninguno, permitiendo enviar correo mediante ese servidor local.</li>
+</ul>
+<p><strong>Configuración</strong></p>
+<ul>
+<li>El parámetro <code>Current PbxCdr Table Data</code> cambia su unidad de meses a días.</li>
+<li>Se agrega el parámetro <code>srvlookup</code> en <code>GENERAL SIP SETTINGS</code>.</li>
+</ul>
+<p><strong>Personalización (Customization)</strong></p>
+<ul>
+<li>Para campos de tipo "relacionado" ahora se puede llenar las opciones por texto libre o subiendo un archivo .txt.</li>
+<li>Aviso al usuario si ya existen paquetes de clientes al agregar un campo.</li>
+<li>Se corrige un error que mostraba campos duplicados al usar mayúsculas en el nombre del campo.</li>
+</ul>
+<p><strong>Clientes individuales y Organizaciones</strong></p>
+<ul>
+<li>Nuevas funciones: elegir etiquetas (tags), eliminación por lotes, asignación por selección (<code>Assign By Check</code>) y asignación por condiciones de búsqueda (<code>Assign By Conditions</code>) hacia paquetes de clientes.</li>
+<li>En la asignación se agregan dos casillas: <code>Keep Agent</code> (conserva al agente asignado si pertenece al grupo de agentes de la campaña del nuevo paquete) y <code>Keep Status</code> (conserva el estado del cliente); además se guarda un registro (log) de cada asignación.</li>
+<li>Se puede asignar el cliente a un paquete directamente al crearlo, y buscar por lista de etiquetas o de paquetes de clientes.</li>
+</ul>
+<p><strong>Registro de contactos (Contact Log)</strong></p>
+<ul>
+<li>Página nueva que muestra el historial de contacto por equipo.</li>
+</ul>
+<p><strong>Campo de cliente (Customer Field)</strong></p>
+<ul>
+<li>Página nueva para configurar el privilegio de campos de clientes individuales u organizaciones por equipo.</li>
+</ul>
+<p><strong>Módulo de Work Order (workorder-1.1)</strong></p>
+<ul>
+<li>Se agrega registro de contacto para las órdenes de trabajo.</li>
+<li>Solo el propietario de la orden o quien la creó puede cambiar su estado.</li>
+<li>Nuevo parámetro <code>Edit Limit</code> (<code>everyone</code>/<code>owner</code>) que controla quién puede editar la orden de trabajo.</li>
+<li>Se agregan los campos <code>Customer Name</code> y <code>Contact Memo</code>.</li>
+</ul>
+<p><strong>Marcador / Dialer (dialer-1.4)</strong></p>
+<ul>
+<li>Las páginas relacionadas con el marcador ahora se controlan por rol.</li>
+<li>En la lista de marcación de campaña se agrega el campo <code>memo</code>, que guarda la condición SQL usada por el filtro.</li>
+<li>Se optimiza la página de configuración del marcador.</li>
+</ul>
+<p><strong>Campaña (campaign-1.4)</strong></p>
+<ul>
+<li>Los resultados de llamada pueden vincularse con una orden de trabajo si el módulo está instalado; se agrega ventana emergente al consultar (pop en consulta).</li>
+<li>Las campañas sin grupo de agentes se muestran con fondo gris en la lista.</li>
+<li>En Avanzado se agrega <code>blacklist direct</code> (<code>Team</code>/<code>Current Campaign</code>) para controlar el alcance de la lista negra (DNC).</li>
+<li>Al crear una campaña se puede elegir crear un nuevo paquete de clientes, usar la tabla maestra de individuos/organizaciones, o reutilizar un paquete existente (mostrando si usa la tabla maestra).</li>
+<li>Se puede ordenar y marcar como requeridos los campos mostrados al agente o al back office; se agrega el indicador <code>Use Main Table</code>.</li>
+<li>En "Asignación manual de clientes" el campo de búsqueda respeta la configuración de campos del back office.</li>
+<li>Un paquete que usa la tabla maestra comparte los mismos clientes que dicha tabla, y un cliente de tabla maestra solo puede pertenecer a un paquete a la vez; se agrega el botón <code>Select from main database</code> para agregar clientes desde la tabla maestra.</li>
+<li>En Clientes: se corrige que la lista no se refrescaba tras un borrado por condiciones; se agrega el campo <code>CallPath</code> (también visible y buscable en CDRs).</li>
+<li>En Resultados: se agrega vínculo con la orden de trabajo y un resultado <code>DNC</code> que envía automáticamente el número del cliente a la lista de no llamar.</li>
+<li>En Control de calidad: se corrige una anomalía al escuchar grabaciones históricas.</li>
+<li>En la lista DNC: se reduce de tres campos de entrada a uno, se agrega función de vaciado (truncate) y de alta de números, y se optimiza la interfaz.</li>
+</ul>
+<p><strong>Atención al cliente (customerservice-1.1)</strong></p>
+<ul>
+<li>Nuevo parámetro <code>Add Customer Priority</code> (<code>Only Individual</code>, <code>Individual Priority</code>, <code>Only Organization</code>, <code>Organization Priority</code>).</li>
+<li>Nuevo botón para configurar los campos de búsqueda de clientes individuales/organizaciones, con modos <code>Disabled Search</code>, <code>Partial Matched</code> y <code>All Matched</code>.</li>
+<li>En CDR: clic en <code>Src</code>/<code>Dst</code> para marcar desde el portal del agente; las llamadas entrantes no contestadas se resaltan en rojo y las salientes no contestadas en verde oscuro.</li>
+<li>En Llamadas perdidas: los registros sin seguimiento se resaltan en rojo.</li>
+</ul>
+<p><strong>Plataforma de trabajo del agente</strong></p>
+<ul>
+<li>El parámetro <code>Device</code> del agente pasa a autodetección (<code>Self-adapting</code>).</li>
+<li>Si el agente usa softphone y este se desconecta, se hace check-out automático de la cola.</li>
+</ul>
+<p><strong>Pantalla emergente de campaña (Campaign Pop Page)</strong></p>
+<ul>
+<li>En modo Preview/Automático, si el primer número no contesta se marca el siguiente automáticamente; el número marcado se resalta en rojo.</li>
+<li>Se puede asignar el resultado DNC directamente desde la pantalla emergente del cliente.</li>
+<li>Se permite fusionar dos clientes (A y B): B queda combinado con A y no puede editarse ni eliminarse por separado.</li>
+</ul>
+<p><strong>Pantalla emergente de atención al cliente</strong></p>
+<ul>
+<li>Nueva página de búsqueda de clientes.</li>
+<li>Nueva pantalla emergente de cliente nuevo, controlada por el parámetro <code>Add Customer Priority</code>: según la prioridad configurada se puede cambiar entre ficha de individuo y de organización.</li>
+</ul>
+<h2 id="astercc-12-beta">AsterCC 1.2-beta<a class="headerlink" href="#astercc-12-beta" title="Permanent link">&para;</a></h2>
+<p><strong>Core</strong></p>
+<ul>
+<li>Se actualiza Google Maps a la versión 3.</li>
+<li>Se agrega el módulo de órdenes de trabajo (Work Order), integrado con el módulo de atención al cliente.</li>
+<li>Se agrega el módulo de Base de Conocimiento (Knowledge).</li>
+<li>Se agrega la función de identificación de área telefónica (número de origen), disponible en la administración avanzada del call center.</li>
+<li>El modo de agente en los dispositivos queda habilitado por defecto.</li>
+<li>Los nombres de horario laboral (worktime) y paquete de horario admiten espacios en blanco.</li>
+<li>Al crear un plan de importación o exportación, la hora de ejecución por defecto es la hora actual.</li>
+<li>Se corrige que el sistema mostraba el módulo de marcador aunque no estuviera instalado.</li>
+<li>Los campos personalizados de "clientes individuales salientes" y "clientes empresariales salientes" se trasladan al módulo de gestión de clientes, agregando además búsqueda por campo personalizado.</li>
+<li>Se corrige un error de un solo dígito en el número de agente.</li>
+<li>Se corrige el título incorrecto del reporte de estadísticas de llamadas entrantes al exportar.</li>
+<li>El "enlace de nombre de identificador de llamada" se renombra a "vinculación de aplicaciones entrantes" (App Binding).</li>
+<li>Cuando una página de selección no tiene opciones no consulta la base de datos, y si solo tiene una opción la selecciona automáticamente; aplica a clientes individuales/empresariales salientes, Oficina Virtual → Clientes y CDR, Campaña → CDRs y Clientes, y Marcador → lista de marcación.</li>
+<li>Correcciones de traducción y de CSS.</li>
+<li>Exportación: se agrega empaquetado en sub-archivos cuando el volumen de datos es grande, comprimiendo cada N registros y empaquetando todo en un único archivo descargable.</li>
+<li>Mensajería interna: al elegir remitente se combina el número de agente con la cuenta (ej. astercc0(5000)); se agrega búsqueda por número de agente.</li>
+<li>Se agrega descarga automática del paquete de actualización.</li>
+<li>Se corrige que no se registraba el número de agente al enviar SMS o correo desde la plataforma del agente.</li>
+<li>Si el parámetro <code>Device</code> del agente está en autodetección y no se ingresa número, el sistema intenta conectar primero al teléfono con la misma IP; si falla, solicita ingresar la extensión.</li>
+<li>Los resultados de llamada se listan por fecha de actualización descendente, para controlar cuál queda seleccionado por defecto.</li>
+<li>Se optimiza el reproductor de grabaciones en línea, alargando la barra de progreso para facilitar el avance rápido en llamadas largas.</li>
+<li>Correcciones en varios plugins JS.</li>
+<li>Equipo: los equipos sin troncal o grupo de troncal asignado se muestran en amarillo en la lista; al editar por doble clic se ofrece asignar foco al campo de troncal; al crear un equipo se selecciona por defecto una troncal global disponible; en el alta de equipo, los máximos de cuentas/agentes/dispositivos/colas/salas de conferencia son 5 por defecto, y el idioma se preselecciona según el idioma del sistema.</li>
+<li>Cuenta: nombre y apellido dejan de ser obligatorios; se agrega visualización y búsqueda de <code>accountcode</code>.</li>
+<li>Grupos de cuenta: al eliminar un grupo se vacían el ID de grupo y el indicador de administrador en las cuentas asociadas.</li>
+<li>Edición rápida: se corrige el guardado por lotes del estado del agente.</li>
+<li>Grupos de agentes: los grupos sin cola asignada (o con cola eliminada) se muestran en rojo; el permiso de salida (<code>Outbound</code>) cambia a "sin restricción" por defecto; se corrige que al quitar un agente del grupo no se eliminaba su cola de check-in en Asterisk; se pueden editar en lote parámetros de los agentes ya seleccionados al crear/editar el grupo; el parámetro <code>Portal</code> inicia en <code>Default</code>; se agregan los parámetros <code>Current Application Type</code> y <code>Current Application</code>; la página de edición muestra la vinculación de aplicación entrante asociada; se gestiona automáticamente el campo <code>Current Agent Group</code> del agente al entrar, salir o eliminarse un grupo; si una aplicación se asocia al grupo sin tener aplicación de salida actual, se crea la vinculación automáticamente.</li>
+<li>Agente: en el alta, el desplegable de número destino se puede ocultar con un clic en cualquier parte de la página; si el dispositivo del agente tiene DND activo, se muestra en rojo junto al nombre; se agrega y permite editar el parámetro <code>Current Agent Group</code>; al hacer doble clic, si el grupo asociado ya no existe se actualiza automáticamente a otro grupo válido (o se limpia si no pertenece a ninguno); se muestra aviso al actualizar <code>Device</code>.</li>
+<li>Dispositivo: el "modo agente" queda habilitado por defecto.</li>
+<li>Cola: soporta anunciar periódicamente la posición en la cola, permitir teclas para pasar a IVR o buzón de voz durante la espera, reproducir un menú IVR antes de entrar a la cola (configurable según el número de personas en espera, incluyendo 0), reproducir un IVR cuando la cola no tiene agentes disponibles, anunciar la posición en la cola, y usar tono de timbre en lugar de música de espera en la música en espera.</li>
+<li>Extensión: se agrega función de verificación de extensiones que muestra los resultados de la comprobación.</li>
+<li>Listas negras: el campo <code>Account</code> deja de ser obligatorio.</li>
+<li>PBX → CDR: se modifican las opciones de búsqueda por disposición de llamada.</li>
+<li>Salas de conferencia (Meetmes): aviso si no se elige ninguna cuenta invitada; ajustes de traducción.</li>
+<li>Anuncios: los anuncios sin archivo de audio asignado se muestran en rojo en la lista.</li>
+<li>IVR: se corrige que no se podía seleccionar <code>Follow Action</code> en "Set IVR Dests"; <code>Max. Digits</code> es "No" por defecto y se ajusta automáticamente cuando el destino usa código de entrada por defecto; se optimiza el diseño de alta/edición.</li>
+<li>DID: se pueden dar de alta varios números DID usando un guion entre dos números; la edición muestra la aplicación entrante vinculada.</li>
+<li>Grupos de DID: la edición muestra la aplicación entrante vinculada.</li>
+<li>Troncal: al elegir protocolo dahdi (grupo de canal o canal único) se ocultan las plantillas y el detalle; la edición muestra la aplicación entrante vinculada; se elimina el <code>* *</code> sobrante del campo de detalle.</li>
+<li>Mensajes → Plantillas: se corrige un error al editar plantillas de tipo correo; se corrige la pérdida de sesión al subir imágenes desde Internet Explorer.</li>
+<li>Monitor en vivo: se puede filtrar por equipo o grupo de agentes; al pasar el mouse sobre una pausa "otro" se muestra el motivo completo; se optimiza el estilo; en la selección de grupo, el grupo con agentes conectados se resalta en rojo; se corrige la falta de sincronía entre los totales por equipo y por grupo de agentes.</li>
+<li>Importación: se agrega selector de equipo para elegir clientes individuales/empresariales salientes, paquetes de clientes y clientes de oficina virtual por equipo; se puede importar a la lista negra de campaña y a datos de área telefónica; al importar clientes se insertan también en la lista de marcación de la campaña correspondiente (si un cliente ya existe, se actualizan su prioridad y horario en la lista de marcación con los nuevos datos).</li>
+<li>Personalización: los campos nuevos de un paquete de clientes ya asociado a una campaña tienen privilegio de edición por defecto; el tipo de idioma coincide con el idioma del navegador.</li>
+<li>Sonidos: se optimiza el estilo de la página de subida de archivos.</li>
+<li>Paquete de horario laboral: se corrige que la edición no mostraba el mensaje completo.</li>
+<li>Horario laboral: los campos <code>Start</code> y <code>End</code> incorporan segundos.</li>
+<li>Vinculación de aplicaciones (App Binding): se elimina la aplicación por defecto del sistema; se agregan los parámetros <code>Agent Group</code> y <code>Trunk Match</code>.</li>
+<li>Trabajos de importación (Shell Import Jobs): se muestra la hora del servidor y el número de duplicados detectados.</li>
+<li>Códigos de función: se agregan tres atajos (<code>*69</code> modo normal, <code>*71</code> modo solo saliente, <code>*72</code> modo solo entrante) y el parámetro <code>parking_key</code> (por defecto 700) junto con diez extensiones de recuperación de aparcado (701-710 por defecto).</li>
+<li>Mensajes del sistema: se elimina la vista de uso de memoria.</li>
+<li>Configuración: el límite de exportación queda desactivado por defecto (límite de tiempo en 0); se agrega la opción "100" al límite de registros por página; se agrega el menú de configuración general de SIP; se agrega restricción de acceso por rango de IP.</li>
+<li>DAHDI: al crear o editar un DID se inserta automáticamente en la tabla de DID.</li>
+</ul>
+<p><strong>Campaña (campaign-1.3)</strong></p>
+<ul>
+<li>Las campañas sin paquete de clientes se muestran en gris en la lista, con aviso en rojo al abrir la edición; si la cuenta de marcador (<code>Dialer Account</code>) vinculada fue eliminada, la campaña se muestra en rojo con foco automático en ese campo.</li>
+<li>Al guardar, los campos del cliente quedan con privilegio de edición.</li>
+<li>Al eliminar una campaña de la papelera se pone en inactiva la encuesta vinculada, se eliminan sus resultados y se eliminan sus cuotas de encuesta asociadas.</li>
+<li>Se agregan <code>dialer recoverdate</code> y <code>dialer recovercount</code>.</li>
+<li>El selector <code>Event URL</code> incluye la opción "por favor seleccione".</li>
+<li>Los clientes con menos llamadas realizadas se asignan primero (tanto en asignación automática como en asignación manual desde el portal del agente).</li>
+<li>Nuevo parámetro <code>Default Search Cdr</code>: si está activo, la pantalla emergente del cliente muestra automáticamente el historial de contacto; si no, debe consultarse manualmente.</li>
+<li>Se agrega alias de campo por paquete de clientes, usado como encabezado al exportar desde Control de Calidad y Clientes.</li>
+<li>Paquetes de clientes: se muestran en gris si la campaña asociada fue eliminada; al eliminar un paquete se deshabilita la campaña asociada (sin permitir cambiar su estado); se agrega un ID de importación por lote para identificar el plan de importación de origen de cada cliente.</li>
+<li>Clientes: se puede eliminar por búsqueda (los clientes con estado distinto de "abierto" no se pueden eliminar); se optimiza el rendimiento del borrado masivo.</li>
+<li>Control de calidad (Qcpage): se optimiza el estilo de la página de escucha; el encabezado se puede personalizar y exportar datos desde la misma página.</li>
+<li>Resultados: el administrador de equipo puede ver los resultados a nivel de sistema.</li>
+<li>Monitores de datos: se agrega el total de éxitos.</li>
+<li>CDRs: se agregan campos relacionados con el marcador.</li>
+</ul>
+<p><strong>Oficina virtual (virtualoffice-1.4)</strong></p>
+<ul>
+<li>Personalización: se agregan cuatro tipos de campo (subida de archivo, fecha, fecha y hora, enlace); se corrige que no se podían guardar campos personalizados para varios clientes virtuales a la vez; al eliminar un campo personalizado se elimina también de la tabla correspondiente.</li>
+</ul>
+<p><strong>Marcador (dialer-1.3)</strong></p>
+<ul>
+<li>Se corrige un error de búsqueda por fecha de marcado en la página de reciclado; se corrige que el marcador no funcionaba al reciclar clientes mediante filtro.</li>
+<li>Se agrega el campo <code>Dial Time</code> (visible y buscable); se corrige que aparecía invertido respecto a <code>Callee Answer</code>.</li>
+<li>Al pasar el mouse sobre el nombre de la campaña se muestra su horario laboral; las campañas fuera de horario se muestran en gris.</li>
+<li>Configuración del marcador: se agregan avisos adicionales.</li>
+<li>Lista de marcación de campaña: se pueden mostrar y buscar los campos configurados por la campaña; se puede eliminar por selección o por búsqueda.</li>
+<li>Registro de filtros: se agrega la hora de finalización.</li>
+</ul>
+<p><strong>Fax (fax-1.3)</strong></p>
+<ul>
+<li>Al enviar un fax, si ya hay uno en curso, no se reinicia el mensaje de estado de la operación del usuario.</li>
+</ul>
+<p><strong>Plataforma de trabajo del agente</strong></p>
+<ul>
+<li>El agente puede cambiar su grupo de uso por defecto (mediante radio button), disponible solo si el grupo tiene vinculación de aplicación entrante; si solo existe un grupo, ese es el grupo por defecto (sin radio button visible).</li>
+<li>La opción "Mis órdenes de trabajo" del menú básico se traslada al módulo de gestión de órdenes de trabajo, controlada por permisos de rol.</li>
+<li>Para pausar o gestionar llamadas con error ya no se requiere el usuario/contraseña del líder de grupo; basta con usuario+contraseña o número de agente+contraseña.</li>
+</ul>
+<p><strong>Pantalla emergente de campaña</strong></p>
+<ul>
+<li>Se corrige que guardar un cliente duplicado no mostraba aviso.</li>
+<li>Se agrega un menú de estado de trabajo del agente con el total de éxitos en la campaña actual.</li>
+<li>Se elimina el límite de caracteres del memo de contacto.</li>
+<li>Se corrige el conteo total mostrado bajo las pestañas "Nuevo", "Pendiente", "Fallido" y "Éxito".</li>
+<li>Se migran los estilos de elementos a clases CSS.</li>
+</ul>
+<p><strong>Pantalla emergente de oficina virtual</strong></p>
+<ul>
+<li>Se corrige que el textarea no se podía editar; se optimiza el estilo.</li>
+</ul>
+<p><strong>Pantalla emergente de atención al cliente</strong></p>
+<ul>
+<li>Mejoras en la identificación de área telefónica del número de origen.</li>
+</ul>
+<p><strong>Calendario</strong></p>
+<ul>
+<li>Se corrigen textos multilingües en la gestión de horarios/calendario.</li>
+</ul>
+<h2 id="astercc-11">AsterCC 1.1<a class="headerlink" href="#astercc-11" title="Permanent link">&para;</a></h2>
+<p><strong>Core</strong></p>
+<ul>
+<li>Los campos de texto eliminan automáticamente los espacios al inicio/final en alta y edición.</li>
+<li>Al eliminar o deshabilitar un agente se verifica si tiene sesión de cola activa.</li>
+<li>Se usa <code>phone1</code> como clave única en los paquetes de clientes.</li>
+<li>Se corrige que no se podían eliminar registros con guion en el listado.</li>
+<li>Correcciones de traducción, de plugins JS y de estilos varios.</li>
+<li>Se corrige que algunas páginas no mostraban correctamente la barra de progreso de carga.</li>
+<li>Se corrige que no se podían recuperar extensiones desde la papelera.</li>
+<li>Al eliminar una campaña, aplicación o cliente virtual se eliminan también sus números de identificación de llamada (cvnumbers) asociados.</li>
+<li>Equipo: al editar los máximos (cuentas, dispositivos, agentes, colas, salas de conferencia) el valor no puede ser menor al total ya existente.</li>
+<li>Cuenta: el límite de tiempo de exportación queda desactivado por defecto.</li>
+<li>Rol: se agrega función de plegado de módulos en la ventana de permisos de alta/edición.</li>
+<li>Configuración rápida (Quick Setup): el tiempo de espera por defecto es 45; al previsualizar se muestra el uso actual del equipo; si el prefijo de usuario termina en número, los siguientes se incrementan correlativamente (ej. Astercc01, Astercc02...).</li>
+<li>Edición rápida: se agrega función de restablecer contraseña al editar un dispositivo.</li>
+<li>Grupo de agentes: se muestra el grupo actual del agente al agregarlo/editarlo; al actualizar la cola del grupo se actualiza también la extensión de entrada de la campaña (si el módulo está instalado); la cola creada automáticamente inicia en estado nuevo; se puede definir la prioridad (<code>penalty</code>) de cada agente en el grupo.</li>
+<li>Dispositivo: el buzón de voz queda habilitado por defecto y su contraseña es obligatoria; no se muestran usuario/clave de registro cuando el tipo es externo; se agrega mensaje de instrucciones del buzón de voz.</li>
+<li>Troncal: se muestra la cadena de registro en la lista; el estado de la regla pasa a tener las opciones Habilitado/Deshabilitado/Rechazar (rechazar impide la llamada cuando la regla coincide).</li>
+<li>Grupo de DID: se agrega tipo de coincidencia (número o prefijo), heredado por los DID del grupo.</li>
+<li>Cola: el "autofill" inicia en "sí" por defecto; el equipo de la cola no se puede editar tras creada.</li>
+<li>Ruta entrante: el equipo es obligatorio; se agrega la opción "Coincidencia automática" para la transferencia (permite elegir una cuenta directamente en vez de un ID de acción); se puede buscar por número DID.</li>
+<li>Extensión: no se puede editar la extensión si su destino es una cola; si el destino es un IVR, al editar se actualiza la extensión de entrada de la campaña (si el módulo está instalado); una cola con extensión ya asignada no admite otra.</li>
+<li>Grupo de troncales: se agrega configuración de reglas de grupo, verificando duplicados al guardar.</li>
+<li>Lista blanca: se puede guardar sin elegir equipo ni cuenta.</li>
+<li>CDRs: se agrega visualización y búsqueda por duración.</li>
+<li>IVR: al editar la extensión del IVR se actualiza la extensión de entrada de la campaña (si aplica); el tipo de obtención de datos queda vacío al cambiar a tipo normal; en "Edit IVR Dest", si <code>Follow Action</code> es "No", el tipo de acción de seguimiento queda vacío.</li>
+<li>DAHDI: ajustes de estilo.</li>
+<li>Monitor de grupo de agentes: se puede forzar pausa (con motivo) o forzar disponibilidad, y editar la prioridad del agente (reordena automáticamente); se corrige la duplicación de filas iguales; un agente en modo "solo saliente" se muestra como "libre (solo saliente)"; se corrige que se podían ejecutar escucha, intrusión, corte forzado y susurro sin ingresar número telefónico.</li>
+<li>Configuración: se agregan parámetros para el formato de visualización de duración y de segundos; el límite de tiempo de exportación por defecto pasa a las 18:00.</li>
+<li>Contraseña del sistema: admite a-z, A-Z, números y los símbolos <code>_ \ / , . * ! @ # $ %</code>.</li>
+<li>Cuadro de búsqueda: el campo de fecha/hora admite entrada manual además de selector.</li>
+<li>Importación: coincidencia automática del nombre de campo con el encabezado (primera fila); si el cliente ya existe en el paquete, se usa como cliente de la lista de marcación de campaña; el administrador de equipo puede importar clientes al paquete de su propio equipo.</li>
+<li>Usuarios en línea: ya no se puede forzar el cierre de la propia sesión.</li>
+<li>Códigos de función: se agrega "Consultar agente", por defecto <code>*55</code>.</li>
+<li>Plataforma de trabajo del agente: se corrige que, con una sola campaña deshabilitada, la pestaña "Pendiente" mostraba la barra de carga indefinidamente; se optimizan los estilos de la página de consulta en Chrome, de alta de tareas, y de las páginas de "procesamiento de datos con error" y colas de cursor.</li>
+</ul>
+<p><strong>Marcador (dialer-1.2)</strong></p>
+<ul>
+<li>Se agrega indicador <code>Online</code> para mostrar el inicio de sesión del agente por grupo.</li>
+<li>Se corrige que en algunos casos los datos no se mostraban correctamente.</li>
+<li>Al reciclar un cliente sin indicar prioridad, se usa la prioridad ya guardada en el registro.</li>
+<li>Se puede buscar por fecha de creación en la página de reciclado.</li>
+<li>En "Recycle" y "Diallist": se ajusta el formato de duración, se muestra el total de datos y de páginas, y se puede ocultar/mostrar el cuadro de búsqueda.</li>
+<li>Si un campo tiene el foco, no se sobrescribe con la actualización automática.</li>
+<li>Correcciones de estilo.</li>
+<li>Lista de marcación de campaña: al reciclar sin prioridad se usa la ya guardada; se agrega visualización y búsqueda por agente y por número de intentos (<code>autocount</code>).</li>
+<li>Se agrega una página de estadísticas del marcador.</li>
+</ul>
+<p><strong>Campaña (campaign-1.2)</strong></p>
+<ul>
+<li>El grupo de agentes es obligatorio; se corrige el guardado incorrecto de <code>Dial-in Exten.</code>; <code>Agent Max. Own</code> inicia en 100; el estado del marcador para la campaña queda habilitado; en la configuración de campos se puede reordenar el orden de visualización arrastrando; se permite agregar/editar <code>Average Answered Ringing Time</code>, <code>Average Talking Time</code>, <code>Average Answered Rate</code> y <code>Average Followup</code>; se agregan <code>ShortCallSec</code>, <code>ShortCallRate</code>, <code>ShortCallAcwSec</code> y <code>CalleeWaitSec</code>; se permite editar <code>DialerCap</code> y agregar <code>Dialerval</code>; al eliminar de la papelera se eliminan también los registros en <code>campaign_diallists</code> y <code>campaign_cdrs</code>; se agrega <code>Default Status</code> para la pantalla emergente del cliente; <code>check reassign</code> inicia en "no"; al guardar la primera campaña se verifica si el equipo tiene un DID vinculado y, si no, se ofrece asignarlo como pantalla emergente entrante por defecto.</li>
+<li>CDRs: se agrega el nombre del agente; el formato de duración sigue la configuración general.</li>
+<li>Campos personalizados: se agregan los tipos <code>date</code>, <code>datetime</code> y <code>upload</code>; se valida duplicidad al guardar; se permite cambiar el tipo entre "input" y "select".</li>
+<li>Clientes: se agrega búsqueda por número de agente; en el alta solo se muestran los campos editables configurados por la campaña, y en la edición todos los campos configurados; se agrega visualización y búsqueda por agente y por <code>autocount</code>; se corrige un error de JS cuando no existe ninguna campaña.</li>
+<li>Control de calidad (Qc): la lista de campos sigue la configuración de la campaña; el administrador de equipo puede ver los datos del equipo "0"; al escuchar una grabación se puede ver la información del cliente y de la encuesta.</li>
+</ul>
+<p><strong>Oficina virtual (virtualoffice-1.2)</strong></p>
+<ul>
+<li>Ajustes de estilo en la página de clientes.</li>
+</ul>
+<p><strong>Encuestas (survey-1.2)</strong></p>
+<ul>
+<li>Ajustes de estilo en algunas ventanas emergentes de la página de encuestas.</li>
+</ul>
+<h2 id="astercc-11-beta2">AsterCC 1.1-beta2<a class="headerlink" href="#astercc-11-beta2" title="Permanent link">&para;</a></h2>
+<p><strong>Core</strong></p>
+<ul>
+<li>Se agregan modos de trabajo del agente: solo saliente, solo entrante y ambos; en modo saliente el agente no recibe llamadas distribuidas por el grupo, en modo entrante no puede marcar por su cuenta, y en modo "ambos" puede marcar y también recibir llamadas del grupo al estar libre; se puede controlar si el agente elige su propio modo.</li>
+<li>Se agrega el estado de procesamiento posterior a la llamada (ACW), con modos: al timbrar (incluye llamadas no contestadas), al finalizar una llamada contestada, y con posibilidad de que el agente elija su modo de ACW libremente.</li>
+<li>Se mejora la función de pausa del agente: se puede elegir un motivo de pausa (útil para analizar el comportamiento del agente) y se agrega función de bloqueo de pantalla.</li>
+<li>Se agrega la pantalla emergente de aplicación y extensión por defecto: al configurarse una aplicación por defecto por equipo, las llamadas no asociadas a cola (por ejemplo entrantes por DID) o las llamadas salientes directas también disparan la pantalla emergente correspondiente.</li>
+<li>Mejoras en la interfaz del agente: además del control de ACW, se agrega inicio y cierre de sesión con un clic.</li>
+<li>Identificador de llamada del cliente: al marcar por saliente o predictivo, el nombre del cliente se muestra como nombre de quien llama en el teléfono del agente.</li>
+<li>Sala de conferencias: se muestra el estado de los invitados mientras están siendo llamados.</li>
+<li>Encuestas/calificación: se agrega soporte de calificación en llamadas salientes; en la página de calificación se agregan botones para escuchar y descargar la grabación.</li>
+<li>Se corrige el orden incorrecto de algunos parámetros especiales al recargar el archivo de configuración.</li>
+<li>Se agrega plantilla de fax en el envío masivo de mensajes.</li>
+<li>La API de JS agrega interfaces de corte forzado y de susurro (whisper).</li>
+<li>Se mejora el soporte de importación de datos multilingües, incluyendo la selección de hora de marcado y prioridad al importar a la lista de marcación.</li>
+<li>Se agrega límite de horario de ejecución de exportación: solo cuentas con permiso pueden exportar en cualquier momento; el resto solo puede hacerlo después de la hora configurada en el sistema.</li>
+<li>La función de líder de grupo se muestra por separado en un menú propio en la interfaz del agente.</li>
+</ul>
+<p><strong>Marcación saliente (outbound-1.1)</strong></p>
+<ul>
+<li>Se agrega envío de fax con un clic (requiere el módulo de fax instalado): permite enviar una plantilla o subir un PDF.</li>
+<li>Filtro de lista negra: permite verificar contra decenas de millones de registros de lista negra y depurar los paquetes de clientes de una campaña; los coincidentes se guardan en un archivo aparte para analizar la calidad del origen de los datos.</li>
+<li>Se agrega función de detección de duplicados en la gestión de clientes.</li>
+<li>El historial de llamadas de campaña se muestra separado por tarea.</li>
+<li>Se corrige que, en Firefox 10.0.x, tras guardar un cliente nuevo desde la pantalla emergente, la encuesta no podía iniciarse.</li>
+</ul>
+<p><strong>Marcador (dialer-1.1)</strong></p>
+<ul>
+<li>El marcador predictivo ya puede marcar directamente a un IVR.</li>
+<li>Se agregan los eventos <code>PDDIALER-callcallee</code>, <code>PDDIALER-calleeanswer</code>, <code>PDDIALER-calltarget</code>, <code>PDDIALER-agentanswer</code> y <code>PDDIALER-hangup</code>.</li>
+<li>Se agrega un menú independiente del marcador, controlable también en modo de sesión por cuenta.</li>
+<li>Nueva página de lista de marcación: permite gestionarla y crear filtros (planes de filtrado que agregan clientes que cumplen la condición a la lista).</li>
+<li>Nueva página de configuración del marcador: permite definir el máximo de concurrencia por equipo y el modo de concurrencia.</li>
+</ul>
+<p><strong>Oficina virtual (virtualoffice-1.1)</strong></p>
+<ul>
+<li>Se agrega función de detección de duplicados en la gestión de clientes.</li>
+<li>Se ajustan los campos de búsqueda y los campos mostrados por defecto en el historial de llamadas.</li>
+</ul>
+<p><strong>Fax (fax-1.1)</strong></p>
+<ul>
+<li>Se corrige que la interfaz de envío manual de fax no se mostraba en la versión en inglés de la página de envío de fax.</li>
+</ul>
+<p><strong>Encuestas (survey-1.1)</strong></p>
+<ul>
+<li>Se mejora el método de exportación de cuotas y se agrega límite de horario de ejecución para la exportación.</li>
+</ul>
+<p><strong>BPO (bpo-1.1)</strong></p>
+<ul>
+<li>Se corrigen problemas de estilo en las páginas de control de calidad y gestión de clientes.</li>
+</ul>
+<p><strong>Financiero (financial-1.1)</strong></p>
+<ul>
+<li>La función de facturación se traslada del módulo de reportes al módulo financiero.</li>
+</ul>
+<h2 id="astercc-11-beta1">AsterCC 1.1-beta1<a class="headerlink" href="#astercc-11-beta1" title="Permanent link">&para;</a></h2>
+<p><strong>Parche 1 (asterCC-1.1-beta1-patch1)</strong></p>
+<ul>
+<li>Se corrige que el marcador no limpiaba la tarea correspondiente cuando fallaba el intento de marcado.</li>
+<li>Se corrige que la música de espera por defecto no se mostraba como seleccionada en la cola.</li>
+<li>En Configuración rápida (creación de extensión, o de extensión y agente) se agrega la opción de elegir el tono de retorno de llamada (Music Ring Back Tone) mediante el botón de configuración detallada.</li>
+<li>En Edición rápida se puede modificar el tono de retorno de llamada de la extensión.</li>
+<li>En la página de horario laboral se agregan nombre, fecha de inicio y fecha de fin; en la página de paquete de horario, la selección ahora muestra el nombre del horario en vez de su detalle.</li>
+<li>Se agrega búsqueda de valores vacíos por campo.</li>
+<li>Se corrige que el CDR de campaña o de cliente virtual no registraba el número de destino en llamadas entrantes o del marcador.</li>
+<li>La página de actualización de módulos de asterCC permite elegir el servidor espejo (mirror) de descarga.</li>
+<li>En el módulo de estadísticas, la página de agente agrega las métricas "Duración total entrante" y "Duración total saliente" (timbrado + conversación).</li>
+<li>Se agregan botones de actualización manual del estado del dispositivo y del estado de la llamada en la plataforma del agente (agentdesk).</li>
+<li>Se corrige un <code>model_id</code> incorrecto de la función de marcado en la API de JS.</li>
+</ul>
+<p><strong>Parche del marcador (asterCC-1.1-beta1-dialer-1.0-patch1)</strong></p>
+<ul>
+<li>Se corrige que el marcador no obtenía correctamente el número de la cola.</li>
+<li>Se corrige que en algunos casos el marcador no podía iniciarse.</li>
+</ul>
+<p><strong>Parche de marcación saliente (asterCC-1.1-beta1-outbound-1.0-patch1)</strong></p>
+<ul>
+<li>Se corrige que en algunos casos no se podía limpiar la cuota de encuesta en la plataforma del agente.</li>
+</ul>
+<p><strong>Parche de llamadas entrantes (asterCC-1.1-beta1-inbound-1.0-patch1)</strong></p>
+<ul>
+<li>Se corrige que el número que llama y el número llamado (src/dst) aparecían invertidos en el CDR de llamadas entrantes.</li>
+</ul>
+<hr />
+<h2 id="fuentes">Fuentes<a class="headerlink" href="#fuentes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>raw/zh/change_log/astercc_login_security_patch.txt</code></li>
+<li><code>raw/en/change_log/astercc-4.2_changelog.txt</code></li>
+<li><code>raw/zh/change_log/astercc-4.2_changelog.txt</code></li>
+<li><code>raw/en/change_log/astercc-4.1_changelog.txt</code></li>
+<li><code>raw/zh/change_log/astercc-4.1_changelog.txt</code></li>
+<li><code>raw/en/change_log/astercc-3.2-rc1_changelog.txt</code></li>
+<li><code>raw/zh/change_log/astercc-3.2-rc1_changelog.txt</code></li>
+<li><code>raw/en/change_log/astercc-2.6-rc2_changelog.txt</code></li>
+<li><code>raw/zh/change_log/astercc-2.6-rc2_changelog.txt</code></li>
+<li><code>raw/en/change_log/astercc-2.6-rc1_changelog.txt</code></li>
+<li><code>raw/zh/change_log/astercc-2.6-rc1_changelog.txt</code></li>
+<li><code>raw/en/change_log/astercc-2.4-rc2_changelog.txt</code></li>
+<li><code>raw/zh/change_log/astercc-2.4-rc2_changelog.txt</code></li>
+<li><code>raw/en/change_log/astercc-2.4-rc1_changelog.txt</code></li>
+<li><code>raw/zh/change_log/astercc-2.4-rc1_changelog.txt</code></li>
+<li><code>raw/en/change_log/astercc-2.3-rc2_changelog.txt</code></li>
+<li><code>raw/zh/change_log/astercc-2.3-rc2_changelog.txt</code></li>
+<li><code>raw/en/change_log/astercc-2.3-rc1_changelog.txt</code></li>
+<li><code>raw/zh/change_log/astercc-2.3-rc1_changelog.txt</code></li>
+<li><code>raw/en/change_log/astercc-2.2_changelog.txt</code></li>
+<li><code>raw/zh/change_log/astercc-2.2_changelog.txt</code></li>
+<li><code>raw/en/change_log/astercc-2.2-rc4_changelog.txt</code></li>
+<li><code>raw/zh/change_log/astercc-2.2-rc4_changelog.txt</code></li>
+<li><code>raw/en/change_log/astercc-2.2-beta_changelog.txt</code></li>
+<li><code>raw/zh/change_log/astercc-2.2-beta_changelog.txt</code></li>
+<li><code>raw/en/change_log/astercc-2.2-alpha_changelog.txt</code></li>
+<li><code>raw/zh/change_log/astercc-2.2-alpha_changelog.txt</code></li>
+<li><code>raw/en/change_log/astercc-2.1_changelog.txt</code></li>
+<li><code>raw/zh/change_log/astercc-2.1_changelog.txt</code></li>
+<li><code>raw/en/change_log/astercc-2.0_changelog.txt</code></li>
+<li><code>raw/zh/change_log/astercc-2.0_changelog.txt</code></li>
+<li><code>raw/en/change_log/astercc-2.0-beta_changelog.txt</code></li>
+<li><code>raw/zh/change_log/astercc-2.0-beta_changelog.txt</code></li>
+<li><code>raw/en/change_log/astercc-1.2_changelog.txt</code></li>
+<li><code>raw/zh/change_log/astercc-1.2_changelog.txt</code></li>
+<li><code>raw/en/change_log/astercc-1.2.2_changelog.txt</code></li>
+<li><code>raw/zh/change_log/astercc-1.2.2_changelog.txt</code></li>
+<li><code>raw/en/change_log/astercc-1.2.1_changelog.txt</code></li>
+<li><code>raw/zh/change_log/astercc-1.2.1_changelog.txt</code></li>
+<li><code>raw/en/change_log/astercc-1.2-beta_changelog.txt</code></li>
+<li><code>raw/en/change_log/astercc-1.2_beta_changelog.txt</code></li>
+<li><code>raw/zh/change_log/astercc-1.2-beta_changelog.txt</code></li>
+<li><code>raw/en/change_log/astercc-1.1_changelog.txt</code></li>
+<li><code>raw/zh/change_log/astercc-1.1_changelog.txt</code></li>
+<li><code>raw/en/change_log/astercc-1.1-beta2_changelog.txt</code></li>
+<li><code>raw/zh/change_log/astercc-1.1-beta2_changelog.txt</code></li>
+<li><code>raw/en/change_log/astercc-1.1-beta1_changelog.txt</code></li>
+<li><code>raw/zh/change_log/astercc-1.1-beta1_changelog.txt</code></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.top", "navigation.indexes", "navigation.tracking", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../assets/javascripts/nav-toggle.js"></script>
+      
+    
+  </body>
+</html>

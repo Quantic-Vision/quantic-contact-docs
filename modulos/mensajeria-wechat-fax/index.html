@@ -1,0 +1,3212 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación de AsterCC — plataforma de call center basada en Asterisk">
+      
+      
+      
+      
+        <link rel="prev" href="../atencion-cliente-mensajeria-ecommerce/">
+      
+      
+        <link rel="next" href="../../casos-de-uso/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Mensajería — WeChat, Fax y envío masivo - Wiki AsterCC (Español)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mensajeria-wechat-fax-y-envio-masivo" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Wiki AsterCC (Español)" class="md-header__button md-logo" aria-label="Wiki AsterCC (Español)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Wiki AsterCC (Español)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mensajería — WeChat, Fax y envío masivo
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Wiki AsterCC (Español)" class="md-nav__button md-logo" aria-label="Wiki AsterCC (Español)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Wiki AsterCC (Español)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glosario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glosario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../introduccion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introducción a AsterCC
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. Introducción a AsterCC
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/que-es-astercc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ¿Qué es AsterCC?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/funcionalidades/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funcionalidades del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/arquitectura-general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura general
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/demo-en-linea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo en línea
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../instalacion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Instalación y configuración inicial
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Instalación y configuración inicial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/requisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requisitos del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/descarga-e-instalacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descarga e instalación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/instalar-desde-usb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instalar desde USB (AsterCC Box)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/configuracion-post-instalacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración post-instalación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacion/licencias-y-errores-comunes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licencias y errores comunes de inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../primeros-pasos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Primeros pasos
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Primeros pasos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/guia-administradores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía rápida para administradores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/guia-agentes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía rápida para agentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/recorrido-interfaz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recorrido por la interfaz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../primeros-pasos/configurar-softphones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configurar softphones (Eyebeam, X-Lite, Zoiper)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Módulos del sistema
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. Módulos del sistema
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pbx-y-telefonia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX y telefonía
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pbx-ivr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX — IVR (menú de voz)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pbx-funciones-avanzadas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PBX — Funciones avanzadas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marcador-y-campanas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcador y campañas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../marcador-predictivo-avanzado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcador predictivo — avanzado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cuentas-equipos-permisos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cuentas, equipos y permisos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarifas-y-facturacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarifas y facturación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../encuestas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encuestas y cuestionarios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../base-conocimiento-work-orders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base de conocimiento y Work Orders
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plataforma-del-agente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plataforma de trabajo del agente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reportes-y-estadisticas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reportes, estadísticas y financiero
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oficina-virtual-bpo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oficina virtual / BPO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atencion-cliente-mensajeria-ecommerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atención al cliente, mensajería y e-commerce
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mensajería — WeChat, Fax y envío masivo
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mensajería — WeChat, Fax y envío masivo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qué es
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-se-usa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo se usa
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cómo se usa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wechat-conectar-una-cuenta-oficial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WeChat — conectar una cuenta oficial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wechat-menu-personalizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WeChat — menú personalizado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fax-dispositivos-y-envio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fax — dispositivos y envío
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#envio-masivo-de-correosms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Envío masivo de correo/SMS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plantillas-de-mensajes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plantillas de mensajes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mensajes-internos-y-avisos-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mensajes internos y avisos del sistema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servidor-de-correo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Servidor de correo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servidor-de-sms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Servidor de SMS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencia-rapida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referencia rápida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fuentes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../casos-de-uso/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Casos de uso y soluciones
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. Casos de uso y soluciones
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/call-center-inbound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Call center de atención al cliente (inbound)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/marketing-outbound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marketing outbound / televentas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/e-commerce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-commerce
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/oficina-virtual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oficina virtual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/marcacion-predictiva/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Marcación predictiva
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../casos-de-uso/casos-tecnicos-avanzados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Casos técnicos avanzados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../administracion/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Administración avanzada
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    6. Administración avanzada
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/asterisk-ami/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración de Asterisk AMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/openvpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenVPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/apc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    APC (caché de PHP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/mailman/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mailman / correo saliente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/diagnostico-red-voip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagnóstico de red y VoIP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/configuracion-y-mantenimiento-sistema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuración y mantenimiento del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/gestion-avanzada-call-center/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestión avanzada del call center
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administracion/historial-documentacion-1.2-beta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentación histórica — AsterCC 1.2 beta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../desarrollo/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Guía de desarrollo y customización
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    7. Guía de desarrollo y customización
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-y-ami/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API y AMI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/guia-desarrolladores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía para desarrolladores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/introduccion-api-integracion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción a la API de integración
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/codigos-retorno-e-idiomas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Códigos de retorno y codificación de idioma
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-autenticacion-y-sesion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Autenticación y sesión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-control-de-llamada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Control de llamada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-supervision-y-control-de-agente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Supervisión y control de agente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/api-datos-y-grabaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API — Datos y grabaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/eventos-tiempo-real-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recibir eventos en tiempo real de la API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo/integrar-envio-de-sms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integrar el envío de SMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Preguntas frecuentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Solución de problemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Historial de versiones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qué es
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-se-usa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo se usa
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cómo se usa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wechat-conectar-una-cuenta-oficial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WeChat — conectar una cuenta oficial
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wechat-menu-personalizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WeChat — menú personalizado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fax-dispositivos-y-envio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fax — dispositivos y envío
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#envio-masivo-de-correosms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Envío masivo de correo/SMS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plantillas-de-mensajes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plantillas de mensajes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mensajes-internos-y-avisos-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mensajes internos y avisos del sistema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servidor-de-correo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Servidor de correo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servidor-de-sms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Servidor de SMS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencia-rapida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referencia rápida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fuentes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="mensajeria-wechat-fax-y-envio-masivo">Mensajería — WeChat, Fax y envío masivo<a class="headerlink" href="#mensajeria-wechat-fax-y-envio-masivo" title="Permanent link">&para;</a></h1>
+<h2 id="que-es">Qué es<a class="headerlink" href="#que-es" title="Permanent link">&para;</a></h2>
+<p>Tres canales de comunicación adicionales al teléfono: <strong>WeChat</strong> (atención al cliente vía la app china más usada), <strong>Fax</strong> (todavía vigente en flujos que requieren comprobantes/contratos), y <strong>envío masivo de correo/SMS</strong> (campañas de comunicación a un segmento de clientes).</p>
+<h2 id="como-se-usa">Cómo se usa<a class="headerlink" href="#como-se-usa" title="Permanent link">&para;</a></h2>
+<h3 id="wechat-conectar-una-cuenta-oficial">WeChat — conectar una cuenta oficial<a class="headerlink" href="#wechat-conectar-una-cuenta-oficial" title="Permanent link">&para;</a></h3>
+<p>Requisitos previos: el servidor de AsterCC debe ser accesible por internet en el puerto 80, tener el módulo de WeChat instalado con al menos una licencia de cuenta, y contar con una cuenta de servicio de WeChat verificada (verificación "V", con costo del lado de WeChat).</p>
+<p><strong>Pasos de conexión:</strong></p>
+<ol>
+<li>En el servidor, edita <code>/etc/astercc.conf</code> y agrega los parámetros del módulo:</li>
+<li><code>wx_token</code>: código de verificación que también se configura del lado de WeChat.</li>
+<li><code>wx_log</code>: carpeta donde se registran los mensajes recibidos.</li>
+<li>En el <strong>centro de desarrolladores de WeChat</strong>, activa el modo de desarrollador avanzado y configura:</li>
+<li><strong>URL:</strong> <code>http://&lt;dirección-del-call-center&gt;/wechat</code></li>
+<li><strong>Token:</strong> el mismo valor que <code>wx_token</code>.</li>
+<li>En la misma plataforma, habilita los permisos de API necesarios: recibir/responder mensajes de usuario, recibir eventos, menú personalizado, reconocimiento de voz, interfaz de servicio al cliente, ubicación geográfica, información básica del usuario, y subida/descarga de archivos multimedia.</li>
+<li>En AsterCC (<strong>Mensajería → WeChat → Cuentas</strong>), vincula la cuenta con los datos que da WeChat: <strong>ID original</strong>, <strong>AppId</strong>, <strong>AppSecret</strong>.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué define</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID original / AppId / AppSecret</td>
+<td>Credenciales que WeChat asigna a la cuenta oficial</td>
+</tr>
+<tr>
+<td>Grupo de agentes</td>
+<td>Quién atiende las conversaciones de "servicio en línea" que lleguen por este canal</td>
+</tr>
+<tr>
+<td>Máximo de atenciones simultáneas por agente</td>
+<td>Cuántas conversaciones de WeChat puede llevar un agente a la vez</td>
+</tr>
+<tr>
+<td>Respuesta al seguir la cuenta</td>
+<td>Mensaje automático la primera vez que un usuario sigue la cuenta oficial</td>
+</tr>
+<tr>
+<td>Respuesta al finalizar el servicio</td>
+<td>Mensaje de cierre tras terminar una atención</td>
+</tr>
+<tr>
+<td>Respuesta fuera de servicio</td>
+<td>Mensaje automático si el usuario escribe sin haber activado "servicio en línea"</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>En <strong>Cuentas y permisos → Grupos de agentes</strong>, define el <strong>atributo de acceso de medios</strong> del grupo asignado: solo agentes libres, o sin restricción (independientemente de si están en pausa o en llamada, mientras no superen su límite de atenciones simultáneas).</li>
+<li>En <strong>Mensajería → WeChat → Menú</strong>, crea un botón de menú con <strong>key = <code>online_customer_service</code></strong> para que el cliente pueda iniciar el chat (ver sección de menú más abajo).</li>
+<li>Con un agente del grupo conectado, sigue la cuenta desde un celular y prueba el flujo — el agente ve mensajes de texto, imagen, ubicación, y puede escuchar notas de voz; <strong>solo puede responder con texto</strong>.</li>
+</ol>
+<p><strong>Comportamiento de la conversación:</strong> si agente y cliente no interactúan durante 3 minutos, la sesión se cierra automáticamente; al cerrarse, el cliente recibe una encuesta de calificación y debe responderla antes de poder volver a usar el servicio en línea.</p>
+<h3 id="wechat-menu-personalizado">WeChat — menú personalizado<a class="headerlink" href="#wechat-menu-personalizado" title="Permanent link">&para;</a></h3>
+<p>Reglas de WeChat: máximo 3 menús de primer nivel (4 caracteres cada uno) con hasta 5 submenús cada uno (7 caracteres). Los cambios tardan hasta 24 horas en reflejarse en el cliente de WeChat por caché — para probar más rápido, deja de seguir la cuenta y vuelve a seguirla.</p>
+<table>
+<thead>
+<tr>
+<th>Tipo de acción del menú</th>
+<th>Para qué</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Key fijo</td>
+<td>Dispara una acción del sistema — <code>online_customer_service</code> está reservado para abrir "servicio en línea"</td>
+</tr>
+<tr>
+<td>Ir a página web</td>
+<td>Abre una URL dentro de WeChat</td>
+</tr>
+<tr>
+<td>Enviar mensaje</td>
+<td>Responde automáticamente con un texto fijo (usa un <code>key</code> propio, distinto de <code>online_customer_service</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>Todos los cambios de menú quedan en borrador hasta hacer clic en <strong>Publicar</strong> — se pueden armar varios cambios (crear, editar, reordenar, eliminar) y publicar todos juntos al final.</p>
+<p><img alt="Pantalla de gestión del menú de WeChat: selección de cuenta, administración de menús y configuración de la acción, con los botones Publicar y Restablecer" src="../../assets/images/mensajeria-wechat-fax/wechat-menu-gestion.jpg" /></p>
+<h3 id="fax-dispositivos-y-envio">Fax — dispositivos y envío<a class="headerlink" href="#fax-dispositivos-y-envio" title="Permanent link">&para;</a></h3>
+<p><strong>Dar de alta un dispositivo de fax</strong> (<strong>Fax → Gestión de dispositivos</strong>):</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué define</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nombre del dispositivo</td>
+<td>Identificación libre</td>
+</tr>
+<tr>
+<td>Identificador mostrado</td>
+<td>Aparece en el encabezado del fax recibido por el destinatario (<code>From: &lt;id&gt; Num: &lt;número&gt; &lt;fecha&gt; &lt;página&gt;</code>)</td>
+</tr>
+<tr>
+<td>Número interno</td>
+<td>Extensión a la que se marca para recibir por este dispositivo</td>
+</tr>
+<tr>
+<td>Canales máximos</td>
+<td>Cuántos faxes simultáneos soporta el dispositivo</td>
+</tr>
+<tr>
+<td>Número/nombre que llama (IP)</td>
+<td>Visible cuando ambos extremos usan IP para la transmisión</td>
+</tr>
+<tr>
+<td>Código de país / ciudad, número mostrado</td>
+<td>Para formatear el identificador internacional del fax</td>
+</tr>
+<tr>
+<td>Prefijo de larga distancia</td>
+<td>Se antepone al marcar números fuera de la ciudad</td>
+</tr>
+<tr>
+<td>Timbres antes de recibir</td>
+<td>Cuántos tonos esperar antes de iniciar la recepción (se recomienda 2 — muy pronto o muy tarde puede perder datos)</td>
+</tr>
+<tr>
+<td>Páginas máximas por transmisión</td>
+<td>Si el remitente envía más, el excedente se guarda como una transmisión nueva</td>
+</tr>
+<tr>
+<td>Equipo / cuenta</td>
+<td>Dueño del dispositivo</td>
+</tr>
+<tr>
+<td>Alcance de uso</td>
+<td>Quién puede ver los registros y archivos de este dispositivo</td>
+</tr>
+<tr>
+<td>Locución de salida</td>
+<td>Mensaje que escucha el destinatario al recibir un fax saliente</td>
+</tr>
+</tbody>
+</table>
+<p>Tras crear o editar, hay que <strong>recargar</strong> para que el dispositivo tome los cambios.</p>
+<p><strong>Enviar un fax</strong> (solo agentes con permiso de la pantalla de envío):</p>
+<table>
+<thead>
+<tr>
+<th>Modo</th>
+<th>Cuándo usarlo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Automático</td>
+<td>El fax del destinatario recibe sin intervención humana — solo se indica el número, el dispositivo, y se sube el archivo</td>
+</tr>
+<tr>
+<td>Manual</td>
+<td>El fax del destinatario requiere que alguien dé la señal manualmente — el sistema conecta primero una llamada de voz entre el agente y el destinatario para coordinar, y el agente dispara el envío al escuchar el tono de fax</td>
+</tr>
+</tbody>
+</table>
+<p>Solo se aceptan archivos <code>.doc</code>, <code>.docx</code> o <code>.pdf</code> (se convierten automáticamente a PDF); el sistema detecta si un archivo fue renombrado para simular una de estas extensiones y lo rechaza.</p>
+<p><strong>Registro de fax:</strong> cada transmisión (entrante o saliente) queda con dispositivo usado, números, hora, estado (recibiendo / enviando / éxito / error), motivo de error si aplica, y el archivo generado — descargable si el estado lo permite.</p>
+<h3 id="envio-masivo-de-correosms">Envío masivo de correo/SMS<a class="headerlink" href="#envio-masivo-de-correosms" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Origen de los clientes a contactar:</strong></li>
+<li>La tabla general de clientes individuales, filtrando por <strong>etiqueta</strong>, o</li>
+<li>
+<p>Un archivo importado específicamente para envío masivo (vía <strong>Administración avanzada del call center → Importación</strong>, tabla "clientes de envío masivo") — el archivo debe incluir el destino (teléfono o correo), los valores para las variables de la plantilla, y una etiqueta que identifique ese lote.
+<img alt="Vista previa del archivo importado con el mapeo de columnas a las variables de la plantilla (phone, param0, param1...)" src="../../assets/images/mensajeria-wechat-fax/envio-masivo-mapeo-variables.jpg" /></p>
+</li>
+<li>
+<p><strong>Armar el envío</strong> (<strong>Mensajería → Envío masivo</strong>):</p>
+</li>
+<li>Elige método de envío (SMS o correo) y la tabla origen.</li>
+<li>Elige la etiqueta — el sistema muestra cuántos de esos clientes tienen destino válido (teléfono/correo) frente al total de la etiqueta.</li>
+<li>Si el origen es la tabla general, hay que mapear qué campo de esa tabla llena cada variable de la plantilla, y cuál es el campo <code>target</code> (destino).</li>
+<li>Elige la <strong>plantilla</strong>, previsualizada con los datos reales del primer cliente.</li>
+<li>
+<p>Confirma cantidad estimada de envíos, fecha/hora programada, y —si es correo— el servidor de correo a usar.
+<img alt="Listado de contactos por lote pendientes de envío, con estado de error y filtros de búsqueda" src="../../assets/images/mensajeria-wechat-fax/contactos-por-lote-pendientes.jpg" /></p>
+</li>
+<li>
+<p>Tras enviar, el lote queda visible en <strong>contactos por lote</strong> (<code>batchcontacts</code>) mientras está pendiente, en proceso, o si falló — funciona como bitácora de trabajo; una vez enviado con éxito, el sistema mueve el registro a <strong>contactos por lote enviados</strong> (<code>batchcontact sents</code>), y de ahí a <strong>archivos</strong> (<code>archives</code>), la vista de solo lectura donde queda visible qué servidor de correo se usó, qué plantilla, qué adjunto (si aplica) y el contenido final enviado. Un mensaje fallido puede reintentarse editando su registro en "contactos por lote" y cambiando el estado a "Nuevo".</p>
+</li>
+</ol>
+<h3 id="plantillas-de-mensajes">Plantillas de mensajes<a class="headerlink" href="#plantillas-de-mensajes" title="Permanent link">&para;</a></h3>
+<p>Las <strong>plantillas</strong> (<strong>Mensajería → Plantillas</strong>) evitan escribir el mismo texto cada vez que se envía un SMS, correo o fax. El sistema trae plantillas predefinidas para las notificaciones automáticas del sistema (tareas, facturas, buzón de voz) — se pueden editar directamente, o crear una nueva y deshabilitar la original para que el sistema use la nueva a partir de ese momento.</p>
+<p><img alt="Listado de plantillas de mensajes, con nombre, estado, objetivo y equipo" src="../../assets/images/mensajeria-wechat-fax/plantillas-listado.jpg" /></p>
+<p><img alt="Formulario para agregar una plantilla: nombre, tipo, objetivo, idioma, comodines, asunto, MIME, estado y contenido" src="../../assets/images/mensajeria-wechat-fax/plantilla-agregar.jpg" /></p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué controla</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tipo</td>
+<td>SMS, correo, o fax — una plantilla de SMS solo puede usarse para enviar SMS, y así con las demás</td>
+</tr>
+<tr>
+<td>Uso</td>
+<td><strong>Normal</strong> (para avisos o publicidad de uso libre) o <strong>de aplicación</strong> (reservada para las notificaciones automáticas del sistema — tareas, facturas, buzón de voz)</td>
+</tr>
+<tr>
+<td>Idioma</td>
+<td>Permite tener la misma plantilla en varios idiomas (definidos en Sistema → Idioma), para que el agente elija según la preferencia del cliente</td>
+</tr>
+<tr>
+<td>Usa comodines</td>
+<td>Si la plantilla usa variables (<code>##param0##</code>, etc.) que el sistema debe reemplazar automáticamente</td>
+</tr>
+<tr>
+<td>Asunto / MIME</td>
+<td>Solo para plantillas de correo — asunto del mensaje, y si el contenido es HTML</td>
+</tr>
+<tr>
+<td>Estado</td>
+<td>Solo las plantillas habilitadas pueden usarse; para una plantilla <strong>de aplicación</strong>, solo puede haber una habilitada por idioma y por equipo — si hay más de una, el sistema no sabría cuál usar</td>
+</tr>
+<tr>
+<td>Equipo</td>
+<td>Vacío = disponible para todos los equipos; con equipo = solo ese equipo la usa</td>
+</tr>
+<tr>
+<td>Tipo y nombre de objeto</td>
+<td>Acota la plantilla a un módulo/objeto específico — así, cuando el agente hace clic en "enviar correo/SMS" desde la pantalla de campaña o de atención al cliente, el sistema preselecciona automáticamente la plantilla correcta</td>
+</tr>
+<tr>
+<td>Selección por el agente</td>
+<td>Si el agente puede ver y elegir esta plantilla manualmente</td>
+</tr>
+<tr>
+<td>Modificable</td>
+<td>Si el agente puede editar el contenido antes de enviar, o debe enviarse exactamente como está</td>
+</tr>
+<tr>
+<td>Adjuntar archivo</td>
+<td>Obligatorio para plantillas de fax (solo PDF, DOC o DOCX); en correo es opcional</td>
+</tr>
+<tr>
+<td>Contenido</td>
+<td>Límite de 140 caracteres por SMS (los mensajes más largos se dividen en varios); el correo no tiene límite, pero se recomienda pegar el contenido como texto plano para evitar que símbolos de Word se pierdan en la conversión</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variables:</strong> además de las 10 variables genéricas (<code>##param0##</code>...<code>##param9##</code>) que el remitente asigna manualmente al enviar en lote, existen variables reservadas que el sistema reemplaza automáticamente según el tipo de plantilla de aplicación: variables de <strong>tarea</strong> (<code>##taskid##</code>, <code>##title##</code>, <code>##sender##</code>, <code>##status##</code>, <code>##priority##</code>, etc.), de <strong>buzón de voz</strong> (<code>##teamname##</code>, <code>##devicename##</code>, <code>##origdate##</code>, <code>##callerid##</code>) y de <strong>factura</strong> (<code>##param_zipcode##</code>, <code>##param_country##</code>, <code>##param_address##</code>, <code>##param_statementstart##</code>, <code>##param_statementend##</code>, etc. — el logo de la factura se cambia reemplazando el archivo <code>astercc_logo.png</code> en el servidor).</p>
+<h3 id="mensajes-internos-y-avisos-del-sistema">Mensajes internos y avisos del sistema<a class="headerlink" href="#mensajes-internos-y-avisos-del-sistema" title="Permanent link">&para;</a></h3>
+<p>Dos canales de comunicación interna, distintos de los canales orientados al cliente:</p>
+<ul>
+<li><strong>Mensajes internos</strong> (<strong>Mensajería → Mensajes internos</strong>): mensajería punto a punto entre cuentas del sistema — se elige uno o varios destinatarios, se escribe asunto y contenido (con opción de usar una plantilla), y se envía. El destinatario ve un aviso de mensaje nuevo; el mensaje enviado queda visible tanto en <strong>Mensajes internos → enviados/recibidos</strong> (con estado leído/no leído, que cambia automáticamente al abrir el mensaje) como en <strong>Archivos</strong>.</li>
+</ul>
+<p><img alt="Formulario para enviar un mensaje interno: destinatario, título, contenido y lista de cuentas/agentes disponibles" src="../../assets/images/mensajeria-wechat-fax/enviar-mensaje-interno.jpg" /></p>
+<p><img alt="Listado de mensajes internos con asunto, contenido, remitente, destinatario y estado leído/no leído" src="../../assets/images/mensajeria-wechat-fax/mensajes-internos-listado.jpg" /></p>
+<ul>
+<li><strong>Avisos</strong> (<strong>Mensajería → Avisos</strong>): boletines internos con alcance configurable — sin equipo ni grupo, lo ve toda la organización; con equipo pero sin grupo, lo ve todo el equipo; con equipo y grupo, solo ese grupo; también puede dirigirse a cuentas específicas arrastrándolas de la lista de disponibles a la de seleccionadas. El contenido se escribe con un editor HTML (WYSIWYG). El estado puede ser <strong>deshabilitado</strong> (nadie lo ve), <strong>abierto</strong> (aparece en orden cronológico inverso) o <strong>fijado</strong> (aparece siempre arriba; si hay varios avisos fijados, se ordenan por fecha de publicación entre ellos). Al publicar o fijar un aviso, el sistema notifica a las cuentas con acceso.</li>
+</ul>
+<p><img alt="Formulario para agregar un aviso: título, estado, objetivo, equipo, grupo y contenido en editor HTML" src="../../assets/images/mensajeria-wechat-fax/aviso-agregar.jpg" /></p>
+<h3 id="servidor-de-correo">Servidor de correo<a class="headerlink" href="#servidor-de-correo" title="Permanent link">&para;</a></h3>
+<p>Configura las cuentas de correo salientes usadas por el envío masivo, la plataforma del agente, el envío de facturas, y las notificaciones de work orders.</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué define</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Equipo</td>
+<td>Vacío = servidor a nivel de sistema; con equipo = solo ese equipo lo usa</td>
+</tr>
+<tr>
+<td>Tipo de servidor</td>
+<td><strong>SMTP</strong> (requiere usuario/contraseña; el proveedor debe aceptar el envío) o <strong>envío local</strong> (cualquier remitente, pero muy propenso a ser rechazado como spam si el dominio no coincide con la infraestructura de envío real)</td>
+</tr>
+<tr>
+<td>Método de envío</td>
+<td><strong>PHP</strong> (inmediato, bloquea hasta tener resultado — ideal para un solo correo) o <strong>por proceso</strong> (se encola y un proceso de fondo lo envía cada minuto — ideal para volumen)</td>
+</tr>
+<tr>
+<td>Host / dominio / puerto</td>
+<td>Datos del proveedor SMTP</td>
+</tr>
+<tr>
+<td>Correo remitente</td>
+<td>Dirección que efectivamente envía</td>
+</tr>
+<tr>
+<td>Por defecto</td>
+<td>Solo puede haber un servidor por defecto por equipo (y uno a nivel sistema) — usado automáticamente por procesos internos como facturación o notificación de work orders</td>
+</tr>
+<tr>
+<td>SSL</td>
+<td>Requerido por algunos proveedores (ej. Gmail)</td>
+</tr>
+<tr>
+<td>Usuario / contraseña</td>
+<td>Solo si el tipo es SMTP — el formato de usuario varía por proveedor</td>
+</tr>
+<tr>
+<td>Botón de prueba</td>
+<td>Verifica la conexión antes de guardar en firme</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Formulario para agregar un servidor de correo SMTP, con el botón de prueba de conexión confirmando el éxito" src="../../assets/images/mensajeria-wechat-fax/servidor-correo-agregar.jpg" /></p>
+<h3 id="servidor-de-sms">Servidor de SMS<a class="headerlink" href="#servidor-de-sms" title="Permanent link">&para;</a></h3>
+<p><strong>Mensajería → Servidor de SMS</strong> no tiene parámetros propios en la interfaz — remite directamente al listado de proveedores de SMS compatibles con AsterCC. La cuenta de envío se da de alta con el proveedor elegido; el sistema se limita a usar esa cuenta para las plantillas de tipo SMS.</p>
+<h2 id="referencia-rapida">Referencia rápida<a class="headerlink" href="#referencia-rapida" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tarea</th>
+<th>Dónde</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conectar una cuenta de WeChat</td>
+<td>Mensajería → WeChat → Cuentas</td>
+</tr>
+<tr>
+<td>Configurar el menú de WeChat</td>
+<td>Mensajería → WeChat → Menú</td>
+</tr>
+<tr>
+<td>Dar de alta un dispositivo de fax</td>
+<td>Fax → Gestión de dispositivos</td>
+</tr>
+<tr>
+<td>Enviar un fax</td>
+<td>Fax → Enviar fax</td>
+</tr>
+<tr>
+<td>Armar un envío masivo</td>
+<td>Mensajería → Envío masivo</td>
+</tr>
+<tr>
+<td>Ver contactos por lote / archivos de mensajes enviados</td>
+<td>Mensajería → Contactos por lote / Archivos</td>
+</tr>
+<tr>
+<td>Configurar servidor de correo</td>
+<td>Mensajería → Servidor de correo</td>
+</tr>
+<tr>
+<td>Crear/editar plantilla de mensaje</td>
+<td>Mensajería → Plantillas</td>
+</tr>
+<tr>
+<td>Enviar mensaje interno</td>
+<td>Mensajería → Mensajes internos</td>
+</tr>
+<tr>
+<td>Publicar un aviso</td>
+<td>Mensajería → Avisos</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="fuentes">Fuentes<a class="headerlink" href="#fuentes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>raw/zh/模块使用说明/微信.txt</code></li>
+<li><code>raw/zh/模块使用说明/微信/微信帐号.txt</code></li>
+<li><code>raw/zh/模块使用说明/微信/微信菜单.txt</code></li>
+<li><code>raw/zh/模块使用说明/传真管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/传真管理/传真设备管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/传真管理/发送传真.txt</code></li>
+<li><code>raw/zh/模块使用说明/传真管理/传真记录.txt</code></li>
+<li><code>raw/zh/模块使用说明/群发信息管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/群发信息管理/群发信息.txt</code></li>
+<li><code>raw/zh/模块使用说明/群发信息管理/邮件服务器.txt</code></li>
+<li><code>raw/zh/模块使用说明/群发信息管理/信息存档管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/群发信息管理/信息模版管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/群发信息管理/公告管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/群发信息管理/内部信息管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/群发信息管理/发送内部信息.txt</code></li>
+<li><code>raw/zh/模块使用说明/群发信息管理/已发信息管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/群发信息管理/待发信息管理.txt</code></li>
+<li><code>raw/zh/模块使用说明/群发信息管理/短信服务器.txt</code></li>
+<li><code>raw/en/module_manual/message/archives.txt</code></li>
+<li><code>raw/en/module_manual/message/batchcontact_sents.txt</code></li>
+<li><code>raw/en/module_manual/message/batchcontacts.txt</code></li>
+<li><code>raw/en/module_manual/message/internal_messages.txt</code></li>
+<li><code>raw/en/module_manual/message/mail_server.txt</code></li>
+<li><code>raw/en/module_manual/message/messages.txt</code></li>
+<li><code>raw/en/module_manual/message/notices.txt</code></li>
+<li><code>raw/en/module_manual/message/send_in_bulk.txt</code></li>
+<li><code>raw/en/module_manual/message/templates.txt</code></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.indexes", "navigation.tracking", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/javascripts/nav-toggle.js"></script>
+      
+    
+  </body>
+</html>
