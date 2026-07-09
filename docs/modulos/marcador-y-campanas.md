@@ -24,6 +24,8 @@ Este módulo configura las **tareas de marketing saliente** (campañas): a qué 
 
 En **Marketing outbound → Tareas de campaña**, al crear una nueva tarea defines, entre otros:
 
+![Listado de tareas de campaña con sus filtros de búsqueda](../assets/images/marcador-y-campanas/listado-tareas-campana.jpg)
+
 | Campo | Qué controla |
 |---|---|
 | Tipo de paquete de clientes | Cliente individual o cliente institucional |
@@ -34,6 +36,8 @@ En **Marketing outbound → Tareas de campaña**, al crear una nueva tarea defin
 | Obtención de datos por el agente | Si el agente puede pedir manualmente un cliente, o solo recibe lo asignado |
 | Permitir agregar clientes nuevos | Si el agente puede dar de alta clientes durante la llamada |
 | E-commerce asociado | Vincula un catálogo para generar pedidos desde la ficha del cliente |
+
+![Pantalla de edición de una tarea de campaña con sus campos principales y los botones de configuración avanzada](../assets/images/marcador-y-campanas/tarea-campana-campos.jpg)
 
 ### 2. Elegir el modo de marcación
 
@@ -72,8 +76,18 @@ En la pestaña **Avanzado** de la tarea (más allá del modo de marcación) se c
 | Aviso de llamada entrante | Si aparece un recordatorio en la esquina inferior derecha cuando entra una llamada |
 | IP del servidor de origen | Necesaria si se va a operar la tarea desde un sistema externo vía API |
 
+Dos ejemplos de estas opciones vistas desde la pantalla emergente del agente: al **ocultar información de contacto**, los campos de teléfono, dirección y correo del cliente aparecen enmascarados u ocultos en vez de mostrar el dato real —
+
+![Ficha del cliente con los datos de contacto ocultos para el agente](../assets/images/marcador-y-campanas/ocultar-informacion-contacto.png)
+
+— y al usar la notación de **programación rápida de callback**, el agente elige la reprogramación desde una lista desplegable en vez de escribir una fecha manualmente:
+
+![Menú desplegable para programar un callback con notación rápida (horas, días, semanas)](../assets/images/marcador-y-campanas/programacion-rapida-callback.png)
+
 !!! tip
     **Alias de reporte:** desde la pantalla de edición de la tarea, el botón "Alias de reporte" permite renombrar el título de cada campo en los reportes exportados (registro de llamadas y control de calidad) sin tocar el nombre interno del campo.
+
+    ![Pantalla para asignar un alias a cada campo antes de exportarlo en los reportes](../assets/images/marcador-y-campanas/alias-de-reporte.jpg)
 
 ### 3. Configurar el marcador predictivo (opcional)
 
@@ -91,7 +105,12 @@ Ver también [Marcación predictiva](../casos-de-uso/marcacion-predictiva.md) pa
 Dos formas de asignar el paquete de clientes de una tarea a los agentes del grupo:
 
 - **Asignación automática:** ideal para lotes grandes — se define qué porcentaje del total recibe cada agente (o se reparte por "pendientes" o "sin asignar"), y el sistema ejecuta la asignación en segundo plano.
+
+  ![Pantalla de asignación automática con el porcentaje o cantidad de clientes por agente](../assets/images/marcador-y-campanas/asignacion-automatica-clientes.jpg)
+
 - **Asignación manual:** ideal para ajustes puntuales — por ejemplo, mover una parte de los clientes de un agente a otro con mejor desempeño, o aislar un segmento específico para un agente en particular.
+
+  ![Pantalla de asignación manual con la lista de clientes y el agente destino](../assets/images/marcador-y-campanas/asignacion-manual-clientes.jpg)
 
 ### 5. Configurar qué ve el agente
 
@@ -112,6 +131,8 @@ En modo automático, tras colgar cada llamada arranca una cuenta regresiva (conf
 
 El [paquete de clientes](../glosario.md#paquete-de-clientes-para-marcacion-saliente) es una tabla independiente generada al crear la tarea (o reutilizada, si se elige un paquete existente).
 
+![Listado de paquetes de clientes con su tipo de tabla y total de registros](../assets/images/marcador-y-campanas/listado-paquetes-clientes.jpg)
+
 | Campo | Qué define |
 |---|---|
 | Estado | "Sin tarea asignada" o "en progreso con una tarea" |
@@ -126,6 +147,8 @@ El [paquete de clientes](../glosario.md#paquete-de-clientes-para-marcacion-salie
     Si "usar tabla general" está activo, no se puede seleccionar clientes manualmente desde el paquete (se nutre automáticamente de la tabla general). Si está inactivo, se puede usar "seleccionar clientes" para copiar registros puntuales — o todos — desde la tabla general del equipo hacia este paquete.
 
 No se puede cambiar la clave única si ya existen duplicados en el paquete — hay que depurarlos primero desde **Gestión de clientes** de la tarea.
+
+![Formulario para crear un nuevo paquete de clientes con clave única y campos de índice](../assets/images/marcador-y-campanas/crear-paquete-clientes.jpg)
 
 ### 7. Registro de llamadas de la campaña
 
@@ -148,6 +171,8 @@ Catálogo de resultados que el agente asigna tras cada contacto (ej. "no coopera
 - Un **equipo** y/o **tarea específica** — para acotar qué resultados ve cada quien.
 - Una **plantilla de work order** — si se asocia, el agente puede crear directamente un work order al elegir ese resultado (solo disponible si la tarea usa la tabla general de clientes).
 
+![Formulario para crear un resultado de llamada, con estado de procesamiento, equipo y plantilla de work order asociada](../assets/images/marcador-y-campanas/agregar-resultado-llamada.jpg)
+
 ### DNC — lista de no llamar, en tres niveles
 
 Un número marcado como DNC (do-not-call) se filtra automáticamente del paquete de clientes en el nivel correspondiente:
@@ -160,6 +185,8 @@ Un número marcado como DNC (do-not-call) se filtra automáticamente del paquete
 
 La carga de números al DNC se hace por importación (en **Administración avanzada del call center → Importación**), eligiendo el nivel según se seleccione equipo y/o tarea. También se pueden agregar números manualmente (uno por línea) o vaciar por completo un nivel de lista.
 
+![Pantalla de importación masiva de números a la lista negra, seleccionando equipo, tarea y tabla destino](../assets/images/marcador-y-campanas/importar-dnc.jpg)
+
 ### Plan de filtrado de lista negra (automatización del DNC)
 
 En vez de importar manualmente, se puede programar que el sistema filtre periódicamente el paquete de una tarea contra el DNC vigente — define equipo, tarea, y horario de ejecución (se puede editar y reactivar). Cada corrida deja disponible para descarga el listado de clientes que fueron filtrados esa vez.
@@ -168,13 +195,19 @@ En vez de importar manualmente, se puede programar que el sistema filtre periód
 
 En **Gestión de control de calidad**, se elige la tarea (y encuesta, si aplica) para revisar contactos uno por uno: escuchar la grabación, ver la ficha y las respuestas de encuesta, y marcar el contacto como aprobado o no — con opción de **calificar** con puntaje si hay estándares de calidad definidos.
 
+![Pantalla de control de calidad con la grabación, el filtro por tarea y el botón para calificar cada contacto](../assets/images/marcador-y-campanas/control-de-calidad.jpg)
+
 **Estándares de control de calidad:** catálogo de criterios de puntaje (suma o resta), acotable por equipo y/o tarea — por ejemplo, una rúbrica de 100 puntos donde cada criterio aprobado suma.
+
+![Listado de criterios de puntaje para el control de calidad, con su descripción y puntaje asignado](../assets/images/marcador-y-campanas/estandares-control-calidad.jpg)
 
 **Exportar grabaciones en lote:** desde control de calidad, filtrando por tarea + estado "enviado con éxito" (el caso típico cuando un cliente externo pide auditar solo las llamadas exitosas), se puede generar un paquete descargable de audios — con la misma opción de descarga vía web o FTP que el registro de llamadas.
 
 ### Monitoreo de volumen de datos
 
 Vista rápida por tarea: total de clientes, cuántos se importaron, cuántos ya se marcaron, cuántos resultaron en éxito, cuántos faltan por marcar, cuántos quedan en la lista de marcación predictiva (0 si la tarea no usa predictivo), cuándo fue la última vez que se recuperaron datos hacia esa lista, y cuántas veces se ha ejecutado esa recuperación.
+
+![Selector de equipo y tarea de campaña para ver el monitoreo de volumen de datos](../assets/images/marcador-y-campanas/monitoreo-volumen-datos.jpg)
 
 ### Estadísticas de la campaña
 

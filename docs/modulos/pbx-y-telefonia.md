@@ -24,6 +24,8 @@ Para IVR ver [PBX — IVR (menú de voz)](pbx-ivr.md). Para conferencias, listas
 
 Cada teléfono o softphone que se conecta al sistema es una **extensión**. Tipos soportados: **SIP, IAX2, MGCP, DAHDI** (línea física) y **extensión externa** (un número de teléfono normal usado como si fuera una extensión — solo puede recibir llamadas del sistema, no puede originarlas).
 
+![Formulario para agregar una extensión, con número, equipo, dispositivo destino y tipo](../assets/images/pbx-y-telefonia/agregar-extension.jpg)
+
 | Campo | Obligatorio | Qué define |
 |---|---|---|
 | Nombre de la extensión | Sí | Nombre libre para identificarla |
@@ -52,10 +54,14 @@ Cada teléfono o softphone que se conecta al sistema es una **extensión**. Tipo
 
 Al editar una extensión, se pueden configurar **lista negra** (números que no pueden llamarla) y **lista blanca** (solo esos números pueden llamarla) directamente desde ahí, o desde [PBX — Funciones avanzadas](pbx-funciones-avanzadas.md#listas-blanca-y-negra-de-llamadas-entrantes). Tras guardar, aparece una barra de **recarga** — es necesaria para que el cambio tome efecto.
 
+![Pestaña de opciones avanzadas de una extensión: no molestar, grabación, buzón de voz, captura de llamada y dirección MAC](../assets/images/pbx-y-telefonia/extension-opciones-avanzadas.jpg)
+
 !!! tip "Cuatro lugares donde se controla la grabación"
     La grabación de llamadas se puede fijar en cuatro niveles, del más específico al más general: la propia **extensión/dispositivo** (campo "Grabación" de esta tabla), la **cuenta** ("grabación forzada" obliga a grabar todas las extensiones que dependen de ella — ver [Call center inbound](../casos-de-uso/call-center-inbound.md#5-configurar-cuentas-extensiones-grupo-de-timbrado-y-softphone-desde-cero)), el **equipo**, y el **agente** — las llamadas de agente se graban automáticamente sin necesidad de configurar nada extra (ver [Grabación de llamadas](../casos-de-uso/call-center-inbound.md#20-grabacion-de-llamadas)). Un nivel más general (equipo/cuenta) sobrescribe el criterio individual de cada dispositivo que dependa de él.
 
 **Buzón de voz:** solo puede recibir mensajes una extensión con "Estado de buzón de voz = disponible". Los mensajes quedan en el servidor en `/var/spool/asterisk/voicemail/<equipo>/<extensión>/INBOX/`, se pueden escuchar en línea, descargar o eliminar desde el listado. Si el equipo tiene configurado "método de envío de buzón = plantilla", cada mensaje nuevo también se reenvía por correo a la dirección configurada en la extensión.
+
+![Listado de mensajes de buzón de voz con dispositivo, contacto, fecha y opciones de descarga/escucha/eliminación](../assets/images/pbx-y-telefonia/listado-buzon-voz.jpg)
 
 ### Números internos (números de interno)
 
@@ -66,6 +72,8 @@ Al eliminar un número desde esta pantalla: si el número fue creado directament
 ### Troncales y grupos de troncales
 
 Un **troncal** conecta el sistema con el exterior — vía **troncal de red** (SIP, IAX), **troncal analógico** (puerto FXO) o **troncal digital** (E1 PRI).
+
+![Formulario para agregar un troncal: protocolo, identificador, cadena de registro y detalle de conexión](../assets/images/pbx-y-telefonia/agregar-troncal-basico.jpg)
 
 | Campo | Obligatorio | Qué define |
 |---|---|---|
@@ -91,9 +99,13 @@ Un **troncal** conecta el sistema con el exterior — vía **troncal de red** (S
 
 **Grupos de troncales:** agrupan varios troncales bajo una **estrategia de uso** — secuencial (prioridad por orden en la lista), aleatoria, o rotativa — y soportan lista negra/blanca y reglas propias (con prioridad: prefijo de objeto > longitud de objeto > troncal > tipo de coincidencia; y dentro del tipo de coincidencia: prefijo llamado > región llamada > prefijo que llama > región que llama). Si un troncal falla, el sistema cambia automáticamente al siguiente del grupo según su error.
 
+![Formulario para agregar un grupo de troncales, moviendo troncales disponibles hacia la lista seleccionada](../assets/images/pbx-y-telefonia/agregar-grupo-troncales.png)
+
 ### DID y grupos de DID
 
 Un **DID** es el número que marca el cliente. Sirve para distinguir, por número, a qué ruta entrante (extensión, grupo de timbrado, IVR o cola) debe dirigirse la llamada.
+
+![Formulario para agregar un DID: número, cuenta, grupo de DID, dispositivo y estado](../assets/images/pbx-y-telefonia/agregar-did.jpg)
 
 | Campo | Obligatorio | Qué define |
 |---|---|---|
@@ -107,18 +119,26 @@ Un **DID** es el número que marca el cliente. Sirve para distinguir, por númer
 
 **Grupos de DID:** agrupan números por **coincidencia exacta** o **coincidencia de prefijo**, evitando repetir la misma regla de ruta entrante para cada número individualmente. Desde el grupo se puede ver el detalle de uso (qué rutas entrantes lo referencian) y listar todos los DID que contiene.
 
+![Edición de un grupo de DID mostrando tipo de coincidencia y la lista de números incluidos](../assets/images/pbx-y-telefonia/editar-grupo-did.jpg)
+
 ### Rutas entrantes y salientes
 
 **Ruta entrante:** enruta según coincidencia de **DID** (individual o por grupo), **número que llama** (CID), **troncal**, o combinaciones — con destino: coincidencia automática (marca hacia una extensión interna del sistema, o hacia afuera por troncal si no coincide ningún interno), grupo de timbrado, cola, IVR, dispositivo específico, buzón de voz, aplicación, sala de conferencia, dispositivo de fax, o directamente colgar (End). Cada ruta pertenece a un equipo, puede acotarse a un **paquete de horario de trabajo** (si se deja vacío, funciona siempre) y tiene prioridad configurable (mayor número = mayor prioridad).
+
+![Formulario para agregar una ruta entrante: coincidencia de DID, CID, transferencia, troncal y horario](../assets/images/pbx-y-telefonia/agregar-ruta-entrante.jpg)
 
 !!! tip
     Si un DID ya tiene cuenta y extensión asignada directamente, la ruta entrante correspondiente por ese DID deja de aplicarse — el enrutamiento directo del DID tiene prioridad.
 
 **Ruta saliente:** aplica sobre grupos de cuentas, decidiendo cómo tratar la llamada saliente según **prefijo** y **longitud** del número marcado (mejor coincidencia; si no coincide ninguno, se usa la regla "default") — destino: marcar directamente hacia afuera, grupo de timbrado, cola, IVR, o colgar (End) — con opción de quitar/agregar prefijo antes de enviar. Cada regla queda asociada a la ruta y se lista en una tabla editable dentro de esa misma ruta.
 
+![Edición de una regla de ruta saliente: prefijo, longitud, transferencia, y prefijo a quitar o agregar](../assets/images/pbx-y-telefonia/editar-regla-ruta-saliente.jpg)
+
 ### Grupos de timbrado
 
 Trata a un conjunto de extensiones como un solo objeto llamable — se le llama a un número interno propio, y hace timbrar según su estrategia a las extensiones del grupo. A diferencia de una cola, **no requiere check-in**.
+
+![Formulario para agregar un grupo de timbrado, con estrategia y selección de extensiones miembro](../assets/images/pbx-y-telefonia/agregar-grupo-timbrado.jpg)
 
 | Estrategia | Comportamiento |
 |---|---|
@@ -132,9 +152,13 @@ Otros campos: prioridad a quien tuvo la llamada más reciente, prefijo agregado 
 
 Cada extensión dentro de un grupo de timbrado tiene su propia **prioridad** (0-9, mayor número = mayor prioridad; empates se ordenan por orden de alta) — relevante en las estrategias secuencial e incremental, y la pantalla de gestión muestra además cuántas llamadas recibió y contestó cada extensión dentro de ese grupo específico.
 
+![Formulario para agregar una extensión a un grupo de timbrado con su prioridad](../assets/images/pbx-y-telefonia/agregar-extension-grupo-timbrado.jpg)
+
 ### Colas
 
 La cola es el corazón de la distribución de llamadas entrantes hacia [grupos de agentes](cuentas-equipos-permisos.md). Un grupo de agentes sin cola asociada no sirve de nada — al guardar un grupo sin cola, el sistema ofrece crear una automáticamente (relación uno a uno).
+
+![Formulario básico para agregar una cola: número, nombre, tipo, estrategia de timbrado y tiempos](../assets/images/pbx-y-telefonia/agregar-cola-basico.jpg)
 
 | Campo | Obligatorio | Qué define |
 |---|---|---|
@@ -163,6 +187,8 @@ La cola es el corazón de la distribución de llamadas entrantes hacia [grupos d
 | Máximo de clientes en espera | No | `0` = sin límite |
 | Privilegio de agente | No | Si el agente puede iniciar una conferencia desde una llamada de esta cola |
 
+![Pestaña avanzada de una cola con auto-switch, privilegio de agente, anuncios y prefijo de nombre/número](../assets/images/pbx-y-telefonia/editar-cola-avanzado.png)
+
 !!! tip
     "Condición de entrada automática" también puede usarse desde el IVR: si un flujo define una variable global (ej. `LANGUAGE=cn` tras que el cliente elija idioma), y esa misma condición se configura en la cola, un destino de tipo "Otro IVR o cola automática" en el IVR puede enrutar dinámicamente a la cola cuya condición coincida, sin fijar la cola de destino de antemano.
 
@@ -175,6 +201,8 @@ Todas las llamadas del sistema (de negocio o directas entre extensiones) quedan 
 - **Tablas mensuales:** una por mes, con una retención configurable por separado (**retención de tablas históricas**, 6 meses por defecto) — al vencer, esos datos se eliminan definitivamente.
 
 Cada registro permite escuchar o descargar la grabación asociada (si existe), y calcula por separado la **duración** (fin − inicio de la llamada) y la **duración facturable** (fin − momento de la respuesta) — esta última es la que usan las [tarifas](tarifas-y-facturacion.md) de sistema, equipo, agente y saliente para calcular el costo.
+
+![Detalle de un registro de llamada (CDR) con CID, destino, disposición, duración y el desglose de sus tramos](../assets/images/pbx-y-telefonia/detalle-registro-llamada.jpg)
 
 ## Referencia rápida
 

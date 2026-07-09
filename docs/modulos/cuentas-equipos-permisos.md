@@ -16,6 +16,8 @@ relacionados: [pbx-y-telefonia, tarifas-y-facturacion, guia-administradores]
 
 AsterCC organiza el acceso en capas: **equipo** (la organización, base del modo multiempresa) → **cuenta** (quién entra al sistema) → **agente** (quien atiende llamadas, opcionalmente ligado a una cuenta) → **rol** (qué puede hacer esa cuenta o agente). Esta página cubre las cinco pantallas de gestión de esta capa y cómo se relacionan.
 
+![Diagrama del orden recomendado para dar de alta permisos, roles, equipos, cuentas y agentes](../assets/images/cuentas-equipos-permisos/estructura-cuentas-astercc.jpg)
+
 ## Cómo se usa
 
 ### Equipos
@@ -36,6 +38,8 @@ Un equipo es una organización independiente dentro del mismo AsterCC — el mec
 | Logo de la empresa | Se muestra tras el login del agente |
 | Prefijo de marcación entre equipos | Prefijo que un equipo debe anteponer para llamar a una extensión interna de otro equipo |
 
+![Formulario para crear un equipo, con sus campos básicos](../assets/images/cuentas-equipos-permisos/equipo-crear-basico.jpg)
+
 **Datos avanzados** incluyen información de contacto de la empresa, y tres campos de integración con sistemas externos:
 
 - **Dirección de recepción de eventos:** AsterCC envía por HTTP POST todos los eventos de llamada del equipo a esta URL — para que un sistema externo registre el detalle de llamadas.
@@ -43,6 +47,8 @@ Un equipo es una organización independiente dentro del mismo AsterCC — el mec
 - **Cadena de verificación:** actúa como contraseña — el evento se firma con el MD5 de esta cadena para que el receptor valide que el evento realmente viene de AsterCC.
 
 Los mismos datos avanzados incluyen, de solo lectura: **crédito actual** y **crédito total** (gasto acumulado del equipo), **crédito de cuenta** (lo que el equipo debe recibir de sus cuentas según la tarifa de extensión) y **crédito de sistema** (lo que el equipo debe pagar según la tarifa de sistema) — útiles para conciliar los tres niveles de tarifa entre sí.
+
+![Pestaña de datos avanzados de un equipo, con campos de integración externa y créditos de solo lectura](../assets/images/cuentas-equipos-permisos/equipo-datos-avanzados.jpg)
 
 !!! warning
     Tras configurar estos tres campos, hay que **reiniciar el CTI** desde **Información en tiempo real del sistema → Información del sistema** para que la conexión tome efecto.
@@ -67,6 +73,10 @@ La **cuenta** es la unidad de acceso al sistema y, salvo que el equipo esté en 
 | Modo de pago | Hereda la lógica del equipo, pero configurable por cuenta |
 | Grabación forzada | Igual que a nivel de equipo, pero por cuenta |
 | Restricción de horario de exportación | Si esta cuenta debe respetar el horario de exportación configurado del sistema |
+
+![Listado de cuentas con filtros de búsqueda por usuario, equipo, rol y estado](../assets/images/cuentas-equipos-permisos/cuentas-listado.jpg)
+
+![Formulario para crear una cuenta nueva, con sus campos básicos](../assets/images/cuentas-equipos-permisos/cuenta-crear-formulario.jpg)
 
 El sistema genera automáticamente un **código de cuenta** único e inmutable al crearla, usado internamente para identificarla. En **datos avanzados** aparecen además, de solo lectura: **crédito entrante acumulado** (suma generada por la [tarifa de agente](tarifas-y-facturacion.md) si la cuenta está ligada a un agente), **crédito acumulado** (total facturado a esta cuenta) y **costo** (costo generado por esta cuenta en el sistema) — más un campo opcional para subir una foto.
 
@@ -94,6 +104,12 @@ Un agente es la unidad operativa de call center — necesita un **número de age
 | Contraseña de aplicación de negocio | Usada al autenticar llamadas a la [API HTTP](../desarrollo/api-y-ami.md) |
 | Nombre de llamante / Número de llamante | Identificación mostrada al destino cuando este agente marca hacia afuera |
 | Grupo de salida actual | Ver más abajo — resuelve el problema de identificar bajo qué contexto de negocio marca un agente cuando usa su extensión directamente |
+
+![Listado de agentes con filtros por número de agente, cuenta, rol y grupo actual](../assets/images/cuentas-equipos-permisos/agentes-listado.jpg)
+
+![Formulario para crear un agente, con sus campos básicos](../assets/images/cuentas-equipos-permisos/agente-crear-formulario.jpg)
+
+![Pestaña de datos avanzados de un agente: datos bancarios, identificación de llamante y notas](../assets/images/cuentas-equipos-permisos/agente-datos-avanzados.jpg)
 
 Si el agente usa **clic para llamar** desde la plataforma, el sistema primero marca el teléfono del propio agente (el "número de destino" configurado) y, una vez que el agente contesta, recién marca el número que quería contactar — no al revés.
 
@@ -134,6 +150,10 @@ El agente no trabaja solo — se organiza en **grupos de agentes**, la unidad de
 | Enviar SIP especial de autorespuesta | Para teléfonos que soportan contestar automáticamente vía cabecera SIP |
 | Alcance de consulta entre agentes | Ninguno / solo el propio grupo / cualquier agente del sistema |
 
+![Listado de grupos de agentes con filtros de búsqueda](../assets/images/cuentas-equipos-permisos/grupos-agentes-listado.jpg)
+
+![Formulario para crear un grupo de agentes, con sus campos de trabajo y cola](../assets/images/cuentas-equipos-permisos/grupo-agentes-crear-formulario.jpg)
+
 **Administrador de grupo (jefe de equipo):** por defecto obtiene permiso para limpiar datos de llamada con error, ver el estado de los agentes del grupo, usar [monitoreo/intervención/interrupción/susurro](../glosario.md#monitoreo-intervencion-interrupcion-forzada-y-susurro), operar el [marcador predictivo](marcador-predictivo-avanzado.md) (si el grupo tiene una tarea con predictivo habilitada), y gestionar turnos.
 
 **Modalidades de conexión del agente dentro de un grupo:**
@@ -151,16 +171,27 @@ Tras cualquier cambio que afecte la cola del grupo, aparece la barra de **recarg
 
 Un **rol** es un conjunto de permisos reutilizable, de dos tipos: *usuario* (aplica a cuentas) o *agente* (aplica a agentes) — cada tipo opera solo sobre su propio tipo de objeto. El sistema trae **cuatro roles por defecto**: administrador de sistema (todos los permisos, no editable), administrador de grupo de agentes, agente, e inspector de calidad — los tres últimos editables.
 
+![Listado de roles del sistema, con su tipo (cuenta o agente) y nota](../assets/images/cuentas-equipos-permisos/roles-listado.jpg)
+
 La pantalla de **gestión de permisos** define, a nivel de todo el sistema, qué permisos existen por módulo — solo el administrador de sistema puede modificarla. Los roles luego seleccionan un subconjunto de ese universo (agregar, editar, ver, eliminar, exportar por módulo). En otras palabras: primero se define **qué es posible**, y los roles definen **qué se permite** a cada perfil.
+
+![Listado de permisos disponibles por módulo, agrupados por categoría](../assets/images/cuentas-equipos-permisos/gestion-permisos-listado.jpg)
 
 ### Configuración y edición rápida (herramientas de lote)
 
 - **Configuración rápida:** genera cuentas + extensiones + agentes en una sola operación (ver [Guía rápida para administradores](../primeros-pasos/guia-administradores.md)). Permite elegir si crear cuentas nuevas automáticamente o usar una ya existente como base, y ofrece un botón de **configuración detallada** para ajustar parámetros de extensión antes de generar, y **vista previa** antes de guardar. Al guardar, el sistema ofrece exportar los registros creados (incluidas las contraseñas generadas) a un archivo **CSV** — útil para distribuir credenciales sin tener que consultarlas una por una.
+
+  ![Formulario de configuración rápida: cantidad de registros, prefijo de usuario, extensión inicial y longitud de contraseña](../assets/images/cuentas-equipos-permisos/configuracion-rapida-formulario.jpg)
+
 - **Edición rápida:** aplica un cambio a muchas extensiones, agentes o cuentas a la vez. Para cuentas en lote permite: agregar un **prefijo o sufijo** al nombre de usuario, cambiar **estado** (habilitar/deshabilitar), activar o desactivar **grabación forzada** en las extensiones de las cuentas seleccionadas, cambiar **forma de pago**, reasignar **rol**, y activar/desactivar el **envío de correo de factura**. Para extensiones, incluye **resetear contraseñas** con un prefijo común (combinado con un sufijo variable). Incluye una vista previa mostrando cómo quedaría el primer registro antes de aplicar a todos.
+
+  ![Selección de equipo y tipo de objeto (extensión, agente o cuenta) al iniciar una edición rápida](../assets/images/cuentas-equipos-permisos/edicion-rapida-seleccion.jpg)
 
 ### Finanzas de usuario
 
 Pantalla para ajustar manualmente el saldo de un equipo (solo accesible por administrador de sistema) o de las cuentas dentro de un equipo (accesible por administrador de ese equipo) — operaciones de **recarga** o **descuento** con monto y nota, quedando como un registro de auditoría no editable después de guardado.
+
+![Listado de movimientos de finanzas de usuario, con tipo de ajuste, monto y equipo o cuenta afectada](../assets/images/cuentas-equipos-permisos/finanzas-usuario-listado.jpg)
 
 ## Referencia rápida
 
