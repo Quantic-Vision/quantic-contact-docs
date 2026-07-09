@@ -154,8 +154,8 @@ El escenario descrito en esta página corresponde, en términos de la industria,
 - **Agentes:** vínculo automático entre agente y softphone, entrada automática a gestión posterior (ACW), monitoreo en tiempo real.
 - **Marketing outbound** (ver [Marketing outbound](marketing-outbound.md)).
 - **Marcador predictivo** (ver [Marcación predictiva](marcacion-predictiva.md)), con dos funciones adicionales relevantes para operar varios proyectos BPO a la vez:
-  - **Reciclaje automático:** una tarea programada permite devolver a la lista de predevolución (pre-dial) a los clientes que cumplan ciertas condiciones — por ejemplo, reintentar automáticamente a los clientes no contactados el día anterior, o a los que debían transferirse a un agente pero no se logró completar la transferencia.
-  - **Estadísticas de predevolución:** permite analizar los resultados de las llamadas de predevolución por tarea, para optimizar los parámetros del predictivo y encontrar el mejor equilibrio entre eficiencia del agente y tasa de llamadas perdidas/abandonadas.
+  - **Reciclaje automático:** una tarea programada permite devolver a la lista de predial a los clientes que cumplan ciertas condiciones — por ejemplo, reintentar automáticamente a los clientes no contactados el día anterior, o a los que debían transferirse a un agente pero no se logró completar la transferencia.
+  - **Estadísticas de predial:** permite analizar los resultados de las llamadas de predial por tarea, para optimizar los parámetros del predictivo y encontrar el mejor equilibrio entre eficiencia del agente y tasa de llamadas perdidas/abandonadas.
 
 ## Caso: negocio de tarjetas de traducción telefónica
 

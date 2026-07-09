@@ -72,6 +72,8 @@ AsterCC soporta dos modos de grabación de llamadas:
 - **Grabación por demanda:** el agente decide cuándo iniciar o detener la grabación durante la llamada.
 - **Grabación obligatoria:** el sistema graba todas las llamadas sin excepción.
 
+Además del criterio por extensión/dispositivo, la grabación puede **forzarse** a nivel de **cuenta** o de **equipo** — un nivel más general (equipo) sobrescribe el criterio individual de cada extensión que dependa de él. Las llamadas de agente, por su parte, se graban automáticamente sin necesidad de configurar nada extra. Ver [PBX y telefonía — cuatro lugares donde se controla la grabación](modulos/pbx-y-telefonia.md#extensiones-gestion-de-dispositivos).
+
 ## Marcación con un clic (click-to-dial)
 
 Función que permite al agente iniciar una llamada haciendo clic sobre un número dentro del sistema de negocio, o ingresándolo manualmente, sin necesidad de marcar desde un teléfono físico.
@@ -191,6 +193,64 @@ Extensión cuyo dispositivo físico no está fijo: el agente puede registrarse d
 ## SaaS / oficina virtual alojada (hosted)
 
 Modalidad en la que AsterCC (o el servicio de call center construido sobre él) se ofrece como servicio alojado por un proveedor, en vez de instalado en un servidor propio del cliente — el mismo concepto que respalda a [Oficina virtual / BPO](modulos/oficina-virtual-bpo.md), donde una sola instalación atiende a varias empresas cliente.
+
+## Cuenta, agente y extensión (las tres capas de una persona que trabaja)
+
+Tres objetos distintos que suelen confundirse porque casi siempre se crean juntos para la misma persona:
+
+- **Cuenta:** el usuario que inicia sesión en el sistema (usuario/contraseña, rol, permisos).
+- **Agente:** la identidad operativa dentro del call center (número de agente, pertenencia a grupos de agentes, tarifas, estadísticas) — una cuenta necesita estar vinculada a un agente para poder atender llamadas.
+- **Extensión (dispositivo):** el teléfono/softphone físico o virtual con el que se hacen y reciben las llamadas (SIP, IAX2, etc.) — un agente necesita una extensión para poder efectivamente hablar.
+
+Una cuenta sin agente puede administrar el sistema pero no atender colas; un agente sin extensión asignada no puede recibir llamadas aunque esté conectado a sus colas.
+
+## Usuario virtual
+
+Empresa cliente atendida dentro de [Oficina virtual / BPO](modulos/oficina-virtual-bpo.md) — comparte el mismo grupo de agentes que otras empresas cliente, pero con su propia base de conocimiento, pantalla emergente, tarifa y registro de llamadas, identificada por su [Número CV](#numero-cv-cvnumber).
+
+## Filtro de reciclaje (recuperación automática)
+
+Regla programada que revisa periódicamente los clientes de una tarea de marcación saliente o de [predial](#predial-pre-dial) y mueve automáticamente a la lista de marcado a los que cumplen cierta condición (ej. "no contactado ayer", "cita programada ya vencida") — evita tener que reciclar manualmente cliente por cliente.
+
+## Diccionario de coincidencia (import dictionary)
+
+Tabla de mapeo usada al importar datos (clientes, listas negras, etc.) que traduce valores de texto libre del archivo origen a los valores enumerados que espera un campo del sistema — por ejemplo, mapear la columna "sexo" con valores "M"/"F" al campo `gender` que solo acepta `male`/`female`.
+
+## Aplicación de negocio (business app)
+
+Registro que vincula un módulo funcional (marketing outbound, atención al cliente, oficina virtual) con un número/DID de entrada, para que el sistema sepa a qué pantalla y a qué configuración de negocio dirigir cada llamada entrante — se administra desde **Administración avanzada del call center → Vinculación de aplicación de entrada**.
+
+## Predial (pre-dial)
+
+Modo de marcación saliente donde el sistema marca de antemano un lote de clientes y solo asigna un agente disponible cuando alguno contesta — así el agente nunca espera un tono de "ocupado" o "no contesta". Requiere una tarea de marcación saliente y no está disponible si la tarea usa la tabla maestra de clientes. Es el término estándar de este wiki para este mecanismo — evitar "predevolución", usado antes en algunos artículos para lo mismo.
+
+## WSDL
+
+Sigla de *Web Services Description Language*. Documento XML que describe las operaciones disponibles de la interfaz WebService de AsterCC — se usa para generar automáticamente el cliente de integración en la mayoría de los lenguajes de programación, en vez de armar las peticiones HTTP a mano.
+
+## SLA / nivel de servicio
+
+Porcentaje de llamadas entrantes contestadas dentro de un umbral de tiempo definido (ej. "80% en menos de 20 segundos") — indicador estándar de la industria de call centers, disponible en el reporte de desempeño de grupo de agentes.
+
+## Grupo de cuentas vs. grupo de agentes
+
+Dos agrupaciones distintas que no deben confundirse: un **grupo de agentes** determina qué agentes atienden qué colas (organización operativa del trabajo); un **grupo de cuentas** es una agrupación administrativa de cuentas de usuario (ej. para asignar una tarifa de extensión o un troncal específico a ese subconjunto de cuentas), independiente de en qué cola trabajen.
+
+## Modo de extensión (fijo / autoadaptable / autoseleccionable)
+
+Determina si una extensión está permanentemente ligada a un dispositivo físico (**fijo**), si el agente puede registrarse desde cualquier dispositivo disponible al iniciar sesión (**autoadaptable**), o si puede elegir entre varios dispositivos disponibles (**autoseleccionable**) — ver también [extensión adaptativa](#extension-adaptativa-modo-autoadaptable-autoseleccionable).
+
+## Tabla maestra de clientes vs. tabla de la tarea
+
+La **tabla maestra** es la base de datos general y compartida de clientes del equipo; una **tabla de la tarea** (o **paquete de clientes**) es un subconjunto extraído de la tabla maestra para una tarea de marcación específica, aislado para no afectar los datos originales ni verse afectado por cambios posteriores en la tabla maestra.
+
+## Comodín (placeholder)
+
+Marcador de la forma `##nombre##` usado en plantillas de correo, SMS o fax, que el sistema reemplaza automáticamente por el dato real del cliente o de la tarea al enviar (ej. `##taskid##`, `##teamname##`, `##param_zipcode##`).
+
+## QC (control de calidad)
+
+Sigla usada indistintamente con "control de calidad" — pantalla donde un supervisor revisa una muestra (o el total, según el porcentaje configurado) de llamadas grabadas de una campaña para calificarlas y, si corresponde, bloquear su edición posterior por el agente.
 
 ---
 

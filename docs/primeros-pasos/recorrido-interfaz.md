@@ -117,7 +117,7 @@ Al hacer clic sobre un agente de su grupo, el jefe de equipo puede ejecutar (seg
 
 Estas acciones requieren un número de extensión desde el cual se ejecutan — por defecto, la extensión del propio jefe de equipo.
 
-El jefe de equipo también puede administrar la predevolución de su grupo (activarla, ajustar sus parámetros, ver y reciclar clientes) y acceder a la pantalla de **control de calidad** para revisar las llamadas pendientes de calificar.
+El jefe de equipo también puede administrar el predial de su grupo (activarlo, ajustar sus parámetros, ver y reciclar clientes) y acceder a la pantalla de **control de calidad** para revisar las llamadas pendientes de calificar.
 
 ### Reportes más usados
 
@@ -136,8 +136,8 @@ Sin necesidad de entrar al módulo avanzado de reportes, estos son los más cons
 | Estadísticas de importación de datos | Seguimiento de las tareas de importación masiva. |
 | Estadísticas de DID | Volumen de llamadas entrantes por número DID. |
 | Estadísticas de marcación saliente | Resultados y tasa de éxito por tarea de marcación saliente. |
-| Estadísticas de predevolución | Datos de las tareas que usan predevolución — sirven de referencia para ajustar sus parámetros. |
-| Registro de filtro de predevolución | Ejecución de los filtros que reciclan clientes automáticamente a la lista de predevolución. |
+| Estadísticas de predial | Datos de las tareas que usan predial — sirven de referencia para ajustar sus parámetros. |
+| Registro de filtro de predial | Ejecución de los filtros que reciclan clientes automáticamente a la lista de predial. |
 | Monitor de volumen de datos | Volumen de datos (importados, marcados, exitosos, pendientes) de una tarea de marcación saliente. |
 
 ## Referencia rápida
