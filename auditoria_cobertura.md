@@ -4,14 +4,14 @@ Cálculo: **archivos fuente citados bajo `## Fuentes` en algún artículo** ÷ *
 
 ## Cobertura global
 
-- Total: **161/1068 (15.1%)**
+- Total: **178/1068 (16.7%)**
 
 ## Cobertura por idioma
 
 | Idioma | Citadas | Total | % |
 |---|---|---|---|
 | EN | 15 | 441 | 3.4% |
-| ZH | 146 | 627 | 23.3% |
+| ZH | 163 | 627 | 26.0% |
 
 > El chino (ZH) es la fuente primaria del proyecto (más completa en el wiki original).
 > Un archivo EN bajo cobertura no implica necesariamente contenido perdido si su equivalente ZH
@@ -521,9 +521,8 @@ Cálculo: **archivos fuente citados bajo `## Fuentes` en algún artículo** ÷ *
 - `raw/zh/常见问题及解答/语音问卷功能的使用方法.txt`
 - `raw/zh/常见问题及解答/质检管理里有客户资料但是听不了录音.txt`
 
-### zh/模块使用说明 — 86 páginas sin citar
+### zh/模块使用说明 — 69 páginas sin citar
 
-- `raw/zh/模块使用说明/bpo/bpo角色管理.txt`
 - `raw/zh/模块使用说明/呼入客服/呼叫记录.txt`
 - `raw/zh/模块使用说明/呼入客服/客户搜索.txt`
 - `raw/zh/模块使用说明/呼入客服/来电性质.txt`
@@ -558,13 +557,6 @@ Cálculo: **archivos fuente citados bajo `## Fuentes` en algún artículo** ÷ *
 - `raw/zh/模块使用说明/客户管理/机构客户管理.txt`
 - `raw/zh/模块使用说明/客户管理/联络记录.txt`
 - `raw/zh/模块使用说明/客户管理/自定义字段.txt`
-- `raw/zh/模块使用说明/系统实时信息.txt`
-- `raw/zh/模块使用说明/系统实时信息/中继实时使用情况.txt`
-- `raw/zh/模块使用说明/系统实时信息/在线坐席.txt`
-- `raw/zh/模块使用说明/系统实时信息/在线用户.txt`
-- `raw/zh/模块使用说明/系统实时信息/坐席组监控.txt`
-- `raw/zh/模块使用说明/系统实时信息/系统使用信息.txt`
-- `raw/zh/模块使用说明/系统实时信息/系统信息.txt`
 - `raw/zh/模块使用说明/系统日志.txt`
 - `raw/zh/模块使用说明/系统日志/坐席事件日志.txt`
 - `raw/zh/模块使用说明/系统日志/日志信息.txt`
@@ -594,15 +586,6 @@ Cálculo: **archivos fuente citados bajo `## Fuentes` en algún artículo** ÷ *
 - `raw/zh/模块使用说明/群发信息管理/已发信息管理.txt`
 - `raw/zh/模块使用说明/群发信息管理/待发信息管理.txt`
 - `raw/zh/模块使用说明/群发信息管理/短信服务器.txt`
-- `raw/zh/模块使用说明/虚拟呼叫中心.txt`
-- `raw/zh/模块使用说明/虚拟呼叫中心/客户管理.txt`
-- `raw/zh/模块使用说明/虚拟呼叫中心/模块流程.txt`
-- `raw/zh/模块使用说明/虚拟呼叫中心/用户管理.txt`
-- `raw/zh/模块使用说明/虚拟呼叫中心/知识库.txt`
-- `raw/zh/模块使用说明/虚拟呼叫中心/知识类别.txt`
-- `raw/zh/模块使用说明/虚拟呼叫中心/自定义字段.txt`
-- `raw/zh/模块使用说明/虚拟呼叫中心/费率管理.txt`
-- `raw/zh/模块使用说明/虚拟呼叫中心/通话记录.txt`
 - `raw/zh/模块使用说明/财务统计.txt`
 - `raw/zh/模块使用说明/财务统计/团队账单.txt`
 - `raw/zh/模块使用说明/财务统计/坐席账务日志.txt`

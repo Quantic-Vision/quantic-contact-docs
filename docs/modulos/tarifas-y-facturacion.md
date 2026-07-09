@@ -1,20 +1,20 @@
 ---
 title: "Tarifas y facturación"
-resumen: "Los cuatro niveles de tarifa de AsterCC — sistema, equipo, extensión y agente — y cómo la tarifa de extensión también decide qué troncal usa una llamada."
+resumen: "Los cinco niveles de tarifa de AsterCC — sistema, equipo, extensión, agente y usuario virtual — y cómo la tarifa de extensión también decide qué troncal usa una llamada."
 seccion: "4.4 Tarifas y facturación"
 tipo: guia
 nivel: intermedio
 roles: [administrador]
 fuente: zh
 obsoleto: false
-relacionados: [pbx-y-telefonia, cuentas-equipos-permisos, reportes-y-estadisticas]
+relacionados: [pbx-y-telefonia, cuentas-equipos-permisos, oficina-virtual-bpo, reportes-y-estadisticas]
 ---
 
 # Tarifas y facturación
 
 ## Qué es
 
-AsterCC calcula el costo de las llamadas en **cuatro niveles de tarifa**, cada uno con un propósito distinto:
+AsterCC calcula el costo de las llamadas en **cinco niveles de tarifa**, cada uno con un propósito distinto:
 
 | Nivel | Para qué sirve | Quién la configura |
 |---|---|---|
@@ -22,8 +22,9 @@ AsterCC calcula el costo de las llamadas en **cuatro niveles de tarifa**, cada u
 | Tarifa de equipo | Lo que se le cobra a un equipo/cliente por sus llamadas salientes | Administrador de sistema (solo lectura para el equipo) |
 | Tarifa de extensión | Costo por extensión saliente — **y además decide qué troncal usa la llamada** | Administrador de sistema o de equipo |
 | Tarifa de agente (llamadas entrantes) | Paga al agente por cada llamada entrante atendida — típico para liquidar personal freelance | Administrador de sistema o de equipo |
+| Tarifa de usuario virtual | Cobra por llamadas entrantes y transferencias de un [usuario virtual (oficina virtual)](oficina-virtual-bpo.md) | Administrador de sistema o de equipo |
 
-Los tres primeros niveles son independientes entre sí — la tarifa de sistema mide el costo real sin importar qué tarifa de equipo o extensión se haya aplicado a esa misma llamada.
+Los primeros niveles son independientes entre sí — la tarifa de sistema mide el costo real sin importar qué tarifa de equipo o extensión se haya aplicado a esa misma llamada.
 
 ## Cómo se usa
 
@@ -82,6 +83,23 @@ Paga al agente una tarifa por cada llamada entrante que atiende — no usa prefi
 
 El monto acumulado se liquida luego desde [Gestión de agentes → Pagar](cuentas-equipos-permisos.md#agentes), y queda auditado en el log financiero del agente.
 
+### Tarifa de usuario virtual
+
+Cobra por el uso que hace un [usuario virtual de oficina virtual](oficina-virtual-bpo.md) del sistema — llamadas entrantes y transferencias.
+
+| Campo | Obligatorio | Qué define |
+|---|---|---|
+| Nombre de la tarifa | Sí | Identificación libre |
+| Tarifa por minuto | Sí | Costo recurrente |
+| Periodo de facturación | Sí | Cada cuánto se cobra |
+| Equipo | No | A qué equipo aplica |
+| Usuario virtual | No | A cuál usuario virtual de ese equipo aplica |
+| Tarifa de conexión | No | Costo fijo al contestar |
+| Duración inicial | No | Tiempo cubierto antes de cobrar por minuto |
+| Vigencia (inicio/fin) | No | Rango de fechas en que esta tarifa está activa |
+| Tipo de tarifa | No | **Entrante** (llamada que recibe el usuario virtual) o **transferencia** — si es transferencia, se puede acotar por prefijo del destino |
+| Notas | No | Descripción libre |
+
 ## Referencia rápida
 
 | Tarifa | Configúrala en | Afecta el enrutamiento de la llamada |
@@ -90,6 +108,7 @@ El monto acumulado se liquida luego desde [Gestión de agentes → Pagar](cuenta
 | Equipo | Tarifas → Tarifa de equipo | No |
 | Extensión | Tarifas → Tarifa de extensión | **Sí — decide el troncal** |
 | Agente (entrante) | Tarifas → Tarifa de agente | No |
+| Usuario virtual | Tarifas → Tarifa de usuario virtual | No |
 
 ---
 
@@ -100,3 +119,4 @@ El monto acumulado se liquida luego desde [Gestión de agentes → Pagar](cuenta
 - `raw/zh/模块使用说明/费率管理/分机费率.txt`
 - `raw/zh/模块使用说明/费率管理/坐席呼入费率.txt`
 - `raw/zh/模块使用说明/费率管理.txt`
+- `raw/zh/模块使用说明/虚拟呼叫中心/费率管理.txt`

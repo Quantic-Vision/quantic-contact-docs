@@ -75,10 +75,41 @@ Los reportes de **agente** y de **grupo de agentes** tienen una variante gráfic
 
 ### Monitoreo en tiempo real
 
-- **Agentes en línea / usuarios en línea:** quién está conectado ahora mismo.
-- **Uso de troncales en tiempo real:** cuántos canales de cada troncal están en uso.
-- **Monitoreo de grupo de agentes:** estado en vivo de cada agente del grupo (libre, timbrando, en llamada, pausado) — con acciones directas como forzar check-out, forzar ocupado/libre, o [intervenir sobre una llamada activa](../glosario.md#monitoreo-intervencion-interrupcion-forzada-y-susurro).
-- **Información del sistema:** estado general del servidor y de los servicios.
+- **Agentes en línea:** número de agente, cola, estado, cantidad de llamadas contestadas/hechas, tiempo total de conversación, equipo, hora de conexión — con opción de auto-refrescar cada 30 segundos.
+- **Usuarios en línea:** cuentas conectadas ahora mismo, con IP de origen, tipo de cuenta, equipo, grupo de cuentas, hora de conexión — y un botón para **forzar el cierre de sesión** de cualquier cuenta que no sea la propia.
+- **Uso de troncales en tiempo real:** llamadas entrantes y salientes en curso por troncal, agrupadas por equipo, con auto-refresco cada 5 segundos (se puede desactivar).
+- **Uso del sistema por equipo:** cuántos agentes, colas, extensiones, etc. tiene provisionados cada equipo en este momento.
+
+#### Monitoreo de grupo de agentes (detallado)
+
+Esta pantalla es la más completa: muestra, por equipo y por grupo de agentes, cuántos agentes están **conectados / libres / timbrando / en llamada / pausados / en gestión posterior**, y lista cada agente individualmente con su estado, contador de respuestas/llamadas, tiempo en llamada, número del cliente actual, hora de conexión, tiempo desde la última llamada, y si es estático/dinámico y en línea/fuera de línea.
+
+Al hacer clic sobre un agente en llamada, se abre un panel de control con:
+
+| Acción | Qué hace |
+|---|---|
+| Colgar | Termina todas las llamadas de ese agente |
+| Monitorear | Escucha silenciosa de la llamada en curso |
+| Intervenir | El jefe de grupo se suma activamente a la llamada |
+| Susurrar | Habla con el agente sin que el cliente lo escuche |
+| Interrumpir | Cuelga al agente; el cliente queda hablando con quien ejecutó la acción |
+| Forzar ocupado | Pone al agente en pausa forzosamente |
+| Forzar libre | Sacar al agente de pausa forzosamente |
+| Forzar check-out | Desconecta al agente de la cola (deshabilitado si el agente es de tipo estático) |
+
+Estas acciones usan como número ejecutor, por defecto, la extensión del propio jefe de grupo que las dispara. Los estados de un agente se codifican por color: libre, timbrando, en llamada, en conferencia, en pausa, en gestión posterior, y los dos casos de consulta (consultando / siendo consultado).
+
+Hay también una **vista de pantalla completa** pensada para mostrar en un monitor grande de la sala de operaciones, con una alarma sonora que se dispara cada vez que la cantidad de clientes esperando en cola sube en múltiplos de 5.
+
+### Información del sistema
+
+- **Estado de licencia:** usuarios autorizados, máximo de agentes, concurrencia máxima de predictivo, proveedor, vigencia — con carga/descarga del archivo de licencia.
+- **Procesos del sistema:** estado del kernel y del CTI, con botones de reinicio individual; **reiniciar o apagar el servidor completo** desde la misma pantalla.
+- **Uso actual:** cantidad de agentes, colas, extensiones y equipos dados de alta.
+- **Aviso de vencimiento:** alerta visual si algún módulo está por expirar.
+
+!!! tip
+    Cuando se cambian los campos de integración de eventos de un [equipo](cuentas-equipos-permisos.md#equipos) (dirección de eventos, interfaz de negocio, cadena de verificación), hay que reiniciar el **CTI** desde esta pantalla para que la nueva conexión tome efecto.
 
 ### Financiero
 
@@ -118,3 +149,10 @@ Las facturas se generan automáticamente de forma periódica y pueden consultars
 - `raw/zh/模块使用说明/报表和统计/系统数据统计.txt`
 - `raw/zh/模块使用说明/财务统计/系统账单.txt`
 - `raw/zh/模块使用说明/报表和统计.txt`
+- `raw/zh/模块使用说明/系统实时信息/坐席组监控.txt`
+- `raw/zh/模块使用说明/系统实时信息/中继实时使用情况.txt`
+- `raw/zh/模块使用说明/系统实时信息/系统信息.txt`
+- `raw/zh/模块使用说明/系统实时信息/在线坐席.txt`
+- `raw/zh/模块使用说明/系统实时信息/在线用户.txt`
+- `raw/zh/模块使用说明/系统实时信息/系统使用信息.txt`
+- `raw/zh/模块使用说明/系统实时信息.txt`

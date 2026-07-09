@@ -37,15 +37,49 @@ En **Oficina virtual → Gestión de usuarios entrantes**, cada usuario virtual 
 | Campo | Qué define |
 |---|---|
 | Nombre del usuario virtual | Identifica a la empresa cliente |
-| Enlace de pantalla del agente | Página que se muestra al agente cuando entra una llamada de este usuario |
+| Equipo | A qué equipo pertenece |
+| Enlace de pantalla del agente (por defecto) | Página que se muestra al agente cuando entra una llamada de este usuario |
 | Enlace de administración | Página de gestión del negocio de este usuario virtual |
-| Encuesta asociada | Si esta empresa cliente requiere encuesta |
+| Encuesta asociada | Puede elegirse más de una — si hay varias, el agente elige cuál abrir en la pantalla del cliente |
+| Enviar datos de login | Si la página embebida (posiblemente externa) recibe automáticamente usuario/contraseña del agente |
+| Modo de transferencia | Por agente, transferencia ciega, o ambos disponibles — se refleja en cómo se comporta cada contacto de la libreta de contactos frecuentes de este usuario |
+| Dirección de recepción de eventos | A dónde se envían los eventos de llamada de este usuario virtual |
 | Grupo de agentes | Qué grupo atiende a este usuario virtual |
+| Correo / dirección / teléfono de contacto, sitio web | Datos de la empresa cliente |
+| Forzar alta de cliente nuevo | Si cada llamada entrante debe generar un registro de cliente nuevo, incluso si podría coincidir con uno existente |
+| Imagen | Logo o imagen mostrada en la pantalla del agente |
+| Ventana de aviso de llamada flotante | Si se muestra un aviso emergente en la esquina al recibir una llamada |
 | Descripción del negocio | Notas para orientar al agente |
 | Saludo | Frase de apertura que el agente debe usar al contestar |
-| IPs de confianza | Requeridas si un sistema externo va a invocar eventos de este call center |
 
-Un mismo usuario virtual puede tener **distintos enlaces de pantalla por grupo de agentes** — útil si ese negocio, a su vez, se subdivide en líneas (ej. soporte técnico, verificación, comercial) enrutadas por IVR a distintos grupos.
+**Datos avanzados:** número/nombre que llama (para telefonía IP), forzar uso de ese número/nombre, modo de transferencia avanzado (agente/ciega/libre elección), restricción de números de transferencia (cualquiera vs. solo contactos frecuentes), IPs de confianza (si un sistema externo va a invocar eventos de este usuario virtual), y si un agente consultado puede editar los datos del cliente que ve durante la consulta.
+
+Un mismo usuario virtual puede tener **distintos enlaces de pantalla por grupo de agentes** (vía "agregar enlace de grupo" en la edición) — útil si ese negocio, a su vez, se subdivide en líneas (ej. soporte técnico, verificación, comercial) enrutadas por IVR a distintos grupos.
+
+### Clientes del usuario virtual
+
+Los clientes de cada usuario virtual se gestionan en **Oficina virtual → Gestión de clientes**, filtrando por usuario virtual. Comparten estructura con el resto del sistema, más los **campos personalizados** definidos específicamente para ese usuario virtual (ver más abajo).
+
+### Campos personalizados por usuario virtual
+
+En **Oficina virtual → Campos personalizados**, cada campo se asocia a uno o varios usuarios virtuales del equipo, y puede ser de tipo:
+
+| Tipo | Comportamiento |
+|---|---|
+| `input` | Texto corto de una línea |
+| `select` | Lista desplegable — opciones separadas por coma; puede permitirse además texto libre si se activa "select editable" |
+| `textarea` | Texto largo |
+| `date` / `datetime` | Selector de fecha (con o sin hora), con calendario emergente |
+| `upload` | Subida de archivo |
+| `link` | Enlace clickeable — se abre en una pestaña de la plataforma del agente o en una ventana de navegador aparte, según se configure |
+
+### Tarifa del usuario virtual
+
+Ver [4.4 Tarifas y facturación](tarifas-y-facturacion.md#tarifa-de-usuario-virtual) — cada usuario virtual puede tener su propia tarifa de llamadas entrantes y de transferencias.
+
+### Registro de llamadas del usuario virtual
+
+**Oficina virtual → Registro de llamadas** centraliza el historial de todos los usuarios virtuales del equipo, con reproducción y descarga de grabación cuando existe.
 
 ### Contactos frecuentes (opcional)
 
@@ -57,7 +91,13 @@ Además de la base de conocimiento, se puede armar una **libreta de contactos fr
 
 ### 4. Base de conocimiento por usuario virtual
 
-Se organiza en categorías de uno o dos niveles (ej. Categoría → Subcategoría → Artículo), igual que en [4.6 Base de conocimiento](base-conocimiento-work-orders.md#base-de-conocimiento), pero acotada al usuario virtual correspondiente — así el agente solo ve el conocimiento relevante para la empresa que está atendiendo en ese momento.
+Se organiza en **dos niveles de categoría** (categoría → subcategoría → artículo de conocimiento) — análoga por concepto a [4.6 Base de conocimiento](base-conocimiento-work-orders.md#base-de-conocimiento), pero con su propia pantalla dentro de Oficina virtual y acotada al usuario virtual correspondiente:
+
+1. En **Oficina virtual → Categorías de conocimiento**, crea la categoría de primer nivel.
+2. Desde esa categoría, entra a "subcategorías" (o usa el botón "nivel siguiente") para crear la de segundo nivel.
+3. Desde la subcategoría, entra a "artículos de conocimiento" y agrega el artículo (nombre, archivo adjunto opcional, contenido).
+
+Así el agente solo ve el conocimiento relevante para la empresa que está atendiendo en ese momento, sin mezclar contenido de otros usuarios virtuales.
 
 ### 5. Que el agente entre directo a la pantalla de oficina virtual (opcional)
 
@@ -71,8 +111,10 @@ Para que un grupo de agentes, al iniciar sesión, entre directamente a la vista 
 Cuando terceros (las propias empresas B, C, D del ejemplo) necesitan ver sus propios reportes y tareas sin acceder al resto del sistema, se les crea una **cuenta BPO**:
 
 - Se define a qué **tareas de campaña** y a qué **usuarios virtuales (oficina virtual)** tiene acceso esa cuenta.
-- Se le asigna un **rol** que controla qué puede ver y hacer.
+- Se le asigna un **rol BPO** que controla qué puede ver y hacer.
 - Las cuentas BPO inician sesión desde una URL separada (`<servidor>/bpologin/`), distinta del login administrativo normal.
+
+**Roles BPO:** se definen en **BPO → Gestión de roles**, con permisos (ver, agregar, editar, eliminar, exportar) acotados específicamente a las páginas de **tareas de campaña** y de **oficina virtual** — un rol BPO no puede alcanzar ninguna otra parte del sistema. La cuenta BPO hereda automáticamente esos permisos sobre cualquier tarea/usuario virtual al que tenga acceso.
 
 ## Referencia rápida
 
@@ -80,7 +122,11 @@ Cuando terceros (las propias empresas B, C, D del ejemplo) necesitan ver sus pro
 |---|---|
 | Crear usuario virtual (empresa cliente) | Oficina virtual → Gestión de usuarios entrantes |
 | Configurar enlaces por grupo de agentes | Dentro del usuario virtual → Enlaces de grupo |
-| Base de conocimiento por usuario virtual | Oficina virtual → Base de conocimiento / Categorías |
+| Gestionar clientes de un usuario virtual | Oficina virtual → Gestión de clientes |
+| Crear campos personalizados | Oficina virtual → Campos personalizados |
+| Configurar tarifa por usuario virtual | Tarifas → Tarifa de usuario virtual |
+| Base de conocimiento por usuario virtual | Oficina virtual → Categorías de conocimiento |
+| Ver registro de llamadas | Oficina virtual → Registro de llamadas |
 | Crear cuenta BPO para el cliente final | BPO → Gestión de cuentas BPO |
 | Login de cuentas BPO | `<servidor>/bpologin/` |
 
@@ -91,3 +137,13 @@ Cuando terceros (las propias empresas B, C, D del ejemplo) necesitan ver sus pro
 - `raw/zh/用途和案例/为客户提供虚拟呼叫中心服务.txt`
 - `raw/zh/模块使用说明/bpo/bpo帐号管理.txt`
 - `raw/en/how-to/how_to_build_a_common_contacts.txt`
+- `raw/zh/模块使用说明/虚拟呼叫中心/用户管理.txt`
+- `raw/zh/模块使用说明/虚拟呼叫中心/客户管理.txt`
+- `raw/zh/模块使用说明/虚拟呼叫中心/知识库.txt`
+- `raw/zh/模块使用说明/虚拟呼叫中心/知识类别.txt`
+- `raw/zh/模块使用说明/虚拟呼叫中心/自定义字段.txt`
+- `raw/zh/模块使用说明/虚拟呼叫中心/费率管理.txt`
+- `raw/zh/模块使用说明/虚拟呼叫中心/通话记录.txt`
+- `raw/zh/模块使用说明/虚拟呼叫中心/模块流程.txt`
+- `raw/zh/模块使用说明/虚拟呼叫中心.txt`
+- `raw/zh/模块使用说明/bpo/bpo角色管理.txt`
