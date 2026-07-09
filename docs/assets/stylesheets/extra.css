@@ -1,1 +1,31 @@
 /* Ajustes mínimos al tema Material — se amplía en Fase 4/6 si hace falta */
+
+/* Barra de "Expandir todo" / "Colapsar todo" sobre el menú lateral */
+.nav-toggle-bar {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem 0.6rem;
+  margin-bottom: 0.25rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.nav-toggle-btn {
+  flex: 1;
+  font-size: 0.65rem;
+  line-height: 1.2;
+  padding: 0.3rem 0.4rem;
+  border: 1px solid var(--md-default-fg-color--light);
+  border-radius: 0.2rem;
+  background: transparent;
+  color: var(--md-default-fg-color);
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+
+.nav-toggle-btn:hover {
+  background-color: var(--md-default-fg-color--lightest);
+}
+
+.nav-toggle-btn:active {
+  background-color: var(--md-default-fg-color--light);
+}

@@ -23,7 +23,6 @@ theme:
     - navigation.top
     - navigation.indexes
     - navigation.tracking
-    - navigation.expand
     - search.suggest
     - search.highlight
     - content.code.copy
@@ -120,3 +119,6 @@ nav:
 
 extra_css:
   - assets/stylesheets/extra.css
+
+extra_javascript:
+  - assets/javascripts/nav-toggle.js
