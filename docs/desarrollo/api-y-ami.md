@@ -101,6 +101,8 @@ Parámetros más relevantes:
 
 En la tarea de campaña, el campo **"enviar datos a esta dirección al enviar"** (pestaña avanzada) activa un `POST` automático hacia un sistema externo cada vez que un agente guarda una gestión — útil para sincronizar el resultado de la llamada con un CRM propio.
 
+![Pestaña de configuración avanzada de una tarea outbound, con el menú lateral de navegación y el campo "enviar datos a esta dirección al enviar" resaltado (interfaz en chino)](../assets/images/api-y-ami/webhook-enviar-datos-tarea.png)
+
 ```javascript
 $.ajax({
   type: 'POST',

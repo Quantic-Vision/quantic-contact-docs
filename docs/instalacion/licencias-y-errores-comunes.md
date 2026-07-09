@@ -16,6 +16,8 @@ relacionados: [descarga-e-instalacion, configuracion-post-instalacion]
 
 AsterCC funciona con un esquema de licencia por número de agentes. Si no se ha cargado una licencia comercial, el sistema arranca igualmente con una **licencia por defecto de prueba, limitada a un número reducido de agentes** (la instalación estándar trae, por ejemplo, una licencia de prueba de 5 agentes).
 
+![Panel de administración de AsterCC mostrando el bloque de información de autorización: usuario autorizado, número de serie del producto, máximo de agentes, canales de fax, fecha de vigencia y botón para descargar el archivo de verificación](../assets/images/licencias-y-errores-comunes/panel-autorizacion-licencia.png)
+
 ## Cómo se usa
 
 ### "can not found license file" al iniciar los demonios de AsterCC

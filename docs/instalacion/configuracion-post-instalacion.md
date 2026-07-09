@@ -22,13 +22,23 @@ Después de instalar AsterCC, el primer acceso al sistema dispara un asistente d
 
 1. Abre un navegador (se recomienda Firefox o Chrome) y entra a la IP del servidor, por ejemplo `http://192.168.1.110`.
 2. Inicia sesión con el usuario y contraseña iniciales: `admin` / `admin`.
+
+   ![Pantalla de login de AsterCC con selector de idioma (inglés / chino simplificado), usuario, contraseña y equipo](../assets/images/configuracion-post-instalacion/login-selector-idioma.png)
+
 3. El sistema ejecuta una inicialización — espera a que termine.
+
+   ![Panel de administración cargando con el aviso "sistema inicializándose, espere" superpuesto](../assets/images/configuracion-post-instalacion/inicializacion-sistema.png)
 
 ### 2. Asistente de inicialización
 
 1. Selecciona el **idioma por defecto** del sistema.
+
+   ![Ventana del asistente pidiendo seleccionar el idioma por defecto del sistema, con menú desplegable y botón "Siguiente"](../assets/images/configuracion-post-instalacion/asistente-idioma-defecto.png)
+
 2. Cuando pregunte si quieres importar datos de demostración, decide según tu caso: importarlos ayuda a explorar el sistema rápido, pero para un entorno de producción normalmente se elige **no importar**.
 3. Ingresa un **correo del administrador** — el sistema lo usa para notificaciones.
+
+   ![Ventana del asistente pidiendo el correo del administrador, con campo de texto y botón "Confirmar"](../assets/images/configuracion-post-instalacion/asistente-correo-admin.png)
 
 Con esto termina la inicialización. A partir de aquí, el sistema queda listo para la configuración funcional: cuentas, extensiones, troncales y agentes, cubierta en [Guía rápida para administradores](../primeros-pasos/guia-administradores.md).
 

@@ -9,7 +9,7 @@ Compara, para cada artículo de `docs/`, cuántas imágenes están disponibles (
 ## Resumen global
 
 - Artículos con fuentes citadas: **64**
-- Artículos que ya tienen alguna imagen insertada: **3**
+- Artículos que ya tienen alguna imagen insertada: **43**
 - Artículos con al menos 1 imagen disponible para insertar: **47**
 - Total de imágenes disponibles (descargadas, EN+ZH, sin insertar aún ni contar las ya usadas): **5207**
 
@@ -19,53 +19,53 @@ Compara, para cada artículo de `docs/`, cuántas imágenes están disponibles (
 
 | Artículo | Ya ilustrado | Imgs EN disp. | Imgs ZH disp. | Recomendación |
 |---|---|---|---|---|
-| `docs/casos-de-uso/call-center-inbound.md` | No | 204 | 234 | EN (UI en inglés, legible) |
-| `docs/casos-de-uso/marketing-outbound.md` | No | 146 | 211 | EN (UI en inglés, legible) |
+| `docs/casos-de-uso/call-center-inbound.md` | Sí | 204 | 234 | EN (UI en inglés, legible) |
+| `docs/casos-de-uso/marketing-outbound.md` | Sí | 146 | 211 | EN (UI en inglés, legible) |
 | `docs/primeros-pasos/guia-administradores.md` | Sí | 114 | 229 | EN (UI en inglés, legible) |
-| `docs/administracion/historial-documentacion-1.2-beta.md` | No | 0 | 289 | ZH (única disponible — UI en chino, revisar antes de usar) |
+| `docs/administracion/historial-documentacion-1.2-beta.md` | Sí | 0 | 289 | ZH (única disponible — UI en chino, revisar antes de usar) |
 | `docs/changelog/index.md` | No | 132 | 133 | EN (UI en inglés, legible) |
-| `docs/casos-de-uso/casos-tecnicos-avanzados.md` | No | 167 | 90 | EN (UI en inglés, legible) |
-| `docs/casos-de-uso/marcacion-predictiva.md` | No | 54 | 202 | EN (UI en inglés, legible) |
-| `docs/modulos/atencion-cliente-mensajeria-ecommerce.md` | No | 101 | 104 | EN (UI en inglés, legible) |
-| `docs/casos-de-uso/oficina-virtual.md` | No | 58 | 130 | EN (UI en inglés, legible) |
-| `docs/modulos/marcador-y-campanas.md` | No | 82 | 82 | EN (UI en inglés, legible) |
-| `docs/administracion/gestion-avanzada-call-center.md` | No | 73 | 74 | EN (UI en inglés, legible) |
-| `docs/faq/base-de-datos-y-sistema.md` | No | 34 | 101 | EN (UI en inglés, legible) |
-| `docs/modulos/pbx-funciones-avanzadas.md` | No | 62 | 69 | EN (UI en inglés, legible) |
-| `docs/modulos/reportes-y-estadisticas.md` | No | 54 | 69 | EN (UI en inglés, legible) |
-| `docs/modulos/oficina-virtual-bpo.md` | No | 50 | 71 | EN (UI en inglés, legible) |
-| `docs/modulos/pbx-y-telefonia.md` | No | 62 | 58 | EN (UI en inglés, legible) |
+| `docs/casos-de-uso/casos-tecnicos-avanzados.md` | Sí | 167 | 90 | EN (UI en inglés, legible) |
+| `docs/casos-de-uso/marcacion-predictiva.md` | Sí | 54 | 202 | EN (UI en inglés, legible) |
+| `docs/modulos/atencion-cliente-mensajeria-ecommerce.md` | Sí | 101 | 104 | EN (UI en inglés, legible) |
+| `docs/casos-de-uso/oficina-virtual.md` | Sí | 58 | 130 | EN (UI en inglés, legible) |
+| `docs/modulos/marcador-y-campanas.md` | Sí | 82 | 82 | EN (UI en inglés, legible) |
+| `docs/administracion/gestion-avanzada-call-center.md` | Sí | 73 | 74 | EN (UI en inglés, legible) |
+| `docs/faq/base-de-datos-y-sistema.md` | Sí | 34 | 101 | EN (UI en inglés, legible) |
+| `docs/modulos/pbx-funciones-avanzadas.md` | Sí | 62 | 69 | EN (UI en inglés, legible) |
+| `docs/modulos/reportes-y-estadisticas.md` | Sí | 54 | 69 | EN (UI en inglés, legible) |
+| `docs/modulos/oficina-virtual-bpo.md` | Sí | 50 | 71 | EN (UI en inglés, legible) |
+| `docs/modulos/pbx-y-telefonia.md` | Sí | 62 | 58 | EN (UI en inglés, legible) |
 | `docs/modulos/plataforma-del-agente.md` | Sí | 13 | 107 | EN (UI en inglés, legible) |
-| `docs/modulos/base-conocimiento-work-orders.md` | No | 60 | 59 | EN (UI en inglés, legible) |
-| `docs/modulos/cuentas-equipos-permisos.md` | No | 60 | 59 | EN (UI en inglés, legible) |
-| `docs/administracion/configuracion-y-mantenimiento-sistema.md` | No | 57 | 61 | EN (UI en inglés, legible) |
-| `docs/primeros-pasos/recorrido-interfaz.md` | No | 41 | 70 | EN (UI en inglés, legible) |
-| `docs/modulos/mensajeria-wechat-fax.md` | No | 38 | 69 | EN (UI en inglés, legible) |
-| `docs/modulos/pbx-ivr.md` | No | 46 | 52 | EN (UI en inglés, legible) |
-| `docs/modulos/marcador-predictivo-avanzado.md` | No | 40 | 38 | EN (UI en inglés, legible) |
-| `docs/faq/instalacion-y-actualizacion.md` | No | 30 | 45 | EN (UI en inglés, legible) |
-| `docs/primeros-pasos/configurar-softphones.md` | No | 36 | 34 | EN (UI en inglés, legible) |
+| `docs/modulos/base-conocimiento-work-orders.md` | Sí | 60 | 59 | EN (UI en inglés, legible) |
+| `docs/modulos/cuentas-equipos-permisos.md` | Sí | 60 | 59 | EN (UI en inglés, legible) |
+| `docs/administracion/configuracion-y-mantenimiento-sistema.md` | Sí | 57 | 61 | EN (UI en inglés, legible) |
+| `docs/primeros-pasos/recorrido-interfaz.md` | Sí | 41 | 70 | EN (UI en inglés, legible) |
+| `docs/modulos/mensajeria-wechat-fax.md` | Sí | 38 | 69 | EN (UI en inglés, legible) |
+| `docs/modulos/pbx-ivr.md` | Sí | 46 | 52 | EN (UI en inglés, legible) |
+| `docs/modulos/marcador-predictivo-avanzado.md` | Sí | 40 | 38 | EN (UI en inglés, legible) |
+| `docs/faq/instalacion-y-actualizacion.md` | Sí | 30 | 45 | EN (UI en inglés, legible) |
+| `docs/primeros-pasos/configurar-softphones.md` | Sí | 36 | 34 | EN (UI en inglés, legible) |
 | `docs/instalacion/descarga-e-instalacion.md` | Sí | 36 | 28 | EN (UI en inglés, legible) |
-| `docs/modulos/encuestas.md` | No | 30 | 33 | EN (UI en inglés, legible) |
-| `docs/faq/mensajeria-encuestas-y-personalizacion.md` | No | 12 | 48 | EN (UI en inglés, legible) |
-| `docs/primeros-pasos/guia-agentes.md` | No | 0 | 58 | ZH (única disponible — UI en chino, revisar antes de usar) |
-| `docs/faq/pbx-y-telefonia.md` | No | 7 | 41 | EN (UI en inglés, legible) |
-| `docs/instalacion/configuracion-post-instalacion.md` | No | 0 | 43 | ZH (única disponible — UI en chino, revisar antes de usar) |
-| `docs/instalacion/licencias-y-errores-comunes.md` | No | 0 | 43 | ZH (única disponible — UI en chino, revisar antes de usar) |
-| `docs/introduccion/demo-en-linea.md` | No | 20 | 20 | EN (UI en inglés, legible) |
-| `docs/faq/marcador-y-campanas.md` | No | 14 | 25 | EN (UI en inglés, legible) |
+| `docs/modulos/encuestas.md` | Sí | 30 | 33 | EN (UI en inglés, legible) |
+| `docs/faq/mensajeria-encuestas-y-personalizacion.md` | Sí | 12 | 48 | EN (UI en inglés, legible) |
+| `docs/primeros-pasos/guia-agentes.md` | Sí | 0 | 58 | ZH (única disponible — UI en chino, revisar antes de usar) |
+| `docs/faq/pbx-y-telefonia.md` | Sí | 7 | 41 | EN (UI en inglés, legible) |
+| `docs/instalacion/configuracion-post-instalacion.md` | Sí | 0 | 43 | ZH (única disponible — UI en chino, revisar antes de usar) |
+| `docs/instalacion/licencias-y-errores-comunes.md` | Sí | 0 | 43 | ZH (única disponible — UI en chino, revisar antes de usar) |
+| `docs/introduccion/demo-en-linea.md` | Sí | 20 | 20 | EN (UI en inglés, legible) |
+| `docs/faq/marcador-y-campanas.md` | Sí | 14 | 25 | EN (UI en inglés, legible) |
 | `docs/casos-de-uso/e-commerce.md` | No | 12 | 22 | EN (UI en inglés, legible) |
-| `docs/desarrollo/integrar-envio-de-sms.md` | No | 9 | 19 | EN (UI en inglés, legible) |
-| `docs/desarrollo/eventos-tiempo-real-api.md` | No | 14 | 13 | EN (UI en inglés, legible) |
-| `docs/modulos/tarifas-y-facturacion.md` | No | 11 | 14 | EN (UI en inglés, legible) |
-| `docs/faq/agentes-cuentas-y-supervision.md` | No | 0 | 23 | ZH (única disponible — UI en chino, revisar antes de usar) |
-| `docs/administracion/diagnostico-red-voip.md` | No | 19 | 0 | EN (UI en inglés, legible) |
-| `docs/desarrollo/guia-desarrolladores.md` | No | 6 | 7 | EN (UI en inglés, legible) |
+| `docs/desarrollo/integrar-envio-de-sms.md` | Sí | 9 | 19 | EN (UI en inglés, legible) |
+| `docs/desarrollo/eventos-tiempo-real-api.md` | Sí | 14 | 13 | EN (UI en inglés, legible) |
+| `docs/modulos/tarifas-y-facturacion.md` | Sí | 11 | 14 | EN (UI en inglés, legible) |
+| `docs/faq/agentes-cuentas-y-supervision.md` | Sí | 0 | 23 | ZH (única disponible — UI en chino, revisar antes de usar) |
+| `docs/administracion/diagnostico-red-voip.md` | Sí | 19 | 0 | EN (UI en inglés, legible) |
+| `docs/desarrollo/guia-desarrolladores.md` | Sí | 6 | 7 | EN (UI en inglés, legible) |
 | `docs/instalacion/requisitos.md` | No | 5 | 5 | EN (UI en inglés, legible) |
 | `docs/desarrollo/introduccion-api-integracion.md` | No | 3 | 3 | EN (UI en inglés, legible) |
-| `docs/instalacion/instalar-desde-usb.md` | No | 0 | 6 | ZH (única disponible — UI en chino, revisar antes de usar) |
-| `docs/troubleshooting/index.md` | No | 0 | 3 | ZH (única disponible — UI en chino, revisar antes de usar) |
-| `docs/desarrollo/api-y-ami.md` | No | 0 | 1 | ZH (única disponible — UI en chino, revisar antes de usar) |
+| `docs/instalacion/instalar-desde-usb.md` | Sí | 0 | 6 | ZH (única disponible — UI en chino, revisar antes de usar) |
+| `docs/troubleshooting/index.md` | Sí | 0 | 3 | ZH (única disponible — UI en chino, revisar antes de usar) |
+| `docs/desarrollo/api-y-ami.md` | Sí | 0 | 1 | ZH (única disponible — UI en chino, revisar antes de usar) |
 
 ---
 

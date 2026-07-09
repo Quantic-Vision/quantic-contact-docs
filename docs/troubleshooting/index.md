@@ -14,6 +14,9 @@ relacionados: []
 
 Esta sección resuelve **síntomas y errores concretos**. Si tu pregunta es conceptual, ve a [Preguntas frecuentes](../faq/index.md).
 
+!!! note "Capturas en chino"
+    Algunas capturas de esta página muestran la interfaz en chino porque no existe fuente equivalente en inglés para esos síntomas — la estructura del formulario (campo resaltado) se entiende igual sin leer el texto.
+
 ## "can not found license file" al iniciar los demonios de AsterCC
 
 Es solo un aviso, no un error — el sistema sigue funcionando con la licencia de prueba por defecto. Ver detalle en [Licencias y errores comunes de inicio](../instalacion/licencias-y-errores-comunes.md).
@@ -32,6 +35,8 @@ Reinicia el servicio de PHP tras el cambio:
 service php-fpm restart
 ```
 
+![Fragmento de php.ini mostrando la línea error_reporting resaltada, con el valor recomendado E_ALL & ~E_DEPRECATED](../assets/images/troubleshooting/php-ini-error-reporting.png)
+
 ## No se puede guardar una extensión o un agente nuevo
 
 Confirma que existe al menos un **equipo** creado en el sistema — sin equipo, el sistema no permite guardar extensiones ni agentes.
@@ -41,7 +46,12 @@ Confirma que existe al menos un **equipo** creado en el sistema — sin equipo, 
 Síntoma típico de un troncal que exige **verificación del número que llama** (caller ID). Dos soluciones posibles:
 
 1. **Configura el número que llama en la tarea de campaña:** edítala, entra a configuración avanzada, y define el número.
+
+![Pestaña de configuración avanzada de una tarea outbound, con el campo "número que llama" resaltado (interfaz en chino)](../assets/images/troubleshooting/tarea-outbound-numero-que-llama.png)
+
 2. **Fuerza el número saliente en el troncal:** edítalo, entra a configuración avanzada, y activa "forzar uso de número que llama".
+
+![Pestaña de configuración avanzada de un troncal, con el campo "forzar uso de número que llama saliente" resaltado (interfaz en chino)](../assets/images/troubleshooting/troncal-forzar-numero-saliente.png)
 
 ## Un cliente navega mal el IVR (no reconoce las teclas)
 
