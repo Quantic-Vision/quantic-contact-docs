@@ -102,6 +102,14 @@ nav:
       - desarrollo/index.md
       - API y AMI: desarrollo/api-y-ami.md
       - Guía para desarrolladores: desarrollo/guia-desarrolladores.md
+      - Introducción a la API de integración: desarrollo/introduccion-api-integracion.md
+      - Códigos de retorno y codificación de idioma: desarrollo/codigos-retorno-e-idiomas.md
+      - "API — Autenticación y sesión": desarrollo/api-autenticacion-y-sesion.md
+      - "API — Control de llamada": desarrollo/api-control-de-llamada.md
+      - "API — Supervisión y control de agente": desarrollo/api-supervision-y-control-de-agente.md
+      - "API — Datos y grabaciones": desarrollo/api-datos-y-grabaciones.md
+      - Recibir eventos en tiempo real de la API: desarrollo/eventos-tiempo-real-api.md
+      - Integrar el envío de SMS: desarrollo/integrar-envio-de-sms.md
   - 8. Preguntas frecuentes: faq/index.md
   - 9. Solución de problemas: troubleshooting/index.md
   - 10. Historial de versiones: changelog/index.md

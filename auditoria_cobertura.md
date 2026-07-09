@@ -4,14 +4,14 @@ Cálculo: **archivos fuente citados bajo `## Fuentes` en algún artículo** ÷ *
 
 ## Cobertura global
 
-- Total: **178/1068 (16.7%)**
+- Total: **293/1068 (27.4%)**
 
 ## Cobertura por idioma
 
 | Idioma | Citadas | Total | % |
 |---|---|---|---|
 | EN | 15 | 441 | 3.4% |
-| ZH | 163 | 627 | 26.0% |
+| ZH | 278 | 627 | 44.3% |
 
 > El chino (ZH) es la fuente primaria del proyecto (más completa en el wiki original).
 > Un archivo EN bajo cobertura no implica necesariamente contenido perdido si su equivalente ZH
@@ -195,124 +195,6 @@ Cálculo: **archivos fuente citados bajo `## Fuentes` en algún artículo** ÷ *
 - `raw/en/module_manual/work_order/my_workorder.txt`
 - `raw/en/module_manual/work_order/work_order.txt`
 - `raw/en/module_manual/work_order/workorder_log.txt`
-
-### zh/二次开发者指南 — 115 páginas sin citar
-
-- `raw/zh/二次开发者指南/start.txt`
-- `raw/zh/二次开发者指南/如何使用第三方短信平台发送短信.txt`
-- `raw/zh/二次开发者指南/如何将串口短信猫与astercc集成.txt`
-- `raw/zh/二次开发者指南/如何接受事件.txt`
-- `raw/zh/二次开发者指南/如何调试http_push测试页面.txt`
-- `raw/zh/二次开发者指南/如何进行js接口测试.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/http接口概述.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/会议接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/双呼回拨.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/发送dtmf.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/呼叫接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/咨询接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/坐席组_签入_签出.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/坐席转ivr.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/密语接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/工作模式切换.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/强拆接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/强插接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/挂断接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/接回接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/数据导入接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/暂停_继续_服务.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/登出接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/登录接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/监听接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/结束话后.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/获取单一坐席实时数据.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/获取单一坐席当日在坐席组中的统计数据.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/获取团队内所有坐席的状态.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/获取坐席状态接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/获取坐席组中各种坐席状态的数量.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/获取坐席组状态接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/获取坐席组队列中各种状态的客户数量.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/获取录音地址.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/设置分机.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/设置随路数据.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/话后模式切换.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/转接接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/通话暂停接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/通话继续接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/javascript接口概述.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/会议接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/双呼回拨.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/发送dtmf.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/呼叫接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/咨询接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/坐席组_签入_签出.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/坐席转ivr.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/密语接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/工作模式切换.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/强拆接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/强插接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/挂断接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/接回接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/数据导入接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/暂停_继续_服务.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/登出接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/登录接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/监听接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/结束话后.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/获取单一坐席实时数据.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/获取单一坐席当日在坐席组中的统计数据.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/获取坐席状态接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/获取坐席组中各种坐席状态的数量.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/获取坐席组状态接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/获取坐席组队列中各种状态的客户数量.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/获取录音地址.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/设置分机.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/设置随路数据.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/话后模式切换.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/转接接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/通话暂停接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/通话继续接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/webservice接口概述.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/会议接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/双呼回拨.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/发送dtmf.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/呼叫接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/咨询接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/坐席组_签入_签出.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/坐席转ivr.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/密语接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/工作模式切换.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/强拆接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/强插接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/挂断接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/接回接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/数据导入接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/暂停_继续_服务.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/登出接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/登录接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/监听接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/结束话后.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/获取单一坐席实时数据.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/获取单一坐席当日在坐席组中的统计数据.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/获取团队内所有坐席的状态.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/获取坐席状态接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/获取坐席组中各种坐席状态的数量.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/获取坐席组状态接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/获取坐席组队列中各种状态的客户数量.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/获取录音地址.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/设置分机.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/设置随路数据.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/话后模式切换.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/转接接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/通话暂停接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/通话继续接口.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/后台接收事件.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/语言编码.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/返回信息编码对照.txt`
-- `raw/zh/二次开发者指南/接口开发手册_v2.0/通话实时事件获取.txt`
 
 ### en/custom_development_guide — 107 páginas sin citar
 

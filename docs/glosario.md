@@ -91,6 +91,21 @@ Conjunto de clientes extraído de la base de datos, usado como insumo para una c
 
 Configuración que define una tarea de marcación saliente. Cada plan de marcación se asocia típicamente a un grupo de agentes y a un paquete de clientes, y opcionalmente puede incluir una encuesta a completar durante o después de la llamada.
 
+## IVR (respuesta de voz interactiva)
+
+Menú de voz automatizado que permite al cliente navegar opciones mediante el teclado del teléfono (tonos DTMF) antes o durante una llamada — por ejemplo, para elegir un departamento o autenticarse. En AsterCC, un IVR se compone de uno o más **flujos**: cada tecla presionada por el cliente avanza al siguiente flujo. Ver [Configurar IVR](modulos/pbx-ivr.md).
+
+## DTMF
+
+Sistema de tonos que genera un teléfono al presionar sus teclas (dígitos, `*`, `#`), usado para navegar IVR o enviar datos durante una llamada activa. La API de integración de AsterCC permite enviar DTMF de forma programática hacia una llamada en curso.
+
+## Webhook / callback
+
+**Webhook:** mecanismo por el cual AsterCC envía (hace `POST` hacia) una URL configurada por el desarrollador cada vez que ocurre un evento (una llamada, un cambio de estado) — el flujo de datos lo inicia AsterCC hacia el sistema externo.
+**Callback (función de retorno):** en las interfaces JavaScript de la API de integración, una función que el desarrollador registra y que AsterCC invoca al completar una operación asíncrona, entregando el resultado (código y mensaje).
+
+No confundir con la **devolución de llamada telefónica** (a veces también llamada "callback"): función de la API donde el sistema marca primero al agente o a un número de origen y, una vez que responde, marca al destino — ver [doble llamada / devolución](desarrollo/api-control-de-llamada.md).
+
 ---
 
 ## Fuentes
