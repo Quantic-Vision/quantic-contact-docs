@@ -5,7 +5,7 @@ seccion: "4.8 Reportes, estadísticas y financiero"
 tipo: referencia
 nivel: intermedio
 roles: [administrador]
-fuente: zh
+fuente: zh+en
 obsoleto: false
 relacionados: [plataforma-del-agente, tarifas-y-facturacion]
 ---
@@ -36,6 +36,8 @@ Indicadores más relevantes del reporte de desempeño de agente:
 | Tasa de ocupación | (Timbrado + en llamada) ÷ tiempo conectado |
 | Tasa de efectividad | (Timbrado + en llamada + ACW) ÷ (conectado − pausado) |
 | Tasa de retención | Retenciones ÷ (entrantes + salientes atendidas) |
+
+El desglose de "tiempo en pausa" separa la duración acumulada por cada motivo predefinido: **almuerzo**, **reunión**, **descanso**, **permiso/ausencia**, **capacitación** y **otro** — más dos motivos que no elige el propio agente: **pausa automática** (activada por el sistema cuando el grupo de agentes tiene esa opción habilitada) y **pausa por administrador** (forzada por un jefe de grupo). El reporte también incluye **porcentaje de ocupado** (tiempo en pausa ÷ tiempo de check-in × 100%) y un contador de **calificación de llamada por IVR**: cuántas veces se le reprodujo al cliente el IVR de calificación tras la llamada, cuántas veces marcó una tecla, y qué porcentaje de esas respuestas correspondió a cada tecla — útil para medir satisfacción sin depender de una encuesta completa.
 
 ### Reporte de desempeño de grupo — niveles de servicio (SLA)
 
@@ -77,8 +79,8 @@ Los reportes de **agente** y de **grupo de agentes** tienen una variante gráfic
 
 - **Agentes en línea:** número de agente, cola, estado, cantidad de llamadas contestadas/hechas, tiempo total de conversación, equipo, hora de conexión — con opción de auto-refrescar cada 30 segundos.
 - **Usuarios en línea:** cuentas conectadas ahora mismo, con IP de origen, tipo de cuenta, equipo, grupo de cuentas, hora de conexión — y un botón para **forzar el cierre de sesión** de cualquier cuenta que no sea la propia.
-- **Uso de troncales en tiempo real:** llamadas entrantes y salientes en curso por troncal, agrupadas por equipo, con auto-refresco cada 5 segundos (se puede desactivar).
-- **Uso del sistema por equipo:** cuántos agentes, colas, extensiones, etc. tiene provisionados cada equipo en este momento.
+- **Uso de troncales en tiempo real:** llamadas entrantes y salientes en curso por troncal, agrupadas por equipo, con auto-refresco cada 5 segundos (se puede desactivar); entrantes y salientes se muestran en dos tablas separadas.
+- **Uso del sistema por equipo:** cuántos agentes, colas, extensiones, etc. tiene provisionados cada equipo en este momento. Un administrador de sistema ve todos los equipos; un administrador de equipo solo ve el suyo.
 
 #### Monitoreo de grupo de agentes (detallado)
 
@@ -156,3 +158,21 @@ Las facturas se generan automáticamente de forma periódica y pueden consultars
 - `raw/zh/模块使用说明/系统实时信息/在线用户.txt`
 - `raw/zh/模块使用说明/系统实时信息/系统使用信息.txt`
 - `raw/zh/模块使用说明/系统实时信息.txt`
+- `raw/en/module_manual/statistics.txt`
+- `raw/en/module_manual/statistics/agent_details.txt`
+- `raw/en/module_manual/statistics/agent_graph.txt`
+- `raw/en/module_manual/statistics/agent_group_details.txt`
+- `raw/en/module_manual/statistics/agent_group_graph.txt`
+- `raw/en/module_manual/statistics/import.txt`
+- `raw/en/module_manual/statistics/inbound_details.txt`
+- `raw/en/module_manual/statistics/ivr_details.txt`
+- `raw/en/module_manual/statistics/outbound.txt`
+- `raw/en/module_manual/statistics/outbound_details.txt`
+- `raw/en/module_manual/statistics/system.txt`
+- `raw/en/module_manual/realtime.txt`
+- `raw/en/module_manual/realtime/accounts.txt`
+- `raw/en/module_manual/realtime/agent_monitors.txt`
+- `raw/en/module_manual/realtime/agents.txt`
+- `raw/en/module_manual/realtime/live_trunk.txt`
+- `raw/en/module_manual/realtime/system_messages.txt`
+- `raw/en/module_manual/realtime/usages.txt`

@@ -106,6 +106,62 @@ Sistema de tonos que genera un teléfono al presionar sus teclas (dígitos, `*`,
 
 No confundir con la **devolución de llamada telefónica** (a veces también llamada "callback"): función de la API donde el sistema marca primero al agente o a un número de origen y, una vez que responde, marca al destino — ver [doble llamada / devolución](desarrollo/api-control-de-llamada.md).
 
+## ACW (gestión posterior a la llamada)
+
+Sigla de *After-Call Work*. Estado en el que entra un agente automáticamente al colgar, con tiempo dedicado a completar la documentación de la llamada (ficha de cliente, work order, resultado) antes de volver a estar disponible para la cola. El sistema puede forzar la salida de ACW tras un tiempo máximo configurado.
+
+## AMI (Asterisk Manager Interface)
+
+Interfaz de administración de Asterisk usada por AsterCC para operar la central telefónica (originar llamadas, consultar canales, recibir eventos) desde fuera del propio Asterisk. Ver [Configurar Asterisk AMI](administracion/asterisk-ami.md).
+
+## CDR (registro de detalle de llamada)
+
+Sigla de *Call Detail Record*. Registro que guarda los datos de cada llamada (origen, destino, duración, resultado, costo, grabación asociada) y que alimenta los reportes, la facturación y el historial de llamadas del cliente.
+
+## DNC (lista de no llamar)
+
+Sigla de *Do Not Call*. Lista de números a los que el marcador saliente tiene prohibido llamar — un número puede llegar a esta lista automáticamente (ej. el cliente lo solicitó) o ser agregado manualmente por un administrador.
+
+## MOH (música en espera)
+
+Sigla de *Music On Hold*. Audio que escucha quien queda en espera durante una consulta, transferencia o mientras aguarda en cola. Se configura como uno o varios archivos de audio agrupados en una clase de MOH, asignable por cola, IVR o troncal.
+
+## Ficha emergente (screen pop)
+
+Ventana o página que se abre automáticamente en la plataforma de trabajo del agente al recibir o hacer una llamada, mostrando la información del cliente o del negocio asociado a esa llamada (también referida como "pantalla emergente" o "pop-up"). Su URL puede personalizarse y recibir parámetros de la llamada.
+
+## TTS (texto a voz)
+
+Sigla de *Text To Speech*. Conversión automática de texto a audio, usada por ejemplo para leer en voz alta un mensaje de IVR sin grabar un archivo de audio manualmente.
+
+## Inspector de calidad
+
+Uno de los cuatro roles por defecto del sistema (junto con administrador de sistema, administrador de grupo de agentes y agente). Tiene acceso a las herramientas de calificación/evaluación de llamadas grabadas, sin los permisos administrativos completos de un administrador de equipo.
+
+## Estados de agente (estático/dinámico, en línea/fuera de línea)
+
+Un agente es **estático** cuando el administrador lo asigna de forma fija a una cola o grupo (no puede iniciar/cerrar sesión por su cuenta en esa cola), y **dinámico** cuando puede unirse o salir de la cola libremente. De forma independiente, un agente está **en línea** cuando su sesión está activa en la plataforma de trabajo, y **fuera de línea** en caso contrario — un agente puede estar asignado (estático) a una cola y a la vez fuera de línea.
+
+## Grupo de timbrado (ring group)
+
+Conjunto de extensiones/teléfonos que timbran juntos ante una misma llamada entrante, según una estrategia (todos a la vez, en secuencia, round robin, etc.), independiente del mecanismo de colas de agentes — se usa típicamente para escenarios simples de oficina (ej. "que timbren los tres teléfonos de recepción").
+
+## Grupo de troncales (trunk group)
+
+Conjunto de troncales agrupados bajo un mismo nombre para que una regla de tarifa o de enrutamiento pueda seleccionar cualquiera de ellos según disponibilidad, en vez de fijar un solo troncal.
+
+## Encuesta posterior a la llamada
+
+Cuestionario (por teclado en IVR, o por formulario en la plataforma del agente) que se ofrece al cliente o se le pide al agente completar justo después de finalizar la llamada, para calificar el servicio o registrar el resultado de la gestión. Es el mismo concepto detrás de términos como "evaluación de llamadas" o "encuesta IVR de evaluación al agente" usados en distintas páginas de este wiki.
+
+## Marcado automático vs. marcador predictivo
+
+**Marcado automático (auto dial):** el sistema disca el siguiente número de la lista tan pronto un agente queda libre, uno a uno, sin anticipar cuántas llamadas van a contestar. **Marcador predictivo:** el sistema disca varios números en simultáneo, anticipando cuántos serán contestados, para minimizar el tiempo que un agente pasa esperando — ver [Marcador predictivo — avanzado](modulos/marcador-predictivo-avanzado.md).
+
+## Número CV (CvNumber)
+
+Identificador técnico que vincula un DID (o número que marca el cliente) con un usuario virtual o campaña específica dentro de [Oficina virtual / BPO](modulos/oficina-virtual-bpo.md), permitiendo que el sistema sepa a qué empresa cliente pertenece cada llamada entrante.
+
 ---
 
 ## Fuentes

@@ -5,7 +5,7 @@ seccion: "4.3 Cuentas, equipos y permisos"
 tipo: guia
 nivel: intermedio
 roles: [administrador]
-fuente: zh
+fuente: zh+en
 obsoleto: false
 relacionados: [pbx-y-telefonia, tarifas-y-facturacion, guia-administradores]
 ---
@@ -42,6 +42,8 @@ Un equipo es una organización independiente dentro del mismo AsterCC — el mec
 - **Dirección de interfaz de negocio:** endpoint para que un sistema externo obtenga eventos de llamada en tiempo real vía HTTP push (formato `http://<servidor>:<puerto>/publicapi/agentpull/<identificador-equipo>-md5(<cadena de verificación>)`).
 - **Cadena de verificación:** actúa como contraseña — el evento se firma con el MD5 de esta cadena para que el receptor valide que el evento realmente viene de AsterCC.
 
+Los mismos datos avanzados incluyen, de solo lectura: **crédito actual** y **crédito total** (gasto acumulado del equipo), **crédito de cuenta** (lo que el equipo debe recibir de sus cuentas según la tarifa de extensión) y **crédito de sistema** (lo que el equipo debe pagar según la tarifa de sistema) — útiles para conciliar los tres niveles de tarifa entre sí.
+
 !!! warning
     Tras configurar estos tres campos, hay que **reiniciar el CTI** desde **Información en tiempo real del sistema → Información del sistema** para que la conexión tome efecto.
 
@@ -66,6 +68,8 @@ La **cuenta** es la unidad de acceso al sistema y, salvo que el equipo esté en 
 | Grabación forzada | Igual que a nivel de equipo, pero por cuenta |
 | Restricción de horario de exportación | Si esta cuenta debe respetar el horario de exportación configurado del sistema |
 
+El sistema genera automáticamente un **código de cuenta** único e inmutable al crearla, usado internamente para identificarla. En **datos avanzados** aparecen además, de solo lectura: **crédito entrante acumulado** (suma generada por la [tarifa de agente](tarifas-y-facturacion.md) si la cuenta está ligada a un agente), **crédito acumulado** (total facturado a esta cuenta) y **costo** (costo generado por esta cuenta en el sistema) — más un campo opcional para subir una foto.
+
 Al guardar una cuenta nueva tipo "usuario", el sistema ofrece directamente un asistente para darle una extensión — y tras guardar, aparece la barra de recarga habitual. Al editar una cuenta tipo usuario aparecen tres atajos: **ver extensiones**, **agregar extensión**, y **configurar agente** (da de alta un agente asociado a esta cuenta sin salir de la pantalla) — además de gestión de lista blanca/negra propia de la cuenta.
 
 ### Grupos de cuentas
@@ -88,7 +92,12 @@ Un agente es la unidad operativa de call center — necesita un **número de age
 | Datos bancarios | Para liquidar agentes freelance/por comisión |
 | Ignorar desvío de llamadas configurado en la extensión | Al iniciar sesión, ignora cualquier "call forwarding" que tenga la extensión |
 | Contraseña de aplicación de negocio | Usada al autenticar llamadas a la [API HTTP](../desarrollo/api-y-ami.md) |
+| Nombre de llamante / Número de llamante | Identificación mostrada al destino cuando este agente marca hacia afuera |
 | Grupo de salida actual | Ver más abajo — resuelve el problema de identificar bajo qué contexto de negocio marca un agente cuando usa su extensión directamente |
+
+Si el agente usa **clic para llamar** desde la plataforma, el sistema primero marca el teléfono del propio agente (el "número de destino" configurado) y, una vez que el agente contesta, recién marca el número que quería contactar — no al revés.
+
+En modo de extensión **autoadaptable** o **autoseleccionable**, si la extensión está registrada por red y su IP de registro no coincide con la IP desde la que el agente inició sesión, el sistema deja de aplicar la restricción de modo fijo/dinámico y permite al agente escribir libremente cualquier número de extensión.
 
 **Costos de llamadas entrantes/salientes** del agente (según su [tarifa de agente](tarifas-y-facturacion.md)) aparecen como campos de solo lectura al editar, junto con botones para: **pagar** (liquidar el saldo pendiente a un agente freelance), **ver detalle** (abre el log financiero del agente), y **ver grupos** (a qué grupos de agentes pertenece).
 
@@ -140,14 +149,14 @@ Tras cualquier cambio que afecte la cola del grupo, aparece la barra de **recarg
 
 ### Roles y permisos
 
-Un **rol** es un conjunto de permisos reutilizable, de dos tipos: *usuario* (aplica a cuentas) o *agente* (aplica a agentes) — cada tipo opera solo sobre su propio tipo de objeto. El sistema trae dos roles por defecto: uno para agentes (editable) y uno para administradores (todos los permisos, no editable).
+Un **rol** es un conjunto de permisos reutilizable, de dos tipos: *usuario* (aplica a cuentas) o *agente* (aplica a agentes) — cada tipo opera solo sobre su propio tipo de objeto. El sistema trae **cuatro roles por defecto**: administrador de sistema (todos los permisos, no editable), administrador de grupo de agentes, agente, e inspector de calidad — los tres últimos editables.
 
 La pantalla de **gestión de permisos** define, a nivel de todo el sistema, qué permisos existen por módulo — solo el administrador de sistema puede modificarla. Los roles luego seleccionan un subconjunto de ese universo (agregar, editar, ver, eliminar, exportar por módulo). En otras palabras: primero se define **qué es posible**, y los roles definen **qué se permite** a cada perfil.
 
 ### Configuración y edición rápida (herramientas de lote)
 
-- **Configuración rápida:** genera cuentas + extensiones + agentes en una sola operación (ver [Guía rápida para administradores](../primeros-pasos/guia-administradores.md)). Permite elegir si crear cuentas nuevas automáticamente o usar una ya existente como base, y ofrece un botón de **configuración detallada** para ajustar parámetros de extensión antes de generar, y **vista previa** antes de guardar.
-- **Edición rápida:** aplica un cambio a muchas extensiones, agentes o cuentas a la vez — por ejemplo, resetear contraseñas con un prefijo común, o cambiar el rol de varias cuentas de un solo golpe. Incluye una vista previa mostrando cómo quedaría el primer registro antes de aplicar a todos.
+- **Configuración rápida:** genera cuentas + extensiones + agentes en una sola operación (ver [Guía rápida para administradores](../primeros-pasos/guia-administradores.md)). Permite elegir si crear cuentas nuevas automáticamente o usar una ya existente como base, y ofrece un botón de **configuración detallada** para ajustar parámetros de extensión antes de generar, y **vista previa** antes de guardar. Al guardar, el sistema ofrece exportar los registros creados (incluidas las contraseñas generadas) a un archivo **CSV** — útil para distribuir credenciales sin tener que consultarlas una por una.
+- **Edición rápida:** aplica un cambio a muchas extensiones, agentes o cuentas a la vez. Para cuentas en lote permite: agregar un **prefijo o sufijo** al nombre de usuario, cambiar **estado** (habilitar/deshabilitar), activar o desactivar **grabación forzada** en las extensiones de las cuentas seleccionadas, cambiar **forma de pago**, reasignar **rol**, y activar/desactivar el **envío de correo de factura**. Para extensiones, incluye **resetear contraseñas** con un prefijo común (combinado con un sufijo variable). Incluye una vista previa mostrando cómo quedaría el primer registro antes de aplicar a todos.
 
 ### Finanzas de usuario
 
@@ -184,3 +193,15 @@ Pantalla para ajustar manualmente el saldo de un equipo (solo accesible por admi
 - `raw/zh/模块使用说明/账户和权限管理/快速设置.txt`
 - `raw/zh/模块使用说明/astercc账户结构.txt`
 - `raw/zh/模块使用说明/账户和权限管理.txt`
+- `raw/en/module_manual/user.txt`
+- `raw/en/module_manual/user/account.txt`
+- `raw/en/module_manual/user/account_group.txt`
+- `raw/en/module_manual/user/adjust_credits.txt`
+- `raw/en/module_manual/user/agent.txt`
+- `raw/en/module_manual/user/agent_group.txt`
+- `raw/en/module_manual/user/privilege.txt`
+- `raw/en/module_manual/user/quick_edit.txt`
+- `raw/en/module_manual/user/quick_setup.txt`
+- `raw/en/module_manual/user/role.txt`
+- `raw/en/module_manual/user/team.txt`
+- `raw/en/module_manual/astercc_structure.txt`

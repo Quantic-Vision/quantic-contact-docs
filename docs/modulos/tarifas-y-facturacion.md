@@ -5,7 +5,7 @@ seccion: "4.4 Tarifas y facturación"
 tipo: guia
 nivel: intermedio
 roles: [administrador]
-fuente: zh
+fuente: zh+en
 obsoleto: false
 relacionados: [pbx-y-telefonia, cuentas-equipos-permisos, oficina-virtual-bpo, reportes-y-estadisticas]
 ---
@@ -45,7 +45,7 @@ Los primeros niveles son independientes entre sí — la tarifa de sistema mide 
 
 ### Tarifa de sistema
 
-Mide el costo real de cada llamada saliente según el troncal usado — acumula tanto al costo de ese troncal como al costo total del sistema. No está pensada para facturar clientes, sino para que el operador conozca su propio costo real. Es de solo lectura para administradores de equipo.
+Mide el costo real de cada llamada saliente según el troncal usado — acumula tanto al costo de ese troncal como al costo total del sistema. No está pensada para facturar clientes, sino para que el operador conozca su propio costo real: no influye en qué troncal se selecciona para la llamada, solo la contabiliza una vez que el troncal ya fue elegido por la tarifa de extensión. Es de solo lectura para administradores de equipo.
 
 ### Tarifa de equipo
 
@@ -69,6 +69,8 @@ Dentro de un mismo nivel, el orden de coincidencia es: **prefijo + longitud exac
 
 !!! warning
     Si una llamada no coincide con ninguna tarifa de extensión en ningún nivel, no hay una ruta implícita — la llamada no tiene por dónde salir. Siempre debe existir al menos una regla `default` en algún nivel que cubra el tráfico no explícitamente tarifado.
+
+Un administrador de equipo, al entrar a esta pantalla, ve tanto las tarifas de extensión propias de su equipo como la tarifa `default` general — esta última es de solo lectura para él, ya que la fija el administrador de sistema.
 
 ### Tarifa de agente (llamadas entrantes)
 
@@ -120,3 +122,8 @@ Cobra por el uso que hace un [usuario virtual de oficina virtual](oficina-virtua
 - `raw/zh/模块使用说明/费率管理/坐席呼入费率.txt`
 - `raw/zh/模块使用说明/费率管理.txt`
 - `raw/zh/模块使用说明/虚拟呼叫中心/费率管理.txt`
+- `raw/en/module_manual/rate.txt`
+- `raw/en/module_manual/rate/agentrates.txt`
+- `raw/en/module_manual/rate/customerrates.txt`
+- `raw/en/module_manual/rate/systemrates.txt`
+- `raw/en/module_manual/rate/teamrates.txt`

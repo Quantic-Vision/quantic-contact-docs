@@ -5,7 +5,7 @@ seccion: "7.7 API de integración — Supervisión y control de agente"
 tipo: referencia
 nivel: avanzado
 roles: [desarrollador]
-fuente: zh
+fuente: zh+en
 obsoleto: true
 relacionados: [introduccion-api-integracion, codigos-retorno-e-idiomas, api-control-de-llamada, api-datos-y-grabaciones]
 ---
@@ -18,6 +18,10 @@ Operaciones para que un supervisor (o el sistema que actúa en su nombre) [monit
 
 !!! note "Diferencia entre protocolos"
     La operación **"Obtener el estado de todos los agentes del equipo"** existe en **HTTP y WebService**, pero **no tiene equivalente en la interfaz JavaScript** — no hay una función `CJI` para esta consulta a nivel de equipo completo.
+
+!!! warning "Cobertura desigual entre las fuentes ZH y EN"
+    - **Interrupción forzada:** la guía en inglés (`raw/en/custom_development_guide`) solo documenta esta operación para **JavaScript**, bajo el archivo `apis/javascript/call_release.txt` (título "Call release", función `forcedReleaseCJI`) — no existe un archivo equivalente para HTTP ni WebService en la fuente EN. Las firmas HTTP (`EVENT=ForcedRelease...`) y WebService (`forcedRelease(...)`) de la tabla de abajo provienen únicamente de la fuente en chino.
+    - **`groupStatusNum`:** esta operación (contar agentes por estado dentro de un grupo) no tiene ningún archivo equivalente en la guía en inglés, en ninguno de los tres protocolos — solo está documentada en la fuente china.
 
 ## Cómo se usa
 
@@ -153,3 +157,30 @@ Devuelve, separados por `|`: nombre del agente, número de agente, estado actual
 - `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/获取单一坐席当日在坐席组中的统计数据.txt`
 - `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/获取单一坐席当日在坐席组中的统计数据.txt`
 - `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/获取单一坐席当日在坐席组中的统计数据.txt`
+- `raw/en/custom_development_guide/apis/http/spy.txt`
+- `raw/en/custom_development_guide/apis/javascript/spy.txt`
+- `raw/en/custom_development_guide/apis/webservice/spy.txt`
+- `raw/en/custom_development_guide/apis/http/barge-in.txt`
+- `raw/en/custom_development_guide/apis/javascript/barge-in.txt`
+- `raw/en/custom_development_guide/apis/webservice/barge-in.txt`
+- `raw/en/custom_development_guide/apis/javascript/call_release.txt`
+- `raw/en/custom_development_guide/apis/http/whisper.txt`
+- `raw/en/custom_development_guide/apis/javascript/whisper.txt`
+- `raw/en/custom_development_guide/apis/webservice/whisper.txt`
+- `raw/en/custom_development_guide/apis/http/get_agent_status.txt`
+- `raw/en/custom_development_guide/apis/javascript/get_agent_status.txt`
+- `raw/en/custom_development_guide/apis/webservice/get_agent_status.txt`
+- `raw/en/custom_development_guide/apis/http/get_agent_group_status.txt`
+- `raw/en/custom_development_guide/apis/javascript/get_agent_group_status.txt`
+- `raw/en/custom_development_guide/apis/webservice/get_agent_group_status.txt`
+- `raw/en/custom_development_guide/apis/http/get_agent_stat_in_team.txt`
+- `raw/en/custom_development_guide/apis/webservice/get_agent_stat_in_team.txt`
+- `raw/en/custom_development_guide/apis/http/get_waiting_stat_in_agent_group.txt`
+- `raw/en/custom_development_guide/apis/javascript/get_waiting_customer_stat_in_agent_group.txt`
+- `raw/en/custom_development_guide/apis/webservice/get_waiting_stat_in_agent_group.txt`
+- `raw/en/custom_development_guide/apis/http/get_single_agent_stat.txt`
+- `raw/en/custom_development_guide/apis/javascript/get_single_agent_stat.txt`
+- `raw/en/custom_development_guide/apis/webservice/get_single_agent_stat.txt`
+- `raw/en/custom_development_guide/apis/http/get_single_agent_stat_in_one_group_of_the_day.txt`
+- `raw/en/custom_development_guide/apis/javascript/get_single_agent_stat_of_the_day.txt`
+- `raw/en/custom_development_guide/apis/webservice/get_single_agent_stat_in_one_group_of_the_day.txt`

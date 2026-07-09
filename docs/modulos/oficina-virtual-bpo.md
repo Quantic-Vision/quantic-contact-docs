@@ -5,7 +5,7 @@ seccion: "4.9 Oficina virtual / BPO"
 tipo: guia
 nivel: intermedio
 roles: [administrador]
-fuente: zh
+fuente: zh+en
 obsoleto: false
 relacionados: [pbx-y-telefonia, cuentas-equipos-permisos, oficina-virtual]
 ---
@@ -99,6 +99,9 @@ Se organiza en **dos niveles de categoría** (categoría → subcategoría → a
 
 Así el agente solo ve el conocimiento relevante para la empresa que está atendiendo en ese momento, sin mezclar contenido de otros usuarios virtuales.
 
+!!! note
+    En la documentación en inglés este mismo mecanismo se llama **FAQ** (`FAQ Category 1` / `FAQ Category 2` / `FAQ`) en vez de "base de conocimiento" — es la misma pantalla y el mismo modelo de dos niveles, solo con otro nombre. El artículo puede acotarse por equipo (`default` = todos los equipos) y por usuario virtual (`default` = todos los usuarios virtuales de ese equipo), y admite un archivo adjunto descargable además del contenido de texto.
+
 ### 5. Que el agente entre directo a la pantalla de oficina virtual (opcional)
 
 Para que un grupo de agentes, al iniciar sesión, entre directamente a la vista de oficina virtual (en vez de la vista por defecto del grupo):
@@ -147,3 +150,11 @@ Cuando terceros (las propias empresas B, C, D del ejemplo) necesitan ver sus pro
 - `raw/zh/模块使用说明/虚拟呼叫中心/模块流程.txt`
 - `raw/zh/模块使用说明/虚拟呼叫中心.txt`
 - `raw/zh/模块使用说明/bpo/bpo角色管理.txt`
+- `raw/en/module_manual/virtual_office.txt`
+- `raw/en/module_manual/virtual_office/caller.txt`
+- `raw/en/module_manual/virtual_office/cdr.txt`
+- `raw/en/module_manual/virtual_office/customer.txt`
+- `raw/en/module_manual/virtual_office/customization.txt`
+- `raw/en/module_manual/virtual_office/faq.txt`
+- `raw/en/module_manual/virtual_office/faq_categories.txt`
+- `raw/en/module_manual/virtual_office/rates.txt`

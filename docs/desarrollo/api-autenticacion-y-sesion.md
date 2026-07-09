@@ -5,7 +5,7 @@ seccion: "7.5 API de integración — Autenticación y sesión"
 tipo: referencia
 nivel: avanzado
 roles: [desarrollador]
-fuente: zh
+fuente: zh+en
 obsoleto: true
 relacionados: [introduccion-api-integracion, codigos-retorno-e-idiomas, api-control-de-llamada, api-supervision-y-control-de-agente]
 ---
@@ -138,3 +138,27 @@ Respuesta: código `1` con detalle por grupo (`<id>:<resultado>`, ej. `1:success
 - `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/设置分机.txt`
 - `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/设置分机.txt`
 - `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/设置分机.txt`
+- `raw/en/custom_development_guide/apis/http/login.txt`
+- `raw/en/custom_development_guide/apis/javascript/login.txt`
+- `raw/en/custom_development_guide/apis/webservice/login.txt`
+- `raw/en/custom_development_guide/apis/http/logout.txt`
+- `raw/en/custom_development_guide/apis/javascript/logout.txt`
+- `raw/en/custom_development_guide/apis/webservice/logout.txt`
+- `raw/en/custom_development_guide/apis/http/agent_group_checkin_checkout.txt`
+- `raw/en/custom_development_guide/apis/javascript/agent_group_checkin_checkout.txt`
+- `raw/en/custom_development_guide/apis/webservice/agent_group_checkin_checkout.txt`
+- `raw/en/custom_development_guide/apis/http/switch_work_mode.txt`
+- `raw/en/custom_development_guide/apis/javascript/switch_work_mode.txt`
+- `raw/en/custom_development_guide/apis/webservice/switch_work_mode.txt`
+- `raw/en/custom_development_guide/apis/http/switch_acw_mode.txt`
+- `raw/en/custom_development_guide/apis/javascript/switch_acw_mode.txt`
+- `raw/en/custom_development_guide/apis/webservice/switch_acw_mode.txt`
+- `raw/en/custom_development_guide/apis/http/exit_acw.txt`
+- `raw/en/custom_development_guide/apis/javascript/exit_acw.txt`
+- `raw/en/custom_development_guide/apis/webservice/exit_acw.txt`
+- `raw/en/custom_development_guide/apis/http/pause_unpause.txt`
+- `raw/en/custom_development_guide/apis/javascript/pause_unpause.txt`
+- `raw/en/custom_development_guide/apis/webservice/pause_unpause.txt`
+- `raw/en/custom_development_guide/apis/http/bind_extension.txt`
+- `raw/en/custom_development_guide/apis/javascript/bind_extension.txt`
+- `raw/en/custom_development_guide/apis/webservice/bind_extension.txt`

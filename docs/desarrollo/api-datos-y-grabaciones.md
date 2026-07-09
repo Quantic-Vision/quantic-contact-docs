@@ -5,7 +5,7 @@ seccion: "7.8 API de integración — Datos y grabaciones"
 tipo: referencia
 nivel: avanzado
 roles: [desarrollador]
-fuente: zh
+fuente: zh+en
 obsoleto: true
 relacionados: [introduccion-api-integracion, codigos-retorno-e-idiomas, api-control-de-llamada, api-y-ami]
 ---
@@ -77,3 +77,13 @@ Ya documentada en detalle, con todos los parámetros, en [API y AMI — importar
 - `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/获取录音地址.txt`
 - `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/获取录音地址.txt`
 - `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/获取录音地址.txt`
+- `raw/en/custom_development_guide/apis/http/set_data_to_agent.txt`
+- `raw/en/custom_development_guide/apis/javascript/set_call_data.txt`
+- `raw/en/custom_development_guide/apis/webservice/set_data_to_agent.txt`
+- `raw/en/custom_development_guide/apis/http/import.txt`
+- `raw/en/custom_development_guide/apis/javascript/import.txt`
+- `raw/en/custom_development_guide/apis/webservice/import.txt`
+- `raw/en/custom_development_guide/how_to_import_the_customers_information_via_api.txt`
+- `raw/en/custom_development_guide/apis/http/get_recording_url.txt`
+- `raw/en/custom_development_guide/apis/javascript/get_recording_url.txt`
+- `raw/en/custom_development_guide/apis/webservice/get_recording_url.txt`

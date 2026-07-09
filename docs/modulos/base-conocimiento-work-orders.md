@@ -5,7 +5,7 @@ seccion: "4.6 Base de conocimiento y Work Orders"
 tipo: guia
 nivel: intermedio
 roles: [administrador, agente]
-fuente: zh
+fuente: zh+en
 obsoleto: false
 relacionados: [cuentas-equipos-permisos, atencion-cliente-mensajeria-ecommerce]
 ---
@@ -28,7 +28,7 @@ Dos módulos distintos que suelen usarse juntos: la **base de conocimiento** cen
 |---|---|
 | Nombre | Identifica brevemente el artículo |
 | Etiquetas | Para búsqueda rápida por tema |
-| Estado | **Borrador** (solo lo ve su creador) o **Publicado** (visible para quien tenga permiso de ver la base) |
+| Estado | **Borrador** (solo lo ve su creador), **Publicado** (visible para quien tenga permiso de ver la base), **Pendiente de aprobación** (esperando revisión de alguien con permiso de publicar) o **Rechazado** (no pasó la revisión) |
 | Archivo adjunto | Material de soporte descargable |
 | Contenido con formato / contenido en texto plano | El texto en formato enriquecido se muestra al leer el artículo; el texto plano es lo que se indexa para búsqueda |
 
@@ -53,6 +53,19 @@ Antes de usar el módulo, hay que definir una **plantilla de work order** — el
 
 2. Define **campos personalizados** para capturar información específica del proceso (texto corto, selección, texto largo, archivo, fecha, fecha y hora).
 3. Si el proceso siempre sigue el mismo camino, configura el **flujo automático**: al guardar la secuencia de grupos, el work order avanza solo de un grupo al siguiente al completarse cada paso, y se cierra automáticamente al terminar el último.
+
+### Pantalla "Mis work orders"
+
+Al entrar con work orders pendientes, el sistema abre automáticamente esta pantalla (también accesible desde el menú). Organiza los casos en cuatro categorías:
+
+| Categoría | Qué muestra |
+|---|---|
+| Mis work orders | Todos los asignados al agente actual |
+| Mis creados | Todos los que el agente creó |
+| Work orders del grupo | Solo visible para el jefe de grupo — todos los del grupo |
+| Creados por el grupo | Solo visible para el jefe de grupo — todos los que el grupo creó |
+
+Dentro de cada categoría se filtra además por **Nuevo**, **Recién completado** e **Histórico completado** (mismas tres tablas de archivo mencionadas abajo). El jefe de grupo puede asignar o reasignar manualmente desde aquí seleccionando el work order y usando el botón **Asignar** — no se pueden asignar juntos work orders de grupos distintos.
 
 ### Dónde se crea un work order
 
@@ -123,3 +136,9 @@ Si el work order ya está completo, nadie puede modificarlo — solo consultar.
 - `raw/zh/模块使用说明/工单管理/分配规则.txt`
 - `raw/zh/模块使用说明/工单管理/我的工单.txt`
 - `raw/zh/模块使用说明/工单管理/工单记录.txt`
+- `raw/en/module_manual/knowledgebase/knowledgebase.txt`
+- `raw/en/module_manual/work_order.txt`
+- `raw/en/module_manual/work_order/assign_rule.txt`
+- `raw/en/module_manual/work_order/my_workorder.txt`
+- `raw/en/module_manual/work_order/work_order.txt`
+- `raw/en/module_manual/work_order/workorder_log.txt`

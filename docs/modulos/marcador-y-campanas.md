@@ -5,7 +5,7 @@ seccion: "4.2 Marcador y campañas"
 tipo: guia
 nivel: intermedio
 roles: [administrador]
-fuente: zh
+fuente: zh+en
 obsoleto: false
 relacionados: [pbx-y-telefonia, marcador-predictivo-avanzado, marketing-outbound, marcacion-predictiva]
 ---
@@ -44,6 +44,35 @@ En **Marketing outbound → Tareas de campaña**, al crear una nueva tarea defin
 
 Parámetros asociados al modo automático: **intervalo entre llamadas**, **cantidad de reintentos**, y **segundos de prórroga** (para cuando el agente necesita más tiempo antes de la siguiente llamada).
 
+### 2.1 Opciones avanzadas de comportamiento de la tarea
+
+En la pestaña **Avanzado** de la tarea (más allá del modo de marcación) se controlan comportamientos finos del agente y de la llamada:
+
+| Opción | Qué controla |
+|---|---|
+| Marcar en dos tramos | Por defecto el sistema llama primero al teléfono del agente y, al contestar, marca al cliente; con esta opción activa marca ambos tramos a la vez, acelerando el proceso (a costa de que el agente pueda esperar en línea) |
+| Verificar al enviar (`ignoredial` / `checkdial` / `checkstart`) | Define cuándo puede el agente guardar el resultado de llamada y responder la encuesta: en cualquier momento, solo mientras habla con el cliente (para evitar encuestas falsas), o solo puede *iniciar* la encuesta mientras habla pero completarla después |
+| Identificador de llamada (nombre/número) y "Forzar caller ID de la campaña" | Qué identificador se muestra al cliente; si se fuerza, sobrescribe el caller ID configurado en el agente o el dispositivo |
+| Ocultar información de contacto | El agente no puede leer el teléfono, fax, correo o dirección del cliente en pantalla |
+| Privilegio de transferencia | Si el agente puede transferir la llamada a cualquier número |
+| Agente no puede editar tras control de calidad | Bloquea la edición de un cliente ya revisado en control de calidad |
+| Carga de historial de contacto | Manual (el agente hace clic para cargarlo), automática al abrir la ficha, o deshabilitada |
+| Destino directo a lista negra | Cuando el agente marca el resultado "DNC", el número se bloquea a nivel de todo el equipo, o solo dentro de la tarea actual |
+| Ranking de agentes en pantalla | Muestra un ranking de desempeño a los agentes — consume recursos, usar solo con pocos agentes/clientes |
+| Edición por agente consultado | Si al hacer una consulta a otro agente, ese agente también puede editar la ficha del cliente |
+| Actualizar estado del cliente | Si cualquier agente puede cambiar el estado del cliente, o solo el agente asignado |
+| Ver/buscar cliente manualmente (pop-up manual) | Si el agente tiene un botón para pedir un cliente nuevo o buscarlo por teléfono |
+| Quitar callback al enviar | Si al cambiar el estado del cliente a "fallido" o "exitoso" se cancelan automáticamente los callbacks programados |
+| Llamada prioritaria | Si la llamada entrante intenta primero al último agente que atendió a ese cliente (o al agente asignado) antes de enviarla a la cola |
+| Programación rápida (callback) | Notación abreviada para reprogramar contacto: `h` = hora, `d` = día, `w` = semana (ej. `3h`, `1d`, `1w`) |
+| Orden por defecto en la pestaña "Nuevo" | Orden de clasificación de los clientes sin procesar |
+| Verificar reasignación | Si el cliente que llama no pertenece al agente que recibe la llamada, no se abre la ficha — solo un aviso, y el agente transfiere o consulta |
+| Aviso de llamada entrante | Si aparece un recordatorio en la esquina inferior derecha cuando entra una llamada |
+| IP del servidor de origen | Necesaria si se va a operar la tarea desde un sistema externo vía API |
+
+!!! tip
+    **Alias de reporte:** desde la pantalla de edición de la tarea, el botón "Alias de reporte" permite renombrar el título de cada campo en los reportes exportados (registro de llamadas y control de calidad) sin tocar el nombre interno del campo.
+
 ### 3. Configurar el marcador predictivo (opcional)
 
 Si la tarea usa marcación predictiva, se configura por separado en **Marcador → Configuración del marcador**:
@@ -71,7 +100,11 @@ Desde la tarea ya creada, dos botones controlan la visibilidad de campos:
 
 ### Pantalla emergente del agente (resumen)
 
-Al abrir la ficha de un cliente durante una campaña, el agente ve pestañas de **historial de contacto**, y si la tarea usa la tabla general de clientes, también **work orders no completados**, **completados recientemente** y **completados históricos** — igual mecánica que en [atención al cliente entrante](atencion-cliente-mensajeria-ecommerce.md#atencion-al-cliente-entrante). Si el resultado de llamada elegido está vinculado a una plantilla de work order, aparece un enlace para crear uno sin salir de la ficha. Si el cliente es individual y pertenece a una organización, también puede consultarse la ficha de esa organización desde la misma pantalla.
+Al abrir la ficha de un cliente durante una campaña, el agente ve pestañas de **historial de contacto**, y si la tarea usa la tabla general de clientes, también **work orders no completados**, **completados recientemente** y **completados históricos** — igual mecánica que en [atención al cliente entrante](atencion-cliente-mensajeria-ecommerce.md#atencion-al-cliente-entrante). Si el resultado de llamada elegido está vinculado a una plantilla de work order, aparece un enlace para crear uno sin salir de la ficha. Si el cliente es individual y pertenece a una organización, también puede consultarse la ficha de esa organización desde la misma pantalla. Si la tarea tiene e-commerce asociado, la ficha muestra además la sección de catálogo/pedido descrita en el [caso de uso de e-commerce](../casos-de-uso/e-commerce.md).
+
+Desde el panel de tareas del agente, la lista de clientes de la campaña activa se clasifica en cuatro pestañas: **no completados** (pendientes de llamar), **en seguimiento** (contacto iniciado pero sin cerrar), **enviado con error** (cerrado sin cumplir el objetivo) y **enviado con éxito** (cerrado cumpliendo el objetivo) — los mismos estados que luego alimentan el control de calidad y las estadísticas de campaña. Los campos en negro son editables por el agente y los campos en gris no, según la configuración de "campos para el agente" del paso 5.
+
+En modo automático, tras colgar cada llamada arranca una cuenta regresiva (configurada en la tarea) para que el agente complete la información de contacto antes de que el sistema marque al siguiente cliente; si el agente termina antes, puede forzar el avance con el botón **siguiente** sin esperar a que se agote el temporizador. Si la tarea tiene encuesta asociada, esta aparece debajo de la ficha del cliente con botones **iniciar**, **pregunta anterior** y **confirmar respuesta de esta pregunta** (o tecla `Tab`) para avanzar, mostrando en gris una vista previa de la siguiente pregunta; las respuestas de texto libre quedan visibles y editables sin necesidad de retroceder.
 
 ### 6. Paquete de clientes en detalle
 
@@ -94,7 +127,7 @@ No se puede cambiar la clave única si ya existen duplicados en el paquete — h
 
 ### 7. Registro de llamadas de la campaña
 
-Cada llamada de la tarea queda en su propio registro, con campos como número de teléfono usado, marca de tiempo de solicitud de marcado (solo aplica a predictivo), tiempo de respuesta del cliente vs. del agente, ruta que siguió la llamada dentro del sistema (ej. `entersystem,queue3,AGENT:8000`), y el estado de marcación en el momento de colgar (pendiente, timbrando cliente, timbrando agente, etc.). Permite escuchar/descargar grabación individualmente, o exportar en lote por rango de búsqueda (con la opción de borrar el archivo original del servidor tras exportarlo, para liberar espacio).
+Cada llamada de la tarea queda en su propio registro, con campos como número de teléfono usado, marca de tiempo de solicitud de marcado (solo aplica a predictivo), tiempo de respuesta del cliente vs. del agente, ruta que siguió la llamada dentro del sistema (ej. `entersystem,queue3,AGENT:8000`), destino de entrada (cola, IVR, dispositivo) y su extensión, tipo de llamada (entrante o saliente), y el estado de marcación en el momento de colgar (pendiente, timbrando cliente, timbrando agente, etc.). Permite escuchar/descargar grabación individualmente, o exportar en lote por rango de búsqueda (con la opción de borrar el archivo original del servidor tras exportarlo, para liberar espacio).
 
 ### 8. Gestión de clientes de la tarea
 
@@ -139,11 +172,27 @@ En **Gestión de control de calidad**, se elige la tarea (y encuesta, si aplica)
 
 ### Monitoreo de volumen de datos
 
-Vista rápida por tarea: total de clientes, cuántos se importaron, cuántos ya se marcaron, cuántos resultaron en éxito, cuántos faltan por marcar, cuántos quedan en la lista de marcación predictiva, y cuándo fue la última vez que se recuperaron datos hacia esa lista.
+Vista rápida por tarea: total de clientes, cuántos se importaron, cuántos ya se marcaron, cuántos resultaron en éxito, cuántos faltan por marcar, cuántos quedan en la lista de marcación predictiva (0 si la tarea no usa predictivo), cuándo fue la última vez que se recuperaron datos hacia esa lista, y cuántas veces se ha ejecutado esa recuperación.
 
 ### Estadísticas de la campaña
 
-Reporte agregable por tarea o por agente, en un rango de fechas, con indicadores como: clientes/llamadas totales, tasa de contactación (por cliente y por intento), duración total y de conversación, desglose por cada resultado de llamada configurado, cuántas quedaron sin guardar, inválidas, en seguimiento, exitosas (antes y después de control de calidad), y cuántas de las exitosas pasaron o no la revisión de calidad.
+Reporte agregable por tarea o por agente, en un rango de fechas, con salida por total, año, trimestre, mes, semana, día u hora. Al crear el reporte el sistema lo procesa en segundo plano (por el volumen de datos) — se consulta el estado en la lista de reportes y se abre cuando queda "cerrado".
+
+| Indicador | Cómo se calcula |
+|---|---|
+| Clientes llamados / veces llamado | Clientes distintos contactados vs. total de intentos (llamar 10 veces al mismo cliente cuenta 1 y 10 respectivamente) |
+| Clientes que contestaron / veces contestada | Igual distinción, pero sobre las llamadas contestadas |
+| Tasa de contactación por cliente / por intento | Contestados ÷ llamados, y contestadas ÷ intentos |
+| Resultados de llamada | Frecuencia de cada resultado configurado, guardado por los agentes |
+| Sin guardar | Contactos sin resultado de llamada registrado |
+| Duración / tiempo en llamada | Total en el teléfono (incluye timbrado) vs. solo tiempo de conversación |
+| Números inválidos / tasa de inválidos | Llamadas no contestadas ÷ total de clientes |
+| Callbacks / tasa de callback | Clientes guardados en estado "pendiente" ÷ clientes llamados |
+| Éxito real (post-QC) | Clientes exitosos que además pasaron control de calidad |
+| Tasa de conversación / tasa de éxito | Éxito real ÷ contestados, y éxito real ÷ llamados |
+| Éxito en control de calidad | Clientes revisados en QC, sin importar su estado |
+| Enviado con éxito (agente) | Clientes que el agente marcó como "enviado con éxito" |
+| Enviado con éxito + revisado / + aprobado / + rechazado en QC | Cruces del estado "enviado con éxito" contra el resultado de control de calidad |
 
 ## Referencia rápida
 
@@ -177,3 +226,15 @@ Reporte agregable por tarea o por agente, en un rango de fechas, con indicadores
 - `raw/zh/模块使用说明/外呼营销/客户管理.txt`
 - `raw/zh/模块使用说明/外呼营销/坐席界面.txt`
 - `raw/zh/模块使用说明/预拨号/拨号器设置.txt`
+- `raw/en/module_manual/campaign/black_lists.txt`
+- `raw/en/module_manual/campaign/campaign_customers.txt`
+- `raw/en/module_manual/campaign/campaigndata_monitors.txt`
+- `raw/en/module_manual/campaign/campaignresults.txt`
+- `raw/en/module_manual/campaign/campaigns.txt`
+- `raw/en/module_manual/campaign/cdrs.txt`
+- `raw/en/module_manual/campaign/customerpackages.txt`
+- `raw/en/module_manual/campaign/outboundstatistics.txt`
+- `raw/en/module_manual/campaign/qcpages.txt`
+- `raw/en/module_manual/campaign/qcrates.txt`
+- `raw/en/module_manual/campaign/shell_blacklists.txt`
+- `raw/en/module_manual/agent_work_page/agent_work_portal.txt`

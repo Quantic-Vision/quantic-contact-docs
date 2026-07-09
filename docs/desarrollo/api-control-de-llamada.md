@@ -5,7 +5,7 @@ seccion: "7.6 API de integración — Control de llamada"
 tipo: referencia
 nivel: avanzado
 roles: [desarrollador]
-fuente: zh
+fuente: zh+en
 obsoleto: true
 relacionados: [introduccion-api-integracion, codigos-retorno-e-idiomas, api-autenticacion-y-sesion, api-supervision-y-control-de-agente]
 ---
@@ -46,7 +46,10 @@ Ambas operaciones se ejecutan **después** de establecer una llamada de [consult
 |---|---|---|---|
 | Transferir | `EVENT=TRANSFER&pwdtype=&password=&usertype=&user=&orgidentity=` | `transferCJI(pwdtype, password, usertype, user, orgidentity, callbackFuc)` | `transfer(pwdtype, password, usertype, user, orgidentity)` |
 | Conferencia | `EVENT=CONFERENCE&pwdtype=&password=&usertype=&user=&orgidentity=` | `conferenceCJI(pwdtype, password, usertype, user, orgidentity, callbackFuc)` | `conference(pwdtype, password, usertype, user, orgidentity)` |
-| Recuperar (volver al cliente) | `EVENT=CALLRETURN&pwdtype=&password=&usertype=&user=&orgidentity=` | `callReturnCJI(pwdtype, password, usertype, user, orgidentity, callbackFuc)` | `callRetuen(pwdtype, password, usertype, user, orgidentity)` |
+| Recuperar (volver al cliente) | `EVENT=CALLRETURN&pwdtype=&password=&usertype=&user=&orgidentity=` | `callReturnCJI(pwdtype, password, usertype, user, orgidentity, callbackFuc)` | `callRetuen(pwdtype, password, usertype, user, orgidentity)` (ver nota) |
+
+!!! note "Discrepancia entre fuentes ZH y EN — nombre del método WebService de Recuperar"
+    La fuente en chino (`raw/zh/.../webservice接口/接回接口.txt`) define el método como `callRetuen(...)` — con el mismo error de escritura ("Retuen" por "Return") que aparece en el formato de respuesta de toda la API. La fuente en inglés equivalente (`raw/en/custom_development_guide/apis/webservice/resume.txt`) documenta en cambio el nombre **`callReturn(...)`, correctamente escrito**, para el mismo método. El formato de la respuesta (`|Retuen|<código>|Retuen|<mensaje>`) mantiene el typo en ambas fuentes — la discrepancia es solo en el nombre del método SOAP. Si tu integración fallara al invocar `callRetuen`, prueba con `callReturn`.
 
 ### Consulta
 
@@ -66,6 +69,9 @@ Ambas operaciones se ejecutan **después** de establecer una llamada de [consult
 | Reanudar | `EVENT=Resume&orgidentity=&usertype=&user=&pwdtype=&password=` | `resumeCJI(orgidentity, usertype, user, pwdtype, password, callbackFuc)` | `resume(orgidentity, usertype, user, pwdtype, password)` |
 
 `silence` (`0`/`1`) define si el cliente escucha silencio o música de espera al quedar retenido. Aplica solo cuando la llamada es exclusivamente agente-cliente (dos partes).
+
+!!! note "Solo en HTTP — campo `status` adicional en la respuesta (fuente EN)"
+    La fuente en inglés para HTTP (`raw/en/custom_development_guide/apis/http/moh.txt` y `.../exit_moh.txt`) documenta un formato de respuesta con un tercer segmento: `|Return|<código>|Return|<mensaje>|Return|<status>`. Este campo `status` adicional no aparece en las variantes JavaScript ni WebService (que devuelven solo `code`/`message`), ni en la fuente china. No se ha podido confirmar su significado exacto — trátalo como informativo hasta validarlo contra el servidor real.
 
 ### Doble llamada / devolución (backCall)
 
@@ -150,3 +156,36 @@ Envía primero la llamada al número de origen (`exten`) y, una vez que este res
 - `raw/zh/二次开发者指南/接口开发手册_v2.0/http接口/坐席转ivr.txt`
 - `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/坐席转ivr.txt`
 - `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/坐席转ivr.txt`
+- `raw/en/custom_development_guide/apis/http/call.txt`
+- `raw/en/custom_development_guide/apis/javascript/call.txt`
+- `raw/en/custom_development_guide/apis/webservice/call.txt`
+- `raw/en/custom_development_guide/apis/http/hangup.txt`
+- `raw/en/custom_development_guide/apis/javascript/hangup.txt`
+- `raw/en/custom_development_guide/apis/webservice/hangup.txt`
+- `raw/en/custom_development_guide/apis/http/transfer.txt`
+- `raw/en/custom_development_guide/apis/javascript/transfer.txt`
+- `raw/en/custom_development_guide/apis/webservice/transfer.txt`
+- `raw/en/custom_development_guide/apis/http/conference.txt`
+- `raw/en/custom_development_guide/apis/javascript/conference.txt`
+- `raw/en/custom_development_guide/apis/webservice/conference.txt`
+- `raw/en/custom_development_guide/apis/http/resume.txt`
+- `raw/en/custom_development_guide/apis/javascript/resume.txt`
+- `raw/en/custom_development_guide/apis/webservice/resume.txt`
+- `raw/en/custom_development_guide/apis/http/consult.txt`
+- `raw/en/custom_development_guide/apis/javascript/consult.txt`
+- `raw/en/custom_development_guide/apis/webservice/consult.txt`
+- `raw/en/custom_development_guide/apis/http/moh.txt`
+- `raw/en/custom_development_guide/apis/javascript/moh.txt`
+- `raw/en/custom_development_guide/apis/webservice/moh.txt`
+- `raw/en/custom_development_guide/apis/http/exit_moh.txt`
+- `raw/en/custom_development_guide/apis/javascript/exit_moh.txt`
+- `raw/en/custom_development_guide/apis/webservice/exit_moh.txt`
+- `raw/en/custom_development_guide/apis/http/callback.txt`
+- `raw/en/custom_development_guide/apis/javascript/callback.txt`
+- `raw/en/custom_development_guide/apis/webservice/callback.txt`
+- `raw/en/custom_development_guide/apis/http/send_dtmf.txt`
+- `raw/en/custom_development_guide/apis/javascript/send_dtmf.txt`
+- `raw/en/custom_development_guide/apis/webservice/send_dtmf.txt`
+- `raw/en/custom_development_guide/apis/http/transfer_to_ivr.txt`
+- `raw/en/custom_development_guide/apis/javascript/transfer_to_ivr.txt`
+- `raw/en/custom_development_guide/apis/webservice/transfer_to_ivr.txt`

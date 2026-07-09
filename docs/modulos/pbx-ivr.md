@@ -145,6 +145,9 @@ Tras capturar una entrada (o el resultado de un webservice), se define a dónde 
 | Colgar | Cuelga directamente |
 | Dispositivo de fax | Espera señal de fax entrante |
 | Ruta saliente | Reenvía la llamada por una ruta de salida |
+| Grabar llamada | Activa la grabación de la llamada a partir de ese punto del flujo |
+| Enviar DTMF | Envía tonos DTMF antes de continuar (además de existir como acción de nodo) |
+| Solicitud de devolución de llamada | Guarda el número que llama y genera una solicitud de rellamada (callback) que se envía a los agentes |
 
 Cuando el destino es "voz de entrada", hay opciones adicionales para encadenar una **acción posterior** (anunciar dígitos/número/monto usando el valor obtenido), una **voz de retorno** (ej. *"para regresar al menú anterior, marque *"*), y una **voz posterior** (ej. *"para repetir, marque 1"*) — todas pensadas para mejorar la experiencia cuando el flujo lee en voz alta un dato dinámico.
 
@@ -191,3 +194,5 @@ Objetivo: *"Bienvenido, para consultas de producto marque 1, para soporte técni
 
 - `raw/zh/模块使用说明/pbx高级管理/电脑话务.txt`
 - `raw/zh/模块使用说明/ivr/设定一个语音菜单ivr.txt`
+- `raw/en/module_manual/advanced/ivr.txt`
+- `raw/en/module_manual/ivr/configuring_a_simple_ivr.txt`

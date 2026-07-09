@@ -5,7 +5,7 @@ seccion: "7.3 API de integración — Introducción"
 tipo: concepto
 nivel: avanzado
 roles: [desarrollador]
-fuente: zh
+fuente: zh+en
 obsoleto: true
 relacionados: [api-y-ami, codigos-retorno-e-idiomas, api-autenticacion-y-sesion, api-control-de-llamada, api-supervision-y-control-de-agente, api-datos-y-grabaciones]
 ---
@@ -34,6 +34,9 @@ AsterCC ofrece un **manual de interfaces v2.0** con tres protocolos equivalentes
 | **HTTP** | `http://<ip>:<puerto>/asterccinterfaces` — parámetros por query string, con `EVENT=<NOMBRE_ACCION>` | Integraciones servidor-a-servidor o desde cualquier lenguaje que pueda hacer una petición HTTP (PHP, Python, backend de un CRM). Es el protocolo más simple de invocar fuera del navegador. |
 | **JavaScript** | Script `astcccwi... astcc_CJI.js` cargado desde `http://<ip>:<puerto>/asterccinterface/astcc_CJI.js`, expone funciones `xxxCJI(...)` | La **pantalla del agente en el navegador** (aplicación B/S embebida o cross-domain junto a la plataforma de trabajo del agente). Cada función recibe un parámetro adicional `callbackFuc` — una función de [callback](../glosario.md#webhook-callback) que AsterCC invoca de forma asíncrona con el resultado en JSON. Página de referencia para pruebas: `http://<ip>:<puerto>/asterccinterface/test_CJI.html`. |
 | **WebService** | SOAP/WSDL en `http://<ip>:<puerto>/<appname>` (archivo `astcccwi.php?wsdl`, con `astcccwi.wsdl` editado con la IP del servidor) | Integraciones servidor-a-servidor desde plataformas que consumen SOAP directamente (ej. sistemas Java/.NET empresariales con clientes WSDL generados). |
+
+!!! note "Detalles adicionales de la fuente en inglés"
+    La guía en inglés (`raw/en/custom_development_guide/apis/`) aporta dos detalles concretos no capturados en la versión ZH: la página de prueba de la interfaz JavaScript se llama `test_CJI_en.html` (variante en inglés del `test_CJI.html` de la fuente china — el nombre depende del idioma de la instalación), y el webroot por defecto del servidor donde se despliega el WSDL de WebService es `/var/www/html/asterCC/app/webroot/` (ejemplo de la fuente EN: `http://192.168.1.45:4580`).
 
 En resumen: **JavaScript es para la pantalla embebida del agente en el navegador** (necesita el callback asíncrono porque corre en el hilo de la UI); **HTTP y WebService son para integraciones servidor-a-servidor**, y son intercambiables — HTTP es más simple de invocar, WebService es preferible si tu plataforma ya tiene tooling maduro para consumir WSDL.
 
@@ -84,3 +87,8 @@ En resumen: **JavaScript es para la pantalla embebida del agente en el navegador
 - `raw/zh/二次开发者指南/接口开发手册_v2.0/javascript接口/javascript接口概述.txt`
 - `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口.txt`
 - `raw/zh/二次开发者指南/接口开发手册_v2.0/webservice接口/webservice接口概述.txt`
+- `raw/en/custom_development_guide/start.txt`
+- `raw/en/custom_development_guide/apis.txt`
+- `raw/en/custom_development_guide/apis/http.txt`
+- `raw/en/custom_development_guide/apis/javascript.txt`
+- `raw/en/custom_development_guide/apis/webservice.txt`

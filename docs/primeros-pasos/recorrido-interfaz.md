@@ -5,7 +5,7 @@ seccion: "3.3 Recorrido por la interfaz"
 tipo: tutorial
 nivel: basico
 roles: [administrador, agente]
-fuente: zh
+fuente: zh+en
 obsoleto: false
 relacionados: [guia-administradores, guia-agentes, plataforma-del-agente]
 ---
@@ -76,6 +76,54 @@ Se abre con el botón de marcación. Permite:
 
 Se abre con el botón de cola y muestra las colas a las que pertenece el agente, con controles para iniciar/cerrar sesión y pausar/reanudar cada una individualmente o todas a la vez, y el estado actual (libre, ocupado al timbrar, ocupado al contestar).
 
+### Monitoreo y supervisión
+
+AsterCC ofrece monitoreo en dos niveles: el administrador (o cualquier cuenta con permiso) ve el sistema completo; el **administrador del grupo de agentes** ("jefe de equipo") ve y actúa solo sobre su propio grupo.
+
+**Vista de administrador — información en tiempo real:**
+
+| Pantalla | Qué muestra |
+|---|---|
+| Monitoreo de grupos de agentes | Los agentes conectados y su estado: libre, timbrando, en llamada, en gestión posterior, o en llamada adicional (conferencia/consulta). Un administrador ve todos los grupos; un jefe de equipo solo el suyo. |
+| Agentes conectados actualmente | Detalle de las sesiones activas — el sistema permite iniciar sesión desde varios navegadores a la vez. |
+| Usuarios conectados actualmente | Lo mismo, para cuentas de usuario (no agentes). |
+| Información de uso del sistema | Uso agregado del sistema completo y por equipo. |
+
+En el panel de grupo de agentes de la plataforma del agente, los colores indican el estado: **amarillo** = libre, **azul claro** = timbrando, **rojo** = en llamada.
+
+**Vista de jefe de equipo — control sobre su grupo:**
+
+Al hacer clic sobre un agente de su grupo, el jefe de equipo puede ejecutar (según el estado de la llamada del agente):
+
+- **Colgar:** termina todas las llamadas del agente.
+- [Monitoreo, intervención, interrupción forzada y susurro](../glosario.md#monitoreo-intervencion-interrupcion-forzada-y-susurro): las cuatro acciones estándar sobre una llamada en curso.
+- **Forzar ocupado:** pone al agente en pausa de inmediato, sin que pueda recibir llamadas.
+- **Forzar libre:** saca al agente de pausa para que vuelva a recibir llamadas.
+- **Forzar cierre de sesión:** saca al agente de la cola (no disponible si el agente está fijo en ese grupo).
+
+Estas acciones requieren un número de extensión desde el cual se ejecutan — por defecto, la extensión del propio jefe de equipo.
+
+El jefe de equipo también puede administrar la predevolución de su grupo (activarla, ajustar sus parámetros, ver y reciclar clientes) y acceder a la pantalla de **control de calidad** para revisar las llamadas pendientes de calificar.
+
+### Reportes más usados
+
+Sin necesidad de entrar al módulo avanzado de reportes, estos son los más consultados en el día a día:
+
+| Reporte | Para qué sirve |
+|---|---|
+| Servicio de agentes | Parámetros de un agente en un rango de fechas — por todas sus tareas de marcación saliente, o solo una. |
+| Detalle de IVR | Cada llamada que entró a un IVR: número que llama, DID, tiempo dentro del IVR, y a dónde salió. |
+| Detalle de llamadas entrantes / salientes | Detalle y volumen de llamadas por agente o por extensión. |
+| Servicio de grupo de agentes | Estadísticas de un grupo de agentes en un rango de fechas (solo datos de telefonía — el detalle de negocio está en el reporte del módulo correspondiente). |
+| Resumen de llamadas salientes | Totales de llamadas salientes por extensión, agente o cuenta. |
+| Resumen diario | Picos diarios de sesiones iniciadas, check-ins, llamadas y pausas — útil para planear turnos. |
+| Estadísticas de importación de datos | Seguimiento de las tareas de importación masiva. |
+| Estadísticas de DID | Volumen de llamadas entrantes por número DID. |
+| Estadísticas de marcación saliente | Resultados y tasa de éxito por tarea de marcación saliente. |
+| Estadísticas de predevolución | Datos de las tareas que usan predevolución — sirven de referencia para ajustar sus parámetros. |
+| Registro de filtro de predevolución | Ejecución de los filtros que reciclan clientes automáticamente a la lista de predevolución. |
+| Monitor de volumen de datos | Volumen de datos (importados, marcados, exitosos, pendientes) de una tarea de marcación saliente. |
+
 ## Referencia rápida
 
 | Panel | Se abre desde |
@@ -85,6 +133,7 @@ Se abre con el botón de cola y muestra las colas a las que pertenece el agente,
 | Cola | Botón de cola |
 | Mapa | Botón de Google Maps |
 | Correo / SMS | Botón de mensajería |
+| Monitoreo de grupos de agentes | Panel de información en tiempo real (administrador) o plataforma del jefe de equipo |
 
 ---
 
@@ -94,3 +143,8 @@ Se abre con el botón de cola y muestra las colas a las que pertenece el agente,
 - `raw/zh/界面简介/坐席界面.txt`
 - `raw/zh/界面简介/队列面板.txt`
 - `raw/zh/界面简介/拨号面板.txt`
+- `raw/zh/呼叫中心常用功能简介/坐席监控系统介绍.txt`
+- `raw/zh/呼叫中心常用功能简介/实时监控.txt`
+- `raw/zh/呼叫中心常用功能简介/班长功能.txt`
+- `raw/zh/呼叫中心常用功能简介/常用报表.txt`
+- `raw/en/newbie/quick_start.txt`

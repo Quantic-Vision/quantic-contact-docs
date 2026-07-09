@@ -41,6 +41,8 @@ Permiten unir múltiples participantes en una misma llamada (probado hasta 30 pa
 
 **Invitar participantes:** desde la sala, se elige la cuenta invitante, se seleccionan destinatarios (por equipo) o se escriben números manualmente (uno por línea), y se confirma la invitación — también es posible entrar directamente marcando un número que enruta por IVR/ruta entrante al número interno de la sala.
 
+**Administradores de la sala:** desde la pantalla de la sala, con el botón "Agregar administrador" se mueven usuarios de una lista general a una lista de administradores de esa sala específica — solo esos usuarios pueden actuar como administrador dentro de la conferencia (usando la contraseña de administrador). Se puede editar esta lista en cualquier momento desde la misma pantalla.
+
 ### Listas blanca y negra de llamadas entrantes
 
 - **Lista negra:** los números listados **no pueden** llamar al equipo/cuenta/extensión asociado.
@@ -141,6 +143,21 @@ Envuelve un archivo de voz (o varios, uno por idioma) bajo un nombre lógico reu
 !!! tip
     Un registro de voz de llamada sin ningún archivo asociado aparece resaltado en rojo en el listado — es una señal visual de que falta completar la configuración.
 
+### Gestión de música en espera
+
+Registra, bajo un nombre lógico reutilizable, qué archivo de voz (de los subidos en [Gestión de archivos de voz](#gestion-de-archivos-de-voz)) se usa como música en espera para un equipo — la misma lógica de "nombre reutilizable + equipo + archivo" que [Voz de llamada](#voz-de-llamada), pero para el rol de música en espera en vez de locución.
+
+| Campo | Qué define |
+|---|---|
+| Nombre de la música en espera | Identificación reutilizable |
+| Identificador | Etiqueta corta para distinguir esta música en espera de otras |
+| Equipo | A qué equipo pertenece |
+| Archivo de voz | Archivo (del equipo) a usar como música en espera |
+
+Los campos "Formato" y "Modo de aplicación" están reservados para una función aún no implementada.
+
+Esta música en espera reutilizable es la misma que puede seleccionarse en el campo "Música en espera" de [extensiones](pbx-y-telefonia.md#extensiones-gestion-de-dispositivos), [colas](pbx-y-telefonia.md#colas), [grupos de timbrado](pbx-y-telefonia.md#grupos-de-timbrado) y [salas de conferencia](#salas-de-conferencia).
+
 ### Aplicación de mensaje de voz
 
 Usada dentro de una acción "dejar mensaje" del [IVR](pbx-ivr.md) — por ejemplo, para capturar consultas fuera de horario laboral y que un agente las gestione al día siguiente.
@@ -169,6 +186,7 @@ Usada dentro de una acción "dejar mensaje" del [IVR](pbx-ivr.md) — por ejempl
 | Plantillas reutilizables | PBX avanzado → Plantillas de PBX |
 | Subir locuciones | PBX avanzado → Gestión de archivos de voz |
 | Asociar locución a un idioma | PBX avanzado → Voz de llamada |
+| Definir música en espera reutilizable | PBX avanzado → Gestión de música en espera |
 | Buzón de voz dentro de un IVR | PBX avanzado → Aplicación de mensaje de voz |
 
 ---
@@ -190,3 +208,17 @@ Usada dentro de una acción "dejar mensaje" del [IVR](pbx-ivr.md) — por ejempl
 - `raw/zh/模块使用说明/pbx高级管理/留言应用.txt`
 - `raw/zh/模块使用说明/pbx高级管理/等待音乐管理.txt`
 - `raw/zh/模块使用说明/pbx高级管理/批量添加语音文件.txt`
+- `raw/en/module_manual/advanced/conference.txt`
+- `raw/en/module_manual/advanced/blacklist.txt`
+- `raw/en/module_manual/advanced/whitelist.txt`
+- `raw/en/module_manual/advanced/callerid_number_restrict.txt`
+- `raw/en/module_manual/advanced/worktime.txt`
+- `raw/en/module_manual/advanced/worktimepackage.txt`
+- `raw/en/module_manual/advanced/pbxtemplate.txt`
+- `raw/en/module_manual/advanced/dahdi.txt`
+- `raw/en/module_manual/advanced/sys_application.txt`
+- `raw/en/module_manual/advanced/soundfile.txt`
+- `raw/en/module_manual/advanced/announcement.txt`
+- `raw/en/module_manual/advanced/record_app.txt`
+- `raw/en/module_manual/advanced/moh.txt`
+- `raw/en/module_manual/advanced/addsoundfiles.txt`

@@ -5,9 +5,9 @@ seccion: "5.3 E-commerce"
 tipo: guia
 nivel: intermedio
 roles: [administrador]
-fuente: zh
+fuente: zh+en
 obsoleto: false
-relacionados: [atencion-cliente-mensajeria-ecommerce, call-center-inbound]
+relacionados: [atencion-cliente-mensajeria-ecommerce, call-center-inbound, marketing-outbound]
 ---
 
 # E-commerce
@@ -21,6 +21,8 @@ Caso de uso para habilitar venta de productos directamente desde la ficha del cl
 ### 1. Instalar el módulo (si no está instalado)
 
 Ve a **Sistema → Gestión de módulos** y confirma que el módulo de e-commerce esté instalado.
+
+> Las dos guías en inglés sobre e-commerce en atención al cliente describen exactamente este mismo procedimiento (instalar el módulo → crear el catálogo de e-commerce → cargar productos → vincular el catálogo al servicio de atención entrante → vender desde la pantalla emergente, dividida en dos páginas de scroll por lo extenso del contenido) sin aportar pasos adicionales — se citan como confirmación cruzada del flujo ya descrito en esta sección y en las secciones 2 a 5.
 
 ### 2. Crear el catálogo de e-commerce
 
@@ -44,6 +46,21 @@ En la ficha del cliente, la sección de e-commerce permite:
 4. **Guardar el pedido**, con los datos de envío precargados desde la ficha del cliente (el agente puede corregirlos si el envío es a otra persona/dirección).
 5. **Consultar el historial de compras** del cliente bajo demanda (no se carga automáticamente, para no afectar el rendimiento).
 
+### Vender durante una campaña saliente
+
+Al crear o editar una tarea de [campaña saliente](marketing-outbound.md), el mismo campo de catálogo de e-commerce descrito en el paso 4 permite vincular un catálogo específico a esa tarea de marcación (en vez de a un servicio de atención entrante). Una vez vinculado:
+
+- El pop-up del cliente que ve el agente en la plataforma de trabajo del agente durante esa tarea muestra la sección de e-commerce, siempre que el módulo esté instalado y la tarea tenga un catálogo vinculado.
+- Cada pedido generado queda etiquetado con el módulo y la tarea/negocio de origen (por ejemplo, la campaña saliente específica), lo que permite distinguirlo de pedidos generados desde atención entrante que use el mismo catálogo — ver la columna "Módulo / negocio del módulo" en la referencia rápida.
+
+**Consultar pedidos y ventas por catálogo**
+
+En **E-commerce → Pedidos recientes** y **E-commerce → Registro de ventas recientes**, selecciona el catálogo en el desplegable superior para ver todos los pedidos o ventas generados desde cualquier módulo que use ese catálogo (campaña saliente, atención entrante, etc.), no solo los de la tarea saliente.
+
+**Retención de datos**
+
+En **Sistema → Configuración → Procesamiento de datos masivos**, el parámetro de retención de datos de e-commerce controla cuánto tiempo se conservan los pedidos y registros de venta antes de moverse automáticamente a **Pedidos históricos** y **Registro de ventas histórico**.
+
 ## Referencia rápida
 
 | Campo del pedido | Qué registra |
@@ -60,3 +77,6 @@ En la ficha del cliente, la sección de e-commerce permite:
 
 - `raw/zh/用途和案例/如何在呼入客服系统中使用电子商务.txt`
 - `raw/zh/模块使用说明/电子商务/电子商务.txt`
+- `raw/zh/用途和案例/在外呼营销中使用电子商务模块.txt`
+- `raw/en/how-to/how_to_config_e-commerce_for_customer_service.txt`
+- `raw/en/how-to/how_to_use_e_commerce_in_customer_service_module.txt`

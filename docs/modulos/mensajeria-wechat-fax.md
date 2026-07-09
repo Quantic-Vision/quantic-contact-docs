@@ -1,11 +1,11 @@
 ---
 title: "Mensajería — WeChat, Fax y envío masivo"
-resumen: "Cómo conectar WeChat como canal de atención, configurar dispositivos de fax, y operar campañas de correo/SMS masivo."
+resumen: "Cómo conectar WeChat como canal de atención, configurar dispositivos de fax, plantillas y mensajería interna, y operar campañas de correo/SMS masivo."
 seccion: "4.10 Atención al cliente, mensajería y e-commerce — Mensajería"
 tipo: guia
 nivel: avanzado
 roles: [administrador]
-fuente: zh
+fuente: zh+en
 obsoleto: false
 relacionados: [atencion-cliente-mensajeria-ecommerce]
 ---
@@ -103,7 +103,35 @@ Solo se aceptan archivos `.doc`, `.docx` o `.pdf` (se convierten automáticament
    - Si el origen es la tabla general, hay que mapear qué campo de esa tabla llena cada variable de la plantilla, y cuál es el campo `target` (destino).
    - Elige la **plantilla**, previsualizada con los datos reales del primer cliente.
    - Confirma cantidad estimada de envíos, fecha/hora programada, y —si es correo— el servidor de correo a usar.
-3. Tras enviar, el lote queda visible en **mensajes por enviar**; una vez procesado, pasa a **mensajes enviados** (éxito) o queda registrado el error.
+3. Tras enviar, el lote queda visible en **contactos por lote** (`batchcontacts`) mientras está pendiente, en proceso, o si falló — funciona como bitácora de trabajo; una vez enviado con éxito, el sistema mueve el registro a **contactos por lote enviados** (`batchcontact sents`), y de ahí a **archivos** (`archives`), la vista de solo lectura donde queda visible qué servidor de correo se usó, qué plantilla, qué adjunto (si aplica) y el contenido final enviado. Un mensaje fallido puede reintentarse editando su registro en "contactos por lote" y cambiando el estado a "Nuevo".
+
+### Plantillas de mensajes
+
+Las **plantillas** (**Mensajería → Plantillas**) evitan escribir el mismo texto cada vez que se envía un SMS, correo o fax. El sistema trae plantillas predefinidas para las notificaciones automáticas del sistema (tareas, facturas, buzón de voz) — se pueden editar directamente, o crear una nueva y deshabilitar la original para que el sistema use la nueva a partir de ese momento.
+
+| Campo | Qué controla |
+|---|---|
+| Tipo | SMS, correo, o fax — una plantilla de SMS solo puede usarse para enviar SMS, y así con las demás |
+| Uso | **Normal** (para avisos o publicidad de uso libre) o **de aplicación** (reservada para las notificaciones automáticas del sistema — tareas, facturas, buzón de voz) |
+| Idioma | Permite tener la misma plantilla en varios idiomas (definidos en Sistema → Idioma), para que el agente elija según la preferencia del cliente |
+| Usa comodines | Si la plantilla usa variables (`##param0##`, etc.) que el sistema debe reemplazar automáticamente |
+| Asunto / MIME | Solo para plantillas de correo — asunto del mensaje, y si el contenido es HTML |
+| Estado | Solo las plantillas habilitadas pueden usarse; para una plantilla **de aplicación**, solo puede haber una habilitada por idioma y por equipo — si hay más de una, el sistema no sabría cuál usar |
+| Equipo | Vacío = disponible para todos los equipos; con equipo = solo ese equipo la usa |
+| Tipo y nombre de objeto | Acota la plantilla a un módulo/objeto específico — así, cuando el agente hace clic en "enviar correo/SMS" desde la pantalla de campaña o de atención al cliente, el sistema preselecciona automáticamente la plantilla correcta |
+| Selección por el agente | Si el agente puede ver y elegir esta plantilla manualmente |
+| Modificable | Si el agente puede editar el contenido antes de enviar, o debe enviarse exactamente como está |
+| Adjuntar archivo | Obligatorio para plantillas de fax (solo PDF, DOC o DOCX); en correo es opcional |
+| Contenido | Límite de 140 caracteres por SMS (los mensajes más largos se dividen en varios); el correo no tiene límite, pero se recomienda pegar el contenido como texto plano para evitar que símbolos de Word se pierdan en la conversión |
+
+**Variables:** además de las 10 variables genéricas (`##param0##`...`##param9##`) que el remitente asigna manualmente al enviar en lote, existen variables reservadas que el sistema reemplaza automáticamente según el tipo de plantilla de aplicación: variables de **tarea** (`##taskid##`, `##title##`, `##sender##`, `##status##`, `##priority##`, etc.), de **buzón de voz** (`##teamname##`, `##devicename##`, `##origdate##`, `##callerid##`) y de **factura** (`##param_zipcode##`, `##param_country##`, `##param_address##`, `##param_statementstart##`, `##param_statementend##`, etc. — el logo de la factura se cambia reemplazando el archivo `astercc_logo.png` en el servidor).
+
+### Mensajes internos y avisos del sistema
+
+Dos canales de comunicación interna, distintos de los canales orientados al cliente:
+
+- **Mensajes internos** (**Mensajería → Mensajes internos**): mensajería punto a punto entre cuentas del sistema — se elige uno o varios destinatarios, se escribe asunto y contenido (con opción de usar una plantilla), y se envía. El destinatario ve un aviso de mensaje nuevo; el mensaje enviado queda visible tanto en **Mensajes internos → enviados/recibidos** (con estado leído/no leído, que cambia automáticamente al abrir el mensaje) como en **Archivos**.
+- **Avisos** (**Mensajería → Avisos**): boletines internos con alcance configurable — sin equipo ni grupo, lo ve toda la organización; con equipo pero sin grupo, lo ve todo el equipo; con equipo y grupo, solo ese grupo; también puede dirigirse a cuentas específicas arrastrándolas de la lista de disponibles a la de seleccionadas. El contenido se escribe con un editor HTML (WYSIWYG). El estado puede ser **deshabilitado** (nadie lo ve), **abierto** (aparece en orden cronológico inverso) o **fijado** (aparece siempre arriba; si hay varios avisos fijados, se ordenan por fecha de publicación entre ellos). Al publicar o fijar un aviso, el sistema notifica a las cuentas con acceso.
 
 ### Servidor de correo
 
@@ -130,7 +158,11 @@ Configura las cuentas de correo salientes usadas por el envío masivo, la plataf
 | Dar de alta un dispositivo de fax | Fax → Gestión de dispositivos |
 | Enviar un fax | Fax → Enviar fax |
 | Armar un envío masivo | Mensajería → Envío masivo |
+| Ver contactos por lote / archivos de mensajes enviados | Mensajería → Contactos por lote / Archivos |
 | Configurar servidor de correo | Mensajería → Servidor de correo |
+| Crear/editar plantilla de mensaje | Mensajería → Plantillas |
+| Enviar mensaje interno | Mensajería → Mensajes internos |
+| Publicar un aviso | Mensajería → Avisos |
 
 ---
 
@@ -145,3 +177,12 @@ Configura las cuentas de correo salientes usadas por el envío masivo, la plataf
 - `raw/zh/模块使用说明/传真管理/传真记录.txt`
 - `raw/zh/模块使用说明/群发信息管理/群发信息.txt`
 - `raw/zh/模块使用说明/群发信息管理/邮件服务器.txt`
+- `raw/en/module_manual/message/archives.txt`
+- `raw/en/module_manual/message/batchcontact_sents.txt`
+- `raw/en/module_manual/message/batchcontacts.txt`
+- `raw/en/module_manual/message/internal_messages.txt`
+- `raw/en/module_manual/message/mail_server.txt`
+- `raw/en/module_manual/message/messages.txt`
+- `raw/en/module_manual/message/notices.txt`
+- `raw/en/module_manual/message/send_in_bulk.txt`
+- `raw/en/module_manual/message/templates.txt`

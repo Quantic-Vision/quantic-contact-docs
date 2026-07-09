@@ -5,7 +5,7 @@ seccion: "7.10 API de integración — Envío de SMS"
 tipo: guia
 nivel: avanzado
 roles: [desarrollador]
-fuente: zh
+fuente: zh+en
 obsoleto: true
 relacionados: [introduccion-api-integracion, api-y-ami]
 ---
@@ -111,3 +111,4 @@ Desde la plataforma de trabajo, botón de mensajes → completar destinatario y 
 
 - `raw/zh/二次开发者指南/如何使用第三方短信平台发送短信.txt`
 - `raw/zh/二次开发者指南/如何将串口短信猫与astercc集成.txt`
+- `raw/en/custom_development_guide/how_to_send_sms_via_a_3rd_party_platform.txt`

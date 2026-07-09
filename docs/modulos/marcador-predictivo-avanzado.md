@@ -36,6 +36,9 @@ El panel muestra, por tarea con predictivo activo: nombre de la tarea, estado de
 | Por concurrencia máxima | `llamadas a lanzar = límite de concurrencia − (en curso + timbrando + esperando)` |
 | Por porcentaje de agentes disponibles | `llamadas a lanzar = agentes libres × porcentaje configurado` |
 
+!!! tip
+    Los agentes marcados como "solo saliente manual" no cuentan como "agentes libres" para la estrategia por porcentaje — el marcador predictivo los excluye del cálculo.
+
 En ambos casos, el resultado nunca puede superar la jerarquía de límites: **licencia del sistema ≥ límite de equipo ≥ límite de tarea ≥ valor calculado**. Si el valor calculado excede cualquiera de los niveles superiores, se recorta automáticamente al límite más bajo aplicable.
 
 ### Configuración del marcador (por equipo)
@@ -92,7 +95,10 @@ llamadas a marcar = (libres + ACW próximos + cortas próximas + largas próxima
 La **lista de marcación** es una copia de trabajo del paquete de clientes, exclusiva para que el marcador la consuma — cada intento de marcado mueve al cliente de vuelta al paquete y lo borra de la lista (con un margen de ~1 minuto tras colgar antes de limpiarse). Para volver a intentar esos números, hay que **recuperarlos** de regreso a la lista.
 
 - **Recuperación manual:** por selección puntual o por condición de búsqueda (ej. estado = pendiente + estado de marcado = contestado por el cliente) — con campo de teléfono a usar, prioridad, y hora de marcado.
-- **Filtro de recuperación automática:** programa una recuperación recurrente con condiciones guardadas (ej. "estado = sin procesar Y estado de marcado = timbrando cliente Y intentos ∈ {1,2}"), con horario tipo cron y ejecución inmediata opcional. El **log de filtros** registra cada corrida: inicio, fin, SQL generado, y cantidad recuperada — útil para auditar por qué la lista se vació o se llenó en cierto momento.
+- **Filtro de recuperación automática:** programa una recuperación recurrente con condiciones guardadas (ej. "estado = sin procesar Y estado de marcado = timbrando cliente Y intentos ∈ {1,2}"), con horario tipo cron y ejecución inmediata opcional (útil si la lista se vació antes de la hora programada). El **log de filtros** registra cada corrida: inicio, fin, SQL generado, y cantidad recuperada — útil para auditar por qué la lista se vació o se llenó en cierto momento.
+
+!!! warning
+    Solo se puede eliminar de la lista de marcación un cliente cuyo estado de marcado sea "pendiente" (aún no intentado) — el resto se depura automáticamente. Para depuraciones o recuperaciones masivas, se recomienda acotar la condición de búsqueda para procesar en tandas de no más de ~5,000 registros por operación, evitando timeouts.
 
 ### Motivos de no conexión (detección de números inválidos)
 
@@ -133,3 +139,9 @@ Reporte generado una vez al día (00:00, sobre el día anterior) por tarea, o ba
 - `raw/zh/模块使用说明/预拨号/预拨号统计.txt`
 - `raw/zh/模块使用说明/预拨号/预拨号未接通原因.txt`
 - `raw/zh/模块使用说明/预拨号/预拨号过滤器日志.txt`
+- `raw/en/module_manual/dialer/campaign_diallists.txt`
+- `raw/en/module_manual/dialer/dialer.txt`
+- `raw/en/module_manual/dialer/dialer_noanswer_cause.txt`
+- `raw/en/module_manual/dialer/dialer_setting.txt`
+- `raw/en/module_manual/dialer/filter_log.txt`
+- `raw/en/module_manual/dialer/statistics.txt`

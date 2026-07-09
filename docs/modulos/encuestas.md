@@ -5,7 +5,7 @@ seccion: "4.5 Encuestas y cuestionarios"
 tipo: guia
 nivel: intermedio
 roles: [administrador]
-fuente: zh
+fuente: zh+en
 obsoleto: false
 relacionados: [marcador-y-campanas, atencion-cliente-mensajeria-ecommerce]
 ---
@@ -44,7 +44,7 @@ Una encuesta queda en estado **libre** hasta que una campaña o el módulo de at
 | Combinada | Varias sub-preguntas que comparten el mismo set de opciones (tipo matriz) |
 | Texto libre | Campo abierto para respuestas largas |
 
-- **Referenciar datos del cliente:** una pregunta puede autocompletarse con un dato ya existente en la ficha del cliente (por ejemplo, si el campo "marca de auto" del cliente es "Toyota", la opción correspondiente se marca sola). Se puede permitir o no que el agente edite esa respuesta autocompletada.
+- **Referenciar datos del cliente:** una pregunta puede autocompletarse con un dato ya existente en la ficha del cliente (por ejemplo, si el campo "marca de auto" del cliente es "Toyota", la opción correspondiente se marca sola). Se puede permitir o no que el agente edite esa respuesta autocompletada. La tabla de clientes disponible para referenciar depende de a qué módulo de negocio está atada la encuesta (campaña saliente, atención al cliente, etc.) — dentro de esa tabla se elige el campo concreto cuyo valor completa la respuesta.
 
 ### 3. Ordenar y enlazar preguntas
 
@@ -115,3 +115,6 @@ Ambos se pueden filtrar por estado: **aprobado en control de calidad**, **enviad
 - `raw/zh/模块使用说明/问卷/问卷选项模板.txt`
 - `raw/zh/模块使用说明/问卷/问卷分布统计.txt`
 - `raw/zh/模块使用说明/问卷.txt`
+- `raw/en/module_manual/survey/answer_templates.txt`
+- `raw/en/module_manual/survey/survey_statistics.txt`
+- `raw/en/module_manual/survey/surveys.txt`

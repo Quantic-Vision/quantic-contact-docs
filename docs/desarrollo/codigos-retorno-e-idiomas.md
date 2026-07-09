@@ -5,7 +5,7 @@ seccion: "7.4 API de integración — Códigos de retorno e idiomas"
 tipo: referencia
 nivel: avanzado
 roles: [desarrollador]
-fuente: zh
+fuente: zh+en
 obsoleto: true
 relacionados: [introduccion-api-integracion, api-autenticacion-y-sesion, api-control-de-llamada, api-supervision-y-control-de-agente, api-datos-y-grabaciones]
 ---
@@ -176,3 +176,5 @@ Cuando una operación de la [API de integración](introduccion-api-integracion.m
 
 - `raw/zh/二次开发者指南/接口开发手册_v2.0/语言编码.txt`
 - `raw/zh/二次开发者指南/接口开发手册_v2.0/返回信息编码对照.txt`
+- `raw/en/custom_development_guide/apis/language_codes.txt`
+- `raw/en/custom_development_guide/apis/return_messages.txt`

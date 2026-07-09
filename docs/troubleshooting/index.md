@@ -45,7 +45,7 @@ Síntoma típico de un troncal que exige **verificación del número que llama**
 
 ## Un cliente navega mal el IVR (no reconoce las teclas)
 
-Revisa el modo DTMF del troncal — ver [FAQ: ¿Cómo elijo el modo DTMF correcto?](../faq/index.md#como-elijo-el-modo-dtmf-correcto). Si usas `inband`, confirma que el códec de voz sea `ulaw` o `alaw`.
+Revisa el modo DTMF del troncal — ver [FAQ: ¿Cómo elijo el modo DTMF correcto?](../faq/pbx-y-telefonia.md#como-elijo-el-modo-dtmf-correcto). Si usas `inband`, confirma que el códec de voz sea `ulaw` o `alaw`.
 
 ## Error `484` al registrar un troncal con un operador móvil (IMS)
 
@@ -61,6 +61,22 @@ Dos causas comunes:
 - Confirma que el modo clúster **no** está activado en `astercc.conf` si no lo estás usando intencionalmente.
 - Confirma que el proceso `astcc_dialer` está corriendo.
 
+## Error de mysqldump al hacer backup de la base de datos
+
+Si al ejecutar `mysqldump -uroot -p astercc10` aparece el error:
+
+```
+mysqldump: Got error: 2002: Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)
+```
+
+El proceso de MySQL no está escuchando por el socket local esperado. Usa la conexión por TCP a `127.0.0.1` en su lugar:
+
+```bash
+mysqldump -h127.0.0.1 -uroot -p astercc10 | gzip > astercc_db.sql.gz
+```
+
+Ver el procedimiento completo de respaldo en [Casos técnicos avanzados](../casos-de-uso/casos-tecnicos-avanzados.md#respaldo-del-sistema-backup).
+
 ## Referencia rápida — dónde revisar cada síntoma
 
 | Síntoma | Revisar |
@@ -72,6 +88,7 @@ Dos causas comunes:
 | IVR no reconoce teclas | Modo DTMF del troncal |
 | Conferencia se cuelga sola | Módulo `app_meetme.so` cargado en Asterisk |
 | Click-to-call falla | Modo clúster / proceso `astcc_dialer` |
+| `mysqldump` no conecta al hacer backup | Usar `-h127.0.0.1` en vez de socket local |
 
 ---
 
@@ -82,3 +99,4 @@ Dos causas comunes:
 - `raw/zh/常见问题及解答/分机呼叫正常_使用预拨号时目标号码不振铃.txt`
 - `raw/zh/常见问题及解答.txt`
 - `raw/en/why_i_get_can_not_found_license_file_when_start_astercc_daemons.txt`
+- `raw/en/use_case/how_to_perform_system_backup.txt`

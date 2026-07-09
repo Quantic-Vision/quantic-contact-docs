@@ -58,6 +58,8 @@ Al editar una extensión, se pueden configurar **lista negra** (números que no 
 
 Cualquier objeto llamable del sistema (extensión, cola, grupo de timbrado, IVR, sala de conferencia, tecla rápida) tiene un **número interno** para poder marcarlo desde otra extensión. Un mismo objeto puede tener más de un número interno. La pantalla de **gestión de números internos** centraliza el alta/edición de números para todos estos tipos de objeto en un solo lugar, además de poder editarse desde la pantalla propia de cada uno. Dos números internos no pueden coincidir dentro del mismo equipo.
 
+Al eliminar un número desde esta pantalla: si el número fue creado directamente ahí, se borra en el acto; si pertenece a un objeto dado de alta en su propia pantalla (dispositivo, cola, IVR, etc.), el sistema redirige a esa pantalla para completar la eliminación ahí.
+
 ### Troncales y grupos de troncales
 
 Un **troncal** conecta el sistema con el exterior — vía **troncal de red** (SIP, IAX), **troncal analógico** (puerto FXO) o **troncal digital** (E1 PRI).
@@ -156,6 +158,10 @@ La cola es el corazón de la distribución de llamadas entrantes hacia [grupos d
 | Frecuencia y voz de anuncio periódico | No | Cada cuánto se repite un aviso mientras espera |
 | Frecuencia de anuncio de posición | No | Cada cuánto se informa la posición en la fila |
 | Máximo de clientes en espera | No | `0` = sin límite |
+| Privilegio de agente | No | Si el agente puede iniciar una conferencia desde una llamada de esta cola |
+
+!!! tip
+    "Condición de entrada automática" también puede usarse desde el IVR: si un flujo define una variable global (ej. `LANGUAGE=cn` tras que el cliente elija idioma), y esa misma condición se configura en la cola, un destino de tipo "Otro IVR o cola automática" en el IVR puede enrutar dinámicamente a la cola cuya condición coincida, sin fijar la cola de destino de antemano.
 
 ### Registro de llamadas (CDR) y retención de datos
 
@@ -200,3 +206,15 @@ Cada registro permite escuchar o descargar la grabación asociada (si existe), y
 - `raw/zh/模块使用说明/pbx高级管理/队列管理.txt`
 - `raw/zh/模块使用说明/pbx管理.txt`
 - `raw/zh/模块使用说明/pbx高级管理.txt`
+- `raw/en/module_manual/pbx/adding_trunk.txt`
+- `raw/en/module_manual/pbx/device.txt`
+- `raw/en/module_manual/pbx/did.txt`
+- `raw/en/module_manual/pbx/didgroup.txt`
+- `raw/en/module_manual/pbx/extension.txt`
+- `raw/en/module_manual/pbx/pbxcdr.txt`
+- `raw/en/module_manual/pbx/ringgroup.txt`
+- `raw/en/module_manual/pbx/ringgroup_device.txt`
+- `raw/en/module_manual/pbx/trunk.txt`
+- `raw/en/module_manual/pbx/voicemail.txt`
+- `raw/en/module_manual/advanced/trunkgroup.txt`
+- `raw/en/module_manual/advanced/queue.txt`

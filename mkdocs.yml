@@ -67,6 +67,7 @@ nav:
       - Guía rápida para administradores: primeros-pasos/guia-administradores.md
       - Guía rápida para agentes: primeros-pasos/guia-agentes.md
       - Recorrido por la interfaz: primeros-pasos/recorrido-interfaz.md
+      - Configurar softphones (Eyebeam, X-Lite, Zoiper): primeros-pasos/configurar-softphones.md
   - 4. Módulos del sistema:
       - modulos/index.md
       - PBX y telefonía: modulos/pbx-y-telefonia.md
@@ -98,6 +99,9 @@ nav:
       - APC (caché de PHP): administracion/apc.md
       - Mailman / correo saliente: administracion/mailman.md
       - Diagnóstico de red y VoIP: administracion/diagnostico-red-voip.md
+      - Configuración y mantenimiento del sistema: administracion/configuracion-y-mantenimiento-sistema.md
+      - Gestión avanzada del call center: administracion/gestion-avanzada-call-center.md
+      - "Documentación histórica — AsterCC 1.2 beta": administracion/historial-documentacion-1.2-beta.md
   - 7. Guía de desarrollo y customización:
       - desarrollo/index.md
       - API y AMI: desarrollo/api-y-ami.md
