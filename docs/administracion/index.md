@@ -24,3 +24,14 @@ relacionados: []
 | [Diagnóstico de red y VoIP](diagnostico-red-voip.md) | ngrep, tcpdump/Wireshark, SIP sobre TLS, Samba, replicación MySQL | Comandos base sí, vías/paquetes a confirmar |
 | [Configuración y mantenimiento del sistema](configuracion-y-mantenimiento-sistema.md) | Respaldos, comandos y logs del núcleo, red, servidores PBX, planes de grabación, configuración general, códigos de función, menú lateral, instalación de módulos | Conceptos sí, rutas/comandos de ejemplo de instalación de referencia antigua |
 | [Documentación histórica — AsterCC 1.2 beta](historial-documentacion-1.2-beta.md) | Resumen de referencia de los 41 documentos del wiki original sobre la versión 1.2 beta (PBX, outbound, clientes, mensajería, encuestas, predial, cuentas, sistema) | No |
+
+## Nota histórica: fax por IAXmodem + HylaFax
+
+!!! warning "Contenido obsoleto"
+    El envío/recepción de fax en AsterCC hoy se gestiona como un módulo propio (ver [Fax — dispositivos y envío](../modulos/mensajeria-wechat-fax.md#fax-dispositivos-y-envio)). El siguiente procedimiento documenta una vía de infraestructura de bajo nivel —anterior a ese módulo— para dar salida/entrada de fax a través de Asterisk usando un módem virtual sobre IAX2 y el software HylaFax. Se conserva por completitud histórica; no es la vía recomendada actualmente.
+
+El procedimiento original (sobre CentOS antiguo) consistía en: compilar e instalar **IAXmodem** (`libiax2` y `spandsp`) desde código fuente, crear un dispositivo de módem virtual (`/dev/ttyIAXn`) configurado con su propio archivo en `/etc/iaxmodem/`, registrar ese módem como un "friend" IAX2 en `/etc/asterisk/iax_modem.conf` e incluirlo desde `iax.conf`, recargar IAX2 desde la consola de Asterisk (`iax2 reload`), arrancar el proceso `iaxmodem` para el dispositivo, y finalmente instalar **HylaFax** (vía RPM) y ejecutar `faxsetup` para completar la configuración del lado de fax.
+
+## Fuentes
+
+- `raw/en/others/iaxmodem_and_hylafax.txt`

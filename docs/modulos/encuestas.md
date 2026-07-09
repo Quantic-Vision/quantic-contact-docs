@@ -96,6 +96,8 @@ En **Encuestas → Distribución de encuesta**, se elige la tarea de campaña y 
 
 Ambos se pueden filtrar por estado: **aprobado en control de calidad**, **enviado con éxito** (según el agente), o **enviado con error** (según el agente) — útil para separar el avance "bruto" del agente de lo que realmente pasó la revisión de calidad.
 
+> Un artículo aparte, dentro de la sección de reportes del sistema, describe esta misma pantalla de distribución de encuestas (con los mismos dos tipos de estadística — por resultado y por avance de finalización — y los mismos filtros de estado) sin aportar información adicional; se cita como confirmación cruzada.
+
 ## Referencia rápida
 
 | Tarea | Dónde |
@@ -115,6 +117,7 @@ Ambos se pueden filtrar por estado: **aprobado en control de calidad**, **enviad
 - `raw/zh/模块使用说明/问卷/问卷选项模板.txt`
 - `raw/zh/模块使用说明/问卷/问卷分布统计.txt`
 - `raw/zh/模块使用说明/问卷.txt`
+- `raw/zh/报表/问卷系统中的报表.txt`
 - `raw/en/module_manual/survey/answer_templates.txt`
 - `raw/en/module_manual/survey/survey_statistics.txt`
 - `raw/en/module_manual/survey/surveys.txt`

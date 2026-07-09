@@ -16,6 +16,8 @@ relacionados: [pbx-y-telefonia, marcador-predictivo-avanzado, marketing-outbound
 
 Este módulo configura las **tareas de marketing saliente** (campañas): a qué [paquete de clientes](../glosario.md#paquete-de-clientes-para-marcacion-saliente) llama la campaña, qué agentes participan, qué modo de marcación usan, y —opcionalmente— el **marcador predictivo** que automatiza el proceso de llamar antes de que el agente lo pida.
 
+**Aplicaciones típicas** de marketing outbound (según la página de introducción del módulo): encuestas de mercado, concertación de citas telefónicas, televenta, televenta vía TV, venta de seguros, y seguimiento posventa. El módulo también resume sus características principales — múltiples formas de asignar clientes al agente (automática, manual, o a petición del propio agente), filtros que mueven datos del paquete de clientes a la lista de marcado según condiciones, clasificación automática de clientes (sin completar / en seguimiento / enviado con éxito / enviado con error), control de calidad con porcentaje de muestreo configurable, reversión (rollback) de datos ya trabajados, ocultar el contacto del cliente al agente, y control granular de qué campos ve/edita cada quien — todas ya cubiertas en detalle en las secciones anteriores de este artículo.
+
 ## Cómo se usa
 
 ### 1. Crear una tarea de campaña
@@ -212,6 +214,8 @@ Reporte agregable por tarea o por agente, en un rango de fechas, con salida por 
 
 ## Fuentes
 
+- `raw/zh/外呼营销.txt`
+- `raw/en/module_manual/campaign.txt`
 - `raw/zh/模块使用说明/外呼营销.txt`
 - `raw/zh/模块使用说明/外呼营销/外呼营销任务.txt`
 - `raw/zh/模块使用说明/外呼营销/客户集合包管理.txt`

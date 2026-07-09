@@ -16,6 +16,8 @@ relacionados: [cuentas-equipos-permisos, atencion-cliente-mensajeria-ecommerce]
 
 Dos módulos distintos que suelen usarse juntos: la **base de conocimiento** centraliza el know-how operativo para que los agentes no dependan de la memoria de "expertos" individuales, y los **work orders (órdenes de trabajo)** modelan un flujo de trabajo que pasa de un equipo a otro hasta resolverse — por ejemplo, un pedido que pasa de ventas a finanzas, a almacén, a logística, y de vuelta al agente que originó el caso.
 
+En resumen (según la página de introducción del módulo): el sistema soporta **múltiples tipos de work order**, **múltiples campos personalizados** y **circulación entre múltiples grupos de trabajo**; al crear uno, puede quedar asignado directamente a su creador o pasar sin asignar al grupo correspondiente. El módulo se usa en conjunto con campañas de marketing outbound o con atención al cliente, según el flujo de cada equipo — el mismo resumen aparece tanto en la fuente en inglés como en la china.
+
 ## Cómo se usa
 
 ### Base de conocimiento
@@ -132,11 +134,13 @@ Si el work order ya está completo, nadie puede modificarlo — solo consultar.
 
 - `raw/zh/模块使用说明/知识库/知识库.txt`
 - `raw/zh/模块使用说明/知识库.txt`
+- `raw/zh/工单.txt`
 - `raw/zh/模块使用说明/工单管理/工单.txt`
 - `raw/zh/模块使用说明/工单管理/分配规则.txt`
 - `raw/zh/模块使用说明/工单管理/我的工单.txt`
 - `raw/zh/模块使用说明/工单管理/工单记录.txt`
 - `raw/en/module_manual/knowledgebase/knowledgebase.txt`
+- `raw/en/work_order.txt`
 - `raw/en/module_manual/work_order.txt`
 - `raw/en/module_manual/work_order/assign_rule.txt`
 - `raw/en/module_manual/work_order/my_workorder.txt`

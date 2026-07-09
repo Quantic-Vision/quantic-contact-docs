@@ -18,6 +18,17 @@ Este módulo permite que un mismo equipo de agentes atienda, de forma indistinta
 
 ## Cómo se usa
 
+### Ámbito de aplicación
+
+Este módulo aplica cuando el mismo grupo de agentes atiende, al mismo tiempo, a varios proyectos entrantes distintos — no solo el escenario de BPO multiempresa, sino también, por ejemplo, una **recepción de hotel virtual** que atiende a huéspedes de varias propiedades desde el mismo pool de agentes.
+
+Características del sistema relevantes en este ámbito:
+
+- **Facturación por tiempo de servicio:** puede cobrarse al cliente según la duración del servicio prestado por el agente.
+- **Lista de transferencia:** permite definir, por cada cliente (usuario virtual), una lista de números de transferencia — al necesitar transferir, el agente hace clic directamente sobre el contacto para consultar o transferir.
+- **Registro de llamadas y contactos.**
+- **Fax.**
+
 ### Caso de referencia
 
 Una empresa A opera el call center para tres empresas clientes (B, C y D). Cada una tiene su propio número de atención. Cuando un cliente llama a B, la llamada se desvía hacia el sistema de A; A identifica —por el DID que recibió la llamada— que se trata de un cliente de B, y muestra al agente la pantalla, el saludo y la base de conocimiento correspondientes a B, sin que el agente necesite saber de memoria el negocio de cada empresa cliente.
@@ -158,3 +169,4 @@ Cuando terceros (las propias empresas B, C, D del ejemplo) necesitan ver sus pro
 - `raw/en/module_manual/virtual_office/faq.txt`
 - `raw/en/module_manual/virtual_office/faq_categories.txt`
 - `raw/en/module_manual/virtual_office/rates.txt`
+- `raw/zh/虚拟办公室.txt`

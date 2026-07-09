@@ -121,7 +121,7 @@ Hay también una **vista de pantalla completa** pensada para mostrar en un monit
 | Factura de equipo | Cada equipo/cliente, según su tarifa de equipo |
 | Factura de usuario | Cuentas individuales con facturación propia |
 
-Las facturas se generan automáticamente de forma periódica y pueden consultarse en línea o enviarse por correo para respaldo o impresión. También existe un **resumen de gasto por agente** y un **log de movimientos financieros por agente**, útil para modelos donde se le paga al agente por desempeño o volumen.
+Las facturas se generan automáticamente de forma periódica y pueden consultarse en línea o enviarse por correo para respaldo o impresión. También existe un **resumen de gasto por agente** y un **log de movimientos financieros por agente** (para ajustes manuales de saldo — alta o cobro — con motivo y datos bancarios), útil para modelos donde se le paga al agente por desempeño o volumen. Un reporte adicional de **estadísticas de gasto** permite comparar el consumo por equipo o por cuenta en un rango de fechas, en formato tabla o gráfico.
 
 ## Referencia rápida
 
@@ -150,6 +150,12 @@ Las facturas se generan automáticamente de forma periódica y pueden consultars
 - `raw/zh/模块使用说明/报表和统计/导入数据统计.txt`
 - `raw/zh/模块使用说明/报表和统计/系统数据统计.txt`
 - `raw/zh/模块使用说明/财务统计/系统账单.txt`
+- `raw/zh/模块使用说明/财务统计.txt`
+- `raw/zh/模块使用说明/财务统计/团队账单.txt`
+- `raw/zh/模块使用说明/财务统计/坐席账务日志.txt`
+- `raw/zh/模块使用说明/财务统计/坐席费用汇总.txt`
+- `raw/zh/模块使用说明/财务统计/用户账单.txt`
+- `raw/zh/模块使用说明/财务统计/费用统计.txt`
 - `raw/zh/模块使用说明/报表和统计.txt`
 - `raw/zh/模块使用说明/系统实时信息/坐席组监控.txt`
 - `raw/zh/模块使用说明/系统实时信息/中继实时使用情况.txt`

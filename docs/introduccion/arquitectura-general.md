@@ -66,6 +66,10 @@ Para un administrador, entender esta arquitectura ayuda a decidir en qué capa i
 - ¿El problema es que un agente no recibe llamadas de una cola? → Capa de call center ([4.3 Cuentas, equipos y permisos](../modulos/cuentas-equipos-permisos.md), [4.7 Plataforma de trabajo del agente](../modulos/plataforma-del-agente.md)).
 - ¿El problema es con una campaña, encuesta o ficha de cliente? → Capa de negocio (sección [4. Módulos del sistema](../modulos/index.md), subgrupos correspondientes).
 
+## Recursos externos sobre Asterisk
+
+Como AsterCC se construye sobre [Asterisk](../glosario.md#asterisk), gran parte de la administración de bajo nivel (telefonía IP, dial plans, protocolos) se apoya en documentación y comunidad del propio proyecto Asterisk, no solo en la de AsterCC. La documentación original enlazaba, entre otros, guías de la comunidad sobre integración con **Kamailio** (proxy SIP) y sobre fax por módem IAX (ver [nota histórica de fax por IAXmodem/HylaFax](../administracion/index.md)) como ejemplos de este tipo de recursos complementarios.
+
 ## Referencia rápida
 
 | Capa | Ejemplos de módulos |
@@ -83,3 +87,4 @@ Para un administrador, entender esta arquitectura ayuda a decidir en qué capa i
 - `raw/zh/呼叫中心系统功能列表.txt`
 - `raw/en/astercc_call_center_quick_feature_list.txt`
 - `raw/en/module_manual/start.txt`
+- `raw/en/others/asterisk_howtos.txt`

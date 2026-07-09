@@ -112,6 +112,29 @@ El caso concluye con un resumen de beneficios percibidos: extensiones internas i
 
 Es, en esencia, una versión con nombres y pasos concretos del mismo patrón que documenta [4.1 PBX y telefonía](../modulos/pbx-y-telefonia.md) para troncales y rutas de entrada — se incluye aquí, en casos de uso, porque ilustra el punto de partida completo (instalación + primera configuración + prueba) de un despliegue real, no un módulo aislado.
 
+## Solución para call center tercerizado (BPO)
+
+El escenario descrito en esta página corresponde, en términos de la industria, a un **call center tercerizado o BPO** (Business Process Outsourcing): un call center con agentes propios que realiza, por cuenta de otras empresas, sus operaciones de atención entrante o de emisión de llamadas.
+
+**Características típicas del proyecto:**
+
+- Gran cantidad de agentes.
+- Gran volumen de datos.
+- Generalmente varios proyectos en curso a la vez.
+- Cada proyecto suele durar solo un período limitado.
+- Cada proyecto necesita su propio número de origen para llamar.
+- Distintos clientes (empresas contratantes) necesitan reportes distintos.
+- Se requiere función de control de calidad.
+
+**Funciones de AsterCC pensadas para este perfil de negocio:**
+
+- **PBX:** soporte de troncal E1 y troncal SIP, con redundancia de troncales.
+- **Agentes:** vínculo automático entre agente y softphone, entrada automática a gestión posterior (ACW), monitoreo en tiempo real.
+- **Marketing outbound** (ver [Marketing outbound](marketing-outbound.md)).
+- **Marcador predictivo** (ver [Marcación predictiva](marcacion-predictiva.md)), con dos funciones adicionales relevantes para operar varios proyectos BPO a la vez:
+  - **Reciclaje automático:** una tarea programada permite devolver a la lista de predevolución (pre-dial) a los clientes que cumplan ciertas condiciones — por ejemplo, reintentar automáticamente a los clientes no contactados el día anterior, o a los que debían transferirse a un agente pero no se logró completar la transferencia.
+  - **Estadísticas de predevolución:** permite analizar los resultados de las llamadas de predevolución por tarea, para optimizar los parámetros del predictivo y encontrar el mejor equilibrio entre eficiencia del agente y tasa de llamadas perdidas/abandonadas.
+
 ## Caso: negocio de tarjetas de traducción telefónica
 
 Una empresa de traducción usa AsterCC como plataforma para un negocio de tarjetas de traducción telefónica: emite tarjetas prepago que dan acceso a traducción en tiempo real por teléfono, apoyándose en la función de conferencia con múltiples participantes (el cliente, la contraparte y el traductor en la misma llamada) más un IVR de atención al cliente.
@@ -143,3 +166,4 @@ Piezas de configuración usadas: una cola por cada servicio de traducción ofrec
 - `raw/zh/用途和案例/团队和域名的绑定.txt`
 - `raw/zh/用途和案例/电话翻译卡业务.txt`
 - `raw/en/real_case_guidance/settingup_astercc_to_receive_inbound_callers_for_virtual_customers.txt`
+- `raw/zh/解决方案/外包呼叫中心解决方案.txt`

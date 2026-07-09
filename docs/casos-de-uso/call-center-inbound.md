@@ -321,7 +321,7 @@ Adicionalmente, la interfaz gráfica del agente admite atajos de teclado: `Esc` 
 - `raw/en/how-to/how_to_use_work_order_in_customer_service_module.txt`
 - `raw/en/how-to/how_to_filter.txt`
 - `raw/en/how-to/how_to_use_filter.txt`
-- `raw/en/how-to/how_to_add_a_customizefield_to_the_contact_log_table.txt`
+- `raw/en/real_case_guidance/how_to_add_a_customizefield_to_the_contact_log_table.txt`
 - `raw/en/how-to/how_to_customize_customer_information_fields_and_import_data.txt`
 - `raw/en/regular_function_description_in_call_center/customization_fields.txt`
 - `raw/en/regular_function_description_in_call_center/import_export_data.txt`

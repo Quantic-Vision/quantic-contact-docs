@@ -16,6 +16,8 @@ relacionados: [marcador-y-campanas, reportes-y-estadisticas, tarifas-y-facturaci
 
 Caso de uso de referencia para montar una operación de televenta desde cero: extensión, agente, softphone, paquete de clientes, tarea de campaña, y cómo se ve el trabajo diario del agente hasta llegar a los reportes de cierre.
 
+En pocas palabras (nota introductoria de la fuente): un plan de marcación saliente define, dentro de la pantalla de trabajo de una tarea, qué agentes participan en la marcación y a qué clientes llama cada uno; el agente ve únicamente los campos del cliente configurados como visibles para esa tarea, y el administrador puede modificar esa configuración para ver el mismo avance de trabajo del equipo. Esta idea general es la que desarrollan en detalle los pasos 1–6 de esta guía.
+
 ## Cómo se usa
 
 ### 1. Preparar extensión, agente y softphone
@@ -285,6 +287,7 @@ Las condiciones del filtro combinan campo + operador (`contiene`, `menor que`, `
 ## Fuentes
 
 - `raw/zh/用途和案例/为企业建立一个外呼呼叫中心用于管理销售.txt`
+- `raw/en/to_establish_an_outbound_program.txt`
 - `raw/en/real_case_guidance/how_to_dial_the_schedular_calling_immediately.txt`
 - `raw/en/real_case_guidance/how_to_terminate_the_mission.txt`
 - `raw/en/real_case_guidance/step_of_configuring_outbound_and_inbound_of_telephone_system.txt`

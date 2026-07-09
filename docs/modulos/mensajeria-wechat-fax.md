@@ -149,6 +149,10 @@ Configura las cuentas de correo salientes usadas por el envío masivo, la plataf
 | Usuario / contraseña | Solo si el tipo es SMTP — el formato de usuario varía por proveedor |
 | Botón de prueba | Verifica la conexión antes de guardar en firme |
 
+### Servidor de SMS
+
+**Mensajería → Servidor de SMS** no tiene parámetros propios en la interfaz — remite directamente al listado de proveedores de SMS compatibles con AsterCC. La cuenta de envío se da de alta con el proveedor elegido; el sistema se limita a usar esa cuenta para las plantillas de tipo SMS.
+
 ## Referencia rápida
 
 | Tarea | Dónde |
@@ -175,8 +179,17 @@ Configura las cuentas de correo salientes usadas por el envío masivo, la plataf
 - `raw/zh/模块使用说明/传真管理/传真设备管理.txt`
 - `raw/zh/模块使用说明/传真管理/发送传真.txt`
 - `raw/zh/模块使用说明/传真管理/传真记录.txt`
+- `raw/zh/模块使用说明/群发信息管理.txt`
 - `raw/zh/模块使用说明/群发信息管理/群发信息.txt`
 - `raw/zh/模块使用说明/群发信息管理/邮件服务器.txt`
+- `raw/zh/模块使用说明/群发信息管理/信息存档管理.txt`
+- `raw/zh/模块使用说明/群发信息管理/信息模版管理.txt`
+- `raw/zh/模块使用说明/群发信息管理/公告管理.txt`
+- `raw/zh/模块使用说明/群发信息管理/内部信息管理.txt`
+- `raw/zh/模块使用说明/群发信息管理/发送内部信息.txt`
+- `raw/zh/模块使用说明/群发信息管理/已发信息管理.txt`
+- `raw/zh/模块使用说明/群发信息管理/待发信息管理.txt`
+- `raw/zh/模块使用说明/群发信息管理/短信服务器.txt`
 - `raw/en/module_manual/message/archives.txt`
 - `raw/en/module_manual/message/batchcontact_sents.txt`
 - `raw/en/module_manual/message/batchcontacts.txt`

@@ -162,6 +162,22 @@ Cuestionario (por teclado en IVR, o por formulario en la plataforma del agente) 
 
 Identificador técnico que vincula un DID (o número que marca el cliente) con un usuario virtual o campaña específica dentro de [Oficina virtual / BPO](modulos/oficina-virtual-bpo.md), permitiendo que el sistema sepa a qué empresa cliente pertenece cada llamada entrante.
 
+## Marcación estadística (stat dial)
+
+Modo de marcación desde la plataforma del agente que, además de originar la llamada, registra métricas de esa marcación (intentos, resultado) por separado del historial normal de llamadas — útil para medir el desempeño de marcación manual fuera de una tarea de campaña.
+
+## Núcleo del sistema (core)
+
+Componente central de AsterCC que se actualiza como unidad independiente de los módulos — una actualización de "core" (ej. `core-2.0-beta`) puede requerirse antes o junto con la actualización de módulos individuales.
+
+## Atributos de número / ubicación geográfica del número que llama
+
+Información de ubicación (código de área, provincia/ciudad, operador) que el sistema resuelve automáticamente a partir del número que marca un cliente, y que se muestra al agente en la ficha o formulario de alta al recibir una llamada — no requiere que el cliente ya exista en la base de datos.
+
+## "El creador retiene" (work order)
+
+Regla de asignación de un work order donde, aunque el caso se derive o consulte a otro grupo/agente, el creador original conserva la propiedad y el seguimiento del caso — ver [Base de conocimiento y Work Orders](modulos/base-conocimiento-work-orders.md#work-orders).
+
 ---
 
 ## Fuentes

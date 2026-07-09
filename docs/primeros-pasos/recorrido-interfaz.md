@@ -147,4 +147,5 @@ Sin necesidad de entrar al módulo avanzado de reportes, estos son los más cons
 - `raw/zh/呼叫中心常用功能简介/实时监控.txt`
 - `raw/zh/呼叫中心常用功能简介/班长功能.txt`
 - `raw/zh/呼叫中心常用功能简介/常用报表.txt`
+- `raw/zh/呼叫中心常用功能简介/start.txt`
 - `raw/en/newbie/quick_start.txt`

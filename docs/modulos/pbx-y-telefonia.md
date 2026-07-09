@@ -52,6 +52,9 @@ Cada teléfono o softphone que se conecta al sistema es una **extensión**. Tipo
 
 Al editar una extensión, se pueden configurar **lista negra** (números que no pueden llamarla) y **lista blanca** (solo esos números pueden llamarla) directamente desde ahí, o desde [PBX — Funciones avanzadas](pbx-funciones-avanzadas.md#listas-blanca-y-negra-de-llamadas-entrantes). Tras guardar, aparece una barra de **recarga** — es necesaria para que el cambio tome efecto.
 
+!!! tip "Cuatro lugares donde se controla la grabación"
+    La grabación de llamadas se puede fijar en cuatro niveles, del más específico al más general: la propia **extensión/dispositivo** (campo "Grabación" de esta tabla), la **cuenta** ("grabación forzada" obliga a grabar todas las extensiones que dependen de ella — ver [Call center inbound](../casos-de-uso/call-center-inbound.md#5-configurar-cuentas-extensiones-grupo-de-timbrado-y-softphone-desde-cero)), el **equipo**, y el **agente** — las llamadas de agente se graban automáticamente sin necesidad de configurar nada extra (ver [Grabación de llamadas](../casos-de-uso/call-center-inbound.md#20-grabacion-de-llamadas)). Un nivel más general (equipo/cuenta) sobrescribe el criterio individual de cada dispositivo que dependa de él.
+
 **Buzón de voz:** solo puede recibir mensajes una extensión con "Estado de buzón de voz = disponible". Los mensajes quedan en el servidor en `/var/spool/asterisk/voicemail/<equipo>/<extensión>/INBOX/`, se pueden escuchar en línea, descargar o eliminar desde el listado. Si el equipo tiene configurado "método de envío de buzón = plantilla", cada mensaje nuevo también se reenvía por correo a la dirección configurada en la extensión.
 
 ### Números internos (números de interno)
@@ -106,12 +109,12 @@ Un **DID** es el número que marca el cliente. Sirve para distinguir, por númer
 
 ### Rutas entrantes y salientes
 
-**Ruta entrante:** enruta según coincidencia de **DID** (individual o por grupo), **número que llama**, **troncal**, o combinaciones — hacia extensión, grupo de timbrado, cola, IVR, buzón de voz, aplicación, sala de conferencia, dispositivo de fax, o directamente colgar. Si el número llamado no coincide con ningún interno del sistema, se envía por un troncal usando la cuenta configurada. Puede acotarse a un **paquete de horario de trabajo** y tiene prioridad configurable (mayor número = mayor prioridad).
+**Ruta entrante:** enruta según coincidencia de **DID** (individual o por grupo), **número que llama** (CID), **troncal**, o combinaciones — con destino: coincidencia automática (marca hacia una extensión interna del sistema, o hacia afuera por troncal si no coincide ningún interno), grupo de timbrado, cola, IVR, dispositivo específico, buzón de voz, aplicación, sala de conferencia, dispositivo de fax, o directamente colgar (End). Cada ruta pertenece a un equipo, puede acotarse a un **paquete de horario de trabajo** (si se deja vacío, funciona siempre) y tiene prioridad configurable (mayor número = mayor prioridad).
 
 !!! tip
     Si un DID ya tiene cuenta y extensión asignada directamente, la ruta entrante correspondiente por ese DID deja de aplicarse — el enrutamiento directo del DID tiene prioridad.
 
-**Ruta saliente:** aplica sobre grupos de cuentas, decidiendo cómo tratar la llamada saliente según **prefijo** y **longitud** del número marcado — destino: marcar directamente, grupo de timbrado, cola, o IVR — con opción de quitar/agregar prefijo antes de enviar.
+**Ruta saliente:** aplica sobre grupos de cuentas, decidiendo cómo tratar la llamada saliente según **prefijo** y **longitud** del número marcado (mejor coincidencia; si no coincide ninguno, se usa la regla "default") — destino: marcar directamente hacia afuera, grupo de timbrado, cola, IVR, o colgar (End) — con opción de quitar/agregar prefijo antes de enviar. Cada regla queda asociada a la ruta y se lista en una tabla editable dentro de esa misma ruta.
 
 ### Grupos de timbrado
 
@@ -190,6 +193,7 @@ Cada registro permite escuchar o descargar la grabación asociada (si existe), y
 
 ## Fuentes
 
+- `raw/en/module_manual/pbx.txt`
 - `raw/zh/模块使用说明/pbx管理/分机管理.txt`
 - `raw/zh/模块使用说明/pbx管理/内线管理.txt`
 - `raw/zh/模块使用说明/pbx管理/中继.txt`
@@ -218,3 +222,6 @@ Cada registro permite escuchar o descargar la grabación asociada (si existe), y
 - `raw/en/module_manual/pbx/voicemail.txt`
 - `raw/en/module_manual/advanced/trunkgroup.txt`
 - `raw/en/module_manual/advanced/queue.txt`
+- `raw/en/module_manual/advanced/iroute.txt`
+- `raw/en/module_manual/advanced/oroute.txt`
+- `raw/en/questions_and_answers/how_to_setup_recording.txt`

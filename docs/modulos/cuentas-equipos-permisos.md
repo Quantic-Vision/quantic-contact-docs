@@ -184,6 +184,7 @@ Pantalla para ajustar manualmente el saldo de un equipo (solo accesible por admi
 - `raw/zh/模块使用说明/账户和权限管理/角色管理.txt`
 - `raw/zh/模块使用说明/账户和权限管理/权限管理.txt`
 - `raw/zh/模块使用说明/账户和权限管理/团队管理.txt`
+- `raw/zh/团队管理.txt`
 - `raw/zh/模块使用说明/账户和权限管理/坐席管理.txt`
 - `raw/zh/模块使用说明/账户和权限管理/坐席组管理.txt`
 - `raw/zh/模块使用说明/账户和权限管理/账号管理.txt`

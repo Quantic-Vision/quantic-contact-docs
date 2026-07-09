@@ -5,7 +5,7 @@ seccion: "2.4 Configuración post-instalación"
 tipo: tutorial
 nivel: intermedio
 roles: [administrador]
-fuente: zh
+fuente: zh+en
 obsoleto: false
 relacionados: [descarga-e-instalacion, guia-administradores]
 ---
@@ -35,6 +35,27 @@ Con esto termina la inicialización. A partir de aquí, el sistema queda listo p
 !!! tip
     Cambia la contraseña del usuario `admin` inmediatamente después del primer acceso — no la dejes en el valor por defecto.
 
+### 3. Preparar archivos de música en espera (opcional)
+
+Antes de subir archivos de música en espera desde la interfaz (ver [Gestión de música en espera](../modulos/pbx-funciones-avanzadas.md#gestion-de-musica-en-espera)), conviene normalizarlos en el servidor para que suenen bien y en el formato correcto (8000 Hz, 16 bits, mono):
+
+1. Convierte los archivos de audio a `.wav` (por ejemplo con Audacity, agregando el plugin LAME si el origen es MP3).
+2. En el servidor, instala `sox`: `yum install sox`.
+3. Ejecuta un script que recorra los `.wav` y normalice volumen y formato:
+   ```bash
+   for i in *.wav; do
+       val=${i%.wav}
+       ampl=$(sox "$i" -t wav /dev/null stat -v 2>&1 | grep -v sox:)
+       sox -v "$ampl" "$i" -t wav -r 8000 -b 16 -c 1 -s -t wav "$val.converted.wav"
+       sox -v .5 "$val.converted.wav" "$val.wav"
+       rm -f "$val.converted.wav"
+   done
+   ```
+4. Copia los archivos resultantes a `/var/lib/asterisk/moh/` en el servidor.
+5. Aplica el cambio sin reiniciar Asterisk: `asterisk -r`, luego dentro de la consola `moh reload`.
+
+Una vez copiados los archivos al servidor, defínelos como música en espera reutilizable desde la interfaz en [Gestión de música en espera](../modulos/pbx-funciones-avanzadas.md#gestion-de-musica-en-espera).
+
 ## Referencia rápida
 
 | Paso | Valor |
@@ -48,3 +69,4 @@ Con esto termina la inicialización. A partir de aquí, el sistema queda listo p
 ## Fuentes
 
 - `raw/zh/新手上路/快速配置手册.txt`
+- `raw/en/installation_guideline_and_setup/setup_moh.txt`

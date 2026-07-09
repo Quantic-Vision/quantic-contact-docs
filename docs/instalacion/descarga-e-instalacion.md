@@ -105,6 +105,55 @@ El método recomendado para instalar AsterCC hoy es el **script de instalación 
 
 7. Abre esa IP en el navegador para llegar a la pantalla de login de AsterCC.
 
+### Variante histórica del método ISO: script de instalación para CentOS/Ubuntu
+
+!!! warning "Puede estar desactualizado"
+    Esta variante corresponde a una versión de AsterCC anterior a la del script sobre Rocky Linux 9 documentado arriba, y usa un dominio de descarga distinto (`download1.astercc.org`). Se conserva como referencia histórica.
+
+Como alternativa a la ISO, la documentación original también ofrecía un script de instalación descargable directamente para CentOS/RedHat o Debian/Ubuntu:
+
+```bash
+# CentOS/RedHat
+wget http://download1.astercc.org/install_asterCC_Commercial_CentOS.sh
+chmod +x ./install_asterCC_Commercial_CentOS.sh
+./install_asterCC_Commercial_CentOS.sh
+
+# Debian/Ubuntu
+wget http://download1.astercc.org/install_asterCC_Commercial_Ubuntu.sh
+chmod +x ./install_asterCC_Commercial_Ubuntu.sh
+./install_asterCC_Commercial_Ubuntu.sh
+```
+
+Todo el código fuente necesario se descarga a `/usr/src/`; para acelerar la instalación en redes lentas, los paquetes se pueden copiar manualmente a esa ruta antes de ejecutar el script.
+
+### Método histórico: instalación manual sobre CentOS 6 (obsoleto)
+
+!!! warning "Puede estar desactualizado"
+    Este procedimiento documenta la preparación manual del sistema operativo (CentOS 6) antes de instalar AsterCC, previa a la existencia de los scripts/ISO automatizados. Se conserva únicamente como referencia histórica — no usar en instalaciones nuevas.
+
+El procedimiento original consistía en: instalar CentOS 6 desde un Live DVD, configurar red y hostname editando directamente `/etc/sysconfig/network-scripts/ifcfg-ethX` y `/etc/sysconfig/network`, cambiar el runlevel a 3 para arrancar sin interfaz gráfica, aplicar actualizaciones (`yum update all`) y, opcionalmente, instalar OpenVPN para permitir que teléfonos IP remotos se conectaran al servidor (ver [Configurar OpenVPN](../administracion/openvpn.md)).
+
+### Actualizar el núcleo (core) y los módulos a core-2.0-beta
+
+!!! warning "Puede estar desactualizado"
+    Este procedimiento de actualización corresponde a la versión `core-2.0-beta`, ya superada por versiones más recientes. Se conserva como referencia del mecanismo general de actualización (descarga desde la interfaz + instalación por SSH), que puede seguir aplicando a otras versiones con nombres de paquete distintos.
+
+1. Inicia sesión en el sistema y entra a **Gestión de módulos del sistema**. Si hay una nueva versión del núcleo disponible, aparece un botón **DESCARGAR**.
+2. Descarga el paquete de actualización y súbelo al servidor desde la misma página, o cópialo por FTP al directorio `/var/www/html/asterCC/data/_cache`.
+3. Al terminar de subir el paquete, refresca la página: el botón **DESCARGAR** cambia a **ACTUALIZAR**.
+4. La actualización a `core-2.0-beta` específicamente **no puede completarse con el botón ACTUALIZAR** — debe hacerse por SSH:
+   ```bash
+   cd /var/www/html/asterCC/data/_cache
+   tar zxf core-2.0-beta-patch-x86_64.tar.gz   # ajusta el nombre según arquitectura (i386/x86_64)
+   cd core-2.0-beta-patch-x86_64
+   php install.php
+   ```
+5. Espera a que termine — la duración depende del tamaño de la base de datos. Un mensaje de éxito confirma que la actualización se completó; si aparece un mensaje de error, sigue la instrucción indicada para ejecutar manualmente el comando que falló, y si el proceso se interrumpe, corrige la causa indicada y vuelve a ejecutar `php install.php` desde el directorio del paquete.
+6. Para actualizar **módulos** (no el núcleo) sobre esta misma versión base, el flujo es análogo desde la misma página de **Gestión de módulos del sistema**: los módulos con actualización disponible muestran su propio botón **DESCARGAR** → subir/FTP al mismo directorio de caché → botón **ACTUALIZAR** (este sí funciona desde la interfaz para módulos), o el mismo procedimiento manual por SSH (`tar zxf` + `php install.php`) dentro del directorio de caché.
+
+!!! tip
+    La nomenclatura de los paquetes de actualización sigue el patrón `<version>[-patch][-i386|-x86_64].tar.gz`: `-patch` indica que es un paquete de actualización (si no lo tiene, es un paquete de instalación completa), y el sufijo de arquitectura indica compatibilidad con un tipo de CPU específico (si no lo tiene, es compatible con cualquiera).
+
 ## Referencia rápida
 
 | Método | Cuándo usarlo |
@@ -121,6 +170,11 @@ El método recomendado para instalar AsterCC hoy es el **script de instalación 
 
 ## Fuentes
 
+- `raw/en/installation_guideline_and_setup/setup.txt`
 - `raw/zh/下载和安装/在rocky9中进行安装.txt`
 - `raw/en/download_and_install/iinstall_in_rocky9.txt`
 - `raw/zh/下载和安装/安装.txt`
+- `raw/en/download_and_install/installation.txt`
+- `raw/en/installation_guideline_and_setup/serverinstallation.txt`
+- `raw/en/download_and_install/upgrade/core-2.0-beta.txt`
+- `raw/zh/下载和安装/升级/core-2.0-beta.txt`

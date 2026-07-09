@@ -22,3 +22,24 @@ Si es la primera vez que exploras AsterCC, este es el punto de partida.
 | [Demo en línea](demo-en-linea.md) | Cómo probar AsterCC sin instalarlo. |
 
 Cuando termines aquí, continúa con [Instalación y configuración inicial](../instalacion/index.md) o, si solo quieres orientarte rápido según tu rol, vuelve a la [portada](../index.md).
+
+## Contacto y recursos
+
+!!! warning "Puede estar desactualizado"
+    Estos datos de contacto provienen de la documentación original del wiki y no han sido validados. Confírmalos con el proveedor antes de usarlos.
+
+Para soporte, ventas o consultas comerciales sobre AsterCC:
+
+| Tipo de contacto | Dato |
+|---|---|
+| Soporte | support@sonicwell.com |
+| Ventas / consultas | solo@sonicwell.com |
+| Teléfono | 86-411-39735857 |
+| Fax | 86-411-39735855 |
+
+---
+
+## Fuentes
+
+- `raw/en/others/contact.txt`
+- `raw/zh/其他/联系我们.txt`

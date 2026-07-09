@@ -222,3 +222,4 @@ Usada dentro de una acción "dejar mensaje" del [IVR](pbx-ivr.md) — por ejempl
 - `raw/en/module_manual/advanced/record_app.txt`
 - `raw/en/module_manual/advanced/moh.txt`
 - `raw/en/module_manual/advanced/addsoundfiles.txt`
+- `raw/en/module_manual/advanced.txt`

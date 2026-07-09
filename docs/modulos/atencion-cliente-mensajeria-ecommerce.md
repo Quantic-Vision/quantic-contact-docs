@@ -20,6 +20,8 @@ Este grupo cubre los módulos orientados al cliente entrante: **atención al cli
 
 ### Atención al cliente entrante
 
+**Aplicaciones típicas** (según la página de introducción del módulo): servicio posventa y gestión de ventas empresariales. Varias de sus características principales — múltiples formas de registrar el contacto, campos personalizados, work orders y gestión de llamadas perdidas — se documentan en detalle en las secciones siguientes. La misma introducción menciona además la **ubicación geográfica del número que llama** (deducida del prefijo del CID) como dato disponible en pantalla, y que el módulo puede combinarse con marketing outbound para dar tratamiento a las llamadas entrantes generadas por una campaña saliente (ver [Marketing outbound / televentas](../casos-de-uso/marketing-outbound.md#7-encuestas-y-pantalla-emergente-en-campana)).
+
 En **Atención al cliente → Atención al cliente → Agregar**, se define un "servicio" con:
 
 | Campo | Qué controla |
@@ -226,12 +228,14 @@ Una vez creado, se vincula el catálogo a una tarea de campaña o a un servicio 
 
 ## Fuentes
 
+- `raw/zh/呼入客服.txt`
 - `raw/zh/模块使用说明/呼入客服/呼入客服.txt`
 - `raw/zh/模块使用说明/呼入客服/来电性质.txt`
 - `raw/zh/模块使用说明/呼入客服/呼叫记录.txt`
 - `raw/zh/模块使用说明/呼入客服/客户搜索.txt`
 - `raw/zh/模块使用说明/呼入客服/漏单管理.txt`
 - `raw/zh/模块使用说明/呼入客服/统计报表.txt`
+- `raw/zh/模块使用说明/客户管理.txt`
 - `raw/zh/模块使用说明/客户管理/联络记录.txt`
 - `raw/zh/模块使用说明/客户管理/总表字段设置.txt`
 - `raw/zh/模块使用说明/客户管理/自定义字段.txt`

@@ -16,6 +16,8 @@ relacionados: [atencion-cliente-mensajeria-ecommerce, call-center-inbound, marke
 
 Caso de uso para habilitar venta de productos directamente desde la ficha del cliente, típicamente combinado con [atención al cliente entrante](call-center-inbound.md) o con una [campaña saliente](marketing-outbound.md).
 
+> La aplicación de **atención al cliente entrante** (呼入客服) sobre la que normalmente corre este caso de uso se distingue de la de [oficina virtual](oficina-virtual.md) en un punto relevante para el historial de compras: usa la **tabla de clientes única y compartida del sistema**, en vez de una tabla de clientes independiente por aplicación. Es decir, los datos del cliente (y su historial de compras de e-commerce) son los mismos sin importar por cuál servicio de atención al cliente entrante haya llamado antes.
+
 ## Cómo se usa
 
 ### 1. Instalar el módulo (si no está instalado)
@@ -80,3 +82,4 @@ En **Sistema → Configuración → Procesamiento de datos masivos**, el paráme
 - `raw/zh/用途和案例/在外呼营销中使用电子商务模块.txt`
 - `raw/en/how-to/how_to_config_e-commerce_for_customer_service.txt`
 - `raw/en/how-to/how_to_use_e_commerce_in_customer_service_module.txt`
+- `raw/zh/电子商务.txt`

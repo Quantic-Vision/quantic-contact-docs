@@ -5,7 +5,7 @@ seccion: "3. Primeros pasos"
 tipo: concepto
 nivel: basico
 roles: [administrador, agente]
-fuente: zh
+fuente: zh+en
 obsoleto: false
 relacionados: []
 ---
@@ -20,3 +20,10 @@ relacionados: []
 | [Configurar softphones: Eyebeam, X-Lite y Zoiper](configurar-softphones.md) | Descarga, instalación y registro SIP de los softphones de referencia. |
 
 Con esto termina el MVP de introducción al sistema. El siguiente nivel de detalle está en [Módulos del sistema](../modulos/index.md).
+
+---
+
+## Fuentes
+
+- `raw/zh/新手上路.txt`
+- `raw/en/newbie/start.txt`

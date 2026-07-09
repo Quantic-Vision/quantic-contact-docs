@@ -5,7 +5,7 @@ seccion: "6. Administración avanzada"
 tipo: referencia
 nivel: avanzado
 roles: [administrador]
-fuente: en
+fuente: zh+en
 obsoleto: false
 relacionados: [asterisk-ami, diagnostico-red-voip]
 ---
@@ -35,7 +35,7 @@ Ve a **Configuración de sistema → Gestión de planes de respaldo**. Sirve par
 | Días de retención del archivo de respaldo | Cuánto se conserva el respaldo en el servidor antes de eliminarse automáticamente (recomendado 3-7 días por espacio en disco) |
 | Envío FTP (activar/dirección/usuario/contraseña/ruta) | Copia adicional del respaldo a otro servidor — el respaldo local se conserva igual, según los días de retención configurados |
 | Contenido a respaldar | Lista de directorios del sistema, uno por línea (hay accesos directos para autocompletar rutas clave) |
-| Bases de datos a respaldar | Una por línea, formato `nombre_bd,usuario,contraseña` (si no hay contraseña, se deja vacía después de la coma) |
+| Bases de datos a respaldar | Una por línea, formato `nombre_bd,usuario,contraseña` (si no hay contraseña, se deja vacía después de la coma) — por defecto la base de datos del sistema es `astercc10` con usuario `root` |
 
 Ejemplos de programación: `mes=todos, semana=todos, día=todos, hora=0, minuto=0` ejecuta el respaldo diario a medianoche; `mes=todos, semana=domingo, día=todos, hora=2, minuto=0` ejecuta el respaldo cada domingo a las 2am.
 
@@ -165,6 +165,11 @@ Ambos registros respetan el período de retención configurado en **Configuraci�
 
 Ve a **Módulos del sistema**. Muestra la versión actual del sistema, los módulos instalados y los módulos disponibles para instalar.
 
+!!! warning
+    Instalar un módulo nuevo requiere iniciar sesión con la cuenta de **administrador del sistema** — no funciona con una cuenta de administrador de equipo.
+
+Para instalar un módulo disponible, basta con hacer clic en su botón **Instalar**; el sistema muestra una confirmación y, al terminar, el menú lateral correspondiente aparece automáticamente sin necesidad de configuración adicional.
+
 - Si hay una versión nueva disponible, se puede **descargar automáticamente** (si `Descarga automática de paquete de actualización` está activo en Configuración → avanzada) o **descargar manualmente** desde la propia pantalla.
 - El paquete de actualización debe colocarse en el directorio de caché de datos del sistema (ej. `/var/www/html/asterCC/data/_cache/` en la instalación de referencia) — vía FTP o subiéndolo con el botón de la propia pantalla.
 - Al reabrir la pantalla con el paquete presente, aparece el botón **Actualizar**.
@@ -222,3 +227,25 @@ Problemas conocidos durante la actualización y su solución:
 - `raw/en/module_manual/log.txt`
 - `raw/en/module_manual/log/logs.txt`
 - `raw/en/module_manual/log/call_event.txt`
+- `raw/zh/模块使用说明/系统日志.txt`
+- `raw/zh/模块使用说明/系统日志/日志信息.txt`
+- `raw/zh/模块使用说明/系统日志/坐席事件日志.txt`
+- `raw/zh/模块使用说明/系统模块管理.txt`
+- `raw/zh/模块使用说明/系统模块管理/安装模块.txt`
+- `raw/zh/模块使用说明/系统设置.txt`
+- `raw/zh/模块使用说明/系统设置/pbx服务器管理.txt`
+- `raw/zh/模块使用说明/系统设置/内核命令提示符.txt`
+- `raw/zh/模块使用说明/系统设置/内核日志.txt`
+- `raw/zh/模块使用说明/系统设置/备份文件管理.txt`
+- `raw/zh/模块使用说明/系统设置/备份计划管理.txt`
+- `raw/zh/模块使用说明/系统设置/左侧列表模块管理.txt`
+- `raw/zh/模块使用说明/系统设置/左侧列表类别管理.txt`
+- `raw/zh/模块使用说明/系统设置/录音文件管理.txt`
+- `raw/zh/模块使用说明/系统设置/拨号错误处理.txt`
+- `raw/zh/模块使用说明/系统设置/系统热键.txt`
+- `raw/zh/模块使用说明/系统设置/系统设置.txt`
+- `raw/zh/模块使用说明/系统设置/网络配置.txt`
+- `raw/zh/模块使用说明/系统设置/语言管理.txt`
+- `raw/zh/模块使用说明/系统设置/错误通话数据处理.txt`
+- `raw/zh/模块使用说明.txt`
+- `raw/zh/模块使用说明/基本模块.txt`

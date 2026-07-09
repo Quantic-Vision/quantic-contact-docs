@@ -22,3 +22,9 @@ relacionados: []
 | [Casos técnicos avanzados](casos-tecnicos-avanzados.md) | IVR con reconocimiento de voz, integración con operadores móviles |
 
 Estos casos combinan varios módulos de la sección [4. Módulos del sistema](../modulos/index.md) — revisa esa sección primero si algún término no es familiar.
+
+---
+
+## Fuentes
+
+- `raw/zh/用途和案例/start.txt`

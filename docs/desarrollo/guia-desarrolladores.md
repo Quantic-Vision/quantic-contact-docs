@@ -5,7 +5,7 @@ seccion: "7.2 Guía para desarrolladores"
 tipo: guia
 nivel: avanzado
 roles: [desarrollador]
-fuente: zh
+fuente: zh+en
 obsoleto: true
 relacionados: [api-y-ami]
 ---
@@ -49,6 +49,8 @@ function sonAccept(msgStr) {
 
 5. Prueba marcando desde un softphone de agente — la página de pop-up debería recibir el número por parámetro de URL.
 
+La documentación en inglés describe el mismo procedimiento (enlace tipo `campaignurl`, vinculación de la campaña como pop-up entrante/saliente por defecto del grupo de agentes) con un ejemplo de código equivalente al de arriba — confirma que el mecanismo es el mismo en ambos idiomas de la fuente original.
+
 ### Integración cross-domain (sistema propio fuera del servidor de AsterCC)
 
 Sigue el mismo principio, pero la comunicación entre el iframe de AsterCC y tu dominio requiere mecanismos cross-domain (`postMessage` u otro puente JS), en vez de acceso directo al DOM del padre como en el ejemplo de arriba. La API HTTP de [acciones](api-y-ami.md) es la vía complementaria para que tu sistema, del otro lado, dispare acciones hacia AsterCC (originar llamada, etc.).
@@ -66,3 +68,4 @@ Sigue el mismo principio, pero la comunicación entre el iframe de AsterCC y tu 
 ## Fuentes
 
 - `raw/zh/二次开发者指南/如何将第三方系统与astercc集成.txt`
+- `raw/en/custom_development_guide/how_to_integrate_custom_page_in_astercc.txt`

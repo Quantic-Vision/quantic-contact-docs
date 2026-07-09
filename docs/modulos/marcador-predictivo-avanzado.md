@@ -16,6 +16,8 @@ relacionados: [marcador-y-campanas, marcacion-predictiva]
 
 Esta página documenta a fondo el algoritmo del marcador predictivo — qué calcula, qué parámetros lo ajustan, y las herramientas asociadas (lista de marcación, filtros automáticos, motivos de no conexión, y estadísticas específicas de predictivo). Para la configuración básica de campañas, ver [Marcador y campañas](marcador-y-campanas.md); para un caso de uso aplicado, ver [Marcación predictiva](../casos-de-uso/marcacion-predictiva.md).
 
+**Aplicaciones típicas** (según la página de introducción del módulo): telemercadeo, difusión masiva de avisos, cobranza, encuestas de mercado, concertación de citas, televenta, venta por TV, seguros, y seguimiento posventa. La misma introducción resume las **estrategias de conexión** al contestar el cliente — IVR, cola, otra aplicación de telefonía personalizada, o un agente específico — y las **estrategias de marcado** — por cantidad máxima de llamadas simultáneas, por cantidad de agentes disponibles, o por una estrategia personalizada basada en duración promedio de timbrado, tasa de conexión o duración promedio de llamada; estas últimas corresponden a los mismos parámetros documentados en las fórmulas de predicción de esta página.
+
 ## Cómo se usa
 
 ### Panel del marcador
@@ -133,6 +135,7 @@ Reporte generado una vez al día (00:00, sobre el día anterior) por tarea, o ba
 
 ## Fuentes
 
+- `raw/zh/预拨号.txt`
 - `raw/zh/模块使用说明/预拨号.txt`
 - `raw/zh/模块使用说明/预拨号/拨号器.txt`
 - `raw/zh/模块使用说明/预拨号/预拨号列表.txt`
