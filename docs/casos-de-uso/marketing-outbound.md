@@ -39,10 +39,25 @@ Sigue [4.2 Marcador y campañas](../modulos/marcador-y-campanas.md) para crear l
 ### 5. Trabajo diario del agente
 
 1. El agente inicia sesión y se conecta al grupo de trabajo saliente.
+
+   ![Portal del agente tras iniciar sesión, con la tarea de campaña visible en el panel lateral](../assets/images/marketing-outbound/login-agente-campana.jpg)
+
 2. Selecciona la tarea de campaña en el panel lateral — se muestra el detalle de la tarea y la lista de clientes pendientes.
+
+   ![Pestaña "Unfinished" con la lista de clientes sin procesar de la tarea](../assets/images/marketing-outbound/lista-clientes-pendientes-agente.jpg)
+
+   Si el agente puede pedir manualmente un cliente (según la configuración de "obtención de datos" de la tarea), lo hace con el botón **Obtain Customer**:
+
+   ![Mensaje de sistema confirmando que se obtuvieron 3 clientes nuevos para trabajar](../assets/images/marketing-outbound/agente-obtiene-clientes.jpg)
+
 3. Al hacer doble clic en un cliente se abre su ficha con los campos configurados para ser visibles.
 4. El agente marca (según el modo configurado: manual, preview o automático — ver [4.2](../modulos/marcador-y-campanas.md#2-elegir-el-modo-de-marcacion)).
-5. Al colgar, registra el **resultado de la llamada**, el **estado de procesamiento**, y notas adicionales — el sistema puede exigir que haya habido conexión real antes de permitir guardar (configurable en la tarea).
+
+   ![Ventana emergente del softphone mostrando una llamada entrante del cliente, con botones para contestar o ignorar](../assets/images/marketing-outbound/llamada-entrante-softphone.jpg)
+
+5. Al colgar, registra el **resultado de la llamada**, el **estado de procesamiento**, y notas adicionales — el sistema puede exigir que haya habido conexión real antes de permitir guardar (configurable en la tarea). Si el estado de procesamiento queda como "Pending" (en seguimiento), se puede fijar además la fecha/hora del próximo contacto y una prioridad:
+
+   ![Ficha del cliente con el resultado de llamada guardado, estado "Pending" y fecha programada de reintento](../assets/images/marketing-outbound/guardar-resultado-en-seguimiento.jpg)
 
 ### 6. Ver los reportes de cierre
 
@@ -77,6 +92,8 @@ Una campaña puede combinarse con una [encuesta](../modulos/encuestas.md) para e
 3. Define qué campos del cliente son visibles/editables desde los botones de configuración de campos de gestión e interfaz en la propia tarea.
 4. Registra un número de CV (número virtual/DID) para la campaña — en Administración avanzada del call center → Vinculación de aplicación de entrada, eligiendo tipo "tarea de marketing outbound" y asociando el número de llamante o el DID. Cuando un cliente que ya está en el paquete llama por ese número, el sistema hace **pop-up automático de su ficha y de la encuesta** vinculada a la tarea, aunque la llamada sea entrante.
 
+   ![Formulario para vincular un número (Cvnumber) a una tarea de campaña, eligiendo equipo, grupo de agentes y tipo](../assets/images/marketing-outbound/vincular-cvnumber-tarea.png)
+
 Este último punto — el pop-up de encuesta al recibir una llamada entrante de un cliente ya cargado en la campaña — es la vía para usar campañas salientes también como mecanismo de identificación de llamadas entrantes de esos mismos clientes. Para el enlace del pop-up con el binding de aplicación y DID (caso puramente entrante) ver [Call center inbound](call-center-inbound.md).
 
 Si el cliente cuelga sin terminar la encuesta, marcar el estado de procesamiento como "en seguimiento" conserva el punto exacto donde quedó — al volver a llamar (o si el cliente devuelve la llamada y entra por la vinculación de arriba), la encuesta continúa desde la siguiente pregunta sin perder las respuestas ya dadas. El agente puede usar la tecla `Tab` para confirmar cada respuesta y avanzar sin usar el mouse.
@@ -101,13 +118,22 @@ Una campaña puede generar [work orders](../modulos/base-conocimiento-work-order
 - El work order debe crearse primero indicando qué grupo(s) de agentes pueden usarlo.
 - La campaña debe usar tabla principal (no se puede cambiar el paquete de clientes una vez creada la campaña con esta opción).
 - Se vincula el work order a uno o varios resultados de llamada de la campaña.
+
+  ![Formulario para agregar un resultado de campaña, con el work order "Complain" vinculado y el equipo asignado](../assets/images/marketing-outbound/vincular-work-order-resultado-llamada.png)
+
 - Cuando el agente selecciona ese resultado en la ficha emergente del cliente, aparece un enlace para crear el work order directamente desde ahí. Un jefe de grupo también puede crear uno manualmente desde **Work order de grupo**.
+
+  ![Ventana emergente "Add work order" abierta desde la ficha del cliente, con título, grupo y descripción](../assets/images/marketing-outbound/crear-work-order-desde-ficha.png)
 
 Para el detalle de gestión y ciclo de vida del work order (asignación, seguimiento, cierre) ver el módulo de referencia.
 
 ### 10. Venta durante la campaña (e-commerce)
 
 Si la campaña vincula un catálogo de e-commerce, la ficha emergente del cliente incluye una sección para buscar productos, armar el pedido y guardarlo sin salir de la pantalla de llamada — el mismo flujo de venta que en atención al cliente. Ver [E-commerce](e-commerce.md) para el detalle de cómo configurar el catálogo y registrar pedidos; aquí solo hace falta enlazar el catálogo ya creado a la campaña desde su página de edición.
+
+![Pantalla de edición de la tarea con el catálogo de e-commerce ya enlazado en el campo "E-commerce"](../assets/images/marketing-outbound/vincular-catalogo-ecommerce-tarea.jpg)
+
+![Sección de e-commerce dentro de la ficha emergente del cliente: búsqueda de producto, carrito y datos del pedido](../assets/images/marketing-outbound/venta-ecommerce-en-ficha-cliente.jpg)
 
 ### 11. Facturación de llamadas de campaña
 
@@ -149,6 +175,8 @@ El sistema soporta tres tipos de plantilla: **SMS**, **correo** y **fax**. Al cr
 Estimado ##param0##, su saldo de este mes es ##param1## y le quedan ##param2## MB de datos.
 ```
 
+![Formulario para crear una plantilla de correo, con tipo, idioma, adjunto y contenido](../assets/images/marketing-outbound/crear-plantilla-correo-comodines.jpg)
+
 **Enviar correo masivo con plantilla (comodines incluidos):**
 
 1. Crear la plantilla de correo y, por separado, el servidor de correo (**Gestión de mensajería masiva → Servidor de correo**).
@@ -158,6 +186,8 @@ Estimado ##param0##, su saldo de este mes es ##param1## y le quedan ##param2## M
 El estado de los envíos se revisa en **Gestión de mensajería masiva → Gestión de mensajes enviados** (éxito) y **Gestión de mensajes pendientes** (fallidos o en cola).
 
 **Envío individual desde la ficha del cliente:** tras cerrar una llamada, el agente puede hacer clic en el ícono junto al correo o teléfono del cliente para editar y enviar un mensaje suelto — elige plantilla, idioma y servidor, y el contenido se autocompleta con los comodines ya resueltos (editable si la plantilla lo permite).
+
+![Ícono de envío de correo junto al campo de email en la ficha del cliente, dentro de una llamada de campaña](../assets/images/marketing-outbound/enviar-correo-individual-ficha-cliente.jpg)
 
 **Usar una plantilla desde un evento de colgado de la tarea:** además del envío manual, una tarea puede disparar el envío de una plantilla automáticamente al colgar según el resultado de la llamada (ej. "contestada sin respuesta"): en la tarea, agregar un **evento de colgado**, elegir el resultado objetivo y la plantilla, y guardar. Para activarlo, el grupo de agentes debe tener esa tarea seleccionada como "aplicación de salida actual" en su configuración básica.
 
@@ -233,7 +263,17 @@ Cuando los datos del cliente incluyen información que no existe como campo del 
 - Elegir el **equipo** y el **tipo de tabla** (cliente individual o institucional) — determina a qué paquetes de esa combinación se les puede aplicar el campo.
 - Elegir uno o varios **paquetes de clientes** concretos para agregarles el campo — o dejar la selección vacía para agregarlo al total de clientes (en ese caso, no podrá editarse después desde los parámetros del paquete).
 
-Con el campo ya creado, se importa el archivo desde **Administración avanzada del call center → Importación de datos**: se elige el paquete destino (aparecen todas sus columnas, incluida la nueva), se mapea cada columna del archivo — marcando **"coincidencia de diccionario"** en las que lo necesiten — y, si la tarea usa predial, opcionalmente se mapean también teléfono/prioridad/hora de predial. El diccionario de coincidencia (configurado en Administración avanzada del call center → Coincidencia de datos de importación) traduce valores del archivo origen a los que la base de datos espera en campos de tipo enumerado — por ejemplo, "男"/"女" a `male`/`female`. Antes de importar, se indica cuántas filas iniciales del archivo hay que descartar (normalmente 1, la fila de encabezados). Al confirmar, el sistema genera un **plan de importación** con número de seguimiento y lo procesa en segundo plano (revisar el avance en Gestión de planes de importación).
+Con el campo ya creado, se importa el archivo desde **Administración avanzada del call center → Importación de datos**: se elige el paquete destino (aparecen todas sus columnas, incluida la nueva), se mapea cada columna del archivo — marcando **"coincidencia de diccionario"** en las que lo necesiten — y, si la tarea usa predial, opcionalmente se mapean también teléfono/prioridad/hora de predial.
+
+![Pantalla de importación con la vista previa del archivo y el mapeo de cada columna a un campo del sistema](../assets/images/marketing-outbound/mapear-columnas-importacion.jpg)
+
+El diccionario de coincidencia (configurado en Administración avanzada del call center → Coincidencia de datos de importación) traduce valores del archivo origen a los que la base de datos espera en campos de tipo enumerado — por ejemplo, "男"/"女" a `male`/`female`.
+
+![Listado del diccionario de coincidencia con pares clave-valor, por ejemplo "male" → "boy"](../assets/images/marketing-outbound/diccionario-coincidencia-importacion.jpg)
+
+Antes de importar, se indica cuántas filas iniciales del archivo hay que descartar (normalmente 1, la fila de encabezados). Al confirmar, el sistema genera un **plan de importación** con número de seguimiento y lo procesa en segundo plano (revisar el avance en Gestión de planes de importación).
+
+![Listado de planes de importación con su estado, total de registros, éxitos y errores](../assets/images/marketing-outbound/plan-importacion-resultado.jpg)
 
 Tras importar, se revisan/ajustan los campos visibles para el agente y para administración desde la tarea (punto 13 de esta guía) y se confirman los datos en Gestión de clientes de la tarea.
 

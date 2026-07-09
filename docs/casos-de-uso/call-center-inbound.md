@@ -32,13 +32,27 @@ Sigue [4.10 Atención al cliente](../modulos/atencion-cliente-mensajeria-ecommer
 ### 3. Qué ve el agente al recibir la llamada
 
 - **Cliente nuevo:** se abre el formulario de alta, mostrando el número que llama, su ubicación geográfica (si está cargada) y la hora de la llamada. El agente puede buscar primero si ese número ya pertenece a un cliente existente antes de crear uno duplicado — y de encontrarlo, vincular el número a ese cliente en lugar de crear uno nuevo.
+
+  ![Formulario de alta de cliente nuevo con número de contacto, hora de llamada y campos de datos personales](../assets/images/call-center-inbound/formulario-alta-cliente-nuevo.jpg)
+
+  ![Búsqueda por teléfono y ventana de fusión para vincular la llamada a un cliente ya existente en lugar de duplicarlo](../assets/images/call-center-inbound/vincular-cliente-existente-busqueda.jpg)
+
 - **Cliente existente:** se abre directamente su ficha, con pestañas de **historial de contacto**, **work orders no completados**, **work orders completados recientemente** y **work orders completados históricos**.
+
+  ![Ficha emergente de un cliente existente con sus datos, número de contacto y campo de registro de contacto/motivo de llamada](../assets/images/call-center-inbound/ficha-cliente-existente.jpg)
 - En ambos casos, el agente registra el **motivo de la llamada** al finalizar — si ese motivo está vinculado a una plantilla de work order, aparece la opción de crear uno directamente desde ahí.
 
 ### 4. Combinar con otros módulos (opcional)
 
 - **Work orders:** vincula un motivo de llamada a una plantilla de [work order](../modulos/base-conocimiento-work-orders.md#work-orders) para que el agente pueda escalar un caso a otro equipo sin salir de la pantalla de atención. La guía en inglés sobre el uso de work orders en el módulo de atención al cliente confirma este mismo flujo y agrega un detalle sobre llamadas perdidas: desde la pantalla de llamadas perdidas del servicio de atención al cliente, el líder de grupo también puede crear un work order directamente para un número que no se llegó a atender, sin depender de que exista un registro de contacto previo.
+
+  ![Menú de motivo de llamada con el enlace "Create >> Workorder" para abrir un work order sin salir de la ficha del cliente](../assets/images/call-center-inbound/crear-work-order-desde-motivo-llamada.jpg)
+
+  ![Ventana "Add Work Order" abierta desde la lista de llamadas perdidas, para crear un work order sin registro de contacto previo](../assets/images/call-center-inbound/crear-work-order-llamada-perdida.jpg)
+
 - **E-commerce:** si el servicio tiene un catálogo de [e-commerce](../modulos/atencion-cliente-mensajeria-ecommerce.md#e-commerce) vinculado, el agente puede buscar productos, armar un pedido, y guardarlo con los datos de envío precargados desde la ficha del cliente — incluyendo consultar el historial de compras del cliente bajo demanda.
+
+  ![Catálogo de e-commerce dentro de la ficha del cliente, con búsqueda de productos, carrito y datos de envío para armar el pedido](../assets/images/call-center-inbound/ecommerce-catalogo-y-pedido.jpg)
 
 La guía en inglés de configuración del módulo de atención al cliente para llamadas entrantes describe el mismo flujo de esta sección y de la sección 2 (troncal → grupo de agentes → cola → DID opcional → servicio de atención al cliente → vínculo con work order/e-commerce), y agrega dos detalles no cubiertos arriba: el campo de "código de área" (o la importación de atribución numérica) que muestra al agente la ubicación geográfica del número que llama, y la posibilidad de vincular a un mismo número existente en vez de crear un cliente duplicado directamente desde el formulario de alta — se cita como fuente adicional de esta y la sección anterior.
 
@@ -171,8 +185,13 @@ Cuando la cola está saturada o es fuera de horario, en vez de perder la llamada
    - Dígito `1` → transferir de vuelta a la misma cola, para que el cliente siga esperando su turno.
    - Dígito `2` → transferir a la acción "solicitar devolución de llamada", eligiendo si el destino es un servicio de atención al cliente entrante o una campaña de marketing outbound. Si el destino es una campaña, la notificación de la solicitud llega al grupo de agentes de esa campaña; si el destino es un servicio de atención al cliente, además hay que elegir a qué grupo de agentes de ese servicio (uno de atención al cliente puede tener más de un grupo asociado) le llega el aviso.
    - Dígito `3` → transferir a la aplicación de buzón de voz para dejar un mensaje.
+
+   ![Pestaña "Transfer" del flujo IVR con las tres condiciones de destino: cola, buzón de voz y solicitud de devolución de llamada](../assets/images/call-center-inbound/ivr-callback-transferencias-digitos.png)
+
 4. **Redirección desde la cola:** en la ficha de la cola, configura el "destino de fallo" como computer telephony (IVR) y selecciona el IVR de devolución de llamada creado arriba, para que el cliente caiga ahí automáticamente cuando se agota el tiempo máximo de espera en cola.
 5. **Qué ve el agente:** cuando el cliente solicita devolución de llamada, el sistema registra el número con prioridad máxima en la lista de llamadas perdidas del grupo de agentes correspondiente y envía una notificación inmediata. Las solicitudes de devolución de llamada aparecen ordenadas antes que las llamadas perdidas comunes en esa misma lista, para que el agente las devuelva primero.
+
+   ![Notificación emergente en la interfaz del agente avisando que un cliente solicitó devolución de llamada (apply for visit)](../assets/images/call-center-inbound/notificacion-solicitud-callback-agente.png)
 
 > La guía en inglés describe el mismo flujo con un ejemplo concreto: una cola de referencia (número 600) cuyo destino de fallo transfiere a un IVR con las opciones "1 = seguir esperando", "2 = solicitar devolución de llamada", "3 = dejar un mensaje" — el destino del dígito 2 puede ser tanto un servicio de atención al cliente como una campaña de marketing outbound, y el agente ve el aviso "gracias, le responderemos a la brevedad" reproducido al cliente que solicitó la devolución.
 
@@ -181,11 +200,19 @@ Cuando la cola está saturada o es fuera de horario, en vez de perder la llamada
 Ampliando lo indicado en "4. Combinar con otros módulos": el módulo de work orders puede usarse junto con el servicio de atención al cliente entrante (y también con marketing outbound) siguiendo este flujo:
 
 1. **Tipos de work order:** en Gestión de work orders → Work order, se definen tipos con su propio flujo — un tipo puede quedar en manos de quien lo creó ("el creador retiene") o pasar directamente a un grupo para que el líder de grupo lo asigne ("fluye directo al grupo").
+
+   ![Formulario para agregar un tipo de work order: equipo, nombre, alcance de grupos y flujo (CrebyFlow) de asignación](../assets/images/call-center-inbound/tipo-work-order-formulario.jpg)
+
 2. **Alcance:** cada tipo de work order define en qué grupos de agentes puede circular.
 3. **Campos personalizados:** cada tipo admite campos propios adicionales a los estándar, para capturar datos específicos del negocio.
 4. **Notificación por correo:** se puede definir una dirección de copia que reciba un correo cada vez que el work order cambia de estado.
 5. **Vínculo con el resultado de llamada:** en la pantalla de atención al cliente entrante, el agente elige un resultado de llamada; si ese resultado tiene un tipo de work order vinculado, aparece de inmediato el enlace para crear el work order sin salir de la pantalla de la llamada.
+
+   ![Edición de un resultado de llamada (Call Result) con el campo "Work order" para vincularlo a un tipo de work order](../assets/images/call-center-inbound/vincular-resultado-llamada-work-order.jpg)
+
 6. **Ciclo de vida:** el agente puede ver y gestionar sus propios work orders, con accesos rápidos para contactar al cliente (llamada, SMS, correo, fax); al marcarlo como resuelto, pasa a revisión del líder de grupo, quien decide si se cierra o se reasigna a otro grupo. El líder de grupo también puede asignar manualmente los work orders que llegaron sin asignar y crear work orders directamente.
+
+   ![Listado "My Work orde" del agente con estado, tipo y última modificación de cada work order propio](../assets/images/call-center-inbound/mis-work-orders-agente.jpg)
 
 ### 15. Filtrar clientes para reciclar a la lista de marcación
 
@@ -205,6 +232,8 @@ Antes de que un dato "nuevo" del negocio pueda capturarse (ficha de cliente, bit
 
 - **Campos de la ficha de cliente:** ver [Campos personalizados](../modulos/atencion-cliente-mensajeria-ecommerce.md#campos-personalizados) — tipo de campo, a qué paquete de clientes aplica, visibilidad para el agente.
 - **Campos del registro de contacto (bitácora de la llamada):** solo aplica si el paquete de clientes de la campaña asociada usa una tabla individual propia (no la tabla general de clientes) — requiere una versión mínima de sistema (núcleo 3.2 y módulo de campañas 2.7). Se agrega en tabla "Registro de contacto", tipo de campo `customer_field`, eligiendo de cuál campo de cliente toma el valor. El campo de nombre del registro de contacto se sincroniza **una sola vez**, en el momento en que se importa al cliente — después la bitácora de contacto y la ficha de cliente son tablas independientes, así que hay que editarlas por separado si el nombre cambia más adelante.
+
+  ![Formulario "Add Customizefield" con tabla "Contact Log", tipo customer_field y el campo de cliente de origen (customerfield)](../assets/images/call-center-inbound/campo-personalizado-registro-contacto.jpg)
 - **Campos de work order:** se agregan al crear o editar el tipo de work order (ver [Work Orders](../modulos/base-conocimiento-work-orders.md#work-orders)).
 
 Una vez creados los campos que se necesiten, para cargar una base de clientes existente se usa [Importación y exportación masiva de datos](../administracion/gestion-avanzada-call-center.md#importacion-y-exportacion-masiva-de-datos):
@@ -212,6 +241,8 @@ Una vez creados los campos que se necesiten, para cargar una base de clientes ex
 1. Sube el archivo (CSV en UTF‑8 recomendado; si el archivo viene de una hoja de cálculo, puede requerir un paso de conversión de codificación con un editor de texto antes de subirlo).
 2. Elige la tabla destino — paquete de clientes de campaña, tabla general de clientes, tabla de atributos de número (código de área), lista negra o lista de no llamar.
 3. Empareja cada columna del archivo con un campo del sistema (incluyendo los campos personalizados recién creados); marca qué campos son solo de lectura para el agente, cuáles editables, y cuáles deben validarse contra el **diccionario de coincidencia** — útil cuando el mismo valor puede escribirse de varias formas en el archivo de origen (por ejemplo, variantes de texto libre para "masculino"/"femenino") y hay que mapearlas a los valores fijos que espera la base de datos para no perder esos registros.
+
+  ![Diccionario de coincidencia (Import Dict) con pares clave/valor, por ejemplo "male" → "Mr." y "female" → "Ms."](../assets/images/call-center-inbound/diccionario-de-coincidencia.jpg)
 4. Si el paquete tiene marcador predictivo habilitado, además se elige qué columna alimenta la lista de marcación, con qué prioridad y horario.
 5. Confirma la importación y revisa el avance en la gestión de planes de importación antes de darla por completa — un plan puede quedar en pendiente, en curso, completo o con error, y se puede descargar por separado lo importado con éxito, lo fallido y lo duplicado.
 
@@ -232,12 +263,24 @@ Resumen de funciones transversales que un agente y su supervisor usan en cualqui
 ### 18. DNC, lista negra y restricción de número entrante
 
 - **DNC (no llamar):** aplica a llamadas salientes de campaña, en tres niveles (sistema, equipo, tarea) — se carga por importación masiva (ver sección 16) o de forma manual. Ver [DNC](../modulos/marcador-y-campanas.md#dnc-lista-de-no-llamar-en-tres-niveles).
+
+  ![Panel para agregar números a la lista DNC de forma manual, con campo de texto y botón "Add DNC"](../assets/images/call-center-inbound/agregar-numero-dnc.jpg)
+
 - **Lista negra de entrantes:** bloquea que ciertos números llamen al call center — por equipo, cuenta o dispositivo. Para pocos números se agrega uno por uno desde la pantalla; para volumen alto se carga por importación masiva (tabla "lista negra"). Ver [Listas blanca y negra de llamadas entrantes](../modulos/pbx-funciones-avanzadas.md#listas-blanca-y-negra-de-llamadas-entrantes).
+
+  ![Formulario "Add Blacklist" para agregar un número uno por uno, con equipo y dispositivo asociado](../assets/images/call-center-inbound/agregar-numero-lista-negra.jpg)
+
+  ![Importación masiva de un archivo hacia la tabla "Black List", con vista previa de los primeros registros y mapeo de columna](../assets/images/call-center-inbound/importar-lista-negra-masiva.png)
+
 - **Restricción por patrón (no por número exacto):** si en vez de bloquear números puntuales hay que bloquear un patrón completo (por ejemplo, todo un prefijo, como los números que empiezan en `150`), se define en la ruta entrante correspondiente (coincidencia y destino de número que llama, con acción "ocupado" o "colgar") en vez de cargar cada número a la lista negra uno por uno. Ver [Rutas entrantes y salientes](../modulos/pbx-y-telefonia.md#rutas-entrantes-y-salientes).
+
+  ![Ruta entrante con CID Match "Prefix", CID Target "150" y ActionId "Busy" para bloquear todo un prefijo de una sola vez](../assets/images/call-center-inbound/restriccion-por-prefijo-ruta-entrante.png)
 
 ### 19. Monitoreo en tiempo real y reportes útiles
 
 - **Estado de agentes en vivo:** quién está inactivo, timbrando, en llamada, en ACW o en una llamada adicional (conferencia/consulta) — visible para administradores de sistema/equipo sobre todos los grupos, y para un líder de grupo sobre el suyo. Ver [Monitoreo en tiempo real](../modulos/reportes-y-estadisticas.md#monitoreo-en-tiempo-real).
+
+  ![Panel "Live Monitor" por grupo de agentes, con estado (busy/idle), llamadas atendidas/marcadas y tiempo hablado de cada agente](../assets/images/call-center-inbound/monitoreo-en-vivo-grupo-agentes.jpg)
 - **Uso de troncales, cuentas conectadas por navegador y uso general del sistema:** vistas complementarias de lo que está pasando en el sistema en este momento, en la misma sección de reportes en tiempo real.
 - **Reportes de desempeño de agente:** estadísticas de un agente (o de varios) durante un periodo, cruzando una o varias campañas. Ver [Reportes de desempeño](../modulos/reportes-y-estadisticas.md#reportes-de-desempeno).
 - **Reportes de llamadas entrantes/salientes:** detalle de llamadas por agente o por dispositivo, con totales de duración por tipo de llamada.
@@ -248,6 +291,8 @@ Resumen de funciones transversales que un agente y su supervisor usan en cualqui
 Todas las llamadas de agente se graban automáticamente en el propio servidor, sin equipo de grabación adicional:
 
 - **Reproducción y descarga:** desde el CDR general de PBX o desde el CDR específico del módulo (atención al cliente, campaña, oficina virtual) — cada uno da una vista más rápida para su tipo de tarea. En campañas, también se puede escuchar la grabación desde la pantalla de control de calidad. El acceso del agente a sus propias grabaciones puede habilitarse o restringirse por equipo. Estas pantallas permiten descarga individual o por lote.
+
+  ![CDR del propio agente (AgentCdrs) con columnas de escucha y descarga de grabación por cada llamada](../assets/images/call-center-inbound/descarga-grabacion-cdr-agente.jpg)
 - **Descarga masiva:** al solicitar una exportación de grabaciones, el sistema empaqueta los archivos en un `.tar` y lo deja disponible para descarga en la pantalla de planes de exportación; por seguridad, esta descarga en línea puede desactivarse a nivel de sistema.
 - **Respaldo automático:** se puede programar un plan de respaldo de grabaciones con horario de ejecución y ruta de guardado configurables.
 
