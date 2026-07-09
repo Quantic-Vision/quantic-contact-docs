@@ -52,6 +52,8 @@ Un agente puede pertenecer a varias colas y elegir en cuáles iniciar o cerrar s
 
 AsterCC puede marcar automáticamente a un agente como ocupado al finalizar una llamada, dándole tiempo para completar su gestión antes de volver a marcarse como disponible.
 
+En la mayoría de las pantallas de la plataforma del agente, esta acción se etiqueta simplemente como **Pausa** ("forzar ocupado" / "forzar libre" desde la vista de supervisor) — es el mismo concepto descrito aquí, no una función distinta. No confundir tampoco con [ACW](#acw-gestion-posterior-a-la-llamada): la pausa es una decisión manual del agente o del supervisor en cualquier momento, mientras que el ACW es un estado automático y de duración acotada que ocurre solo justo después de colgar.
+
 ## Consulta, transferencia, recuperar y conferencia
 
 Durante una llamada activa con un cliente, el agente puede iniciar una **consulta**: una llamada hacia un tercero mientras el cliente queda en espera (normalmente escuchando música de espera). Durante esa consulta, el agente puede elegir entre tres acciones:
@@ -177,6 +179,18 @@ Información de ubicación (código de área, provincia/ciudad, operador) que el
 ## "El creador retiene" (work order)
 
 Regla de asignación de un work order donde, aunque el caso se derive o consulte a otro grupo/agente, el creador original conserva la propiedad y el seguimiento del caso — ver [Base de conocimiento y Work Orders](modulos/base-conocimiento-work-orders.md#work-orders).
+
+## BLF (indicador de estado de línea)
+
+Sigla de *Busy Lamp Field*. Luz o ícono en un teléfono IP que muestra en tiempo real si otra extensión está libre, timbrando o en llamada — se configura agrupando extensiones en un **grupo BLF** para que cada teléfono del grupo pueda ver el estado de las demás.
+
+## Extensión adaptativa (modo autoadaptable / autoseleccionable)
+
+Extensión cuyo dispositivo físico no está fijo: el agente puede registrarse desde cualquier teléfono/softphone disponible al iniciar sesión, en vez de tener siempre el mismo aparato asignado — típico en esquemas de puesto compartido entre turnos. Se distingue del modo **fijo**, donde la extensión siempre corresponde al mismo dispositivo.
+
+## SaaS / oficina virtual alojada (hosted)
+
+Modalidad en la que AsterCC (o el servicio de call center construido sobre él) se ofrece como servicio alojado por un proveedor, en vez de instalado en un servidor propio del cliente — el mismo concepto que respalda a [Oficina virtual / BPO](modulos/oficina-virtual-bpo.md), donde una sola instalación atiende a varias empresas cliente.
 
 ---
 

@@ -7,7 +7,7 @@ nivel: intermedio
 roles: [administrador]
 fuente: zh+en
 obsoleto: false
-relacionados: [pbx-y-telefonia, marcador-predictivo-avanzado, marketing-outbound, marcacion-predictiva]
+relacionados: [pbx-y-telefonia, marcador-predictivo-avanzado, marketing-outbound, marcacion-predictiva, atencion-cliente-mensajeria-ecommerce]
 ---
 
 # Marcador y campañas
@@ -96,7 +96,7 @@ Si la tarea usa marcación predictiva, se configura por separado en **Marcador �
 - **Cuentas y límites de concurrencia:** existen tres niveles de límite — licencia del sistema, límite por equipo (configurado aquí), y límite por tarea de campaña. Ningún nivel puede superar al que está por encima.
 - **Regla de marcación:** define si el operador del marcador puede elegir libremente entre "por concurrencia" y "por agentes disponibles", o si se fuerza una de las dos.
 - **Destino al contestar:** a qué se transfiere la llamada cuando el cliente contesta — al grupo de agentes directamente, o a un IVR primero.
-- **Parámros de predicción:** duración promedio de timbrado, duración promedio de llamada, tasa de contactación esperada, tiempo de gestión posterior, y definición de "llamada corta" (para ajustar el algoritmo de predicción y evitar que sobren o falten llamadas para los agentes disponibles).
+- **Parámetros de predicción:** duración promedio de timbrado, duración promedio de llamada, tasa de contactación esperada, tiempo de gestión posterior, y definición de "llamada corta" (para ajustar el algoritmo de predicción y evitar que sobren o falten llamadas para los agentes disponibles).
 
 Ver también [Marcación predictiva](../casos-de-uso/marcacion-predictiva.md) para un caso de uso aplicado.
 

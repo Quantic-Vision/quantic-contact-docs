@@ -122,13 +122,14 @@ Para las instrucciones exactas de configuración de cuenta SIP en Eyebeam, X-Lit
    fromdomain=<ip-del-troncal>
    port=5060
    ```
+
+   ![Formulario de troncal con configuración típica por IP, sin campos de registro](../assets/images/primeros-pasos/trunk_2.png)
+
 3. Al guardar, si el equipo no tiene un troncal saliente por defecto, el sistema pregunta si quieres asignar este troncal como predeterminado para las llamadas salientes del equipo.
 
-   ![Confirmación de troncal por defecto del equipo](../assets/images/primeros-pasos/trunk_2.png)
+   ![Confirmación de troncal por defecto del equipo](../assets/images/primeros-pasos/trunk_3.png)
 
 4. Recarga el sistema. Si todo está bien, la columna **Estado** del troncal se muestra en verde.
-
-   ![Troncal en estado activo (verde)](../assets/images/primeros-pasos/trunk_3.png)
 5. Prueba una llamada saliente desde el softphone. Códigos de error comunes:
    - **486 Not Acceptable Here:** códec de voz incompatible entre el troncal y el softphone (revisa soporte de g729 si aplica).
    - **603 Declined:** normalmente autenticación del troncal — revisa si el troncal exige verificación del número que llama. Si el troncal lo exige, puedes forzar un Caller ID específico para ese troncal.

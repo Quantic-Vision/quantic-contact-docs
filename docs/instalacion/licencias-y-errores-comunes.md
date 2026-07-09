@@ -14,7 +14,7 @@ relacionados: [descarga-e-instalacion, configuracion-post-instalacion]
 
 ## Qué es
 
-AsterCC funciona con un esquema de licencia por número de agentes. Si no se ha cargado una licencia comercial, el sistema arranca igualmente con una **licencia por defecto de prueba, limitada a un número reducido de agentes** (la instalación estándar trae, por ejemplo, una licencia de prueba de 5 agentes).
+AsterCC funciona con un esquema de licencia por número de agentes. Si no se ha cargado una licencia comercial, el sistema arranca igualmente con una **licencia por defecto de prueba, limitada a un número reducido de agentes** (la instalación estándar trae, por ejemplo, una licencia de prueba de 4 agentes).
 
 ![Panel de administración de AsterCC mostrando el bloque de información de autorización: usuario autorizado, número de serie del producto, máximo de agentes, canales de fax, fecha de vigencia y botón para descargar el archivo de verificación](../assets/images/licencias-y-errores-comunes/panel-autorizacion-licencia.png)
 
@@ -31,7 +31,7 @@ Este mensaje aparece en los logs al iniciar los procesos (`asterccdaemons`) cuan
 | Situación | Qué significa | Acción |
 |---|---|---|
 | `can not found license file` en el log de arranque | No hay licencia comercial cargada | Ninguna, salvo que necesites más agentes — el sistema usa la licencia de prueba por defecto |
-| Sistema recién instalado | Trae licencia de prueba limitada (ej. 5 agentes) | Contactar al proveedor para licencia comercial si se necesita más capacidad |
+| Sistema recién instalado | Trae licencia de prueba limitada (ej. 4 agentes) | Contactar al proveedor para licencia comercial si se necesita más capacidad |
 
 ---
 

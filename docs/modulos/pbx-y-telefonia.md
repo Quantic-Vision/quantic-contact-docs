@@ -5,9 +5,9 @@ seccion: "4.1 PBX y telefonía"
 tipo: guia
 nivel: intermedio
 roles: [administrador]
-fuente: zh
+fuente: zh+en
 obsoleto: false
-relacionados: [pbx-ivr, pbx-funciones-avanzadas, cuentas-equipos-permisos, guia-administradores, marcador-y-campanas]
+relacionados: [pbx-ivr, pbx-funciones-avanzadas, cuentas-equipos-permisos, guia-administradores, marcador-y-campanas, tarifas-y-facturacion]
 ---
 
 # PBX y telefonía

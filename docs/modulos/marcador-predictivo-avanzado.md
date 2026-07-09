@@ -5,7 +5,7 @@ seccion: "4.2 Marcador y campañas — Marcador predictivo avanzado"
 tipo: referencia
 nivel: avanzado
 roles: [administrador]
-fuente: zh
+fuente: zh+en
 obsoleto: false
 relacionados: [marcador-y-campanas, marcacion-predictiva]
 ---

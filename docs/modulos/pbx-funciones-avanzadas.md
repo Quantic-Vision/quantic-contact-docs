@@ -5,9 +5,9 @@ seccion: "4.1 PBX y telefonía — Funciones avanzadas"
 tipo: referencia
 nivel: avanzado
 roles: [administrador]
-fuente: zh
+fuente: zh+en
 obsoleto: false
-relacionados: [pbx-y-telefonia, pbx-ivr]
+relacionados: [pbx-y-telefonia, pbx-ivr, marcador-y-campanas]
 ---
 
 # PBX — Funciones avanzadas

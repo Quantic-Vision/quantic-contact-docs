@@ -363,7 +363,7 @@ wget http://internode.dl.sourceforge.net/project/lame/lame/3.99/lame-3.99.5.tar.
 tar zxf lame-3.99.5.tar.gz
 cd lame-3.99.5
 ./configure
-./make && make install
+make && make install
 ```
 
 En CPUs de varios núcleos se puede acelerar la compilación con `make -j2` (o el número de núcleos disponibles).

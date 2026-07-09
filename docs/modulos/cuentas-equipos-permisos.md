@@ -7,7 +7,7 @@ nivel: intermedio
 roles: [administrador]
 fuente: zh+en
 obsoleto: false
-relacionados: [pbx-y-telefonia, tarifas-y-facturacion, guia-administradores]
+relacionados: [pbx-y-telefonia, tarifas-y-facturacion, guia-administradores, marcador-predictivo-avanzado, oficina-virtual-bpo]
 ---
 
 # Cuentas, equipos y permisos

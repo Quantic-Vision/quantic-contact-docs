@@ -18,7 +18,7 @@ Operaciones para adjuntar datos personalizados a una llamada en curso, importar 
 
 ## Cómo se usa
 
-### Fijar datos adjuntos (variable de canal / "随路数据")
+### Fijar datos adjuntos (variable de canal)
 
 Asocia una variable personalizada a la llamada en curso — útil para pasar datos de negocio (ej. un ID de ticket) que luego se pueden leer desde el CDR o desde eventos.
 

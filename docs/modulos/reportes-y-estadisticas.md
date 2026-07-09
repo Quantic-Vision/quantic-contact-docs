@@ -7,7 +7,7 @@ nivel: intermedio
 roles: [administrador]
 fuente: zh+en
 obsoleto: false
-relacionados: [plataforma-del-agente, tarifas-y-facturacion]
+relacionados: [plataforma-del-agente, tarifas-y-facturacion, cuentas-equipos-permisos, marcador-y-campanas]
 ---
 
 # Reportes, estadísticas y financiero

@@ -188,8 +188,8 @@ Ambos esquemas se configuran con el mismo script, tras instalar y autorizar Aste
 ```bash
 cp /opt/asterisk/scripts/astercc/clusterconf.sh /root
 cd /root
-chmod +x ./clustercc.sh
-./clustercc.sh
+chmod +x ./clusterconf.sh
+./clusterconf.sh
 ```
 
 El script pide elegir el tipo de configuración (`1` = primario/respaldo, `2` = clúster) y luego los datos de red de cada servidor. Al terminar, apaga los servidores secundarios, reinicia el primario y luego enciende los secundarios.

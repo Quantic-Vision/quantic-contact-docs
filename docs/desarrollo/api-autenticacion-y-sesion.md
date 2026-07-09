@@ -48,7 +48,7 @@ Parámetros: `type` (`1`=entrar, `2`=salir); `list` = IDs de grupo de agentes se
 
 Respuesta: código `1` con detalle por grupo (`<id>:<resultado>`, ej. `1:success,2:NotChecked`), código `2` con motivo de fallo general, o código `3` cuando algunos grupos fallan (`1:NotChecked,2:NotFoundGroup`). Resultados posibles por grupo: `success`, `CheckedIn` (ya estaba dentro), `NotInGroup`, `NotFoundGroup`, `NotChecked` (al salir, si no había entrado).
 
-### Cambiar el modo de trabajo (呼入/呼出/todo)
+### Cambiar el modo de trabajo (entrante/saliente/todo)
 
 | Protocolo | Firma |
 |---|---|

@@ -7,7 +7,7 @@ nivel: basico
 roles: [agente]
 fuente: zh+en
 obsoleto: false
-relacionados: [guia-agentes, recorrido-interfaz, marcador-y-campanas, tarifas-y-facturacion, reportes-y-estadisticas]
+relacionados: [guia-agentes, recorrido-interfaz, marcador-y-campanas, tarifas-y-facturacion, reportes-y-estadisticas, cuentas-equipos-permisos]
 ---
 
 # Plataforma de trabajo del agente

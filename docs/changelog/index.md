@@ -757,6 +757,80 @@ Como medida adicional, AsterCC recomienda eliminar (o renombrar con `mv` en vez 
 - En "Compras recientes" se puede abrir el detalle de un pedido desde su número; si el pedido no ha sido despachado, se puede cancelar con confirmación previa.
 - Popup de cliente de campaña y de atención al cliente: se agregó la vista de cancelación de pedido descrita arriba.
 
+## AsterCC 1.2.2
+
+**Core**
+
+- Se agrega el tipo de campo "link" en la personalización de campos.
+- Se corrige que un memo con saltos de línea impedía abrir la página de control de calidad (qcpage).
+- En los gráficos estadísticos, la unidad de "Hora" cambia a formato "hh:mm:ss".
+- Se mejoran los mensajes de error del sistema.
+- Se agrega un aviso en amarillo (arriba a la derecha) que muestra usuario, rol y hora local.
+- Nuevo calendario del cliente en la tabla maestra: al reasignar un cliente, su calendario se reasigna también al nuevo agente.
+- Se agrega el privilegio de rol "Mis órdenes de trabajo" para que el agente vea solo sus propias órdenes.
+- Al consultar o transferir una llamada, al agente consultado/receptor se le muestra automáticamente la ficha del cliente, con botón de actualización inmediata.
+- Se corrige que un dispositivo externo no podía transferir a una extensión.
+- Se agrega soporte de BLF en los teléfonos.
+- Se corrige la exportación de archivos que no incluía los campos correctamente.
+- Se corrige el estilo (CSS) incorrecto del cuadro de búsqueda.
+- Al exportar, ahora se puede indicar un correo destino para recibir el archivo exportado; aplica a: PBX → CDRs, Campaña → exportar clientes desde edición de paquete, Campaña → Clientes, Campaña → CDRs, Campaña → Control de calidad, Marcador → listas de marcación, Atención al cliente → CDR, Atención al cliente → Llamadas perdidas, y Encuestas → exportación de cuotas.
+- Cuentas: aparece barra de desplazamiento en las páginas de lista negra/blanca cuando hay muchos datos.
+- Agentes: desde "Ver grupo de agentes" se puede quitar al agente del grupo.
+- Grupo de agentes: al editar el campo ACW aparece el aviso de reiniciar sesión.
+- Personalización: los saltos de línea se unifican al estándar unix; el campo `Display As` ahora es editable.
+- Troncal: al editar `Registry String` aparece el aviso de recarga.
+- Rutas salientes: se agrega la opción `Sip Refer` en el campo `Transfer` de la regla.
+- IVR: se corrige que se podían guardar datos vacíos.
+- Base de conocimiento: se revisan traducciones y se optimiza el CSS.
+- Dispositivo: el campo `ExternalNumber` no puede coincidir con `Ext. No.`.
+- Configuración: se agregan los parámetros SIP TCP (`tcpenable`, `tcpbindaddr`, `transport`) en `GENERAL SIP SETTINGS`.
+- Respaldo de archivos: se optimiza el CSS de la paginación.
+- Troncal en vivo: se corrige que no se mostraban troncales sin equipo asignado.
+- Grupo BLF: los dispositivos pueden unirse a un grupo BLF para ver en el teléfono el estado de las demás extensiones del grupo.
+
+**Página de inicio de sesión**
+
+- Se corrige que no se podía entrar al sistema presionando Enter tras llenar el correo.
+- El acceso ahora admite identificar el equipo por URL, de dos formas: `http://IP_SERVIDOR/identificadorDeEquipo` o mediante dominio propio (`http://www.identificador.xxx` o `http://identificador.xxx`); con este método ya no se muestra el selector de equipo, útil para operaciones multi-equipo. Para activarlo se agrega `login_route = team` bajo `[system]` en `/etc/astercc.conf` (quitando el `;` si ya existía comentado).
+
+**Campaña**
+
+- Las campañas que usan la tabla maestra de clientes ya pueden trabajar con el marcador (dialer).
+
+**Marcador**
+
+- Al reciclar clientes, se usa el valor del campo `Schedule` del cliente como horario de re-marcado, en dos casos: cuando el cliente reciclado tiene `Schedule` propio posterior al del reciclado, o cuando la operación de reciclado no define `Schedule` y el cliente sí lo tiene.
+- Nueva opción para controlar si se vacía el número de agente (`agentno`) del cliente al reciclar.
+- En la lista de marcación de campaña se deshabilita la edición del cliente en la vista "Campaign Customer".
+
+**Plataforma de trabajo del agente**
+
+- Se agrega la columna `status` en la lista de pedidos al ver el historial de compras.
+- Aparece barra de desplazamiento cuando la cola es demasiado larga para la pantalla.
+- Se corrige que no se obtenían los datos de clientes pendientes bajo la pestaña `Pending` en la pantalla de trabajo de campaña.
+
+## AsterCC 1.2.1
+
+**Core**
+
+- Se agrega control del modo de aviso en la pantalla de trabajo del agente: ventana emergente o parpadeo.
+- Al consultar a un agente, se muestra la ficha del cliente en la pantalla emergente del agente consultado.
+- Correcciones de traducción.
+- Se optimiza la consulta SQL de reciclado de clientes, ordenando por fecha de marcado e ID ascendente.
+- Se corrige que no se actualizaba el correo del administrador al iniciar sesión.
+- Equipo: se corrige que no se validaba la duplicidad del identificador al editar; se corrige que no se podía actualizar el número máximo de agentes al valor real ya existente en el equipo.
+- Agente: se corrige que no se guardaba el rol al agregar un agente.
+- Monitor en vivo: el estado del agente ahora es consistente entre distintos grupos de agentes; se corrige que no funcionaban las funciones "Call Barge", "Call Spy" y "Whisper".
+- Códigos de función: se agrega `*54` para consultar a un agente; `*55` queda reservado para consultar un número telefónico.
+
+**Campaña (campaign-1.5)**
+
+- Se corrige que el número de agente (agentno) no aparecía en la búsqueda de la página de asignación manual.
+
+**Atención al cliente (customerservice-1.2)**
+
+- Se corrige que el campo de agente podía quedar nulo.
+
 ## AsterCC 1.2
 
 **Core**
@@ -903,80 +977,6 @@ Como medida adicional, AsterCC recomienda eliminar (o renombrar con `mv` en vez 
 
 - Nueva página de búsqueda de clientes.
 - Nueva pantalla emergente de cliente nuevo, controlada por el parámetro `Add Customer Priority`: según la prioridad configurada se puede cambiar entre ficha de individuo y de organización.
-
-## AsterCC 1.2.2
-
-**Core**
-
-- Se agrega el tipo de campo "link" en la personalización de campos.
-- Se corrige que un memo con saltos de línea impedía abrir la página de control de calidad (qcpage).
-- En los gráficos estadísticos, la unidad de "Hora" cambia a formato "hh:mm:ss".
-- Se mejoran los mensajes de error del sistema.
-- Se agrega un aviso en amarillo (arriba a la derecha) que muestra usuario, rol y hora local.
-- Nuevo calendario del cliente en la tabla maestra: al reasignar un cliente, su calendario se reasigna también al nuevo agente.
-- Se agrega el privilegio de rol "Mis órdenes de trabajo" para que el agente vea solo sus propias órdenes.
-- Al consultar o transferir una llamada, al agente consultado/receptor se le muestra automáticamente la ficha del cliente, con botón de actualización inmediata.
-- Se corrige que un dispositivo externo no podía transferir a una extensión.
-- Se agrega soporte de BLF en los teléfonos.
-- Se corrige la exportación de archivos que no incluía los campos correctamente.
-- Se corrige el estilo (CSS) incorrecto del cuadro de búsqueda.
-- Al exportar, ahora se puede indicar un correo destino para recibir el archivo exportado; aplica a: PBX → CDRs, Campaña → exportar clientes desde edición de paquete, Campaña → Clientes, Campaña → CDRs, Campaña → Control de calidad, Marcador → listas de marcación, Atención al cliente → CDR, Atención al cliente → Llamadas perdidas, y Encuestas → exportación de cuotas.
-- Cuentas: aparece barra de desplazamiento en las páginas de lista negra/blanca cuando hay muchos datos.
-- Agentes: desde "Ver grupo de agentes" se puede quitar al agente del grupo.
-- Grupo de agentes: al editar el campo ACW aparece el aviso de reiniciar sesión.
-- Personalización: los saltos de línea se unifican al estándar unix; el campo `Display As` ahora es editable.
-- Troncal: al editar `Registry String` aparece el aviso de recarga.
-- Rutas salientes: se agrega la opción `Sip Refer` en el campo `Transfer` de la regla.
-- IVR: se corrige que se podían guardar datos vacíos.
-- Base de conocimiento: se revisan traducciones y se optimiza el CSS.
-- Dispositivo: el campo `ExternalNumber` no puede coincidir con `Ext. No.`.
-- Configuración: se agregan los parámetros SIP TCP (`tcpenable`, `tcpbindaddr`, `transport`) en `GENERAL SIP SETTINGS`.
-- Respaldo de archivos: se optimiza el CSS de la paginación.
-- Troncal en vivo: se corrige que no se mostraban troncales sin equipo asignado.
-- Grupo BLF: los dispositivos pueden unirse a un grupo BLF para ver en el teléfono el estado de las demás extensiones del grupo.
-
-**Página de inicio de sesión**
-
-- Se corrige que no se podía entrar al sistema presionando Enter tras llenar el correo.
-- El acceso ahora admite identificar el equipo por URL, de dos formas: `http://IP_SERVIDOR/identificadorDeEquipo` o mediante dominio propio (`http://www.identificador.xxx` o `http://identificador.xxx`); con este método ya no se muestra el selector de equipo, útil para operaciones multi-equipo. Para activarlo se agrega `login_route = team` bajo `[system]` en `/etc/astercc.conf` (quitando el `;` si ya existía comentado).
-
-**Campaña**
-
-- Las campañas que usan la tabla maestra de clientes ya pueden trabajar con el marcador (dialer).
-
-**Marcador**
-
-- Al reciclar clientes, se usa el valor del campo `Schedule` del cliente como horario de re-marcado, en dos casos: cuando el cliente reciclado tiene `Schedule` propio posterior al del reciclado, o cuando la operación de reciclado no define `Schedule` y el cliente sí lo tiene.
-- Nueva opción para controlar si se vacía el número de agente (`agentno`) del cliente al reciclar.
-- En la lista de marcación de campaña se deshabilita la edición del cliente en la vista "Campaign Customer".
-
-**Plataforma de trabajo del agente**
-
-- Se agrega la columna `status` en la lista de pedidos al ver el historial de compras.
-- Aparece barra de desplazamiento cuando la cola es demasiado larga para la pantalla.
-- Se corrige que no se obtenían los datos de clientes pendientes bajo la pestaña `Pending` en la pantalla de trabajo de campaña.
-
-## AsterCC 1.2.1
-
-**Core**
-
-- Se agrega control del modo de aviso en la pantalla de trabajo del agente: ventana emergente o parpadeo.
-- Al consultar a un agente, se muestra la ficha del cliente en la pantalla emergente del agente consultado.
-- Correcciones de traducción.
-- Se optimiza la consulta SQL de reciclado de clientes, ordenando por fecha de marcado e ID ascendente.
-- Se corrige que no se actualizaba el correo del administrador al iniciar sesión.
-- Equipo: se corrige que no se validaba la duplicidad del identificador al editar; se corrige que no se podía actualizar el número máximo de agentes al valor real ya existente en el equipo.
-- Agente: se corrige que no se guardaba el rol al agregar un agente.
-- Monitor en vivo: el estado del agente ahora es consistente entre distintos grupos de agentes; se corrige que no funcionaban las funciones "Call Barge", "Call Spy" y "Whisper".
-- Códigos de función: se agrega `*54` para consultar a un agente; `*55` queda reservado para consultar un número telefónico.
-
-**Campaña (campaign-1.5)**
-
-- Se corrige que el número de agente (agentno) no aparecía en la búsqueda de la página de asignación manual.
-
-**Atención al cliente (customerservice-1.2)**
-
-- Se corrige que el campo de agente podía quedar nulo.
 
 ## AsterCC 1.2-beta
 

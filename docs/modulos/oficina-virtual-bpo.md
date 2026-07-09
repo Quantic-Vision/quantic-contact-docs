@@ -7,7 +7,7 @@ nivel: intermedio
 roles: [administrador]
 fuente: zh+en
 obsoleto: false
-relacionados: [pbx-y-telefonia, cuentas-equipos-permisos, oficina-virtual]
+relacionados: [pbx-y-telefonia, cuentas-equipos-permisos, oficina-virtual, base-conocimiento-work-orders, tarifas-y-facturacion]
 ---
 
 # Oficina virtual / BPO

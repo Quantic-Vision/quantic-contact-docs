@@ -57,7 +57,7 @@ En resumen: **JavaScript es para la pantalla embebida del agente en el navegador
 | Parámetro | Qué define |
 |---|---|
 | `orgidentity` | Identificador único del equipo/organización |
-| `usertype` | `agent` (autenticar como坐席/agente por número de agente) o `account` (autenticar como cuenta de usuario) |
+| `usertype` | `agent` (autenticar como agente por número de agente) o `account` (autenticar como cuenta de usuario) |
 | `user` | Número de agente o nombre de usuario, según `usertype` |
 | `pwdtype` | Tipo de contraseña: `plaintext` (texto plano) o `md5` (hash MD5) |
 | `password` | La contraseña, en el formato indicado por `pwdtype` |

@@ -5,7 +5,7 @@ seccion: "Portada"
 tipo: concepto
 nivel: basico
 roles: [administrador, agente, desarrollador]
-fuente: pendiente
+fuente: zh+en
 obsoleto: false
 relacionados: []
 ---

@@ -5,7 +5,7 @@ seccion: "4.1 PBX y telefonía — IVR"
 tipo: referencia
 nivel: avanzado
 roles: [administrador, desarrollador]
-fuente: zh
+fuente: zh+en
 obsoleto: false
 relacionados: [pbx-y-telefonia, pbx-funciones-avanzadas, api-y-ami]
 ---
